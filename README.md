@@ -12,8 +12,9 @@ This book is created using a minimal example of a book based on R Markdown and *
   5.2. git add README.md
   5.3. git commit -m "first commit"
   5.4. git branch -M main
-  5.5. git remote add origin git@github.com:icu-hsuzuki/da4r2022.git
-  5.6. git push -u origin main
+  5.5. git remote rm origin
+  5.6. git remote add origin git@github.com:icu-hsuzuki/da4r2022.git
+  5.7. git push -u origin main
 6. Restart R Studio
 7. Build Book
 8. Git: Commit "first build" > Push
