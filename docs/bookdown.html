@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 8 Bookdown | A Minimal Book Example</title>
+<meta name="author" content="John Doe">
+<meta name="description" content="8.1 About This is a sample book written in Markdown. You can use anything that Pandoc’s Markdown supports; for example, a math equation \(a^2 + b^2 = c^2\).  8.1.1 Usage Each bookdown chapter is...">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
+<meta property="og:title" content="Chapter 8 Bookdown | A Minimal Book Example">
+<meta property="og:type" content="book">
+<meta property="og:description" content="8.1 About This is a sample book written in Markdown. You can use anything that Pandoc’s Markdown supports; for example, a math equation \(a^2 + b^2 = c^2\).  8.1.1 Usage Each bookdown chapter is...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 8 Bookdown | A Minimal Book Example">
+<meta name="twitter:description" content="8.1 About This is a sample book written in Markdown. You can use anything that Pandoc’s Markdown supports; for example, a math equation \(a^2 + b^2 = c^2\).  8.1.1 Usage Each bookdown chapter is...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">A Minimal Book Example</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled"><li><a class="" href="index.html"><span class="header-section-number">Chapter 8</span> Bookdown</a></li></ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="bookdown" class="section level1" number="8">
+<h1>
+<span class="header-section-number">8</span> Bookdown<a class="anchor" aria-label="anchor" href="#bookdown"><i class="fas fa-link"></i></a>
+</h1>
+<div id="about" class="section level2" number="8.1">
+<h2>
+<span class="header-section-number">8.1</span> About<a class="anchor" aria-label="anchor" href="#about"><i class="fas fa-link"></i></a>
+</h2>
+<p>This is a <em>sample</em> book written in <strong>Markdown</strong>. You can use anything that Pandoc’s Markdown supports; for example, a math equation <span class="math inline">\(a^2 + b^2 = c^2\)</span>.</p>
+<div id="usage-1" class="section level3" number="8.1.1">
+<h3>
+<span class="header-section-number">8.1.1</span> Usage<a class="anchor" aria-label="anchor" href="#usage-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Each <strong>bookdown</strong> chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter <em>must</em> start with a first-level heading: <code># A good chapter</code>, and can contain one (and only one) first-level heading.</p>
+<p>Use second-level and higher headings within chapters like: <code>## A short section</code> or <code>### An even shorter section</code>.</p>
+<p>The <code>index.Rmd</code> file is required, and is also your first book chapter. It will be the homepage when you render the book.</p>
+</div>
+<div id="render-book-1" class="section level3" number="8.1.2">
+<h3>
+<span class="header-section-number">8.1.2</span> Render book<a class="anchor" aria-label="anchor" href="#render-book-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>You can render the HTML version of this example book without changing anything:</p>
+<ol style="list-style-type: decimal">
+<li><p>Find the <strong>Build</strong> pane in the RStudio IDE, and</p></li>
+<li><p>Click on <strong>Build Book</strong>, then select your output format, or select “All formats” if you’d like to use multiple formats from the same book source files.</p></li>
+</ol>
+<p>Or build the book from the R console:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">bookdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/bookdown/reference/render_book.html">render_book</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>To render this example to PDF as a <code><a href="https://pkgs.rstudio.com/bookdown/reference/pdf_book.html">bookdown::pdf_book</a></code>, you’ll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.org/tinytex/" class="uri">https://yihui.org/tinytex/</a>.</p>
+</div>
+<div id="preview-book-1" class="section level3" number="8.1.3">
+<h3>
+<span class="header-section-number">8.1.3</span> Preview book<a class="anchor" aria-label="anchor" href="#preview-book-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in “Preview book”, or from the R console:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">bookdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/bookdown/reference/serve_book.html">serve_book</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+</div>
+</div>
+<div id="hello-bookdown-1" class="section level2" number="8.2">
+<h2>
+<span class="header-section-number">8.2</span> Hello bookdown<a class="anchor" aria-label="anchor" href="#hello-bookdown-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (<code>#</code>) per .Rmd file.</p>
+<div id="a-section-1" class="section level3" number="8.2.1">
+<h3>
+<span class="header-section-number">8.2.1</span> A section<a class="anchor" aria-label="anchor" href="#a-section-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>All chapter sections start with a second-level (<code>##</code>) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.</p>
+<div id="an-unnumbered-section-1" class="section level4 unnumbered">
+<h4>An unnumbered section<a class="anchor" aria-label="anchor" href="#an-unnumbered-section-1"><i class="fas fa-link"></i></a>
+</h4>
+<p>Chapters and sections are numbered by default. To un-number a heading, add a <code>{.unnumbered}</code> or the shorter <code>{-}</code> at the end of the heading, like in this section.</p>
+</div>
+</div>
+</div>
+<div id="cross" class="section level2" number="8.3">
+<h2>
+<span class="header-section-number">8.3</span> Cross-references<a class="anchor" aria-label="anchor" href="#cross"><i class="fas fa-link"></i></a>
+</h2>
+<p>Cross-references make it easier for your readers to find and link to elements in your book.</p>
+<div id="chapters-and-sub-chapters-1" class="section level3" number="8.3.1">
+<h3>
+<span class="header-section-number">8.3.1</span> Chapters and sub-chapters<a class="anchor" aria-label="anchor" href="#chapters-and-sub-chapters-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>There are two steps to cross-reference any heading:</p>
+<ol style="list-style-type: decimal">
+<li>Label the heading: <code># Hello world {#nice-label}</code>.
+<ul>
+<li>Leave the label off if you like the automated heading generated based on your heading title: for example, <code># Hello world</code> = <code># Hello world {#hello-world}</code>.</li>
+<li>To label an un-numbered heading, use: <code># Hello world {-#nice-label}</code> or <code>{# Hello world .unnumbered}</code>.</li>
+</ul>
+</li>
+<li>Next, reference the labeled heading anywhere in the text using <code>\@ref(nice-label)</code>; for example, please see Chapter <a href="cross.html#cross">3</a>.
+<ul>
+<li>If you prefer text as the link instead of a numbered reference use: <a href="cross.html#cross">any text you want can go here</a>.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div id="captioned-figures-and-tables-1" class="section level3" number="8.3.2">
+<h3>
+<span class="header-section-number">8.3.2</span> Captioned figures and tables<a class="anchor" aria-label="anchor" href="#captioned-figures-and-tables-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Figures and tables <em>with captions</em> can also be cross-referenced from elsewhere in your book using <code>\@ref(fig:chunk-label)</code> and <code>\@ref(tab:chunk-label)</code>, respectively.</p>
+<p>See Figure <a href="bookdown.html#fig:nice-fig">8.1</a>.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">4</span>, <span class="fl">4</span>, <span class="fl">.1</span>, <span class="fl">.1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">pressure</span>, type <span class="op">=</span> <span class="st">'b'</span>, pch <span class="op">=</span> <span class="fl">19</span><span class="op">)</span></span></code></pre></div>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:nice-fig"></span>
+<img src="90-bookdown_files/figure-html/nice-fig-1.png" alt="Plot with connected points showing that vapor pressure of mercury increases exponentially as temperature increases." width="80%"><p class="caption">
+Figure 8.1: Here is a nice figure!
+</p>
+</div>
+<p>Don’t miss Table <a href="bookdown.html#tab:nice-tab">8.1</a>.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">pressure</span>, <span class="fl">10</span><span class="op">)</span>, caption <span class="op">=</span> <span class="st">'Here is a nice table!'</span>,</span>
+<span>  booktabs <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<caption>
+<span id="tab:nice-tab">Table 8.1: </span>Here is a nice table!</caption>
+<thead><tr class="header">
+<th align="right">temperature</th>
+<th align="right">pressure</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">0.0002</td>
+</tr>
+<tr class="even">
+<td align="right">20</td>
+<td align="right">0.0012</td>
+</tr>
+<tr class="odd">
+<td align="right">40</td>
+<td align="right">0.0060</td>
+</tr>
+<tr class="even">
+<td align="right">60</td>
+<td align="right">0.0300</td>
+</tr>
+<tr class="odd">
+<td align="right">80</td>
+<td align="right">0.0900</td>
+</tr>
+<tr class="even">
+<td align="right">100</td>
+<td align="right">0.2700</td>
+</tr>
+<tr class="odd">
+<td align="right">120</td>
+<td align="right">0.7500</td>
+</tr>
+<tr class="even">
+<td align="right">140</td>
+<td align="right">1.8500</td>
+</tr>
+<tr class="odd">
+<td align="right">160</td>
+<td align="right">4.2000</td>
+</tr>
+<tr class="even">
+<td align="right">180</td>
+<td align="right">8.8000</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="parts-1" class="section level2" number="8.4">
+<h2>
+<span class="header-section-number">8.4</span> Parts<a class="anchor" aria-label="anchor" href="#parts-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>You can add parts to organize one or more book chapters together. Parts can be inserted at the top of an .Rmd file, before the first-level chapter heading in that same file.</p>
+<p>Add a numbered part: <code># (PART) Act one {-}</code> (followed by <code># A chapter</code>)</p>
+<p>Add an unnumbered part: <code># (PART\*) Act one {-}</code> (followed by <code># A chapter</code>)</p>
+<p>Add an appendix as a special kind of un-numbered part: <code># (APPENDIX) Other stuff {-}</code> (followed by <code># A chapter</code>). Chapters in an appendix are prepended with letters instead of numbers.</p>
+</div>
+<div id="footnotes-and-citations-1" class="section level2" number="8.5">
+<h2>
+<span class="header-section-number">8.5</span> Footnotes and citations<a class="anchor" aria-label="anchor" href="#footnotes-and-citations-1"><i class="fas fa-link"></i></a>
+</h2>
+<div id="footnotes-1" class="section level3" number="8.5.1">
+<h3>
+<span class="header-section-number">8.5.1</span> Footnotes<a class="anchor" aria-label="anchor" href="#footnotes-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Footnotes are put inside the square brackets after a caret <code>^[]</code>. Like this one <a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;This is a footnote.&lt;/p&gt;"><sup>4</sup></a>.</p>
+</div>
+<div id="citations-1" class="section level3" number="8.5.2">
+<h3>
+<span class="header-section-number">8.5.2</span> Citations<a class="anchor" aria-label="anchor" href="#citations-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Reference items in your bibliography file(s) using <code>@key</code>.</p>
+<p>For example, we are using the <strong>bookdown</strong> package<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Xie, &lt;em&gt;Bookdown&lt;/em&gt;.&lt;/p&gt;"><sup>5</sup></a></span> (check out the last code chunk in index.Rmd to see how this citation key was added) in this sample book, which was built on top of R Markdown and <strong>knitr</strong><span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Xie, &lt;em&gt;Dynamic Documents with &lt;span&gt;R&lt;/span&gt; and Knitr&lt;/em&gt;.&lt;/p&gt;"><sup>6</sup></a></span> (this citation was added manually in an external file book.bib).
+Note that the <code>.bib</code> files need to be listed in the index.Rmd with the YAML <code>bibliography</code> key.</p>
+<p>The <code>bs4_book</code> theme makes footnotes appear inline when you click on them. In this example book, we added <code>csl: chicago-fullnote-bibliography.csl</code> to the <code>index.Rmd</code> YAML, and include the <code>.csl</code> file. To download a new style, we recommend: <a href="https://www.zotero.org/styles/" class="uri">https://www.zotero.org/styles/</a></p>
+<p>The RStudio Visual Markdown Editor can also make it easier to insert citations: <a href="https://rstudio.github.io/visual-markdown-editing/#/citations" class="uri">https://rstudio.github.io/visual-markdown-editing/#/citations</a></p>
+</div>
+</div>
+<div id="blocks-1" class="section level2" number="8.6">
+<h2>
+<span class="header-section-number">8.6</span> Blocks<a class="anchor" aria-label="anchor" href="#blocks-1"><i class="fas fa-link"></i></a>
+</h2>
+<div id="equations-1" class="section level3" number="8.6.1">
+<h3>
+<span class="header-section-number">8.6.1</span> Equations<a class="anchor" aria-label="anchor" href="#equations-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Here is an equation.</p>
+<p><span class="math display" id="eq:binom">\[\begin{equation}
+  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
+  \tag{8.1}
+\end{equation}\]</span></p>
+<p>You may refer to using <code>\@ref(eq:binom)</code>, like see Equation <a href="bookdown.html#eq:binom">(8.1)</a>.</p>
+</div>
+<div id="theorems-and-proofs-1" class="section level3" number="8.6.2">
+<h3>
+<span class="header-section-number">8.6.2</span> Theorems and proofs<a class="anchor" aria-label="anchor" href="#theorems-and-proofs-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Labeled theorems can be referenced in text using <code>\@ref(thm:tri)</code>, for example, check out this smart theorem <a href="bookdown.html#thm:tri">8.1</a>.</p>
+<div class="theorem">
+<p><span id="thm:tri" class="theorem"><strong>Theorem 8.1  </strong></span>For a right triangle, if <span class="math inline">\(c\)</span> denotes the <em>length</em> of the hypotenuse
+and <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> denote the lengths of the <strong>other</strong> two sides, we have
+<span class="math display">\[a^2 + b^2 = c^2\]</span></p>
+</div>
+<p>Read more here <a href="https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html" class="uri">https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html</a>.</p>
+</div>
+<div id="callout-blocks-1" class="section level3" number="8.6.3">
+<h3>
+<span class="header-section-number">8.6.3</span> Callout blocks<a class="anchor" aria-label="anchor" href="#callout-blocks-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>The <code>bs4_book</code> theme also includes special callout blocks, like this <code>.rmdnote</code>.</p>
+<div class="rmdnote">
+<p>You can use <strong>markdown</strong> inside a block.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">beaver1</span>, n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   day time  temp activ</span></span>
+<span><span class="co">#&gt; 1 346  840 36.33     0</span></span>
+<span><span class="co">#&gt; 2 346  850 36.34     0</span></span>
+<span><span class="co">#&gt; 3 346  900 36.35     0</span></span>
+<span><span class="co">#&gt; 4 346  910 36.42     0</span></span>
+<span><span class="co">#&gt; 5 346  920 36.55     0</span></span></code></pre></div>
+</div>
+<p>It is up to the user to define the appearance of these blocks for LaTeX output.</p>
+<p>You may also use: <code>.rmdcaution</code>, <code>.rmdimportant</code>, <code>.rmdtip</code>, or <code>.rmdwarning</code> as the block name.</p>
+<p>The R Markdown Cookbook provides more help on how to use custom blocks to design your own callouts: <a href="https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html</a></p>
+</div>
+</div>
+<div id="sharing-your-book-1" class="section level2" number="8.7">
+<h2>
+<span class="header-section-number">8.7</span> Sharing your book<a class="anchor" aria-label="anchor" href="#sharing-your-book-1"><i class="fas fa-link"></i></a>
+</h2>
+<div id="publishing-1" class="section level3" number="8.7.1">
+<h3>
+<span class="header-section-number">8.7.1</span> Publishing<a class="anchor" aria-label="anchor" href="#publishing-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>HTML books can be published online, see: <a href="https://bookdown.org/yihui/bookdown/publishing.html" class="uri">https://bookdown.org/yihui/bookdown/publishing.html</a></p>
+</div>
+<div id="pages-1" class="section level3" number="8.7.2">
+<h3>
+<span class="header-section-number">8.7.2</span> 404 pages<a class="anchor" aria-label="anchor" href="#pages-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>By default, users will be directed to a 404 page if they try to access a webpage that cannot be found. If you’d like to customize your 404 page instead of using the default, you may add either a <code>_404.Rmd</code> or <code>_404.md</code> file to your project root and use code and/or Markdown syntax.</p>
+</div>
+<div id="metadata-for-sharing-1" class="section level3" number="8.7.3">
+<h3>
+<span class="header-section-number">8.7.3</span> Metadata for sharing<a class="anchor" aria-label="anchor" href="#metadata-for-sharing-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Bookdown HTML books will provide HTML metadata for social sharing on platforms like Twitter, Facebook, and LinkedIn, using information you provide in the <code>index.Rmd</code> YAML. To setup, set the <code>url</code> for your book and the path to your <code>cover-image</code> file. Your book’s <code>title</code> and <code>description</code> are also used.</p>
+<p>This <code>bs4_book</code> provides enhanced metadata for social sharing, so that each chapter shared will have a unique description, auto-generated based on the content.</p>
+<p>Specify your book’s source repository on GitHub as the <code>repo</code> in the <code>_output.yml</code> file, which allows users to view each chapter’s source file or suggest an edit. Read more about the features of this output format here:</p>
+<p><a href="https://pkgs.rstudio.com/bookdown/reference/bs4_book.html" class="uri">https://pkgs.rstudio.com/bookdown/reference/bs4_book.html</a></p>
+<p>Or use:</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">?</span><span class="fu">bookdown</span><span class="fu">::</span><span class="va"><a href="https://pkgs.rstudio.com/bookdown/reference/bs4_book.html">bs4_book</a></span></span></code></pre></div>
+</div>
+</div>
+<div id="references-1" class="section level2 unnumbered">
+<h2>References<a class="anchor" aria-label="anchor" href="#references-1"><i class="fas fa-link"></i></a>
+</h2>
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-R-bookdown" class="csl-entry">
+Xie, Yihui. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>, 2022. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.
+</div>
+<div id="ref-xie2015" class="csl-entry">
+———. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC, 2015. <a href="http://yihui.org/knitr/">http://yihui.org/knitr/</a>.
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="chapter-nav">
+<div class="empty"></div>
+<div class="empty"></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <div id="book-on-this-page"></div>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>A Minimal Book Example</strong>" was written by John Doe. It was last built on 2023-02-05.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

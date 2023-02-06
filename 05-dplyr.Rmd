@@ -1,0 +1,500 @@
+# Data Transforamtion with `dplyr` {#dplyr}
+
+```{r}
+library(tidyverse)
+```
+
+
+## `dplyr` [Overview](https://dplyr.tidyverse.org)
+
+dplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges:
+
+* `select()` picks variables based on their names.
+* `filter()` picks cases based on their values.
+* `mutate()` adds new variables that are functions of existing variables
+* `summarise()` reduces multiple values down to a single summary.
+* `arrange()` changes the ordering of the rows.
+* `group_by()` takes an existing tbl and converts it into a grouped tbl.
+
+You can learn more about them in vignette("dplyr"). As well as these single-table verbs, dplyr also provides a variety of two-table verbs, which you can learn about in vignette("two-table").
+
+If you are new to dplyr, the best place to start is [the data transformation chapter in R for data science](http://r4ds.had.co.nz/transform.html).
+
+---
+
+## [`select`](https://dplyr.tidyverse.org/reference/select.html): Subset columns using their names and types
+
+Helper Function	| Use	| Example
+---|-------|--------
+-	| Columns except	| select(babynames, -prop)
+:	| Columns between (inclusive)	| select(babynames, year:n)
+contains() |	Columns that contains a string |	select(babynames, contains("n"))
+ends_with()	| Columns that ends with a string	| select(babynames, ends_with("n"))
+matches()	| Columns that matches a regex |	select(babynames, matches("n"))
+num_range()	| Columns with a numerical suffix in the range | Not applicable with babynames
+one_of() |	Columns whose name appear in the given set |	select(babynames, one_of(c("sex", "gender")))
+starts_with()	| Columns that starts with a string	| select(babynames, starts_with("n"))
+
+---
+
+## [`filter`](https://dplyr.tidyverse.org/reference/filter.html): Subset rows using column values
+
+Logical operator	| tests	| Example
+--|-----|---
+>	| Is x greater than y? |	x > y
+>=	| Is x greater than or equal to y? |	x >= y
+<	| Is x less than y?	| x < y
+<=	| Is x less than or equal to y? | 	x <= y
+==	| Is x equal to y? |	x == y
+!=	| Is x not equal to y? |	x != y
+is.na()	| Is x an NA?	| is.na(x)
+!is.na() |	Is x not an NA? |	!is.na(x)
+
+---
+
+## [`arrange`](https://dplyr.tidyverse.org/reference/arrange.html) and `Pipe %>%`
+
+* `arrange()` orders the rows of a data frame by the values of selected columns.
+
+Unlike other `dplyr` verbs, `arrange()` largely ignores grouping; you need to explicitly mention grouping variables (`or use .by_group = TRUE) in order to group by them, and functions of variables are evaluated once per data frame, not once per group.
+
+* [`pipes`](https://r4ds.had.co.nz/pipes.html) in R for Data Science.
+
+---
+
+## [`mutate`](https://dplyr.tidyverse.org/reference/mutate.html) 
+
+* Create, modify, and delete columns
+
+* Useful mutate functions
+
+  - +, -, log(), etc., for their usual mathematical meanings
+
+  - lead(), lag()
+
+  - dense_rank(), min_rank(), percent_rank(), row_number(), cume_dist(), ntile()
+
+  - cumsum(), cummean(), cummin(), cummax(), cumany(), cumall()
+
+  - na_if(), coalesce()### `group_by()` and `summarise()`
+
+---
+
+## [`group_by`](https://dplyr.tidyverse.org/reference/group_by.html)
+
+---
+
+## [`summarise` or `summarize`](https://dplyr.tidyverse.org/reference/summarise.html)
+
+#### Summary functions
+
+So far our summarise() examples have relied on sum(), max(), and mean(). But you can use any function in summarise() so long as it meets one criteria: the function must take a vector of values as input and return a single value as output. Functions that do this are known as summary functions and they are common in the field of descriptive statistics. Some of the most useful summary functions include:
+
+1. Measures of location - mean(x), median(x), quantile(x, 0.25), min(x), and max(x)
+2. Measures of spread - sd(x), var(x), IQR(x), and mad(x)
+3. Measures of position - first(x), nth(x, 2), and last(x)
+4. Counts - n_distinct(x) and n(), which takes no arguments, and returns the size of the current group or data frame.
+5. Counts and proportions of logical values - sum(!is.na(x)), which counts the number of TRUEs returned by a logical test; mean(y == 0), which returns the proportion of TRUEs returned by a logical test.
+
+
+  - if_else(), recode(), case_when()
+
+---
+
+## Learn `dplyr` by Examples
+
+### Data `iris`
+
+```{r}
+iris
+```
+
+
+---
+
+```{r}
+summary(iris)
+```
+
+---
+
+### `select` 1 - columns 1, 2, 5
+
+```{r}
+select(iris, c(1,2,5))
+```
+
+---
+
+### `select` 2 - except Species
+
+```{r}
+select(iris, -Species)
+```
+
+---
+
+### `select` 3 - change column names
+
+```{r}
+select(iris, sl = Sepal.Length, sw = Sepal.Width, sp = Species)
+```
+
+---
+
+### `filter` - by names
+
+```{r}
+filter(iris, Species == "virginica")
+```
+
+
+---
+
+### `arrange`  - ascending and descending order
+
+```{r}
+arrange(iris, Sepal.Length, desc(Sepal.Width))
+```
+
+---
+
+### `mutate` - rank
+
+```{r}
+iris %>% mutate(sl_rank = min_rank(Sepal.Length)) %>% arrange(sl_rank)
+```
+
+---
+
+### `group_by` and `summarize`
+
+```{r}
+iris %>% 
+  group_by(Species) %>% 
+  summarize(sl = mean(Sepal.Length), sw = mean(Sepal.Width), 
+  pl = mean(Petal.Length), pw = mean(Petal.Width))
+```
+
+* mean: `mean()` or `mean(x, na.rm = TRUE)` - arithmetic mean (average)
+* median: `median()` or `median(x, na.rm = TRUE)` - mid value
+
+---
+
+For more examples see 
+
+[dplr_iris](https://icu-hsuzuki.github.io/da4r2022_note/dplyr-iris.nb.html)
+
+
+## References of `dplyr`
+
+* Textbook: [R for Data Science, Part II Explore](https://r4ds.had.co.nz/wrangle-intro.html#wrangle-intro)
+
+::: {.block}
+### RStudio Primers: See References in Moodle at the bottom
+
+1. The Basics -- [r4ds: Explore, I](https://r4ds.had.co.nz/explore-intro.html#explore-intro)
+  - [Visualization Basics](https://rstudio.cloud/learn/primers/1.1)
+  - [Programming Basics](https://rstudio.cloud/learn/primers/1.2)
+2. **Work with Data** -- [r4ds: Wrangle, I](https://r4ds.had.co.nz/wrangle-intro.html#wrangle-intro)
+  - **Working with Tibbles**
+  - **Isolating Data with dplyr**
+  - **Deriving Information with dplyr**
+3. Visualize Data -- [r4ds: Explore, II](https://r4ds.had.co.nz/explore-intro.html#explore-intro)
+4. Tidy Your Data -- [r4ds: Wrangle, II](https://r4ds.had.co.nz/wrangle-intro.html#wrangle-intro)
+5. Iterate -- [r4ds: Program](https://r4ds.had.co.nz/program-intro.html#program-intro)
+6. Write Functions -- [r4ds: Program](https://r4ds.had.co.nz/program-intro.html#program-intro)
+::: 
+
+---
+
+## Learn `dplyr` by Examples II - `gapminder`
+
+
+
+### `ggplot2` [Overview](https://ggplot2.tidyverse.org)
+
+`ggplot2` is a system for declaratively creating graphics, based on [The Grammar of Graphics](https://amzn.to/2ef1eWp). You provide the data, tell ggplot2 how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details.
+
+**Examples**
+```
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy))
+```
+```
+ggplot(data = mpg) + 
+  geom_boxplot(mapping = aes(x = class, y = hwy))
+```
+
+**Template**
+```
+ggplot(data = <DATA>) + 
+  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
+```
+
+---
+
+#### Gapminder and R Package `gapminder`
+
+> Gapminder was founded by Ola Rosling, Anna Rosling Rönnlund, and Hans Rosling
+
+-   Gapminder: <https://www.gapminder.org>
+
+    -   Test on Top: You are probably wrong about - upgrade your worldview
+    -   Bubble Chart: <https://www.gapminder.org/tools/#$chart-type=bubbles&url=v1>
+    -   Dallar Street: <https://www.gapminder.org/tools/#$chart-type=bubbles&url=v1>
+    -   Data: <https://www.gapminder.org/data/>
+
+-   R Package gapminder by Jennifer Bryan
+
+    -   Package site: <https://CRAN.R-project.org/package=gapminder>
+    -   Site: <https://github.com/jennybc/gapminder>
+    -   Documents: <https://www.rdocumentation.org/packages/gapminder/versions/0.3.0>
+
+-   Package Help `?gapminder` or `gapminder` in the search window of Help
+
+    -   The main data frame gapminder has 1704 rows and 6 variables:
+        -   country: factor with 142 levels
+        -   continent: factor with 5 levels
+        -   year: ranges from 1952 to 2007 in increments of 5 years
+        -   lifeExp: life expectancy at birth, in years
+        -   pop: population
+        -   gdpPercap: GDP per capita (US\$, inflation-adjusted)
+
+---
+
+```{r packages, message=FALSE}
+library(tidyverse)
+library(gapminder)
+library(WDI)
+```
+
+---
+
+#### R Package `gapminder` data
+
+```{r}
+df <- gapminder
+df
+```
+
+---
+
+```{r}
+glimpse(df)
+```
+
+---
+
+```{r}
+summary(df)
+```
+
+---
+
+#### Tidyverse::ggplot
+
+##### First Try - with failures
+
+```{r}
+ggplot(df, aes(x = year, y = lifeExp)) + geom_point()
+```
+
+---
+
+```{r}
+ggplot(df, aes(x = year, y = lifeExp)) + geom_line()
+```
+
+---
+
+```{r}
+ggplot(df, aes(x = year, y = lifeExp)) + geom_boxplot()
+```
+
+---
+
+```{r}
+typeof(pull(df, year)) # same as typeof(df$year)
+```
+
+---
+
+```{r}
+ggplot(df, aes(y = lifeExp, group = year)) + geom_boxplot()
+```
+
+---
+
+##### Box Plot
+
+```{r}
+ggplot(df, aes(x = as_factor(year), y = lifeExp)) + geom_boxplot()
+```
+
+---
+
+#### Applications of `dplyr`
+
+##### `filter`
+
+```{r}
+df %>% filter(country == "Afghanistan") %>%
+  ggplot(aes(x = year, y = lifeExp)) + geom_line()
+```
+
+---
+
+```{r}
+df %>% filter(country %in% c("Afghanistan", "Japan")) %>%
+  ggplot(aes(x = year, y = lifeExp, color = country)) + geom_line()
+```
+
+---
+
+```{r}
+df %>% distinct(country) %>% pull()
+```
+
+---
+
+```{r}
+df %>% filter(country %in% c("Brazil", "Russia", "India", "China")) %>%
+  ggplot(aes(x = year, y = lifeExp, color = country)) + geom_line()
+```
+
+Russian data is missing.
+
+---
+
+### Exercises
+
+1.  Change `lifeExp` to `pop` and `gdpPercap` and do the same.
+2.  Choose ASEAN countries and do the similar investigations.
+
+-   Brunei, Cambodia, Indonesia, Laos, Malaysia, Myanmar, Philippines, Singapore.
+
+3.  Choose several countries by yourself and do the similar investigations.
+
+---
+
+### `group_by` and `summarize`
+
+Let us use the variable `continent` and summarize the data.
+
+```{r}
+df_lifeExp <- df %>% group_by(continent, year) %>% 
+  summarize(mean_lifeExp = mean(lifeExp), median_lifeExp = median(lifeExp), max_lifeExp = max(lifeExp), min_lifeExp = min(lifeExp), .groups = "keep")
+```
+
+---
+
+```{r}
+df_lifeExp
+```
+
+---
+
+```{r}
+df %>% filter(year %in% c(1952, 1987, 2007)) %>%
+  ggplot(aes(x=as_factor(year), y = lifeExp, fill = continent)) +
+  geom_boxplot()
+```
+
+---
+
+```{r}
+df_lifeExp %>% ggplot(aes(x = year, y = mean_lifeExp, color = continent)) +
+  geom_line()
+```
+
+---
+
+```{r}
+df_lifeExp %>% ggplot(aes(x = year, y = mean_lifeExp, color = continent, linetype = continent)) +
+  geom_line()
+```
+
+---
+
+```{r}
+df_lifeExp %>% ggplot() +
+  geom_line(aes(x = year, y = mean_lifeExp, color = continent)) + 
+  geom_line(aes(x = year, y = median_lifeExp, linetype = continent))
+```
+
+
+## The Week Two Assignment (in Moodle)
+
+**R Markdown and `dplyr`**
+
+* Create an R Notebook of a Data Analysis containing the following and submit the rendered HTML file (eg. `a2_123456.nb.html`)
+  1. create an R Notebook using the R Notebook Template in Moodle,  save as `a2_123456.Rmd`, 
+  2. write your name and ID and the contents, 
+  3. run each code block, 
+  4. preview to create `a2_123456.nb.html`,
+  5. submit  `a2_123456.nb.html` to Moodle.
+
+1. Pick data from the built-in datasets besides `cars`. (`library(help = "datasets")` or go to the site [The R Datasets Package](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html))
+
+    - Information of the data: Name, Description, Usage, Format, Source, References (Hint: ?cars)
+    - Use `head()`, `str()`, ..., and create at least one chart using `ggplot2` - Code Chunk.
+      + Don't forget to add `library(tidyverse)` in the first code chunk.
+    - An observation of the chart - in your own words.
+
+---
+
+2. Load `gapminder` by `library(gapminder)`.
+
+    - Choose `pop` or `gdpPercap`, or both, one country in the data, a group of countries in the data.
+    - Create charts using ggplot2 with geom_line and the variables and countries chosen in 1. (See examples of the charts for `lifeExp`.)
+    - Study the data as you like.
+    - Observations and difficulties encountered.
+
+**Due:** 2023-01-09 23:59:00. Submit your R Notebook file in Moodle (The Second Assignment). Due on Monday!
+
+---
+
+### Original Data? WDI?
+
+```{r}
+gapminder
+```
+
+---
+
+#### WDI
+
+* SP.DYN.LE00.IN: Life expectancy at birth, total (years)
+* NY.GDP.PCAP.KD: GDP per capita (constant 2015 US$)
+* SP.POP.TOTL: Population, total
+
+```{r cash=TRUE}
+df_wdi <- WDI(
+  country = "all", 
+  indicator = c(lifeExp = "SP.DYN.LE00.IN", pop = "SP.POP.TOTL", gdpPercap = "NY.GDP.PCAP.KD")
+)
+```
+
+---
+
+```{r}
+df_wdi
+```
+
+---
+
+```{r cash=TRUE}
+df_wdi_extra <- WDI(
+  country = "all", 
+  indicator = c(lifeExp = "SP.DYN.LE00.IN", pop = "SP.POP.TOTL", gdpPercap = "NY.GDP.PCAP.KD"), 
+  extra = TRUE
+)
+```
+
+---
+
+```{r}
+df_wdi_extra
+```
+

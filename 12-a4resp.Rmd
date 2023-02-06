@@ -1,0 +1,741 @@
+# Assignment Four: The Week Five Assignment {.unnumbered}
+
+**`tidyr` and WIR2022**
+
+-   Create an R Notebook of a Data Analysis containing the following and submit the rendered HTML file (e.g., `a3_123456.nb.html` by replacing 123456 with your ID)
+    1.  create an R Notebook using the R Notebook Template in Moodle, save it as `a3_123456.Rmd`,
+    2.  write your name and ID and the contents,
+    3.  run each code block,
+    4.  preview to create `a3_123456.nb.html`,
+    5.  submit `a3_123456.nb.html` to Moodle.
+
+1.  Choose data with at least two categorical variables and at least two numerical variables.
+
+    -   Information of the data: Name, Indicator, Description, Source, etc.
+    -   Explain why you chose the indicator
+    -   List questions you want to study
+
+2.  Explore the data using visualization using `ggplot2`.
+
+    -   Create various charts
+    -   Create at least one chart with at least two categorical variables and one numerical variable.
+    -   Create at least one chart with at least two numerical and one categorical variable.
+
+3.  Observations based on your data visualization and difficulties and questions encountered, if any.
+
+**Due:** 2023-01-23 23:59:00. Submit your R Notebook file in Moodle (The Fourth Assignment). Due on Monday!
+
+# Set up
+
+```{r}
+library(tidyverse)
+library(readxl) # for excel files
+library(WDI)
+```
+
+## World Development Indicator - WDI
+
+The following is useful when you use WDI.
+
+```{r cache = TRUE, eval = FALSE}
+wdi_cache <- WDIcache()
+```
+
+Or, write the cache and read it from your computer. Since `wdi_cache` is a list of two data frames, we cannot use `write_csv()`; instead, we use `write_rds`.
+
+```{r cache = TRUE, eval = FALSE}
+write_rds(wdi_cache, "./data/wdi_cache")
+```
+
+```{r cache = TRUE}
+wdi_cache <- read_rds("./data/wdi_cache")
+```
+
+`WDIcache()` produces a list containing two data frames: `wdi_cache$series` and `wdi_cache$country`.
+
+```{r}
+glimpse(wdi_cache)
+```
+
+## World Inequility Report - WIR2022
+
+* World Inequality Report: https://wir2022.wid.world/
+* Executive Summary: https://wir2022.wid.world/executive-summary/
+* Methodology: https://wir2022.wid.world/methodology/
+* URL of Executive Summary Data: https://wir2022.wid.world/www-site/uploads/2022/03/WIR2022TablesFigures-Summary.xlsx
+
+Please add `mode="wb"` (web binary). This should work better. 
+
+```{r summary-data, cash = TRUE, eval = FALSE}
+url_summary <- "https://wir2022.wid.world/www-site/uploads/2022/03/WIR2022TablesFigures-Summary.xlsx"
+download.file(url = url_summary, 
+              destfile = "./data/WIR2022s.xlsx", 
+              mode = "wb") 
+```
+
+If you get an error, download the file directory from the methodology site into your computer, then open it with Excel and save it in the data folder of your R Studio project. Then R studio can recognize it easily as an Excel data.
+
+Generally, a text file such as a CSV file is easy to import, but a binary file is difficult to handle. It is because unless R can recognize its file type, for example, Excel or so, R cannot import the data.
+
+```{r}
+excel_sheets("./data/WIR2022s.xlsx")
+```
+
+
+# General Comments
+
+## Reproducibility and Literate Programming
+
+Reproducibility and Literate Programming are critical to exploratory data analysis (EDA). These are for communication; communication with readers of the paper, graders of the assignments, and communication with yourself, as we always forget. Please think about the reader of the article, and record the procedure and output so that reader can easily understand what you have done.
+
+The data source is critical. Unless the reader obtains the same data quickly, the communication on EDA does not start. If the data is not downloaded automatically through the code chunk, you should explain how to obtain the data and the part of the data you applied. It is crucial when you use copying and paste using `read_delim(clipboard())`. Please describe the way for the reader to retrieve the same data easily. It is best to read your paper; in some cases, it can be a hard copy from the beginning to check whether the reader can reproduce what you have done in the article.
+
+## Varibles
+
+In this Assignment Four, we required the following:
+
+-   Create at least one chart with at least two categorical variables and one numerical variable.
+-   Create at least one chart with at least two numerical and one categorical variable.
+
+You can create a simple chart, such as a histogram or a box plot with only one variable. If you have two variables, you can create a scatter plot. But with `ggplot2`, you can create various charts with rich information using more than two variables. For example, the year can be used for both numerical and categorical variables using `factor(year)` or recognized as a character vector by `as.character(year)`. So the distinction between categorical variables and numerical variables is flexible. The purpose of this assignment is to experience creating a chart with rich information using more than two variables.
+
+However, I needed to clarify the variables' requirements for some of you. So I sent out an extra message from Announcement that you do not need to take it so strictly.
+
+If you use WDI, the following may be examples:
+
+-   two categorical and one numerical: a. country, region, and indicator; b. country, income, and indicator; c. after selecting a couple of years and using factor(year), country, indicator, d. create a table using group_by and summarize this type, etc.
+-   two numerical and one categorical: a. year, indicator, and country; b. two indicators and region, etc.
+
+If you use WIR, the following may be examples you saw in the executive summary:
+
+-   two categorical and one numerical: F1, F2, F4, F13 (year in this case is categorical), F15
+
+-   two numerical and one categorical: F6, F7, F10
+
+-   Three categorical: F3
+
+-   Two categorical and two numerical: F8, F11
+
+## Visualization
+
+Data visualization is a key to EDA. Create various charts and write your observations you can or cannot obtain from the chart.
+
+The following are the first two fundamental questions you keep in mind.
+
+-   What type of variation occurs within my variables?
+-   What type of covariation occurs between my variables?
+
+# Your Work
+
+Here is a list of data your classmates used for Assignment Four.
+
+## World Inequality Report 2022 - WIR
+
+- WIR2022TablesFigures-Summary.xlsx: Data of Exective Summary
+- WIR2022TablesFigures-Chapter6.xlsx: 
+Historical and current emissions, Income and Population by world region
+
+## World Development Indicators - WDI
+
+- SP.DYN.TFRT.IN:	Fertility rate, total (births per woman)
+- SP.POP.GROW: Population growth (annual %)
+- NY.GDP.MKTP.CD: GDP (current US$)
+- NY.GDP.MKTP.KD.ZG: GDP growth (annual %)
+- BX.KLT.DINV.CD.WD: Foreign Direct Investment (FDI) inflows
+- BX.KLT.DINV.CD.WD: Foreign direct investment, net inflows (BoP, current US$)
+- BN.CAB.XOKA.CD: Current account balance (BoP, current US$)
+- NE.EXP.GNFS.KD: Exports of goods and services (constant 2015 US$)
+- NE.IMP.GNFS.KD: Imports of goods and services (constant 2015 US$)
+- BX.TRF.PWKR.CD.DT: Personal remittances, received (current US$)
+- NY.GNS.ICTR.ZS: Gross savings (% of GDP)
+- EN.ATM.CO2E.KT: CO2 emissions (kt)
+- SE.XPD.TOTL.GB.ZS: Government expenditure on education, total (% of government expenditure)
+- SE.ENR.PRSC.FM.ZS: School enrollment, primary and secondary (gross), gender parity index (GPI)
+- SE.PRM.UNER.FE: Children out of school, primary, female
+- SE.PRM.UNER.MA: Children out of school, primary, male
+
+
+## United Nations - UNdata
+
+- Education: "https://data.un.org/_Docs/SYB/CSV/SYB65_309_202209_Education.csv"
+- Population: "https://data.un.org/_Docs/SYB/CSV/SYB65_246_202209_Population%20Growth,%20Fertility%20and%20Mortality%20Indicators.csv"
+
+
+# Responses to Questions
+
+## Q. WIR2022, F8 with a fixed year, say 2020 describing the difference of goevernment and private income.
+
+As for WIR2022, please refer to: https://ds-sl.github.io/data-analysis/wir2022.nb.html
+
+I added explanations to each chart.
+
+* Step 1. Import the data
+
+There is a step-by-step explanation of how to recreate a chart.
+
+```{r data-f1, cash = TRUE, message = FALSE}
+df_f8 <- read_excel("./data/WIR2022s.xlsx", sheet = "data-F8")
+df_f8
+```
+
+* Step 2. Tidy up the data by `pivot_longer`.
+
+```{r}
+df_f8_rev <- df_f8 %>% filter(year == "2020") %>%
+  select(year, Germany_public = Germany, Germany_private = 'Germany (private)', 
+         Spain_public = Spain, Spain_private = 'Spain (private)', 
+         France_public = France, France_private = 'France (private)', 
+         UK_public  = UK, UK_private = 'UK (private)', 
+         Japan_public = Japan, Japan_private = 'Japan (private)', 
+         Norway_public = Norway, Norway_private = 'Norway (private)',
+         USA_public = USA, USA_private = 'USA (private)') %>%
+  pivot_longer(!year, names_to = c("country",".value"), names_sep = "_") %>%
+  pivot_longer(3:4, names_to = "type", values_to = "value")
+df_f8_rev
+```
+
+* Step 3. Visualize using `ggplot2`.
+
+Then, in this case, `geom_col` seems to fit.
+
+```{r}
+df_f8_rev %>%
+  ggplot() +
+  geom_col(aes(x = country, y = value, fill = type), position = "dodge") +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  labs(title = "Private versus public wealth in rich countries in 2020", 
+       x = "", y = "wealth as % of national income", color = "", type = "")
+```
+
+
+Can you find a similar data of other countries of this type?
+
+It is in Chapter 3 of the report:
+
+https://wir2022.wid.world/chapter-3/
+
+From methodology, I explained on January 25, you can download the data for chapter three: WIR2022TablesFigures-Chapter3.xlsx
+
+
+## Q. The line graph looked strange at first and I couldn’t really see the results clearly. However, I could solve that problem by using “smoothstat” and then the results looked way better and I was able to interpret them easily.
+
+The strange looking line graph is called a sawtooth shape, and happens very often. So let me explain it
+
+* WDI indicator: BX.KLT.DINV.CD.WD: Foreign Direct Investment (FDI) inflows
+
+* Step 1. Import the data.
+
+```{r}
+df_fdi <- WDI(country = "all", indicator = c(fdi = "BX.KLT.DINV.CD.WD"), start =1970 , extra = TRUE, cache = NULL)
+df_fdi
+```
+
+* Step 2. Check the list of `income` names.
+
+The following code in `Base R` does the same as the following using `tidyverse`: 
+`df_fdi %>% distinct(income) %>% pull()`. 
+If the list is long, it may be better to check using `tibble` by ``df_fdi %>% distinct(income)`. You can also use `DT::datatable(df_fdi)` and search items of interest, though it takes up a lot of memory.
+
+
+```{r}
+unique(df_fdi$income)
+```
+
+* Step 3. Try a line graph.
+
+```{r}
+df_dfi %>% ggplot(aes(x=year, y=fdi, color=income)) + geom_line()
+```
+
+We observe several problems. But the most significant issue is it looks like a sawtooth. It is because there are so many `y` values at the same `x` value. When you draw a line graph, you need to choose only several countries or use group_by and summarize and use summarized data. However, there is an option; we can use a model to summarize the data of each group using `geom_smooth()`. Since you do not want a line but a curve, we use "loess" with `span`, we used to draw some of WIR2022 charts.
+
+* Step 4. Let us try `group_by` and `summarize`.
+
+```{r}
+df_fdi %>% drop_na(fdi) %>% drop_na(income) %>% 
+  filter(!income %in% c("Aggregates","Not classified")) %>%
+  group_by(income, year) %>% summarize(fdi_mean = mean(fdi)) %>% 
+  ggplot(aes(x=year,y=fdi_mean,color=income)) + 
+  geom_line()
+```
+
+If you do not want the message '`summarise()` has grouped output by 'income'. You can override using the `.groups` argument.' try the following by adding `.group = drop`.
+
+```{r}
+df_fdi %>% drop_na(fdi) %>% drop_na(income) %>% 
+  filter(!income %in% c("Aggregates","Not classified")) %>%
+  group_by(income, year) %>% summarize(fdi_mean = mean(fdi), .groups = "drop") %>% 
+  ggplot(aes(x=year,y=fdi_mean,color=income)) + 
+  geom_line()
+```
+
+
+* Step 5. Let us try `geom_smooth` with `loess` and `span`.
+
+Do you see similarities and differences? We need to choose the one from the other by our objective, and explain
+
+```{r}
+df_fdi  %>% drop_na(fdi) %>% drop_na(income) %>% 
+  filter(!income %in% c("Aggregates","Not classified")) %>%
+  ggplot(aes(x=year,y=fdi,color=income)) + 
+  geom_smooth(formula = y~x, method = "loess", span = 0.25, se = FALSE)
+```
+
+* Step 6. Change of the scale.
+
+It may be a good choice to use `scale_y_log10()`. However, since log10 is not finite if the value is not positive, you need to choose those with the indicator positive. Let us see how many zero values are in each income level.
+
+```{r}
+df_fdi %>% filter(!income %in% c(NA, "Aggregates")) %>% filter(fdi <= 0) %>%
+  ggplot(aes(x = income, fill = income)) + geom_bar() + 
+  labs(title = "Number of countries with FDI is not positive") +
+  theme(legend.position = "none")
+```
+
+
+```{r}
+df_fdi %>% drop_na(income) %>% filter(fdi > 0) %>%
+  filter(!income %in% c("Aggregates","Not classified")) %>%
+  ggplot(aes(x=year,y=fdi,color=income)) + 
+  geom_smooth(formula = y~x, method = "loess", span = 0.25, se = FALSE) +
+  scale_y_log10() + labs(title="The Value FID < 0 or Zero Excluded")
+```
+
+**Note.** If this is the target chart, it may be better to check the number of NA values, 0 values, negative values, and nonzero values in each income group. I add `  mutate(value = factor(value, levels = c("Positive", "Zero", "Negative", "NA"), labels = c("Positive", "Zero", "Negative", "NA")))` in order to set the order of the labels. Please try the same without the line.
+
+```{r}
+df_fdi %>% select(country, year, fdi, income) %>%
+  filter(!income %in% c("Aggregates", NA)) %>% 
+  mutate(value = case_when(
+    fdi == NA ~ "NA",
+    fdi == 0  ~ "Zero",
+    fdi < 0  ~ "Negative",
+    fdi > 0 ~ "Positive")) %>%
+  mutate(value = factor(value, levels = c("Positive", "Zero", "Negative", "NA"), labels = c("Positive", "Zero", "Negative", "NA"))) %>%
+  group_by(income, value) %>% summarize(n = n(), .groups = "drop") %>% 
+  ggplot(aes(income, n, fill = value)) + geom_col(position="dodge") + 
+  labs(x = "")
+```
+
+## Q. How is it possible to organize better the name of the value in the x axis so that they are better readable?
+
+* In the example above, the labels are overlapping. One way is to give an angle to the text with `vjust` and `hjust` values to place the labels in appropriate places: `theme(axis.text.x = element_text(angle = 30, vjust = 1, hjust=1))`
+
+```{r}
+df_fdi %>% select(country, year, fdi, income) %>%
+  filter(!income %in% c("Aggregates", NA)) %>% 
+  mutate(value = case_when(
+    fdi == NA ~ "NA",
+    fdi == 0  ~ "Zero",
+    fdi < 0  ~ "Negative",
+    fdi > 0 ~ "Positive")) %>%
+  mutate(value = factor(value, levels = c("Positive", "Zero", "Negative", "NA"), labels = c("Positive", "Zero", "Negative", "NA"))) %>%
+  group_by(income, value) %>% summarize(n = n(), .groups = "drop") %>% 
+  ggplot(aes(income, n, fill = value)) + geom_col(position="dodge") + 
+  theme(axis.text.x = element_text(angle = 30, vjust = 1, hjust=1)) + 
+  labs(x = "")
+```
+
+* You can use another package `stringr` included in `tidyverse` but not loaded. `scale_x_discrete(labels = function(x) stringr::str_wrap(x, width = 15))`
+Change the width value to fit to your chart. If you add library(stringr), then `scale_x_discrete(labels = function(x) str_wrap(x, width = 15))` is enough.
+
+```{r}
+df_fdi %>% select(country, year, fdi, income) %>%
+  filter(!income %in% c("Aggregates", NA)) %>% 
+  mutate(value = case_when(
+    fdi == NA ~ "NA",
+    fdi == 0  ~ "Zero",
+    fdi < 0  ~ "Negative",
+    fdi > 0 ~ "Positive")) %>%
+  mutate(value = factor(value, levels = c("Positive", "Zero", "Negative", "NA"), labels = c("Positive", "Zero", "Negative", "NA"))) %>%
+  group_by(income, value) %>% summarize(n = n(), .groups = "drop") %>% 
+  ggplot(aes(income, n, fill = value)) + geom_col(position="dodge") + 
+  scale_x_discrete(labels = function(x) stringr::str_wrap(x, width = 15)) + 
+  labs(x = "")
+```
+
+* If you have a long name for the title, use `\n` for the line feed.
+
+```{r}
+df_fdi %>% select(country, year, fdi, income) %>%
+  filter(!income %in% c("Aggregates", NA)) %>% 
+  mutate(value = case_when(
+    fdi == NA ~ "NA",
+    fdi == 0  ~ "Zero",
+    fdi < 0  ~ "Negative",
+    fdi > 0 ~ "Positive")) %>%
+  mutate(value = factor(value, levels = c("Positive", "Zero", "Negative", "NA"), labels = c("Positive", "Zero", "Negative", "NA"))) %>%
+  group_by(income, value) %>% summarize(n = n(), .groups = "drop") %>% 
+  ggplot(aes(income, n, fill = value)) + geom_col(position="dodge") + 
+  scale_x_discrete(labels = function(x) stringr::str_wrap(x, width = 15)) + 
+  labs(title = "long long long long long long long \nlong long long title", x = "")
+```
+
+## Q. Position of the labels
+
+* Step 1. If you want to use you own color palette, choose the codes or the color names from the following sites.
+
+  - Color Names: http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/
+  - RGB codes: https://www.rapidtables.com/web/color/RGB_Color.html
+
+```{r}
+color_list <- c("#00AE9D","#F58220","#6C676E")
+```
+
+* Import the data and tidy up
+
+```{r}
+df_f1 <- read_excel("./data/WIR2022s.xlsx", sheet = "data-F1")
+df_f1_rev <- pivot_longer(df_f1, -1, names_to = "group", values_to = "value")
+df_f1_rev
+```
+
+* Step 3. Visualize the data using `geom_col()`, change the default fill color using the list of the color in Step 1, and change the scale of the y axis into percents. 
+
+```{r}
+df_f1_rev[df_f1_rev$group != "Top 1%",] %>%
+  ggplot(aes(x = ...1, y = value, fill = group)) + 
+  geom_col(position = "dodge", width = 0.8) + 
+  scale_fill_manual(values = color_list) + 
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  labs(x = "")
+```
+
+* Step 4. Add the values in the text. Do not forget that the values should be in percentages.
+
+```{r}
+df_f1_rev[df_f1_rev$group != "Top 1%",] %>%
+  ggplot(aes(x = ...1, y = value, fill = group)) + 
+  geom_col(position = "dodge", width = 0.8) + 
+  scale_fill_manual(values = color_list) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  labs(x="") +
+  geom_text(aes(x = ...1, y = value, group = group, 
+            label = scales::label_percent(accuracy=1)(value)), 
+            position = position_dodge(0.8))  
+```
+* Step 5. If you want to change the locations of texts use `vjust = -0.2`. 
+
+```{r}
+df_f1_rev[df_f1_rev$group != "Top 1%",] %>%
+  ggplot(aes(x = ...1, y = value, fill = group)) + 
+  geom_col(position = "dodge", width = 0.8) + 
+  scale_fill_manual(values = color_list) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  labs(x="") +
+  geom_text(aes(x = ...1, y = value, group = group, 
+            label = scales::label_percent(accuracy=1)(value)), vjust = -0.2,
+            position = position_dodge(0.8))  
+```
+
+* One student used another method to add `0.03` to the value of `y` by `y = value+0.03`. Great!
+
+```{r}
+df_f1_rev[df_f1_rev$group != "Top 1%",] %>%
+  ggplot(aes(x = ...1, y = value, fill = group)) + 
+  geom_col(position = "dodge", width = 0.8) + 
+  scale_fill_manual(values = color_list) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  labs(x="") +
+  geom_text(aes(x = ...1, y = value+0.03, group = group, 
+            label = scales::label_percent(accuracy=1)(value)), 
+            position = position_dodge(0.8))  
+```
+# My Comments after Review
+
+## Visualization by Charts
+
+Please try as various charts as possible. You can learn only by experience or from others.
+
+### Treat `year` as a group?
+
+```{r}
+df_wdi <- WDI(
+  country = "all", 
+  indicator = c(lifeExp = "SP.DYN.LE00.IN"), start = 1990, extra = TRUE, cache =  wdi_cache)
+df_wdi
+```
+
+* Something is wrong in the next chart. Can you tell what the problem is?
+
+```{r}
+df_wdi %>%
+  filter(year %in% c("1988", "1998", "2008", "2018")) %>%
+  filter(country %in% c("Afghanistan", "Israel", "Azerbaijan", "Austria", "Australia")) %>%
+  ggplot(aes(x=year)) +
+  geom_boxplot(aes(y=lifeExp, fill=country))
+```
+I erased the second line: `filter(year %in% c("1988", "1998", "2008", "2018"))` but the result is very similar. 
+
+
+```{r}
+df_wdi %>%
+  filter(country %in% c("Afghanistan", "Israel", "Azerbaijan", "Austria", "Australia")) %>%
+  ggplot(aes(x=year)) +
+  geom_boxplot(aes(y=lifeExp, fill=country))
+```
+
+If you look at the table, you can see that year is a integer vector, not a character vector. Then what happens if we remove quotation marks. The next chart is not a box plot anymore. It is because, for each year there is only one value for each country.
+
+```{r}
+df_wdi %>%
+  filter(year %in% c(1988, 1998, 2008, 2018)) %>%
+  filter(country %in% c("Afghanistan", "Israel", "Azerbaijan", "Austria", "Australia")) %>%
+  ggplot(aes(x=factor(year))) +
+  geom_boxplot(aes(y=lifeExp, fill=country))
+```
+
+If we want to take `year` as a group after selecting some years, then we should try the next using `factor(year)`. You can change the label of x axis by
+  `labs(x = "year")` easily. We should also notice that there are no values for 1988. We should check basic information as such first.
+
+
+```{r}
+df_wdi %>%
+  filter(year %in% c(1988, 1998, 2008, 2018)) %>%
+  filter(country %in% c("Afghanistan", "Israel", "Azerbaijan", "Austria", "Australia")) %>%
+  ggplot(aes(x=factor(year), y=lifeExp, fill=country)) +
+  geom_col(position = "dodge", col = "black")
+```
+It is possible if you change year to a character vector by `mutate(year = as.character(year))`.
+
+```{r}
+df_wdi %>% mutate(year = as.character(year)) %>% 
+  filter(year %in% c("1998", "2008", "2018")) %>%
+  filter(country %in% c("Afghanistan", "Israel", "Azerbaijan", "Austria", "Australia")) %>%
+  ggplot(aes(x=year, y=lifeExp, fill=country)) +
+  geom_col(position = "dodge", col = "black") +
+  labs(x = "year")
+```
+
+
+## UN Data
+
+* UNdata: https://data.un.org
+
+Data of World Development Indicators are in a uniform format and downloadable using an R package WDI. So it is easy to handle. However, other data require data transformation to make it tidy. We give a couple of examples. Most of the UN data, they are in CSV, and you can get a link quickly, or download it by clicking. Though the data structure is not uniform, it is relatively easy to handle.
+
+### Education
+
+By the following, you can see that the first row is not the column name. R gives column names such as ...1, ...2, etc., when the column name is void.
+
+You can copy the link (url) by right click or ctrl+click.
+
+```{r}
+url_un_edu <- "https://data.un.org/_Docs/SYB/CSV/SYB65_309_202209_Education.csv"
+```
+
+```{r}
+un_edu <- read_csv(url_un_edu)
+un_edu
+```
+
+Let is skip the first row by adding 1skip = 11.
+
+```{r}
+un_edu <- read_csv(url_un_edu, skip = 1)
+un_edu
+```
+
+It is a very large data, and we need to check the values.
+
+```{r}
+summary(un_edu)
+```
+We can see that the Year is from 2000 to 2021. The first variable, Region/Country/Area and the fifth variable, Value are `dbl`, i.e., double; hence, these are numerical variables, and you can see them from the summary as well. But it is not easy to see other variables. Let us try them one by one.
+
+```{r}
+un_edu %>% distinct(...2)
+```
+
+```{r}
+un_edu %>% distinct(Series)
+```
+```{r}
+un_edu %>% distinct(Footnotes)
+```
+
+```{r}
+un_edu %>% distinct(Source)
+```
+
+* We may need to handle Footnotes carefully later, but for the first exploration, we need, ...2 for Region, Year, Series, Values.
+
+```{r}
+df_un_edu <- un_edu %>%
+  select(Region = ...2, Year, Series, Value)
+df_un_edu
+```
+
+Is there a way to separate regions from countries?
+
+```{r}
+df_un_edu %>% left_join(wdi_cache$country, by = c("Region"="country")) %>%
+  filter(!is.na(iso2c)) %>% distinct(Region)
+```
+
+```{r}
+df_un_edu %>% left_join(wdi_cache$country, by = c("Region"="country")) %>%
+  filter(is.na(iso2c)) %>% distinct(Region)
+```
+
+```{r}
+df_un_edu %>% left_join(wdi_cache$country, by = c("Region"="country")) %>%
+  filter(is.na(iso2c)) %>% distinct(Region) %>% pull()
+```
+
+There are some countries iso2c is not properly assigned. From the list above, Probably, the first 12 are areas and the value contains the aggregated value. 
+
+```{r}
+area <- df_un_edu %>% distinct(Region) %>% slice(1:12) %>% pull()
+area
+```
+```{r}
+un_edu_area <- df_un_edu %>% filter(Region %in% area)
+un_edu_region <- df_un_edu %>% filter(!Region %in% area)
+```
+
+Now we can start studying the data.
+
+```{r}
+un_edu_area %>% 
+  filter(Series %in% c("Gross enrollment ratio - Upper secondary level (male)", "Gross enrollment ratio - Upper secondary level (female)")) %>%
+  ggplot(aes(Year, Value, color = Region, linetype = Series)) + geom_line()
+```
+
+```{r}
+un_edu_area %>% 
+  filter(Series %in% c("Gross enrollment ratio - Upper secondary level (male)", "Gross enrollment ratio - Upper secondary level (female)")) %>% 
+  pivot_wider(names_from = Series, values_from = Value) %>%
+  mutate (Ratio = `Gross enrollment ratio - Upper secondary level (female)`/`Gross enrollment ratio - Upper secondary level (male)`) %>%
+  ggplot(aes(Year, Ratio, color = Region, linetype = Region)) + geom_line() +
+  labs(title = "Upper Secondary Level Education", subtitle = "Ratio = female/male")
+```
+
+### Population
+
+Data structure is similar to the previous one. So use `skip=1`, and check the variable s briefly.
+
+
+```{r}
+url_un_pop = "https://data.un.org/_Docs/SYB/CSV/SYB65_246_202209_Population%20Growth,%20Fertility%20and%20Mortality%20Indicators.csv"
+df_un_pop <- read.csv(url_un_pop, skip = 1)
+df_un_pop
+```
+
+```{r}
+df_un_pop %>% distinct(Source)
+```
+
+```{r}
+df_un_pop %>% distinct(Footnotes)
+```
+
+```{r}
+df_un_pop %>% distinct(X)
+```
+
+```{r}
+df_un_pop %>% distinct(Series)
+```
+
+1. Footnotes need to be studied.
+2. There are four different sources.
+3. X is for the region, the first 30 are areas, and the rest are countries or regions.
+4. There are seven series. It may be easier if we assign shorter names for each value.
+
+```{r}
+pop_area <- df_un_pop %>% distinct(X) %>% slice(1:30) %>% pull()
+pop_area
+```
+
+```{r}
+un_pop <- df_un_pop %>% select(Region = X, Year, Series, Value)
+un_pop
+```
+
+Let us change the names of series.
+
+```{r}
+un_pop_wide <- un_pop %>% pivot_wider(names_from = Series, values_from = Value)
+colnames(un_pop_wide) <- c("Region", "Year", "IncRate", "Fert", "InfDeath", "MatDeath", "LifeExp", "LifeExpM", "LifeExpF")
+un_pop_wide
+```
+
+```{r}
+un_pop_long <- un_pop_wide %>% pivot_longer(cols = -c(1,2), names_to = "Series", values_to = "Value")
+un_pop_long                                           
+```
+
+
+```{r}
+un_pop_long_area <- un_pop_long %>% filter(Region %in% pop_area)
+un_pop_long_region <- un_pop_long %>% filter(!Region %in% pop_area)
+un_pop_wide_area <- un_pop_wide %>% filter(Region %in% pop_area)
+un_pop_wide_region <- un_pop_wide %>% filter(!Region %in% pop_area)
+```
+
+
+Now we can visualize data.
+
+
+## WIR
+
+In the following, we explain how to download data by an R package `wir`. First, you need to install the package. However, it is not an official R package yet; you need to use the package `devtools` to install it.
+
+```{r eval=FALSE}
+install.packages("devtools")
+devtools::install_github("WIDworld/wid-r-tool")
+```
+
+
+I have not studied fully, but you can download the data by a package called `wir`. See [here](https://ds-sl.github.io/data-analysis/wir2022.nb.html). After installing the package, check the [codebook](https://wid.world/codes-dictionary) of the indicators. The following is not the ratio given in F8, but an example. 
+
+* w	wealth-to-income ratio or labor/capital share	fraction of national income
+* wealg: net public wealth to net national income ratio
+* wealp: net private wealth to net national income ratio
+
+```{r}
+library(wid)
+wwealg <- download_wid(indicators = "wwealg", areas = "all", years = "all")
+wwealp <- download_wid(indicators = "wwealp", areas = "all", years = "all")
+```
+
+```{r}
+public <- wwealg %>% select(country, year, public = value)
+public
+```
+
+```{r}
+private <- wwealp %>% select(country, year, private = value)
+private
+```
+
+```{r}
+public_vs_private <- public %>% left_join(private)
+public_vs_private
+```
+
+```{r}
+df_pub_priv <- public_vs_private %>% pivot_longer(cols = c(3,4), names_to = "category", values_to = "value") %>% left_join(wdi_cache$country, by = c("country"="iso2c")) %>%
+  select(country = country.y, iso2c = country, year, category, value, region, income, lending)
+df_pub_priv
+```
+
+```{r}
+unique(df_pub_priv$country)
+```
+
+
+```{r}
+df_pub_priv %>% 
+  filter(country %in% c("Japan", "Norway", "Sweden", "Denmark", "Finland"), year %in% 1970:2020) %>%
+  ggplot(aes(year, value, color = country, linetype = category)) + geom_line()
+```
+
+We choose two indicators: 'wealg' and 'wealp'. WIR2022 indicators consists of 6 characters; 1 letter code plus 5 letter code. You can find the list in the codebook.
+
+If you want to study WIR2022, please study the [report](https://wir2022.wid.world/), the [codebook](https://wid.world/codes-dictionary), and wir [vignette](https://ds-sl.github.io/data-analysis/wir_download.pdf) together with the [R Notebook](https://ds-sl.github.io/data-analysis/wir2022.nb.html). 
+
+As I mentioned earlier, the data tables used in the report are available from the following page. 
+
+* Methodology: https://wir2022.wid.world/methodology/

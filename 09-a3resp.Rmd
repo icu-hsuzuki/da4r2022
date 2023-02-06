@@ -1,0 +1,518 @@
+
+
+## Assignment Three: The Week Four Assignment {-}
+
+**WDI and `ggplot2`**
+
+* Create an R Notebook of a Data Analysis containing the following and submit the rendered HTML file (eg. `a3_123456.nb.html`  by replacing 123456 with your ID)
+  1. create an R Notebook using the R Notebook Template in Moodle,  save as `a3_123456.Rmd`, 
+  2. write your name and ID and the contents, 
+  3. run each code block, 
+  4. preview to create `a3_123456.nb.html`,
+  5. submit  `a3_123456.nb.html` to Moodle.
+
+1. Choose at least one indicator of WDI
+
+    - Information of the data: Name, Indicator, Description, Source, etc.
+    - Download the data with `WDI`
+    - Explain why you chose the indicator
+    - List questions you want to study
+
+2. Explore the data using visualization using `ggplot2`
+
+    - Use a histogram (geom_histogram), boxplot (geom_boxplot), a scatter plot (geom_point), a line plot (geom_line)
+    - For at least one chart, add title, and labels of axis, and add an explanation of it
+
+3. Observations and difficulties encountered.
+
+**Due:** 2023-01-16 23:59:00. Submit your R Notebook file in Moodle (The Third Assignment). Due on Monday!
+
+# Set up
+
+Follow the workflow explained in EDA4 on January 18.
+
+## EDA by R Studio: Step 1
+
+In RStudio,
+
+1.1. Project
+
+  * Create a new project: File > New Project; or  
+  * Open a project: File > Open Project, Open Project in New Session, Open Recent Project  
+    - It is easier to find an existing project from: File > Recent Project 
+  * _Check there is a file `project_name.Rproj` in your project folder (directory)_
+
+ 
+1.2. data folder (directory) `data`
+
+  * Create a data folder: Press New Folder at the right bottom pane; or 
+  * Confirm the data folder previously created: Press Files at the right bottom pane
+  * _If you follow 1, the data folder exists in your project folder_
+
+ 
+1.3. Move (or copy) data for the project to the data folder
+
+  * If you downloaded the data, it is in your Download folder. Move it to `data`.
+  * _Check in your RStudio that your data is in `data`: Press Files at the right bottom pane and click `data`, the data folder._
+
+
+## EDA by R Studio: Step 2
+
+2.1. Project Notebook: Memo
+
+  - Create an R Notebook: File > New File > R Notebook
+  
+    + You can use R Notebook template in Moodle by moving the template (template.Rmd or template.nb.Rmd) file in your project folder or copy and paste the text file into your new R Notebook.
+    + If you use template.nb.Rmd (R Notebook File), choose Open in Editor.
+    
+  - Add descriptive title. 
+  
+2.2. Setup Code Chunk 
+
+  - Create a code chunk and add packages to use in the project and RUN the code.
+  
+      + library(tidyverse)
+      + library(WDI)
+      + or any other packages
+      
+```{r}
+library(tidyverse)
+library(WDI)
+```
+
+_When people read a paper, they want to know the minimal set of packages required to install. So it is better to load the packages by library() you actually need in the paper._
+
+2.3. Choose `Source` or `Visual` editor mode, and start editing Project Notebook
+
+  - Set up Headings such as: About, Data, Analysis and Visualizations, Conclusions
+  - Under About or Data, paste url of the sites and/or the data
+
+2.4. Edit a new file by saving as for a report
+
+  - File > Save As...
+
+# General Comments
+
+## Varibles
+
+We should know first about the variables. At least you must know if each of the variables is a categorical variable or a numerical variable.
+
+## Visualization
+
+  * What type of variation occurs within my variables?
+  * What type of covariation occurs between my variables?
+
+# World Development Indicators (WDI)
+
+## Setup
+
+It is not a must, but it is good to run the following code chunk and use `wdi_cache` for `WDIsearch()` to update the mata data. See `WDIcache` help. 
+
+```{r cache = TRUE}
+wdi_cache <- WDIcache()
+```
+
+
+## Indicators Used in Assignment Three
+
+* NY.GDP.PCAP.KD: GDP per capita (constant 2015 US$)
+* NY.GDP.MKTP.CD: GDP (current US$)
+* NY.GDP.PCAP.KD.ZG: GDP per capita growth (annual%)
+* SP.POP.TOTL: Total Population
+* IP.JRN.ARTC.SC: Scientific and technical journal articles
+* FP.CPI.TOTL.ZG: Inflation, consumer prices (% annual growth) 
+* DT.ODA.ODAT.PC.ZS: Net ODA received per capita (current US$)
+* BX.KLT.DINV.CD.WD: Foreign direct investment, net inflows (BoP, current US$)
+* MS.MIL.XPND.GD.ZS: Military expenditure (% of GDP)
+* MS.MIL.TOTL.P1: Total Armed Forces Personnel
+* SI.POV.MDIM: Multidimensional poverty headcount ratio (% of total population)
+* SI.POV.NAHC: Poverty headcount ratio at national poverty lines (% of population) 
+* SI.POV.GINI: Gini index
+* NY.GNS.ICTR.ZS: Gross savings (% of GDP)
+* SL.UEM.TOTL.ZS: Unemployment, total (% of total labor force) (modeled ILO estimate)
+* SP.URB.TOTL.IN.ZS (Urban population (% of total population))
+* AG.LND.AGRI.ZS: Agricultural land (% of land area)
+* SE.ADT.LITR.FE.ZS: Literacy rate, adult female (% of females ages 15 and above))
+* SE.ADT.LITR.MA.ZS: Literacy rate, adult male (% of males ages 15 and above)) 
+* SE.ADT.LITR.ZS: Literacy rate, adult total
+* SE.ADT.1524.LT.FE.ZS: Literacy rate, youth female (% of females ages 15-24)
+* SE.XPD.TOTL.GD.ZS: Government expenditure on education, total (% of GDP)
+* SG.GEN.PARL.ZS: Proportion of seats held by women in national parliaments (%)
+
+## WDIsearch
+
+We obtain the information of the data, i.e., meta data of WDI: Name, Indicator, Description, Source, etc. by `WDIsearch`.
+
+* Usage
+
+```
+WDIsearch(string = "gdp", field = "name", short = TRUE, cache = NULL)
+```
+
+* Arguments
+
+  * `string`: Character string. Search for this string using grep with ignore.case=TRUE.
+
+  * `field`: Character string. Search this field. Admissible fields: 'indicator', 'name', 'description', 'sourceDatabase', 'sourceOrganization'
+
+  * `short`: TRUE: Returns only the indicator's code and name. FALSE: Returns the indicator's code, name, description, and source.
+
+  * `cache`: Data list generated by the WDIcache function. If omitted, WDIsearch will search a local list of series.
+
+If you follow the order of the arguments, you can omit argument names: `string`, `field`, `short`, `cache`.
+
+* The simplest format 1.
+
+```{r}
+WDIsearch("NY.GNS.ICTR.ZS", "indicator")
+```
+* The simplest format 2.
+
+```{r}
+WDIsearch("Literacy rate", "name")
+```
+
+* Detailed with short = FALSE
+
+```{r}
+WDIsearch("IP.JRN.ARTC.SC", "indicator", FALSE)
+```
+* You can use `wdi_cache` downloaded above to use the updated meta data.
+
+```{r}
+WDIsearch("Government expenditure on education", "name", FALSE, wdi_cache)
+```
+
+
+## Importing Data Using WDI
+
+* The shortest form. The following is same as:
+`WDI(country = "all", indicator = "NY.GDP.PCAP.KD", start = 1960, end = NULL, extra = FALSE, cache = NULL, latest = NULL, language = "en)`
+
+```{r}
+WDI(indicator = "NY.GDP.PCAP.KD")
+```
+
+* In order to use the downloaded data, we need to assign a name to it. It can be `df` if you download and use only one data, but it is better to assign the data to be a more descriptive name.
+
+```{r cache = TRUE}
+df_gdppcap <- WDI(indicator = "NY.GDP.PCAP.KD")
+df_gdppcap
+```
+
+* If you want to use extra information such as `region`, `income`, `lending`, use `extra = TRUE`.
+
+```{r cache = TRUE}
+df_gdppcap_extra <- WDI(indicator = "NY.GDP.PCAP.KD", extra = TRUE)
+df_gdppcap_extra
+```
+
+## Writing and reading a csv file
+
+Since the data is generally huge, it is better to use a data saved in your computer.
+Before saving it check whether you have `data` folder (or directory) in you project folder. Use the `Files` tab of the right bottom pane. You should be able to see the project icon with Rproj at the end, your R Notebook file you are editing, and the `data` folder. Since `.csv` is automatically added, `write_csv(gdppcap_extra, "./data/gdppcap_extra")` does the same as below.
+
+```{r eval = FALSE}
+write_csv(gdppcap_extra, "./data/gdppcap_extra.csv")
+```
+
+To read the data, run the next code chunk. You do not have to run the code `df_gdppcap_extra <- WDI(indicator = "NY.GDP.PCAP.KD", extra = TRUE)` again.
+
+```{r eval = FALSE}
+gdppcap <- read_csv("./data/gdppcap_extra.csv")
+```
+
+"./data/gdpcap_extra.csv" is the way to express the name of the data `gdpcap_extra.csv` in csv format in the data folder. 
+
+## `country` argument
+
+If you want to import data for several countries, you can use `iso2c` codes of the countries.
+
+```{r cache = TRUE}
+ASEAN <- c("BN", "ID", "KH", "LA", "MM", "MY", "PH", "SG")
+df_gdppcap_asean <- WDI(ASEAN, "NY.GDP.PCAP.KD")
+df_gdppcap_asean %>% distinct(country) %>% pull()
+```
+
+
+```{r}
+wdi_cache$country %>% filter(iso2c %in% ASEAN) %>% distinct(country) %>% pull()
+```
+
+
+You can also use `wdi_cache$country`.
+
+```{r}
+wdi_cache$country
+```
+
+```{r}
+wdi_cache$country %>% filter(iso2c %in% ASEAN) %>% pull(country)
+```
+
+
+You can find iso2c codes from the downloaded data, or using wdi_cache$country
+
+```{r}
+wdi_cache$country %>% 
+  filter(country %in% c("Brunei Darussalam", "Indonesia", "Cambodia", "Lao PDR", "Myanmar", "Malaysia", "Philippines", "Singapore")) %>%
+  pull(iso2c)
+```
+
+You can also find countries in some category.
+
+```{r}
+wdi_cache$country %>% 
+  filter(region == "South Asia") %>%
+  pull(country)
+```
+
+
+```{r}
+wdi_cache$country %>% 
+  filter(income == "Lower middle income") %>%
+  pull(iso2c)
+```
+
+The following shows a list of indicators
+
+```{r}
+wdi_cache$series
+```
+
+The following is same as `WDIsearch("gdp per cap", "name")`. See WDIsearch help.
+
+```{r}
+wdi_cache$series %>% filter(grepl("gdp per cap", name, ignore.case = TRUE))
+```
+
+# Responses to Questions
+
+## Q1. How do we use histograms.
+
+* [Histograms and frequency polygons](https://ggplot2.tidyverse.org/reference/geom_histogram.html)
+* [Posit Cloud: Histograms](https://posit.cloud/learn/primers/3.3)
+
+
+```{r cache = TRUE}
+wdi_cache$series %>% filter(indicator == "SG.GEN.PARL.ZS") %>% pull(name)
+df_women_in_parl <- WDI(indicator = c(women_in_parl = "SG.GEN.PARL.ZS")) %>%
+  drop_na(women_in_parl)
+```
+
+```{r}
+df_women_in_parl %>% filter(year == 2020) %>%
+  ggplot(aes(women_in_parl)) + geom_histogram()
+```
+
+```{r}
+df_women_in_parl %>% filter(year == 2020) %>%
+  ggplot(aes(women_in_parl)) + geom_histogram(binwidth = 5)
+```
+
+```{r cache = TRUE}
+wdi_cache$series %>% filter(indicator == "IP.JRN.ARTC.SC") %>% pull(name)
+df_stja <- WDI(indicator = c(stja = "IP.JRN.ARTC.SC"), extra = TRUE) %>%
+  drop_na(stja)
+```
+
+Default of the number of bins is 30. Change and find an appropriate one.
+
+```{r}
+df_stja$year %>% summary()
+```
+
+
+```{r}
+df_stja %>% filter(income != "Aggregates") %>% 
+  ggplot(aes(stja)) + geom_histogram(bins = 20)
+```
+```{r}
+df_stja %>% filter(income != "Aggregates", stja >0) %>% 
+  ggplot(aes(stja)) + geom_histogram(bins = 20) + scale_x_log10()
+```
+```{r}
+df_stja %>% filter(income != "Aggregates", income != "Not classified", stja >0) %>% 
+  ggplot(aes(stja, fill = income)) + geom_histogram(alpha = 0.7, bins = 20, color = "black") + scale_x_log10()
+```
+
+```{r}
+df_stja %>% filter(income != "Aggregates", income != "Not classified", stja >0) %>% 
+  ggplot(aes(stja, fill = income)) + geom_density(alpha = 0.3) + scale_x_log10()
+```
+
+```{r cache = TRUE}
+wdi_cache$series %>% filter(indicator == "MS.MIL.XPND.GD.ZS") %>% pull(name)
+df_milxpnd <- WDI(indicator = c(milxpnd = "MS.MIL.XPND.GD.ZS"), extra = TRUE) %>%
+  drop_na(milxpnd)
+```
+
+
+Default of the number of bins is 30. Here I chose binwidth = 0.5 (%).
+
+```{r}
+df_milxpnd %>% filter(income != "Aggregates", year == 2021) %>% 
+  ggplot(aes(milxpnd, fill = income)) + geom_histogram(color = "black", binwidth = 0.5) + 
+  labs(title = "Military expenditure (% of GDP)")
+```
+
+```{r}
+df_milxpnd %>% filter(income != "Aggregates", income != "Not classified", year == 2021) %>% 
+  ggplot(aes(milxpnd, fill = income)) + geom_density(binwidth = 0.5, alpha = 0.3) + 
+  labs(title = "Military expenditure (% of GDP)")
+```
+
+## Q2. Effect of unemployed rate under pandemic depending on income groups
+
+```{r cache = TRUE}
+wdi_cache$series %>% filter(indicator == "SL.UEM.TOTL.ZS") %>% pull(name)
+df_ur <- WDI(indicator = c(ur = "SL.UEM.TOTL.ZS"), 
+             extra = TRUE, cache = wdi_cache) %>% drop_na(ur)
+```
+
+
+```{r}
+df_ur %>% filter(income == "Aggregates") %>% filter(grepl('income', country)) %>% 
+  filter(year >= 2018) %>% ggplot() + geom_line(aes(x = year, y = ur, color = country))
+```
+
+## Q3. Add values at each data point.
+
+```{r cache = TRUE}
+wdi_cache$series %>% filter(indicator == "FP.CPI.TOTL.ZG") %>% pull(name)
+df_infl <- WDI(country = c("VN","CN","JP"), 
+               indicator = c(inf = "FP.CPI.TOTL.ZG"), extra = TRUE) %>% drop_na(inf)
+```
+
+```{r}
+df_infl_s <- df_infl %>% filter(year %in% c(2000, 2005, 2010, 2015, 2020), 
+                   country %in% c("Japan", "Vietnam", "China"))
+df_infl_s
+```
+```{r}
+df_infl_s %>%
+  ggplot(aes(x = year, y = inf, color= country)) + 
+  geom_line() + geom_point() + 
+  geom_text(aes(label = round(inf,2)), nudge_y = 0.8) + 
+labs(title = "Inflation of Japan, Vietnam and China from 2000 to 2020", 
+     x = "", y = "Inflation, consumer prices (annual %)")
+```
+
+# Regression Lines; Topic of EDA5
+
+```{r cache = TRUE}
+wdi_cache$series %>% filter(indicator %in% c("SI.POV.NAHC","SI.POV.MDIM")) %>% pull(name)
+df_wdi_poverty <- WDI(
+  indicator = c(poverty = "SI.POV.NAHC", multipoverty = "SI.POV.MDIM", gdppercap = "NY.GDP.PCAP.KD"), start = 1990,
+  extra = TRUE) %>% drop_na(poverty, multipoverty, gdppercap)
+```
+
+```{r}
+df_wdi_poverty %>%  
+  group_by(country, year) %>%
+  mutate(mean_gdp = mean(gdppercap)) %>%
+  mutate(mean_poverty= mean(poverty)) %>%
+  ungroup() %>% filter(income != "Aggregates") %>% 
+  ggplot(aes(x = mean_gdp)) + geom_point(aes(y = mean_poverty, color = income)) +
+  scale_x_log10() +  geom_smooth(aes(y = mean_poverty), formula = y~x, linetype="longdash", color = "black", method = "lm", se = FALSE) + 
+  labs(x = "GDP per capita", y = "poverty rate (% of population)", title = "Poverty rates and GDP per capita", subtitle="world countries, 1990-2021 average, by income level")
+```
+
+```{r}
+df_wdi_poverty %>%  
+  group_by(country, year) %>%
+  mutate(mean_gdp = mean(gdppercap)) %>%
+  mutate(mean_multipoverty= mean(multipoverty)) %>%
+  ungroup() %>%
+    filter(region !="Aggregates") %>% ggplot(aes(x = mean_gdp)) + geom_point(aes(y = mean_multipoverty, color = region)) +  
+  scale_x_log10() +  
+  geom_smooth(aes(y = mean_multipoverty), formula = y~x, linetype="longdash", color = "black", method = "lm", se = FALSE) + labs(x = "GDP per capita", y = "Multidimentinal poverty rate (% of population)", title = "Multidimentional Poverty rates and GDP per capita", subtitle="world countries, 1990-2021 average, by region")
+```
+
+
+# Appendix: A secondary axis
+
+* [Specify a secondary axis](https://ggplot2.tidyverse.org/reference/sec_axis.html)
+  - This function is used in conjunction with a position scale to create a secondary axis, positioned opposite of the primary axis. All secondary axes must be based on a one-to-one transformation of the primary axes.
+
+`scale_y_continuous(sec.axis = sec_axis(~ . scaling_function))`
+
+## Example
+
+Suppose you have two indicators, 
+
+* NY.GDP.MKTP.KD: GDP (constant 2015 US$)
+* NY.GDP.PCAP.KD: GDP per capita (constant 2015 US$)
+
+```{r}
+WDIsearch(string = "NY.GDP.MKTP.KD", field = "indicator", short = FALSE, cache = wdi_cache)
+```
+
+```{r}
+WDIsearch(string = "NY.GDP.PCAP.KD", field = "indicator", short = FALSE, cache = wdi_cache)
+```
+
+List the name of countries of ASEAN and BRICs using `wdi_cache$country`.
+
+```{r}
+asean <- c("Brunei Darussalam", "Cambodia", "Lao PDR", "Myanmar", 
+           "Philippines", "Indonesia", "Malaysia", "Singapore")
+brics <- c("Brazil", "Russian Federation", "India", "China")
+```
+
+Find the `iso2c` of the countries using `wdi_cache$country`.
+
+```{r}
+wdi_cache$country %>% 
+  filter(country %in% 
+           c("Brunei Darussalam", "Cambodia", "Lao PDR", "Myanmar", 
+           "Philippines", "Indonesia", "Malaysia", "Singapore",
+           "Brazil", "Russian Federation", "India", "China")) %>% 
+  pull(iso2c)
+```
+
+Separate the iso3c's of the countries with commas and read data using `WDI`.
+
+```{r cache=TRUE}
+wdi_gdp <- WDI(
+  country = c("BR", "BN", "CN", "ID", "IN", "KH", "LA", "MM", "MY", "PH", "RU", "SG"),
+  indicator = c(gdp = "NY.GDP.MKTP.KD", gdpPercap = "NY.GDP.PCAP.KD"),
+  start = 1960, extra = TRUE, cache = wdi_cache)
+```
+
+
+```{r}
+wdi_gdp %>% filter(country %in% asean) %>% drop_na(gdp, gdpPercap) %>% summary() 
+```
+
+Using the summary, decide the scaling of two variables, `gdpPercap` and `gdp`.
+
+```{r}
+wdi_gdp %>% drop_na(gdp, gdpPercap) %>%
+  filter(country %in% asean) %>%
+  ggplot() + 
+  geom_line(aes(x = year, y = gdpPercap, linetype = country)) + 
+  geom_line(aes(x = year, y = gdp/(10^7), col = country)) + 
+  coord_trans(x ="identity", y="log10") +
+  scale_y_continuous(sec.axis = sec_axis(~ . *(10^7), name = "gdp/(10^7)"))
+```
+
+### BRICs
+
+```{r}
+wdi_gdp %>% filter(country %in% brics) %>% drop_na(gdp, gdpPercap) %>% summary() 
+```
+
+Using the summary, decide the scaling of two variables, `gdpPercap` and `gdp`.
+
+```{r}
+wdi_gdp %>% drop_na(gdp, gdpPercap) %>%
+  filter(country %in% brics) %>%
+  ggplot() + 
+  geom_line(aes(x = year, y = gdpPercap, linetype = country)) + 
+  geom_line(aes(x = year, y = gdp/(10^9), col = country)) + 
+  coord_trans(x ="identity", y="log10") +
+  scale_y_continuous(sec.axis = sec_axis(~ . *(10^7), name = "gdp/(10^9)"))
+```
+
+

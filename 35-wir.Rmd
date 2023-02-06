@@ -1,0 +1,1 @@
+# World Inequality Report {#wir}

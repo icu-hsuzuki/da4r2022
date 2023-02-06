@@ -1,0 +1,535 @@
+
+# Responses to Assignment Two
+
+1. You are supposed to submit an R Notebook File with a file name a2_YourID.nb.html.
+  - Some submitted an HTML file, such as a2_YourID.html. You need to create an R Notebook. Use the template in Moodle. It creates a file with *.nb.html at the end automatically.
+  - Some did not run each code chunk. You should run each code or select 'Run all' under 'Run' button. If some code chunk has a problem or an error, run each code chunk or use Run all chunk above or Run all chunk below, so the result appear in your R Notebook file.
+  
+2. You are supposed to write observations. 
+  - Writing codes seem to be challenging, however, we are learning 'data analysis' not 'programming'. Do not forget to write explanations of the data, questions and observations.
+  
+3. Cheat Sheets, Posit Primers, and the textbook 'R for Data Science' are the first set of references you should look at together wih my lecture materials.
+
+# Set up
+
+```{r}
+library(tidyverse)
+library(gapminder)
+```
+
+The following `(df <- gapminder)` is a short-hand of 
+
+```
+df <- gapminder
+df
+```
+
+```{r}
+(df <- gapminder)
+```
+
+# General Comments
+
+## Varibles
+
+We should know first about the variables. At least you must know if each of the variables is a categorical variable or a numerical variable.
+
+For example, in the `gapminder` data, `country`, `continent` are categorical variables, and `year`, `lifeExp`, `pop`, `gdpPercap` are numerical variables. It is possible to treat `year` as a categorical variable. 
+
+## Example: `datasets::CO2`
+
+### The first step
+
+You can obtain basic information of the data by the following or typing CO2 in the search box under Help tab. You can see the same at: https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html
+
+```{r eval=FALSE}
+help(CO2) # or ? CO2
+```
+
+* **Description**: The CO2 data frame has 84 rows and 5 columns of data from an experiment on the cold tolerance of the grass species Echinochloa crus-galli.
+* **Usage**: CO2
+* **Format**
+  - An object of class c("nfnGroupedData", "nfGroupedData", "groupedData", "data.frame") containing the following columns:
+
+  - Plant: an ordered factor with levels Qn1 < Qn2 < Qn3 < ... < Mc1 giving a unique identifier for each plant.
+
+  - Type: a factor with levels Quebec Mississippi giving the origin of the plant
+
+  - Treatment: a factor with levels nonchilled chilled
+
+  - conc: a numeric vector of ambient carbon dioxide concentrations (mL/L).
+
+  - uptake: a numeric vector of carbon dioxide uptake rates (\mu\mbox{mol}/m^2μmol/m 2
+  sec).
+  
+* **Details**: The CO_2 uptake of six plants from Quebec and six plants from Mississippi was measured at several levels of ambient CO_2 concentration. Half the plants of each type were chilled overnight before the experiment was conducted.
+  - This dataset was originally part of package nlme, and that has methods (including for [, as.data.frame, plot and print) for its grouped-data classes.
+
+* **Source**: Potvin, C., Lechowicz, M. J. and Tardif, S. (1990) “The statistical analysis of ecophysiological response curves obtained from experiments involving repeated measures”, Ecology, 71, 1389–1400.
+  - Pinheiro, J. C. and Bates, D. M. (2000) Mixed-effects Models in S and S-PLUS, Springer.
+
+
+```{r}
+df_co2 <- as_tibble(datasets::CO2) # what happens if simply `df_co2 <- datasets::CO2`
+df_co2
+```
+
+You can use `head(CO2)` if you set `df_co2 <-CO2` or `df_co2 <- datasets::CO2`.
+
+```{r}
+glimpse(df_co2)
+```
+
+"factor" is a categorical data, and "double" is a numerical data.
+
+```{r}
+class(df_co2$Plant)
+class(df_co2$Type)
+class(df_co2$Treatment)
+class(df_co2$conc)
+class(df_co2$uptake)
+```
+```{r}
+summary(df_co2)
+```
+
+### Try as many visualizations as possible
+
+Then you can choose appropriate ones later in your research.
+
+#### Histogram
+
+
+```{r}
+df_co2 %>% ggplot(aes(x = conc)) + geom_histogram()
+```
+
+```{r}
+df_co2 %>% ggplot(aes(x = uptake)) + geom_histogram()
+```
+
+#### Box Plots
+
+```{r}
+df_co2 %>% ggplot(aes(x = factor(conc), y = uptake)) + geom_boxplot()
+```
+
+```{r}
+df_co2 %>% ggplot(aes(x = factor(conc), y = uptake, fill = Type)) + geom_boxplot()
+```
+```{r}
+df_co2 %>% ggplot(aes(x = factor(conc), y = uptake, fill = Treatment)) + geom_boxplot()
+```
+
+
+```{r}
+df_co2 %>% ggplot(aes(x = Plant, y = uptake, fill = Treatment)) + geom_boxplot()
+```
+
+
+```{r}
+df_co2 %>% ggplot(aes(x = Plant, y = uptake, fill = Type)) + geom_boxplot()
+```
+
+
+```{r}
+df_co2 %>% ggplot(aes(x = Plant, y = uptake, fill = Type, color = Treatment)) + geom_boxplot()
+```
+
+What can you see?
+Write your observations.
+
+#### Scatter Plots
+
+```{r}
+df_co2 %>% ggplot(aes(x = conc, y = uptake, color = Treatment)) + geom_point()
+```
+
+
+```{r}
+df_co2 %>% ggplot(aes(x = Plant, y = Type, color = Treatment, size = conc)) + geom_point()
+```
+
+
+```{r}
+df_co2 %>% ggplot(aes(x = Plant, y = Type, size = conc, shape = Treatment)) + geom_point() + facet_wrap(vars(Treatment))
+```
+
+
+```{r}
+ggplot(data = df_co2) + 
+  geom_point(aes(x = conc, y = uptake))
+```
+
+The following prints a vector.
+
+```{r}
+df_co2 %>% distinct(conc) %>% pull()
+```
+
+The following code generates a data frame.
+
+```{r}
+df_co2 %>% distinct(conc)
+```
+
+```{r}
+ggplot(data = CO2) + 
+  geom_line(aes(x = conc, y = uptake))
+```
+
+The code above did not work, and the line graph is not appropriate in this case. There are so many `update` values at the same `conc`.
+
+### Example. `datasets::Seatbelts`
+
+Search the data information.
+
+**Road Casualties in Great Britain 1969–84**
+
+* Seatbelts is a multiple time series, with columns
+* DriversKilled: car drivers killed.
+* drivers: same as UKDriverDeaths.
+* front: front-seat passengers killed or seriously injured.
+* rear: rear-seat passengers killed or seriously injured.
+* kms: distance driven.
+* PetrolPrice: petrol price.
+* VanKilled: number of van (‘light goods vehicle’) drivers.
+* law: 0/1: was the law in effect that month?
+
+**References**
+Harvey, A. C. and Durbin, J. (1986). The effects of seat belt legislation on British road casualties: A case study in structural time series modelling. Journal of the Royal Statistical Society series A, 149, 187–227. doi:10.2307/2981553.
+
+_The paper is available as you log-in to ICU Library > E-Databases > JSTOR_
+
+Can you see the difference of the following two codes?
+
+```{r}
+head(Seatbelts)
+```
+
+
+```{r}
+df_sb <- as_tibble(datasets::Seatbelts)
+df_sb
+```
+
+```{r}
+summary(df_sb)
+```
+
+Which visualization do you apply?
+
+```{r}
+df_sb %>% ggplot(aes(x = factor(law), y = DriversKilled)) + geom_boxplot()
+```
+
+What do you observe above?
+
+```{r}
+df_sb %>% ggplot(aes(x = PetrolPrice, y = DriversKilled)) + geom_point() +
+  geom_smooth(formula = y~x, method = "lm", se = FALSE)
+```
+
+What can you see above?
+
+```{r}
+df_sb %>% ggplot(aes(x = kms, y = DriversKilled)) + geom_point() +
+  geom_smooth(formula = y~x, method = "lm", se = FALSE)
+```
+
+What can you see above?
+
+We will learn how to use `pivot_longer` and `pivot_wider` in EDA4.
+
+```{r}
+df_sb %>% 
+  pivot_longer(cols = 2:4, names_to = "seat", values_to = "value")
+```
+
+```{r}
+df_sb %>% 
+  pivot_longer(cols = 2:4, names_to = "seat", values_to = "value") %>%
+  ggplot() + geom_boxplot(aes(x = seat, y = value, fill = seat))
+```
+
+What can you observe?
+
+
+
+```{r}
+df %>% filter(continent == "Asia") %>%
+  ggplot(aes(x = year, y = gdpPercap, color = country)) + geom_line()
+```
+
+Appropriate graph?
+
+## Gapminder
+
+```{r}
+ggplot(df, aes(x = continent)) + geom_bar()
+```
+
+```{r}
+ggplot(df, aes(x = continent, fill = continent)) + geom_bar(width = 0.75)
+```
+
+```{r}
+ggplot(df, aes(x = continent, y = pop)) + geom_boxplot()
+```
+
+```{r}
+ggplot(df, aes(x = continent, y = log10(pop))) + geom_boxplot()
+```
+
+Alternately, you can use `coord_trans(x = "identity", y = "log10")` in stead of `y = log10(pop)`.
+Can you see the difference?
+
+```{r}
+ggplot(df, aes(x = continent, y = pop)) + geom_boxplot() + 
+  coord_trans(x = "identity", y = "log10")
+```
+
+```{r}
+df %>% filter(year %in% c(1957, 1982, 2007)) %>%
+  ggplot() + geom_boxplot(aes(x = continent, y = pop, fill = factor(year))) +
+    coord_trans(x = "identity", y = "log10")
+```
+
+
+```{r}
+df %>% filter(year %in% c(1957, 1982, 2007)) %>%
+  ggplot() + geom_boxplot(aes(x = continent, y = gdpPercap, fill = factor(year))) +
+  coord_trans(x = "identity", y = "log10")
+```
+
+
+```{r}
+ggplot(df, aes(gdpPercap, lifeExp)) + geom_point(aes(color=continent))
+```
+
+
+```{r}
+df %>% ggplot(aes(gdpPercap, lifeExp, color = continent)) + geom_point() +
+  coord_trans(x = "log10", y = "identity")
+```
+
+```{r}
+df %>% filter(year %in% c(2007)) %>%
+  ggplot() + geom_point(aes(x = pop, y = gdpPercap, col = continent)) +
+  coord_trans(x = "log10", y = "log10")
+```
+```{r}
+df %>% filter(year %in% c(1957)) %>%
+  ggplot() + geom_point(aes(x = gdpPercap, y = lifeExp, col = continent, size = pop)) +
+  coord_trans(x = "log10", y = "identity")
+```
+
+```{r}
+df %>% filter(year %in% c(2007)) %>%
+  ggplot() + geom_point(aes(x = gdpPercap, y = lifeExp, col = continent, size = pop)) +
+  coord_trans(x = "log10", y = "identity")
+```
+
+```{r}
+df %>% filter(year %in% c(1957, 2007)) %>%
+  ggplot() + geom_point(aes(x = gdpPercap, y = lifeExp, col = continent, size = pop)) +
+  coord_trans(x = "log10", y = "identity") +
+  facet_wrap(vars(year))
+```
+
+
+
+```{r}
+df_lifeExp <- df %>% group_by(continent, year) %>% 
+  summarize(mean_lifeExp = mean(lifeExp), median_lifeExp = median(lifeExp), max_lifeExp = max(lifeExp), min_lifeExp = min(lifeExp))
+```
+
+The code above gives a message, but it works.
+
+```{r}
+df_lifeExp %>% ggplot(aes(x = year, y = median_lifeExp, color = continent)) +
+  geom_line()
+```
+
+If you do not want to have a message, the following is an option. Otherwise, grouping is kept and you can get the original data back by `ungroup()`.
+
+```{r}
+df_pop <- df %>% group_by(continent, year) %>% 
+  summarize(mean_pop = mean(pop), median_pop = median(pop), max_pop = max(pop), min_pop = min(pop), .groups = "drop")
+```
+
+```{r}
+df_pop %>% ggplot(aes(x = year, y = mean_pop, color = continent)) +
+  geom_line()
+```
+The following two codes create the same chart.
+
+```{r}
+df_pop %>% ggplot(aes(x = year, y = mean_pop, color = continent, linetype = continent)) +
+  geom_line()
+```
+
+```{r}
+df_pop %>% ggplot() +
+  geom_line(aes(x = year, y = mean_pop, color = continent)) + 
+  geom_line(aes(x = year, y = median_pop, linetype = continent))
+```
+
+
+
+# Responses to Questions
+
+## Q1. Two categorical variables and one numerical variables
+
+Eg. [Smoking, Alcohol and (O)esophageal Cancer](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/esoph.html)
+
+```{r}
+(df_esoph <- as_tibble(esoph))
+```
+
+`df_esoph` has three categorical variables and one numerical variable `ncases` to investigate.
+
+**Comments**: I wanted to include three variables in the first exercise to be able to compare tobacco consumption, number of cases of cancer, and age in the same graph but I was not able to do it.
+
+**Solutions**: There are various ways you can choose from.
+
+Scatter plot with size by `geom_point()`.
+
+```{r}
+ggplot(df_esoph) + geom_point(aes(agegp, tobgp, size=ncases))
+```
+
+Heatmap with `geom_tile()`
+
+```{r}
+ggplot(df_esoph) + geom_tile(mapping = aes(x = agegp, y = tobgp, fill = ncases))
+```
+
+`geom_boxplot()`
+
+```{r}
+ggplot(df_esoph, aes(x= tobgp, y=ncases, fill=agegp))+geom_boxplot()
+```
+
+```{r}
+ggplot(df_esoph, aes(x= agegp, y=ncases, fill=tobgp))+geom_boxplot()
+```
+
+`geom_col()`
+
+```{r}
+ggplot(df_esoph, aes(x= agegp, y=ncases, fill=tobgp))+geom_col()
+```
+
+Default position is "stack".
+
+```{r}
+ggplot(df_esoph, aes(x= agegp, y=ncases, fill=tobgp))+geom_col(position = "dodge")
+```
+
+
+## Q2. Combine two charts
+
+```{r}
+df %>%
+  select(country, continent, year, gdpPercap) %>%
+  filter(continent %in% c("Asia", "Europe")) %>%
+  group_by(continent, year) %>%
+  summarise(mean_GDPperCapita = mean(gdpPercap)) %>%
+  ggplot(aes(x=year)) +
+  geom_line(aes(y=mean_GDPperCapita, color=continent)) +
+  ggtitle("GDP oer capita by continents, 1950's to today") 
+```
+
+
+```{r}
+df %>% 
+  select(country, year, gdpPercap) %>% 
+  filter(country %in% c("Israel", "Japan", "Norway", "China", "Ireland")) %>% 
+  ggplot(aes(x=year)) + 
+  geom_line(aes(y=gdpPercap, color=country))
+```
+
+**Question.** I have not managed to add on the same graph of the continents the data for the individual countries, as I would have liked:
+
+**Solution.** Construct two data sets and combine them into one.
+
+`ggplot2` starts with one data. 
+
+```{r}
+df_2c <- df %>%
+  select(continent, year, gdpPercap) %>%
+  filter(continent %in% c("Asia", "Europe")) %>%
+  group_by(continent, year) %>%
+  summarise(gdpPercap = mean(gdpPercap), .groups = 'drop') %>%
+  select(country = continent, year, gdpPercap)
+
+df_5c <- df %>%
+  select(country, year, gdpPercap) %>%
+  filter(country %in% c("Israel", "Japan", "Norway", "China", "Ireland"))
+
+df_2c %>% bind_rows(df_5c) %>%
+  ggplot(aes(x = year, y = gdpPercap, color = country)) + geom_line()
+```
+
+Use `mutate`.
+
+```{r}
+df %>%
+  group_by(continent, year) %>%
+  mutate(mean_by_continent = mean(gdpPercap)) %>%
+  ungroup() %>%
+  filter(country %in% c("Israel", "Japan", "Norway", "China", "Ireland")) %>%
+  ggplot(aes(x = year)) +
+    geom_line(aes(y = gdpPercap, color=country)) +
+    geom_line(aes(y = mean_by_continent, linetype=continent)) +
+    labs(title = "GDP oer capita of five countries", subtitle = "Mean of GDP per capita of their continent") 
+```
+
+When you want to change the linetype manually, use `scale_linetype_manual()`.
+
+```{r}
+df %>%
+  group_by(continent, year) %>%
+  mutate(mean_by_continent = mean(gdpPercap)) %>%
+  ungroup() %>%
+  filter(country %in% c("Israel", "Japan", "Norway", "China", "Ireland")) %>%
+  ggplot(aes(x = year)) +
+    geom_line(aes(y = gdpPercap, color=country)) +
+    geom_line(aes(y = mean_by_continent, linetype=continent)) + 
+    scale_linetype_manual(values = c("Asia" = "twodash", "Europe" = "longdash")) + 
+    labs(title = "GDP oer capita of five countries", subtitle = "Mean of GDP per capita of their continent") 
+```
+
+# Appendix: Change colors, shapes, linetypes, etc. manually
+
+Example: Default
+
+```{r}
+df %>%
+  filter(country %in% c("Germany", "Japan", "United States")) %>%
+  ggplot() +
+    geom_line(aes(x = year, y = gdpPercap, color=country, linetype=continent))
+```
+
+* `scale_color_manual`: https://ggplot2-book.org/scale-colour.html
+  - eg1: scale_colour_manual(values = c("red", "blue", "green"))
+  - eg2: scale_colour_manual(values = c("China" = "red", "Japan" = "blue", "Norway" = "green"))
+  - eg3: scale_colour_manual(values = scales::hue_pal()(3)) # default
+  - eg4: scale_colour_manual(values = scales::hue_pal(direction = -1)(3)) # reverse order
+* `scale_fill_manual`: similar to  `scale_color_manual`
+* `scale_linetype_manual`: https://ggplot2-book.org/scale-other.html?q=linetype#scale-linetype
+* `scale_shape_manual: https://ggplot2-book.org/scale-other.html?q=scale_shape_manual#scale-shape
+* `scale_size: https://ggplot2-book.org/scale-other.html?q=size#scale-size
+
+
+```{r}
+df %>%
+  filter(country %in% c("Germany", "Japan", "United States")) %>%
+  ggplot(aes(x = year, y = gdpPercap)) +
+    geom_line(aes(color=country, linetype=continent)) +
+    geom_point(aes(shape = country)) +
+    scale_colour_manual(values = scales::hue_pal(direction = -1)(3)) +
+    scale_linetype_manual(values = c("Europe" = "dotted", "Asia" = "dotdash", "Americas" = "longdash")) +
+    scale_shape_manual(values = c("Germany" = 7, "Japan" = 9, "United States" = 12))
+```
