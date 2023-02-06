@@ -2,6 +2,11 @@
 
 ---
 
+```{r}
+library(tidyverse)
+```
+
+
 ## R Markdown Revisited
 
 Presentation: Submit an R Notebook (with codes used in the presentation), and PowerPoint file or other files used for your presentation, if any. If you use R Notebook for your presentation, you do not need to submit extra files.

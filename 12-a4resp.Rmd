@@ -44,11 +44,11 @@ wdi_cache <- WDIcache()
 Or, write the cache and read it from your computer. Since `wdi_cache` is a list of two data frames, we cannot use `write_csv()`; instead, we use `write_rds`.
 
 ```{r cache = TRUE, eval = FALSE}
-write_rds(wdi_cache, "./data/wdi_cache")
+write_rds(wdi_cache, "./data/wdi_cache.RData")
 ```
 
 ```{r cache = TRUE}
-wdi_cache <- read_rds("./data/wdi_cache")
+wdi_cache <- read_rds("./data/wdi_cache.RData")
 ```
 
 `WDIcache()` produces a list containing two data frames: `wdi_cache$series` and `wdi_cache$country`.
@@ -225,7 +225,7 @@ The strange looking line graph is called a sawtooth shape, and happens very ofte
 
 * Step 1. Import the data.
 
-```{r}
+```{r cash=TRUE}
 df_fdi <- WDI(country = "all", indicator = c(fdi = "BX.KLT.DINV.CD.WD"), start =1970 , extra = TRUE, cache = NULL)
 df_fdi
 ```
@@ -244,7 +244,7 @@ unique(df_fdi$income)
 * Step 3. Try a line graph.
 
 ```{r}
-df_dfi %>% ggplot(aes(x=year, y=fdi, color=income)) + geom_line()
+df_fdi %>% ggplot(aes(x=year, y=fdi, color=income)) + geom_line()
 ```
 
 We observe several problems. But the most significant issue is it looks like a sawtooth. It is because there are so many `y` values at the same `x` value. When you draw a line graph, you need to choose only several countries or use group_by and summarize and use summarized data. However, there is an option; we can use a model to summarize the data of each group using `geom_smooth()`. Since you do not want a line but a curve, we use "loess" with `span`, we used to draw some of WIR2022 charts.
@@ -449,7 +449,7 @@ Please try as various charts as possible. You can learn only by experience or fr
 
 ### Treat `year` as a group?
 
-```{r}
+```{r cash=TRUE}
 df_wdi <- WDI(
   country = "all", 
   indicator = c(lifeExp = "SP.DYN.LE00.IN"), start = 1990, extra = TRUE, cache =  wdi_cache)

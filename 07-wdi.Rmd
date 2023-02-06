@@ -125,11 +125,11 @@ df_wdi <- WDI(
 ```
 
 ```{r echo=FALSE, message=FALSE, eval=FALSE}
-write_csv(df_wdi, "data/df_wdi.csv")
+write_csv(df_wdi, "./data/df_wdi.csv")
 ```
 
 ```{r echo=FALSE, message=FALSE}
-df_wdi <- read_csv("data/df_wdi.csv")
+df_wdi <- read_csv("./data/df_wdi.csv")
 ```
 
 
@@ -150,11 +150,11 @@ df_wdi_extra <- WDI(
 ```
 
 ```{r echo=FALSE, message=FALSE, eval=FALSE}
-write_csv(df_wdi_extra, "data/df_wdi_extra.csv")
+write_csv(df_wdi_extra, "./data/df_wdi_extra.csv")
 ```
 
 ```{r echo=FALSE, message=FALSE}
-df_wdi_extra <- read_csv("data/df_wdi_extra.csv")
+df_wdi_extra <- read_csv("./data/df_wdi_extra.csv")
 ```
 
 
@@ -292,7 +292,7 @@ Downloading all series information from the World Bank website can take time. Th
 write_rds(wdi_cache, "data/wdi_cache.RData", refhook = NULL)
 ```
 
-```{r echo=FALSE, message=FALSE, eval=FALSE}
+```{r echo=FALSE, message=FALSE}
 wdi_cache <- read_rds("data/wdi_cache.RData", refhook = NULL)
 ```
 
@@ -370,11 +370,11 @@ co2pcap <- WDI(country = "all", indicator = "EN.ATM.CO2E.PC", start = 1960, end 
 ```
 
 ```{r echo=FALSE, message=FALSE, eval=FALSE}
-write_csv(co2pcap, "data/co2pcap.csv")
+write_csv(co2pcap, "./data/co2pcap.csv")
 ```
 
 ```{r echo=FALSE, message=FALSE}
-co2pcap <- read_csv("data/co2pcap.csv")
+co2pcap <- read_csv("./data/co2pcap.csv")
 ```
 
 ```{r}
@@ -382,11 +382,11 @@ co2pcap
 ```
 
 
----
+<!-- --- -->
 
-```{r}
-write_csv(co2pcap, "data/co2pcap.csv")
-```
+<!-- ```{r} -->
+<!-- write_csv(co2pcap, "./data/co2pcap.csv") -->
+<!-- ``` -->
 
 
 ---
@@ -525,7 +525,7 @@ world_map0 <- world_map %>%
 ---
 
 ```{r}
-write_csv(world_map0, "data/world_map0.csv")
+write_csv(world_map0, "./data/world_map0.csv")
 ```
 
 ```{r eval=FALSE}

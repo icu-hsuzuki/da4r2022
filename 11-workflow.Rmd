@@ -1,5 +1,12 @@
 # EDA Workflow {#workflow}
 
+
+```{r}
+library(tidyverse)
+library(WDI)
+library(readxl)
+```
+
 ## EDA Step 0
 
 1. Choose and clarify a topic to study.
@@ -186,6 +193,12 @@ EDA is an important part of any data analysis. You can use EDA to make discoveri
 ---
 
 ## Example: WIR2022
+
+```{r}
+df_f8 <- read_excel("./data/WIR2022s.xlsx", sheet = "data-F8")
+df_f8
+```
+
 
 ```{r warning=FALSE, echo=FALSE}
 df_f8 %>% 

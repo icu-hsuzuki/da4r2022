@@ -1,0 +1,3 @@
+# Exploartory Data analysis {#eda}
+
+What is Exploratory Data Analysis?

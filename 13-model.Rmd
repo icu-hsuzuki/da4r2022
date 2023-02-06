@@ -319,8 +319,8 @@ wdi_lifeExp %>% filter(country %in% c("Brazil", "Russian Federation", "India", "
 ```
 
 ---
-
-```{r}
+Need to work
+```{r eval=FALSE}
 country_model <- function(df) {
   lm(lifeExp ~ year, data = df)
 }
