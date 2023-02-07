@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 30 Set up | A Minimal Book Example</title>
+<meta name="author" content="John Doe">
+<meta name="description" content="It is better to use the following, because you can search by error message when you get an error. Error messages are important. If you get used to it, you can correct most of the errors. You can...">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
+<meta property="og:title" content="Chapter 30 Set up | A Minimal Book Example">
+<meta property="og:type" content="book">
+<meta property="og:description" content="It is better to use the following, because you can search by error message when you get an error. Error messages are important. If you get used to it, you can correct most of the errors. You can...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 30 Set up | A Minimal Book Example">
+<meta name="twitter:description" content="It is better to use the following, because you can search by error message when you get an error. Error messages are important. If you get used to it, you can correct most of the errors. You can...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">A Minimal Book Example</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li><a class="" href="intro.html"><span class="header-section-number">2</span> Intdoduction</a></li>
+<li><a class="" href="r-with-r-studio.html"><span class="header-section-number">3</span> R with R Studio</a></li>
+<li><a class="" href="tidyverse.html"><span class="header-section-number">4</span> tidyverse Packages</a></li>
+<li><a class="" href="rmarkdown.html"><span class="header-section-number">5</span> R Markdown</a></li>
+<li><a class="" href="dplyr.html"><span class="header-section-number">6</span> Data Transforamtion with dplyr</a></li>
+<li><a class="" href="responses-to-assignment-two.html"><span class="header-section-number">7</span> Responses to Assignment Two</a></li>
+<li><a class="" href="set-up-1.html"><span class="header-section-number">8</span> Set up</a></li>
+<li><a class="" href="general-comments.html"><span class="header-section-number">9</span> General Comments</a></li>
+<li><a class="" href="responses-to-questions.html"><span class="header-section-number">10</span> Responses to Questions</a></li>
+<li><a class="" href="appendix-change-colors-shapes-linetypes-etc.-manually.html"><span class="header-section-number">11</span> Appendix: Change colors, shapes, linetypes, etc. manually</a></li>
+<li><a class="" href="wdi.html"><span class="header-section-number">12</span> Importing Public Data, WDI</a></li>
+<li><a class="" href="ggokit2.html"><span class="header-section-number">13</span> Data Visualization and `ggplot2’</a></li>
+<li><a class="" href="responses-to-assignment-three.html"><span class="header-section-number">14</span> Responses to Assignment Three</a></li>
+<li><a class="" href="set-up-2.html"><span class="header-section-number">15</span> Set up</a></li>
+<li><a class="" href="general-comments-1.html"><span class="header-section-number">16</span> General Comments</a></li>
+<li><a class="" href="world-development-indicators-wdi.html"><span class="header-section-number">17</span> World Development Indicators (WDI)</a></li>
+<li><a class="" href="responses-to-questions-1.html"><span class="header-section-number">18</span> Responses to Questions</a></li>
+<li><a class="" href="regression-lines-topic-of-eda5.html"><span class="header-section-number">19</span> Regression Lines; Topic of EDA5</a></li>
+<li><a class="" href="appendix-a-secondary-axis.html"><span class="header-section-number">20</span> Appendix: A secondary axis</a></li>
+<li><a class="" href="tidy.html"><span class="header-section-number">21</span> Tidy Data</a></li>
+<li><a class="" href="workflow.html"><span class="header-section-number">22</span> EDA Workflow</a></li>
+<li><a class="" href="assignment-four-the-week-five-assignment.html">Assignment Four: The Week Five Assignment</a></li>
+<li><a class="" href="set-up-3.html"><span class="header-section-number">23</span> Set up</a></li>
+<li><a class="" href="general-comments-2.html"><span class="header-section-number">24</span> General Comments</a></li>
+<li><a class="" href="your-work.html"><span class="header-section-number">25</span> Your Work</a></li>
+<li><a class="" href="responses-to-questions-2.html"><span class="header-section-number">26</span> Responses to Questions</a></li>
+<li><a class="" href="model.html"><span class="header-section-number">27</span> Model</a></li>
+<li><a class="" href="roudups.html"><span class="header-section-number">28</span> Roudups</a></li>
+<li><a class="" href="a5resp.html"><span class="header-section-number">29</span> Responses to Assignment Five</a></li>
+<li><a class="active" href="set-up-4.html"><span class="header-section-number">30</span> Set up</a></li>
+<li><a class="" href="general-comments-3.html"><span class="header-section-number">31</span> General Comments</a></li>
+<li><a class="" href="your-work-1.html"><span class="header-section-number">32</span> Your Work</a></li>
+<li><a class="" href="responses-to-questions-3.html"><span class="header-section-number">33</span> Responses to Questions</a></li>
+<li><a class="" href="my-comments-after-review.html"><span class="header-section-number">34</span> My Comments after Review</a></li>
+<li><a class="" href="eda.html"><span class="header-section-number">35</span> Exploartory Data analysis</a></li>
+<li><a class="" href="importing.html"><span class="header-section-number">36</span> Impoarting Data</a></li>
+<li><a class="" href="transforming.html"><span class="header-section-number">37</span> Transforming Data</a></li>
+<li><a class="" href="tidying.html"><span class="header-section-number">38</span> Tidying Data</a></li>
+<li><a class="" href="visualizing.html"><span class="header-section-number">39</span> Visualizing Data</a></li>
+<li><a class="" href="modeling.html"><span class="header-section-number">40</span> Modeling Data</a></li>
+<li><a class="" href="communicating-data-communicating.html"><span class="header-section-number">41</span> Communicating Data {communicating}</a></li>
+<li><a class="" href="worldbank.html"><span class="header-section-number">42</span> World Bank</a></li>
+<li><a class="" href="owid.html"><span class="header-section-number">43</span> Our World in Data</a></li>
+<li><a class="" href="oecd.html"><span class="header-section-number">44</span> OECD</a></li>
+<li><a class="" href="undata.html"><span class="header-section-number">45</span> UN Data</a></li>
+<li><a class="" href="wir.html"><span class="header-section-number">46</span> World Inequality Report</a></li>
+<li><a class="" href="histdata.html"><span class="header-section-number">47</span> HistData</a></li>
+<li><a class="" href="covid19.html"><span class="header-section-number">48</span> Covid 19</a></li>
+<li><a class="" href="bookdown.html"><span class="header-section-number">49</span> Bookdown</a></li>
+<li><a class="" href="template.html"><span class="header-section-number">50</span> Template</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="set-up-4" class="section level1" number="30">
+<h1>
+<span class="header-section-number">30</span> Set up<a class="anchor" aria-label="anchor" href="#set-up-4"><i class="fas fa-link"></i></a>
+</h1>
+<p>It is better to use the following, because you can search by error message when you get an error. Error messages are important. If you get used to it, you can correct most of the errors. You can use the information given by <code>message</code> as well.</p>
+<div class="sourceCode" id="cb473"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span><span class="op">(</span>LANG <span class="op">=</span> <span class="st">"en"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb474"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
+<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 </span></span>
+<span><span class="co">#&gt; ✔ tibble  3.1.8      ✔ dplyr   1.0.10</span></span>
+<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.5.0 </span></span>
+<span><span class="co">#&gt; ✔ readr   2.1.3      ✔ forcats 0.5.2 </span></span>
+<span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
+<span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
+<span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span> <span class="co"># for excel files</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/WDI/">WDI</a></span><span class="op">)</span></span></code></pre></div>
+<div id="world-development-indicator---wdi-1" class="section level2" number="30.1">
+<h2>
+<span class="header-section-number">30.1</span> World Development Indicator - WDI<a class="anchor" aria-label="anchor" href="#world-development-indicator---wdi-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>The following is useful when you use WDI.</p>
+<div class="sourceCode" id="cb475"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDIcache.html">WDIcache</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div id="creating-a-vector-with-iso2-codes" class="section level3" number="30.1.1">
+<h3>
+<span class="header-section-number">30.1.1</span> Creating a vector with <code>iso2</code> codes<a class="anchor" aria-label="anchor" href="#creating-a-vector-with-iso2-codes"><i class="fas fa-link"></i></a>
+</h3>
+<p>It is convenient to have a vector with <code>iso2c</code> codes when you import data from WDI.</p>
+<div class="sourceCode" id="cb476"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">asean</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Brunei Darussalam"</span>, <span class="st">"Cambodia"</span>, <span class="st">"Lao PDR"</span>, <span class="st">"Myanmar"</span>, </span>
+<span>           <span class="st">"Philippines"</span>, <span class="st">"Indonesia"</span>, <span class="st">"Malaysia"</span>, <span class="st">"Singapore"</span><span class="op">)</span></span>
+<span><span class="va">brics</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Brazil"</span>, <span class="st">"Russian Federation"</span>, <span class="st">"India"</span>, <span class="st">"China"</span><span class="op">)</span></span>
+<span><span class="va">g7</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Canada"</span>, <span class="st">"France"</span>, <span class="st">"Italy"</span>, <span class="st">"Japan"</span>, <span class="st">"Germany"</span>, <span class="st">"United Kingdom"</span>, <span class="st">"United States"</span><span class="op">)</span></span>
+<span><span class="va">income_levels</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"High income"</span>,<span class="st">"Upper middle income"</span>, <span class="st">"Middle income"</span>, </span>
+<span>                   <span class="st">"Lower middle income"</span>,<span class="st">"Low income"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb477"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ASEAN</span> <span class="op">&lt;-</span> <span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">asean</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">iso2c</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">ASEAN</span></span>
+<span><span class="co">#&gt; [1] "BN" "ID" "KH" "LA" "MM" "MY" "PH" "SG"</span></span></code></pre></div>
+<div class="sourceCode" id="cb478"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">BRICs</span> <span class="op">&lt;-</span> <span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">brics</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">iso2c</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">BRICs</span></span>
+<span><span class="co">#&gt; [1] "BR" "CN" "IN" "RU"</span></span></code></pre></div>
+<div class="sourceCode" id="cb479"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">G7</span> <span class="op">&lt;-</span> <span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">g7</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">iso2c</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">G7</span></span>
+<span><span class="co">#&gt; [1] "CA" "DE" "FR" "GB" "IT" "JP" "US"</span></span></code></pre></div>
+<div class="sourceCode" id="cb480"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">INCOME_LEVELS</span> <span class="op">&lt;-</span> <span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">income_levels</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">iso2c</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">INCOME_LEVELS</span></span>
+<span><span class="co">#&gt; [1] "XD" "XM" "XN" "XP" "XT"</span></span></code></pre></div>
+<ul>
+<li>In the following code chunk, we import only the G7 countries.</li>
+</ul>
+<div class="sourceCode" id="cb481"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">series</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">indicator</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"SG.GEN.PARL.ZS"</span>,<span class="st">"SI.POV.GINI"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt;        indicator</span></span>
+<span><span class="co">#&gt; 1 SG.GEN.PARL.ZS</span></span>
+<span><span class="co">#&gt; 2    SI.POV.GINI</span></span>
+<span><span class="co">#&gt;                                                            name</span></span>
+<span><span class="co">#&gt; 1 Proportion of seats held by women in national parliaments (%)</span></span>
+<span><span class="co">#&gt; 2                                                    Gini index</span></span>
+<span><span class="co">#&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            description</span></span>
+<span><span class="co">#&gt; 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           Women in parliaments are the percentage of parliamentary seats in a single or lower chamber held by women.</span></span>
+<span><span class="co">#&gt; 2 Gini index measures the extent to which the distribution of income (or, in some cases, consumption expenditure) among individuals or households within an economy deviates from a perfectly equal distribution. A Lorenz curve plots the cumulative percentages of total income received against the cumulative number of recipients, starting with the poorest individual or household. The Gini index measures the area between the Lorenz curve and a hypothetical line of absolute equality, expressed as a percentage of the maximum area under the line. Thus a Gini index of 0 represents perfect equality, while an index of 100 implies perfect inequality.</span></span>
+<span><span class="co">#&gt;                 sourceDatabase</span></span>
+<span><span class="co">#&gt; 1 World Development Indicators</span></span>
+<span><span class="co">#&gt; 2 World Development Indicators</span></span>
+<span><span class="co">#&gt;                                                                                                                                                                                                                                                                                                                               sourceOrganization</span></span>
+<span><span class="co">#&gt; 1                                                                                                                                                                                                                                       Inter-Parliamentary Union (IPU) (www.ipu.org).  For the year of 1998, the data is as of August 10, 1998.</span></span>
+<span><span class="co">#&gt; 2 World Bank, Poverty and Inequality Platform. Data are based on primary household survey data obtained from government statistical agencies and World Bank country departments. Data for high-income economies are mostly from the Luxembourg Income Study database. For more information and methodology, please see http://pip.worldbank.org.</span></span></code></pre></div>
+<div class="sourceCode" id="cb482"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span>country <span class="op">=</span> <span class="va">G7</span>, </span>
+<span>           indicator<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>parl <span class="op">=</span> <span class="st">"SG.GEN.PARL.ZS"</span>, gini <span class="op">=</span> <span class="st">"SI.POV.GINI"</span><span class="op">)</span>,</span>
+<span>           extra<span class="op">=</span><span class="cn">TRUE</span>, cache<span class="op">=</span><span class="va">wdi_cache</span><span class="op">)</span></span>
+<span><span class="va">df1</span>  <span class="co"># for R Notebook use this line, for PDF delete by adding #</span></span>
+<span><span class="co">#&gt;            country iso2c iso3c year status lastupdated</span></span>
+<span><span class="co">#&gt; 1           Canada    CA   CAN 1960         2022-12-22</span></span>
+<span><span class="co">#&gt; 2           Canada    CA   CAN 1961         2022-12-22</span></span>
+<span><span class="co">#&gt; 3           Canada    CA   CAN 1962         2022-12-22</span></span>
+<span><span class="co">#&gt; 4           Canada    CA   CAN 1963         2022-12-22</span></span>
+<span><span class="co">#&gt; 5           Canada    CA   CAN 1964         2022-12-22</span></span>
+<span><span class="co">#&gt; 6           Canada    CA   CAN 1965         2022-12-22</span></span>
+<span><span class="co">#&gt; 7           Canada    CA   CAN 1966         2022-12-22</span></span>
+<span><span class="co">#&gt; 8           Canada    CA   CAN 1967         2022-12-22</span></span>
+<span><span class="co">#&gt; 9           Canada    CA   CAN 1968         2022-12-22</span></span>
+<span><span class="co">#&gt; 10          Canada    CA   CAN 1969         2022-12-22</span></span>
+<span><span class="co">#&gt; 11          Canada    CA   CAN 1970         2022-12-22</span></span>
+<span><span class="co">#&gt; 12          Canada    CA   CAN 1971         2022-12-22</span></span>
+<span><span class="co">#&gt; 13          Canada    CA   CAN 1972         2022-12-22</span></span>
+<span><span class="co">#&gt; 14          Canada    CA   CAN 1973         2022-12-22</span></span>
+<span><span class="co">#&gt; 15          Canada    CA   CAN 1974         2022-12-22</span></span>
+<span><span class="co">#&gt; 16          Canada    CA   CAN 1975         2022-12-22</span></span>
+<span><span class="co">#&gt; 17          Canada    CA   CAN 1976         2022-12-22</span></span>
+<span><span class="co">#&gt; 18          Canada    CA   CAN 1977         2022-12-22</span></span>
+<span><span class="co">#&gt; 19          Canada    CA   CAN 1978         2022-12-22</span></span>
+<span><span class="co">#&gt; 20          Canada    CA   CAN 1979         2022-12-22</span></span>
+<span><span class="co">#&gt; 21          Canada    CA   CAN 1980         2022-12-22</span></span>
+<span><span class="co">#&gt; 22          Canada    CA   CAN 1981         2022-12-22</span></span>
+<span><span class="co">#&gt; 23          Canada    CA   CAN 1982         2022-12-22</span></span>
+<span><span class="co">#&gt; 24          Canada    CA   CAN 1983         2022-12-22</span></span>
+<span><span class="co">#&gt; 25          Canada    CA   CAN 1984         2022-12-22</span></span>
+<span><span class="co">#&gt; 26          Canada    CA   CAN 1985         2022-12-22</span></span>
+<span><span class="co">#&gt; 27          Canada    CA   CAN 1986         2022-12-22</span></span>
+<span><span class="co">#&gt; 28          Canada    CA   CAN 1987         2022-12-22</span></span>
+<span><span class="co">#&gt; 29          Canada    CA   CAN 1988         2022-12-22</span></span>
+<span><span class="co">#&gt; 30          Canada    CA   CAN 1989         2022-12-22</span></span>
+<span><span class="co">#&gt; 31          Canada    CA   CAN 1990         2022-12-22</span></span>
+<span><span class="co">#&gt; 32          Canada    CA   CAN 1991         2022-12-22</span></span>
+<span><span class="co">#&gt; 33          Canada    CA   CAN 1992         2022-12-22</span></span>
+<span><span class="co">#&gt; 34          Canada    CA   CAN 1993         2022-12-22</span></span>
+<span><span class="co">#&gt; 35          Canada    CA   CAN 1994         2022-12-22</span></span>
+<span><span class="co">#&gt; 36          Canada    CA   CAN 1995         2022-12-22</span></span>
+<span><span class="co">#&gt; 37          Canada    CA   CAN 1996         2022-12-22</span></span>
+<span><span class="co">#&gt; 38          Canada    CA   CAN 1997         2022-12-22</span></span>
+<span><span class="co">#&gt; 39          Canada    CA   CAN 1998         2022-12-22</span></span>
+<span><span class="co">#&gt; 40          Canada    CA   CAN 1999         2022-12-22</span></span>
+<span><span class="co">#&gt; 41          Canada    CA   CAN 2000         2022-12-22</span></span>
+<span><span class="co">#&gt; 42          Canada    CA   CAN 2001         2022-12-22</span></span>
+<span><span class="co">#&gt; 43          Canada    CA   CAN 2002         2022-12-22</span></span>
+<span><span class="co">#&gt; 44          Canada    CA   CAN 2003         2022-12-22</span></span>
+<span><span class="co">#&gt; 45          Canada    CA   CAN 2004         2022-12-22</span></span>
+<span><span class="co">#&gt; 46          Canada    CA   CAN 2005         2022-12-22</span></span>
+<span><span class="co">#&gt; 47          Canada    CA   CAN 2006         2022-12-22</span></span>
+<span><span class="co">#&gt; 48          Canada    CA   CAN 2007         2022-12-22</span></span>
+<span><span class="co">#&gt; 49          Canada    CA   CAN 2008         2022-12-22</span></span>
+<span><span class="co">#&gt; 50          Canada    CA   CAN 2009         2022-12-22</span></span>
+<span><span class="co">#&gt; 51          Canada    CA   CAN 2010         2022-12-22</span></span>
+<span><span class="co">#&gt; 52          Canada    CA   CAN 2011         2022-12-22</span></span>
+<span><span class="co">#&gt; 53          Canada    CA   CAN 2012         2022-12-22</span></span>
+<span><span class="co">#&gt; 54          Canada    CA   CAN 2013         2022-12-22</span></span>
+<span><span class="co">#&gt; 55          Canada    CA   CAN 2014         2022-12-22</span></span>
+<span><span class="co">#&gt; 56          Canada    CA   CAN 2015         2022-12-22</span></span>
+<span><span class="co">#&gt; 57          Canada    CA   CAN 2016         2022-12-22</span></span>
+<span><span class="co">#&gt; 58          Canada    CA   CAN 2017         2022-12-22</span></span>
+<span><span class="co">#&gt; 59          Canada    CA   CAN 2018         2022-12-22</span></span>
+<span><span class="co">#&gt; 60          Canada    CA   CAN 2019         2022-12-22</span></span>
+<span><span class="co">#&gt; 61          Canada    CA   CAN 2020         2022-12-22</span></span>
+<span><span class="co">#&gt; 62          Canada    CA   CAN 2021         2022-12-22</span></span>
+<span><span class="co">#&gt; 63          France    FR   FRA 1960         2022-12-22</span></span>
+<span><span class="co">#&gt; 64          France    FR   FRA 1961         2022-12-22</span></span>
+<span><span class="co">#&gt; 65          France    FR   FRA 1962         2022-12-22</span></span>
+<span><span class="co">#&gt; 66          France    FR   FRA 1963         2022-12-22</span></span>
+<span><span class="co">#&gt; 67          France    FR   FRA 1964         2022-12-22</span></span>
+<span><span class="co">#&gt; 68          France    FR   FRA 1965         2022-12-22</span></span>
+<span><span class="co">#&gt; 69          France    FR   FRA 1966         2022-12-22</span></span>
+<span><span class="co">#&gt; 70          France    FR   FRA 1967         2022-12-22</span></span>
+<span><span class="co">#&gt; 71          France    FR   FRA 1968         2022-12-22</span></span>
+<span><span class="co">#&gt; 72          France    FR   FRA 1969         2022-12-22</span></span>
+<span><span class="co">#&gt; 73          France    FR   FRA 1970         2022-12-22</span></span>
+<span><span class="co">#&gt; 74          France    FR   FRA 1971         2022-12-22</span></span>
+<span><span class="co">#&gt; 75          France    FR   FRA 1972         2022-12-22</span></span>
+<span><span class="co">#&gt; 76          France    FR   FRA 1973         2022-12-22</span></span>
+<span><span class="co">#&gt; 77          France    FR   FRA 1974         2022-12-22</span></span>
+<span><span class="co">#&gt; 78          France    FR   FRA 1975         2022-12-22</span></span>
+<span><span class="co">#&gt; 79          France    FR   FRA 1976         2022-12-22</span></span>
+<span><span class="co">#&gt; 80          France    FR   FRA 1977         2022-12-22</span></span>
+<span><span class="co">#&gt; 81          France    FR   FRA 1978         2022-12-22</span></span>
+<span><span class="co">#&gt; 82          France    FR   FRA 1979         2022-12-22</span></span>
+<span><span class="co">#&gt; 83          France    FR   FRA 1980         2022-12-22</span></span>
+<span><span class="co">#&gt; 84          France    FR   FRA 1981         2022-12-22</span></span>
+<span><span class="co">#&gt; 85          France    FR   FRA 1982         2022-12-22</span></span>
+<span><span class="co">#&gt; 86          France    FR   FRA 1983         2022-12-22</span></span>
+<span><span class="co">#&gt; 87          France    FR   FRA 1984         2022-12-22</span></span>
+<span><span class="co">#&gt; 88          France    FR   FRA 1985         2022-12-22</span></span>
+<span><span class="co">#&gt; 89          France    FR   FRA 1986         2022-12-22</span></span>
+<span><span class="co">#&gt; 90          France    FR   FRA 1987         2022-12-22</span></span>
+<span><span class="co">#&gt; 91          France    FR   FRA 1988         2022-12-22</span></span>
+<span><span class="co">#&gt; 92          France    FR   FRA 1989         2022-12-22</span></span>
+<span><span class="co">#&gt; 93          France    FR   FRA 1990         2022-12-22</span></span>
+<span><span class="co">#&gt; 94          France    FR   FRA 1991         2022-12-22</span></span>
+<span><span class="co">#&gt; 95          France    FR   FRA 1992         2022-12-22</span></span>
+<span><span class="co">#&gt; 96          France    FR   FRA 1993         2022-12-22</span></span>
+<span><span class="co">#&gt; 97          France    FR   FRA 1994         2022-12-22</span></span>
+<span><span class="co">#&gt; 98          France    FR   FRA 1995         2022-12-22</span></span>
+<span><span class="co">#&gt; 99          France    FR   FRA 1996         2022-12-22</span></span>
+<span><span class="co">#&gt; 100         France    FR   FRA 1997         2022-12-22</span></span>
+<span><span class="co">#&gt; 101         France    FR   FRA 1998         2022-12-22</span></span>
+<span><span class="co">#&gt; 102         France    FR   FRA 1999         2022-12-22</span></span>
+<span><span class="co">#&gt; 103         France    FR   FRA 2000         2022-12-22</span></span>
+<span><span class="co">#&gt; 104         France    FR   FRA 2001         2022-12-22</span></span>
+<span><span class="co">#&gt; 105         France    FR   FRA 2002         2022-12-22</span></span>
+<span><span class="co">#&gt; 106         France    FR   FRA 2003         2022-12-22</span></span>
+<span><span class="co">#&gt; 107         France    FR   FRA 2004         2022-12-22</span></span>
+<span><span class="co">#&gt; 108         France    FR   FRA 2005         2022-12-22</span></span>
+<span><span class="co">#&gt; 109         France    FR   FRA 2006         2022-12-22</span></span>
+<span><span class="co">#&gt; 110         France    FR   FRA 2007         2022-12-22</span></span>
+<span><span class="co">#&gt; 111         France    FR   FRA 2008         2022-12-22</span></span>
+<span><span class="co">#&gt; 112         France    FR   FRA 2009         2022-12-22</span></span>
+<span><span class="co">#&gt; 113         France    FR   FRA 2010         2022-12-22</span></span>
+<span><span class="co">#&gt; 114         France    FR   FRA 2011         2022-12-22</span></span>
+<span><span class="co">#&gt; 115         France    FR   FRA 2012         2022-12-22</span></span>
+<span><span class="co">#&gt; 116         France    FR   FRA 2013         2022-12-22</span></span>
+<span><span class="co">#&gt; 117         France    FR   FRA 2014         2022-12-22</span></span>
+<span><span class="co">#&gt; 118         France    FR   FRA 2015         2022-12-22</span></span>
+<span><span class="co">#&gt; 119         France    FR   FRA 2016         2022-12-22</span></span>
+<span><span class="co">#&gt; 120         France    FR   FRA 2017         2022-12-22</span></span>
+<span><span class="co">#&gt; 121         France    FR   FRA 2018         2022-12-22</span></span>
+<span><span class="co">#&gt; 122         France    FR   FRA 2019         2022-12-22</span></span>
+<span><span class="co">#&gt; 123         France    FR   FRA 2020         2022-12-22</span></span>
+<span><span class="co">#&gt; 124         France    FR   FRA 2021         2022-12-22</span></span>
+<span><span class="co">#&gt; 125        Germany    DE   DEU 1960         2022-12-22</span></span>
+<span><span class="co">#&gt; 126        Germany    DE   DEU 1961         2022-12-22</span></span>
+<span><span class="co">#&gt; 127        Germany    DE   DEU 1962         2022-12-22</span></span>
+<span><span class="co">#&gt; 128        Germany    DE   DEU 1963         2022-12-22</span></span>
+<span><span class="co">#&gt; 129        Germany    DE   DEU 1964         2022-12-22</span></span>
+<span><span class="co">#&gt; 130        Germany    DE   DEU 1965         2022-12-22</span></span>
+<span><span class="co">#&gt; 131        Germany    DE   DEU 1966         2022-12-22</span></span>
+<span><span class="co">#&gt; 132        Germany    DE   DEU 1967         2022-12-22</span></span>
+<span><span class="co">#&gt; 133        Germany    DE   DEU 1968         2022-12-22</span></span>
+<span><span class="co">#&gt; 134        Germany    DE   DEU 1969         2022-12-22</span></span>
+<span><span class="co">#&gt; 135        Germany    DE   DEU 1970         2022-12-22</span></span>
+<span><span class="co">#&gt; 136        Germany    DE   DEU 1971         2022-12-22</span></span>
+<span><span class="co">#&gt; 137        Germany    DE   DEU 1972         2022-12-22</span></span>
+<span><span class="co">#&gt; 138        Germany    DE   DEU 1973         2022-12-22</span></span>
+<span><span class="co">#&gt; 139        Germany    DE   DEU 1974         2022-12-22</span></span>
+<span><span class="co">#&gt; 140        Germany    DE   DEU 1975         2022-12-22</span></span>
+<span><span class="co">#&gt; 141        Germany    DE   DEU 1976         2022-12-22</span></span>
+<span><span class="co">#&gt; 142        Germany    DE   DEU 1977         2022-12-22</span></span>
+<span><span class="co">#&gt; 143        Germany    DE   DEU 1978         2022-12-22</span></span>
+<span><span class="co">#&gt; 144        Germany    DE   DEU 1979         2022-12-22</span></span>
+<span><span class="co">#&gt; 145        Germany    DE   DEU 1980         2022-12-22</span></span>
+<span><span class="co">#&gt; 146        Germany    DE   DEU 1981         2022-12-22</span></span>
+<span><span class="co">#&gt; 147        Germany    DE   DEU 1982         2022-12-22</span></span>
+<span><span class="co">#&gt; 148        Germany    DE   DEU 1983         2022-12-22</span></span>
+<span><span class="co">#&gt; 149        Germany    DE   DEU 1984         2022-12-22</span></span>
+<span><span class="co">#&gt; 150        Germany    DE   DEU 1985         2022-12-22</span></span>
+<span><span class="co">#&gt; 151        Germany    DE   DEU 1986         2022-12-22</span></span>
+<span><span class="co">#&gt; 152        Germany    DE   DEU 1987         2022-12-22</span></span>
+<span><span class="co">#&gt; 153        Germany    DE   DEU 1988         2022-12-22</span></span>
+<span><span class="co">#&gt; 154        Germany    DE   DEU 1989         2022-12-22</span></span>
+<span><span class="co">#&gt; 155        Germany    DE   DEU 1990         2022-12-22</span></span>
+<span><span class="co">#&gt; 156        Germany    DE   DEU 1991         2022-12-22</span></span>
+<span><span class="co">#&gt; 157        Germany    DE   DEU 1992         2022-12-22</span></span>
+<span><span class="co">#&gt; 158        Germany    DE   DEU 1993         2022-12-22</span></span>
+<span><span class="co">#&gt; 159        Germany    DE   DEU 1994         2022-12-22</span></span>
+<span><span class="co">#&gt; 160        Germany    DE   DEU 1995         2022-12-22</span></span>
+<span><span class="co">#&gt; 161        Germany    DE   DEU 1996         2022-12-22</span></span>
+<span><span class="co">#&gt; 162        Germany    DE   DEU 1997         2022-12-22</span></span>
+<span><span class="co">#&gt; 163        Germany    DE   DEU 1998         2022-12-22</span></span>
+<span><span class="co">#&gt; 164        Germany    DE   DEU 1999         2022-12-22</span></span>
+<span><span class="co">#&gt; 165        Germany    DE   DEU 2000         2022-12-22</span></span>
+<span><span class="co">#&gt; 166        Germany    DE   DEU 2001         2022-12-22</span></span>
+<span><span class="co">#&gt; 167        Germany    DE   DEU 2002         2022-12-22</span></span>
+<span><span class="co">#&gt; 168        Germany    DE   DEU 2003         2022-12-22</span></span>
+<span><span class="co">#&gt; 169        Germany    DE   DEU 2004         2022-12-22</span></span>
+<span><span class="co">#&gt; 170        Germany    DE   DEU 2005         2022-12-22</span></span>
+<span><span class="co">#&gt; 171        Germany    DE   DEU 2006         2022-12-22</span></span>
+<span><span class="co">#&gt; 172        Germany    DE   DEU 2007         2022-12-22</span></span>
+<span><span class="co">#&gt; 173        Germany    DE   DEU 2008         2022-12-22</span></span>
+<span><span class="co">#&gt; 174        Germany    DE   DEU 2009         2022-12-22</span></span>
+<span><span class="co">#&gt; 175        Germany    DE   DEU 2010         2022-12-22</span></span>
+<span><span class="co">#&gt; 176        Germany    DE   DEU 2011         2022-12-22</span></span>
+<span><span class="co">#&gt; 177        Germany    DE   DEU 2012         2022-12-22</span></span>
+<span><span class="co">#&gt; 178        Germany    DE   DEU 2013         2022-12-22</span></span>
+<span><span class="co">#&gt; 179        Germany    DE   DEU 2014         2022-12-22</span></span>
+<span><span class="co">#&gt; 180        Germany    DE   DEU 2015         2022-12-22</span></span>
+<span><span class="co">#&gt; 181        Germany    DE   DEU 2016         2022-12-22</span></span>
+<span><span class="co">#&gt; 182        Germany    DE   DEU 2017         2022-12-22</span></span>
+<span><span class="co">#&gt; 183        Germany    DE   DEU 2018         2022-12-22</span></span>
+<span><span class="co">#&gt; 184        Germany    DE   DEU 2019         2022-12-22</span></span>
+<span><span class="co">#&gt; 185        Germany    DE   DEU 2020         2022-12-22</span></span>
+<span><span class="co">#&gt; 186        Germany    DE   DEU 2021         2022-12-22</span></span>
+<span><span class="co">#&gt; 187          Italy    IT   ITA 1960         2022-12-22</span></span>
+<span><span class="co">#&gt; 188          Italy    IT   ITA 1961         2022-12-22</span></span>
+<span><span class="co">#&gt; 189          Italy    IT   ITA 1962         2022-12-22</span></span>
+<span><span class="co">#&gt; 190          Italy    IT   ITA 1963         2022-12-22</span></span>
+<span><span class="co">#&gt; 191          Italy    IT   ITA 1964         2022-12-22</span></span>
+<span><span class="co">#&gt; 192          Italy    IT   ITA 1965         2022-12-22</span></span>
+<span><span class="co">#&gt; 193          Italy    IT   ITA 1966         2022-12-22</span></span>
+<span><span class="co">#&gt; 194          Italy    IT   ITA 1967         2022-12-22</span></span>
+<span><span class="co">#&gt; 195          Italy    IT   ITA 1968         2022-12-22</span></span>
+<span><span class="co">#&gt; 196          Italy    IT   ITA 1969         2022-12-22</span></span>
+<span><span class="co">#&gt; 197          Italy    IT   ITA 1970         2022-12-22</span></span>
+<span><span class="co">#&gt; 198          Italy    IT   ITA 1971         2022-12-22</span></span>
+<span><span class="co">#&gt; 199          Italy    IT   ITA 1972         2022-12-22</span></span>
+<span><span class="co">#&gt; 200          Italy    IT   ITA 1973         2022-12-22</span></span>
+<span><span class="co">#&gt; 201          Italy    IT   ITA 1974         2022-12-22</span></span>
+<span><span class="co">#&gt; 202          Italy    IT   ITA 1975         2022-12-22</span></span>
+<span><span class="co">#&gt; 203          Italy    IT   ITA 1976         2022-12-22</span></span>
+<span><span class="co">#&gt; 204          Italy    IT   ITA 1977         2022-12-22</span></span>
+<span><span class="co">#&gt; 205          Italy    IT   ITA 1978         2022-12-22</span></span>
+<span><span class="co">#&gt; 206          Italy    IT   ITA 1979         2022-12-22</span></span>
+<span><span class="co">#&gt; 207          Italy    IT   ITA 1980         2022-12-22</span></span>
+<span><span class="co">#&gt; 208          Italy    IT   ITA 1981         2022-12-22</span></span>
+<span><span class="co">#&gt; 209          Italy    IT   ITA 1982         2022-12-22</span></span>
+<span><span class="co">#&gt; 210          Italy    IT   ITA 1983         2022-12-22</span></span>
+<span><span class="co">#&gt; 211          Italy    IT   ITA 1984         2022-12-22</span></span>
+<span><span class="co">#&gt; 212          Italy    IT   ITA 1985         2022-12-22</span></span>
+<span><span class="co">#&gt; 213          Italy    IT   ITA 1986         2022-12-22</span></span>
+<span><span class="co">#&gt; 214          Italy    IT   ITA 1987         2022-12-22</span></span>
+<span><span class="co">#&gt; 215          Italy    IT   ITA 1988         2022-12-22</span></span>
+<span><span class="co">#&gt; 216          Italy    IT   ITA 1989         2022-12-22</span></span>
+<span><span class="co">#&gt; 217          Italy    IT   ITA 1990         2022-12-22</span></span>
+<span><span class="co">#&gt; 218          Italy    IT   ITA 1991         2022-12-22</span></span>
+<span><span class="co">#&gt; 219          Italy    IT   ITA 1992         2022-12-22</span></span>
+<span><span class="co">#&gt; 220          Italy    IT   ITA 1993         2022-12-22</span></span>
+<span><span class="co">#&gt; 221          Italy    IT   ITA 1994         2022-12-22</span></span>
+<span><span class="co">#&gt; 222          Italy    IT   ITA 1995         2022-12-22</span></span>
+<span><span class="co">#&gt; 223          Italy    IT   ITA 1996         2022-12-22</span></span>
+<span><span class="co">#&gt; 224          Italy    IT   ITA 1997         2022-12-22</span></span>
+<span><span class="co">#&gt; 225          Italy    IT   ITA 1998         2022-12-22</span></span>
+<span><span class="co">#&gt; 226          Italy    IT   ITA 1999         2022-12-22</span></span>
+<span><span class="co">#&gt; 227          Italy    IT   ITA 2000         2022-12-22</span></span>
+<span><span class="co">#&gt; 228          Italy    IT   ITA 2001         2022-12-22</span></span>
+<span><span class="co">#&gt; 229          Italy    IT   ITA 2002         2022-12-22</span></span>
+<span><span class="co">#&gt; 230          Italy    IT   ITA 2003         2022-12-22</span></span>
+<span><span class="co">#&gt; 231          Italy    IT   ITA 2004         2022-12-22</span></span>
+<span><span class="co">#&gt; 232          Italy    IT   ITA 2005         2022-12-22</span></span>
+<span><span class="co">#&gt; 233          Italy    IT   ITA 2006         2022-12-22</span></span>
+<span><span class="co">#&gt; 234          Italy    IT   ITA 2007         2022-12-22</span></span>
+<span><span class="co">#&gt; 235          Italy    IT   ITA 2008         2022-12-22</span></span>
+<span><span class="co">#&gt; 236          Italy    IT   ITA 2009         2022-12-22</span></span>
+<span><span class="co">#&gt; 237          Italy    IT   ITA 2010         2022-12-22</span></span>
+<span><span class="co">#&gt; 238          Italy    IT   ITA 2011         2022-12-22</span></span>
+<span><span class="co">#&gt; 239          Italy    IT   ITA 2012         2022-12-22</span></span>
+<span><span class="co">#&gt; 240          Italy    IT   ITA 2013         2022-12-22</span></span>
+<span><span class="co">#&gt; 241          Italy    IT   ITA 2014         2022-12-22</span></span>
+<span><span class="co">#&gt; 242          Italy    IT   ITA 2015         2022-12-22</span></span>
+<span><span class="co">#&gt; 243          Italy    IT   ITA 2016         2022-12-22</span></span>
+<span><span class="co">#&gt; 244          Italy    IT   ITA 2017         2022-12-22</span></span>
+<span><span class="co">#&gt; 245          Italy    IT   ITA 2018         2022-12-22</span></span>
+<span><span class="co">#&gt; 246          Italy    IT   ITA 2019         2022-12-22</span></span>
+<span><span class="co">#&gt; 247          Italy    IT   ITA 2020         2022-12-22</span></span>
+<span><span class="co">#&gt; 248          Italy    IT   ITA 2021         2022-12-22</span></span>
+<span><span class="co">#&gt; 249          Japan    JP   JPN 1960         2022-12-22</span></span>
+<span><span class="co">#&gt; 250          Japan    JP   JPN 1961         2022-12-22</span></span>
+<span><span class="co">#&gt; 251          Japan    JP   JPN 1962         2022-12-22</span></span>
+<span><span class="co">#&gt; 252          Japan    JP   JPN 1963         2022-12-22</span></span>
+<span><span class="co">#&gt; 253          Japan    JP   JPN 1964         2022-12-22</span></span>
+<span><span class="co">#&gt; 254          Japan    JP   JPN 1965         2022-12-22</span></span>
+<span><span class="co">#&gt; 255          Japan    JP   JPN 1966         2022-12-22</span></span>
+<span><span class="co">#&gt; 256          Japan    JP   JPN 1967         2022-12-22</span></span>
+<span><span class="co">#&gt; 257          Japan    JP   JPN 1968         2022-12-22</span></span>
+<span><span class="co">#&gt; 258          Japan    JP   JPN 1969         2022-12-22</span></span>
+<span><span class="co">#&gt; 259          Japan    JP   JPN 1970         2022-12-22</span></span>
+<span><span class="co">#&gt; 260          Japan    JP   JPN 1971         2022-12-22</span></span>
+<span><span class="co">#&gt; 261          Japan    JP   JPN 1972         2022-12-22</span></span>
+<span><span class="co">#&gt; 262          Japan    JP   JPN 1973         2022-12-22</span></span>
+<span><span class="co">#&gt; 263          Japan    JP   JPN 1974         2022-12-22</span></span>
+<span><span class="co">#&gt; 264          Japan    JP   JPN 1975         2022-12-22</span></span>
+<span><span class="co">#&gt; 265          Japan    JP   JPN 1976         2022-12-22</span></span>
+<span><span class="co">#&gt; 266          Japan    JP   JPN 1977         2022-12-22</span></span>
+<span><span class="co">#&gt; 267          Japan    JP   JPN 1978         2022-12-22</span></span>
+<span><span class="co">#&gt; 268          Japan    JP   JPN 1979         2022-12-22</span></span>
+<span><span class="co">#&gt; 269          Japan    JP   JPN 1980         2022-12-22</span></span>
+<span><span class="co">#&gt; 270          Japan    JP   JPN 1981         2022-12-22</span></span>
+<span><span class="co">#&gt; 271          Japan    JP   JPN 1982         2022-12-22</span></span>
+<span><span class="co">#&gt; 272          Japan    JP   JPN 1983         2022-12-22</span></span>
+<span><span class="co">#&gt; 273          Japan    JP   JPN 1984         2022-12-22</span></span>
+<span><span class="co">#&gt; 274          Japan    JP   JPN 1985         2022-12-22</span></span>
+<span><span class="co">#&gt; 275          Japan    JP   JPN 1986         2022-12-22</span></span>
+<span><span class="co">#&gt; 276          Japan    JP   JPN 1987         2022-12-22</span></span>
+<span><span class="co">#&gt; 277          Japan    JP   JPN 1988         2022-12-22</span></span>
+<span><span class="co">#&gt; 278          Japan    JP   JPN 1989         2022-12-22</span></span>
+<span><span class="co">#&gt; 279          Japan    JP   JPN 1990         2022-12-22</span></span>
+<span><span class="co">#&gt; 280          Japan    JP   JPN 1991         2022-12-22</span></span>
+<span><span class="co">#&gt; 281          Japan    JP   JPN 1992         2022-12-22</span></span>
+<span><span class="co">#&gt; 282          Japan    JP   JPN 1993         2022-12-22</span></span>
+<span><span class="co">#&gt; 283          Japan    JP   JPN 1994         2022-12-22</span></span>
+<span><span class="co">#&gt; 284          Japan    JP   JPN 1995         2022-12-22</span></span>
+<span><span class="co">#&gt; 285          Japan    JP   JPN 1996         2022-12-22</span></span>
+<span><span class="co">#&gt; 286          Japan    JP   JPN 1997         2022-12-22</span></span>
+<span><span class="co">#&gt; 287          Japan    JP   JPN 1998         2022-12-22</span></span>
+<span><span class="co">#&gt; 288          Japan    JP   JPN 1999         2022-12-22</span></span>
+<span><span class="co">#&gt; 289          Japan    JP   JPN 2000         2022-12-22</span></span>
+<span><span class="co">#&gt; 290          Japan    JP   JPN 2001         2022-12-22</span></span>
+<span><span class="co">#&gt; 291          Japan    JP   JPN 2002         2022-12-22</span></span>
+<span><span class="co">#&gt; 292          Japan    JP   JPN 2003         2022-12-22</span></span>
+<span><span class="co">#&gt; 293          Japan    JP   JPN 2004         2022-12-22</span></span>
+<span><span class="co">#&gt; 294          Japan    JP   JPN 2005         2022-12-22</span></span>
+<span><span class="co">#&gt; 295          Japan    JP   JPN 2006         2022-12-22</span></span>
+<span><span class="co">#&gt; 296          Japan    JP   JPN 2007         2022-12-22</span></span>
+<span><span class="co">#&gt; 297          Japan    JP   JPN 2008         2022-12-22</span></span>
+<span><span class="co">#&gt; 298          Japan    JP   JPN 2009         2022-12-22</span></span>
+<span><span class="co">#&gt; 299          Japan    JP   JPN 2010         2022-12-22</span></span>
+<span><span class="co">#&gt; 300          Japan    JP   JPN 2011         2022-12-22</span></span>
+<span><span class="co">#&gt; 301          Japan    JP   JPN 2012         2022-12-22</span></span>
+<span><span class="co">#&gt; 302          Japan    JP   JPN 2013         2022-12-22</span></span>
+<span><span class="co">#&gt; 303          Japan    JP   JPN 2014         2022-12-22</span></span>
+<span><span class="co">#&gt; 304          Japan    JP   JPN 2015         2022-12-22</span></span>
+<span><span class="co">#&gt; 305          Japan    JP   JPN 2016         2022-12-22</span></span>
+<span><span class="co">#&gt; 306          Japan    JP   JPN 2017         2022-12-22</span></span>
+<span><span class="co">#&gt; 307          Japan    JP   JPN 2018         2022-12-22</span></span>
+<span><span class="co">#&gt; 308          Japan    JP   JPN 2019         2022-12-22</span></span>
+<span><span class="co">#&gt; 309          Japan    JP   JPN 2020         2022-12-22</span></span>
+<span><span class="co">#&gt; 310          Japan    JP   JPN 2021         2022-12-22</span></span>
+<span><span class="co">#&gt; 311 United Kingdom    GB   GBR 1960         2022-12-22</span></span>
+<span><span class="co">#&gt; 312 United Kingdom    GB   GBR 1961         2022-12-22</span></span>
+<span><span class="co">#&gt; 313 United Kingdom    GB   GBR 1962         2022-12-22</span></span>
+<span><span class="co">#&gt; 314 United Kingdom    GB   GBR 1963         2022-12-22</span></span>
+<span><span class="co">#&gt; 315 United Kingdom    GB   GBR 1964         2022-12-22</span></span>
+<span><span class="co">#&gt; 316 United Kingdom    GB   GBR 1965         2022-12-22</span></span>
+<span><span class="co">#&gt; 317 United Kingdom    GB   GBR 1966         2022-12-22</span></span>
+<span><span class="co">#&gt; 318 United Kingdom    GB   GBR 1967         2022-12-22</span></span>
+<span><span class="co">#&gt; 319 United Kingdom    GB   GBR 1968         2022-12-22</span></span>
+<span><span class="co">#&gt; 320 United Kingdom    GB   GBR 1969         2022-12-22</span></span>
+<span><span class="co">#&gt; 321 United Kingdom    GB   GBR 1970         2022-12-22</span></span>
+<span><span class="co">#&gt; 322 United Kingdom    GB   GBR 1971         2022-12-22</span></span>
+<span><span class="co">#&gt; 323 United Kingdom    GB   GBR 1972         2022-12-22</span></span>
+<span><span class="co">#&gt; 324 United Kingdom    GB   GBR 1973         2022-12-22</span></span>
+<span><span class="co">#&gt; 325 United Kingdom    GB   GBR 1974         2022-12-22</span></span>
+<span><span class="co">#&gt; 326 United Kingdom    GB   GBR 1975         2022-12-22</span></span>
+<span><span class="co">#&gt; 327 United Kingdom    GB   GBR 1976         2022-12-22</span></span>
+<span><span class="co">#&gt; 328 United Kingdom    GB   GBR 1977         2022-12-22</span></span>
+<span><span class="co">#&gt; 329 United Kingdom    GB   GBR 1978         2022-12-22</span></span>
+<span><span class="co">#&gt; 330 United Kingdom    GB   GBR 1979         2022-12-22</span></span>
+<span><span class="co">#&gt; 331 United Kingdom    GB   GBR 1980         2022-12-22</span></span>
+<span><span class="co">#&gt; 332 United Kingdom    GB   GBR 1981         2022-12-22</span></span>
+<span><span class="co">#&gt; 333 United Kingdom    GB   GBR 1982         2022-12-22</span></span>
+<span><span class="co">#&gt; 334 United Kingdom    GB   GBR 1983         2022-12-22</span></span>
+<span><span class="co">#&gt; 335 United Kingdom    GB   GBR 1984         2022-12-22</span></span>
+<span><span class="co">#&gt; 336 United Kingdom    GB   GBR 1985         2022-12-22</span></span>
+<span><span class="co">#&gt; 337 United Kingdom    GB   GBR 1986         2022-12-22</span></span>
+<span><span class="co">#&gt; 338 United Kingdom    GB   GBR 1987         2022-12-22</span></span>
+<span><span class="co">#&gt; 339 United Kingdom    GB   GBR 1988         2022-12-22</span></span>
+<span><span class="co">#&gt; 340 United Kingdom    GB   GBR 1989         2022-12-22</span></span>
+<span><span class="co">#&gt; 341 United Kingdom    GB   GBR 1990         2022-12-22</span></span>
+<span><span class="co">#&gt; 342 United Kingdom    GB   GBR 1991         2022-12-22</span></span>
+<span><span class="co">#&gt; 343 United Kingdom    GB   GBR 1992         2022-12-22</span></span>
+<span><span class="co">#&gt; 344 United Kingdom    GB   GBR 1993         2022-12-22</span></span>
+<span><span class="co">#&gt; 345 United Kingdom    GB   GBR 1994         2022-12-22</span></span>
+<span><span class="co">#&gt; 346 United Kingdom    GB   GBR 1995         2022-12-22</span></span>
+<span><span class="co">#&gt; 347 United Kingdom    GB   GBR 1996         2022-12-22</span></span>
+<span><span class="co">#&gt; 348 United Kingdom    GB   GBR 1997         2022-12-22</span></span>
+<span><span class="co">#&gt; 349 United Kingdom    GB   GBR 1998         2022-12-22</span></span>
+<span><span class="co">#&gt; 350 United Kingdom    GB   GBR 1999         2022-12-22</span></span>
+<span><span class="co">#&gt; 351 United Kingdom    GB   GBR 2000         2022-12-22</span></span>
+<span><span class="co">#&gt; 352 United Kingdom    GB   GBR 2001         2022-12-22</span></span>
+<span><span class="co">#&gt; 353 United Kingdom    GB   GBR 2002         2022-12-22</span></span>
+<span><span class="co">#&gt; 354 United Kingdom    GB   GBR 2003         2022-12-22</span></span>
+<span><span class="co">#&gt; 355 United Kingdom    GB   GBR 2004         2022-12-22</span></span>
+<span><span class="co">#&gt; 356 United Kingdom    GB   GBR 2005         2022-12-22</span></span>
+<span><span class="co">#&gt; 357 United Kingdom    GB   GBR 2006         2022-12-22</span></span>
+<span><span class="co">#&gt; 358 United Kingdom    GB   GBR 2007         2022-12-22</span></span>
+<span><span class="co">#&gt; 359 United Kingdom    GB   GBR 2008         2022-12-22</span></span>
+<span><span class="co">#&gt; 360 United Kingdom    GB   GBR 2009         2022-12-22</span></span>
+<span><span class="co">#&gt; 361 United Kingdom    GB   GBR 2010         2022-12-22</span></span>
+<span><span class="co">#&gt; 362 United Kingdom    GB   GBR 2011         2022-12-22</span></span>
+<span><span class="co">#&gt; 363 United Kingdom    GB   GBR 2012         2022-12-22</span></span>
+<span><span class="co">#&gt; 364 United Kingdom    GB   GBR 2013         2022-12-22</span></span>
+<span><span class="co">#&gt; 365 United Kingdom    GB   GBR 2014         2022-12-22</span></span>
+<span><span class="co">#&gt; 366 United Kingdom    GB   GBR 2015         2022-12-22</span></span>
+<span><span class="co">#&gt; 367 United Kingdom    GB   GBR 2016         2022-12-22</span></span>
+<span><span class="co">#&gt; 368 United Kingdom    GB   GBR 2017         2022-12-22</span></span>
+<span><span class="co">#&gt; 369 United Kingdom    GB   GBR 2018         2022-12-22</span></span>
+<span><span class="co">#&gt; 370 United Kingdom    GB   GBR 2019         2022-12-22</span></span>
+<span><span class="co">#&gt; 371 United Kingdom    GB   GBR 2020         2022-12-22</span></span>
+<span><span class="co">#&gt; 372 United Kingdom    GB   GBR 2021         2022-12-22</span></span>
+<span><span class="co">#&gt; 373  United States    US   USA 1960         2022-12-22</span></span>
+<span><span class="co">#&gt; 374  United States    US   USA 1961         2022-12-22</span></span>
+<span><span class="co">#&gt; 375  United States    US   USA 1962         2022-12-22</span></span>
+<span><span class="co">#&gt; 376  United States    US   USA 1963         2022-12-22</span></span>
+<span><span class="co">#&gt; 377  United States    US   USA 1964         2022-12-22</span></span>
+<span><span class="co">#&gt; 378  United States    US   USA 1965         2022-12-22</span></span>
+<span><span class="co">#&gt; 379  United States    US   USA 1966         2022-12-22</span></span>
+<span><span class="co">#&gt; 380  United States    US   USA 1967         2022-12-22</span></span>
+<span><span class="co">#&gt; 381  United States    US   USA 1968         2022-12-22</span></span>
+<span><span class="co">#&gt; 382  United States    US   USA 1969         2022-12-22</span></span>
+<span><span class="co">#&gt; 383  United States    US   USA 1970         2022-12-22</span></span>
+<span><span class="co">#&gt; 384  United States    US   USA 1971         2022-12-22</span></span>
+<span><span class="co">#&gt; 385  United States    US   USA 1972         2022-12-22</span></span>
+<span><span class="co">#&gt; 386  United States    US   USA 1973         2022-12-22</span></span>
+<span><span class="co">#&gt; 387  United States    US   USA 1974         2022-12-22</span></span>
+<span><span class="co">#&gt; 388  United States    US   USA 1975         2022-12-22</span></span>
+<span><span class="co">#&gt; 389  United States    US   USA 1976         2022-12-22</span></span>
+<span><span class="co">#&gt; 390  United States    US   USA 1977         2022-12-22</span></span>
+<span><span class="co">#&gt; 391  United States    US   USA 1978         2022-12-22</span></span>
+<span><span class="co">#&gt; 392  United States    US   USA 1979         2022-12-22</span></span>
+<span><span class="co">#&gt; 393  United States    US   USA 1980         2022-12-22</span></span>
+<span><span class="co">#&gt; 394  United States    US   USA 1981         2022-12-22</span></span>
+<span><span class="co">#&gt; 395  United States    US   USA 1982         2022-12-22</span></span>
+<span><span class="co">#&gt; 396  United States    US   USA 1983         2022-12-22</span></span>
+<span><span class="co">#&gt; 397  United States    US   USA 1984         2022-12-22</span></span>
+<span><span class="co">#&gt; 398  United States    US   USA 1985         2022-12-22</span></span>
+<span><span class="co">#&gt; 399  United States    US   USA 1986         2022-12-22</span></span>
+<span><span class="co">#&gt; 400  United States    US   USA 1987         2022-12-22</span></span>
+<span><span class="co">#&gt; 401  United States    US   USA 1988         2022-12-22</span></span>
+<span><span class="co">#&gt; 402  United States    US   USA 1989         2022-12-22</span></span>
+<span><span class="co">#&gt; 403  United States    US   USA 1990         2022-12-22</span></span>
+<span><span class="co">#&gt; 404  United States    US   USA 1991         2022-12-22</span></span>
+<span><span class="co">#&gt; 405  United States    US   USA 1992         2022-12-22</span></span>
+<span><span class="co">#&gt; 406  United States    US   USA 1993         2022-12-22</span></span>
+<span><span class="co">#&gt; 407  United States    US   USA 1994         2022-12-22</span></span>
+<span><span class="co">#&gt; 408  United States    US   USA 1995         2022-12-22</span></span>
+<span><span class="co">#&gt; 409  United States    US   USA 1996         2022-12-22</span></span>
+<span><span class="co">#&gt; 410  United States    US   USA 1997         2022-12-22</span></span>
+<span><span class="co">#&gt; 411  United States    US   USA 1998         2022-12-22</span></span>
+<span><span class="co">#&gt; 412  United States    US   USA 1999         2022-12-22</span></span>
+<span><span class="co">#&gt; 413  United States    US   USA 2000         2022-12-22</span></span>
+<span><span class="co">#&gt; 414  United States    US   USA 2001         2022-12-22</span></span>
+<span><span class="co">#&gt; 415  United States    US   USA 2002         2022-12-22</span></span>
+<span><span class="co">#&gt; 416  United States    US   USA 2003         2022-12-22</span></span>
+<span><span class="co">#&gt; 417  United States    US   USA 2004         2022-12-22</span></span>
+<span><span class="co">#&gt; 418  United States    US   USA 2005         2022-12-22</span></span>
+<span><span class="co">#&gt; 419  United States    US   USA 2006         2022-12-22</span></span>
+<span><span class="co">#&gt; 420  United States    US   USA 2007         2022-12-22</span></span>
+<span><span class="co">#&gt; 421  United States    US   USA 2008         2022-12-22</span></span>
+<span><span class="co">#&gt; 422  United States    US   USA 2009         2022-12-22</span></span>
+<span><span class="co">#&gt; 423  United States    US   USA 2010         2022-12-22</span></span>
+<span><span class="co">#&gt; 424  United States    US   USA 2011         2022-12-22</span></span>
+<span><span class="co">#&gt; 425  United States    US   USA 2012         2022-12-22</span></span>
+<span><span class="co">#&gt; 426  United States    US   USA 2013         2022-12-22</span></span>
+<span><span class="co">#&gt; 427  United States    US   USA 2014         2022-12-22</span></span>
+<span><span class="co">#&gt; 428  United States    US   USA 2015         2022-12-22</span></span>
+<span><span class="co">#&gt; 429  United States    US   USA 2016         2022-12-22</span></span>
+<span><span class="co">#&gt; 430  United States    US   USA 2017         2022-12-22</span></span>
+<span><span class="co">#&gt; 431  United States    US   USA 2018         2022-12-22</span></span>
+<span><span class="co">#&gt; 432  United States    US   USA 2019         2022-12-22</span></span>
+<span><span class="co">#&gt; 433  United States    US   USA 2020         2022-12-22</span></span>
+<span><span class="co">#&gt; 434  United States    US   USA 2021         2022-12-22</span></span>
+<span><span class="co">#&gt;          parl gini                region         capital</span></span>
+<span><span class="co">#&gt; 1          NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 2          NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 3          NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 4          NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 5          NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 6          NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 7          NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 8          NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 9          NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 10         NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 11         NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 12         NA 37.3         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 13         NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 14         NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 15         NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 16         NA 33.3         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 17         NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 18         NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 19         NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 20         NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 21         NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 22         NA 32.4         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 23         NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 24         NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 25         NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 26         NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 27         NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 28         NA 31.5         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 29         NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 30         NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 31         NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 32         NA 31.0         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 33         NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 34         NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 35         NA 31.3         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 36         NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 37         NA   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 38  20.598007 31.6         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 39  20.598007 33.2         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 40  20.598007   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 41         NA 33.3         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 42  20.598007   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 43  20.598007   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 44  20.598007   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 45  21.103896 33.7         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 46  21.103896   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 47  20.779221   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 48  21.311475 33.8         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 49  22.077922   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 50  22.077922   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 51  22.077922 33.6         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 52  24.755700   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 53  24.675325 33.5         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 54  24.675325 33.8         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 55  25.081433 33.2         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 56  26.035503 33.7         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 57  26.035503 32.7         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 58  26.268657 33.3         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 59  26.946108   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 60  28.994083   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 61  28.994083   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 62  30.473373   NA         North America          Ottawa</span></span>
+<span><span class="co">#&gt; 63         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 64         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 65         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 66         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 67         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 68         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 69         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 70         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 71         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 72         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 73         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 74         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 75         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 76         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 77         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 78         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 79         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 80         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 81         NA 35.2 Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 82         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 83         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 84         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 85         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 86         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 87         NA 36.9 Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 88         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 89         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 90         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 91         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 92         NA 32.2 Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 93         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 94         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 95         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 96         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 97         NA 32.3 Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 98         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 99         NA   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 100 10.918544   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 101 10.918544   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 102 10.918544   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 103 10.918544 31.1 Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 104 10.918544   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 105 12.131716   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 106 12.195122 31.4 Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 107 12.195122 30.6 Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 108 12.195122 29.8 Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 109 12.195122 29.7 Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 110 18.197574 32.4 Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 111 18.197574 33.0 Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 112 18.890815 32.7 Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 113 18.890815 33.7 Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 114 18.890815 33.3 Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 115 26.863085 33.1 Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 116 26.863085 32.5 Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 117 26.169844 32.3 Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 118 26.169844 32.7 Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 119 26.169844 31.9 Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 120 38.994801 31.6 Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 121 39.583333 32.4 Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 122 39.688042   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 123 39.514731   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 124 39.514731   NA Europe &amp; Central Asia           Paris</span></span>
+<span><span class="co">#&gt; 125        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 126        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 127        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 128        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 129        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 130        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 131        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 132        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 133        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 134        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 135        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 136        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 137        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 138        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 139        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 140        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 141        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 142        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 143        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 144        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 145        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 146        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 147        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 148        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 149        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 150        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 151        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 152        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 153        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 154        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 155        NA   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 156        NA 29.4 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 157        NA 29.2 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 158        NA 28.7 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 159        NA 29.2 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 160        NA 29.0 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 161        NA 28.4 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 162 26.190476 28.3 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 163 26.190476 28.3 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 164 30.941704 29.1 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 165 30.941704 28.9 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 166 31.081081 30.1 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 167 32.172471 29.9 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 168 32.172471 30.1 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 169 32.750000 30.3 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 170 31.758958 31.8 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 171 31.596091 31.2 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 172 31.647635 31.4 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 173 32.189542 30.9 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 174 32.797428 30.5 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 175 32.797428 30.3 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 176 32.903226 30.8 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 177 32.903226 31.1 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 178 36.450079 31.5 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 179 36.450079 30.9 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 180 36.450079 31.6 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 181 36.450079 31.6 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 182 30.747532 31.2 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 183 30.747532 31.7 Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 184 30.888575   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 185 31.170663   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 186 34.918478   NA Europe &amp; Central Asia          Berlin</span></span>
+<span><span class="co">#&gt; 187        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 188        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 189        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 190        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 191        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 192        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 193        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 194        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 195        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 196        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 197        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 198        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 199        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 200        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 201        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 202        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 203        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 204        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 205        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 206        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 207        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 208        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 209        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 210        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 211        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 212        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 213        NA 32.5 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 214        NA 34.5 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 215        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 216        NA 32.6 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 217        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 218        NA 31.5 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 219        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 220        NA 35.5 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 221        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 222        NA 35.2 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 223        NA   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 224 11.111111   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 225 11.111111 36.7 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 226 11.111111   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 227 11.111111 35.3 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 228  9.841270   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 229  9.841270   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 230 11.488673 34.9 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 231 11.525974 34.3 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 232 11.525974 33.8 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 233 17.301587 33.7 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 234 17.301587 32.9 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 235 21.269841 33.8 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 236 21.269841 33.8 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 237 21.269841 34.7 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 238 21.587302 35.1 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 239 21.428571 35.2 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 240 31.428571 34.9 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 241 31.428571 34.7 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 242 30.952381 35.4 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 243 30.952381 35.2 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 244 30.952381 35.9 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 245 35.714286 35.2 Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 246 35.714286   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 247 35.714286   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 248 35.714286   NA Europe &amp; Central Asia            Rome</span></span>
+<span><span class="co">#&gt; 249        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 250        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 251        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 252        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 253        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 254        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 255        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 256        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 257        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 258        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 259        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 260        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 261        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 262        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 263        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 264        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 265        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 266        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 267        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 268        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 269        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 270        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 271        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 272        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 273        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 274        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 275        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 276        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 277        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 278        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 279        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 280        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 281        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 282        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 283        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 284        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 285        NA   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 286  4.600000   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 287  4.600000   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 288  4.600000   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 289  7.291667   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 290  7.291667   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 291  7.291667   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 292  7.083333   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 293  7.083333   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 294  8.958333   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 295  9.375000   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 296  9.375000   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 297  9.375000 34.8   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 298 11.250000   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 299 11.250000 32.1   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 300 10.833333   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 301  7.916667   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 302  8.125000 32.9   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 303  8.125000   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 304  9.473684   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 305  9.473684   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 306 10.107527   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 307 10.107527   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 308 10.107527   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 309  9.892473   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 310  9.677419   NA   East Asia &amp; Pacific           Tokyo</span></span>
+<span><span class="co">#&gt; 311        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 312        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 313        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 314        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 315        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 316        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 317        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 318        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 319        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 320        NA 33.7 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 321        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 322        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 323        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 324        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 325        NA 30.0 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 326        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 327        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 328        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 329        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 330        NA 28.4 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 331        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 332        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 333        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 334        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 335        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 336        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 337        NA 31.9 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 338        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 339        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 340        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 341        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 342        NA 35.9 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 343        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 344        NA   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 345        NA 36.0 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 346        NA 35.5 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 347        NA 35.3 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 348 18.209408 35.7 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 349 18.209408 36.6 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 350 18.361153 36.8 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 351 18.361153 39.6 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 352 17.905918 37.9 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 353 17.905918 35.7 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 354 17.905918 35.5 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 355 18.057663 36.0 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 356 19.659443 34.3 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 357 19.659443 34.6 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 358 19.504644 35.7 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 359 19.504644 34.1 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 360 19.504644 34.3 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 361 22.000000 34.4 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 362 22.307692 33.2 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 363 22.461538 32.3 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 364 22.461538 33.2 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 365 22.615385 34.0 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 366 29.384615 33.2 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 367 29.583975 34.8 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 368 32.000000 35.1 Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 369 32.153846   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 370 32.000000   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 371 33.846154   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 372 34.259259   NA Europe &amp; Central Asia          London</span></span>
+<span><span class="co">#&gt; 373        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 374        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 375        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 376        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 377        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 378        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 379        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 380        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 381        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 382        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 383        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 384        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 385        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 386        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 387        NA 35.3         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 388        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 389        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 390        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 391        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 392        NA 34.5         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 393        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 394        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 395        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 396        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 397        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 398        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 399        NA 37.4         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 400        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 401        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 402        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 403        NA   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 404        NA 38.0         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 405        NA 38.4         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 406        NA 40.4         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 407        NA 40.0         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 408        NA 39.9         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 409        NA 40.3         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 410 11.724138 40.5         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 411 11.724138 40.0         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 412 13.333333 40.0         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 413        NA 40.1         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 414 14.022989 40.6         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 415 13.793103 40.4         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 416 14.252874 40.8         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 417 14.942529 40.3         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 418 15.172414 41.0         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 419 16.321839 41.4         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 420 16.781609 40.8         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 421 17.011494 40.8         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 422 16.781609 40.6         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 423 16.781609 40.0         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 424 16.820276 40.9         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 425 17.972350 40.9         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 426 17.824074 40.7         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 427 19.310345 41.5         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 428 19.354839 41.2         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 429 19.168591 41.1         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 430 19.354839 41.2         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 431 23.502304 41.4         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 432 23.433875 41.5         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 433 27.464789   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt; 434 27.649770   NA         North America Washington D.C.</span></span>
+<span><span class="co">#&gt;     longitude latitude      income        lending</span></span>
+<span><span class="co">#&gt; 1    -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 2    -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 3    -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 4    -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 5    -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 6    -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 7    -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 8    -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 9    -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 10   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 11   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 12   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 13   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 14   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 15   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 16   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 17   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 18   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 19   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 20   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 21   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 22   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 23   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 24   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 25   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 26   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 27   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 28   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 29   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 30   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 31   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 32   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 33   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 34   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 35   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 36   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 37   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 38   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 39   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 40   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 41   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 42   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 43   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 44   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 45   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 46   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 47   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 48   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 49   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 50   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 51   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 52   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 53   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 54   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 55   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 56   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 57   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 58   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 59   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 60   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 61   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 62   -75.6919  45.4215 High income Not classified</span></span>
+<span><span class="co">#&gt; 63    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 64    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 65    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 66    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 67    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 68    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 69    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 70    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 71    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 72    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 73    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 74    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 75    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 76    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 77    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 78    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 79    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 80    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 81    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 82    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 83    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 84    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 85    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 86    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 87    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 88    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 89    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 90    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 91    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 92    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 93    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 94    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 95    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 96    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 97    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 98    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 99    2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 100   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 101   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 102   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 103   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 104   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 105   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 106   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 107   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 108   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 109   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 110   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 111   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 112   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 113   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 114   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 115   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 116   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 117   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 118   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 119   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 120   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 121   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 122   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 123   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 124   2.35097  48.8566 High income Not classified</span></span>
+<span><span class="co">#&gt; 125   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 126   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 127   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 128   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 129   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 130   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 131   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 132   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 133   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 134   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 135   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 136   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 137   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 138   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 139   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 140   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 141   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 142   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 143   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 144   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 145   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 146   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 147   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 148   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 149   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 150   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 151   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 152   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 153   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 154   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 155   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 156   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 157   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 158   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 159   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 160   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 161   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 162   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 163   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 164   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 165   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 166   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 167   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 168   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 169   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 170   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 171   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 172   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 173   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 174   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 175   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 176   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 177   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 178   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 179   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 180   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 181   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 182   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 183   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 184   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 185   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 186   13.4115  52.5235 High income Not classified</span></span>
+<span><span class="co">#&gt; 187   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 188   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 189   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 190   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 191   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 192   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 193   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 194   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 195   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 196   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 197   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 198   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 199   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 200   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 201   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 202   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 203   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 204   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 205   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 206   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 207   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 208   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 209   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 210   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 211   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 212   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 213   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 214   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 215   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 216   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 217   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 218   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 219   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 220   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 221   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 222   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 223   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 224   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 225   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 226   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 227   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 228   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 229   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 230   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 231   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 232   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 233   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 234   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 235   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 236   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 237   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 238   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 239   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 240   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 241   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 242   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 243   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 244   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 245   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 246   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 247   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 248   12.4823  41.8955 High income Not classified</span></span>
+<span><span class="co">#&gt; 249    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 250    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 251    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 252    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 253    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 254    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 255    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 256    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 257    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 258    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 259    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 260    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 261    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 262    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 263    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 264    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 265    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 266    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 267    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 268    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 269    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 270    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 271    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 272    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 273    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 274    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 275    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 276    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 277    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 278    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 279    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 280    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 281    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 282    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 283    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 284    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 285    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 286    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 287    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 288    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 289    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 290    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 291    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 292    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 293    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 294    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 295    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 296    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 297    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 298    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 299    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 300    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 301    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 302    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 303    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 304    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 305    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 306    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 307    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 308    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 309    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 310    139.77    35.67 High income Not classified</span></span>
+<span><span class="co">#&gt; 311 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 312 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 313 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 314 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 315 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 316 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 317 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 318 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 319 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 320 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 321 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 322 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 323 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 324 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 325 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 326 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 327 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 328 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 329 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 330 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 331 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 332 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 333 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 334 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 335 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 336 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 337 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 338 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 339 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 340 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 341 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 342 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 343 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 344 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 345 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 346 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 347 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 348 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 349 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 350 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 351 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 352 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 353 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 354 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 355 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 356 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 357 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 358 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 359 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 360 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 361 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 362 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 363 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 364 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 365 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 366 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 367 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 368 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 369 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 370 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 371 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 372 -0.126236  51.5002 High income Not classified</span></span>
+<span><span class="co">#&gt; 373   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 374   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 375   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 376   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 377   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 378   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 379   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 380   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 381   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 382   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 383   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 384   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 385   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 386   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 387   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 388   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 389   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 390   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 391   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 392   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 393   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 394   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 395   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 396   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 397   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 398   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 399   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 400   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 401   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 402   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 403   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 404   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 405   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 406   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 407   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 408   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 409   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 410   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 411   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 412   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 413   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 414   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 415   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 416   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 417   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 418   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 419   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 420   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 421   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 422   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 423   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 424   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 425   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 426   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 427   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 428   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 429   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 430   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 431   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 432   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 433   -77.032  38.8895 High income Not classified</span></span>
+<span><span class="co">#&gt; 434   -77.032  38.8895 High income Not classified</span></span></code></pre></div>
+</div>
+</div>
+<div id="world-inequility-report---wir2022-1" class="section level2" number="30.2">
+<h2>
+<span class="header-section-number">30.2</span> World Inequility Report - WIR2022<a class="anchor" aria-label="anchor" href="#world-inequility-report---wir2022-1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>World Inequality Report: <a href="https://wir2022.wid.world/" class="uri">https://wir2022.wid.world/</a>
+</li>
+<li>Executive Summary: <a href="https://wir2022.wid.world/executive-summary/" class="uri">https://wir2022.wid.world/executive-summary/</a>
+</li>
+<li>Methodology: <a href="https://wir2022.wid.world/methodology/" class="uri">https://wir2022.wid.world/methodology/</a>
+</li>
+<li>URL of Executive Summary Data: <a href="https://wir2022.wid.world/www-site/uploads/2022/03/WIR2022TablesFigures-Summary.xlsx" class="uri">https://wir2022.wid.world/www-site/uploads/2022/03/WIR2022TablesFigures-Summary.xlsx</a>
+</li>
+</ul>
+<p>Please add <code>mode="wb"</code> (web binary). This should work better.</p>
+<div class="sourceCode" id="cb483"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">url_summary</span> <span class="op">&lt;-</span> <span class="st">"https://wir2022.wid.world/www-site/uploads/2022/03/WIR2022TablesFigures-Summary.xlsx"</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span><span class="op">(</span>url <span class="op">=</span> <span class="va">url_summary</span>, </span>
+<span>              destfile <span class="op">=</span> <span class="st">"./data/WIR2022s.xlsx"</span>, </span>
+<span>              mode <span class="op">=</span> <span class="st">"wb"</span><span class="op">)</span> </span></code></pre></div>
+<p>If you get an error, download the file directory from the methodology site into your computer, then open it with Excel and save it in the data folder of your R Studio project. Then R studio can recognize it easily as an Excel data.</p>
+<p>Generally, a text file such as a CSV file is easy to import, but a binary file is difficult to handle. It is because unless R can recognize its file type, for example, Excel or so, R cannot import the data.</p>
+<div class="sourceCode" id="cb484"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://readxl.tidyverse.org/reference/excel_sheets.html">excel_sheets</a></span><span class="op">(</span><span class="st">"./data/WIR2022s.xlsx"</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "Index"     "F1"        "F2"        "F3"       </span></span>
+<span><span class="co">#&gt;  [5] "F4"        "F5."       "F6"        "F7"       </span></span>
+<span><span class="co">#&gt;  [9] "F8"        "F9"        "F10"       "F11"      </span></span>
+<span><span class="co">#&gt; [13] "F12"       "F13"       "F14"       "F15"      </span></span>
+<span><span class="co">#&gt; [17] "T1"        "data-F1"   "data-F2"   "data-F3"  </span></span>
+<span><span class="co">#&gt; [21] "data-F4"   "data-F5"   "data-F6"   "data-F7"  </span></span>
+<span><span class="co">#&gt; [25] "data-F8"   "data-F9"   "data-F10"  "data-F11" </span></span>
+<span><span class="co">#&gt; [29] "data-F12"  "data-F13." "data-F14." "data-F15"</span></span></code></pre></div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="a5resp.html"><span class="header-section-number">29</span> Responses to Assignment Five</a></div>
+<div class="next"><a href="general-comments-3.html"><span class="header-section-number">31</span> General Comments</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#set-up-4"><span class="header-section-number">30</span> Set up</a></li>
+<li>
+<a class="nav-link" href="#world-development-indicator---wdi-1"><span class="header-section-number">30.1</span> World Development Indicator - WDI</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#creating-a-vector-with-iso2-codes"><span class="header-section-number">30.1.1</span> Creating a vector with iso2 codes</a></li></ul>
+</li>
+<li><a class="nav-link" href="#world-inequility-report---wir2022-1"><span class="header-section-number">30.2</span> World Inequility Report - WIR2022</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/15-a5resp.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/15-a5resp.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>A Minimal Book Example</strong>" was written by John Doe. It was last built on 2023-02-07.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

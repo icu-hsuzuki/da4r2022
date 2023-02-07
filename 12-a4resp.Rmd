@@ -37,7 +37,7 @@ library(WDI)
 
 The following is useful when you use WDI.
 
-```{r cache = TRUE, eval = FALSE}
+```{r cache=TRUE, eval = FALSE}
 wdi_cache <- WDIcache()
 ```
 
@@ -66,7 +66,7 @@ glimpse(wdi_cache)
 
 Please add `mode="wb"` (web binary). This should work better. 
 
-```{r summary-data, cash = TRUE, eval = FALSE}
+```{r summary-data, cache=TRUE, eval = FALSE}
 url_summary <- "https://wir2022.wid.world/www-site/uploads/2022/03/WIR2022TablesFigures-Summary.xlsx"
 download.file(url = url_summary, 
               destfile = "./data/WIR2022s.xlsx", 
@@ -173,7 +173,7 @@ I added explanations to each chart.
 
 There is a step-by-step explanation of how to recreate a chart.
 
-```{r data-f1, cash = TRUE, message = FALSE}
+```{r data-f1, cache=TRUE, message = FALSE}
 df_f8 <- read_excel("./data/WIR2022s.xlsx", sheet = "data-F8")
 df_f8
 ```
@@ -225,9 +225,18 @@ The strange looking line graph is called a sawtooth shape, and happens very ofte
 
 * Step 1. Import the data.
 
-```{r cash=TRUE}
+```{r eval=FALSE}
 df_fdi <- WDI(country = "all", indicator = c(fdi = "BX.KLT.DINV.CD.WD"), start =1970 , extra = TRUE, cache = NULL)
 df_fdi
+```
+
+```{r eval=FALSE, echo=FALSE}
+df_fdi <- WDI(country = "all", indicator = c(fdi = "BX.KLT.DINV.CD.WD"), start =1970 , extra = TRUE, cache = NULL)
+write_csv(df_fdi, "./data/fdi.csv")
+```
+
+```{r eval=TRUE, echo=FALSE}
+df_fdi <- read_csv("./data/fdi.csv")
 ```
 
 * Step 2. Check the list of `income` names.
@@ -449,11 +458,15 @@ Please try as various charts as possible. You can learn only by experience or fr
 
 ### Treat `year` as a group?
 
-```{r cash=TRUE}
+```{r eval=FALSE}
 df_wdi <- WDI(
   country = "all", 
   indicator = c(lifeExp = "SP.DYN.LE00.IN"), start = 1990, extra = TRUE, cache =  wdi_cache)
 df_wdi
+```
+
+```{r echo=FALSE, eval=TRUE}
+df_wdi <- read_csv("./data/wdi.csv")
 ```
 
 * Something is wrong in the next chart. Can you tell what the problem is?
@@ -465,6 +478,7 @@ df_wdi %>%
   ggplot(aes(x=year)) +
   geom_boxplot(aes(y=lifeExp, fill=country))
 ```
+
 I erased the second line: `filter(year %in% c("1988", "1998", "2008", "2018"))` but the result is very similar. 
 
 
@@ -524,16 +538,34 @@ You can copy the link (url) by right click or ctrl+click.
 url_un_edu <- "https://data.un.org/_Docs/SYB/CSV/SYB65_309_202209_Education.csv"
 ```
 
-```{r}
+```{r eval=FALSE}
 un_edu <- read_csv(url_un_edu)
-un_edu
+un_edu %>% slice(1:10)
+```
+```{r echo=FALSE, eval=FALSE}
+un_edu <- read_csv(url_un_edu)
+write_csv(un_edu, "./data/un_edu0.csv")
 ```
 
-Let is skip the first row by adding 1skip = 11.
+```{r echo=FALSE, eval=FALSE}
+un_edu <- read_csv("./data/un_edu0.csv")
+un_edu %>% slice(1:10)
+```
 
-```{r}
+Let is skip the first row by adding `skip = 1`.
+
+```{r eval=FALSE}
 un_edu <- read_csv(url_un_edu, skip = 1)
-un_edu
+un_edu %>% slice(1:10)
+```
+```{r echo=FALSE, eval=FALSE}
+un_edu <- read_csv(url_un_edu, skip = 1)
+write_csv(un_edu, "./data/un_edu.csv")
+```
+
+```{r eval=TRUE, echo=FALSE}
+un_edu <- read_csv("./data/un_edu.csv")
+un_edu %>% slice(1:10)
 ```
 
 It is a very large data, and we need to check the values.
@@ -616,10 +648,21 @@ un_edu_area %>%
 Data structure is similar to the previous one. So use `skip=1`, and check the variable s briefly.
 
 
-```{r}
+```{r eval=FALSE}
 url_un_pop = "https://data.un.org/_Docs/SYB/CSV/SYB65_246_202209_Population%20Growth,%20Fertility%20and%20Mortality%20Indicators.csv"
 df_un_pop <- read.csv(url_un_pop, skip = 1)
 df_un_pop
+```
+
+```{r eval=FALSE, echo=FALSE}
+url_un_pop = "https://data.un.org/_Docs/SYB/CSV/SYB65_246_202209_Population%20Growth,%20Fertility%20and%20Mortality%20Indicators.csv"
+df_un_pop <- read.csv(url_un_pop, skip = 1)
+write_csv(df_un_pop, "./data/un_pop.csv")
+```
+
+```{r eval=TRUE, echo=FALSE}
+df_un_pop <- read_csv("./data/un_pop.csv")
+df_un_pop %>% slice(1:10)
 ```
 
 ```{r}
@@ -694,10 +737,22 @@ I have not studied fully, but you can download the data by a package called `wir
 * wealg: net public wealth to net national income ratio
 * wealp: net private wealth to net national income ratio
 
-```{r}
+```{r eval=FALSE}
 library(wid)
 wwealg <- download_wid(indicators = "wwealg", areas = "all", years = "all")
 wwealp <- download_wid(indicators = "wwealp", areas = "all", years = "all")
+```
+
+```{r eval=FALSE, echo=FALSE}
+library(wid)
+wwealg <- download_wid(indicators = "wwealg", areas = "all", years = "all")
+wwealp <- download_wid(indicators = "wwealp", areas = "all", years = "all")
+write_csv(wwealg, "./data/wwealg.csv")
+write_csv(wwealp, "./data/wwealp.csv")
+```
+```{r eval=TRUE, echo=FALSE}
+wwealg <-read_csv("./data/wwealg.csv")
+wwealp <-read_csv("./data/wwealp.csv")
 ```
 
 ```{r}

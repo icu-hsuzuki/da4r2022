@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 27 Model | A Minimal Book Example</title>
+<meta name="author" content="John Doe">
+<meta name="description" content="Setup library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.5.0...">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
+<meta property="og:title" content="Chapter 27 Model | A Minimal Book Example">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Setup library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.5.0...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 27 Model | A Minimal Book Example">
+<meta name="twitter:description" content="Setup library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.5.0...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">A Minimal Book Example</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li><a class="" href="intro.html"><span class="header-section-number">2</span> Intdoduction</a></li>
+<li><a class="" href="r-with-r-studio.html"><span class="header-section-number">3</span> R with R Studio</a></li>
+<li><a class="" href="tidyverse.html"><span class="header-section-number">4</span> tidyverse Packages</a></li>
+<li><a class="" href="rmarkdown.html"><span class="header-section-number">5</span> R Markdown</a></li>
+<li><a class="" href="dplyr.html"><span class="header-section-number">6</span> Data Transforamtion with dplyr</a></li>
+<li><a class="" href="responses-to-assignment-two.html"><span class="header-section-number">7</span> Responses to Assignment Two</a></li>
+<li><a class="" href="set-up-1.html"><span class="header-section-number">8</span> Set up</a></li>
+<li><a class="" href="general-comments.html"><span class="header-section-number">9</span> General Comments</a></li>
+<li><a class="" href="responses-to-questions.html"><span class="header-section-number">10</span> Responses to Questions</a></li>
+<li><a class="" href="appendix-change-colors-shapes-linetypes-etc.-manually.html"><span class="header-section-number">11</span> Appendix: Change colors, shapes, linetypes, etc. manually</a></li>
+<li><a class="" href="wdi.html"><span class="header-section-number">12</span> Importing Public Data, WDI</a></li>
+<li><a class="" href="ggokit2.html"><span class="header-section-number">13</span> Data Visualization and `ggplot2’</a></li>
+<li><a class="" href="responses-to-assignment-three.html"><span class="header-section-number">14</span> Responses to Assignment Three</a></li>
+<li><a class="" href="set-up-2.html"><span class="header-section-number">15</span> Set up</a></li>
+<li><a class="" href="general-comments-1.html"><span class="header-section-number">16</span> General Comments</a></li>
+<li><a class="" href="world-development-indicators-wdi.html"><span class="header-section-number">17</span> World Development Indicators (WDI)</a></li>
+<li><a class="" href="responses-to-questions-1.html"><span class="header-section-number">18</span> Responses to Questions</a></li>
+<li><a class="" href="regression-lines-topic-of-eda5.html"><span class="header-section-number">19</span> Regression Lines; Topic of EDA5</a></li>
+<li><a class="" href="appendix-a-secondary-axis.html"><span class="header-section-number">20</span> Appendix: A secondary axis</a></li>
+<li><a class="" href="tidy.html"><span class="header-section-number">21</span> Tidy Data</a></li>
+<li><a class="" href="workflow.html"><span class="header-section-number">22</span> EDA Workflow</a></li>
+<li><a class="" href="assignment-four-the-week-five-assignment.html">Assignment Four: The Week Five Assignment</a></li>
+<li><a class="" href="set-up-3.html"><span class="header-section-number">23</span> Set up</a></li>
+<li><a class="" href="general-comments-2.html"><span class="header-section-number">24</span> General Comments</a></li>
+<li><a class="" href="your-work.html"><span class="header-section-number">25</span> Your Work</a></li>
+<li><a class="" href="responses-to-questions-2.html"><span class="header-section-number">26</span> Responses to Questions</a></li>
+<li><a class="active" href="model.html"><span class="header-section-number">27</span> Model</a></li>
+<li><a class="" href="roudups.html"><span class="header-section-number">28</span> Roudups</a></li>
+<li><a class="" href="a5resp.html"><span class="header-section-number">29</span> Responses to Assignment Five</a></li>
+<li><a class="" href="set-up-4.html"><span class="header-section-number">30</span> Set up</a></li>
+<li><a class="" href="general-comments-3.html"><span class="header-section-number">31</span> General Comments</a></li>
+<li><a class="" href="your-work-1.html"><span class="header-section-number">32</span> Your Work</a></li>
+<li><a class="" href="responses-to-questions-3.html"><span class="header-section-number">33</span> Responses to Questions</a></li>
+<li><a class="" href="my-comments-after-review.html"><span class="header-section-number">34</span> My Comments after Review</a></li>
+<li><a class="" href="eda.html"><span class="header-section-number">35</span> Exploartory Data analysis</a></li>
+<li><a class="" href="importing.html"><span class="header-section-number">36</span> Impoarting Data</a></li>
+<li><a class="" href="transforming.html"><span class="header-section-number">37</span> Transforming Data</a></li>
+<li><a class="" href="tidying.html"><span class="header-section-number">38</span> Tidying Data</a></li>
+<li><a class="" href="visualizing.html"><span class="header-section-number">39</span> Visualizing Data</a></li>
+<li><a class="" href="modeling.html"><span class="header-section-number">40</span> Modeling Data</a></li>
+<li><a class="" href="communicating-data-communicating.html"><span class="header-section-number">41</span> Communicating Data {communicating}</a></li>
+<li><a class="" href="worldbank.html"><span class="header-section-number">42</span> World Bank</a></li>
+<li><a class="" href="owid.html"><span class="header-section-number">43</span> Our World in Data</a></li>
+<li><a class="" href="oecd.html"><span class="header-section-number">44</span> OECD</a></li>
+<li><a class="" href="undata.html"><span class="header-section-number">45</span> UN Data</a></li>
+<li><a class="" href="wir.html"><span class="header-section-number">46</span> World Inequality Report</a></li>
+<li><a class="" href="histdata.html"><span class="header-section-number">47</span> HistData</a></li>
+<li><a class="" href="covid19.html"><span class="header-section-number">48</span> Covid 19</a></li>
+<li><a class="" href="bookdown.html"><span class="header-section-number">49</span> Bookdown</a></li>
+<li><a class="" href="template.html"><span class="header-section-number">50</span> Template</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="model" class="section level1" number="27">
+<h1>
+<span class="header-section-number">27</span> Model<a class="anchor" aria-label="anchor" href="#model"><i class="fas fa-link"></i></a>
+</h1>
+<div id="setup-2" class="section level3 unnumbered">
+<h3>Setup<a class="anchor" aria-label="anchor" href="#setup-2"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb414"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
+<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 </span></span>
+<span><span class="co">#&gt; ✔ tibble  3.1.8      ✔ dplyr   1.0.10</span></span>
+<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.5.0 </span></span>
+<span><span class="co">#&gt; ✔ readr   2.1.3      ✔ forcats 0.5.2 </span></span>
+<span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
+<span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
+<span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/WDI/">WDI</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://broom.tidymodels.org/">broom</a></span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li>broom: <a href="https://cran.r-project.org/web/packages/broom/index.html" class="uri">https://cran.r-project.org/web/packages/broom/index.html</a>
+</li>
+<li>Introduction to broom: <a href="https://cran.r-project.org/web/packages/broom/vignettes/broom.html" class="uri">https://cran.r-project.org/web/packages/broom/vignettes/broom.html</a>
+</li>
+</ul>
+</div>
+<div id="what-is-modeling-in-eda" class="section level2" number="27.1">
+<h2>
+<span class="header-section-number">27.1</span> What is modeling in EDA<a class="anchor" aria-label="anchor" href="#what-is-modeling-in-eda"><i class="fas fa-link"></i></a>
+</h2>
+<p>Model is a simple summary of data</p>
+<p>Goal: A simple low-dimensional summary of a dataset. Ideally, the model will capture true “signals” (i.e. patterns generated by the phenomenon of interest), and ignore “noise” (i.e. random variation that you’re not interested in).</p>
+<div class="figure">
+<img src="data/data-science.png" alt=""><p class="caption">image</p>
+</div>
+<hr>
+<div class="sourceCode" id="cb415"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Species</span> <span class="op">!=</span> <span class="st">"setosa"</span><span class="op">)</span></span></code></pre></div>
+<hr>
+<div class="sourceCode" id="cb416"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df0</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Petal.Width</span>, <span class="va">Petal.Length</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="13-model_files/figure-html/unnamed-chunk-3-1.png" width="672"></div>
+<hr>
+<div class="sourceCode" id="cb417"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df0</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Petal.Width</span>, <span class="va">Petal.Length</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method<span class="op">=</span><span class="st">"lm"</span>,formula<span class="op">=</span><span class="va">y</span><span class="op">~</span><span class="va">x</span>, se<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="13-model_files/figure-html/unnamed-chunk-4-1.png" width="672"></div>
+<hr>
+<div class="sourceCode" id="cb418"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df0</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Sepal.Width</span>, <span class="va">Sepal.Length</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="13-model_files/figure-html/unnamed-chunk-5-1.png" width="672"></div>
+<hr>
+<div class="sourceCode" id="cb419"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df0</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Sepal.Width</span>, <span class="va">Sepal.Length</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method<span class="op">=</span><span class="st">"lm"</span>,formula<span class="op">=</span><span class="va">y</span><span class="op">~</span><span class="va">x</span>, se<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="13-model_files/figure-html/unnamed-chunk-6-1.png" width="672"></div>
+<hr>
+</div>
+<div id="linear-model-petal.length-petal.width" class="section level2" number="27.2">
+<h2>
+<span class="header-section-number">27.2</span> Linear Model: Petal.Length ~ Petal.Width<a class="anchor" aria-label="anchor" href="#linear-model-petal.length-petal.width"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb420"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df0</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Petal.Length</span> <span class="op">~</span> <span class="va">Petal.Width</span>, <span class="va">.</span><span class="op">)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Call:</span></span>
+<span><span class="co">#&gt; lm(formula = Petal.Length ~ Petal.Width, data = .)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Coefficients:</span></span>
+<span><span class="co">#&gt; (Intercept)  Petal.Width  </span></span>
+<span><span class="co">#&gt;       2.224        1.600</span></span></code></pre></div>
+<hr>
+</div>
+<div id="formula-textpetal.length-2.224-1.600cdot-textpetal.width" class="section level2" number="27.3">
+<h2>
+<span class="header-section-number">27.3</span> Formula: <span class="math inline">\(\text{Petal.Length} = 2.224 + 1.600\cdot \text{Petal.Width}\)</span><a class="anchor" aria-label="anchor" href="#formula-textpetal.length-2.224-1.600cdot-textpetal.width"><i class="fas fa-link"></i></a>
+</h2>
+<div class="inline-figure"><img src="13-model_files/figure-html/unnamed-chunk-8-1.png" width="672"></div>
+<hr>
+</div>
+<div id="linear-model-sepal.length-sepal.width" class="section level2" number="27.4">
+<h2>
+<span class="header-section-number">27.4</span> Linear Model: Sepal.Length ~ Sepal.Width<a class="anchor" aria-label="anchor" href="#linear-model-sepal.length-sepal.width"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb421"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df0</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Sepal.Length</span> <span class="op">~</span> <span class="va">Sepal.Width</span>, <span class="va">.</span><span class="op">)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Call:</span></span>
+<span><span class="co">#&gt; lm(formula = Sepal.Length ~ Sepal.Width, data = .)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Coefficients:</span></span>
+<span><span class="co">#&gt; (Intercept)  Sepal.Width  </span></span>
+<span><span class="co">#&gt;       3.093        1.103</span></span></code></pre></div>
+<hr>
+</div>
+<div id="formula-textsepal.length-3.093-1.103cdot-textsepal.width" class="section level2" number="27.5">
+<h2>
+<span class="header-section-number">27.5</span> Formula: <span class="math inline">\(\text{Sepal.Length} = 3.093 + 1.103\cdot \text{Sepal.Width}\)</span><a class="anchor" aria-label="anchor" href="#formula-textsepal.length-3.093-1.103cdot-textsepal.width"><i class="fas fa-link"></i></a>
+</h2>
+<div class="inline-figure"><img src="13-model_files/figure-html/unnamed-chunk-10-1.png" width="672"></div>
+<hr>
+</div>
+<div id="petal.length-petal.width-r-squared-0.6779---68" class="section level2" number="27.6">
+<h2>
+<span class="header-section-number">27.6</span> Petal.Length ~ Petal.Width: R squared = 0.6779 - 68%<a class="anchor" aria-label="anchor" href="#petal.length-petal.width-r-squared-0.6779---68"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb422"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df0</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Petal.Length</span> <span class="op">~</span> <span class="va">Petal.Width</span>, <span class="va">.</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Call:</span></span>
+<span><span class="co">#&gt; lm(formula = Petal.Length ~ Petal.Width, data = .)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Residuals:</span></span>
+<span><span class="co">#&gt;     Min      1Q  Median      3Q     Max </span></span>
+<span><span class="co">#&gt; -0.9842 -0.3043 -0.1043  0.2407  1.2755 </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Coefficients:</span></span>
+<span><span class="co">#&gt;             Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
+<span><span class="co">#&gt; (Intercept)   2.2240     0.1926   11.55   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; Petal.Width   1.6003     0.1114   14.36   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; ---</span></span>
+<span><span class="co">#&gt; Signif. codes:  </span></span>
+<span><span class="co">#&gt; 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Residual standard error: 0.4709 on 98 degrees of freedom</span></span>
+<span><span class="co">#&gt; Multiple R-squared:  0.6779, Adjusted R-squared:  0.6746 </span></span>
+<span><span class="co">#&gt; F-statistic: 206.3 on 1 and 98 DF,  p-value: &lt; 2.2e-16</span></span></code></pre></div>
+<hr>
+</div>
+<div id="sepal.length-sepal.width-r-squared-0.3068---31" class="section level2" number="27.7">
+<h2>
+<span class="header-section-number">27.7</span> Sepal.Length ~ Sepal.Width: R squared = 0.3068 - 31%<a class="anchor" aria-label="anchor" href="#sepal.length-sepal.width-r-squared-0.3068---31"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb423"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df0</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Sepal.Length</span> <span class="op">~</span> <span class="va">Sepal.Width</span>, <span class="va">.</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Call:</span></span>
+<span><span class="co">#&gt; lm(formula = Sepal.Length ~ Sepal.Width, data = .)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Residuals:</span></span>
+<span><span class="co">#&gt;     Min      1Q  Median      3Q     Max </span></span>
+<span><span class="co">#&gt; -1.0032 -0.3877 -0.0774  0.3200  1.7381 </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Coefficients:</span></span>
+<span><span class="co">#&gt;             Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
+<span><span class="co">#&gt; (Intercept)   3.0934     0.4844   6.387 5.70e-09 ***</span></span>
+<span><span class="co">#&gt; Sepal.Width   1.1033     0.1675   6.585 2.27e-09 ***</span></span>
+<span><span class="co">#&gt; ---</span></span>
+<span><span class="co">#&gt; Signif. codes:  </span></span>
+<span><span class="co">#&gt; 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Residual standard error: 0.5547 on 98 degrees of freedom</span></span>
+<span><span class="co">#&gt; Multiple R-squared:  0.3068, Adjusted R-squared:  0.2997 </span></span>
+<span><span class="co">#&gt; F-statistic: 43.36 on 1 and 98 DF,  p-value: 2.27e-09</span></span></code></pre></div>
+<hr>
+</div>
+<div id="linear-model-basics-y-x" class="section level2" number="27.8">
+<h2>
+<span class="header-section-number">27.8</span> Linear Model Basics: y ~ x<a class="anchor" aria-label="anchor" href="#linear-model-basics-y-x"><i class="fas fa-link"></i></a>
+</h2>
+<pre><code>lm(y~x, data)</code></pre>
+<pre><code>data %&gt;% lm(y~x, .)</code></pre>
+<p>y-intercept, and slope: rate of increase or decrease</p>
+<pre><code>summary(lm(y~x, data))</code></pre>
+<pre><code>data %&gt;% lm(y~x, .) %&gt;% summary()</code></pre>
+<p>(Multiple) R Squared: a value between 0 and 1, strength of the model</p>
+<hr>
+<div class="inline-figure"><img src="13-model_files/figure-html/unnamed-chunk-13-1.png" width="672"></div>
+<hr>
+<div class="sourceCode" id="cb428"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span><span class="op">)</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">0.5</span>,<span class="fl">2</span>, <span class="fl">1.5</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">ybar</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">df1</span><span class="op">$</span><span class="va">y</span><span class="op">)</span></span>
+<span><span class="va">mod1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">y</span><span class="op">~</span><span class="va">x</span>, <span class="va">df1</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://generics.r-lib.org/reference/augment.html">augment</a></span><span class="op">(</span><span class="va">mod1</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span>, formula <span class="op">=</span> <span class="va">y</span><span class="op">~</span><span class="va">x</span>, method <span class="op">=</span> <span class="st">"lm"</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_hline</a></span><span class="op">(</span>yintercept <span class="op">=</span> <span class="va">ybar</span>, linetype<span class="op">=</span><span class="st">"longdash"</span>, col <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">ybar</span><span class="op">)</span>, shape<span class="op">=</span><span class="fl">4</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">.fitted</span><span class="op">)</span>, shape <span class="op">=</span><span class="fl">9</span>, size<span class="op">=</span><span class="fl">2</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">ybar</span>, label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"("</span>,<span class="va">x</span>,<span class="st">","</span>,<span class="fl">1.25</span>,<span class="st">")"</span><span class="op">)</span><span class="op">)</span>, nudge_y <span class="op">=</span> <span class="op">-</span><span class="fl">0.1</span>, col <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">.fitted</span>, label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"("</span>,<span class="va">x</span>,<span class="st">","</span>,<span class="va">.fitted</span>,<span class="st">")"</span><span class="op">)</span><span class="op">)</span>, nudge_y <span class="op">=</span> <span class="op">-</span><span class="fl">0.1</span>, col <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"("</span>,<span class="va">x</span>,<span class="st">","</span>,<span class="va">y</span>,<span class="st">")"</span><span class="op">)</span><span class="op">)</span>, nudge_y <span class="op">=</span> <span class="op">-</span><span class="fl">0.1</span><span class="op">)</span> </span></code></pre></div>
+<ul>
+<li>
+<span class="math inline">\((x_1, y_1)\)</span>, <span class="math inline">\((x_2,y_2)\)</span>, <span class="math inline">\((x_3, y_3)\)</span>, <span class="math inline">\((x_4, y_4)\)</span>: Data points</li>
+<li>
+<span class="math inline">\(\bar{y}\)</span>: mean of y = <span class="math inline">\((y_1 + y_2 + y_3 + y_4)/4\)</span>.</li>
+<li>
+<span class="math inline">\(\hat{y}_i\)</span>: prediction at <span class="math inline">\(x_i\)</span>,
+<ul>
+<li>
+<span class="math inline">\((x_1, \hat{y}_1)\)</span>, <span class="math inline">\((x_2, \hat{y}_2)\)</span>, <span class="math inline">\((x_3, \hat{y}_3)\)</span>, <span class="math inline">\((x_4, \hat{y}_4)\)</span> are on the regression line.</li>
+</ul>
+</li>
+<li>
+<span class="math inline">\(y_1-\hat{y}_1\)</span>, <span class="math inline">\(y_2-\hat{y}_2\)</span>, <span class="math inline">\(y_2-\hat{y}_2\)</span>, <span class="math inline">\(y_2-\hat{y}_2\)</span> are called residues.</li>
+</ul>
+<hr>
+<div class="inline-figure"><img src="13-model_files/figure-html/unnamed-chunk-15-1.png" width="672"></div>
+<hr>
+</div>
+<div id="r-squared" class="section level2" number="27.9">
+<h2>
+<span class="header-section-number">27.9</span> R Squared<a class="anchor" aria-label="anchor" href="#r-squared"><i class="fas fa-link"></i></a>
+</h2>
+<p><span class="math display">\[SS_{tot} = (1-1.25)^2 + (0.5-1.25)^2 + (2-1.25)^2 + (1.5-1.25)^2 = 1.25\]</span>
+<span class="math display">\[SS_{res} = (1-0.8)^2 + (0.5-1.1)^2 + (2-1.4)^2 + (1.5-1.7)^2 = 0.8\]</span>
+<span class="math display">\[R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = 1- \frac{0.8}{1.25} = 0.36.\]</span></p>
+<hr>
+<div class="sourceCode" id="cb429"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">mod1</span><span class="op">)</span><span class="op">$</span><span class="va">r.squared</span></span>
+<span><span class="co">#&gt; [1] 0.36</span></span></code></pre></div>
+<div class="sourceCode" id="cb430"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mod1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/glance.html">glance</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">r.squared</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0.36</span></span></code></pre></div>
+<div class="sourceCode" id="cb431"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mod1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/glance.html">glance</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span>`R Squared` <span class="op">=</span> <span class="va">r.squared</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 1 × 1</span></span>
+<span><span class="co">#&gt;   `R Squared`</span></span>
+<span><span class="co">#&gt;         &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1        0.36</span></span></code></pre></div>
+<div class="sourceCode" id="cb432"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mod1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; List of 11</span></span>
+<span><span class="co">#&gt;  $ call         : language lm(formula = y ~ x, data = df1)</span></span>
+<span><span class="co">#&gt;  $ terms        :Classes 'terms', 'formula'  language y ~ x</span></span>
+<span><span class="co">#&gt;   .. ..- attr(*, "variables")= language list(y, x)</span></span>
+<span><span class="co">#&gt;   .. ..- attr(*, "factors")= int [1:2, 1] 0 1</span></span>
+<span><span class="co">#&gt;   .. .. ..- attr(*, "dimnames")=List of 2</span></span>
+<span><span class="co">#&gt;   .. ..- attr(*, "term.labels")= chr "x"</span></span>
+<span><span class="co">#&gt;   .. ..- attr(*, "order")= int 1</span></span>
+<span><span class="co">#&gt;   .. ..- attr(*, "intercept")= int 1</span></span>
+<span><span class="co">#&gt;   .. ..- attr(*, "response")= int 1</span></span>
+<span><span class="co">#&gt;   .. ..- attr(*, ".Environment")=&lt;environment: R_GlobalEnv&gt; </span></span>
+<span><span class="co">#&gt;   .. ..- attr(*, "predvars")= language list(y, x)</span></span>
+<span><span class="co">#&gt;   .. ..- attr(*, "dataClasses")= Named chr [1:2] "numeric" "numeric"</span></span>
+<span><span class="co">#&gt;   .. .. ..- attr(*, "names")= chr [1:2] "y" "x"</span></span>
+<span><span class="co">#&gt;  $ residuals    : Named num [1:4] 0.2 -0.6 0.6 -0.2</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "names")= chr [1:4] "1" "2" "3" "4"</span></span>
+<span><span class="co">#&gt;  $ coefficients : num [1:2, 1:4] 0.5 0.3 0.775 0.283 0.645 ...</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "dimnames")=List of 2</span></span>
+<span><span class="co">#&gt;   .. ..$ : chr [1:2] "(Intercept)" "x"</span></span>
+<span><span class="co">#&gt;   .. ..$ : chr [1:4] "Estimate" "Std. Error" "t value" "Pr(&gt;|t|)"</span></span>
+<span><span class="co">#&gt;  $ aliased      : Named logi [1:2] FALSE FALSE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "names")= chr [1:2] "(Intercept)" "x"</span></span>
+<span><span class="co">#&gt;  $ sigma        : num 0.632</span></span>
+<span><span class="co">#&gt;  $ df           : int [1:3] 2 2 2</span></span>
+<span><span class="co">#&gt;  $ r.squared    : num 0.36</span></span>
+<span><span class="co">#&gt;  $ adj.r.squared: num 0.04</span></span>
+<span><span class="co">#&gt;  $ fstatistic   : Named num [1:3] 1.12 1 2</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "names")= chr [1:3] "value" "numdf" "dendf"</span></span>
+<span><span class="co">#&gt;  $ cov.unscaled : num [1:2, 1:2] 1.5 -0.5 -0.5 0.2</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "dimnames")=List of 2</span></span>
+<span><span class="co">#&gt;   .. ..$ : chr [1:2] "(Intercept)" "x"</span></span>
+<span><span class="co">#&gt;   .. ..$ : chr [1:2] "(Intercept)" "x"</span></span>
+<span><span class="co">#&gt;  - attr(*, "class")= chr "summary.lm"</span></span></code></pre></div>
+<hr>
+</div>
+<div id="useful-mathematical-formula" class="section level2" number="27.10">
+<h2>
+<span class="header-section-number">27.10</span> Useful Mathematical Formula<a class="anchor" aria-label="anchor" href="#useful-mathematical-formula"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Let <span class="math inline">\(x = c(x_1, x_2, \ldots, x_n)\)</span> be the independent variable, i.e., Sepal.L</li>
+<li>Let <span class="math inline">\(y = c(y_1, y_2, \ldots, y_n)\)</span> be the dependent variable, i.e., Sepal.W</li>
+<li>Let <span class="math inline">\(\mbox{pred} = c(\hat{y}_1, \hat{y}_2, \ldots, \hat{y}_n)\)</span> be the predicted values by linear regression.</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+\mbox{slope of the regression line}  &amp;= \frac{cov(x,y)}{var(x)} = \frac{cor(x,y)\sqrt{var(y)}}{\sqrt{var(x)}}\\
+\mbox{total sum of squares} &amp;= SS_{tot} = \sum_{i}(y_i-mean(y))^2\\
+\mbox{residual sum of squares} &amp;= SS_{res} = \sum_{i}(y_i-\mbox{pred}_i)^2 = \sum_{i}(y_i-\hat{y}_i)^2\\
+\mbox{R squared} = R^2 &amp; = 1 - \frac{SS_{res}}{SS_{tot}} = cor(x,y)^2
+\end{aligned}
+\]</span></p>
+<hr>
+<div id="adjusted-r-squared" class="section level3" number="27.10.1">
+<h3>
+<span class="header-section-number">27.10.1</span> Adjusted R Squared<a class="anchor" aria-label="anchor" href="#adjusted-r-squared"><i class="fas fa-link"></i></a>
+</h3>
+<p><span class="math display">\[\text{Adjusted }R^2 = 1- \frac{(1-R^2)(n-1)}{n-k-1}\]</span>
+<span class="math inline">\(n\)</span>: number of observations, the number of rows</p>
+<p><span class="math inline">\(k\)</span>: number of variables used for prediction</p>
+<hr>
+<div class="sourceCode" id="cb433"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df0</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;              Sepal.Length Sepal.Width Petal.Length</span></span>
+<span><span class="co">#&gt; Sepal.Length    1.0000000   0.5538548    0.8284787</span></span>
+<span><span class="co">#&gt; Sepal.Width     0.5538548   1.0000000    0.5198023</span></span>
+<span><span class="co">#&gt; Petal.Length    0.8284787   0.5198023    1.0000000</span></span>
+<span><span class="co">#&gt; Petal.Width     0.5937094   0.5662025    0.8233476</span></span>
+<span><span class="co">#&gt;              Petal.Width</span></span>
+<span><span class="co">#&gt; Sepal.Length   0.5937094</span></span>
+<span><span class="co">#&gt; Sepal.Width    0.5662025</span></span>
+<span><span class="co">#&gt; Petal.Length   0.8233476</span></span>
+<span><span class="co">#&gt; Petal.Width    1.0000000</span></span></code></pre></div>
+<div class="sourceCode" id="cb434"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">cormat</span> <span class="op">&lt;-</span> <span class="va">df0</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">cormat</span><span class="op">*</span><span class="va">cormat</span></span>
+<span><span class="co">#&gt;              Sepal.Length Sepal.Width Petal.Length</span></span>
+<span><span class="co">#&gt; Sepal.Length    1.0000000   0.3067552    0.6863769</span></span>
+<span><span class="co">#&gt; Sepal.Width     0.3067552   1.0000000    0.2701944</span></span>
+<span><span class="co">#&gt; Petal.Length    0.6863769   0.2701944    1.0000000</span></span>
+<span><span class="co">#&gt; Petal.Width     0.3524909   0.3205853    0.6779013</span></span>
+<span><span class="co">#&gt;              Petal.Width</span></span>
+<span><span class="co">#&gt; Sepal.Length   0.3524909</span></span>
+<span><span class="co">#&gt; Sepal.Width    0.3205853</span></span>
+<span><span class="co">#&gt; Petal.Length   0.6779013</span></span>
+<span><span class="co">#&gt; Petal.Width    1.0000000</span></span></code></pre></div>
+<hr>
+<div class="sourceCode" id="cb435"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Species</span> <span class="op">==</span> <span class="st">"setosa"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="fl">5</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;              Sepal.Length Sepal.Width Petal.Length</span></span>
+<span><span class="co">#&gt; Sepal.Length    1.0000000   0.7425467    0.2671758</span></span>
+<span><span class="co">#&gt; Sepal.Width     0.7425467   1.0000000    0.1777000</span></span>
+<span><span class="co">#&gt; Petal.Length    0.2671758   0.1777000    1.0000000</span></span>
+<span><span class="co">#&gt; Petal.Width     0.2780984   0.2327520    0.3316300</span></span>
+<span><span class="co">#&gt;              Petal.Width</span></span>
+<span><span class="co">#&gt; Sepal.Length   0.2780984</span></span>
+<span><span class="co">#&gt; Sepal.Width    0.2327520</span></span>
+<span><span class="co">#&gt; Petal.Length   0.3316300</span></span>
+<span><span class="co">#&gt; Petal.Width    1.0000000</span></span></code></pre></div>
+<div class="sourceCode" id="cb436"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Species</span> <span class="op">==</span> <span class="st">"virginica"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="fl">5</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;              Sepal.Length Sepal.Width Petal.Length</span></span>
+<span><span class="co">#&gt; Sepal.Length    1.0000000   0.4572278    0.8642247</span></span>
+<span><span class="co">#&gt; Sepal.Width     0.4572278   1.0000000    0.4010446</span></span>
+<span><span class="co">#&gt; Petal.Length    0.8642247   0.4010446    1.0000000</span></span>
+<span><span class="co">#&gt; Petal.Width     0.2811077   0.5377280    0.3221082</span></span>
+<span><span class="co">#&gt;              Petal.Width</span></span>
+<span><span class="co">#&gt; Sepal.Length   0.2811077</span></span>
+<span><span class="co">#&gt; Sepal.Width    0.5377280</span></span>
+<span><span class="co">#&gt; Petal.Length   0.3221082</span></span>
+<span><span class="co">#&gt; Petal.Width    1.0000000</span></span></code></pre></div>
+<div class="sourceCode" id="cb437"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Species</span> <span class="op">==</span> <span class="st">"versicolor"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="fl">5</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;              Sepal.Length Sepal.Width Petal.Length</span></span>
+<span><span class="co">#&gt; Sepal.Length    1.0000000   0.5259107    0.7540490</span></span>
+<span><span class="co">#&gt; Sepal.Width     0.5259107   1.0000000    0.5605221</span></span>
+<span><span class="co">#&gt; Petal.Length    0.7540490   0.5605221    1.0000000</span></span>
+<span><span class="co">#&gt; Petal.Width     0.5464611   0.6639987    0.7866681</span></span>
+<span><span class="co">#&gt;              Petal.Width</span></span>
+<span><span class="co">#&gt; Sepal.Length   0.5464611</span></span>
+<span><span class="co">#&gt; Sepal.Width    0.6639987</span></span>
+<span><span class="co">#&gt; Petal.Length   0.7866681</span></span>
+<span><span class="co">#&gt; Petal.Width    1.0000000</span></span></code></pre></div>
+<hr>
+<div class="sourceCode" id="cb438"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Species</span> <span class="op">==</span> <span class="st">"virginica"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Sepal.Length</span>, <span class="va">Petal.Length</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, formula <span class="op">=</span> <span class="va">y</span><span class="op">~</span><span class="va">x</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="13-model_files/figure-html/unnamed-chunk-25-1.png" width="672"></div>
+<hr>
+<div class="sourceCode" id="cb439"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Species</span> <span class="op">==</span> <span class="st">"virginica"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Petal.Length</span> <span class="op">~</span> <span class="va">Sepal.Length</span>, <span class="va">.</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/glance.html">glance</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">r.squared</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0.8642247</span></span></code></pre></div>
+<p>Correlations of the data suggest the possible strength of linear model y ~ x.</p>
+<div class="sourceCode" id="cb440"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">iris</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="fl">5</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;              Sepal.Length Sepal.Width Petal.Length</span></span>
+<span><span class="co">#&gt; Sepal.Length    1.0000000  -0.1175698    0.8717538</span></span>
+<span><span class="co">#&gt; Sepal.Width    -0.1175698   1.0000000   -0.4284401</span></span>
+<span><span class="co">#&gt; Petal.Length    0.8717538  -0.4284401    1.0000000</span></span>
+<span><span class="co">#&gt; Petal.Width     0.8179411  -0.3661259    0.9628654</span></span>
+<span><span class="co">#&gt;              Petal.Width</span></span>
+<span><span class="co">#&gt; Sepal.Length   0.8179411</span></span>
+<span><span class="co">#&gt; Sepal.Width   -0.3661259</span></span>
+<span><span class="co">#&gt; Petal.Length   0.9628654</span></span>
+<span><span class="co">#&gt; Petal.Width    1.0000000</span></span></code></pre></div>
+<hr>
+</div>
+</div>
+<div id="examples-wdi" class="section level2" number="27.11">
+<h2>
+<span class="header-section-number">27.11</span> Examples: WDI<a class="anchor" aria-label="anchor" href="#examples-wdi"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>SP.DYN.LE00.IN: Life expectancy at birth, total (years)</li>
+</ul>
+<div class="sourceCode" id="cb441"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_lifeExp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span>indicator <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>lifeExp <span class="op">=</span> <span class="st">"SP.DYN.LE00.IN"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>#&gt; Rows: 16492 Columns: 5
+#&gt; ── Column specification ────────────────────────────────────
+#&gt; Delimiter: ","
+#&gt; chr (3): country, iso2c, iso3c
+#&gt; dbl (2): year, lifeExp
+#&gt; 
+#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
+#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<hr>
+<div class="sourceCode" id="cb443"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_lifeExp</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op">==</span> <span class="st">"World"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">lifeExp</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; `geom_smooth()` using formula = 'y ~ x'</span></span></code></pre></div>
+<div class="inline-figure"><img src="13-model_files/figure-html/unnamed-chunk-31-1.png" width="672"></div>
+<hr>
+<div class="sourceCode" id="cb444"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_lifeExp</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">lifeExp</span> <span class="op">~</span> <span class="va">year</span>, <span class="va">.</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Call:</span></span>
+<span><span class="co">#&gt; lm(formula = lifeExp ~ year, data = .)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Residuals:</span></span>
+<span><span class="co">#&gt;     Min      1Q  Median      3Q     Max </span></span>
+<span><span class="co">#&gt; -51.142  -7.297   1.782   7.873  19.139 </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Coefficients:</span></span>
+<span><span class="co">#&gt;               Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
+<span><span class="co">#&gt; (Intercept) -5.574e+02  8.987e+00  -62.02   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; year         3.123e-01  4.515e-03   69.15   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; ---</span></span>
+<span><span class="co">#&gt; Signif. codes:  </span></span>
+<span><span class="co">#&gt; 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Residual standard error: 9.797 on 15202 degrees of freedom</span></span>
+<span><span class="co">#&gt;   (1288 observations deleted due to missingness)</span></span>
+<span><span class="co">#&gt; Multiple R-squared:  0.2393, Adjusted R-squared:  0.2392 </span></span>
+<span><span class="co">#&gt; F-statistic:  4782 on 1 and 15202 DF,  p-value: &lt; 2.2e-16</span></span></code></pre></div>
+<p><span class="math display">\[lifeExp \sim -557.4 + 0.3123 \cdot year\]</span>
+Each year, life expectancy at birth increases approximately 0.3123 years. R-squared of this model is 0.2392, and the model explains 24%.</p>
+<hr>
+<div class="sourceCode" id="cb445"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_lifeExp</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op">==</span> <span class="st">"World"</span>, <span class="va">year</span> <span class="op">&gt;=</span> <span class="fl">1962</span>, <span class="va">year</span> <span class="op">&lt;=</span> <span class="fl">2019</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">lifeExp</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">lifeExp</span> <span class="op">~</span> <span class="va">year</span>, <span class="va">.</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Call:</span></span>
+<span><span class="co">#&gt; lm(formula = lifeExp ~ year, data = .)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Residuals:</span></span>
+<span><span class="co">#&gt;      Min       1Q   Median       3Q      Max </span></span>
+<span><span class="co">#&gt; -1.01769 -0.29535 -0.04302  0.38542  0.82106 </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Coefficients:</span></span>
+<span><span class="co">#&gt;               Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
+<span><span class="co">#&gt; (Intercept) -5.543e+02  7.885e+00  -70.30   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; year         3.110e-01  3.961e-03   78.52   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; ---</span></span>
+<span><span class="co">#&gt; Signif. codes:  </span></span>
+<span><span class="co">#&gt; 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Residual standard error: 0.505 on 56 degrees of freedom</span></span>
+<span><span class="co">#&gt; Multiple R-squared:  0.991,  Adjusted R-squared:  0.9908 </span></span>
+<span><span class="co">#&gt; F-statistic:  6166 on 1 and 56 DF,  p-value: &lt; 2.2e-16</span></span></code></pre></div>
+<hr>
+</div>
+<div id="brics-1" class="section level2" number="27.12">
+<h2>
+<span class="header-section-number">27.12</span> BRICs<a class="anchor" aria-label="anchor" href="#brics-1"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb446"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mod_brics</span> <span class="op">&lt;-</span> <span class="va">wdi_lifeExp</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Brazil"</span>, <span class="st">"Russian Federation"</span>, <span class="st">"India"</span>, <span class="st">"China"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">lifeExp</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">lifeExp</span> <span class="op">~</span> <span class="va">year</span>, <span class="va">.</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">mod_brics</span><span class="op">$</span><span class="va">r.squared</span></span>
+<span><span class="co">#&gt; [1] 0.5658162</span></span></code></pre></div>
+<div class="sourceCode" id="cb447"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_lifeExp</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Brazil"</span>, <span class="st">"Russian Federation"</span>, <span class="st">"India"</span>, <span class="st">"China"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">lifeExp</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>formula <span class="op">=</span> <span class="va">y</span><span class="op">~</span><span class="va">x</span>, method <span class="op">=</span> <span class="st">"lm"</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<hr>
+<div class="inline-figure"><img src="13-model_files/figure-html/unnamed-chunk-36-1.png" width="672"></div>
+<hr>
+<div class="sourceCode" id="cb448"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_lifeExp</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Brazil"</span>, <span class="st">"Russian Federation"</span>, <span class="st">"India"</span>, <span class="st">"China"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">lifeExp</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">lifeExp</span>, color <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>shape <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>formula <span class="op">=</span> <span class="va">y</span><span class="op">~</span><span class="va">x</span>, method <span class="op">=</span> <span class="st">"lm"</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="13-model_files/figure-html/unnamed-chunk-37-1.png" width="672"></div>
+<div class="inline-table"><table style="width:6%;" class="table table-sm">
+<colgroup><col width="5%"></colgroup>
+<tbody>
+<tr class="odd">
+<td>Need to work</td>
+</tr>
+<tr class="even">
+<td>```r
+country_model &lt;- function(df) {
+lm(lifeExp ~ year, data = df)
+}</td>
+</tr>
+<tr class="odd">
+<td>by_country &lt;- wdi_lifeExp %&gt;% filter(country %in% c(“Brazil”, “Russian Federation”, “India”, “China”)) %&gt;% drop_na(lifeExp) %&gt;% group_by(country) %&gt;% nest()</td>
+</tr>
+<tr class="even">
+<td>by_country &lt;- by_country %&gt;%
+mutate(model = map(data, country_model))</td>
+</tr>
+<tr class="odd">
+<td>by_country %&gt;%
+mutate(tidy = map(model, broom::tidy)) %&gt;%
+unnest(tidy)</td>
+</tr>
+<tr class="even">
+<td>by_country %&gt;%
+mutate(glance = map(model, broom::glance)) %&gt;%
+unnest(glance)
+```</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="government-expenditure-of-gdp" class="section level2" number="27.13">
+<h2>
+<span class="header-section-number">27.13</span> Government Expenditure, (% of GDP)<a class="anchor" aria-label="anchor" href="#government-expenditure-of-gdp"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb449"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_rds.html">read_rds</a></span><span class="op">(</span><span class="st">"./data/wdi_cache.RData"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb450"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDIsearch.html">WDIsearch</a></span><span class="op">(</span><span class="st">"expenditure"</span>, <span class="st">"name"</span>, cache <span class="op">=</span> <span class="va">wdi_cache</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join</a></span><span class="op">(</span><span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDIsearch.html">WDIsearch</a></span><span class="op">(</span><span class="st">"% of GDP"</span>, <span class="st">"name"</span>, cache <span class="op">=</span> <span class="va">wdi_cache</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Joining, by = c("indicator", "name")</span></span>
+<span><span class="co">#&gt;               indicator</span></span>
+<span><span class="co">#&gt; 1    GB.XPD.DEFN.GDP.ZS</span></span>
+<span><span class="co">#&gt; 2     GB.XPD.RSDV.GD.ZS</span></span>
+<span><span class="co">#&gt; 3     GB.XPD.TOTL.GD.ZS</span></span>
+<span><span class="co">#&gt; 4    GB.XPD.TOTL.GDP.ZS</span></span>
+<span><span class="co">#&gt; 5     IE.ICT.TOTL.GD.ZS</span></span>
+<span><span class="co">#&gt; 6     MS.MIL.XPND.GD.ZS</span></span>
+<span><span class="co">#&gt; 7        NE.CON.GOVT.ZS</span></span>
+<span><span class="co">#&gt; 8        NE.CON.PETC.ZS</span></span>
+<span><span class="co">#&gt; 9        NE.CON.PRVT.ZS</span></span>
+<span><span class="co">#&gt; 10       NE.CON.TETC.ZS</span></span>
+<span><span class="co">#&gt; 11       NE.CON.TOTL.ZS</span></span>
+<span><span class="co">#&gt; 12       NE.DAB.TOTL.ZS</span></span>
+<span><span class="co">#&gt; 13    NY.GEN.AEDU.GD.ZS</span></span>
+<span><span class="co">#&gt; 14    SE.XPD.PRIM.PC.ZS</span></span>
+<span><span class="co">#&gt; 15    SE.XPD.SECO.PC.ZS</span></span>
+<span><span class="co">#&gt; 16    SE.XPD.TERT.PC.ZS</span></span>
+<span><span class="co">#&gt; 17    SE.XPD.TOTL.GD.ZS</span></span>
+<span><span class="co">#&gt; 18    SH.XPD.CHEX.GD.ZS</span></span>
+<span><span class="co">#&gt; 19    SH.XPD.GHED.GD.ZS</span></span>
+<span><span class="co">#&gt; 20    SH.XPD.KHEX.GD.ZS</span></span>
+<span><span class="co">#&gt; 21       SH.XPD.PRIV.ZS</span></span>
+<span><span class="co">#&gt; 22       SH.XPD.PUBL.ZS</span></span>
+<span><span class="co">#&gt; 23       SH.XPD.TOTL.ZS</span></span>
+<span><span class="co">#&gt; 24     UIS.XGDP.0.FSGOV</span></span>
+<span><span class="co">#&gt; 25     UIS.XGDP.1.FSGOV</span></span>
+<span><span class="co">#&gt; 26    UIS.XGDP.23.FSGOV</span></span>
+<span><span class="co">#&gt; 27 UIS.XGDP.2T4.V.FSGOV</span></span>
+<span><span class="co">#&gt; 28     UIS.XGDP.4.FSGOV</span></span>
+<span><span class="co">#&gt; 29    UIS.XGDP.56.FSGOV</span></span>
+<span><span class="co">#&gt;                                                                                                        name</span></span>
+<span><span class="co">#&gt; 1                                                                            Defense expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 2                                                           Research and development expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 3                                                                             Expenditure, total (% of GDP)</span></span>
+<span><span class="co">#&gt; 4                                                                              Total expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 5                                           Information and communication technology expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 6                                                                           Military expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 7                                               General government final consumption expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 8                                                  Household final consumption expenditure, etc. (% of GDP)</span></span>
+<span><span class="co">#&gt; 9                                            Households and NPISHs final consumption expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 10                                                           Final consumption expenditure, etc. (% of GDP)</span></span>
+<span><span class="co">#&gt; 11                                                                 Final consumption expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 12                                                                    Gross national expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 13                                                        Genuine savings: education expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 14                                        Government expenditure per student, primary (% of GDP per capita)</span></span>
+<span><span class="co">#&gt; 15                                      Government expenditure per student, secondary (% of GDP per capita)</span></span>
+<span><span class="co">#&gt; 16                                       Government expenditure per student, tertiary (% of GDP per capita)</span></span>
+<span><span class="co">#&gt; 17                                                    Government expenditure on education, total (% of GDP)</span></span>
+<span><span class="co">#&gt; 18                                                                    Current health expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 19                                                Domestic general government health expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 20                                                                    Capital health expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 21                                                                   Health expenditure, private (% of GDP)</span></span>
+<span><span class="co">#&gt; 22                                                                    Health expenditure, public (% of GDP)</span></span>
+<span><span class="co">#&gt; 23                                                                     Health expenditure, total (% of GDP)</span></span>
+<span><span class="co">#&gt; 24                                          Government expenditure on pre-primary education as % of GDP (%)</span></span>
+<span><span class="co">#&gt; 25                                              Government expenditure on primary education as % of GDP (%)</span></span>
+<span><span class="co">#&gt; 26                                            Government expenditure on secondary education as % of GDP (%)</span></span>
+<span><span class="co">#&gt; 27 Government expenditure on secondary and post-secondary non-tertiary vocational education as % of GDP (%)</span></span>
+<span><span class="co">#&gt; 28                          Government expenditure on post-secondary non-tertiary education as % of GDP (%)</span></span>
+<span><span class="co">#&gt; 29                                             Government expenditure on tertiary education as % of GDP (%)</span></span></code></pre></div>
+<hr>
+<div class="sourceCode" id="cb451"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">series</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"expenditure"</span>, <span class="va">name</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"% of GDP"</span>, <span class="va">name</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt;               indicator</span></span>
+<span><span class="co">#&gt; 1    GB.XPD.DEFN.GDP.ZS</span></span>
+<span><span class="co">#&gt; 2     GB.XPD.RSDV.GD.ZS</span></span>
+<span><span class="co">#&gt; 3    GB.XPD.TOTL.GDP.ZS</span></span>
+<span><span class="co">#&gt; 4     IE.ICT.TOTL.GD.ZS</span></span>
+<span><span class="co">#&gt; 5     MS.MIL.XPND.GD.ZS</span></span>
+<span><span class="co">#&gt; 6        NE.CON.GOVT.ZS</span></span>
+<span><span class="co">#&gt; 7        NE.CON.PETC.ZS</span></span>
+<span><span class="co">#&gt; 8        NE.CON.PRVT.ZS</span></span>
+<span><span class="co">#&gt; 9        NE.CON.TETC.ZS</span></span>
+<span><span class="co">#&gt; 10       NE.CON.TOTL.ZS</span></span>
+<span><span class="co">#&gt; 11       NE.DAB.TOTL.ZS</span></span>
+<span><span class="co">#&gt; 12    NY.GEN.AEDU.GD.ZS</span></span>
+<span><span class="co">#&gt; 13    SE.XPD.PRIM.PC.ZS</span></span>
+<span><span class="co">#&gt; 14    SE.XPD.SECO.PC.ZS</span></span>
+<span><span class="co">#&gt; 15    SE.XPD.TERT.PC.ZS</span></span>
+<span><span class="co">#&gt; 16    SE.XPD.TOTL.GD.ZS</span></span>
+<span><span class="co">#&gt; 17    SH.XPD.CHEX.GD.ZS</span></span>
+<span><span class="co">#&gt; 18    SH.XPD.GHED.GD.ZS</span></span>
+<span><span class="co">#&gt; 19    SH.XPD.KHEX.GD.ZS</span></span>
+<span><span class="co">#&gt; 20       SH.XPD.PRIV.ZS</span></span>
+<span><span class="co">#&gt; 21       SH.XPD.PUBL.ZS</span></span>
+<span><span class="co">#&gt; 22       SH.XPD.TOTL.ZS</span></span>
+<span><span class="co">#&gt; 23     UIS.XGDP.0.FSGOV</span></span>
+<span><span class="co">#&gt; 24     UIS.XGDP.1.FSGOV</span></span>
+<span><span class="co">#&gt; 25    UIS.XGDP.23.FSGOV</span></span>
+<span><span class="co">#&gt; 26 UIS.XGDP.2T4.V.FSGOV</span></span>
+<span><span class="co">#&gt; 27     UIS.XGDP.4.FSGOV</span></span>
+<span><span class="co">#&gt; 28    UIS.XGDP.56.FSGOV</span></span>
+<span><span class="co">#&gt;                                                                                                        name</span></span>
+<span><span class="co">#&gt; 1                                                                            Defense expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 2                                                           Research and development expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 3                                                                              Total expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 4                                           Information and communication technology expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 5                                                                           Military expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 6                                               General government final consumption expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 7                                                  Household final consumption expenditure, etc. (% of GDP)</span></span>
+<span><span class="co">#&gt; 8                                            Households and NPISHs final consumption expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 9                                                            Final consumption expenditure, etc. (% of GDP)</span></span>
+<span><span class="co">#&gt; 10                                                                 Final consumption expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 11                                                                    Gross national expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 12                                                        Genuine savings: education expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 13                                        Government expenditure per student, primary (% of GDP per capita)</span></span>
+<span><span class="co">#&gt; 14                                      Government expenditure per student, secondary (% of GDP per capita)</span></span>
+<span><span class="co">#&gt; 15                                       Government expenditure per student, tertiary (% of GDP per capita)</span></span>
+<span><span class="co">#&gt; 16                                                    Government expenditure on education, total (% of GDP)</span></span>
+<span><span class="co">#&gt; 17                                                                    Current health expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 18                                                Domestic general government health expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 19                                                                    Capital health expenditure (% of GDP)</span></span>
+<span><span class="co">#&gt; 20                                                                   Health expenditure, private (% of GDP)</span></span>
+<span><span class="co">#&gt; 21                                                                    Health expenditure, public (% of GDP)</span></span>
+<span><span class="co">#&gt; 22                                                                     Health expenditure, total (% of GDP)</span></span>
+<span><span class="co">#&gt; 23                                          Government expenditure on pre-primary education as % of GDP (%)</span></span>
+<span><span class="co">#&gt; 24                                              Government expenditure on primary education as % of GDP (%)</span></span>
+<span><span class="co">#&gt; 25                                            Government expenditure on secondary education as % of GDP (%)</span></span>
+<span><span class="co">#&gt; 26 Government expenditure on secondary and post-secondary non-tertiary vocational education as % of GDP (%)</span></span>
+<span><span class="co">#&gt; 27                          Government expenditure on post-secondary non-tertiary education as % of GDP (%)</span></span>
+<span><span class="co">#&gt; 28                                             Government expenditure on tertiary education as % of GDP (%)</span></span>
+<span><span class="co">#&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          description</span></span>
+<span><span class="co">#&gt; 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   </span></span>
+<span><span class="co">#&gt; 2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Gross domestic expenditures on research and development (R&amp;D), expressed as a percent of GDP. They include both capital and current expenditures in the four main sectors: Business enterprise, Government, Higher education and Private non-profit. R&amp;D covers basic research, applied research, and experimental development.</span></span>
+<span><span class="co">#&gt; 3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   </span></span>
+<span><span class="co">#&gt; 4                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Information and communications technology expenditures include computer hardware (computers, storage devices, printers, and other peripherals); computer software (operating systems, programming tools, utilities, applications, and internal software development); computer services (information technology consulting, computer and network systems integration, Web hosting, data processing services, and other services); and communications services (voice and data communications services) and wired and wireless communications equipment.</span></span>
+<span><span class="co">#&gt; 5  Military expenditures data from SIPRI are derived from the NATO definition, which includes all current and capital expenditures on the armed forces, including peacekeeping forces; defense ministries and other government agencies engaged in defense projects; paramilitary forces, if these are judged to be trained and equipped for military operations; and military space activities. Such expenditures include military and civil personnel, including retirement pensions of military personnel and social services for personnel; operation and maintenance; procurement; military research and development; and military aid (in the military expenditures of the donor country). Excluded are civil defense and current expenditures for previous military activities, such as for veterans' benefits, demobilization, conversion, and destruction of weapons. This definition cannot be applied for all countries, however, since that would require much more detailed information than is available about what is included in military budgets and off-budget military expenditure items. (For example, military budgets might or might not cover civil defense, reserves and auxiliary forces, police and paramilitary forces, dual-purpose forces such as military and civilian police, military grants in kind, pensions for military personnel, and social security contributions paid by one part of government to another.)</span></span>
+<span><span class="co">#&gt; 6                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               General government final consumption expenditure (formerly general government consumption) includes all government current expenditures for purchases of goods and services (including compensation of employees). It also includes most expenditures on national defense and security, but excludes government military expenditures that are part of government capital formation.</span></span>
+<span><span class="co">#&gt; 7                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Household final consumption expenditure (formerly private consumption) is the market value of all goods and services, including durable products (such as cars, washing machines, and home computers), purchased by households. It excludes purchases of dwellings but includes imputed rent for owner-occupied dwellings. It also includes payments and fees to governments to obtain permits and licenses. Here, household consumption expenditure includes the expenditures of nonprofit institutions serving households, even when reported separately by the country. This item also includes any statistical discrepancy in the use of resources relative to the supply of resources.</span></span>
+<span><span class="co">#&gt; 8                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Household final consumption expenditure (formerly private consumption) is the market value of all goods and services, including durable products (such as cars, washing machines, and home computers), purchased by households. It excludes purchases of dwellings but includes imputed rent for owner-occupied dwellings. It also includes payments and fees to governments to obtain permits and licenses. Here, household consumption expenditure includes the expenditures of nonprofit institutions serving households, even when reported separately by the country. This item also includes any statistical discrepancy in the use of resources relative to the supply of resources.</span></span>
+<span><span class="co">#&gt; 9                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      Final consumption expenditure (formerly total consumption) is the sum of household final consumption expenditure (private consumption) and general government final consumption expenditure (general government consumption). This estimate includes any statistical discrepancy in the use of resources relative to the supply of resources.</span></span>
+<span><span class="co">#&gt; 10                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Final consumption expenditure (formerly total consumption) is the sum of household final consumption expenditure (private consumption) and general government final consumption expenditure (general government consumption). This estimate includes any statistical discrepancy in the use of resources relative to the supply of resources.</span></span>
+<span><span class="co">#&gt; 11                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Gross national expenditure (formerly domestic absorption) is the sum of household final consumption expenditure (formerly private consumption), general government final consumption expenditure (formerly general government consumption), and gross capital formation (formerly gross domestic investment).</span></span>
+<span><span class="co">#&gt; 12                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </span></span>
+<span><span class="co">#&gt; 13                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      Government expenditure per student is the average general government expenditure (current, capital, and transfers) per student in the given level of education, expressed as a percentage of GDP per capita.</span></span>
+<span><span class="co">#&gt; 14                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      Government expenditure per student is the average general government expenditure (current, capital, and transfers) per student in the given level of education, expressed as a percentage of GDP per capita.</span></span>
+<span><span class="co">#&gt; 15                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      Government expenditure per student is the average general government expenditure (current, capital, and transfers) per student in the given level of education, expressed as a percentage of GDP per capita.</span></span>
+<span><span class="co">#&gt; 16                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            General government expenditure on education (current, capital, and transfers) is expressed as a percentage of GDP. It includes expenditure funded by transfers from international sources to government. General government usually refers to local, regional and central governments.</span></span>
+<span><span class="co">#&gt; 17                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Level of current health expenditure expressed as a percentage of GDP.  Estimates of current health expenditures include healthcare goods and services consumed during each year. This indicator does not include capital health expenditures such as buildings, machinery, IT and stocks of vaccines for emergency or outbreaks.</span></span>
+<span><span class="co">#&gt; 18                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Public expenditure on health from domestic sources as a share of the economy as measured by GDP.</span></span>
+<span><span class="co">#&gt; 19                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Level of capital investments on health expressed as a percentage of GDP.  Capital health investments include health infrastructure (buildings, machinery, IT) and stocks of vaccines for emergency or outbreaks.</span></span>
+<span><span class="co">#&gt; 20                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      Private health expenditure includes direct household (out-of-pocket) spending, private insurance, charitable donations, and direct service payments by private corporations.</span></span>
+<span><span class="co">#&gt; 21                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          Public health expenditure consists of recurrent and capital spending from government (central and local) budgets, external borrowings and grants (including donations from international agencies and nongovernmental organizations), and social (or compulsory) health insurance funds.</span></span>
+<span><span class="co">#&gt; 22                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             Total health expenditure is the sum of public and private health expenditure. It covers the provision of health services (preventive and curative), family planning activities, nutrition activities, and emergency aid designated for health but does not include provision of water and sanitation.</span></span>
+<span><span class="co">#&gt; 23                                                                                                                                                                                         Total general (local, regional and central) government expenditure on pre-primary education (current, capital, and transfers), expressed as a percentage of GDP. It includes expenditure funded by transfers from international sources to government. Divide total government expenditure for a given level of education (ex. primary, secondary, or all levels combined) by the GDP, and multiply by 100. A higher percentage of GDP spent on education shows a higher government priority for education, but also a higher capacity of the government to raise revenues for public spending, in relation to the size of the country's economy. When interpreting this indicator however, one should keep in mind in some countries, the private sector and/or households may fund a higher proportion of total funding for education, thus making government expenditure appear lower than in other countries. Limitations: In some instances data on total public expenditure on education refers only to the Ministry of Education, excluding other ministries which may also spend a part of their budget on educational activities. For more information, consult the UNESCO Institute of Statistics website: http://www.uis.unesco.org/Education/</span></span>
+<span><span class="co">#&gt; 24                                                                                                                                                                                             Total general (local, regional and central) government expenditure on primary education (current, capital, and transfers), expressed as a percentage of GDP. It includes expenditure funded by transfers from international sources to government. Divide total government expenditure for a given level of education (ex. primary, secondary, or all levels combined) by the GDP, and multiply by 100. A higher percentage of GDP spent on education shows a higher government priority for education, but also a higher capacity of the government to raise revenues for public spending, in relation to the size of the country's economy. When interpreting this indicator however, one should keep in mind in some countries, the private sector and/or households may fund a higher proportion of total funding for education, thus making government expenditure appear lower than in other countries. Limitations: In some instances data on total public expenditure on education refers only to the Ministry of Education, excluding other ministries which may also spend a part of their budget on educational activities. For more information, consult the UNESCO Institute of Statistics website: http://www.uis.unesco.org/Education/</span></span>
+<span><span class="co">#&gt; 25                                                                                                                                                                                           Total general (local, regional and central) government expenditure on secondary education (current, capital, and transfers), expressed as a percentage of GDP. It includes expenditure funded by transfers from international sources to government. Divide total government expenditure for a given level of education (ex. primary, secondary, or all levels combined) by the GDP, and multiply by 100. A higher percentage of GDP spent on education shows a higher government priority for education, but also a higher capacity of the government to raise revenues for public spending, in relation to the size of the country's economy. When interpreting this indicator however, one should keep in mind in some countries, the private sector and/or households may fund a higher proportion of total funding for education, thus making government expenditure appear lower than in other countries. Limitations: In some instances data on total public expenditure on education refers only to the Ministry of Education, excluding other ministries which may also spend a part of their budget on educational activities. For more information, consult the UNESCO Institute of Statistics website: http://www.uis.unesco.org/Education/</span></span>
+<span><span class="co">#&gt; 26                                                                                                                                                Total general (local, regional and central) government expenditure on secondary and post-secondary non-tertiary vocational education (current, capital, and transfers), expressed as a percentage of GDP. It includes expenditure funded by transfers from international sources to government. Divide total government expenditure for a given level of education (ex. primary, secondary, or all levels combined) by the GDP, and multiply by 100. A higher percentage of GDP spent on education shows a higher government priority for education, but also a higher capacity of the government to raise revenues for public spending, in relation to the size of the country's economy. When interpreting this indicator however, one should keep in mind in some countries, the private sector and/or households may fund a higher proportion of total funding for education, thus making government expenditure appear lower than in other countries. Limitations: In some instances data on total public expenditure on education refers only to the Ministry of Education, excluding other ministries which may also spend a part of their budget on educational activities. For more information, consult the UNESCO Institute of Statistics website: http://www.uis.unesco.org/Education/</span></span>
+<span><span class="co">#&gt; 27                                                                                                                                                                         Total general (local, regional and central) government expenditure on post-secondary non-tertiary education (current, capital, and transfers), expressed as a percentage of GDP. It includes expenditure funded by transfers from international sources to government. Divide total government expenditure for a given level of education (ex. primary, secondary, or all levels combined) by the GDP, and multiply by 100. A higher percentage of GDP spent on education shows a higher government priority for education, but also a higher capacity of the government to raise revenues for public spending, in relation to the size of the country's economy. When interpreting this indicator however, one should keep in mind in some countries, the private sector and/or households may fund a higher proportion of total funding for education, thus making government expenditure appear lower than in other countries. Limitations: In some instances data on total public expenditure on education refers only to the Ministry of Education, excluding other ministries which may also spend a part of their budget on educational activities. For more information, consult the UNESCO Institute of Statistics website: http://www.uis.unesco.org/Education/</span></span>
+<span><span class="co">#&gt; 28                                                                                                                                                                                            Total general (local, regional and central) government expenditure on tertiary education (current, capital, and transfers), expressed as a percentage of GDP. It includes expenditure funded by transfers from international sources to government. Divide total government expenditure for a given level of education (ex. primary, secondary, or all levels combined) by the GDP, and multiply by 100. A higher percentage of GDP spent on education shows a higher government priority for education, but also a higher capacity of the government to raise revenues for public spending, in relation to the size of the country's economy. When interpreting this indicator however, one should keep in mind in some countries, the private sector and/or households may fund a higher proportion of total funding for education, thus making government expenditure appear lower than in other countries. Limitations: In some instances data on total public expenditure on education refers only to the Ministry of Education, excluding other ministries which may also spend a part of their budget on educational activities. For more information, consult the UNESCO Institute of Statistics website: http://www.uis.unesco.org/Education/</span></span>
+<span><span class="co">#&gt;                                sourceDatabase</span></span>
+<span><span class="co">#&gt; 1                       WDI Database Archives</span></span>
+<span><span class="co">#&gt; 2                World Development Indicators</span></span>
+<span><span class="co">#&gt; 3                       WDI Database Archives</span></span>
+<span><span class="co">#&gt; 4               Africa Development Indicators</span></span>
+<span><span class="co">#&gt; 5                World Development Indicators</span></span>
+<span><span class="co">#&gt; 6                World Development Indicators</span></span>
+<span><span class="co">#&gt; 7                       WDI Database Archives</span></span>
+<span><span class="co">#&gt; 8                World Development Indicators</span></span>
+<span><span class="co">#&gt; 9                       WDI Database Archives</span></span>
+<span><span class="co">#&gt; 10               World Development Indicators</span></span>
+<span><span class="co">#&gt; 11               World Development Indicators</span></span>
+<span><span class="co">#&gt; 12                      WDI Database Archives</span></span>
+<span><span class="co">#&gt; 13               World Development Indicators</span></span>
+<span><span class="co">#&gt; 14               World Development Indicators</span></span>
+<span><span class="co">#&gt; 15               World Development Indicators</span></span>
+<span><span class="co">#&gt; 16               World Development Indicators</span></span>
+<span><span class="co">#&gt; 17               World Development Indicators</span></span>
+<span><span class="co">#&gt; 18               World Development Indicators</span></span>
+<span><span class="co">#&gt; 19 Health Nutrition and Population Statistics</span></span>
+<span><span class="co">#&gt; 20                      WDI Database Archives</span></span>
+<span><span class="co">#&gt; 21                      WDI Database Archives</span></span>
+<span><span class="co">#&gt; 22                      WDI Database Archives</span></span>
+<span><span class="co">#&gt; 23                       Education Statistics</span></span>
+<span><span class="co">#&gt; 24                       Education Statistics</span></span>
+<span><span class="co">#&gt; 25                       Education Statistics</span></span>
+<span><span class="co">#&gt; 26                       Education Statistics</span></span>
+<span><span class="co">#&gt; 27                       Education Statistics</span></span>
+<span><span class="co">#&gt; 28                       Education Statistics</span></span>
+<span><span class="co">#&gt;                                                                                                                               sourceOrganization</span></span>
+<span><span class="co">#&gt; 1                                                                                                                                               </span></span>
+<span><span class="co">#&gt; 2  UNESCO Institute for Statistics (UIS). UIS.Stat Bulk Data Download Service. Accessed October 24, 2022. https://apiportal.uis.unesco.org/bdds.</span></span>
+<span><span class="co">#&gt; 3                                                                                                                                               </span></span>
+<span><span class="co">#&gt; 4                   World Information Technology and Services Alliance, Digital Planet: The Global Information Economy, and Global Insight, Inc.</span></span>
+<span><span class="co">#&gt; 5                         Stockholm International Peace Research Institute (SIPRI), Yearbook: Armaments, Disarmament and International Security.</span></span>
+<span><span class="co">#&gt; 6                                                                      World Bank national accounts data, and OECD National Accounts data files.</span></span>
+<span><span class="co">#&gt; 7                                                                      World Bank national accounts data, and OECD National Accounts data files.</span></span>
+<span><span class="co">#&gt; 8                                                                      World Bank national accounts data, and OECD National Accounts data files.</span></span>
+<span><span class="co">#&gt; 9                                                                      World Bank national accounts data, and OECD National Accounts data files.</span></span>
+<span><span class="co">#&gt; 10                                                                     World Bank national accounts data, and OECD National Accounts data files.</span></span>
+<span><span class="co">#&gt; 11                                                                     World Bank national accounts data, and OECD National Accounts data files.</span></span>
+<span><span class="co">#&gt; 12                                                                                                                                              </span></span>
+<span><span class="co">#&gt; 13                                                           UNESCO Institute for Statistics (http://uis.unesco.org/). Data as of February 2020.</span></span>
+<span><span class="co">#&gt; 14                                                           UNESCO Institute for Statistics (http://uis.unesco.org/). Data as of February 2020.</span></span>
+<span><span class="co">#&gt; 15                                                           UNESCO Institute for Statistics (http://uis.unesco.org/). Data as of February 2020.</span></span>
+<span><span class="co">#&gt; 16 UNESCO Institute for Statistics (UIS). UIS.Stat Bulk Data Download Service. Accessed October 24, 2022. https://apiportal.uis.unesco.org/bdds.</span></span>
+<span><span class="co">#&gt; 17  World Health Organization Global Health Expenditure database (http://apps.who.int/nha/database). The data was retrieved on January 30, 2022.</span></span>
+<span><span class="co">#&gt; 18  World Health Organization Global Health Expenditure database (http://apps.who.int/nha/database). The data was retrieved on January 30, 2022.</span></span>
+<span><span class="co">#&gt; 19  World Health Organization Global Health Expenditure database (http://apps.who.int/nha/database). The data was retrieved on January 30, 2022.</span></span>
+<span><span class="co">#&gt; 20              World Health Organization Global Health Expenditure database (see http://apps.who.int/nha/database for the most recent updates).</span></span>
+<span><span class="co">#&gt; 21              World Health Organization Global Health Expenditure database (see http://apps.who.int/nha/database for the most recent updates).</span></span>
+<span><span class="co">#&gt; 22              World Health Organization Global Health Expenditure database (see http://apps.who.int/nha/database for the most recent updates).</span></span>
+<span><span class="co">#&gt; 23                                                                                                               UNESCO Institute for Statistics</span></span>
+<span><span class="co">#&gt; 24                                                                                                               UNESCO Institute for Statistics</span></span>
+<span><span class="co">#&gt; 25                                                                                                               UNESCO Institute for Statistics</span></span>
+<span><span class="co">#&gt; 26                                                                                                               UNESCO Institute for Statistics</span></span>
+<span><span class="co">#&gt; 27                                                                                                               UNESCO Institute for Statistics</span></span>
+<span><span class="co">#&gt; 28                                                                                                               UNESCO Institute for Statistics</span></span></code></pre></div>
+<hr>
+<ul>
+<li><p>NY.GDP.PCAP.KD: GDP per capita (constant 2015 US$)</p></li>
+<li><p>SP.DYN.LE00.IN: Life expectancy at birth, total (years)</p></li>
+<li><p>SP.POP.TOTL: Population, total</p></li>
+<li><p>GB.XPD.RSDV.GD.ZS: Research and development expenditure (% of GDP) - 2</p></li>
+<li><p>MS.MIL.XPND.GD.ZS: Military expenditure (% of GDP) - 6</p></li>
+<li><p>SE.XPD.TOTL.GD.ZS: Government expenditure on education, total (% of GDP)</p></li>
+</ul>
+<div class="sourceCode" id="cb452"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_world</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span>country <span class="op">=</span> <span class="st">"all"</span>, indicator <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>gdpPcap <span class="op">=</span> <span class="st">"NY.GDP.PCAP.KD"</span>, lifeExp <span class="op">=</span> <span class="st">"SP.DYN.LE00.IN"</span>, pop <span class="op">=</span> <span class="st">"SP.POP.TOTL"</span>, research <span class="op">=</span> <span class="st">"GB.XPD.RSDV.GD.ZS"</span>, military <span class="op">=</span> <span class="st">"MS.MIL.XPND.GD.ZS"</span>, education <span class="op">=</span> <span class="st">"SE.XPD.TOTL.GD.ZS"</span><span class="op">)</span>, <span class="fl">1990</span>, extra <span class="op">=</span> <span class="cn">TRUE</span>, cache <span class="op">=</span> <span class="va">wdi_cache</span><span class="op">)</span></span></code></pre></div>
+<pre><code>#&gt; Rows: 8512 Columns: 18
+#&gt; ── Column specification ────────────────────────────────────
+#&gt; Delimiter: ","
+#&gt; chr  (7): country, iso2c, iso3c, region, capital, income...
+#&gt; dbl  (9): year, gdpPcap, lifeExp, pop, research, militar...
+#&gt; lgl  (1): status
+#&gt; date (1): lastupdated
+#&gt; 
+#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
+#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb454"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_world</span></span>
+<span><span class="co">#&gt; # A tibble: 8,512 × 18</span></span>
+<span><span class="co">#&gt;    country     iso2c iso3c  year status lastupdated gdpPcap</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt;  &lt;date&gt;        &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 Afghanistan AF    AFG    2018 NA     2022-12-22     579.</span></span>
+<span><span class="co">#&gt;  2 Afghanistan AF    AFG    2009 NA     2022-12-22     512.</span></span>
+<span><span class="co">#&gt;  3 Afghanistan AF    AFG    2016 NA     2022-12-22     590.</span></span>
+<span><span class="co">#&gt;  4 Afghanistan AF    AFG    2014 NA     2022-12-22     603.</span></span>
+<span><span class="co">#&gt;  5 Afghanistan AF    AFG    2012 NA     2022-12-22     596.</span></span>
+<span><span class="co">#&gt;  6 Afghanistan AF    AFG    2015 NA     2022-12-22     592.</span></span>
+<span><span class="co">#&gt;  7 Afghanistan AF    AFG    1990 NA     2022-12-22      NA </span></span>
+<span><span class="co">#&gt;  8 Afghanistan AF    AFG    2019 NA     2022-12-22     584.</span></span>
+<span><span class="co">#&gt;  9 Afghanistan AF    AFG    2002 NA     2022-12-22     360.</span></span>
+<span><span class="co">#&gt; 10 Afghanistan AF    AFG    2017 NA     2022-12-22     589.</span></span>
+<span><span class="co">#&gt; # … with 8,502 more rows, and 11 more variables:</span></span>
+<span><span class="co">#&gt; #   lifeExp &lt;dbl&gt;, pop &lt;dbl&gt;, research &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   military &lt;dbl&gt;, education &lt;dbl&gt;, region &lt;chr&gt;,</span></span>
+<span><span class="co">#&gt; #   capital &lt;chr&gt;, longitude &lt;dbl&gt;, latitude &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   income &lt;chr&gt;, lending &lt;chr&gt;</span></span></code></pre></div>
+<p>SE.XPD.TOTL.GB.ZS: Government expenditure on education, total (% of government expenditure)
+SE.XPD.TOTL.GD.ZS: Government expenditure on education, total (% of GDP)
+SE.XPD.PRIM.PC.ZS: Government expenditure per student, primary (% of GDP per capita)
+MS.MIL.XPND.ZS: Military expenditure (% of general government expenditure)
+SE.XPD.TERT.ZS: Expenditure on tertiary education (% of government expenditure on education)
+—</p>
+<div class="sourceCode" id="cb455"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mod_e</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">lifeExp</span> <span class="op">~</span> <span class="va">education</span>, <span class="va">wdi_world</span><span class="op">)</span>; <span class="va">mod_e</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Call:</span></span>
+<span><span class="co">#&gt; lm(formula = lifeExp ~ education, data = wdi_world)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Coefficients:</span></span>
+<span><span class="co">#&gt; (Intercept)    education  </span></span>
+<span><span class="co">#&gt;     65.9047       0.9748</span></span></code></pre></div>
+<div class="sourceCode" id="cb456"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_world</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">education</span>, <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>formula <span class="op">=</span> <span class="va">y</span> <span class="op">~</span> <span class="va">x</span>, method <span class="op">=</span> <span class="st">"lm"</span>, se<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning: Removed 3858 rows containing non-finite values</span></span>
+<span><span class="co">#&gt; (`stat_smooth()`).</span></span>
+<span><span class="co">#&gt; Warning: Removed 3858 rows containing missing values</span></span>
+<span><span class="co">#&gt; (`geom_point()`).</span></span></code></pre></div>
+<div class="inline-figure"><img src="13-model_files/figure-html/unnamed-chunk-47-1.png" width="672"></div>
+<div class="sourceCode" id="cb457"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_world</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">income</span> <span class="op">!=</span> <span class="st">"Aggregates"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">education</span>, <span class="va">lifeExp</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">education</span>, <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>formula <span class="op">=</span> <span class="va">y</span> <span class="op">~</span> <span class="va">x</span>, method <span class="op">=</span> <span class="st">"lm"</span>, se<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="13-model_files/figure-html/unnamed-chunk-48-1.png" width="672"></div>
+<div class="sourceCode" id="cb458"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_world_el</span> <span class="op">&lt;-</span> <span class="va">wdi_world</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">country</span>, <span class="va">year</span>, <span class="va">education</span>, <span class="va">lifeExp</span>, <span class="va">gdpPcap</span>, <span class="va">pop</span>, <span class="va">research</span>, <span class="va">military</span>, <span class="va">region</span>, <span class="va">income</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">income</span> <span class="op">!=</span> <span class="st">"Aggregates"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">education</span>, <span class="va">lifeExp</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb459"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_world_el</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">education</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; `stat_bin()` using `bins = 30`. Pick better value with</span></span>
+<span><span class="co">#&gt; `binwidth`.</span></span></code></pre></div>
+<div class="inline-figure"><img src="13-model_files/figure-html/unnamed-chunk-50-1.png" width="672"></div>
+<div class="sourceCode" id="cb460"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_world_el</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span><span class="op">==</span><span class="fl">2020</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">income</span>, y <span class="op">=</span> <span class="va">education</span>, fill <span class="op">=</span> <span class="va">income</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="13-model_files/figure-html/unnamed-chunk-51-1.png" width="672"></div>
+<div class="sourceCode" id="cb461"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_world_el</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span><span class="op">==</span><span class="fl">2020</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">education</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 152 × 10</span></span>
+<span><span class="co">#&gt;    country       year educa…¹ lifeExp gdpPcap    pop resea…²</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;        &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 Solomon Isl…  2020   12.8     70.2   2080. 6.91e5  NA    </span></span>
+<span><span class="co">#&gt;  2 Bolivia       2020    9.84    64.5   2920. 1.19e7  NA    </span></span>
+<span><span class="co">#&gt;  3 Namibia       2020    9.45    62.8   4155. 2.49e6  NA    </span></span>
+<span><span class="co">#&gt;  4 Sierra Leone  2020    8.81    59.8    604. 8.23e6  NA    </span></span>
+<span><span class="co">#&gt;  5 Botswana      2020    8.74    65.6   5811. 2.55e6  NA    </span></span>
+<span><span class="co">#&gt;  6 Saudi Arabia  2020    7.81    76.2  18086. 3.60e7   0.522</span></span>
+<span><span class="co">#&gt;  7 Iceland       2020    7.72    83.1  52984. 3.66e5   2.47 </span></span>
+<span><span class="co">#&gt;  8 Lesotho       2020    7.67    54.7    972. 2.25e6  NA    </span></span>
+<span><span class="co">#&gt;  9 Cabo Verde    2020    7.58    74.8   2801. 5.83e5  NA    </span></span>
+<span><span class="co">#&gt; 10 Belize        2020    7.53    72.9   5040. 3.95e5  NA    </span></span>
+<span><span class="co">#&gt; # … with 142 more rows, 3 more variables: military &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   region &lt;chr&gt;, income &lt;chr&gt;, and abbreviated variable</span></span>
+<span><span class="co">#&gt; #   names ¹​education, ²​research</span></span></code></pre></div>
+<div class="sourceCode" id="cb462"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_world_el</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span><span class="op">==</span><span class="fl">2020</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">education</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 152 × 10</span></span>
+<span><span class="co">#&gt;    country       year educa…¹ lifeExp gdpPcap    pop resea…²</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;        &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 Solomon Isl…  2020   12.8     70.2   2080. 6.91e5  NA    </span></span>
+<span><span class="co">#&gt;  2 Bolivia       2020    9.84    64.5   2920. 1.19e7  NA    </span></span>
+<span><span class="co">#&gt;  3 Namibia       2020    9.45    62.8   4155. 2.49e6  NA    </span></span>
+<span><span class="co">#&gt;  4 Sierra Leone  2020    8.81    59.8    604. 8.23e6  NA    </span></span>
+<span><span class="co">#&gt;  5 Botswana      2020    8.74    65.6   5811. 2.55e6  NA    </span></span>
+<span><span class="co">#&gt;  6 Saudi Arabia  2020    7.81    76.2  18086. 3.60e7   0.522</span></span>
+<span><span class="co">#&gt;  7 Iceland       2020    7.72    83.1  52984. 3.66e5   2.47 </span></span>
+<span><span class="co">#&gt;  8 Lesotho       2020    7.67    54.7    972. 2.25e6  NA    </span></span>
+<span><span class="co">#&gt;  9 Cabo Verde    2020    7.58    74.8   2801. 5.83e5  NA    </span></span>
+<span><span class="co">#&gt; 10 Belize        2020    7.53    72.9   5040. 3.95e5  NA    </span></span>
+<span><span class="co">#&gt; # … with 142 more rows, 3 more variables: military &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   region &lt;chr&gt;, income &lt;chr&gt;, and abbreviated variable</span></span>
+<span><span class="co">#&gt; #   names ¹​education, ²​research</span></span></code></pre></div>
+<div class="sourceCode" id="cb463"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_world_el</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span><span class="op">==</span><span class="fl">2020</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">gdpPcap</span> <span class="op">~</span> <span class="va">education</span>, <span class="va">.</span><span class="op">)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Call:</span></span>
+<span><span class="co">#&gt; lm(formula = gdpPcap ~ education, data = .)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Coefficients:</span></span>
+<span><span class="co">#&gt; (Intercept)    education  </span></span>
+<span><span class="co">#&gt;        9158         1285</span></span></code></pre></div>
+<div class="sourceCode" id="cb464"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_world_el</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span><span class="op">==</span><span class="fl">2020</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">gdpPcap</span> <span class="op">~</span> <span class="va">education</span>, <span class="va">.</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/glance.html">glance</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 1 × 12</span></span>
+<span><span class="co">#&gt;   r.squa…¹ adj.r…²  sigma stati…³ p.value    df logLik   AIC</span></span>
+<span><span class="co">#&gt;      &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1   0.0131 0.00650 20523.    1.98   0.161     1 -1713. 3431.</span></span>
+<span><span class="co">#&gt; # … with 4 more variables: BIC &lt;dbl&gt;, deviance &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   df.residual &lt;int&gt;, nobs &lt;int&gt;, and abbreviated variable</span></span>
+<span><span class="co">#&gt; #   names ¹​r.squared, ²​adj.r.squared, ³​statistic</span></span></code></pre></div>
+<div class="sourceCode" id="cb465"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_world_el</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">lifeExp</span> <span class="op">~</span> <span class="va">education</span> <span class="op">+</span> <span class="va">research</span> <span class="op">+</span> <span class="va">military</span>, <span class="va">.</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/glance.html">glance</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 1 × 12</span></span>
+<span><span class="co">#&gt;   r.squ…¹ adj.r…² sigma stati…³   p.value    df logLik   AIC</span></span>
+<span><span class="co">#&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1   0.346   0.345  5.25    270. 2.05e-140     3 -4711. 9432.</span></span>
+<span><span class="co">#&gt; # … with 4 more variables: BIC &lt;dbl&gt;, deviance &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   df.residual &lt;int&gt;, nobs &lt;int&gt;, and abbreviated variable</span></span>
+<span><span class="co">#&gt; #   names ¹​r.squared, ²​adj.r.squared, ³​statistic</span></span></code></pre></div>
+<div class="sourceCode" id="cb466"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_world_el</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">lifeExp</span> <span class="op">~</span> <span class="va">education</span> <span class="op">+</span> <span class="va">research</span> <span class="op">+</span> <span class="va">military</span>, <span class="va">.</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html">tidy</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 4 × 5</span></span>
+<span><span class="co">#&gt;   term        estimate std.error statistic   p.value</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 (Intercept)  70.2       0.489    144.    0        </span></span>
+<span><span class="co">#&gt; 2 education     0.0771    0.0966     0.798 4.25e-  1</span></span>
+<span><span class="co">#&gt; 3 research      3.84      0.145     26.4   6.95e-127</span></span>
+<span><span class="co">#&gt; 4 military     -0.0682    0.102     -0.667 5.05e-  1</span></span></code></pre></div>
+<p><span class="math display">\[lifeExp \sim 70.22 + 0.08\cdot education + 3.84 \cdot research - 0.07 \cdot military\]</span></p>
+<div class="sourceCode" id="cb467"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_world_el</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">gdpPcap</span> <span class="op">~</span> <span class="va">education</span> <span class="op">+</span> <span class="va">research</span> <span class="op">+</span> <span class="va">military</span>, <span class="va">.</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html">tidy</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 4 × 5</span></span>
+<span><span class="co">#&gt;   term        estimate std.error statistic   p.value</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 (Intercept)    1077.     1308.     0.823 4.11e-  1</span></span>
+<span><span class="co">#&gt; 2 education      1324.      258.     5.12  3.41e-  7</span></span>
+<span><span class="co">#&gt; 3 research      12792.      389.    32.9   1.07e-179</span></span>
+<span><span class="co">#&gt; 4 military       -967.      273.    -3.54  4.08e-  4</span></span></code></pre></div>
+<div class="sourceCode" id="cb468"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_world_el</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">gdpPcap</span> <span class="op">~</span> <span class="va">education</span> <span class="op">+</span> <span class="va">research</span> <span class="op">+</span> <span class="va">military</span>, <span class="va">.</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/glance.html">glance</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 1 × 12</span></span>
+<span><span class="co">#&gt;   r.squared adj.r.s…¹  sigma stati…²   p.value    df  logLik</span></span>
+<span><span class="co">#&gt;       &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1     0.478     0.477 14013.    466. 9.65e-215     3 -16766.</span></span>
+<span><span class="co">#&gt; # … with 5 more variables: AIC &lt;dbl&gt;, BIC &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;, and</span></span>
+<span><span class="co">#&gt; #   abbreviated variable names ¹​adj.r.squared, ²​statistic</span></span></code></pre></div>
+<p><span class="math display">\[gdpPcap \sim 1077 + 1024\cdot education + 12792 \cdot research - 967 \cdot military\]</span></p>
+<div class="sourceCode" id="cb469"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mod_r</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">lifeExp</span> <span class="op">~</span> <span class="va">research</span>, <span class="va">wdi_world</span><span class="op">)</span>; <span class="va">mod_e</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Call:</span></span>
+<span><span class="co">#&gt; lm(formula = lifeExp ~ education, data = wdi_world)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Coefficients:</span></span>
+<span><span class="co">#&gt; (Intercept)    education  </span></span>
+<span><span class="co">#&gt;     65.9047       0.9748</span></span></code></pre></div>
+</div>
+<div id="model-and-linear-regression-quick-reference" class="section level2" number="27.14">
+<h2>
+<span class="header-section-number">27.14</span> model and Linear Regression Quick Reference<a class="anchor" aria-label="anchor" href="#model-and-linear-regression-quick-reference"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>R4DS: Model basics
+<ul>
+<li><a href="https://r4ds.had.co.nz/model-basics.html" class="uri">https://r4ds.had.co.nz/model-basics.html</a></li>
+</ul>
+</li>
+</ul>
+<p>For explanation of other indices, please see.</p>
+<ul>
+<li>r-statistics.co by Selva Prabhakaran:
+<ul>
+<li><a href="http://r-statistics.co/Linear-Regression.html" class="uri">http://r-statistics.co/Linear-Regression.html</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="responses-to-questions-2.html"><span class="header-section-number">26</span> Responses to Questions</a></div>
+<div class="next"><a href="roudups.html"><span class="header-section-number">28</span> Roudups</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li>
+<a class="nav-link" href="#model"><span class="header-section-number">27</span> Model</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#setup-2">Setup</a></li></ul>
+</li>
+<li><a class="nav-link" href="#what-is-modeling-in-eda"><span class="header-section-number">27.1</span> What is modeling in EDA</a></li>
+<li><a class="nav-link" href="#linear-model-petal.length-petal.width"><span class="header-section-number">27.2</span> Linear Model: Petal.Length ~ Petal.Width</a></li>
+<li><a class="nav-link" href="#formula-textpetal.length-2.224-1.600cdot-textpetal.width"><span class="header-section-number">27.3</span> Formula: \(\text{Petal.Length} = 2.224 + 1.600\cdot \text{Petal.Width}\)</a></li>
+<li><a class="nav-link" href="#linear-model-sepal.length-sepal.width"><span class="header-section-number">27.4</span> Linear Model: Sepal.Length ~ Sepal.Width</a></li>
+<li><a class="nav-link" href="#formula-textsepal.length-3.093-1.103cdot-textsepal.width"><span class="header-section-number">27.5</span> Formula: \(\text{Sepal.Length} = 3.093 + 1.103\cdot \text{Sepal.Width}\)</a></li>
+<li><a class="nav-link" href="#petal.length-petal.width-r-squared-0.6779---68"><span class="header-section-number">27.6</span> Petal.Length ~ Petal.Width: R squared = 0.6779 - 68%</a></li>
+<li><a class="nav-link" href="#sepal.length-sepal.width-r-squared-0.3068---31"><span class="header-section-number">27.7</span> Sepal.Length ~ Sepal.Width: R squared = 0.3068 - 31%</a></li>
+<li><a class="nav-link" href="#linear-model-basics-y-x"><span class="header-section-number">27.8</span> Linear Model Basics: y ~ x</a></li>
+<li><a class="nav-link" href="#r-squared"><span class="header-section-number">27.9</span> R Squared</a></li>
+<li>
+<a class="nav-link" href="#useful-mathematical-formula"><span class="header-section-number">27.10</span> Useful Mathematical Formula</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#adjusted-r-squared"><span class="header-section-number">27.10.1</span> Adjusted R Squared</a></li></ul>
+</li>
+<li><a class="nav-link" href="#examples-wdi"><span class="header-section-number">27.11</span> Examples: WDI</a></li>
+<li><a class="nav-link" href="#brics-1"><span class="header-section-number">27.12</span> BRICs</a></li>
+<li><a class="nav-link" href="#government-expenditure-of-gdp"><span class="header-section-number">27.13</span> Government Expenditure, (% of GDP)</a></li>
+<li><a class="nav-link" href="#model-and-linear-regression-quick-reference"><span class="header-section-number">27.14</span> model and Linear Regression Quick Reference</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/13-model.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/13-model.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>A Minimal Book Example</strong>" was written by John Doe. It was last built on 2023-02-07.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

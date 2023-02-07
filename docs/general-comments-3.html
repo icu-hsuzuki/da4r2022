@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 31 General Comments | A Minimal Book Example</title>
+<meta name="author" content="John Doe">
+<meta name="description" content="31.1 Create a PDF or Word file. A Notebook file is created by pressing the Preview button, and the outputs appear as is. However, making a file with another format, R runs all code chunks from the...">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
+<meta property="og:title" content="Chapter 31 General Comments | A Minimal Book Example">
+<meta property="og:type" content="book">
+<meta property="og:description" content="31.1 Create a PDF or Word file. A Notebook file is created by pressing the Preview button, and the outputs appear as is. However, making a file with another format, R runs all code chunks from the...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 31 General Comments | A Minimal Book Example">
+<meta name="twitter:description" content="31.1 Create a PDF or Word file. A Notebook file is created by pressing the Preview button, and the outputs appear as is. However, making a file with another format, R runs all code chunks from the...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">A Minimal Book Example</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li><a class="" href="intro.html"><span class="header-section-number">2</span> Intdoduction</a></li>
+<li><a class="" href="r-with-r-studio.html"><span class="header-section-number">3</span> R with R Studio</a></li>
+<li><a class="" href="tidyverse.html"><span class="header-section-number">4</span> tidyverse Packages</a></li>
+<li><a class="" href="rmarkdown.html"><span class="header-section-number">5</span> R Markdown</a></li>
+<li><a class="" href="dplyr.html"><span class="header-section-number">6</span> Data Transforamtion with dplyr</a></li>
+<li><a class="" href="responses-to-assignment-two.html"><span class="header-section-number">7</span> Responses to Assignment Two</a></li>
+<li><a class="" href="set-up-1.html"><span class="header-section-number">8</span> Set up</a></li>
+<li><a class="" href="general-comments.html"><span class="header-section-number">9</span> General Comments</a></li>
+<li><a class="" href="responses-to-questions.html"><span class="header-section-number">10</span> Responses to Questions</a></li>
+<li><a class="" href="appendix-change-colors-shapes-linetypes-etc.-manually.html"><span class="header-section-number">11</span> Appendix: Change colors, shapes, linetypes, etc. manually</a></li>
+<li><a class="" href="wdi.html"><span class="header-section-number">12</span> Importing Public Data, WDI</a></li>
+<li><a class="" href="ggokit2.html"><span class="header-section-number">13</span> Data Visualization and `ggplot2’</a></li>
+<li><a class="" href="responses-to-assignment-three.html"><span class="header-section-number">14</span> Responses to Assignment Three</a></li>
+<li><a class="" href="set-up-2.html"><span class="header-section-number">15</span> Set up</a></li>
+<li><a class="" href="general-comments-1.html"><span class="header-section-number">16</span> General Comments</a></li>
+<li><a class="" href="world-development-indicators-wdi.html"><span class="header-section-number">17</span> World Development Indicators (WDI)</a></li>
+<li><a class="" href="responses-to-questions-1.html"><span class="header-section-number">18</span> Responses to Questions</a></li>
+<li><a class="" href="regression-lines-topic-of-eda5.html"><span class="header-section-number">19</span> Regression Lines; Topic of EDA5</a></li>
+<li><a class="" href="appendix-a-secondary-axis.html"><span class="header-section-number">20</span> Appendix: A secondary axis</a></li>
+<li><a class="" href="tidy.html"><span class="header-section-number">21</span> Tidy Data</a></li>
+<li><a class="" href="workflow.html"><span class="header-section-number">22</span> EDA Workflow</a></li>
+<li><a class="" href="assignment-four-the-week-five-assignment.html">Assignment Four: The Week Five Assignment</a></li>
+<li><a class="" href="set-up-3.html"><span class="header-section-number">23</span> Set up</a></li>
+<li><a class="" href="general-comments-2.html"><span class="header-section-number">24</span> General Comments</a></li>
+<li><a class="" href="your-work.html"><span class="header-section-number">25</span> Your Work</a></li>
+<li><a class="" href="responses-to-questions-2.html"><span class="header-section-number">26</span> Responses to Questions</a></li>
+<li><a class="" href="model.html"><span class="header-section-number">27</span> Model</a></li>
+<li><a class="" href="roudups.html"><span class="header-section-number">28</span> Roudups</a></li>
+<li><a class="" href="a5resp.html"><span class="header-section-number">29</span> Responses to Assignment Five</a></li>
+<li><a class="" href="set-up-4.html"><span class="header-section-number">30</span> Set up</a></li>
+<li><a class="active" href="general-comments-3.html"><span class="header-section-number">31</span> General Comments</a></li>
+<li><a class="" href="your-work-1.html"><span class="header-section-number">32</span> Your Work</a></li>
+<li><a class="" href="responses-to-questions-3.html"><span class="header-section-number">33</span> Responses to Questions</a></li>
+<li><a class="" href="my-comments-after-review.html"><span class="header-section-number">34</span> My Comments after Review</a></li>
+<li><a class="" href="eda.html"><span class="header-section-number">35</span> Exploartory Data analysis</a></li>
+<li><a class="" href="importing.html"><span class="header-section-number">36</span> Impoarting Data</a></li>
+<li><a class="" href="transforming.html"><span class="header-section-number">37</span> Transforming Data</a></li>
+<li><a class="" href="tidying.html"><span class="header-section-number">38</span> Tidying Data</a></li>
+<li><a class="" href="visualizing.html"><span class="header-section-number">39</span> Visualizing Data</a></li>
+<li><a class="" href="modeling.html"><span class="header-section-number">40</span> Modeling Data</a></li>
+<li><a class="" href="communicating-data-communicating.html"><span class="header-section-number">41</span> Communicating Data {communicating}</a></li>
+<li><a class="" href="worldbank.html"><span class="header-section-number">42</span> World Bank</a></li>
+<li><a class="" href="owid.html"><span class="header-section-number">43</span> Our World in Data</a></li>
+<li><a class="" href="oecd.html"><span class="header-section-number">44</span> OECD</a></li>
+<li><a class="" href="undata.html"><span class="header-section-number">45</span> UN Data</a></li>
+<li><a class="" href="wir.html"><span class="header-section-number">46</span> World Inequality Report</a></li>
+<li><a class="" href="histdata.html"><span class="header-section-number">47</span> HistData</a></li>
+<li><a class="" href="covid19.html"><span class="header-section-number">48</span> Covid 19</a></li>
+<li><a class="" href="bookdown.html"><span class="header-section-number">49</span> Bookdown</a></li>
+<li><a class="" href="template.html"><span class="header-section-number">50</span> Template</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="general-comments-3" class="section level1" number="31">
+<h1>
+<span class="header-section-number">31</span> General Comments<a class="anchor" aria-label="anchor" href="#general-comments-3"><i class="fas fa-link"></i></a>
+</h1>
+<div id="create-a-pdf-or-word-file." class="section level2" number="31.1">
+<h2>
+<span class="header-section-number">31.1</span> Create a PDF or Word file.<a class="anchor" aria-label="anchor" href="#create-a-pdf-or-word-file."><i class="fas fa-link"></i></a>
+</h2>
+<p>A Notebook file is created by pressing the Preview button, and the outputs appear as is. However, making a file with another format, R runs all code chunks from the top. So if the object is not defined above the code used, the knit program stops with an error message. I recommend the following steps.</p>
+<ol start="0" style="list-style-type: decimal">
+<li><p>Create a PDF right after you create a new (R Notebook) file (using Template). By this step, you can check your ‘Knit to PDF’ process by <code>tinytex</code> is working well. Please let me know if you fail to create a PDF and cannot solve the problem. I will look at the setting of your PC in class.</p></li>
+<li><p>Run all codes before you preview Notebook. You can use ‘Run All’, and ‘Run All Code Chunks Below’ under the ‘Run’ button if there is an incomplete code chunk.</p></li>
+<li><p>Before you create a PDF or word, you need to correct all errors. But if you could not, add <code>eval = FALSE</code> as an option.</p></li>
+</ol>
+<div class="sourceCode" id="cb485"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb485-1"><a href="general-comments-3.html#cb485-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb485-2"><a href="general-comments-3.html#cb485-2" aria-hidden="true" tabindex="-1"></a><span class="in"># code chunk with errors</span></span>
+<span id="cb485-3"><a href="general-comments-3.html#cb485-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<p>You can add a similar option from the gear mark at the top right in the code chunk. Select show nothing (don’t run code); it adds <code>{r eval = FALSE, include = FALSE}</code>, and the code chunk itself is skipped.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Rerun all. If you can reach the end of the file without having an error, ‘Knit to PDF’ or ‘Knit to Word’.</li>
+</ol>
+<p>Creating a Word file is similar, and should be more accessible.</p>
+<p>If you fail to create a PDF using <code>Knit to PDF</code> or <code>Knit to Word,</code> the alternative is to open the notebook wile with nb.html at the end in your web browser, such as Google Chrome, Edge, or Safari, and use the functionality of printing to PDF of your browser.</p>
+<div id="other-code-chunk-options" class="section level3" number="31.1.1">
+<h3>
+<span class="header-section-number">31.1.1</span> Other Code Chunk Options<a class="anchor" aria-label="anchor" href="#other-code-chunk-options"><i class="fas fa-link"></i></a>
+</h3>
+<p>Please review EDA5, and try options under the gear mark at the top right of each code chunk. I will add two useful options, I use often</p>
+<ol style="list-style-type: decimal">
+<li>
+<code>cash = TRUE</code> option. Downloading data and accessing to the internet takes time, and may cause trouble for the hosting site. With this option, you can avoid it, and shorten the compilation time to render. I always add this option to <code><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI()</a></code>. As for <code><a href="https://vincentarelbundock.github.io/WDI/reference/WDIsearch.html">WDIsearch()</a></code>, if you use <code>cache = wdi_cache</code>, you do not need to add this option. It is another benefit to use <code>cache = wdi_cache</code>.</li>
+</ol>
+<div class="sourceCode" id="cb486"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb486-1"><a href="general-comments-3.html#cb486-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r cash = TRUE}</span></span>
+<span id="cb486-2"><a href="general-comments-3.html#cb486-2" aria-hidden="true" tabindex="-1"></a><span class="in"># download from the internet</span></span>
+<span id="cb486-3"><a href="general-comments-3.html#cb486-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>
+<code>echo = FALSE</code> option. When you create a PDF with a limit of pages, you do not want to include some code chunks. Then use this option. The output is included, but the code chunk is not. You can select this option by choosing ’Show output only` option.</li>
+</ol>
+</div>
+<div id="reference" class="section level3" number="31.1.2">
+<h3>
+<span class="header-section-number">31.1.2</span> Reference<a class="anchor" aria-label="anchor" href="#reference"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><a href="https://yihui.org/knitr/options/" class="uri">https://yihui.org/knitr/options/</a></li>
+<li>Cheat Sheet. We distributed in class. You can download the same from Help: Cheatsheet at the top menu of R Stduio.</li>
+</ul>
+</div>
+<div id="long-table" class="section level3" number="31.1.3">
+<h3>
+<span class="header-section-number">31.1.3</span> Long Table<a class="anchor" aria-label="anchor" href="#long-table"><i class="fas fa-link"></i></a>
+</h3>
+<p>If you do not want to include a long table in your PDF or Word, use the following.</p>
+<div class="sourceCode" id="cb487"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">series</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="co">#&gt;               indicator</span></span>
+<span><span class="co">#&gt; 1    1.0.HCount.1.90usd</span></span>
+<span><span class="co">#&gt; 2     1.0.HCount.2.5usd</span></span>
+<span><span class="co">#&gt; 3  1.0.HCount.Mid10to50</span></span>
+<span><span class="co">#&gt; 4       1.0.HCount.Ofcl</span></span>
+<span><span class="co">#&gt; 5   1.0.HCount.Poor4uds</span></span>
+<span><span class="co">#&gt; 6   1.0.HCount.Vul4to10</span></span>
+<span><span class="co">#&gt; 7      1.0.PGap.1.90usd</span></span>
+<span><span class="co">#&gt; 8       1.0.PGap.2.5usd</span></span>
+<span><span class="co">#&gt; 9     1.0.PGap.Poor4uds</span></span>
+<span><span class="co">#&gt; 10     1.0.PSev.1.90usd</span></span>
+<span><span class="co">#&gt;                                       name</span></span>
+<span><span class="co">#&gt; 1          Poverty Headcount ($1.90 a day)</span></span>
+<span><span class="co">#&gt; 2          Poverty Headcount ($2.50 a day)</span></span>
+<span><span class="co">#&gt; 3    Middle Class ($10-50 a day) Headcount</span></span>
+<span><span class="co">#&gt; 4  Official Moderate Poverty Rate-National</span></span>
+<span><span class="co">#&gt; 5             Poverty Headcount ($4 a day)</span></span>
+<span><span class="co">#&gt; 6       Vulnerable ($4-10 a day) Headcount</span></span>
+<span><span class="co">#&gt; 7                Poverty Gap ($1.90 a day)</span></span>
+<span><span class="co">#&gt; 8                Poverty Gap ($2.50 a day)</span></span>
+<span><span class="co">#&gt; 9                   Poverty Gap ($4 a day)</span></span>
+<span><span class="co">#&gt; 10          Poverty Severity ($1.90 a day)</span></span>
+<span><span class="co">#&gt;                                                                                                                                                                                                                                                                    description</span></span>
+<span><span class="co">#&gt; 1                                                                                                                                     The poverty headcount index measures the proportion of the population with daily per capita income (in 2011 PPP) below the poverty line.</span></span>
+<span><span class="co">#&gt; 2                                                                                                                                     The poverty headcount index measures the proportion of the population with daily per capita income (in 2005 PPP) below the poverty line.</span></span>
+<span><span class="co">#&gt; 3                                                                                                                                     The poverty headcount index measures the proportion of the population with daily per capita income (in 2005 PPP) below the poverty line.</span></span>
+<span><span class="co">#&gt; 4                                                                                                                The poverty headcount index measures the proportion of the population with daily per capita income below the official poverty line developed by each country.</span></span>
+<span><span class="co">#&gt; 5                                                                                                                                     The poverty headcount index measures the proportion of the population with daily per capita income (in 2005 PPP) below the poverty line.</span></span>
+<span><span class="co">#&gt; 6                                                                                                                                     The poverty headcount index measures the proportion of the population with daily per capita income (in 2005 PPP) below the poverty line.</span></span>
+<span><span class="co">#&gt; 7  The poverty gap captures the mean aggregate income or consumption shortfall relative to the poverty line across the entire population. It measures the total resources needed to bring all the poor to the level of the poverty line (averaged over the total population). </span></span>
+<span><span class="co">#&gt; 8  The poverty gap captures the mean aggregate income or consumption shortfall relative to the poverty line across the entire population. It measures the total resources needed to bring all the poor to the level of the poverty line (averaged over the total population). </span></span>
+<span><span class="co">#&gt; 9  The poverty gap captures the mean aggregate income or consumption shortfall relative to the poverty line across the entire population. It measures the total resources needed to bring all the poor to the level of the poverty line (averaged over the total population). </span></span>
+<span><span class="co">#&gt; 10                                                                                                        The poverty severity index combines information on both poverty and inequality among the poor by averaging the squares of the poverty gaps relative the poverty line</span></span>
+<span><span class="co">#&gt;    sourceDatabase</span></span>
+<span><span class="co">#&gt; 1  LAC Equity Lab</span></span>
+<span><span class="co">#&gt; 2  LAC Equity Lab</span></span>
+<span><span class="co">#&gt; 3  LAC Equity Lab</span></span>
+<span><span class="co">#&gt; 4  LAC Equity Lab</span></span>
+<span><span class="co">#&gt; 5  LAC Equity Lab</span></span>
+<span><span class="co">#&gt; 6  LAC Equity Lab</span></span>
+<span><span class="co">#&gt; 7  LAC Equity Lab</span></span>
+<span><span class="co">#&gt; 8  LAC Equity Lab</span></span>
+<span><span class="co">#&gt; 9  LAC Equity Lab</span></span>
+<span><span class="co">#&gt; 10 LAC Equity Lab</span></span>
+<span><span class="co">#&gt;                                                       sourceOrganization</span></span>
+<span><span class="co">#&gt; 1      LAC Equity Lab tabulations of SEDLAC (CEDLAS and the World Bank).</span></span>
+<span><span class="co">#&gt; 2      LAC Equity Lab tabulations of SEDLAC (CEDLAS and the World Bank).</span></span>
+<span><span class="co">#&gt; 3      LAC Equity Lab tabulations of SEDLAC (CEDLAS and the World Bank).</span></span>
+<span><span class="co">#&gt; 4  LAC Equity Lab tabulations of data from National Statistical Offices.</span></span>
+<span><span class="co">#&gt; 5      LAC Equity Lab tabulations of SEDLAC (CEDLAS and the World Bank).</span></span>
+<span><span class="co">#&gt; 6      LAC Equity Lab tabulations of SEDLAC (CEDLAS and the World Bank).</span></span>
+<span><span class="co">#&gt; 7      LAC Equity Lab tabulations of SEDLAC (CEDLAS and the World Bank).</span></span>
+<span><span class="co">#&gt; 8      LAC Equity Lab tabulations of SEDLAC (CEDLAS and the World Bank).</span></span>
+<span><span class="co">#&gt; 9      LAC Equity Lab tabulations of SEDLAC (CEDLAS and the World Bank).</span></span>
+<span><span class="co">#&gt; 10     LAC Equity Lab tabulations of SEDLAC (CEDLAS and the World Bank).</span></span></code></pre></div>
+<p>This will print only the first ten rows. The following R Basic code does almost the same.</p>
+<div class="sourceCode" id="cb488"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span>, <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="co">#&gt;    iso3c iso2c                     country</span></span>
+<span><span class="co">#&gt; 1    ABW    AW                       Aruba</span></span>
+<span><span class="co">#&gt; 2    AFE    ZH Africa Eastern and Southern</span></span>
+<span><span class="co">#&gt; 3    AFG    AF                 Afghanistan</span></span>
+<span><span class="co">#&gt; 4    AFR    A9                      Africa</span></span>
+<span><span class="co">#&gt; 5    AFW    ZI  Africa Western and Central</span></span>
+<span><span class="co">#&gt; 6    AGO    AO                      Angola</span></span>
+<span><span class="co">#&gt; 7    ALB    AL                     Albania</span></span>
+<span><span class="co">#&gt; 8    AND    AD                     Andorra</span></span>
+<span><span class="co">#&gt; 9    ARB    1A                  Arab World</span></span>
+<span><span class="co">#&gt; 10   ARE    AE        United Arab Emirates</span></span>
+<span><span class="co">#&gt;                        region          capital longitude</span></span>
+<span><span class="co">#&gt; 1   Latin America &amp; Caribbean       Oranjestad  -70.0167</span></span>
+<span><span class="co">#&gt; 2                  Aggregates                           </span></span>
+<span><span class="co">#&gt; 3                  South Asia            Kabul   69.1761</span></span>
+<span><span class="co">#&gt; 4                  Aggregates                           </span></span>
+<span><span class="co">#&gt; 5                  Aggregates                           </span></span>
+<span><span class="co">#&gt; 6          Sub-Saharan Africa           Luanda    13.242</span></span>
+<span><span class="co">#&gt; 7       Europe &amp; Central Asia           Tirane   19.8172</span></span>
+<span><span class="co">#&gt; 8       Europe &amp; Central Asia Andorra la Vella    1.5218</span></span>
+<span><span class="co">#&gt; 9                  Aggregates                           </span></span>
+<span><span class="co">#&gt; 10 Middle East &amp; North Africa        Abu Dhabi   54.3705</span></span>
+<span><span class="co">#&gt;    latitude              income        lending</span></span>
+<span><span class="co">#&gt; 1   12.5167         High income Not classified</span></span>
+<span><span class="co">#&gt; 2                    Aggregates     Aggregates</span></span>
+<span><span class="co">#&gt; 3   34.5228          Low income            IDA</span></span>
+<span><span class="co">#&gt; 4                    Aggregates     Aggregates</span></span>
+<span><span class="co">#&gt; 5                    Aggregates     Aggregates</span></span>
+<span><span class="co">#&gt; 6  -8.81155 Lower middle income           IBRD</span></span>
+<span><span class="co">#&gt; 7   41.3317 Upper middle income           IBRD</span></span>
+<span><span class="co">#&gt; 8   42.5075         High income Not classified</span></span>
+<span><span class="co">#&gt; 9                    Aggregates     Aggregates</span></span>
+<span><span class="co">#&gt; 10  24.4764         High income Not classified</span></span></code></pre></div>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="set-up-4.html"><span class="header-section-number">30</span> Set up</a></div>
+<div class="next"><a href="your-work-1.html"><span class="header-section-number">32</span> Your Work</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#general-comments-3"><span class="header-section-number">31</span> General Comments</a></li>
+<li>
+<a class="nav-link" href="#create-a-pdf-or-word-file."><span class="header-section-number">31.1</span> Create a PDF or Word file.</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#other-code-chunk-options"><span class="header-section-number">31.1.1</span> Other Code Chunk Options</a></li>
+<li><a class="nav-link" href="#reference"><span class="header-section-number">31.1.2</span> Reference</a></li>
+<li><a class="nav-link" href="#long-table"><span class="header-section-number">31.1.3</span> Long Table</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/15-a5resp.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/15-a5resp.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>A Minimal Book Example</strong>" was written by John Doe. It was last built on 2023-02-07.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

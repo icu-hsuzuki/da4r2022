@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 21 Tidy Data | A Minimal Book Example</title>
+<meta name="author" content="John Doe">
+<meta name="description" content="21.1 Reviews and Previews   21.2 Example: World Inequility Report - WIR2022 World Inequality Report: https://wir2022.wid.world/ Executive Summary: https://wir2022.wid.world/executive-summary/...">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
+<meta property="og:title" content="Chapter 21 Tidy Data | A Minimal Book Example">
+<meta property="og:type" content="book">
+<meta property="og:description" content="21.1 Reviews and Previews   21.2 Example: World Inequility Report - WIR2022 World Inequality Report: https://wir2022.wid.world/ Executive Summary: https://wir2022.wid.world/executive-summary/...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 21 Tidy Data | A Minimal Book Example">
+<meta name="twitter:description" content="21.1 Reviews and Previews   21.2 Example: World Inequility Report - WIR2022 World Inequality Report: https://wir2022.wid.world/ Executive Summary: https://wir2022.wid.world/executive-summary/...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">A Minimal Book Example</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li><a class="" href="intro.html"><span class="header-section-number">2</span> Intdoduction</a></li>
+<li><a class="" href="r-with-r-studio.html"><span class="header-section-number">3</span> R with R Studio</a></li>
+<li><a class="" href="tidyverse.html"><span class="header-section-number">4</span> tidyverse Packages</a></li>
+<li><a class="" href="rmarkdown.html"><span class="header-section-number">5</span> R Markdown</a></li>
+<li><a class="" href="dplyr.html"><span class="header-section-number">6</span> Data Transforamtion with dplyr</a></li>
+<li><a class="" href="responses-to-assignment-two.html"><span class="header-section-number">7</span> Responses to Assignment Two</a></li>
+<li><a class="" href="set-up-1.html"><span class="header-section-number">8</span> Set up</a></li>
+<li><a class="" href="general-comments.html"><span class="header-section-number">9</span> General Comments</a></li>
+<li><a class="" href="responses-to-questions.html"><span class="header-section-number">10</span> Responses to Questions</a></li>
+<li><a class="" href="appendix-change-colors-shapes-linetypes-etc.-manually.html"><span class="header-section-number">11</span> Appendix: Change colors, shapes, linetypes, etc. manually</a></li>
+<li><a class="" href="wdi.html"><span class="header-section-number">12</span> Importing Public Data, WDI</a></li>
+<li><a class="" href="ggokit2.html"><span class="header-section-number">13</span> Data Visualization and `ggplot2’</a></li>
+<li><a class="" href="responses-to-assignment-three.html"><span class="header-section-number">14</span> Responses to Assignment Three</a></li>
+<li><a class="" href="set-up-2.html"><span class="header-section-number">15</span> Set up</a></li>
+<li><a class="" href="general-comments-1.html"><span class="header-section-number">16</span> General Comments</a></li>
+<li><a class="" href="world-development-indicators-wdi.html"><span class="header-section-number">17</span> World Development Indicators (WDI)</a></li>
+<li><a class="" href="responses-to-questions-1.html"><span class="header-section-number">18</span> Responses to Questions</a></li>
+<li><a class="" href="regression-lines-topic-of-eda5.html"><span class="header-section-number">19</span> Regression Lines; Topic of EDA5</a></li>
+<li><a class="" href="appendix-a-secondary-axis.html"><span class="header-section-number">20</span> Appendix: A secondary axis</a></li>
+<li><a class="active" href="tidy.html"><span class="header-section-number">21</span> Tidy Data</a></li>
+<li><a class="" href="workflow.html"><span class="header-section-number">22</span> EDA Workflow</a></li>
+<li><a class="" href="assignment-four-the-week-five-assignment.html">Assignment Four: The Week Five Assignment</a></li>
+<li><a class="" href="set-up-3.html"><span class="header-section-number">23</span> Set up</a></li>
+<li><a class="" href="general-comments-2.html"><span class="header-section-number">24</span> General Comments</a></li>
+<li><a class="" href="your-work.html"><span class="header-section-number">25</span> Your Work</a></li>
+<li><a class="" href="responses-to-questions-2.html"><span class="header-section-number">26</span> Responses to Questions</a></li>
+<li><a class="" href="model.html"><span class="header-section-number">27</span> Model</a></li>
+<li><a class="" href="roudups.html"><span class="header-section-number">28</span> Roudups</a></li>
+<li><a class="" href="a5resp.html"><span class="header-section-number">29</span> Responses to Assignment Five</a></li>
+<li><a class="" href="set-up-4.html"><span class="header-section-number">30</span> Set up</a></li>
+<li><a class="" href="general-comments-3.html"><span class="header-section-number">31</span> General Comments</a></li>
+<li><a class="" href="your-work-1.html"><span class="header-section-number">32</span> Your Work</a></li>
+<li><a class="" href="responses-to-questions-3.html"><span class="header-section-number">33</span> Responses to Questions</a></li>
+<li><a class="" href="my-comments-after-review.html"><span class="header-section-number">34</span> My Comments after Review</a></li>
+<li><a class="" href="eda.html"><span class="header-section-number">35</span> Exploartory Data analysis</a></li>
+<li><a class="" href="importing.html"><span class="header-section-number">36</span> Impoarting Data</a></li>
+<li><a class="" href="transforming.html"><span class="header-section-number">37</span> Transforming Data</a></li>
+<li><a class="" href="tidying.html"><span class="header-section-number">38</span> Tidying Data</a></li>
+<li><a class="" href="visualizing.html"><span class="header-section-number">39</span> Visualizing Data</a></li>
+<li><a class="" href="modeling.html"><span class="header-section-number">40</span> Modeling Data</a></li>
+<li><a class="" href="communicating-data-communicating.html"><span class="header-section-number">41</span> Communicating Data {communicating}</a></li>
+<li><a class="" href="worldbank.html"><span class="header-section-number">42</span> World Bank</a></li>
+<li><a class="" href="owid.html"><span class="header-section-number">43</span> Our World in Data</a></li>
+<li><a class="" href="oecd.html"><span class="header-section-number">44</span> OECD</a></li>
+<li><a class="" href="undata.html"><span class="header-section-number">45</span> UN Data</a></li>
+<li><a class="" href="wir.html"><span class="header-section-number">46</span> World Inequality Report</a></li>
+<li><a class="" href="histdata.html"><span class="header-section-number">47</span> HistData</a></li>
+<li><a class="" href="covid19.html"><span class="header-section-number">48</span> Covid 19</a></li>
+<li><a class="" href="bookdown.html"><span class="header-section-number">49</span> Bookdown</a></li>
+<li><a class="" href="template.html"><span class="header-section-number">50</span> Template</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="tidy" class="section level1" number="21">
+<h1>
+<span class="header-section-number">21</span> Tidy Data<a class="anchor" aria-label="anchor" href="#tidy"><i class="fas fa-link"></i></a>
+</h1>
+<div id="reviews-and-previews-1" class="section level2" number="21.1">
+<h2>
+<span class="header-section-number">21.1</span> Reviews and Previews<a class="anchor" aria-label="anchor" href="#reviews-and-previews-1"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="example-world-inequility-report---wir2022-1" class="section level2" number="21.2">
+<h2>
+<span class="header-section-number">21.2</span> Example: World Inequility Report - WIR2022<a class="anchor" aria-label="anchor" href="#example-world-inequility-report---wir2022-1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>World Inequality Report: <a href="https://wir2022.wid.world/" class="uri">https://wir2022.wid.world/</a>
+</li>
+<li>Executive Summary: <a href="https://wir2022.wid.world/executive-summary/" class="uri">https://wir2022.wid.world/executive-summary/</a>
+</li>
+<li>Methodology: <a href="https://wir2022.wid.world/methodology/" class="uri">https://wir2022.wid.world/methodology/</a>
+</li>
+<li>Data URL: <a href="https://wir2022.wid.world/www-site/uploads/2022/03/WIR2022TablesFigures-Summary.xlsx" class="uri">https://wir2022.wid.world/www-site/uploads/2022/03/WIR2022TablesFigures-Summary.xlsx</a>
+</li>
+</ul>
+<div class="sourceCode" id="cb280"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
+<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 </span></span>
+<span><span class="co">#&gt; ✔ tibble  3.1.8      ✔ dplyr   1.0.10</span></span>
+<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.5.0 </span></span>
+<span><span class="co">#&gt; ✔ readr   2.1.3      ✔ forcats 0.5.2 </span></span>
+<span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
+<span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
+<span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb281"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">url_summary</span> <span class="op">&lt;-</span> <span class="st">"https://wir2022.wid.world/www-site/uploads/2022/03/WIR2022TablesFigures-Summary.xlsx"</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span><span class="op">(</span>url <span class="op">=</span> <span class="va">url_summary</span>, destfile <span class="op">=</span> <span class="st">"./data/WIR2022s.xlsx"</span>, mode <span class="op">=</span> <span class="st">"wb"</span><span class="op">)</span> </span></code></pre></div>
+<div class="sourceCode" id="cb282"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://readxl.tidyverse.org/reference/excel_sheets.html">excel_sheets</a></span><span class="op">(</span><span class="st">"./data/WIR2022s.xlsx"</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "Index"     "F1"        "F2"        "F3"       </span></span>
+<span><span class="co">#&gt;  [5] "F4"        "F5."       "F6"        "F7"       </span></span>
+<span><span class="co">#&gt;  [9] "F8"        "F9"        "F10"       "F11"      </span></span>
+<span><span class="co">#&gt; [13] "F12"       "F13"       "F14"       "F15"      </span></span>
+<span><span class="co">#&gt; [17] "T1"        "data-F1"   "data-F2"   "data-F3"  </span></span>
+<span><span class="co">#&gt; [21] "data-F4"   "data-F5"   "data-F6"   "data-F7"  </span></span>
+<span><span class="co">#&gt; [25] "data-F8"   "data-F9"   "data-F10"  "data-F11" </span></span>
+<span><span class="co">#&gt; [29] "data-F12"  "data-F13." "data-F14." "data-F15"</span></span></code></pre></div>
+<hr>
+</div>
+<div id="f1-global-income-and-wealth-inequality-2021-1" class="section level2" number="21.3">
+<h2>
+<span class="header-section-number">21.3</span> F1: Global income and wealth inequality, 2021<a class="anchor" aria-label="anchor" href="#f1-global-income-and-wealth-inequality-2021-1"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb283"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"./data/WIR2022s.xlsx"</span>, sheet <span class="op">=</span> <span class="st">"data-F1"</span><span class="op">)</span></span>
+<span><span class="va">df_f1</span></span>
+<span><span class="co">#&gt; # A tibble: 2 × 5</span></span>
+<span><span class="co">#&gt;   ...1   `Bottom 50%` `Middle 40%` `Top 10%` `Top 1%`</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;         &lt;dbl&gt;        &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 Income       0.084         0.394     0.522    0.192</span></span>
+<span><span class="co">#&gt; 2 Wealth       0.0199        0.224     0.756    0.378</span></span></code></pre></div>
+<pre><code>#&gt; # A tibble: 6 × 3
+#&gt;   cat    group       value
+#&gt;   &lt;chr&gt;  &lt;chr&gt;       &lt;dbl&gt;
+#&gt; 1 Income Bottom 50% 0.084 
+#&gt; 2 Income Middle 40% 0.394 
+#&gt; 3 Income Top 10%    0.522 
+#&gt; 4 Wealth Bottom 50% 0.0199
+#&gt; 5 Wealth Middle 40% 0.224 
+#&gt; 6 Wealth Top 10%    0.756</code></pre>
+<hr>
+<div class="sourceCode" id="cb285"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f1_rev</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cat</span>, y <span class="op">=</span> <span class="va">value</span>, fill <span class="op">=</span> <span class="va">group</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-4-1.png" width="672"></div>
+<hr>
+</div>
+<div id="references-of-tidyr" class="section level2" number="21.4">
+<h2>
+<span class="header-section-number">21.4</span> References of <code>tidyr</code><a class="anchor" aria-label="anchor" href="#references-of-tidyr"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Textbook: <a href="https://r4ds.had.co.nz/tidy-data.html#tidy-data">R for Data Science,Tidy Data</a>
+</li>
+</ul>
+<div id="rstudio-primers-see-references-in-moodle-at-the-bottom-2" class="section level3" number="21.4.1">
+<h3>
+<span class="header-section-number">21.4.1</span> RStudio Primers: See References in Moodle at the bottom<a class="anchor" aria-label="anchor" href="#rstudio-primers-see-references-in-moodle-at-the-bottom-2"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>Tidy Your Data</strong></p>
+<ul>
+<li>Reshape Data</li>
+<li>Separate and Unite Columns</li>
+<li>Join Data Sets</li>
+</ul>
+<hr>
+</div>
+</div>
+<div id="variables-values-and-observations-definitions" class="section level2" number="21.5">
+<h2>
+<span class="header-section-number">21.5</span> Variables, values, and observations: Definitions<a class="anchor" aria-label="anchor" href="#variables-values-and-observations-definitions"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>A <strong>variable</strong> is a quantity, quality, or property that you can measure.</li>
+<li>A <strong>value</strong> is the state of a variable when you measure it. The value of a variable may change from measurement to measurement.</li>
+<li>An <strong>observation</strong> or <strong>case</strong> is a set of measurements made under similar conditions (you usually make all of the measurements in an observation at the same time and on the same object). An observation will contain several values, each associated with a different variable. I’ll sometimes refer to an observation as a case or data point.</li>
+<li>
+<strong>Tabular data</strong> is a table of values, each associated with a variable and an observation. Tabular data is tidy if each value is placed in its own cell, each variable in its own column, and each observation in its own row.</li>
+<li>So far, all of the data that you’ve seen has been tidy. In real-life, most data isn’t tidy, so we’ll come back to these ideas again in Data Wrangling.</li>
+</ul>
+<hr>
+</div>
+<div id="tidy-data" class="section level2" number="21.6">
+<h2>
+<span class="header-section-number">21.6</span> Tidy Data<a class="anchor" aria-label="anchor" href="#tidy-data"><i class="fas fa-link"></i></a>
+</h2>
+<blockquote>
+<p>“Data comes in many formats, but R prefers just one: tidy data.” — Garrett Grolemund</p>
+</blockquote>
+<p>Data can come in a variety of formats, but one format is easier to use in R than the others. This format is known as tidy data. A data set is tidy if:</p>
+<ol style="list-style-type: decimal">
+<li>Each variable is in its own column</li>
+<li>Each observation is in its own row</li>
+<li>Each value is in its own cell (this follows from #1 and #2)</li>
+</ol>
+<blockquote>
+<p>“Tidy data sets are all alike; but every messy data set is messy in its own way.” — Hadley Wickham</p>
+</blockquote>
+<blockquote>
+<p>“all happy families are all alike; each unhappy family is unhappy in its own way” - Tolstoy’s Anna Karenina</p>
+</blockquote>
+<hr>
+</div>
+<div id="tidyr-basics" class="section level2" number="21.7">
+<h2>
+<span class="header-section-number">21.7</span> <code>tidyr</code> Basics<a class="anchor" aria-label="anchor" href="#tidyr-basics"><i class="fas fa-link"></i></a>
+</h2>
+<div class="inline-figure"><img src="data/tidy-1.png" width="100%"></div>
+<ol style="list-style-type: decimal">
+<li>Each variable is in its own column</li>
+<li>Each observation is in its own row</li>
+</ol>
+<hr>
+</div>
+<div id="pivot-data-from-wide-to-long-pivot_longer" class="section level2" number="21.8">
+<h2>
+<span class="header-section-number">21.8</span> Pivot data from wide to long: <a href="https://tidyr.tidyverse.org/reference/pivot_longer.html"><code>pivot_longer()</code></a><a class="anchor" aria-label="anchor" href="#pivot-data-from-wide-to-long-pivot_longer"><i class="fas fa-link"></i></a>
+</h2>
+<pre><code>pivot_longer(data, cols = &lt;columns to pivot into longer format&gt;,
+  names_to = &lt;name of the new character column&gt;, # e.g. "group", "category", "class"
+  values_to = &lt;name of the column the values of cells go to&gt;) # e.g. "value", "n"</code></pre>
+<div class="sourceCode" id="cb287"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f1</span></span>
+<span><span class="co">#&gt; # A tibble: 2 × 5</span></span>
+<span><span class="co">#&gt;   ...1   `Bottom 50%` `Middle 40%` `Top 10%` `Top 1%`</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;         &lt;dbl&gt;        &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 Income       0.084         0.394     0.522    0.192</span></span>
+<span><span class="co">#&gt; 2 Wealth       0.0199        0.224     0.756    0.378</span></span></code></pre></div>
+<div class="sourceCode" id="cb288"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">(</span><span class="va">df_f1_rev</span> <span class="op">&lt;-</span> <span class="va">df_f1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span>, names_to <span class="op">=</span> <span class="st">"group"</span>, values_to <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 8 × 3</span></span>
+<span><span class="co">#&gt;   ...1   group       value</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;  &lt;chr&gt;       &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 Income Bottom 50% 0.084 </span></span>
+<span><span class="co">#&gt; 2 Income Middle 40% 0.394 </span></span>
+<span><span class="co">#&gt; 3 Income Top 10%    0.522 </span></span>
+<span><span class="co">#&gt; 4 Income Top 1%     0.192 </span></span>
+<span><span class="co">#&gt; 5 Wealth Bottom 50% 0.0199</span></span>
+<span><span class="co">#&gt; 6 Wealth Middle 40% 0.224 </span></span>
+<span><span class="co">#&gt; 7 Wealth Top 10%    0.756 </span></span>
+<span><span class="co">#&gt; 8 Wealth Top 1%     0.378</span></span></code></pre></div>
+<hr>
+<div class="sourceCode" id="cb289"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f1_rev</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">...1</span>, y <span class="op">=</span> <span class="va">value</span>, fill <span class="op">=</span> <span class="va">group</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-8-1.png" width="672"></div>
+<hr>
+<div class="sourceCode" id="cb290"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f1_rev</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">group</span> <span class="op">!=</span> <span class="st">"Top 1%"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">...1</span>, y <span class="op">=</span> <span class="va">value</span>, fill <span class="op">=</span> <span class="va">group</span><span class="op">)</span>, position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">...1</span>, y <span class="op">=</span> <span class="va">value</span>, group <span class="op">=</span> <span class="va">group</span>, </span>
+<span>            label <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/label_percent.html">label_percent</a></span><span class="op">(</span>accuracy<span class="op">=</span><span class="fl">1</span><span class="op">)</span><span class="op">(</span><span class="va">value</span><span class="op">)</span><span class="op">)</span>, </span>
+<span>            position <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/position_dodge.html">position_dodge</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">0.9</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent_format</a></span><span class="op">(</span>accuracy <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Figure 1. Global income and wealth inequality, 2021"</span>,</span>
+<span>       x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">"Share of total income or wealth"</span>, fill <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></code></pre></div>
+<hr>
+<p><img src="10-tidyr_files/figure-html/unnamed-chunk-10-1.png" width="672"><strong>Interpretation</strong>: The global bottom 50% captures 8.5% of total income measured at Purchasing Power Parity (PPP). The global bottom 50% owns 2% of wealth (at Purchasing Power Parity). The global top 10% owns 76% of total Household wealth and captures 52% of total income in 2021. Note that top wealth holders are not necessarily top income holders. Incomes are measured after the operation of pension and unemployment systems and before taxes and transfers.<br><strong>Sources and series</strong>: wir2022.wid.world/methodology.</p>
+<hr>
+</div>
+<div id="f2-the-poorest-half-lags-behind-bottom-50-middle-40-and-top-10-income-shares-across-the-world-in-2021" class="section level2" number="21.9">
+<h2>
+<span class="header-section-number">21.9</span> F2: The poorest half lags behind: Bottom 50%, middle 40% and top 10% income shares across the world in 2021<a class="anchor" aria-label="anchor" href="#f2-the-poorest-half-lags-behind-bottom-50-middle-40-and-top-10-income-shares-across-the-world-in-2021"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb291"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"./data/WIR2022s.xlsx"</span>, sheet <span class="op">=</span> <span class="st">"data-F2"</span><span class="op">)</span></span>
+<span><span class="va">df_f2</span></span>
+<span><span class="co">#&gt; # A tibble: 8 × 5</span></span>
+<span><span class="co">#&gt;    year iso                     `Bottom 50%` Middl…¹ Top 1…²</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;                          &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1  2021 Europe                        0.189    0.453   0.358</span></span>
+<span><span class="co">#&gt; 2  2021 East Asia                     0.139    0.427   0.434</span></span>
+<span><span class="co">#&gt; 3  2021 North America                 0.132    0.411   0.457</span></span>
+<span><span class="co">#&gt; 4  2021 Russia &amp; Central Asia         0.147    0.386   0.467</span></span>
+<span><span class="co">#&gt; 5  2021 South &amp; South East Asia       0.123    0.328   0.548</span></span>
+<span><span class="co">#&gt; 6  2021 Latin America                 0.102    0.344   0.554</span></span>
+<span><span class="co">#&gt; 7  2021 Sub-Saharan Africa            0.0892   0.354   0.557</span></span>
+<span><span class="co">#&gt; 8  2021 MENA                          0.09     0.329   0.581</span></span>
+<span><span class="co">#&gt; # … with abbreviated variable names ¹​`Middle 40%`,</span></span>
+<span><span class="co">#&gt; #   ²​`Top 10%`</span></span></code></pre></div>
+<hr>
+<div class="sourceCode" id="cb292"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="fl">3</span><span class="op">:</span><span class="fl">5</span>, names_to <span class="op">=</span> <span class="st">"group"</span>, values_to <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 24 × 4</span></span>
+<span><span class="co">#&gt;     year iso                   group      value</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;                 &lt;chr&gt;      &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  2021 Europe                Bottom 50% 0.189</span></span>
+<span><span class="co">#&gt;  2  2021 Europe                Middle 40% 0.453</span></span>
+<span><span class="co">#&gt;  3  2021 Europe                Top 10%    0.358</span></span>
+<span><span class="co">#&gt;  4  2021 East Asia             Bottom 50% 0.139</span></span>
+<span><span class="co">#&gt;  5  2021 East Asia             Middle 40% 0.427</span></span>
+<span><span class="co">#&gt;  6  2021 East Asia             Top 10%    0.434</span></span>
+<span><span class="co">#&gt;  7  2021 North America         Bottom 50% 0.132</span></span>
+<span><span class="co">#&gt;  8  2021 North America         Middle 40% 0.411</span></span>
+<span><span class="co">#&gt;  9  2021 North America         Top 10%    0.457</span></span>
+<span><span class="co">#&gt; 10  2021 Russia &amp; Central Asia Bottom 50% 0.147</span></span>
+<span><span class="co">#&gt; # … with 14 more rows</span></span></code></pre></div>
+<hr>
+<div class="sourceCode" id="cb293"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="fl">3</span><span class="op">:</span><span class="fl">5</span>, names_to <span class="op">=</span> <span class="st">"group"</span>, values_to <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">iso</span>, y <span class="op">=</span> <span class="va">value</span>, fill <span class="op">=</span> <span class="va">group</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-13-1.png" width="672"></div>
+<hr>
+</div>
+<div id="pivot-data-from-long-to-wide" class="section level2" number="21.10">
+<h2>
+<span class="header-section-number">21.10</span> Pivot data from long to wide:<a class="anchor" aria-label="anchor" href="#pivot-data-from-long-to-wide"><i class="fas fa-link"></i></a>
+</h2>
+<p><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html"><code>pivot_wider()</code></a>
+In Console: vignette(“pivot”)</p>
+<pre><code>pivot_wider(data, 
+  names_from = &lt;name of the column (or columns) to get the name of the output column&gt;,
+  values_from = &lt;name of the column to get the value of the output&gt;) </code></pre>
+<hr>
+<pre><code>#&gt; # A tibble: 24 × 4
+#&gt;     year iso                   group      value
+#&gt;    &lt;dbl&gt; &lt;chr&gt;                 &lt;chr&gt;      &lt;dbl&gt;
+#&gt;  1  2021 Europe                Bottom 50% 0.189
+#&gt;  2  2021 Europe                Middle 40% 0.453
+#&gt;  3  2021 Europe                Top 10%    0.358
+#&gt;  4  2021 East Asia             Bottom 50% 0.139
+#&gt;  5  2021 East Asia             Middle 40% 0.427
+#&gt;  6  2021 East Asia             Top 10%    0.434
+#&gt;  7  2021 North America         Bottom 50% 0.132
+#&gt;  8  2021 North America         Middle 40% 0.411
+#&gt;  9  2021 North America         Top 10%    0.457
+#&gt; 10  2021 Russia &amp; Central Asia Bottom 50% 0.147
+#&gt; # … with 14 more rows</code></pre>
+<pre><code>pivot_wider(data, names_from = group, values_from = value) </code></pre>
+<hr>
+</div>
+<div id="practice-f4-and-f13" class="section level2" number="21.11">
+<h2>
+<span class="header-section-number">21.11</span> Practice: F4 and F13<a class="anchor" aria-label="anchor" href="#practice-f4-and-f13"><i class="fas fa-link"></i></a>
+</h2>
+<p>F4 and F13 are similar. Please use <code>pivot_longer</code> to tidy the data and create charts.</p>
+<ul>
+<li>
+<strong>References</strong>: <a href="https://ds-sl.github.io/data-analysis/wir2022.nb.html" class="uri">https://ds-sl.github.io/data-analysis/wir2022.nb.html</a>
+</li>
+</ul>
+<div id="done-last-week" class="section level3" number="21.11.1">
+<h3>
+<span class="header-section-number">21.11.1</span> Done Last Week<a class="anchor" aria-label="anchor" href="#done-last-week"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>F12: Female share in global labor incomes, 1990-2020</li>
+<li>F14: Global carbon inequality, 2019. Group contribution to world emissions (%)</li>
+</ul>
+<hr>
+</div>
+</div>
+<div id="f3-top-10bottom-50-income-gaps-across-the-world-2021" class="section level2" number="21.12">
+<h2>
+<span class="header-section-number">21.12</span> F3: Top 10/Bottom 50 income gaps across the world, 2021<a class="anchor" aria-label="anchor" href="#f3-top-10bottom-50-income-gaps-across-the-world-2021"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb297"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"./data/WIR2022s.xlsx"</span>, sheet <span class="op">=</span> <span class="st">"data-F3"</span><span class="op">)</span></span>
+<span><span class="va">df_f3</span></span>
+<span><span class="co">#&gt; # A tibble: 177 × 3</span></span>
+<span><span class="co">#&gt;     year Country                T10B50</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  2021 United Arab Emirates    19.2 </span></span>
+<span><span class="co">#&gt;  2  2021 Afghanistan             11.7 </span></span>
+<span><span class="co">#&gt;  3  2021 Albania                  8.99</span></span>
+<span><span class="co">#&gt;  4  2021 Armenia                 11.0 </span></span>
+<span><span class="co">#&gt;  5  2021 Angola                  32.1 </span></span>
+<span><span class="co">#&gt;  6  2021 Argentina               13.2 </span></span>
+<span><span class="co">#&gt;  7  2021 Austria                  7.68</span></span>
+<span><span class="co">#&gt;  8  2021 Australia               10.4 </span></span>
+<span><span class="co">#&gt;  9  2021 Azerbaijan               9.63</span></span>
+<span><span class="co">#&gt; 10  2021 Bosnia and Herzegovina   9.32</span></span>
+<span><span class="co">#&gt; # … with 167 more rows</span></span></code></pre></div>
+<hr>
+</div>
+<div id="f3-top-10bottom-50-income-gaps-across-the-world-2021---original" class="section level2" number="21.13">
+<h2>
+<span class="header-section-number">21.13</span> F3: Top 10/Bottom 50 income gaps across the world, 2021 - Original<a class="anchor" aria-label="anchor" href="#f3-top-10bottom-50-income-gaps-across-the-world-2021---original"><i class="fas fa-link"></i></a>
+</h2>
+<div class="inline-figure"><img src="data/F3.png" width="100%"></div>
+<hr>
+<ul>
+<li>To 10 / Bottom 50 ratio has 5 classes: 5-12, 12-13, 13-16, 16-19, 19-140</li>
+</ul>
+<div class="sourceCode" id="cb298"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f3</span><span class="op">$</span><span class="va">T10B50</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span></span>
+<span><span class="co">#&gt;   5.394  10.958  15.676  17.635  19.838 139.591</span></span></code></pre></div>
+<hr>
+<div class="sourceCode" id="cb299"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">T10B50</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; `stat_bin()` using `bins = 30`. Pick better value with</span></span>
+<span><span class="co">#&gt; `binwidth`.</span></span></code></pre></div>
+<div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-18-1.png" width="672"></div>
+<hr>
+<div class="sourceCode" id="cb300"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">T10B50</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 177 × 3</span></span>
+<span><span class="co">#&gt;     year Country                  T10B50</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;                     &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  2021 Oman                      140. </span></span>
+<span><span class="co">#&gt;  2  2021 South Africa               63.1</span></span>
+<span><span class="co">#&gt;  3  2021 Namibia                    49.0</span></span>
+<span><span class="co">#&gt;  4  2021 Zambia                     44.4</span></span>
+<span><span class="co">#&gt;  5  2021 Central African Republic   42.5</span></span>
+<span><span class="co">#&gt;  6  2021 Mozambique                 38.9</span></span>
+<span><span class="co">#&gt;  7  2021 Swaziland                  38.1</span></span>
+<span><span class="co">#&gt;  8  2021 Botswana                   36.5</span></span>
+<span><span class="co">#&gt;  9  2021 Angola                     32.1</span></span>
+<span><span class="co">#&gt; 10  2021 Yemen                      32.0</span></span>
+<span><span class="co">#&gt; # … with 167 more rows</span></span></code></pre></div>
+<hr>
+<div class="sourceCode" id="cb301"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>`Top 10 Bottom 50 Ratio` <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/cut.html">cut</a></span><span class="op">(</span><span class="va">T10B50</span>,breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">12</span>, <span class="fl">13</span>, <span class="fl">16</span>, <span class="fl">19</span>,<span class="fl">140</span><span class="op">)</span>, </span>
+<span>                                        include.lowest <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span> </span>
+<span><span class="co">#&gt; # A tibble: 177 × 4</span></span>
+<span><span class="co">#&gt;     year Country                T10B50 Top 10 Bottom 50 Ra…¹</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt; &lt;fct&gt;                </span></span>
+<span><span class="co">#&gt;  1  2021 United Arab Emirates    19.2  (19,140]             </span></span>
+<span><span class="co">#&gt;  2  2021 Afghanistan             11.7  (5,12]               </span></span>
+<span><span class="co">#&gt;  3  2021 Albania                  8.99 (5,12]               </span></span>
+<span><span class="co">#&gt;  4  2021 Armenia                 11.0  (5,12]               </span></span>
+<span><span class="co">#&gt;  5  2021 Angola                  32.1  (19,140]             </span></span>
+<span><span class="co">#&gt;  6  2021 Argentina               13.2  (13,16]              </span></span>
+<span><span class="co">#&gt;  7  2021 Austria                  7.68 (5,12]               </span></span>
+<span><span class="co">#&gt;  8  2021 Australia               10.4  (5,12]               </span></span>
+<span><span class="co">#&gt;  9  2021 Azerbaijan               9.63 (5,12]               </span></span>
+<span><span class="co">#&gt; 10  2021 Bosnia and Herzegovina   9.32 (5,12]               </span></span>
+<span><span class="co">#&gt; # … with 167 more rows, and abbreviated variable name</span></span>
+<span><span class="co">#&gt; #   ¹​`Top 10 Bottom 50 Ratio`</span></span></code></pre></div>
+<hr>
+<div class="sourceCode" id="cb302"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">world_map</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/map_data.html">map_data</a></span><span class="op">(</span><span class="st">"world"</span><span class="op">)</span></span>
+<span><span class="va">df_f3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>`Top 10 Bottom 50 Ratio` <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/cut.html">cut</a></span><span class="op">(</span><span class="va">T10B50</span>,breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">12</span>, <span class="fl">13</span>, <span class="fl">16</span>, <span class="fl">19</span>,<span class="fl">140</span><span class="op">)</span>, </span>
+<span>                                        include.lowest <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>map_id <span class="op">=</span> <span class="va">Country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_map.html">geom_map</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">`Top 10 Bottom 50 Ratio`</span><span class="op">)</span>, map <span class="op">=</span> <span class="va">world_map</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/expand_limits.html">expand_limits</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">world_map</span><span class="op">$</span><span class="va">long</span>, y <span class="op">=</span> <span class="va">world_map</span><span class="op">$</span><span class="va">lat</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-21-1.png" width="672"></div>
+<hr>
+<div class="sourceCode" id="cb303"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">world_map_wir</span> <span class="op">&lt;-</span> <span class="va">world_map</span></span>
+<span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">[</span></span>
+<span>  <span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">==</span><span class="st">"Democratic Republic of the Congo"</span><span class="op">]</span><span class="op">&lt;-</span><span class="st">"DR Congo"</span></span>
+<span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">[</span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">==</span><span class="st">"Republic of Congo"</span><span class="op">]</span><span class="op">&lt;-</span><span class="st">"Congo"</span></span>
+<span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">[</span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">==</span><span class="st">"Ivory Coast"</span><span class="op">]</span><span class="op">&lt;-</span><span class="st">"Cote dIvoire"</span></span>
+<span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">[</span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">==</span><span class="st">"Vietnam"</span><span class="op">]</span><span class="op">&lt;-</span><span class="st">"Viet Nam"</span></span>
+<span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">[</span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">==</span><span class="st">"Russia"</span><span class="op">]</span><span class="op">&lt;-</span><span class="st">"Russian Federation"</span></span>
+<span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">[</span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">==</span><span class="st">"South Korea"</span><span class="op">]</span><span class="op">&lt;-</span><span class="st">"Korea"</span></span>
+<span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">[</span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">==</span><span class="st">"UK"</span><span class="op">]</span><span class="op">&lt;-</span><span class="st">"United Kingdom"</span></span>
+<span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">[</span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">==</span><span class="st">"Brunei"</span><span class="op">]</span><span class="op">&lt;-</span><span class="st">"Brunei Darussalam"</span></span>
+<span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">[</span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">==</span><span class="st">"Laos"</span><span class="op">]</span><span class="op">&lt;-</span><span class="st">"Lao PDR"</span></span>
+<span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">[</span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">==</span><span class="st">"Cote dIvoire"</span><span class="op">]</span><span class="op">&lt;-</span><span class="st">"Cote d'Ivoire"</span></span>
+<span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">[</span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">==</span><span class="st">"Cape Verde"</span><span class="op">]</span><span class="op">&lt;-</span> <span class="st">"Cabo Verde"</span></span>
+<span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">[</span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">==</span><span class="st">"Syria"</span><span class="op">]</span><span class="op">&lt;-</span> <span class="st">"Syrian Arab Republic"</span></span>
+<span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">[</span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">==</span><span class="st">"Trinidad"</span><span class="op">]</span><span class="op">&lt;-</span> <span class="st">"Trinidad and Tobago"</span></span>
+<span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">[</span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">==</span><span class="st">"Tobago"</span><span class="op">]</span><span class="op">&lt;-</span> <span class="st">"Trinidad and Tobago"</span></span></code></pre></div>
+<hr>
+<div class="sourceCode" id="cb304"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>`Top 10 Bottom 50 Ratio` <span class="op">=</span> </span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/cut.html">cut</a></span><span class="op">(</span><span class="va">T10B50</span>, breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">12</span>, <span class="fl">13</span>, <span class="fl">16</span>, <span class="fl">19</span>,<span class="fl">140</span><span class="op">)</span>, include.lowest <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>map_id <span class="op">=</span> <span class="va">Country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_map.html">geom_map</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">`Top 10 Bottom 50 Ratio`</span><span class="op">)</span>, </span>
+<span>    map <span class="op">=</span> <span class="va">world_map_wir</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/expand_limits.html">expand_limits</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">world_map_wir</span><span class="op">$</span><span class="va">long</span>, y <span class="op">=</span> <span class="va">world_map_wir</span><span class="op">$</span><span class="va">lat</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-23-1.png" width="672"></div>
+<hr>
+<div class="sourceCode" id="cb305"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>`Top 10 Bottom 50 Ratio` <span class="op">=</span> </span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/cut.html">cut</a></span><span class="op">(</span><span class="va">T10B50</span>,breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">12</span>, <span class="fl">13</span>, <span class="fl">16</span>, <span class="fl">19</span>,<span class="fl">140</span><span class="op">)</span>, include.lowest <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>map_id <span class="op">=</span> <span class="va">Country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_map.html">geom_map</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">`Top 10 Bottom 50 Ratio`</span><span class="op">)</span>, </span>
+<span>    map <span class="op">=</span> <span class="va">world_map_wir</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/expand_limits.html">expand_limits</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">world_map_wir</span><span class="op">$</span><span class="va">long</span>, y <span class="op">=</span> <span class="va">world_map_wir</span><span class="op">$</span><span class="va">lat</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_map.html">coord_map</a></span><span class="op">(</span><span class="st">"orthographic"</span>, orientation <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">25</span>, <span class="fl">60</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-24-1.png" width="672"></div>
+<hr>
+<div class="sourceCode" id="cb306"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>`Top 10 Bottom 50 Ratio` <span class="op">=</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/cut.html">cut</a></span><span class="op">(</span><span class="va">T10B50</span>,breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">12</span>, <span class="fl">13</span>, <span class="fl">16</span>, <span class="fl">19</span>,<span class="fl">140</span><span class="op">)</span>, include.lowest <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>map_id <span class="op">=</span> <span class="va">Country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_map.html">geom_map</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">`Top 10 Bottom 50 Ratio`</span><span class="op">)</span>, </span>
+<span>    map <span class="op">=</span> <span class="va">world_map_wir</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/expand_limits.html">expand_limits</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">world_map_wir</span><span class="op">$</span><span class="va">long</span>, y <span class="op">=</span> <span class="va">world_map_wir</span><span class="op">$</span><span class="va">lat</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_map.html">coord_map</a></span><span class="op">(</span><span class="st">"orthographic"</span>, orientation <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="op">-</span><span class="fl">80</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-25-1.png" width="672"></div>
+<hr>
+<div class="sourceCode" id="cb307"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>`Top 10 Bottom 50 Ratio` <span class="op">=</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/cut.html">cut</a></span><span class="op">(</span><span class="va">T10B50</span>,breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">12</span>, <span class="fl">13</span>, <span class="fl">16</span>, <span class="fl">19</span>,<span class="fl">140</span><span class="op">)</span>, include.lowest <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>map_id <span class="op">=</span> <span class="va">Country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_map.html">geom_map</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">`Top 10 Bottom 50 Ratio`</span><span class="op">)</span>, </span>
+<span>    map <span class="op">=</span> <span class="va">world_map_wir</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/expand_limits.html">expand_limits</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">world_map_wir</span><span class="op">$</span><span class="va">long</span>, y <span class="op">=</span> <span class="va">world_map_wir</span><span class="op">$</span><span class="va">lat</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-26-1.png" width="672"></div>
+<hr>
+<div class="sourceCode" id="cb308"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>`Top 10 Bottom 50 Ratio` <span class="op">=</span> </span>
+<span>        <span class="fu"><a href="https://rdrr.io/r/base/cut.html">cut</a></span><span class="op">(</span><span class="va">T10B50</span>,breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">12</span>, <span class="fl">13</span>, <span class="fl">16</span>, <span class="fl">19</span>,<span class="fl">140</span><span class="op">)</span>, include.lowest <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>map_id <span class="op">=</span> <span class="va">Country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_map.html">geom_map</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">`Top 10 Bottom 50 Ratio`</span><span class="op">)</span>, map <span class="op">=</span> <span class="va">world_map_wir</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/expand_limits.html">expand_limits</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">world_map_wir</span><span class="op">$</span><span class="va">long</span>, y <span class="op">=</span> <span class="va">world_map_wir</span><span class="op">$</span><span class="va">lat</span><span class="op">)</span>  <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Figure 3. Top 10/Bottom 50 income gaps across the world, 2021"</span>,</span>
+<span>       x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">""</span>, fill <span class="op">=</span> <span class="st">"Top 10/Bottom 50 ratio"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position<span class="op">=</span><span class="st">"bottom"</span>, </span>
+<span>        axis.text.x<span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span>, axis.ticks.x<span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>        axis.text.y<span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span>, axis.ticks.y<span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_fill_brewer</a></span><span class="op">(</span>palette<span class="op">=</span><span class="st">'YlOrRd'</span><span class="op">)</span></span></code></pre></div>
+<hr>
+<div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-28-1.png" width="672"></div>
+<hr>
+<div class="sourceCode" id="cb309"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter-joins.html">anti_join</a></span><span class="op">(</span><span class="va">world_map_wir</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Country"</span> <span class="op">=</span> <span class="st">"region"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 3 × 3</span></span>
+<span><span class="co">#&gt;    year Country   T10B50</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1  2021 Hong Kong   17.7</span></span>
+<span><span class="co">#&gt; 2  2021 Macao       14.5</span></span>
+<span><span class="co">#&gt; 3  2021 Zanzibar    19.8</span></span></code></pre></div>
+<p><strong>Filtering joins</strong></p>
+<ul>
+<li>
+<code>anti_join(x,y, ...)</code>: return all rows from x without a match in y.</li>
+<li>
+<code>semi_join(x,y, ...)</code>: return all rows from x with a match in y.</li>
+</ul>
+<p>Check <code>dplyr</code> cheat sheet, and Posit Primers Tidy Data.</p>
+<hr>
+</div>
+<div id="remaining-charts" class="section level2" number="21.14">
+<h2>
+<span class="header-section-number">21.14</span> Remaining Charts<a class="anchor" aria-label="anchor" href="#remaining-charts"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>F5: Global income inequality: T10/B50 ratio, 1820-2020 - fit curve</p></li>
+<li><p>F9: Average annual wealth growth rate, 1995-2021 - fit curve + alpha</p></li>
+<li><p>F7: Global income inequality, 1820-2020 - pivot + fit curve</p></li>
+<li><p>F10: The share of wealth owned by the global 0.1% and billionaires, 2021 - pivot + fit curve</p></li>
+<li><p>F6: Global income inequality: Between vs. Within country inequality (Theil index), 1820-2020 - pivot + area</p></li>
+<li><p>F11: Top 1% vs bottom 50% wealth shares in Western Europe and the US, 1910-2020 - pivot name_sep + fit curve</p></li>
+<li><p>F8: The rise of private versus the decline of public wealth in rich countries, 1970-2020 - rename + pivot + pivot + fit curve</p></li>
+<li><p>F15: Per capita emissions acriss the world, 2019 - add row names + dodge</p></li>
+</ul>
+<hr>
+</div>
+<div id="f5-global-income-inequality-t10b50-ratio-1820-2020" class="section level2" number="21.15">
+<h2>
+<span class="header-section-number">21.15</span> F5: Global income inequality: T10/B50 ratio, 1820-2020<a class="anchor" aria-label="anchor" href="#f5-global-income-inequality-t10b50-ratio-1820-2020"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb310"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">(</span><span class="va">df_f5</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"./data/WIR2022s.xlsx"</span>, sheet <span class="op">=</span> <span class="st">"data-F5"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 24 × 2</span></span>
+<span><span class="co">#&gt;        y t10b50</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt;  &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  1820   18.5</span></span>
+<span><span class="co">#&gt;  2  1850   22.5</span></span>
+<span><span class="co">#&gt;  3  1880   32.7</span></span>
+<span><span class="co">#&gt;  4  1900   41.1</span></span>
+<span><span class="co">#&gt;  5  1910   41.2</span></span>
+<span><span class="co">#&gt;  6  1920   39.5</span></span>
+<span><span class="co">#&gt;  7  1930   39.0</span></span>
+<span><span class="co">#&gt;  8  1940   44.4</span></span>
+<span><span class="co">#&gt;  9  1950   40.3</span></span>
+<span><span class="co">#&gt; 10  1960   38.4</span></span>
+<span><span class="co">#&gt; # … with 14 more rows</span></span></code></pre></div>
+<hr>
+<div class="sourceCode" id="cb311"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f5</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">y</span>, y <span class="op">=</span> <span class="va">t10b50</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>span<span class="op">=</span><span class="fl">0.25</span>, se<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; `geom_smooth()` using method = 'loess' and formula = 'y ~</span></span>
+<span><span class="co">#&gt; x'</span></span></code></pre></div>
+<div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-30-1.png" width="672"></div>
+<hr>
+</div>
+<div id="f9-average-annual-wealth-growth-rate-1995-2021---fit-curve-alpha" class="section level2" number="21.16">
+<h2>
+<span class="header-section-number">21.16</span> F9: Average annual wealth growth rate, 1995-2021 - fit curve + alpha<a class="anchor" aria-label="anchor" href="#f9-average-annual-wealth-growth-rate-1995-2021---fit-curve-alpha"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb312"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f9</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"./data/WIR2022s.xlsx"</span>, sheet <span class="op">=</span> <span class="st">"data-F9"</span><span class="op">)</span>; <span class="va">df_f9</span></span>
+<span><span class="co">#&gt; # A tibble: 127 × 2</span></span>
+<span><span class="co">#&gt;        p `Wealth growth 1995-2021`</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt;                     &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1     0                    0.0310</span></span>
+<span><span class="co">#&gt;  2     1                    0.0310</span></span>
+<span><span class="co">#&gt;  3     2                    0.0310</span></span>
+<span><span class="co">#&gt;  4     3                    0.0310</span></span>
+<span><span class="co">#&gt;  5     4                    0.0310</span></span>
+<span><span class="co">#&gt;  6     5                    0.0310</span></span>
+<span><span class="co">#&gt;  7     6                    0.0312</span></span>
+<span><span class="co">#&gt;  8     7                    0.0317</span></span>
+<span><span class="co">#&gt;  9     8                    0.0322</span></span>
+<span><span class="co">#&gt; 10     9                    0.0328</span></span>
+<span><span class="co">#&gt; # … with 117 more rows</span></span></code></pre></div>
+<hr>
+<div class="sourceCode" id="cb313"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f9</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">p</span>, y <span class="op">=</span> <span class="va">`Wealth growth 1995-2021`</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>span <span class="op">=</span> <span class="fl">0.30</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; `geom_smooth()` using method = 'loess' and formula = 'y ~</span></span>
+<span><span class="co">#&gt; x'</span></span></code></pre></div>
+<div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-31-1.png" width="672"></div>
+<hr>
+</div>
+<div id="f7-global-income-inequality-1820-2020---pivot-fit-curve" class="section level2" number="21.17">
+<h2>
+<span class="header-section-number">21.17</span> F7: Global income inequality, 1820-2020 - pivot + fit curve<a class="anchor" aria-label="anchor" href="#f7-global-income-inequality-1820-2020---pivot-fit-curve"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb314"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f7</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"./data/WIR2022s.xlsx"</span>, sheet <span class="op">=</span> <span class="st">"data-F7"</span><span class="op">)</span>; <span class="va">df_f7</span></span>
+<span><span class="co">#&gt; # A tibble: 24 × 4</span></span>
+<span><span class="co">#&gt;        y `Bottom 50%` `Middle 40%` `Top 10%`</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;     &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  1820       0.136         0.361     0.503</span></span>
+<span><span class="co">#&gt;  2  1850       0.118         0.350     0.532</span></span>
+<span><span class="co">#&gt;  3  1880       0.0870        0.345     0.568</span></span>
+<span><span class="co">#&gt;  4  1900       0.0724        0.332     0.595</span></span>
+<span><span class="co">#&gt;  5  1910       0.0729        0.326     0.601</span></span>
+<span><span class="co">#&gt;  6  1920       0.0755        0.328     0.597</span></span>
+<span><span class="co">#&gt;  7  1930       0.0714        0.371     0.558</span></span>
+<span><span class="co">#&gt;  8  1940       0.0629        0.379     0.558</span></span>
+<span><span class="co">#&gt;  9  1950       0.0687        0.377     0.554</span></span>
+<span><span class="co">#&gt; 10  1960       0.0701        0.392     0.538</span></span>
+<span><span class="co">#&gt; # … with 14 more rows</span></span></code></pre></div>
+<hr>
+<div class="sourceCode" id="cb315"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f7</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="fl">2</span><span class="op">:</span><span class="fl">4</span>, names_to <span class="op">=</span> <span class="st">"type"</span>, values_to <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">y</span>, y <span class="op">=</span> <span class="va">value</span>, color <span class="op">=</span> <span class="va">type</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">stat_smooth</a></span><span class="op">(</span>formula <span class="op">=</span> <span class="va">y</span><span class="op">~</span><span class="va">x</span>, method <span class="op">=</span> <span class="st">"loess"</span>, span <span class="op">=</span> <span class="fl">0.25</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-32-1.png" width="672"></div>
+<hr>
+</div>
+<div id="f10-the-share-of-wealth-owned-by-the-global-0.1-and-billionaires-2021---pivot-fit-curve" class="section level2" number="21.18">
+<h2>
+<span class="header-section-number">21.18</span> F10: The share of wealth owned by the global 0.1% and billionaires, 2021 - pivot + fit curve<a class="anchor" aria-label="anchor" href="#f10-the-share-of-wealth-owned-by-the-global-0.1-and-billionaires-2021---pivot-fit-curve"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb316"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f10</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"./data/WIR2022s.xlsx"</span>, sheet <span class="op">=</span> <span class="st">"data-F10"</span><span class="op">)</span>; <span class="va">df_f10</span></span>
+<span><span class="co">#&gt; New names:</span></span>
+<span><span class="co">#&gt; • `` -&gt; `...4`</span></span>
+<span><span class="co">#&gt; • `` -&gt; `...5`</span></span>
+<span><span class="co">#&gt; • `` -&gt; `...6`</span></span>
+<span><span class="co">#&gt; # A tibble: 27 × 6</span></span>
+<span><span class="co">#&gt;     year bn_hhweal top0.1_hhweal ...4   ...5  ...6</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt; &lt;lgl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  1995   0.0108         0.0729 NA       NA    NA</span></span>
+<span><span class="co">#&gt;  2  1996   0.0114         0.0744 NA       NA    NA</span></span>
+<span><span class="co">#&gt;  3  1997   0.0101         0.0768 NA       NA    NA</span></span>
+<span><span class="co">#&gt;  4  1998   0.00995        0.0815 NA       NA    NA</span></span>
+<span><span class="co">#&gt;  5  1999   0.0112         0.0855 NA       NA    NA</span></span>
+<span><span class="co">#&gt;  6  2000   0.0115         0.0862 NA       NA    NA</span></span>
+<span><span class="co">#&gt;  7  2001   0.0139         0.0846 NA       NA    NA</span></span>
+<span><span class="co">#&gt;  8  2002   0.0119         0.08   NA       NA    NA</span></span>
+<span><span class="co">#&gt;  9  2003   0.0103         0.08   NA       NA    NA</span></span>
+<span><span class="co">#&gt; 10  2004   0.0127         0.0828 NA       NA    NA</span></span>
+<span><span class="co">#&gt; # … with 17 more rows</span></span></code></pre></div>
+<hr>
+<div class="sourceCode" id="cb317"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f10</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">year</span>, <span class="st">"Global Billionaire Wealth"</span> <span class="op">=</span> <span class="va">bn_hhweal</span>, <span class="st">"Top 0.01%"</span> <span class="op">=</span> <span class="va">top0.1_hhweal</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="op">!</span><span class="va">year</span>, names_to <span class="op">=</span> <span class="st">"group"</span>,<span class="st">".value"</span>, values_to <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 54 × 3</span></span>
+<span><span class="co">#&gt;     year group                       value</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;                       &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  1995 Global Billionaire Wealth 0.0108 </span></span>
+<span><span class="co">#&gt;  2  1995 Top 0.01%                 0.0729 </span></span>
+<span><span class="co">#&gt;  3  1996 Global Billionaire Wealth 0.0114 </span></span>
+<span><span class="co">#&gt;  4  1996 Top 0.01%                 0.0744 </span></span>
+<span><span class="co">#&gt;  5  1997 Global Billionaire Wealth 0.0101 </span></span>
+<span><span class="co">#&gt;  6  1997 Top 0.01%                 0.0768 </span></span>
+<span><span class="co">#&gt;  7  1998 Global Billionaire Wealth 0.00995</span></span>
+<span><span class="co">#&gt;  8  1998 Top 0.01%                 0.0815 </span></span>
+<span><span class="co">#&gt;  9  1999 Global Billionaire Wealth 0.0112 </span></span>
+<span><span class="co">#&gt; 10  1999 Top 0.01%                 0.0855 </span></span>
+<span><span class="co">#&gt; # … with 44 more rows</span></span></code></pre></div>
+<hr>
+<div class="sourceCode" id="cb318"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f10</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">year</span>, <span class="st">"Global Billionaire Wealth"</span> <span class="op">=</span> <span class="va">bn_hhweal</span>, <span class="st">"Top 0.01%"</span> <span class="op">=</span> <span class="va">top0.1_hhweal</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="op">!</span><span class="va">year</span>, names_to <span class="op">=</span> <span class="st">"group"</span>,<span class="st">".value"</span>, values_to <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">stat_smooth</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">value</span>, color <span class="op">=</span> <span class="va">group</span><span class="op">)</span>, formula <span class="op">=</span> <span class="va">y</span><span class="op">~</span><span class="va">x</span>, method <span class="op">=</span> <span class="st">"loess"</span>, span <span class="op">=</span> <span class="fl">0.25</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-34-1.png" width="672"></div>
+<hr>
+</div>
+<div id="f6-global-income-inequality-between-vs.-within-country-inequality-theil-index-1820-2020---pivot-area" class="section level2" number="21.19">
+<h2>
+<span class="header-section-number">21.19</span> F6: Global income inequality: Between vs. Within country inequality (Theil index), 1820-2020 - pivot + area<a class="anchor" aria-label="anchor" href="#f6-global-income-inequality-between-vs.-within-country-inequality-theil-index-1820-2020---pivot-area"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb319"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f6</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"./data/WIR2022s.xlsx"</span>, sheet <span class="op">=</span> <span class="st">"data-F6"</span><span class="op">)</span>; <span class="va">df_f6</span></span>
+<span><span class="co">#&gt; New names:</span></span>
+<span><span class="co">#&gt; • `` -&gt; `...1`</span></span>
+<span><span class="co">#&gt; # A tibble: 9 × 3</span></span>
+<span><span class="co">#&gt;    ...1 `Between-country inequality` Within-country inequa…¹</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt;                        &lt;dbl&gt;                   &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1  1820                        0.120                   0.880</span></span>
+<span><span class="co">#&gt; 2  1850                        0.166                   0.834</span></span>
+<span><span class="co">#&gt; 3  1880                        0.241                   0.759</span></span>
+<span><span class="co">#&gt; 4  1900                        0.257                   0.743</span></span>
+<span><span class="co">#&gt; 5  1920                        0.320                   0.680</span></span>
+<span><span class="co">#&gt; 6  1950                        0.439                   0.561</span></span>
+<span><span class="co">#&gt; 7  1980                        0.569                   0.431</span></span>
+<span><span class="co">#&gt; 8  2000                        0.473                   0.527</span></span>
+<span><span class="co">#&gt; 9  2020                        0.320                   0.680</span></span>
+<span><span class="co">#&gt; # … with abbreviated variable name</span></span>
+<span><span class="co">#&gt; #   ¹​`Within-country inequality`</span></span></code></pre></div>
+<hr>
+<div class="sourceCode" id="cb320"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f6</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span>year <span class="op">=</span> <span class="st">"...1"</span>, <span class="fl">2</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="fl">2</span><span class="op">:</span><span class="fl">3</span>, names_to <span class="op">=</span> <span class="st">"type"</span>, values_to <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>types <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">type</span>, </span>
+<span>      levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Within-country inequality"</span>, <span class="st">"Between-country inequality"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">value</span>, fill <span class="op">=</span> <span class="va">types</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_ribbon.html">geom_area</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent_format</a></span><span class="op">(</span>accuracy <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1820</span>, <span class="fl">2020</span>, by <span class="op">=</span> <span class="fl">20</span><span class="op">)</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span><span class="op">(</span>values<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/rev.html">rev</a></span><span class="op">(</span><span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/hue_pal.html">hue_pal</a></span><span class="op">(</span><span class="op">)</span><span class="op">(</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span>, </span>
+<span>      labels <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_wrap.html">str_wrap</a></span><span class="op">(</span><span class="va">x</span>, width <span class="op">=</span> <span class="fl">15</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Figure 6. Global income inequality: </span></span>
+<span><span class="st">       \nBetween vs. within country inequality (Theil index), 1820-2020"</span>,</span>
+<span>       x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">"Share of global inequality (% of total Theil index)"</span>, fill <span class="op">=</span> <span class="st">""</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span><span class="st">"text"</span>, x <span class="op">=</span> <span class="fl">1850</span>, y <span class="op">=</span> <span class="fl">0.28</span>, </span>
+<span>      label <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_wrap.html">str_wrap</a></span><span class="op">(</span><span class="st">"1820: Between country inequality represents 11% </span></span>
+<span><span class="st">                                of global inequality"</span>, width <span class="op">=</span> <span class="fl">20</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span><span class="st">"text"</span>, x <span class="op">=</span> <span class="fl">1980</span>, y <span class="op">=</span> <span class="fl">0.70</span>, </span>
+<span>      label <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_wrap.html">str_wrap</a></span><span class="op">(</span><span class="st">"1980: Between country inequality represents 57% </span></span>
+<span><span class="st">                                of global inequality"</span>, width <span class="op">=</span> <span class="fl">20</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span><span class="st">"text"</span>, x <span class="op">=</span> <span class="fl">1990</span>, y <span class="op">=</span> <span class="fl">0.30</span>, </span>
+<span>      label <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_wrap.html">str_wrap</a></span><span class="op">(</span><span class="st">"2020: Between country inequality represents 32% </span></span>
+<span><span class="st">                                of global inequality"</span>, width <span class="op">=</span> <span class="fl">20</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<hr>
+<div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-36-1.png" width="672"></div>
+<hr>
+</div>
+<div id="f11-top-1-vs-bottom-50-wealth-shares-in-western-europe-and-the-us-1910-2020---pivot-name_sep-fit-curve" class="section level2" number="21.20">
+<h2>
+<span class="header-section-number">21.20</span> F11: Top 1% vs bottom 50% wealth shares in Western Europe and the US, 1910-2020 - pivot name_sep + fit curve<a class="anchor" aria-label="anchor" href="#f11-top-1-vs-bottom-50-wealth-shares-in-western-europe-and-the-us-1910-2020---pivot-name_sep-fit-curve"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb321"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f11</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"./data/WIR2022s.xlsx"</span>, sheet <span class="op">=</span> <span class="st">"data-F11"</span><span class="op">)</span>; <span class="va">df_f11</span></span>
+<span><span class="co">#&gt; # A tibble: 12 × 5</span></span>
+<span><span class="co">#&gt;     year USbot50 UStop1 EUbot50 EUtop1</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  1910 0.00700  0.425  0.0128  0.554</span></span>
+<span><span class="co">#&gt;  2  1920 0.0102   0.410  0.0139  0.496</span></span>
+<span><span class="co">#&gt;  3  1930 0.00737  0.409  0.0175  0.464</span></span>
+<span><span class="co">#&gt;  4  1940 0.0112   0.319  0.0282  0.412</span></span>
+<span><span class="co">#&gt;  5  1950 0.0270   0.276  0.0272  0.339</span></span>
+<span><span class="co">#&gt;  6  1960 0.0232   0.279  0.0503  0.304</span></span>
+<span><span class="co">#&gt;  7  1970 0.0221   0.241  0.0649  0.235</span></span>
+<span><span class="co">#&gt;  8  1980 0.0260   0.251  0.0658  0.200</span></span>
+<span><span class="co">#&gt;  9  1990 0.0211   0.294  0.0535  0.200</span></span>
+<span><span class="co">#&gt; 10  2000 0.0162   0.323  0.0543  0.214</span></span>
+<span><span class="co">#&gt; 11  2010 0.0111   0.357  0.0500  0.219</span></span>
+<span><span class="co">#&gt; 12  2020 0.0149   0.354  0.0576  0.219</span></span></code></pre></div>
+<hr>
+<div class="sourceCode" id="cb322"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f11</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span><span class="op">!</span><span class="va">year</span>, US_bot50 <span class="op">=</span> <span class="va">USbot50</span>, US_top1 <span class="op">=</span> <span class="va">UStop1</span>, </span>
+<span>         EU_bot50 <span class="op">=</span> <span class="va">EUbot50</span>, EU_top1 <span class="op">=</span> <span class="va">EUtop1</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="op">!</span><span class="va">year</span>, names_to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"group"</span>,<span class="st">".value"</span><span class="op">)</span>, names_sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="fl">3</span><span class="op">:</span><span class="fl">4</span>, names_to <span class="op">=</span> <span class="st">"type"</span>, values_to <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">stat_smooth</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">value</span>, color <span class="op">=</span> <span class="va">group</span>, linetype <span class="op">=</span> <span class="va">type</span><span class="op">)</span>, </span>
+<span>              span <span class="op">=</span> <span class="fl">0.25</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1910</span>, <span class="fl">2020</span>, by <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent_format</a></span><span class="op">(</span>accuracy <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Figure 11. Top 1% vs bottom 50% wealth shares </span></span>
+<span><span class="st">       \n in Western Europe and the US, 1910-2020"</span>, </span>
+<span>       x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">"Share of total personal wealth (%)"</span>, color <span class="op">=</span> <span class="st">""</span>, linetype <span class="op">=</span> <span class="st">""</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_linetype_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"dotted"</span>,<span class="st">"solid"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span><span class="st">"text"</span>, x <span class="op">=</span> <span class="fl">2000</span>, y <span class="op">=</span> <span class="fl">0.50</span>, </span>
+<span>      label <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_wrap.html">str_wrap</a></span><span class="op">(</span><span class="st">"Wealth inequality has been rising at </span></span>
+<span><span class="st">        different speeds after a historical decline. The bottom 50% has always been </span></span>
+<span><span class="st">                                extremely low."</span>, width <span class="op">=</span> <span class="fl">30</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<hr>
+<div id="step-1." class="section level3" number="21.20.1">
+<h3>
+<span class="header-section-number">21.20.1</span> Step 1.<a class="anchor" aria-label="anchor" href="#step-1."><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb323"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f11</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span><span class="op">!</span><span class="va">year</span>, US_bot50 <span class="op">=</span> <span class="va">USbot50</span>, US_top1 <span class="op">=</span> <span class="va">UStop1</span>, </span>
+<span>                  EU_bot50 <span class="op">=</span> <span class="va">EUbot50</span>, EU_top1 <span class="op">=</span> <span class="va">EUtop1</span><span class="op">)</span> </span>
+<span><span class="co">#&gt; # A tibble: 12 × 5</span></span>
+<span><span class="co">#&gt;     year US_bot50 US_top1 EU_bot50 EU_top1</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  1910  0.00700   0.425   0.0128   0.554</span></span>
+<span><span class="co">#&gt;  2  1920  0.0102    0.410   0.0139   0.496</span></span>
+<span><span class="co">#&gt;  3  1930  0.00737   0.409   0.0175   0.464</span></span>
+<span><span class="co">#&gt;  4  1940  0.0112    0.319   0.0282   0.412</span></span>
+<span><span class="co">#&gt;  5  1950  0.0270    0.276   0.0272   0.339</span></span>
+<span><span class="co">#&gt;  6  1960  0.0232    0.279   0.0503   0.304</span></span>
+<span><span class="co">#&gt;  7  1970  0.0221    0.241   0.0649   0.235</span></span>
+<span><span class="co">#&gt;  8  1980  0.0260    0.251   0.0658   0.200</span></span>
+<span><span class="co">#&gt;  9  1990  0.0211    0.294   0.0535   0.200</span></span>
+<span><span class="co">#&gt; 10  2000  0.0162    0.323   0.0543   0.214</span></span>
+<span><span class="co">#&gt; 11  2010  0.0111    0.357   0.0500   0.219</span></span>
+<span><span class="co">#&gt; 12  2020  0.0149    0.354   0.0576   0.219</span></span></code></pre></div>
+<hr>
+</div>
+<div id="step-2." class="section level3" number="21.20.2">
+<h3>
+<span class="header-section-number">21.20.2</span> Step 2.<a class="anchor" aria-label="anchor" href="#step-2."><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb324"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f11</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span><span class="op">!</span><span class="va">year</span>, US_bot50 <span class="op">=</span> <span class="va">USbot50</span>, US_top1 <span class="op">=</span> <span class="va">UStop1</span>, </span>
+<span>         EU_bot50 <span class="op">=</span> <span class="va">EUbot50</span>, EU_top1 <span class="op">=</span> <span class="va">EUtop1</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="op">!</span><span class="va">year</span>, names_to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"group"</span>,<span class="st">".value"</span><span class="op">)</span>, names_sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span></span></code></pre></div>
+<hr>
+</div>
+<div id="step-2.-1" class="section level3" number="21.20.3">
+<h3>
+<span class="header-section-number">21.20.3</span> Step 2.<a class="anchor" aria-label="anchor" href="#step-2.-1"><i class="fas fa-link"></i></a>
+</h3>
+<pre><code>#&gt; # A tibble: 24 × 4
+#&gt;     year group   bot50  top1
+#&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;
+#&gt;  1  1910 US    0.00700 0.425
+#&gt;  2  1910 EU    0.0128  0.554
+#&gt;  3  1920 US    0.0102  0.410
+#&gt;  4  1920 EU    0.0139  0.496
+#&gt;  5  1930 US    0.00737 0.409
+#&gt;  6  1930 EU    0.0175  0.464
+#&gt;  7  1940 US    0.0112  0.319
+#&gt;  8  1940 EU    0.0282  0.412
+#&gt;  9  1950 US    0.0270  0.276
+#&gt; 10  1950 EU    0.0272  0.339
+#&gt; # … with 14 more rows</code></pre>
+<hr>
+</div>
+<div id="step-3." class="section level3" number="21.20.4">
+<h3>
+<span class="header-section-number">21.20.4</span> Step 3.<a class="anchor" aria-label="anchor" href="#step-3."><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb326"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f11</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span><span class="op">!</span><span class="va">year</span>, US_bot50 <span class="op">=</span> <span class="va">USbot50</span>, US_top1 <span class="op">=</span> <span class="va">UStop1</span>, </span>
+<span>         EU_bot50 <span class="op">=</span> <span class="va">EUbot50</span>, EU_top1 <span class="op">=</span> <span class="va">EUtop1</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="op">!</span><span class="va">year</span>, names_to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"group"</span>,<span class="st">".value"</span><span class="op">)</span>, </span>
+<span>               names_sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="fl">3</span><span class="op">:</span><span class="fl">4</span>, names_to <span class="op">=</span> <span class="st">"type"</span>, values_to <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span> </span></code></pre></div>
+<hr>
+</div>
+<div id="step-3.-1" class="section level3" number="21.20.5">
+<h3>
+<span class="header-section-number">21.20.5</span> Step 3.<a class="anchor" aria-label="anchor" href="#step-3.-1"><i class="fas fa-link"></i></a>
+</h3>
+<pre><code>#&gt; # A tibble: 48 × 4
+#&gt;     year group type    value
+#&gt;    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt;
+#&gt;  1  1910 US    bot50 0.00700
+#&gt;  2  1910 US    top1  0.425  
+#&gt;  3  1910 EU    bot50 0.0128 
+#&gt;  4  1910 EU    top1  0.554  
+#&gt;  5  1920 US    bot50 0.0102 
+#&gt;  6  1920 US    top1  0.410  
+#&gt;  7  1920 EU    bot50 0.0139 
+#&gt;  8  1920 EU    top1  0.496  
+#&gt;  9  1930 US    bot50 0.00737
+#&gt; 10  1930 US    top1  0.409  
+#&gt; # … with 38 more rows</code></pre>
+<hr>
+<div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-43-1.png" width="672"></div>
+<hr>
+</div>
+</div>
+<div id="f8-the-rise-of-private-versus-the-decline-of-public-wealth-in-rich-countries-1970-2020---rename-pivot-pivot-fit-curve" class="section level2" number="21.21">
+<h2>
+<span class="header-section-number">21.21</span> F8: The rise of private versus the decline of public wealth in rich countries, 1970-2020 - rename + pivot + pivot + fit curve<a class="anchor" aria-label="anchor" href="#f8-the-rise-of-private-versus-the-decline-of-public-wealth-in-rich-countries-1970-2020---rename-pivot-pivot-fit-curve"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb328"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f8</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"./data/WIR2022s.xlsx"</span>, sheet <span class="op">=</span> <span class="st">"data-F8"</span><span class="op">)</span>; <span class="va">df_f8</span></span>
+<span><span class="co">#&gt; # A tibble: 51 × 17</span></span>
+<span><span class="co">#&gt;     year Germany German…¹ Spain Spain…² France Franc…³    UK</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  1970   1.11      2.30 0.604    4.06  0.422    3.12 0.601</span></span>
+<span><span class="co">#&gt;  2  1971   1.12      2.25 0.657    4.53  0.443    3.06 0.689</span></span>
+<span><span class="co">#&gt;  3  1972   1.11      2.27 0.624    4.36  0.467    3.08 0.790</span></span>
+<span><span class="co">#&gt;  4  1973   1.11      2.23 0.596    4.46  0.478    3.06 0.929</span></span>
+<span><span class="co">#&gt;  5  1974   1.13      2.25 0.586    4.64  0.498    3.03 1.09 </span></span>
+<span><span class="co">#&gt;  6  1975   1.12      2.35 0.602    4.83  0.545    3.12 1.00 </span></span>
+<span><span class="co">#&gt;  7  1976   1.03      2.34 0.581    4.46  0.561    3.08 0.918</span></span>
+<span><span class="co">#&gt;  8  1977   1.01      2.42 0.586    4.10  0.567    3.10 0.867</span></span>
+<span><span class="co">#&gt;  9  1978   0.990     2.52 0.604    4.10  0.580    3.20 0.881</span></span>
+<span><span class="co">#&gt; 10  1979   0.989     2.55 0.621    4.20  0.624    3.30 0.955</span></span>
+<span><span class="co">#&gt; # … with 41 more rows, 9 more variables:</span></span>
+<span><span class="co">#&gt; #   `UK (private)` &lt;dbl&gt;, Japan &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   `Japan (private)` &lt;dbl&gt;, Norway &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   `Norway (private)` &lt;dbl&gt;, USA &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   `USA (private)` &lt;dbl&gt;, gwealAVGRICH &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   pwealAVGRICH &lt;dbl&gt;, and abbreviated variable names</span></span>
+<span><span class="co">#&gt; #   ¹​`Germany (private)`, ²​`Spain (private)`, …</span></span></code></pre></div>
+<hr>
+<div class="sourceCode" id="cb329"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f8</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">year</span>, Germany_public <span class="op">=</span> <span class="va">Germany</span>, Germany_private <span class="op">=</span> <span class="st">'Germany (private)'</span>, </span>
+<span>         Spain_public <span class="op">=</span> <span class="va">Spain</span>, Spain_private <span class="op">=</span> <span class="st">'Spain (private)'</span>, </span>
+<span>         France_public <span class="op">=</span> <span class="va">France</span>, France_private <span class="op">=</span> <span class="st">'France (private)'</span>, </span>
+<span>         UK_public  <span class="op">=</span> <span class="va">UK</span>, UK_private <span class="op">=</span> <span class="st">'UK (private)'</span>, </span>
+<span>         Japan_public <span class="op">=</span> <span class="va">Japan</span>, Japan_private <span class="op">=</span> <span class="st">'Japan (private)'</span>, </span>
+<span>         Norway_public <span class="op">=</span> <span class="va">Norway</span>, Norway_private <span class="op">=</span> <span class="st">'Norway (private)'</span>,</span>
+<span>         USA_public <span class="op">=</span> <span class="va">USA</span>, USA_private <span class="op">=</span> <span class="st">'USA (private)'</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="op">!</span><span class="va">year</span>, names_to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"country"</span>,<span class="st">".value"</span><span class="op">)</span>, names_sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="fl">3</span><span class="op">:</span><span class="fl">4</span>, names_to <span class="op">=</span> <span class="st">"type"</span>, values_to <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">stat_smooth</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">value</span>, color <span class="op">=</span> <span class="va">country</span>, linetype <span class="op">=</span> <span class="va">type</span><span class="op">)</span>, </span>
+<span>              span <span class="op">=</span> <span class="fl">0.25</span>, se <span class="op">=</span> <span class="cn">FALSE</span>, size<span class="op">=</span><span class="fl">0.75</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent_format</a></span><span class="op">(</span>accuracy <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Figure 8. The rise of private versus the decline of public </span></span>
+<span><span class="st">       wealth in rich countries, 1970-2020"</span>, </span>
+<span>       x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">"wealth as as % of national income"</span>, color <span class="op">=</span> <span class="st">""</span>, type <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></code></pre></div>
+<hr>
+<div id="step-1" class="section level3" number="21.21.1">
+<h3>
+<span class="header-section-number">21.21.1</span> Step 1<a class="anchor" aria-label="anchor" href="#step-1"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb330"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f8</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">year</span>, Germany_public <span class="op">=</span> <span class="va">Germany</span>, Germany_private <span class="op">=</span> <span class="st">'Germany (private)'</span>, </span>
+<span>         Spain_public <span class="op">=</span> <span class="va">Spain</span>, Spain_private <span class="op">=</span> <span class="st">'Spain (private)'</span>, </span>
+<span>         France_public <span class="op">=</span> <span class="va">France</span>, France_private <span class="op">=</span> <span class="st">'France (private)'</span>, </span>
+<span>         UK_public  <span class="op">=</span> <span class="va">UK</span>, UK_private <span class="op">=</span> <span class="st">'UK (private)'</span>, </span>
+<span>         Japan_public <span class="op">=</span> <span class="va">Japan</span>, Japan_private <span class="op">=</span> <span class="st">'Japan (private)'</span>, </span>
+<span>         Norway_public <span class="op">=</span> <span class="va">Norway</span>, Norway_private <span class="op">=</span> <span class="st">'Norway (private)'</span>,</span>
+<span>         USA_public <span class="op">=</span> <span class="va">USA</span>, USA_private <span class="op">=</span> <span class="st">'USA (private)'</span><span class="op">)</span> </span></code></pre></div>
+<hr>
+<pre><code>#&gt; # A tibble: 51 × 15
+#&gt;     year Germany_p…¹ Germa…² Spain…³ Spain…⁴ Franc…⁵ Franc…⁶
+#&gt;    &lt;dbl&gt;       &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+#&gt;  1  1970       1.11     2.30   0.604    4.06   0.422    3.12
+#&gt;  2  1971       1.12     2.25   0.657    4.53   0.443    3.06
+#&gt;  3  1972       1.11     2.27   0.624    4.36   0.467    3.08
+#&gt;  4  1973       1.11     2.23   0.596    4.46   0.478    3.06
+#&gt;  5  1974       1.13     2.25   0.586    4.64   0.498    3.03
+#&gt;  6  1975       1.12     2.35   0.602    4.83   0.545    3.12
+#&gt;  7  1976       1.03     2.34   0.581    4.46   0.561    3.08
+#&gt;  8  1977       1.01     2.42   0.586    4.10   0.567    3.10
+#&gt;  9  1978       0.990    2.52   0.604    4.10   0.580    3.20
+#&gt; 10  1979       0.989    2.55   0.621    4.20   0.624    3.30
+#&gt; # … with 41 more rows, 8 more variables: UK_public &lt;dbl&gt;,
+#&gt; #   UK_private &lt;dbl&gt;, Japan_public &lt;dbl&gt;,
+#&gt; #   Japan_private &lt;dbl&gt;, Norway_public &lt;dbl&gt;,
+#&gt; #   Norway_private &lt;dbl&gt;, USA_public &lt;dbl&gt;,
+#&gt; #   USA_private &lt;dbl&gt;, and abbreviated variable names
+#&gt; #   ¹​Germany_public, ²​Germany_private, ³​Spain_public,
+#&gt; #   ⁴​Spain_private, ⁵​France_public, ⁶​France_private</code></pre>
+<hr>
+</div>
+<div id="step-2.-2" class="section level3" number="21.21.2">
+<h3>
+<span class="header-section-number">21.21.2</span> Step 2.<a class="anchor" aria-label="anchor" href="#step-2.-2"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb332"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f8</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">year</span>, Germany_public <span class="op">=</span> <span class="va">Germany</span>, Germany_private <span class="op">=</span> <span class="st">'Germany (private)'</span>, </span>
+<span>         Spain_public <span class="op">=</span> <span class="va">Spain</span>, Spain_private <span class="op">=</span> <span class="st">'Spain (private)'</span>, </span>
+<span>         France_public <span class="op">=</span> <span class="va">France</span>, France_private <span class="op">=</span> <span class="st">'France (private)'</span>, </span>
+<span>         UK_public  <span class="op">=</span> <span class="va">UK</span>, UK_private <span class="op">=</span> <span class="st">'UK (private)'</span>, </span>
+<span>         Japan_public <span class="op">=</span> <span class="va">Japan</span>, Japan_private <span class="op">=</span> <span class="st">'Japan (private)'</span>, </span>
+<span>         Norway_public <span class="op">=</span> <span class="va">Norway</span>, Norway_private <span class="op">=</span> <span class="st">'Norway (private)'</span>,</span>
+<span>         USA_public <span class="op">=</span> <span class="va">USA</span>, USA_private <span class="op">=</span> <span class="st">'USA (private)'</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="op">!</span><span class="va">year</span>, names_to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"country"</span>,<span class="st">".value"</span><span class="op">)</span>, names_sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span> </span></code></pre></div>
+<hr>
+<pre><code>#&gt; # A tibble: 357 × 4
+#&gt;     year country public private
+#&gt;    &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;   &lt;dbl&gt;
+#&gt;  1  1970 Germany  1.11     2.30
+#&gt;  2  1970 Spain    0.604    4.06
+#&gt;  3  1970 France   0.422    3.12
+#&gt;  4  1970 UK       0.601    2.85
+#&gt;  5  1970 Japan    0.719    3.09
+#&gt;  6  1970 Norway  NA       NA   
+#&gt;  7  1970 USA      0.364    3.26
+#&gt;  8  1971 Germany  1.12     2.25
+#&gt;  9  1971 Spain    0.657    4.53
+#&gt; 10  1971 France   0.443    3.06
+#&gt; # … with 347 more rows</code></pre>
+<hr>
+</div>
+<div id="step-3.-2" class="section level3" number="21.21.3">
+<h3>
+<span class="header-section-number">21.21.3</span> Step 3.<a class="anchor" aria-label="anchor" href="#step-3.-2"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb334"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f8</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">year</span>, Germany_public <span class="op">=</span> <span class="va">Germany</span>, Germany_private <span class="op">=</span> <span class="st">'Germany (private)'</span>, </span>
+<span>         Spain_public <span class="op">=</span> <span class="va">Spain</span>, Spain_private <span class="op">=</span> <span class="st">'Spain (private)'</span>, </span>
+<span>         France_public <span class="op">=</span> <span class="va">France</span>, France_private <span class="op">=</span> <span class="st">'France (private)'</span>, </span>
+<span>         UK_public  <span class="op">=</span> <span class="va">UK</span>, UK_private <span class="op">=</span> <span class="st">'UK (private)'</span>, </span>
+<span>         Japan_public <span class="op">=</span> <span class="va">Japan</span>, Japan_private <span class="op">=</span> <span class="st">'Japan (private)'</span>, </span>
+<span>         Norway_public <span class="op">=</span> <span class="va">Norway</span>, Norway_private <span class="op">=</span> <span class="st">'Norway (private)'</span>,</span>
+<span>         USA_public <span class="op">=</span> <span class="va">USA</span>, USA_private <span class="op">=</span> <span class="st">'USA (private)'</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="op">!</span><span class="va">year</span>, names_to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"country"</span>,<span class="st">".value"</span><span class="op">)</span>, names_sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="fl">3</span><span class="op">:</span><span class="fl">4</span>, names_to <span class="op">=</span> <span class="st">"type"</span>, values_to <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span></span></code></pre></div>
+<hr>
+<pre><code>#&gt; # A tibble: 714 × 4
+#&gt;     year country type    value
+#&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;dbl&gt;
+#&gt;  1  1970 Germany public  1.11 
+#&gt;  2  1970 Germany private 2.30 
+#&gt;  3  1970 Spain   public  0.604
+#&gt;  4  1970 Spain   private 4.06 
+#&gt;  5  1970 France  public  0.422
+#&gt;  6  1970 France  private 3.12 
+#&gt;  7  1970 UK      public  0.601
+#&gt;  8  1970 UK      private 2.85 
+#&gt;  9  1970 Japan   public  0.719
+#&gt; 10  1970 Japan   private 3.09 
+#&gt; # … with 704 more rows</code></pre>
+<hr>
+</div>
+<div id="step-3.-final-step" class="section level3" number="21.21.4">
+<h3>
+<span class="header-section-number">21.21.4</span> Step 3. Final Step<a class="anchor" aria-label="anchor" href="#step-3.-final-step"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb336"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f8</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">year</span>, Germany_public <span class="op">=</span> <span class="va">Germany</span>, Germany_private <span class="op">=</span> <span class="st">'Germany (private)'</span>, </span>
+<span>         Spain_public <span class="op">=</span> <span class="va">Spain</span>, Spain_private <span class="op">=</span> <span class="st">'Spain (private)'</span>, </span>
+<span>         France_public <span class="op">=</span> <span class="va">France</span>, France_private <span class="op">=</span> <span class="st">'France (private)'</span>, </span>
+<span>         UK_public  <span class="op">=</span> <span class="va">UK</span>, UK_private <span class="op">=</span> <span class="st">'UK (private)'</span>, </span>
+<span>         Japan_public <span class="op">=</span> <span class="va">Japan</span>, Japan_private <span class="op">=</span> <span class="st">'Japan (private)'</span>, </span>
+<span>         Norway_public <span class="op">=</span> <span class="va">Norway</span>, Norway_private <span class="op">=</span> <span class="st">'Norway (private)'</span>,</span>
+<span>         USA_public <span class="op">=</span> <span class="va">USA</span>, USA_private <span class="op">=</span> <span class="st">'USA (private)'</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="op">!</span><span class="va">year</span>, names_to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"country"</span>,<span class="st">".value"</span><span class="op">)</span>, names_sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="fl">3</span><span class="op">:</span><span class="fl">4</span>, names_to <span class="op">=</span> <span class="st">"type"</span>, values_to <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">stat_smooth</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">value</span>, color <span class="op">=</span> <span class="va">country</span>, linetype <span class="op">=</span> <span class="va">type</span><span class="op">)</span>, </span>
+<span>              formula <span class="op">=</span> <span class="va">y</span><span class="op">~</span><span class="va">x</span>, method <span class="op">=</span> <span class="st">"loess"</span>, span <span class="op">=</span> <span class="fl">0.25</span>, se <span class="op">=</span> <span class="cn">FALSE</span>, size<span class="op">=</span><span class="fl">0.75</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent_format</a></span><span class="op">(</span>accuracy <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Figure 8. The rise of private versus the decline of public wealth </span></span>
+<span><span class="st">       \nin rich countries, 1970-2020"</span>, </span>
+<span>       x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">"wealth as as % of national income"</span>, color <span class="op">=</span> <span class="st">""</span>, type <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></code></pre></div>
+<hr>
+<div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-52-1.png" width="672"></div>
+<hr>
+</div>
+</div>
+<div id="f15-per-capita-emissions-acriss-the-world-2019---add-row-names-dodge" class="section level2" number="21.22">
+<h2>
+<span class="header-section-number">21.22</span> F15: Per capita emissions acriss the world, 2019 - add row names + dodge<a class="anchor" aria-label="anchor" href="#f15-per-capita-emissions-acriss-the-world-2019---add-row-names-dodge"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb337"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f15</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"./data/WIR2022s.xlsx"</span>, sheet <span class="op">=</span> <span class="st">"data-F15"</span><span class="op">)</span>; <span class="va">df_f15</span></span>
+<span><span class="co">#&gt; # A tibble: 24 × 4</span></span>
+<span><span class="co">#&gt;    regionWID               group       tcap  mark</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;                   &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 East Asia               Bottom 50%  3.12     1</span></span>
+<span><span class="co">#&gt;  2 &lt;NA&gt;                    Middle 40%  7.91     1</span></span>
+<span><span class="co">#&gt;  3 &lt;NA&gt;                    Top 10%    38.9      1</span></span>
+<span><span class="co">#&gt;  4 Europe                  Bottom 50%  5.09     2</span></span>
+<span><span class="co">#&gt;  5 &lt;NA&gt;                    Middle 40% 10.6      2</span></span>
+<span><span class="co">#&gt;  6 &lt;NA&gt;                    Top 10%    29.2      2</span></span>
+<span><span class="co">#&gt;  7 North America           Bottom 50%  9.67     3</span></span>
+<span><span class="co">#&gt;  8 &lt;NA&gt;                    Middle 40% 21.7      3</span></span>
+<span><span class="co">#&gt;  9 &lt;NA&gt;                    Top 10%    73.0      3</span></span>
+<span><span class="co">#&gt; 10 South &amp; South-East Asia Bottom 50%  1.04     4</span></span>
+<span><span class="co">#&gt; # … with 14 more rows</span></span></code></pre></div>
+<hr>
+<div class="sourceCode" id="cb338"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f15</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>region <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="va">regionWID</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">regionWID</span><span class="op">)</span><span class="op">]</span>, each <span class="op">=</span> <span class="fl">3</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">region</span>, <span class="va">group</span>, <span class="va">tcap</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">region</span>, y <span class="op">=</span> <span class="va">tcap</span>, fill <span class="op">=</span> <span class="va">group</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_wrap.html">str_wrap</a></span><span class="op">(</span><span class="va">x</span>, width <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Figure 15 Per capita emissions across the world, 2019"</span>, </span>
+<span>       x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">"tonnes of CO2e per person per year"</span>, fill <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></code></pre></div>
+<hr>
+<div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-54-1.png" width="672"></div>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="appendix-a-secondary-axis.html"><span class="header-section-number">20</span> Appendix: A secondary axis</a></div>
+<div class="next"><a href="workflow.html"><span class="header-section-number">22</span> EDA Workflow</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#tidy"><span class="header-section-number">21</span> Tidy Data</a></li>
+<li><a class="nav-link" href="#reviews-and-previews-1"><span class="header-section-number">21.1</span> Reviews and Previews</a></li>
+<li><a class="nav-link" href="#example-world-inequility-report---wir2022-1"><span class="header-section-number">21.2</span> Example: World Inequility Report - WIR2022</a></li>
+<li><a class="nav-link" href="#f1-global-income-and-wealth-inequality-2021-1"><span class="header-section-number">21.3</span> F1: Global income and wealth inequality, 2021</a></li>
+<li>
+<a class="nav-link" href="#references-of-tidyr"><span class="header-section-number">21.4</span> References of tidyr</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#rstudio-primers-see-references-in-moodle-at-the-bottom-2"><span class="header-section-number">21.4.1</span> RStudio Primers: See References in Moodle at the bottom</a></li></ul>
+</li>
+<li><a class="nav-link" href="#variables-values-and-observations-definitions"><span class="header-section-number">21.5</span> Variables, values, and observations: Definitions</a></li>
+<li><a class="nav-link" href="#tidy-data"><span class="header-section-number">21.6</span> Tidy Data</a></li>
+<li><a class="nav-link" href="#tidyr-basics"><span class="header-section-number">21.7</span> tidyr Basics</a></li>
+<li><a class="nav-link" href="#pivot-data-from-wide-to-long-pivot_longer"><span class="header-section-number">21.8</span> Pivot data from wide to long: pivot_longer()</a></li>
+<li><a class="nav-link" href="#f2-the-poorest-half-lags-behind-bottom-50-middle-40-and-top-10-income-shares-across-the-world-in-2021"><span class="header-section-number">21.9</span> F2: The poorest half lags behind: Bottom 50%, middle 40% and top 10% income shares across the world in 2021</a></li>
+<li><a class="nav-link" href="#pivot-data-from-long-to-wide"><span class="header-section-number">21.10</span> Pivot data from long to wide:</a></li>
+<li>
+<a class="nav-link" href="#practice-f4-and-f13"><span class="header-section-number">21.11</span> Practice: F4 and F13</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#done-last-week"><span class="header-section-number">21.11.1</span> Done Last Week</a></li></ul>
+</li>
+<li><a class="nav-link" href="#f3-top-10bottom-50-income-gaps-across-the-world-2021"><span class="header-section-number">21.12</span> F3: Top 10/Bottom 50 income gaps across the world, 2021</a></li>
+<li><a class="nav-link" href="#f3-top-10bottom-50-income-gaps-across-the-world-2021---original"><span class="header-section-number">21.13</span> F3: Top 10/Bottom 50 income gaps across the world, 2021 - Original</a></li>
+<li><a class="nav-link" href="#remaining-charts"><span class="header-section-number">21.14</span> Remaining Charts</a></li>
+<li><a class="nav-link" href="#f5-global-income-inequality-t10b50-ratio-1820-2020"><span class="header-section-number">21.15</span> F5: Global income inequality: T10/B50 ratio, 1820-2020</a></li>
+<li><a class="nav-link" href="#f9-average-annual-wealth-growth-rate-1995-2021---fit-curve-alpha"><span class="header-section-number">21.16</span> F9: Average annual wealth growth rate, 1995-2021 - fit curve + alpha</a></li>
+<li><a class="nav-link" href="#f7-global-income-inequality-1820-2020---pivot-fit-curve"><span class="header-section-number">21.17</span> F7: Global income inequality, 1820-2020 - pivot + fit curve</a></li>
+<li><a class="nav-link" href="#f10-the-share-of-wealth-owned-by-the-global-0.1-and-billionaires-2021---pivot-fit-curve"><span class="header-section-number">21.18</span> F10: The share of wealth owned by the global 0.1% and billionaires, 2021 - pivot + fit curve</a></li>
+<li><a class="nav-link" href="#f6-global-income-inequality-between-vs.-within-country-inequality-theil-index-1820-2020---pivot-area"><span class="header-section-number">21.19</span> F6: Global income inequality: Between vs. Within country inequality (Theil index), 1820-2020 - pivot + area</a></li>
+<li>
+<a class="nav-link" href="#f11-top-1-vs-bottom-50-wealth-shares-in-western-europe-and-the-us-1910-2020---pivot-name_sep-fit-curve"><span class="header-section-number">21.20</span> F11: Top 1% vs bottom 50% wealth shares in Western Europe and the US, 1910-2020 - pivot name_sep + fit curve</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#step-1."><span class="header-section-number">21.20.1</span> Step 1.</a></li>
+<li><a class="nav-link" href="#step-2."><span class="header-section-number">21.20.2</span> Step 2.</a></li>
+<li><a class="nav-link" href="#step-2.-1"><span class="header-section-number">21.20.3</span> Step 2.</a></li>
+<li><a class="nav-link" href="#step-3."><span class="header-section-number">21.20.4</span> Step 3.</a></li>
+<li><a class="nav-link" href="#step-3.-1"><span class="header-section-number">21.20.5</span> Step 3.</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#f8-the-rise-of-private-versus-the-decline-of-public-wealth-in-rich-countries-1970-2020---rename-pivot-pivot-fit-curve"><span class="header-section-number">21.21</span> F8: The rise of private versus the decline of public wealth in rich countries, 1970-2020 - rename + pivot + pivot + fit curve</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#step-1"><span class="header-section-number">21.21.1</span> Step 1</a></li>
+<li><a class="nav-link" href="#step-2.-2"><span class="header-section-number">21.21.2</span> Step 2.</a></li>
+<li><a class="nav-link" href="#step-3.-2"><span class="header-section-number">21.21.3</span> Step 3.</a></li>
+<li><a class="nav-link" href="#step-3.-final-step"><span class="header-section-number">21.21.4</span> Step 3. Final Step</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#f15-per-capita-emissions-acriss-the-world-2019---add-row-names-dodge"><span class="header-section-number">21.22</span> F15: Per capita emissions acriss the world, 2019 - add row names + dodge</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/10-tidyr.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/10-tidyr.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>A Minimal Book Example</strong>" was written by John Doe. It was last built on 2023-02-07.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

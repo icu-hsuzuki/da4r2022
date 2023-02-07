@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 20 Appendix: A secondary axis | A Minimal Book Example</title>
+<meta name="author" content="John Doe">
+<meta name="description" content="Specify a secondary axis This function is used in conjunction with a position scale to create a secondary axis, positioned opposite of the primary axis. All secondary axes must be based on a...">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
+<meta property="og:title" content="Chapter 20 Appendix: A secondary axis | A Minimal Book Example">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Specify a secondary axis This function is used in conjunction with a position scale to create a secondary axis, positioned opposite of the primary axis. All secondary axes must be based on a...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 20 Appendix: A secondary axis | A Minimal Book Example">
+<meta name="twitter:description" content="Specify a secondary axis This function is used in conjunction with a position scale to create a secondary axis, positioned opposite of the primary axis. All secondary axes must be based on a...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">A Minimal Book Example</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li><a class="" href="intro.html"><span class="header-section-number">2</span> Intdoduction</a></li>
+<li><a class="" href="r-with-r-studio.html"><span class="header-section-number">3</span> R with R Studio</a></li>
+<li><a class="" href="tidyverse.html"><span class="header-section-number">4</span> tidyverse Packages</a></li>
+<li><a class="" href="rmarkdown.html"><span class="header-section-number">5</span> R Markdown</a></li>
+<li><a class="" href="dplyr.html"><span class="header-section-number">6</span> Data Transforamtion with dplyr</a></li>
+<li><a class="" href="responses-to-assignment-two.html"><span class="header-section-number">7</span> Responses to Assignment Two</a></li>
+<li><a class="" href="set-up-1.html"><span class="header-section-number">8</span> Set up</a></li>
+<li><a class="" href="general-comments.html"><span class="header-section-number">9</span> General Comments</a></li>
+<li><a class="" href="responses-to-questions.html"><span class="header-section-number">10</span> Responses to Questions</a></li>
+<li><a class="" href="appendix-change-colors-shapes-linetypes-etc.-manually.html"><span class="header-section-number">11</span> Appendix: Change colors, shapes, linetypes, etc. manually</a></li>
+<li><a class="" href="wdi.html"><span class="header-section-number">12</span> Importing Public Data, WDI</a></li>
+<li><a class="" href="ggokit2.html"><span class="header-section-number">13</span> Data Visualization and `ggplot2’</a></li>
+<li><a class="" href="responses-to-assignment-three.html"><span class="header-section-number">14</span> Responses to Assignment Three</a></li>
+<li><a class="" href="set-up-2.html"><span class="header-section-number">15</span> Set up</a></li>
+<li><a class="" href="general-comments-1.html"><span class="header-section-number">16</span> General Comments</a></li>
+<li><a class="" href="world-development-indicators-wdi.html"><span class="header-section-number">17</span> World Development Indicators (WDI)</a></li>
+<li><a class="" href="responses-to-questions-1.html"><span class="header-section-number">18</span> Responses to Questions</a></li>
+<li><a class="" href="regression-lines-topic-of-eda5.html"><span class="header-section-number">19</span> Regression Lines; Topic of EDA5</a></li>
+<li><a class="active" href="appendix-a-secondary-axis.html"><span class="header-section-number">20</span> Appendix: A secondary axis</a></li>
+<li><a class="" href="tidy.html"><span class="header-section-number">21</span> Tidy Data</a></li>
+<li><a class="" href="workflow.html"><span class="header-section-number">22</span> EDA Workflow</a></li>
+<li><a class="" href="assignment-four-the-week-five-assignment.html">Assignment Four: The Week Five Assignment</a></li>
+<li><a class="" href="set-up-3.html"><span class="header-section-number">23</span> Set up</a></li>
+<li><a class="" href="general-comments-2.html"><span class="header-section-number">24</span> General Comments</a></li>
+<li><a class="" href="your-work.html"><span class="header-section-number">25</span> Your Work</a></li>
+<li><a class="" href="responses-to-questions-2.html"><span class="header-section-number">26</span> Responses to Questions</a></li>
+<li><a class="" href="model.html"><span class="header-section-number">27</span> Model</a></li>
+<li><a class="" href="roudups.html"><span class="header-section-number">28</span> Roudups</a></li>
+<li><a class="" href="a5resp.html"><span class="header-section-number">29</span> Responses to Assignment Five</a></li>
+<li><a class="" href="set-up-4.html"><span class="header-section-number">30</span> Set up</a></li>
+<li><a class="" href="general-comments-3.html"><span class="header-section-number">31</span> General Comments</a></li>
+<li><a class="" href="your-work-1.html"><span class="header-section-number">32</span> Your Work</a></li>
+<li><a class="" href="responses-to-questions-3.html"><span class="header-section-number">33</span> Responses to Questions</a></li>
+<li><a class="" href="my-comments-after-review.html"><span class="header-section-number">34</span> My Comments after Review</a></li>
+<li><a class="" href="eda.html"><span class="header-section-number">35</span> Exploartory Data analysis</a></li>
+<li><a class="" href="importing.html"><span class="header-section-number">36</span> Impoarting Data</a></li>
+<li><a class="" href="transforming.html"><span class="header-section-number">37</span> Transforming Data</a></li>
+<li><a class="" href="tidying.html"><span class="header-section-number">38</span> Tidying Data</a></li>
+<li><a class="" href="visualizing.html"><span class="header-section-number">39</span> Visualizing Data</a></li>
+<li><a class="" href="modeling.html"><span class="header-section-number">40</span> Modeling Data</a></li>
+<li><a class="" href="communicating-data-communicating.html"><span class="header-section-number">41</span> Communicating Data {communicating}</a></li>
+<li><a class="" href="worldbank.html"><span class="header-section-number">42</span> World Bank</a></li>
+<li><a class="" href="owid.html"><span class="header-section-number">43</span> Our World in Data</a></li>
+<li><a class="" href="oecd.html"><span class="header-section-number">44</span> OECD</a></li>
+<li><a class="" href="undata.html"><span class="header-section-number">45</span> UN Data</a></li>
+<li><a class="" href="wir.html"><span class="header-section-number">46</span> World Inequality Report</a></li>
+<li><a class="" href="histdata.html"><span class="header-section-number">47</span> HistData</a></li>
+<li><a class="" href="covid19.html"><span class="header-section-number">48</span> Covid 19</a></li>
+<li><a class="" href="bookdown.html"><span class="header-section-number">49</span> Bookdown</a></li>
+<li><a class="" href="template.html"><span class="header-section-number">50</span> Template</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="appendix-a-secondary-axis" class="section level1" number="20">
+<h1>
+<span class="header-section-number">20</span> Appendix: A secondary axis<a class="anchor" aria-label="anchor" href="#appendix-a-secondary-axis"><i class="fas fa-link"></i></a>
+</h1>
+<ul>
+<li>
+<a href="https://ggplot2.tidyverse.org/reference/sec_axis.html">Specify a secondary axis</a>
+<ul>
+<li>This function is used in conjunction with a position scale to create a secondary axis, positioned opposite of the primary axis. All secondary axes must be based on a one-to-one transformation of the primary axes.</li>
+</ul>
+</li>
+</ul>
+<p><code>scale_y_continuous(sec.axis = sec_axis(~ . scaling_function))</code></p>
+<div id="example" class="section level2" number="20.1">
+<h2>
+<span class="header-section-number">20.1</span> Example<a class="anchor" aria-label="anchor" href="#example"><i class="fas fa-link"></i></a>
+</h2>
+<p>Suppose you have two indicators,</p>
+<ul>
+<li>NY.GDP.MKTP.KD: GDP (constant 2015 US$)</li>
+<li>NY.GDP.PCAP.KD: GDP per capita (constant 2015 US$)</li>
+</ul>
+<div class="sourceCode" id="cb270"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDIsearch.html">WDIsearch</a></span><span class="op">(</span>string <span class="op">=</span> <span class="st">"NY.GDP.MKTP.KD"</span>, field <span class="op">=</span> <span class="st">"indicator"</span>, short <span class="op">=</span> <span class="cn">FALSE</span>, cache <span class="op">=</span> <span class="va">wdi_cache</span><span class="op">)</span></span>
+<span><span class="co">#&gt;               indicator</span></span>
+<span><span class="co">#&gt; 12112    NY.GDP.MKTP.KD</span></span>
+<span><span class="co">#&gt; 12113 NY.GDP.MKTP.KD.87</span></span>
+<span><span class="co">#&gt; 12114 NY.GDP.MKTP.KD.ZG</span></span>
+<span><span class="co">#&gt;                                           name</span></span>
+<span><span class="co">#&gt; 12112                  GDP (constant 2015 US$)</span></span>
+<span><span class="co">#&gt; 12113 GDP at market prices (constant 1987 US$)</span></span>
+<span><span class="co">#&gt; 12114                    GDP growth (annual %)</span></span>
+<span><span class="co">#&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     description</span></span>
+<span><span class="co">#&gt; 12112 GDP at purchaser's prices is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources. Data are in constant 2015 prices, expressed in U.S. dollars. Dollar figures for GDP are converted from domestic currencies using 2015 official exchange rates. For a few countries where the official exchange rate does not reflect the rate effectively applied to actual foreign exchange transactions, an alternative conversion factor is used.</span></span>
+<span><span class="co">#&gt; 12113                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </span></span>
+<span><span class="co">#&gt; 12114                                                                                                                                                                                                           Annual percentage growth rate of GDP at market prices based on constant local currency. Aggregates are based on constant 2015 prices, expressed in U.S. dollars. GDP is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources.</span></span>
+<span><span class="co">#&gt;                     sourceDatabase</span></span>
+<span><span class="co">#&gt; 12112 World Development Indicators</span></span>
+<span><span class="co">#&gt; 12113        WDI Database Archives</span></span>
+<span><span class="co">#&gt; 12114 World Development Indicators</span></span>
+<span><span class="co">#&gt;                                                              sourceOrganization</span></span>
+<span><span class="co">#&gt; 12112 World Bank national accounts data, and OECD National Accounts data files.</span></span>
+<span><span class="co">#&gt; 12113                                                                          </span></span>
+<span><span class="co">#&gt; 12114 World Bank national accounts data, and OECD National Accounts data files.</span></span></code></pre></div>
+<div class="sourceCode" id="cb271"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDIsearch.html">WDIsearch</a></span><span class="op">(</span>string <span class="op">=</span> <span class="st">"NY.GDP.PCAP.KD"</span>, field <span class="op">=</span> <span class="st">"indicator"</span>, short <span class="op">=</span> <span class="cn">FALSE</span>, cache <span class="op">=</span> <span class="va">wdi_cache</span><span class="op">)</span></span>
+<span><span class="co">#&gt;               indicator                               name</span></span>
+<span><span class="co">#&gt; 12127    NY.GDP.PCAP.KD GDP per capita (constant 2015 US$)</span></span>
+<span><span class="co">#&gt; 12128 NY.GDP.PCAP.KD.ZG   GDP per capita growth (annual %)</span></span>
+<span><span class="co">#&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          description</span></span>
+<span><span class="co">#&gt; 12127                                                                 GDP per capita is gross domestic product divided by midyear population. GDP is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources. Data are in constant 2015 U.S. dollars.</span></span>
+<span><span class="co">#&gt; 12128 Annual percentage growth rate of GDP per capita based on constant local currency. GDP per capita is gross domestic product divided by midyear population. GDP at purchaser's prices is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources.</span></span>
+<span><span class="co">#&gt;                     sourceDatabase</span></span>
+<span><span class="co">#&gt; 12127 World Development Indicators</span></span>
+<span><span class="co">#&gt; 12128 World Development Indicators</span></span>
+<span><span class="co">#&gt;                                                              sourceOrganization</span></span>
+<span><span class="co">#&gt; 12127 World Bank national accounts data, and OECD National Accounts data files.</span></span>
+<span><span class="co">#&gt; 12128 World Bank national accounts data, and OECD National Accounts data files.</span></span></code></pre></div>
+<p>List the name of countries of ASEAN and BRICs using <code>wdi_cache$country</code>.</p>
+<div class="sourceCode" id="cb272"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">asean</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Brunei Darussalam"</span>, <span class="st">"Cambodia"</span>, <span class="st">"Lao PDR"</span>, <span class="st">"Myanmar"</span>, </span>
+<span>           <span class="st">"Philippines"</span>, <span class="st">"Indonesia"</span>, <span class="st">"Malaysia"</span>, <span class="st">"Singapore"</span><span class="op">)</span></span>
+<span><span class="va">brics</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Brazil"</span>, <span class="st">"Russian Federation"</span>, <span class="st">"India"</span>, <span class="st">"China"</span><span class="op">)</span></span></code></pre></div>
+<p>Find the <code>iso2c</code> of the countries using <code>wdi_cache$country</code>.</p>
+<div class="sourceCode" id="cb273"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> </span>
+<span>           <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Brunei Darussalam"</span>, <span class="st">"Cambodia"</span>, <span class="st">"Lao PDR"</span>, <span class="st">"Myanmar"</span>, </span>
+<span>           <span class="st">"Philippines"</span>, <span class="st">"Indonesia"</span>, <span class="st">"Malaysia"</span>, <span class="st">"Singapore"</span>,</span>
+<span>           <span class="st">"Brazil"</span>, <span class="st">"Russian Federation"</span>, <span class="st">"India"</span>, <span class="st">"China"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">iso2c</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "BR" "BN" "CN" "ID" "IN" "KH" "LA" "MM" "MY" "PH" "RU"</span></span>
+<span><span class="co">#&gt; [12] "SG"</span></span></code></pre></div>
+<p>Separate the iso3c’s of the countries with commas and read data using <code>WDI</code>.</p>
+<div class="sourceCode" id="cb274"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_gdp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span></span>
+<span>  country <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"BR"</span>, <span class="st">"BN"</span>, <span class="st">"CN"</span>, <span class="st">"ID"</span>, <span class="st">"IN"</span>, <span class="st">"KH"</span>, <span class="st">"LA"</span>, <span class="st">"MM"</span>, <span class="st">"MY"</span>, <span class="st">"PH"</span>, <span class="st">"RU"</span>, <span class="st">"SG"</span><span class="op">)</span>,</span>
+<span>  indicator <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>gdp <span class="op">=</span> <span class="st">"NY.GDP.MKTP.KD"</span>, gdpPercap <span class="op">=</span> <span class="st">"NY.GDP.PCAP.KD"</span><span class="op">)</span>,</span>
+<span>  start <span class="op">=</span> <span class="fl">1960</span>, extra <span class="op">=</span> <span class="cn">TRUE</span>, cache <span class="op">=</span> <span class="va">wdi_cache</span><span class="op">)</span></span></code></pre></div>
+<pre><code>#&gt; Rows: 744 Columns: 14
+#&gt; ── Column specification ────────────────────────────────────
+#&gt; Delimiter: ","
+#&gt; chr  (7): country, iso2c, iso3c, region, capital, income...
+#&gt; dbl  (5): year, gdp, gdpPercap, longitude, latitude
+#&gt; lgl  (1): status
+#&gt; date (1): lastupdated
+#&gt; 
+#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
+#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb276"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_gdp</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">asean</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">gdp</span>, <span class="va">gdpPercap</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span> </span>
+<span><span class="co">#&gt;    country             iso2c              iso3c          </span></span>
+<span><span class="co">#&gt;  Length:424         Length:424         Length:424        </span></span>
+<span><span class="co">#&gt;  Class :character   Class :character   Class :character  </span></span>
+<span><span class="co">#&gt;  Mode  :character   Mode  :character   Mode  :character  </span></span>
+<span><span class="co">#&gt;                                                          </span></span>
+<span><span class="co">#&gt;                                                          </span></span>
+<span><span class="co">#&gt;                                                          </span></span>
+<span><span class="co">#&gt;       year       status         lastupdated        </span></span>
+<span><span class="co">#&gt;  Min.   :1960   Mode:logical   Min.   :2022-12-22  </span></span>
+<span><span class="co">#&gt;  1st Qu.:1980   NA's:424       1st Qu.:2022-12-22  </span></span>
+<span><span class="co">#&gt;  Median :1995                  Median :2022-12-22  </span></span>
+<span><span class="co">#&gt;  Mean   :1994                  Mean   :2022-12-22  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:2008                  3rd Qu.:2022-12-22  </span></span>
+<span><span class="co">#&gt;  Max.   :2021                  Max.   :2022-12-22  </span></span>
+<span><span class="co">#&gt;       gdp              gdpPercap          region         </span></span>
+<span><span class="co">#&gt;  Min.   :2.109e+09   Min.   :  144.0   Length:424        </span></span>
+<span><span class="co">#&gt;  1st Qu.:1.069e+10   1st Qu.:  978.2   Class :character  </span></span>
+<span><span class="co">#&gt;  Median :4.099e+10   Median : 1891.2   Mode  :character  </span></span>
+<span><span class="co">#&gt;  Mean   :1.149e+11   Mean   : 9718.5                     </span></span>
+<span><span class="co">#&gt;  3rd Qu.:1.430e+11   3rd Qu.: 8777.6                     </span></span>
+<span><span class="co">#&gt;  Max.   :1.066e+12   Max.   :66176.4                     </span></span>
+<span><span class="co">#&gt;    capital            longitude         latitude     </span></span>
+<span><span class="co">#&gt;  Length:424         Min.   : 95.96   Min.   :-6.198  </span></span>
+<span><span class="co">#&gt;  Class :character   1st Qu.:101.68   1st Qu.: 1.289  </span></span>
+<span><span class="co">#&gt;  Mode  :character   Median :103.85   Median : 4.942  </span></span>
+<span><span class="co">#&gt;                     Mean   :106.52   Mean   : 8.035  </span></span>
+<span><span class="co">#&gt;                     3rd Qu.:114.95   3rd Qu.:14.552  </span></span>
+<span><span class="co">#&gt;                     Max.   :121.03   Max.   :21.914  </span></span>
+<span><span class="co">#&gt;     income            lending         </span></span>
+<span><span class="co">#&gt;  Length:424         Length:424        </span></span>
+<span><span class="co">#&gt;  Class :character   Class :character  </span></span>
+<span><span class="co">#&gt;  Mode  :character   Mode  :character  </span></span>
+<span><span class="co">#&gt;                                       </span></span>
+<span><span class="co">#&gt;                                       </span></span>
+<span><span class="co">#&gt; </span></span></code></pre></div>
+<p>Using the summary, decide the scaling of two variables, <code>gdpPercap</code> and <code>gdp</code>.</p>
+<div class="sourceCode" id="cb277"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_gdp</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">gdp</span>, <span class="va">gdpPercap</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">asean</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">gdpPercap</span>, linetype <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">gdp</span><span class="op">/</span><span class="op">(</span><span class="fl">10</span><span class="op">^</span><span class="fl">7</span><span class="op">)</span>, col <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_trans.html">coord_trans</a></span><span class="op">(</span>x <span class="op">=</span><span class="st">"identity"</span>, y<span class="op">=</span><span class="st">"log10"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>sec.axis <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/sec_axis.html">sec_axis</a></span><span class="op">(</span><span class="op">~</span> <span class="va">.</span> <span class="op">*</span><span class="op">(</span><span class="fl">10</span><span class="op">^</span><span class="fl">7</span><span class="op">)</span>, name <span class="op">=</span> <span class="st">"gdp/(10^7)"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="09-a3resp_files/figure-html/9-79-1.png" width="672"></div>
+<div id="brics" class="section level3" number="20.1.1">
+<h3>
+<span class="header-section-number">20.1.1</span> BRICs<a class="anchor" aria-label="anchor" href="#brics"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb278"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_gdp</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">brics</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">gdp</span>, <span class="va">gdpPercap</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span> </span>
+<span><span class="co">#&gt;    country             iso2c              iso3c          </span></span>
+<span><span class="co">#&gt;  Length:219         Length:219         Length:219        </span></span>
+<span><span class="co">#&gt;  Class :character   Class :character   Class :character  </span></span>
+<span><span class="co">#&gt;  Mode  :character   Mode  :character   Mode  :character  </span></span>
+<span><span class="co">#&gt;                                                          </span></span>
+<span><span class="co">#&gt;                                                          </span></span>
+<span><span class="co">#&gt;                                                          </span></span>
+<span><span class="co">#&gt;       year       status         lastupdated        </span></span>
+<span><span class="co">#&gt;  Min.   :1960   Mode:logical   Min.   :2022-12-22  </span></span>
+<span><span class="co">#&gt;  1st Qu.:1978   NA's:219       1st Qu.:2022-12-22  </span></span>
+<span><span class="co">#&gt;  Median :1994                  Median :2022-12-22  </span></span>
+<span><span class="co">#&gt;  Mean   :1993                  Mean   :2022-12-22  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:2008                  3rd Qu.:2022-12-22  </span></span>
+<span><span class="co">#&gt;  Max.   :2021                  Max.   :2022-12-22  </span></span>
+<span><span class="co">#&gt;       gdp              gdpPercap          region         </span></span>
+<span><span class="co">#&gt;  Min.   :1.091e+11   Min.   :  163.9   Length:219        </span></span>
+<span><span class="co">#&gt;  1st Qu.:3.564e+11   1st Qu.:  531.7   Class :character  </span></span>
+<span><span class="co">#&gt;  Median :9.215e+11   Median : 2758.9   Mode  :character  </span></span>
+<span><span class="co">#&gt;  Mean   :1.644e+12   Mean   : 3825.8                     </span></span>
+<span><span class="co">#&gt;  3rd Qu.:1.500e+12   3rd Qu.: 6579.5                     </span></span>
+<span><span class="co">#&gt;  Max.   :1.580e+13   Max.   :11188.3                     </span></span>
+<span><span class="co">#&gt;    capital            longitude         latitude     </span></span>
+<span><span class="co">#&gt;  Length:219         Min.   :-47.93   Min.   :-15.78  </span></span>
+<span><span class="co">#&gt;  Class :character   1st Qu.:-47.93   1st Qu.:-15.78  </span></span>
+<span><span class="co">#&gt;  Mode  :character   Median : 77.22   Median : 28.64  </span></span>
+<span><span class="co">#&gt;                     Mean   : 46.88   Mean   : 23.38  </span></span>
+<span><span class="co">#&gt;                     3rd Qu.:116.29   3rd Qu.: 40.05  </span></span>
+<span><span class="co">#&gt;                     Max.   :116.29   Max.   : 55.76  </span></span>
+<span><span class="co">#&gt;     income            lending         </span></span>
+<span><span class="co">#&gt;  Length:219         Length:219        </span></span>
+<span><span class="co">#&gt;  Class :character   Class :character  </span></span>
+<span><span class="co">#&gt;  Mode  :character   Mode  :character  </span></span>
+<span><span class="co">#&gt;                                       </span></span>
+<span><span class="co">#&gt;                                       </span></span>
+<span><span class="co">#&gt; </span></span></code></pre></div>
+<p>Using the summary, decide the scaling of two variables, <code>gdpPercap</code> and <code>gdp</code>.</p>
+<div class="sourceCode" id="cb279"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_gdp</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">gdp</span>, <span class="va">gdpPercap</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">brics</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">gdpPercap</span>, linetype <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">gdp</span><span class="op">/</span><span class="op">(</span><span class="fl">10</span><span class="op">^</span><span class="fl">9</span><span class="op">)</span>, col <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_trans.html">coord_trans</a></span><span class="op">(</span>x <span class="op">=</span><span class="st">"identity"</span>, y<span class="op">=</span><span class="st">"log10"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>sec.axis <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/sec_axis.html">sec_axis</a></span><span class="op">(</span><span class="op">~</span> <span class="va">.</span> <span class="op">*</span><span class="op">(</span><span class="fl">10</span><span class="op">^</span><span class="fl">7</span><span class="op">)</span>, name <span class="op">=</span> <span class="st">"gdp/(10^9)"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="09-a3resp_files/figure-html/9-81-1.png" width="672"></div>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="regression-lines-topic-of-eda5.html"><span class="header-section-number">19</span> Regression Lines; Topic of EDA5</a></div>
+<div class="next"><a href="tidy.html"><span class="header-section-number">21</span> Tidy Data</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#appendix-a-secondary-axis"><span class="header-section-number">20</span> Appendix: A secondary axis</a></li>
+<li>
+<a class="nav-link" href="#example"><span class="header-section-number">20.1</span> Example</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#brics"><span class="header-section-number">20.1.1</span> BRICs</a></li></ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/09-a3resp.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/09-a3resp.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>A Minimal Book Example</strong>" was written by John Doe. It was last built on 2023-02-07.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 34 My Comments after Review | A Minimal Book Example</title>
+<meta name="author" content="John Doe">
+<meta name="description" content="34.1 NA values It is challenging to handle NA values properly. Let me introduce basics. In the following we use two data sets. One is df1 used above, containing the indicator related the women’s...">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
+<meta property="og:title" content="Chapter 34 My Comments after Review | A Minimal Book Example">
+<meta property="og:type" content="book">
+<meta property="og:description" content="34.1 NA values It is challenging to handle NA values properly. Let me introduce basics. In the following we use two data sets. One is df1 used above, containing the indicator related the women’s...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 34 My Comments after Review | A Minimal Book Example">
+<meta name="twitter:description" content="34.1 NA values It is challenging to handle NA values properly. Let me introduce basics. In the following we use two data sets. One is df1 used above, containing the indicator related the women’s...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">A Minimal Book Example</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li><a class="" href="intro.html"><span class="header-section-number">2</span> Intdoduction</a></li>
+<li><a class="" href="r-with-r-studio.html"><span class="header-section-number">3</span> R with R Studio</a></li>
+<li><a class="" href="tidyverse.html"><span class="header-section-number">4</span> tidyverse Packages</a></li>
+<li><a class="" href="rmarkdown.html"><span class="header-section-number">5</span> R Markdown</a></li>
+<li><a class="" href="dplyr.html"><span class="header-section-number">6</span> Data Transforamtion with dplyr</a></li>
+<li><a class="" href="responses-to-assignment-two.html"><span class="header-section-number">7</span> Responses to Assignment Two</a></li>
+<li><a class="" href="set-up-1.html"><span class="header-section-number">8</span> Set up</a></li>
+<li><a class="" href="general-comments.html"><span class="header-section-number">9</span> General Comments</a></li>
+<li><a class="" href="responses-to-questions.html"><span class="header-section-number">10</span> Responses to Questions</a></li>
+<li><a class="" href="appendix-change-colors-shapes-linetypes-etc.-manually.html"><span class="header-section-number">11</span> Appendix: Change colors, shapes, linetypes, etc. manually</a></li>
+<li><a class="" href="wdi.html"><span class="header-section-number">12</span> Importing Public Data, WDI</a></li>
+<li><a class="" href="ggokit2.html"><span class="header-section-number">13</span> Data Visualization and `ggplot2’</a></li>
+<li><a class="" href="responses-to-assignment-three.html"><span class="header-section-number">14</span> Responses to Assignment Three</a></li>
+<li><a class="" href="set-up-2.html"><span class="header-section-number">15</span> Set up</a></li>
+<li><a class="" href="general-comments-1.html"><span class="header-section-number">16</span> General Comments</a></li>
+<li><a class="" href="world-development-indicators-wdi.html"><span class="header-section-number">17</span> World Development Indicators (WDI)</a></li>
+<li><a class="" href="responses-to-questions-1.html"><span class="header-section-number">18</span> Responses to Questions</a></li>
+<li><a class="" href="regression-lines-topic-of-eda5.html"><span class="header-section-number">19</span> Regression Lines; Topic of EDA5</a></li>
+<li><a class="" href="appendix-a-secondary-axis.html"><span class="header-section-number">20</span> Appendix: A secondary axis</a></li>
+<li><a class="" href="tidy.html"><span class="header-section-number">21</span> Tidy Data</a></li>
+<li><a class="" href="workflow.html"><span class="header-section-number">22</span> EDA Workflow</a></li>
+<li><a class="" href="assignment-four-the-week-five-assignment.html">Assignment Four: The Week Five Assignment</a></li>
+<li><a class="" href="set-up-3.html"><span class="header-section-number">23</span> Set up</a></li>
+<li><a class="" href="general-comments-2.html"><span class="header-section-number">24</span> General Comments</a></li>
+<li><a class="" href="your-work.html"><span class="header-section-number">25</span> Your Work</a></li>
+<li><a class="" href="responses-to-questions-2.html"><span class="header-section-number">26</span> Responses to Questions</a></li>
+<li><a class="" href="model.html"><span class="header-section-number">27</span> Model</a></li>
+<li><a class="" href="roudups.html"><span class="header-section-number">28</span> Roudups</a></li>
+<li><a class="" href="a5resp.html"><span class="header-section-number">29</span> Responses to Assignment Five</a></li>
+<li><a class="" href="set-up-4.html"><span class="header-section-number">30</span> Set up</a></li>
+<li><a class="" href="general-comments-3.html"><span class="header-section-number">31</span> General Comments</a></li>
+<li><a class="" href="your-work-1.html"><span class="header-section-number">32</span> Your Work</a></li>
+<li><a class="" href="responses-to-questions-3.html"><span class="header-section-number">33</span> Responses to Questions</a></li>
+<li><a class="active" href="my-comments-after-review.html"><span class="header-section-number">34</span> My Comments after Review</a></li>
+<li><a class="" href="eda.html"><span class="header-section-number">35</span> Exploartory Data analysis</a></li>
+<li><a class="" href="importing.html"><span class="header-section-number">36</span> Impoarting Data</a></li>
+<li><a class="" href="transforming.html"><span class="header-section-number">37</span> Transforming Data</a></li>
+<li><a class="" href="tidying.html"><span class="header-section-number">38</span> Tidying Data</a></li>
+<li><a class="" href="visualizing.html"><span class="header-section-number">39</span> Visualizing Data</a></li>
+<li><a class="" href="modeling.html"><span class="header-section-number">40</span> Modeling Data</a></li>
+<li><a class="" href="communicating-data-communicating.html"><span class="header-section-number">41</span> Communicating Data {communicating}</a></li>
+<li><a class="" href="worldbank.html"><span class="header-section-number">42</span> World Bank</a></li>
+<li><a class="" href="owid.html"><span class="header-section-number">43</span> Our World in Data</a></li>
+<li><a class="" href="oecd.html"><span class="header-section-number">44</span> OECD</a></li>
+<li><a class="" href="undata.html"><span class="header-section-number">45</span> UN Data</a></li>
+<li><a class="" href="wir.html"><span class="header-section-number">46</span> World Inequality Report</a></li>
+<li><a class="" href="histdata.html"><span class="header-section-number">47</span> HistData</a></li>
+<li><a class="" href="covid19.html"><span class="header-section-number">48</span> Covid 19</a></li>
+<li><a class="" href="bookdown.html"><span class="header-section-number">49</span> Bookdown</a></li>
+<li><a class="" href="template.html"><span class="header-section-number">50</span> Template</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="my-comments-after-review" class="section level1" number="34">
+<h1>
+<span class="header-section-number">34</span> My Comments after Review<a class="anchor" aria-label="anchor" href="#my-comments-after-review"><i class="fas fa-link"></i></a>
+</h1>
+<div id="na-values" class="section level2" number="34.1">
+<h2>
+<span class="header-section-number">34.1</span> NA values<a class="anchor" aria-label="anchor" href="#na-values"><i class="fas fa-link"></i></a>
+</h2>
+<p>It is challenging to handle NA values properly. Let me introduce basics. In the following we use two data sets. One is <code>df1</code> used above, containing the indicator related the women’s sheet in parliament and the GINI index, and the following data on the forest area.</p>
+<div class="sourceCode" id="cb492"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">series</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">indicator</span> <span class="op">==</span> <span class="st">"AG.LND.FRST.K2"</span><span class="op">)</span></span>
+<span><span class="co">#&gt;        indicator                 name</span></span>
+<span><span class="co">#&gt; 1 AG.LND.FRST.K2 Forest area (sq. km)</span></span>
+<span><span class="co">#&gt;                                                                                                                                                                                                                                                                            description</span></span>
+<span><span class="co">#&gt; 1 Forest area is land under natural or planted stands of trees of at least 5 meters in situ, whether productive or not, and excludes tree stands in agricultural production systems (for example, in fruit plantations and agroforestry systems) and trees in urban parks and gardens.</span></span>
+<span><span class="co">#&gt;                 sourceDatabase</span></span>
+<span><span class="co">#&gt; 1 World Development Indicators</span></span>
+<span><span class="co">#&gt;                                                  sourceOrganization</span></span>
+<span><span class="co">#&gt; 1 Food and Agriculture Organization, electronic files and web site.</span></span></code></pre></div>
+<div class="sourceCode" id="cb493"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span>country <span class="op">=</span> <span class="st">"all"</span>, indicator <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>area <span class="op">=</span> <span class="st">"AG.LND.FRST.K2"</span><span class="op">)</span>, extra <span class="op">=</span> <span class="cn">TRUE</span>, cache <span class="op">=</span> <span class="va">wdi_cache</span><span class="op">)</span> </span>
+<span><span class="va">df2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="co">#&gt;        country iso2c iso3c year    area status lastupdated</span></span>
+<span><span class="co">#&gt; 1  Afghanistan    AF   AFG 2021      NA         2022-12-22</span></span>
+<span><span class="co">#&gt; 2  Afghanistan    AF   AFG 2020 12084.4         2022-12-22</span></span>
+<span><span class="co">#&gt; 3  Afghanistan    AF   AFG 2019 12084.4         2022-12-22</span></span>
+<span><span class="co">#&gt; 4  Afghanistan    AF   AFG 2018 12084.4         2022-12-22</span></span>
+<span><span class="co">#&gt; 5  Afghanistan    AF   AFG 2017 12084.4         2022-12-22</span></span>
+<span><span class="co">#&gt; 6  Afghanistan    AF   AFG 2016 12084.4         2022-12-22</span></span>
+<span><span class="co">#&gt; 7  Afghanistan    AF   AFG 2015 12084.4         2022-12-22</span></span>
+<span><span class="co">#&gt; 8  Afghanistan    AF   AFG 2014 12084.4         2022-12-22</span></span>
+<span><span class="co">#&gt; 9  Afghanistan    AF   AFG 2013 12084.4         2022-12-22</span></span>
+<span><span class="co">#&gt; 10 Afghanistan    AF   AFG 2012 12084.4         2022-12-22</span></span>
+<span><span class="co">#&gt;        region capital longitude latitude     income lending</span></span>
+<span><span class="co">#&gt; 1  South Asia   Kabul   69.1761  34.5228 Low income     IDA</span></span>
+<span><span class="co">#&gt; 2  South Asia   Kabul   69.1761  34.5228 Low income     IDA</span></span>
+<span><span class="co">#&gt; 3  South Asia   Kabul   69.1761  34.5228 Low income     IDA</span></span>
+<span><span class="co">#&gt; 4  South Asia   Kabul   69.1761  34.5228 Low income     IDA</span></span>
+<span><span class="co">#&gt; 5  South Asia   Kabul   69.1761  34.5228 Low income     IDA</span></span>
+<span><span class="co">#&gt; 6  South Asia   Kabul   69.1761  34.5228 Low income     IDA</span></span>
+<span><span class="co">#&gt; 7  South Asia   Kabul   69.1761  34.5228 Low income     IDA</span></span>
+<span><span class="co">#&gt; 8  South Asia   Kabul   69.1761  34.5228 Low income     IDA</span></span>
+<span><span class="co">#&gt; 9  South Asia   Kabul   69.1761  34.5228 Low income     IDA</span></span>
+<span><span class="co">#&gt; 10 South Asia   Kabul   69.1761  34.5228 Low income     IDA</span></span></code></pre></div>
+<ol style="list-style-type: decimal">
+<li>Get rid of all NA values. nrow(data) gives the number of rows, the length of data.</li>
+</ol>
+<div class="sourceCode" id="cb494"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df1_wona</span> <span class="op">&lt;-</span> <span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">df1_wona</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 114</span></span></code></pre></div>
+<div class="sourceCode" id="cb495"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df2_wona</span> <span class="op">&lt;-</span> <span class="va">df2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">df2_wona</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 7723</span></span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Drop data only a specified indicator.</li>
+</ol>
+<div class="sourceCode" id="cb496"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df1_wona_parl</span> <span class="op">&lt;-</span> <span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">parl</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">df1_wona_parl</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 173</span></span></code></pre></div>
+<div class="sourceCode" id="cb497"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df1_wona_gini</span> <span class="op">&lt;-</span> <span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">gini</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">df1_wona_gini</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 155</span></span></code></pre></div>
+<div class="sourceCode" id="cb498"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df1_wona_parl_gini</span> <span class="op">&lt;-</span> <span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">parl</span>, <span class="va">gini</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">df1_wona_parl_gini</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 114</span></span></code></pre></div>
+<div class="sourceCode" id="cb499"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df2_wona_area</span> <span class="op">&lt;-</span> <span class="va">df2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">area</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">df2_wona_area</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 7909</span></span></code></pre></div>
+<p>Can you see why the number above is larger than the row number of <code>df2_wona</code>? Since there are many column imported using <code>extra=TRUE</code>, there may be NA values in the othre columns.</p>
+<p>So, generally speaking, it is better to drop NA only for the indicators.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Selecting year or other conditions with many data.</li>
+</ol>
+<p>I chose the year 2013 and 2010, because those are the only years we had data for all G7 countries with two indicator values, i.e., <code>parl</code> and <code>gini</code>.</p>
+<div class="sourceCode" id="cb500"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">parl</span>, <span class="va">gini</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span>, <span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/top_n.html">top_n</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Selecting by n</span></span>
+<span><span class="co">#&gt; # A tibble: 2 × 2</span></span>
+<span><span class="co">#&gt;    year     n</span></span>
+<span><span class="co">#&gt;   &lt;int&gt; &lt;int&gt;</span></span>
+<span><span class="co">#&gt; 1  2013     7</span></span>
+<span><span class="co">#&gt; 2  2010     7</span></span></code></pre></div>
+<ol start="4" style="list-style-type: decimal">
+<li>Compare the following charts. In the second chart, we can get rid of the warnings. You can simply remove the warning by adding a chunk optiion <code>warning=FALSE</code> by {r warning=FALSE} or choosing an option using the gear mark.</li>
+</ol>
+<div class="sourceCode" id="cb501"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">gini</span>, col <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning: Removed 184 rows containing missing values</span></span>
+<span><span class="co">#&gt; (`geom_line()`).</span></span></code></pre></div>
+<div class="inline-figure"><img src="15-a5resp_files/figure-html/unnamed-chunk-26-1.png" width="672"></div>
+<div class="sourceCode" id="cb502"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">gini</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">gini</span>, col <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="15-a5resp_files/figure-html/unnamed-chunk-27-1.png" width="672"></div>
+<div id="reference-1" class="section level3" number="34.1.1">
+<h3>
+<span class="header-section-number">34.1.1</span> Reference<a class="anchor" aria-label="anchor" href="#reference-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Posit Primers: <a href="https://posit.cloud/learn/primers/4">Tidy Your Data</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="comparing-two" class="section level2" number="34.2">
+<h2>
+<span class="header-section-number">34.2</span> Comparing Two<a class="anchor" aria-label="anchor" href="#comparing-two"><i class="fas fa-link"></i></a>
+</h2>
+<p>There are several ways if you want to compare two charts. You can incllude them in one chart, as I gave examples above using <code>geom_line</code> with arrows.</p>
+<p>We want to combine the following charts into one. A few comments on the charts.</p>
+<ul>
+<li>Since <code>year</code> is fixed, we set <code>x = ""</code> in <code>labs</code> and add a title specifying the year.</li>
+<li>
+<code>scale_x_discrete(labels = function(x) stringr::str_wrap(x, width = 7))</code>: Since the labels of the x-axis are long, we used a unique technique to wrap the tags to fit into a fixed length.</li>
+<li>
+<code>theme(legend. position = "none")</code>: Since the legend is the same as the labels, we removed it.</li>
+</ul>
+<div class="sourceCode" id="cb503"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df2_wona_area</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"East Asia &amp; Pacific"</span>, <span class="st">"Europe &amp; Central Asia"</span>, <span class="st">"Latin America &amp; Caribbean"</span>, <span class="st">"Middle East &amp; North Africa"</span>, <span class="st">"North America"</span>, <span class="st">"South Asia"</span>, <span class="st">"Sub-Saharan Africa"</span><span class="op">)</span>, <span class="va">year</span> <span class="op">==</span> <span class="fl">1990</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">region</span>, y <span class="op">=</span> <span class="va">area</span>, fill <span class="op">=</span> <span class="va">region</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Graph 1. Forest areas in 1990"</span>, x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">"Forest area (sq. km)"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_wrap.html">str_wrap</a></span><span class="op">(</span><span class="va">x</span>, width <span class="op">=</span> <span class="fl">7</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="15-a5resp_files/figure-html/unnamed-chunk-28-1.png" width="672"></div>
+<div class="sourceCode" id="cb504"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df2_wona_area</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"East Asia &amp; Pacific"</span>, <span class="st">"Europe &amp; Central Asia"</span>, <span class="st">"Latin America &amp; Caribbean"</span>, <span class="st">"Middle East &amp; North Africa"</span>, <span class="st">"North America"</span>, <span class="st">"South Asia"</span>, <span class="st">"Sub-Saharan Africa"</span><span class="op">)</span>, <span class="va">year</span> <span class="op">==</span> <span class="fl">2020</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">region</span>, y <span class="op">=</span> <span class="va">area</span>, fill <span class="op">=</span> <span class="va">region</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Graph 2. Forest areas in 2020"</span>, subtitle <span class="op">=</span> <span class="st">"Regions of the world"</span>, x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">"Forest area (sq. km)"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_wrap.html">str_wrap</a></span><span class="op">(</span><span class="va">x</span>, width <span class="op">=</span> <span class="fl">7</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="15-a5resp_files/figure-html/unnamed-chunk-29-1.png" width="672"></div>
+<ol style="list-style-type: decimal">
+<li>position(“dodge”)</li>
+</ol>
+<div class="sourceCode" id="cb505"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df2_wona_area</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"East Asia &amp; Pacific"</span>, <span class="st">"Europe &amp; Central Asia"</span>, <span class="st">"Latin America &amp; Caribbean"</span>, <span class="st">"Middle East &amp; North Africa"</span>, <span class="st">"North America"</span>, <span class="st">"South Asia"</span>, <span class="st">"Sub-Saharan Africa"</span><span class="op">)</span>, <span class="va">year</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1990</span>,<span class="fl">2020</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">region</span>, y <span class="op">=</span> <span class="va">area</span>, fill <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position<span class="op">=</span><span class="st">"dodge"</span>, width <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Forest areas"</span>, x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">"Forest area (sq. km)"</span>, fill <span class="op">=</span> <span class="st">"year: "</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_wrap.html">str_wrap</a></span><span class="op">(</span><span class="va">x</span>, width <span class="op">=</span> <span class="fl">12</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"top"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="15-a5resp_files/figure-html/unnamed-chunk-30-1.png" width="672"></div>
+<ol start="2" style="list-style-type: decimal">
+<li><code>facet_wrap</code></li>
+</ol>
+<div class="sourceCode" id="cb506"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df2_wona_area</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"East Asia &amp; Pacific"</span>, <span class="st">"Europe &amp; Central Asia"</span>, <span class="st">"Latin America &amp; Caribbean"</span>, <span class="st">"Middle East &amp; North Africa"</span>, <span class="st">"North America"</span>, <span class="st">"South Asia"</span>, <span class="st">"Sub-Saharan Africa"</span><span class="op">)</span>, <span class="va">year</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1990</span>,<span class="fl">2020</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">region</span>, y <span class="op">=</span> <span class="va">area</span>, fill <span class="op">=</span> <span class="va">region</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position<span class="op">=</span><span class="st">"dodge"</span>, width <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Forest areas"</span>, x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">"Forest area (sq. km)"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_wrap.html">str_wrap</a></span><span class="op">(</span><span class="va">x</span>, width <span class="op">=</span> <span class="fl">3</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="va">.</span><span class="op">~</span><span class="va">year</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="15-a5resp_files/figure-html/unnamed-chunk-31-1.png" width="672"></div>
+<div class="sourceCode" id="cb507"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df2_wona_area</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"East Asia &amp; Pacific"</span>, <span class="st">"Europe &amp; Central Asia"</span>, <span class="st">"Latin America &amp; Caribbean"</span>, <span class="st">"Middle East &amp; North Africa"</span>, <span class="st">"North America"</span>, <span class="st">"South Asia"</span>, <span class="st">"Sub-Saharan Africa"</span><span class="op">)</span>, <span class="va">year</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1990</span>,<span class="fl">2020</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">region</span>, y <span class="op">=</span> <span class="va">area</span>, fill <span class="op">=</span> <span class="va">region</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position<span class="op">=</span><span class="st">"dodge"</span>, width <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Forest areas"</span>, x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">"Forest area (sq. km)"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_wrap.html">str_wrap</a></span><span class="op">(</span><span class="va">x</span>, width <span class="op">=</span> <span class="fl">3</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="va">.</span><span class="op">~</span><span class="va">year</span>, nrow <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="15-a5resp_files/figure-html/unnamed-chunk-32-1.png" width="672"></div>
+<p>See Posit Primers: <a href="https://posit.cloud/learn/primers/3">Visualize Data</a></p>
+</div>
+<div id="the-package-broom-for-models" class="section level2" number="34.3">
+<h2>
+<span class="header-section-number">34.3</span> The package <code>broom</code> for models<a class="anchor" aria-label="anchor" href="#the-package-broom-for-models"><i class="fas fa-link"></i></a>
+</h2>
+<p>There is another package for models in <code>tidyverse</code>, i.e., <code>modelr</code>. Some of the functions of <code>modelr</code> can be useful, but it is mainly for sampling and machine learning. So we explain the package <code>broom</code> only.</p>
+<p>Although, <code>broom</code> is installed when you install <code>tidyverse</code>, it is not loaded. So you need to add <code><a href="https://broom.tidymodels.org/">library(broom)</a></code>.</p>
+<div class="sourceCode" id="cb508"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://broom.tidymodels.org/">broom</a></span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb509"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df3</span> <span class="op">&lt;-</span> <span class="fu">datasets</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/r/datasets/iris.html">iris</a></span></span></code></pre></div>
+<p>There are two ways to set a model.</p>
+<ul>
+<li>
+<code>lm(y~x, data)</code> and <code>data %&gt;% lm(y~x, .)</code>.</li>
+</ul>
+<p>You can see model summary by the following.</p>
+<ul>
+<li>
+<code>summary(lm(y~x, data))</code> and <code>data %&gt;% lm(y~x, .) %&gt;% summary()</code>.</li>
+</ul>
+<div class="sourceCode" id="cb510"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mod</span> <span class="op">&lt;-</span> <span class="va">df3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Sepal.Length</span> <span class="op">~</span> <span class="va">Sepal.Width</span>, <span class="va">.</span><span class="op">)</span></span>
+<span><span class="va">mod</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Call:</span></span>
+<span><span class="co">#&gt; lm(formula = Sepal.Length ~ Sepal.Width, data = .)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Coefficients:</span></span>
+<span><span class="co">#&gt; (Intercept)  Sepal.Width  </span></span>
+<span><span class="co">#&gt;      6.5262      -0.2234</span></span></code></pre></div>
+<div class="sourceCode" id="cb511"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Sepal.Length</span> <span class="op">~</span> <span class="va">Sepal.Width</span>, <span class="va">.</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Call:</span></span>
+<span><span class="co">#&gt; lm(formula = Sepal.Length ~ Sepal.Width, data = .)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Residuals:</span></span>
+<span><span class="co">#&gt;     Min      1Q  Median      3Q     Max </span></span>
+<span><span class="co">#&gt; -1.5561 -0.6333 -0.1120  0.5579  2.2226 </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Coefficients:</span></span>
+<span><span class="co">#&gt;             Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
+<span><span class="co">#&gt; (Intercept)   6.5262     0.4789   13.63   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; Sepal.Width  -0.2234     0.1551   -1.44    0.152    </span></span>
+<span><span class="co">#&gt; ---</span></span>
+<span><span class="co">#&gt; Signif. codes:  </span></span>
+<span><span class="co">#&gt; 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Residual standard error: 0.8251 on 148 degrees of freedom</span></span>
+<span><span class="co">#&gt; Multiple R-squared:  0.01382,    Adjusted R-squared:  0.007159 </span></span>
+<span><span class="co">#&gt; F-statistic: 2.074 on 1 and 148 DF,  p-value: 0.1519</span></span></code></pre></div>
+<p>Since the coefficients are under Estimate of the summary, you think you do not need <code>mod = lm(y~x, data)</code>. But it is not the case.</p>
+<p><code>mod &lt;- lm(y~x, data)</code> defines a model.</p>
+<p>We intoroduce only <code><a href="https://generics.r-lib.org/reference/tidy.html">tidy()</a></code>, <code><a href="https://generics.r-lib.org/reference/glance.html">glance()</a></code> and <code><a href="https://generics.r-lib.org/reference/augment.html">augment()</a></code></p>
+<div id="tidy-1" class="section level3" number="34.3.1">
+<h3>
+<span class="header-section-number">34.3.1</span> <code>tidy</code><a class="anchor" aria-label="anchor" href="#tidy-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>It produces the coefficients part of the model summary. So, the two values under estimate is the y-intercept and the slope.</p>
+<div class="sourceCode" id="cb512"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mod</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html">tidy</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 2 × 5</span></span>
+<span><span class="co">#&gt;   term        estimate std.error statistic  p.value</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 (Intercept)    6.53      0.479     13.6  6.47e-28</span></span>
+<span><span class="co">#&gt; 2 Sepal.Width   -0.223     0.155     -1.44 1.52e- 1</span></span></code></pre></div>
+</div>
+<div id="glance" class="section level3" number="34.3.2">
+<h3>
+<span class="header-section-number">34.3.2</span> <code>glance</code><a class="anchor" aria-label="anchor" href="#glance"><i class="fas fa-link"></i></a>
+</h3>
+<p>It produces the latter half of the model summary. The fist is the R squared followed by adjusted R squared, and other values.</p>
+<div class="sourceCode" id="cb513"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mod</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/glance.html">glance</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 1 × 12</span></span>
+<span><span class="co">#&gt;   r.squared adj.r…¹ sigma stati…² p.value    df logLik   AIC</span></span>
+<span><span class="co">#&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1    0.0138 0.00716 0.825    2.07   0.152     1  -183.  372.</span></span>
+<span><span class="co">#&gt; # … with 4 more variables: BIC &lt;dbl&gt;, deviance &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   df.residual &lt;int&gt;, nobs &lt;int&gt;, and abbreviated variable</span></span>
+<span><span class="co">#&gt; #   names ¹​adj.r.squared, ²​statistic</span></span></code></pre></div>
+</div>
+<div id="augment" class="section level3" number="34.3.3">
+<h3>
+<span class="header-section-number">34.3.3</span> <code>augment</code><a class="anchor" aria-label="anchor" href="#augment"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>The first column is the vector corresponding to y.</li>
+<li>The second column is the vector corresponding to x.</li>
+<li>
+<code>.fitted</code> is the y value of the fitted line. So
+<span class="math display">\[.fitted = y-intercept + slope \cdot x.\]</span>
+</li>
+<li>
+<code>.resid</code> is the residue, i.e., y-value minus .fitted (or predicted) value.</li>
+</ul>
+<div class="sourceCode" id="cb514"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mod</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/augment.html">augment</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">Sepal.Width</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 150 × 8</span></span>
+<span><span class="co">#&gt;    Sepal.Len…¹ Sepal…² .fitted  .resid   .hat .sigma .cooksd</span></span>
+<span><span class="co">#&gt;          &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1         5       2      6.08 -1.08   0.0462  0.823 4.34e-2</span></span>
+<span><span class="co">#&gt;  2         6       2.2    6.03 -0.0348 0.0326  0.828 3.11e-5</span></span>
+<span><span class="co">#&gt;  3         6.2     2.2    6.03  0.165  0.0326  0.828 6.99e-4</span></span>
+<span><span class="co">#&gt;  4         6       2.2    6.03 -0.0348 0.0326  0.828 3.11e-5</span></span>
+<span><span class="co">#&gt;  5         4.5     2.3    6.01 -1.51   0.0269  0.818 4.78e-2</span></span>
+<span><span class="co">#&gt;  6         5.5     2.3    6.01 -0.512  0.0269  0.827 5.49e-3</span></span>
+<span><span class="co">#&gt;  7         6.3     2.3    6.01  0.288  0.0269  0.828 1.73e-3</span></span>
+<span><span class="co">#&gt;  8         5       2.3    6.01 -1.01   0.0269  0.824 2.14e-2</span></span>
+<span><span class="co">#&gt;  9         4.9     2.4    5.99 -1.09   0.0219  0.823 2.00e-2</span></span>
+<span><span class="co">#&gt; 10         5.5     2.4    5.99 -0.490  0.0219  0.827 4.05e-3</span></span>
+<span><span class="co">#&gt; # … with 140 more rows, 1 more variable: .std.resid &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   and abbreviated variable names ¹​Sepal.Length,</span></span>
+<span><span class="co">#&gt; #   ²​Sepal.Width</span></span></code></pre></div>
+<p>Hence, the following two charts are the same.</p>
+<div class="sourceCode" id="cb515"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mod</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/augment.html">augment</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sepal.Width</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">Sepal.Length</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">.fitted</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="15-a5resp_files/figure-html/unnamed-chunk-40-1.png" width="672"></div>
+<div class="sourceCode" id="cb516"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sepal.Width</span>, y <span class="op">=</span> <span class="va">Sepal.Length</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>formula <span class="op">=</span> <span class="va">y</span><span class="op">~</span><span class="va">x</span>, method <span class="op">=</span> <span class="st">"lm"</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="15-a5resp_files/figure-html/unnamed-chunk-41-1.png" width="672"></div>
+<div class="sourceCode" id="cb517"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sepal.Width</span>, y <span class="op">=</span> <span class="va">Sepal.Length</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>formula <span class="op">=</span> <span class="va">y</span><span class="op">~</span><span class="va">x</span>, method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="15-a5resp_files/figure-html/unnamed-chunk-42-1.png" width="672"></div>
+<p>The shaded band is supposed to tell you the range of the prediction line should be under some assumption. I did not explain it because you need to be careful when interpreting its meaning.</p>
+</div>
+<div id="references-of-broom" class="section level3" number="34.3.4">
+<h3>
+<span class="header-section-number">34.3.4</span> References of <code>broom</code><a class="anchor" aria-label="anchor" href="#references-of-broom"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Official site of R project: <a href="https://CRAN.R-project.org/package=broom" class="uri">https://CRAN.R-project.org/package=broom</a>
+</li>
+<li>Manual: <a href="https://cran.r-project.org/web/packages/broom/broom.pdf" class="uri">https://cran.r-project.org/web/packages/broom/broom.pdf</a>
+</li>
+<li>vignette: <a href="https://cran.r-project.org/web/packages/broom/vignettes/broom.html">Introduction to broom</a>
+</li>
+<li>vignette: <a href="https://cran.r-project.org/web/packages/broom/vignettes/broom_and_dplyr.html">broom and dplyr</a>
+</li>
+<li><a href="https://broom.tidymodels.org/reference/augment.lm.html">Augment data with information from a(n) lm object</a></li>
+</ul>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="responses-to-questions-3.html"><span class="header-section-number">33</span> Responses to Questions</a></div>
+<div class="next"><a href="eda.html"><span class="header-section-number">35</span> Exploartory Data analysis</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#my-comments-after-review"><span class="header-section-number">34</span> My Comments after Review</a></li>
+<li>
+<a class="nav-link" href="#na-values"><span class="header-section-number">34.1</span> NA values</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#reference-1"><span class="header-section-number">34.1.1</span> Reference</a></li></ul>
+</li>
+<li><a class="nav-link" href="#comparing-two"><span class="header-section-number">34.2</span> Comparing Two</a></li>
+<li>
+<a class="nav-link" href="#the-package-broom-for-models"><span class="header-section-number">34.3</span> The package broom for models</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#tidy-1"><span class="header-section-number">34.3.1</span> tidy</a></li>
+<li><a class="nav-link" href="#glance"><span class="header-section-number">34.3.2</span> glance</a></li>
+<li><a class="nav-link" href="#augment"><span class="header-section-number">34.3.3</span> augment</a></li>
+<li><a class="nav-link" href="#references-of-broom"><span class="header-section-number">34.3.4</span> References of broom</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/15-a5resp.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/15-a5resp.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>A Minimal Book Example</strong>" was written by John Doe. It was last built on 2023-02-07.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

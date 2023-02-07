@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 23 Set up | A Minimal Book Example</title>
+<meta name="author" content="John Doe">
+<meta name="description" content="library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.5.0 #&gt; ✔...">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
+<meta property="og:title" content="Chapter 23 Set up | A Minimal Book Example">
+<meta property="og:type" content="book">
+<meta property="og:description" content="library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.5.0 #&gt; ✔...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 23 Set up | A Minimal Book Example">
+<meta name="twitter:description" content="library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.5.0 #&gt; ✔...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">A Minimal Book Example</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li><a class="" href="intro.html"><span class="header-section-number">2</span> Intdoduction</a></li>
+<li><a class="" href="r-with-r-studio.html"><span class="header-section-number">3</span> R with R Studio</a></li>
+<li><a class="" href="tidyverse.html"><span class="header-section-number">4</span> tidyverse Packages</a></li>
+<li><a class="" href="rmarkdown.html"><span class="header-section-number">5</span> R Markdown</a></li>
+<li><a class="" href="dplyr.html"><span class="header-section-number">6</span> Data Transforamtion with dplyr</a></li>
+<li><a class="" href="responses-to-assignment-two.html"><span class="header-section-number">7</span> Responses to Assignment Two</a></li>
+<li><a class="" href="set-up-1.html"><span class="header-section-number">8</span> Set up</a></li>
+<li><a class="" href="general-comments.html"><span class="header-section-number">9</span> General Comments</a></li>
+<li><a class="" href="responses-to-questions.html"><span class="header-section-number">10</span> Responses to Questions</a></li>
+<li><a class="" href="appendix-change-colors-shapes-linetypes-etc.-manually.html"><span class="header-section-number">11</span> Appendix: Change colors, shapes, linetypes, etc. manually</a></li>
+<li><a class="" href="wdi.html"><span class="header-section-number">12</span> Importing Public Data, WDI</a></li>
+<li><a class="" href="ggokit2.html"><span class="header-section-number">13</span> Data Visualization and `ggplot2’</a></li>
+<li><a class="" href="responses-to-assignment-three.html"><span class="header-section-number">14</span> Responses to Assignment Three</a></li>
+<li><a class="" href="set-up-2.html"><span class="header-section-number">15</span> Set up</a></li>
+<li><a class="" href="general-comments-1.html"><span class="header-section-number">16</span> General Comments</a></li>
+<li><a class="" href="world-development-indicators-wdi.html"><span class="header-section-number">17</span> World Development Indicators (WDI)</a></li>
+<li><a class="" href="responses-to-questions-1.html"><span class="header-section-number">18</span> Responses to Questions</a></li>
+<li><a class="" href="regression-lines-topic-of-eda5.html"><span class="header-section-number">19</span> Regression Lines; Topic of EDA5</a></li>
+<li><a class="" href="appendix-a-secondary-axis.html"><span class="header-section-number">20</span> Appendix: A secondary axis</a></li>
+<li><a class="" href="tidy.html"><span class="header-section-number">21</span> Tidy Data</a></li>
+<li><a class="" href="workflow.html"><span class="header-section-number">22</span> EDA Workflow</a></li>
+<li><a class="" href="assignment-four-the-week-five-assignment.html">Assignment Four: The Week Five Assignment</a></li>
+<li><a class="active" href="set-up-3.html"><span class="header-section-number">23</span> Set up</a></li>
+<li><a class="" href="general-comments-2.html"><span class="header-section-number">24</span> General Comments</a></li>
+<li><a class="" href="your-work.html"><span class="header-section-number">25</span> Your Work</a></li>
+<li><a class="" href="responses-to-questions-2.html"><span class="header-section-number">26</span> Responses to Questions</a></li>
+<li><a class="" href="model.html"><span class="header-section-number">27</span> Model</a></li>
+<li><a class="" href="roudups.html"><span class="header-section-number">28</span> Roudups</a></li>
+<li><a class="" href="a5resp.html"><span class="header-section-number">29</span> Responses to Assignment Five</a></li>
+<li><a class="" href="set-up-4.html"><span class="header-section-number">30</span> Set up</a></li>
+<li><a class="" href="general-comments-3.html"><span class="header-section-number">31</span> General Comments</a></li>
+<li><a class="" href="your-work-1.html"><span class="header-section-number">32</span> Your Work</a></li>
+<li><a class="" href="responses-to-questions-3.html"><span class="header-section-number">33</span> Responses to Questions</a></li>
+<li><a class="" href="my-comments-after-review.html"><span class="header-section-number">34</span> My Comments after Review</a></li>
+<li><a class="" href="eda.html"><span class="header-section-number">35</span> Exploartory Data analysis</a></li>
+<li><a class="" href="importing.html"><span class="header-section-number">36</span> Impoarting Data</a></li>
+<li><a class="" href="transforming.html"><span class="header-section-number">37</span> Transforming Data</a></li>
+<li><a class="" href="tidying.html"><span class="header-section-number">38</span> Tidying Data</a></li>
+<li><a class="" href="visualizing.html"><span class="header-section-number">39</span> Visualizing Data</a></li>
+<li><a class="" href="modeling.html"><span class="header-section-number">40</span> Modeling Data</a></li>
+<li><a class="" href="communicating-data-communicating.html"><span class="header-section-number">41</span> Communicating Data {communicating}</a></li>
+<li><a class="" href="worldbank.html"><span class="header-section-number">42</span> World Bank</a></li>
+<li><a class="" href="owid.html"><span class="header-section-number">43</span> Our World in Data</a></li>
+<li><a class="" href="oecd.html"><span class="header-section-number">44</span> OECD</a></li>
+<li><a class="" href="undata.html"><span class="header-section-number">45</span> UN Data</a></li>
+<li><a class="" href="wir.html"><span class="header-section-number">46</span> World Inequality Report</a></li>
+<li><a class="" href="histdata.html"><span class="header-section-number">47</span> HistData</a></li>
+<li><a class="" href="covid19.html"><span class="header-section-number">48</span> Covid 19</a></li>
+<li><a class="" href="bookdown.html"><span class="header-section-number">49</span> Bookdown</a></li>
+<li><a class="" href="template.html"><span class="header-section-number">50</span> Template</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="set-up-3" class="section level1" number="23">
+<h1>
+<span class="header-section-number">23</span> Set up<a class="anchor" aria-label="anchor" href="#set-up-3"><i class="fas fa-link"></i></a>
+</h1>
+<div class="sourceCode" id="cb341"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
+<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 </span></span>
+<span><span class="co">#&gt; ✔ tibble  3.1.8      ✔ dplyr   1.0.10</span></span>
+<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.5.0 </span></span>
+<span><span class="co">#&gt; ✔ readr   2.1.3      ✔ forcats 0.5.2 </span></span>
+<span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
+<span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
+<span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span> <span class="co"># for excel files</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/WDI/">WDI</a></span><span class="op">)</span></span></code></pre></div>
+<div id="world-development-indicator---wdi" class="section level2" number="23.1">
+<h2>
+<span class="header-section-number">23.1</span> World Development Indicator - WDI<a class="anchor" aria-label="anchor" href="#world-development-indicator---wdi"><i class="fas fa-link"></i></a>
+</h2>
+<p>The following is useful when you use WDI.</p>
+<div class="sourceCode" id="cb342"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDIcache.html">WDIcache</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>Or, write the cache and read it from your computer. Since <code>wdi_cache</code> is a list of two data frames, we cannot use <code><a href="https://readr.tidyverse.org/reference/write_delim.html">write_csv()</a></code>; instead, we use <code>write_rds</code>.</p>
+<div class="sourceCode" id="cb343"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_rds.html">write_rds</a></span><span class="op">(</span><span class="va">wdi_cache</span>, <span class="st">"./data/wdi_cache.RData"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb344"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_rds.html">read_rds</a></span><span class="op">(</span><span class="st">"./data/wdi_cache.RData"</span><span class="op">)</span></span></code></pre></div>
+<p><code><a href="https://vincentarelbundock.github.io/WDI/reference/WDIcache.html">WDIcache()</a></code> produces a list containing two data frames: <code>wdi_cache$series</code> and <code>wdi_cache$country</code>.</p>
+<div class="sourceCode" id="cb345"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">wdi_cache</span><span class="op">)</span></span>
+<span><span class="co">#&gt; List of 2</span></span>
+<span><span class="co">#&gt;  $ series :'data.frame': 21034 obs. of  5 variables:</span></span>
+<span><span class="co">#&gt;   ..$ indicator         : chr [1:21034] "1.0.HCount.1.90usd" "1.0.HCount.2.5usd" "1.0.HCount.Mid10to50" "1.0.HCount.Ofcl" ...</span></span>
+<span><span class="co">#&gt;   ..$ name              : chr [1:21034] "Poverty Headcount ($1.90 a day)" "Poverty Headcount ($2.50 a day)" "Middle Class ($10-50 a day) Headcount" "Official Moderate Poverty Rate-National" ...</span></span>
+<span><span class="co">#&gt;   ..$ description       : chr [1:21034] "The poverty headcount index measures the proportion of the population with daily per capita income (in 2011 PPP"| __truncated__ "The poverty headcount index measures the proportion of the population with daily per capita income (in 2005 PPP"| __truncated__ "The poverty headcount index measures the proportion of the population with daily per capita income (in 2005 PPP"| __truncated__ "The poverty headcount index measures the proportion of the population with daily per capita income below the of"| __truncated__ ...</span></span>
+<span><span class="co">#&gt;   ..$ sourceDatabase    : chr [1:21034] "LAC Equity Lab" "LAC Equity Lab" "LAC Equity Lab" "LAC Equity Lab" ...</span></span>
+<span><span class="co">#&gt;   ..$ sourceOrganization: chr [1:21034] "LAC Equity Lab tabulations of SEDLAC (CEDLAS and the World Bank)." "LAC Equity Lab tabulations of SEDLAC (CEDLAS and the World Bank)." "LAC Equity Lab tabulations of SEDLAC (CEDLAS and the World Bank)." "LAC Equity Lab tabulations of data from National Statistical Offices." ...</span></span>
+<span><span class="co">#&gt;  $ country:'data.frame': 299 obs. of  9 variables:</span></span>
+<span><span class="co">#&gt;   ..$ iso3c    : chr [1:299] "ABW" "AFE" "AFG" "AFR" ...</span></span>
+<span><span class="co">#&gt;   ..$ iso2c    : chr [1:299] "AW" "ZH" "AF" "A9" ...</span></span>
+<span><span class="co">#&gt;   ..$ country  : chr [1:299] "Aruba" "Africa Eastern and Southern" "Afghanistan" "Africa" ...</span></span>
+<span><span class="co">#&gt;   ..$ region   : chr [1:299] "Latin America &amp; Caribbean" "Aggregates" "South Asia" "Aggregates" ...</span></span>
+<span><span class="co">#&gt;   ..$ capital  : chr [1:299] "Oranjestad" "" "Kabul" "" ...</span></span>
+<span><span class="co">#&gt;   ..$ longitude: chr [1:299] "-70.0167" "" "69.1761" "" ...</span></span>
+<span><span class="co">#&gt;   ..$ latitude : chr [1:299] "12.5167" "" "34.5228" "" ...</span></span>
+<span><span class="co">#&gt;   ..$ income   : chr [1:299] "High income" "Aggregates" "Low income" "Aggregates" ...</span></span>
+<span><span class="co">#&gt;   ..$ lending  : chr [1:299] "Not classified" "Aggregates" "IDA" "Aggregates" ...</span></span></code></pre></div>
+</div>
+<div id="world-inequility-report---wir2022" class="section level2" number="23.2">
+<h2>
+<span class="header-section-number">23.2</span> World Inequility Report - WIR2022<a class="anchor" aria-label="anchor" href="#world-inequility-report---wir2022"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>World Inequality Report: <a href="https://wir2022.wid.world/" class="uri">https://wir2022.wid.world/</a>
+</li>
+<li>Executive Summary: <a href="https://wir2022.wid.world/executive-summary/" class="uri">https://wir2022.wid.world/executive-summary/</a>
+</li>
+<li>Methodology: <a href="https://wir2022.wid.world/methodology/" class="uri">https://wir2022.wid.world/methodology/</a>
+</li>
+<li>URL of Executive Summary Data: <a href="https://wir2022.wid.world/www-site/uploads/2022/03/WIR2022TablesFigures-Summary.xlsx" class="uri">https://wir2022.wid.world/www-site/uploads/2022/03/WIR2022TablesFigures-Summary.xlsx</a>
+</li>
+</ul>
+<p>Please add <code>mode="wb"</code> (web binary). This should work better.</p>
+<div class="sourceCode" id="cb346"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">url_summary</span> <span class="op">&lt;-</span> <span class="st">"https://wir2022.wid.world/www-site/uploads/2022/03/WIR2022TablesFigures-Summary.xlsx"</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span><span class="op">(</span>url <span class="op">=</span> <span class="va">url_summary</span>, </span>
+<span>              destfile <span class="op">=</span> <span class="st">"./data/WIR2022s.xlsx"</span>, </span>
+<span>              mode <span class="op">=</span> <span class="st">"wb"</span><span class="op">)</span> </span></code></pre></div>
+<p>If you get an error, download the file directory from the methodology site into your computer, then open it with Excel and save it in the data folder of your R Studio project. Then R studio can recognize it easily as an Excel data.</p>
+<p>Generally, a text file such as a CSV file is easy to import, but a binary file is difficult to handle. It is because unless R can recognize its file type, for example, Excel or so, R cannot import the data.</p>
+<div class="sourceCode" id="cb347"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://readxl.tidyverse.org/reference/excel_sheets.html">excel_sheets</a></span><span class="op">(</span><span class="st">"./data/WIR2022s.xlsx"</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "Index"     "F1"        "F2"        "F3"       </span></span>
+<span><span class="co">#&gt;  [5] "F4"        "F5."       "F6"        "F7"       </span></span>
+<span><span class="co">#&gt;  [9] "F8"        "F9"        "F10"       "F11"      </span></span>
+<span><span class="co">#&gt; [13] "F12"       "F13"       "F14"       "F15"      </span></span>
+<span><span class="co">#&gt; [17] "T1"        "data-F1"   "data-F2"   "data-F3"  </span></span>
+<span><span class="co">#&gt; [21] "data-F4"   "data-F5"   "data-F6"   "data-F7"  </span></span>
+<span><span class="co">#&gt; [25] "data-F8"   "data-F9"   "data-F10"  "data-F11" </span></span>
+<span><span class="co">#&gt; [29] "data-F12"  "data-F13." "data-F14." "data-F15"</span></span></code></pre></div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="assignment-four-the-week-five-assignment.html">Assignment Four: The Week Five Assignment</a></div>
+<div class="next"><a href="general-comments-2.html"><span class="header-section-number">24</span> General Comments</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#set-up-3"><span class="header-section-number">23</span> Set up</a></li>
+<li><a class="nav-link" href="#world-development-indicator---wdi"><span class="header-section-number">23.1</span> World Development Indicator - WDI</a></li>
+<li><a class="nav-link" href="#world-inequility-report---wir2022"><span class="header-section-number">23.2</span> World Inequility Report - WIR2022</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/12-a4resp.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/12-a4resp.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>A Minimal Book Example</strong>" was written by John Doe. It was last built on 2023-02-07.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

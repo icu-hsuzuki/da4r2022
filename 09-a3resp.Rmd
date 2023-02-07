@@ -494,7 +494,7 @@ labs(title = "Inflation of Japan, Vietnam and China from 2000 to 2020",
 wdi_cache$series %>% filter(indicator %in% c("SI.POV.NAHC","SI.POV.MDIM")) %>% pull(name)
 ```
 
-```{r 9-66, cash = TRUE, eval=FALSE}
+```{r 9-66, cache=TRUE, eval=FALSE}
 df_wdi_poverty <- WDI(
   indicator = c(poverty = "SI.POV.NAHC", multipoverty = "SI.POV.MDIM", gdppercap = "NY.GDP.PCAP.KD"), start = 1990,
   extra = TRUE) %>% drop_na(poverty, multipoverty, gdppercap)

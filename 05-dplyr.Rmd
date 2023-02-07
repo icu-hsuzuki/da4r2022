@@ -273,7 +273,7 @@ library(WDI)
 
 #### R Package `gapminder` data
 
-```{r cash=TRUE}
+```{r cache=TRUE}
 df <- gapminder
 df %>% slice(1:10)
 ```
