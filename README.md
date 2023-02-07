@@ -20,6 +20,13 @@ This book is created using a minimal example of a book based on R Markdown and *
 8. Git: Commit "first build" > Push
 9. @GitHub: Pages > main > docs
 
+Another PC
+
+1. Login to GitHub account
+2. Copy SSH address under Code>Clone
+3. Create a new project using Version Control:Git with the SSH address by setting the directory name
+4. Edit README.md and test Git Commit and Push
+
 Additional resources:
 
 The **bookdown** book: https://bookdown.org/yihui/bookdown/
