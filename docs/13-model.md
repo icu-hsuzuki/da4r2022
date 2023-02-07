@@ -31,50 +31,50 @@ Goal: A simple low-dimensional summary of a dataset. Ideally, the model will cap
 
 ![image](data/data-science.png)
 
----
+
 
 
 ```r
 df0 <- as_tibble(iris) %>% filter(Species != "setosa")
 ```
 
----
+
 
 
 ```r
 df0 %>% ggplot(aes(Petal.Width, Petal.Length)) + geom_point()
 ```
 
-![](13-model_files/figure-epub3/unnamed-chunk-3-1.png)<!-- -->
+<img src="13-model_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
----
+
 
 
 ```r
 df0 %>% ggplot(aes(Petal.Width, Petal.Length)) + geom_point() + geom_smooth(method="lm",formula=y~x, se=FALSE)
 ```
 
-![](13-model_files/figure-epub3/unnamed-chunk-4-1.png)<!-- -->
+<img src="13-model_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
----
+
 
 
 ```r
 df0 %>% ggplot(aes(Sepal.Width, Sepal.Length)) + geom_point()
 ```
 
-![](13-model_files/figure-epub3/unnamed-chunk-5-1.png)<!-- -->
+<img src="13-model_files/figure-html/unnamed-chunk-5-1.png" width="672" />
 
----
+
 
 
 ```r
 df0 %>% ggplot(aes(Sepal.Width, Sepal.Length)) + geom_point() + geom_smooth(method="lm",formula=y~x, se=FALSE)
 ```
 
-![](13-model_files/figure-epub3/unnamed-chunk-6-1.png)<!-- -->
+<img src="13-model_files/figure-html/unnamed-chunk-6-1.png" width="672" />
 
----
+
 
 ## Linear Model: Petal.Length ~ Petal.Width
 
@@ -90,13 +90,13 @@ df0 %>% lm(Petal.Length ~ Petal.Width, .)
 #>       2.224        1.600
 ```
 
----
+
 
 ## Formula: $\text{Petal.Length} = 2.224 + 1.600\cdot \text{Petal.Width}$
 
-![](13-model_files/figure-epub3/unnamed-chunk-8-1.png)<!-- -->
+<img src="13-model_files/figure-html/unnamed-chunk-8-1.png" width="672" />
 
----
+
 
 ## Linear Model: Sepal.Length ~ Sepal.Width
 
@@ -112,13 +112,13 @@ df0 %>% lm(Sepal.Length ~ Sepal.Width, .)
 #>       3.093        1.103
 ```
 
----
+
 
 ## Formula: $\text{Sepal.Length} = 3.093 + 1.103\cdot \text{Sepal.Width}$
 
-![](13-model_files/figure-epub3/unnamed-chunk-10-1.png)<!-- -->
+<img src="13-model_files/figure-html/unnamed-chunk-10-1.png" width="672" />
 
----
+
 
 ## Petal.Length ~ Petal.Width: R squared = 0.6779 - 68%
 
@@ -146,7 +146,7 @@ df0 %>% lm(Petal.Length ~ Petal.Width, .) %>% summary()
 #> F-statistic: 206.3 on 1 and 98 DF,  p-value: < 2.2e-16
 ```
 
----
+
 
 ## Sepal.Length ~ Sepal.Width: R squared = 0.3068 - 31%
 
@@ -174,7 +174,7 @@ df0 %>% lm(Sepal.Length ~ Sepal.Width, .) %>% summary()
 #> F-statistic: 43.36 on 1 and 98 DF,  p-value: 2.27e-09
 ```
 
----
+
 
 ## Linear Model Basics: y ~ x
 
@@ -197,11 +197,11 @@ data %>% lm(y~x, .) %>% summary()
 
 (Multiple) R Squared: a value between 0 and 1, strength of the model
 
----
 
-![](13-model_files/figure-epub3/unnamed-chunk-13-1.png)<!-- -->
 
----
+<img src="13-model_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+
+
 
 
 ```r
@@ -217,11 +217,11 @@ augment(mod1) %>% ggplot() + geom_point(aes(x,y)) + geom_smooth(aes(x,y), formul
   - $(x_1, \hat{y}_1)$, $(x_2, \hat{y}_2)$, $(x_3, \hat{y}_3)$, $(x_4, \hat{y}_4)$ are on the regression line.
 * $y_1-\hat{y}_1$, $y_2-\hat{y}_2$, $y_2-\hat{y}_2$, $y_2-\hat{y}_2$ are called residues.
 
----
 
-![](13-model_files/figure-epub3/unnamed-chunk-15-1.png)<!-- -->
 
----
+<img src="13-model_files/figure-html/unnamed-chunk-15-1.png" width="672" />
+
+
 
 ## R Squared
 
@@ -229,7 +229,7 @@ $$SS_{tot} = (1-1.25)^2 + (0.5-1.25)^2 + (2-1.25)^2 + (1.5-1.25)^2 = 1.25$$
 $$SS_{res} = (1-0.8)^2 + (0.5-1.1)^2 + (2-1.4)^2 + (1.5-1.7)^2 = 0.8$$
 $$R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = 1- \frac{0.8}{1.25} = 0.36.$$
 
----
+
 
 
 ```r
@@ -291,7 +291,7 @@ mod1 %>% summary() %>% glimpse()
 ```
 
 
----
+
 
 ## Useful Mathematical Formula
 
@@ -308,7 +308,7 @@ $$
 \end{aligned}
 $$
 
----
+
 
 ### Adjusted R Squared
 
@@ -317,7 +317,7 @@ $n$: number of observations, the number of rows
 
 $k$: number of variables used for prediction
 
----
+
 
 
 ```r
@@ -349,7 +349,7 @@ cormat*cormat
 #> Petal.Width    1.0000000
 ```
 
----
+
 
 
 ```r
@@ -394,16 +394,16 @@ as_tibble(iris) %>% filter(Species == "versicolor") %>% select(-5) %>% cor()
 #> Petal.Width    1.0000000
 ```
 
----
+
 
 
 ```r
 as_tibble(iris) %>% filter(Species == "virginica") %>% ggplot(aes(Sepal.Length, Petal.Length)) + geom_point() + geom_smooth(method = "lm", formula = y~x, se = FALSE)
 ```
 
-![](13-model_files/figure-epub3/unnamed-chunk-25-1.png)<!-- -->
+<img src="13-model_files/figure-html/unnamed-chunk-25-1.png" width="672" />
 
----
+
 
 
 ```r
@@ -429,7 +429,7 @@ iris %>% select(-5) %>% cor()
 #> Petal.Width    1.0000000
 ```
 
----
+
 
 ## Examples: WDI
 
@@ -454,7 +454,7 @@ wdi_lifeExp <- WDI(indicator = c(lifeExp = "SP.DYN.LE00.IN"))
 #> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ```
 
----
+
 
 
 ```r
@@ -463,9 +463,9 @@ wdi_lifeExp %>% filter(country == "World") %>% drop_na(lifeExp) %>%
 #> `geom_smooth()` using formula = 'y ~ x'
 ```
 
-![](13-model_files/figure-epub3/unnamed-chunk-31-1.png)<!-- -->
+<img src="13-model_files/figure-html/unnamed-chunk-31-1.png" width="672" />
 
----
+
 
 
 ```r
@@ -495,7 +495,7 @@ wdi_lifeExp %>% lm(lifeExp ~ year, .) %>% summary()
 $$lifeExp \sim -557.4 + 0.3123 \cdot year$$
 Each year, life expectancy at birth increases approximately 0.3123 years. R-squared of this model is 0.2392, and the model explains 24%.
 
----
+
 
 
 ```r
@@ -521,7 +521,7 @@ wdi_lifeExp %>% filter(country == "World", year >= 1962, year <= 2019) %>% drop_
 #> F-statistic:  6166 on 1 and 56 DF,  p-value: < 2.2e-16
 ```
 
----
+
 
 ## BRICs
 
@@ -539,13 +539,13 @@ wdi_lifeExp %>% filter(country %in% c("Brazil", "Russian Federation", "India", "
   ggplot(aes(year, lifeExp)) + geom_point() + geom_smooth(formula = y~x, method = "lm", se = FALSE)
 ```
 
----
-
-![](13-model_files/figure-epub3/unnamed-chunk-36-1.png)<!-- -->
 
 
+<img src="13-model_files/figure-html/unnamed-chunk-36-1.png" width="672" />
 
----
+
+
+
 
 
 ```r
@@ -553,10 +553,11 @@ wdi_lifeExp %>% filter(country %in% c("Brazil", "Russian Federation", "India", "
   ggplot(aes(year, lifeExp, color = country)) + geom_point(aes(shape = country)) + geom_smooth(formula = y~x, method = "lm", se = FALSE)
 ```
 
-![](13-model_files/figure-epub3/unnamed-chunk-37-1.png)<!-- -->
+<img src="13-model_files/figure-html/unnamed-chunk-37-1.png" width="672" />
 
----
+
 Need to work
+
 
 ```r
 country_model <- function(df) {
@@ -577,7 +578,7 @@ by_country %>%
   unnest(glance)
 ```
 
----
+
 
 ## Government Expenditure, (% of GDP)
 
@@ -653,7 +654,7 @@ WDIsearch("expenditure", "name", cache = wdi_cache) %>%
 #> 29                                             Government expenditure on tertiary education as % of GDP (%)
 ```
 
----
+
 
 
 ```r
@@ -805,7 +806,7 @@ wdi_cache$series %>% filter(grepl("expenditure", name), grepl("% of GDP", name))
 #> 28                                                                                                               UNESCO Institute for Statistics
 ```
 
----
+
 
 * NY.GDP.PCAP.KD: GDP per capita (constant 2015 US$)
 * SP.DYN.LE00.IN: Life expectancy at birth, total (years)
@@ -865,7 +866,7 @@ SE.XPD.TOTL.GD.ZS: Government expenditure on education, total (% of GDP)
 SE.XPD.PRIM.PC.ZS: Government expenditure per student, primary (% of GDP per capita)
 MS.MIL.XPND.ZS: Military expenditure (% of general government expenditure)
 SE.XPD.TERT.ZS: Expenditure on tertiary education (% of government expenditure on education)
----
+
 
 
 ```r
@@ -887,13 +888,13 @@ wdi_world %>% ggplot(aes(education, lifeExp)) + geom_point() + geom_smooth(formu
 #> (`geom_point()`).
 ```
 
-![](13-model_files/figure-epub3/unnamed-chunk-47-1.png)<!-- -->
+<img src="13-model_files/figure-html/unnamed-chunk-47-1.png" width="672" />
 
 ```r
 wdi_world %>% filter(income != "Aggregates") %>% drop_na(education, lifeExp) %>% ggplot(aes(education, lifeExp)) + geom_point() + geom_smooth(formula = y ~ x, method = "lm", se=FALSE)
 ```
 
-![](13-model_files/figure-epub3/unnamed-chunk-48-1.png)<!-- -->
+<img src="13-model_files/figure-html/unnamed-chunk-48-1.png" width="672" />
 
 
 ```r
@@ -907,14 +908,14 @@ wdi_world_el %>% ggplot(aes(education)) + geom_histogram()
 #> `binwidth`.
 ```
 
-![](13-model_files/figure-epub3/unnamed-chunk-50-1.png)<!-- -->
+<img src="13-model_files/figure-html/unnamed-chunk-50-1.png" width="672" />
 
 
 ```r
 wdi_world_el %>% filter(year==2020) %>% ggplot(aes(x = income, y = education, fill = income)) + geom_boxplot()
 ```
 
-![](13-model_files/figure-epub3/unnamed-chunk-51-1.png)<!-- -->
+<img src="13-model_files/figure-html/unnamed-chunk-51-1.png" width="672" />
 
 
 ```r
@@ -1056,6 +1057,6 @@ For explanation of other indices, please see.
   - http://r-statistics.co/Linear-Regression.html
 
 
----
+
 
 

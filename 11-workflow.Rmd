@@ -45,7 +45,7 @@ In RStudio,
   * _Check in your RStudio that your data is in `data`: Press Files at the right bottom pane and click `data`, the data folder._
   
 
----
+
 
 ## EDA by R Studio: Step 2
 
@@ -66,7 +66,6 @@ In RStudio,
       + library(WDI)
       + or any other packages
 
----
 
 2.3. Choose `Source` or `Visual` editor mode, and start editing Project Notebook
 
@@ -84,7 +83,7 @@ In RStudio,
 
   - File > Save As...
 
----
+
 
 ## EDA by R Studio: Step 3 - Importing Data
 
@@ -101,7 +100,7 @@ Assign a name you can recall easily when you import data. You may need to reload
 
   * `df1_shortname <- read_csv("./data/file_name.csv")`
 
----
+
 
 3.3. Use `readr` to read using the url of the data
 
@@ -116,7 +115,7 @@ Assign a name you can recall easily when you import data. You may need to reload
 References: Cheat Sheet - `readr`, [readr](https://readr.tidyverse.org), [readxl](https://readxl.tidyverse.org)
 
 
----
+
 
 ## EDA by R Studio: Step 4 - Data Trasnformation
 
@@ -137,7 +136,7 @@ References: Cheat Sheet - `readr`, [readr](https://readr.tidyverse.org), [readxl
   
     - `df_wo_na <- df %>% drop_na(x1)` if you want to use only the rows without NA in `x1`
     
----
+
 
 4.4. Use `dpylr` and `tidyr` to change column names, tidy data, and/or summarize data
 
@@ -146,7 +145,7 @@ References: Cheat Sheet - `readr`, [readr](https://readr.tidyverse.org), [readxl
 
 References: Cheat Sheet - `dplyr` and `tidyr`, [dplyr](https://dplyr.tidyverse.org), [tidyr](https://tidyr.tidyverse.org)
 
----
+
 
 ## EDA by R Studio: Step 5 - Visualize Data
 
@@ -166,7 +165,7 @@ References: Cheat Sheet - `dplyr` and `tidyr`, [dplyr](https://dplyr.tidyverse.o
 
 References: Cheat Sheet - `ggplot2` [ggplot2](https://ggplot2.tidyverse.org), [ggplot2 book](https://ggplot2-book.org)
 
----
+
 
 ## EDA by R Studio: Step 6 - Conclusions and Questions for Further Study
 
@@ -180,7 +179,7 @@ Use what you learn to refine your questions and/or generate new questions
 
 EDA is an important part of any data analysis. You can use EDA to make discoveries about the world; or you can use EDA to ensure the quality of your data, asking questions about whether the data meets your standards or not.
 
----
+
 
 ## Example: WDI
 
@@ -190,7 +189,7 @@ EDA is an important part of any data analysis. You can use EDA to make discoveri
   
 * ID: SE.XPD.TOTL.GD.ZS
 
----
+
 
 ## Example: WIR2022
 
@@ -235,7 +234,7 @@ df_f8 %>%
     - Explain why you chose the indicator
     - List questions you want to study
 
----
+
 
 2. Explore the data using visualization using `ggplot2`
 

@@ -153,7 +153,7 @@ YouTube: How To Create A PowerPoint Template
 
 > The heights of descendants of tall ancestors tend to regress down towards a normal average
 
-![](14-rmarkdown2_files/figure-epub3/unnamed-chunk-2-1.png)<!-- -->
+<img src="14-rmarkdown2_files/figure-html/unnamed-chunk-2-1.png" width="672" />
 
 
 ---

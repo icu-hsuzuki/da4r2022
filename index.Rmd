@@ -1,14 +1,14 @@
 --- 
-title: "A Minimal Book Example"
-author: "John Doe"
+title: "Data Analysis for Researchers AY2022"
+author: "Hiroshi Suzuki"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
+url: https://icu-hsuzuki.github.io/da4r2022/
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
-  This is a minimal example of using the bookdown package to write a book.
+  This is a book based on the lecture given in AY2022 at International Christian University compiled  using the bookdown package and RStudio.
   The HTML output format for this example is bookdown::bs4_book,
   set in the _output.yml file.
 biblio-style: apalike

@@ -4,15 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 10 Responses to Questions | A Minimal Book Example</title>
-<meta name="author" content="John Doe">
+<title>Chapter 10 Responses to Questions | Data Analysis for Researchers AY2022</title>
+<meta name="author" content="Hiroshi Suzuki">
 <meta name="description" content="10.1 Q1. Two categorical variables and one numerical variables Eg. Smoking, Alcohol and (O)esophageal Cancer (df_esoph &lt;- as_tibble(esoph)) #&gt; # A tibble: 88 × 5 #&gt;  agegp alcgp   tobgp  ncases...">
 <meta name="generator" content="bookdown 0.31 with bs4_book()">
-<meta property="og:title" content="Chapter 10 Responses to Questions | A Minimal Book Example">
+<meta property="og:title" content="Chapter 10 Responses to Questions | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
+<meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/responses-to-questions.html">
 <meta property="og:description" content="10.1 Q1. Two categorical variables and one numerical variables Eg. Smoking, Alcohol and (O)esophageal Cancer (df_esoph &lt;- as_tibble(esoph)) #&gt; # A tibble: 88 × 5 #&gt;  agegp alcgp   tobgp  ncases...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 10 Responses to Questions | A Minimal Book Example">
+<meta name="twitter:title" content="Chapter 10 Responses to Questions | Data Analysis for Researchers AY2022">
 <meta name="twitter:description" content="10.1 Q1. Two categorical variables and one numerical variables Eg. Smoking, Alcohol and (O)esophageal Cancer (df_esoph &lt;- as_tibble(esoph)) #&gt; # A tibble: 88 × 5 #&gt;  agegp alcgp   tobgp  ncases...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -53,7 +54,7 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="">A Minimal Book Example</a>
+        <a href="index.html" title="">Data Analysis for Researchers AY2022</a>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -67,55 +68,45 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
 <li><a class="" href="intro.html"><span class="header-section-number">2</span> Introduction</a></li>
-<li><a class="" href="r-with-r-studio.html"><span class="header-section-number">3</span> R with R Studio</a></li>
+<li><a class="" href="rwithrstudio.html"><span class="header-section-number">3</span> R with R Studio</a></li>
 <li><a class="" href="tidyverse.html"><span class="header-section-number">4</span> tidyverse Packages</a></li>
 <li><a class="" href="rmarkdown.html"><span class="header-section-number">5</span> R Markdown</a></li>
 <li><a class="" href="dplyr.html"><span class="header-section-number">6</span> Data Transforamtion with dplyr</a></li>
-<li><a class="" href="responses-to-assignment-two.html"><span class="header-section-number">7</span> Responses to Assignment Two</a></li>
+<li><a class="" href="a2resp.html"><span class="header-section-number">7</span> Responses to Assignment Two</a></li>
 <li><a class="" href="set-up-1.html"><span class="header-section-number">8</span> Set up</a></li>
 <li><a class="" href="general-comments.html"><span class="header-section-number">9</span> General Comments</a></li>
 <li><a class="active" href="responses-to-questions.html"><span class="header-section-number">10</span> Responses to Questions</a></li>
 <li><a class="" href="appendix-change-colors-shapes-linetypes-etc.-manually.html"><span class="header-section-number">11</span> Appendix: Change colors, shapes, linetypes, etc. manually</a></li>
-<li><a class="" href="wdi.html"><span class="header-section-number">12</span> Importing Public Data, WDI</a></li>
+<li><a class="" href="wdidata.html"><span class="header-section-number">12</span> Importing Public Data, WDI</a></li>
 <li><a class="" href="ggokit2.html"><span class="header-section-number">13</span> Data Visualization and `ggplot2’</a></li>
-<li><a class="" href="responses-to-assignment-three.html"><span class="header-section-number">14</span> Responses to Assignment Three</a></li>
-<li><a class="" href="set-up-2.html"><span class="header-section-number">15</span> Set up</a></li>
-<li><a class="" href="general-comments-1.html"><span class="header-section-number">16</span> General Comments</a></li>
-<li><a class="" href="world-development-indicators-wdi.html"><span class="header-section-number">17</span> World Development Indicators (WDI)</a></li>
-<li><a class="" href="responses-to-questions-1.html"><span class="header-section-number">18</span> Responses to Questions</a></li>
-<li><a class="" href="regression-lines-topic-of-eda5.html"><span class="header-section-number">19</span> Regression Lines; Topic of EDA5</a></li>
-<li><a class="" href="appendix-a-secondary-axis.html"><span class="header-section-number">20</span> Appendix: A secondary axis</a></li>
-<li><a class="" href="tidy.html"><span class="header-section-number">21</span> Tidy Data</a></li>
-<li><a class="" href="workflow.html"><span class="header-section-number">22</span> EDA Workflow</a></li>
-<li><a class="" href="assignment-four-the-week-five-assignment.html">Assignment Four: The Week Five Assignment</a></li>
-<li><a class="" href="set-up-3.html"><span class="header-section-number">23</span> Set up</a></li>
-<li><a class="" href="general-comments-2.html"><span class="header-section-number">24</span> General Comments</a></li>
-<li><a class="" href="your-work.html"><span class="header-section-number">25</span> Your Work</a></li>
-<li><a class="" href="responses-to-questions-2.html"><span class="header-section-number">26</span> Responses to Questions</a></li>
-<li><a class="" href="model.html"><span class="header-section-number">27</span> Model</a></li>
-<li><a class="" href="roudups.html"><span class="header-section-number">28</span> Roudups</a></li>
-<li><a class="" href="a5resp.html"><span class="header-section-number">29</span> Responses to Assignment Five</a></li>
-<li><a class="" href="set-up-4.html"><span class="header-section-number">30</span> Set up</a></li>
-<li><a class="" href="general-comments-3.html"><span class="header-section-number">31</span> General Comments</a></li>
-<li><a class="" href="your-work-1.html"><span class="header-section-number">32</span> Your Work</a></li>
-<li><a class="" href="responses-to-questions-3.html"><span class="header-section-number">33</span> Responses to Questions</a></li>
-<li><a class="" href="my-comments-after-review.html"><span class="header-section-number">34</span> My Comments after Review</a></li>
-<li><a class="" href="eda.html"><span class="header-section-number">35</span> Exploartory Data analysis</a></li>
-<li><a class="" href="importing.html"><span class="header-section-number">36</span> Impoarting Data</a></li>
-<li><a class="" href="transforming.html"><span class="header-section-number">37</span> Transforming Data</a></li>
-<li><a class="" href="tidying.html"><span class="header-section-number">38</span> Tidying Data</a></li>
-<li><a class="" href="visualizing.html"><span class="header-section-number">39</span> Visualizing Data</a></li>
-<li><a class="" href="modeling.html"><span class="header-section-number">40</span> Modeling Data</a></li>
-<li><a class="" href="communicating-data-communicating.html"><span class="header-section-number">41</span> Communicating Data {communicating}</a></li>
-<li><a class="" href="worldbank.html"><span class="header-section-number">42</span> World Bank</a></li>
-<li><a class="" href="owid.html"><span class="header-section-number">43</span> Our World in Data</a></li>
-<li><a class="" href="oecd.html"><span class="header-section-number">44</span> OECD</a></li>
-<li><a class="" href="undata.html"><span class="header-section-number">45</span> UN Data</a></li>
-<li><a class="" href="wir.html"><span class="header-section-number">46</span> World Inequality Report</a></li>
-<li><a class="" href="histdata.html"><span class="header-section-number">47</span> HistData</a></li>
-<li><a class="" href="covid19.html"><span class="header-section-number">48</span> Covid 19</a></li>
-<li><a class="" href="bookdown.html"><span class="header-section-number">49</span> Bookdown</a></li>
-<li><a class="" href="template.html"><span class="header-section-number">50</span> Template</a></li>
+<li><a class="" href="s3resp.html"><span class="header-section-number">14</span> Responses to Assignment Three</a></li>
+<li><a class="" href="tidy.html"><span class="header-section-number">15</span> Tidy Data</a></li>
+<li><a class="" href="workflow.html"><span class="header-section-number">16</span> EDA Workflow</a></li>
+<li><a class="" href="a4resp.html"><span class="header-section-number">17</span> Assignment Four: The Week Five Assignment</a></li>
+<li><a class="" href="model.html"><span class="header-section-number">18</span> Model</a></li>
+<li><a class="" href="roudups.html"><span class="header-section-number">19</span> Roudups</a></li>
+<li><a class="" href="a5resp.html"><span class="header-section-number">20</span> Responses to Assignment Five</a></li>
+<li><a class="" href="set-up-4.html"><span class="header-section-number">21</span> Set up</a></li>
+<li><a class="" href="general-comments-3.html"><span class="header-section-number">22</span> General Comments</a></li>
+<li><a class="" href="your-work-1.html"><span class="header-section-number">23</span> Your Work</a></li>
+<li><a class="" href="responses-to-questions-3.html"><span class="header-section-number">24</span> Responses to Questions</a></li>
+<li><a class="" href="my-comments-after-review.html"><span class="header-section-number">25</span> My Comments after Review</a></li>
+<li><a class="" href="eda.html"><span class="header-section-number">26</span> Exploartory Data analysis</a></li>
+<li><a class="" href="importing.html"><span class="header-section-number">27</span> Impoarting Data</a></li>
+<li><a class="" href="transforming.html"><span class="header-section-number">28</span> Transforming Data</a></li>
+<li><a class="" href="tidying.html"><span class="header-section-number">29</span> Tidying Data</a></li>
+<li><a class="" href="visualizing.html"><span class="header-section-number">30</span> Visualizing Data</a></li>
+<li><a class="" href="modeling.html"><span class="header-section-number">31</span> Modeling Data</a></li>
+<li><a class="" href="communicating-data-communicating.html"><span class="header-section-number">32</span> Communicating Data {communicating}</a></li>
+<li><a class="" href="worldbank.html"><span class="header-section-number">33</span> World Bank</a></li>
+<li><a class="" href="owid.html"><span class="header-section-number">34</span> Our World in Data</a></li>
+<li><a class="" href="oecd.html"><span class="header-section-number">35</span> OECD</a></li>
+<li><a class="" href="undata.html"><span class="header-section-number">36</span> UN Data</a></li>
+<li><a class="" href="wir.html"><span class="header-section-number">37</span> World Inequality Report</a></li>
+<li><a class="" href="histdata.html"><span class="header-section-number">38</span> HistData</a></li>
+<li><a class="" href="covid19.html"><span class="header-section-number">39</span> Covid 19</a></li>
+<li><a class="" href="bookdown.html"><span class="header-section-number">40</span> Bookdown</a></li>
+<li><a class="" href="template.html"><span class="header-section-number">41</span> Template</a></li>
 </ul>
 
         <div class="book-extra">
@@ -132,7 +123,7 @@
 <span class="header-section-number">10.1</span> Q1. Two categorical variables and one numerical variables<a class="anchor" aria-label="anchor" href="#q1.-two-categorical-variables-and-one-numerical-variables"><i class="fas fa-link"></i></a>
 </h2>
 <p>Eg. <a href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/esoph.html">Smoking, Alcohol and (O)esophageal Cancer</a></p>
-<div class="sourceCode" id="cb143"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb144"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">(</span><span class="va">df_esoph</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="va">esoph</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 88 × 5</span></span>
 <span><span class="co">#&gt;    agegp alcgp     tobgp    ncases ncontrols</span></span>
@@ -152,26 +143,26 @@
 <p><strong>Comments</strong>: I wanted to include three variables in the first exercise to be able to compare tobacco consumption, number of cases of cancer, and age in the same graph but I was not able to do it.</p>
 <p><strong>Solutions</strong>: There are various ways you can choose from.</p>
 <p>Scatter plot with size by <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code>.</p>
-<div class="sourceCode" id="cb144"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb145"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df_esoph</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">agegp</span>, <span class="va">tobgp</span>, size<span class="op">=</span><span class="va">ncases</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="06-a2resp_files/figure-html/unnamed-chunk-52-1.png" width="672"></div>
 <p>Heatmap with <code><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_tile()</a></code></p>
-<div class="sourceCode" id="cb145"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb146"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df_esoph</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_tile</a></span><span class="op">(</span>mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">agegp</span>, y <span class="op">=</span> <span class="va">tobgp</span>, fill <span class="op">=</span> <span class="va">ncases</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="06-a2resp_files/figure-html/unnamed-chunk-53-1.png" width="672"></div>
 <p><code><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot()</a></code></p>
-<div class="sourceCode" id="cb146"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb147"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df_esoph</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span> <span class="va">tobgp</span>, y<span class="op">=</span><span class="va">ncases</span>, fill<span class="op">=</span><span class="va">agegp</span><span class="op">)</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="06-a2resp_files/figure-html/unnamed-chunk-54-1.png" width="672"></div>
-<div class="sourceCode" id="cb147"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb148"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df_esoph</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span> <span class="va">agegp</span>, y<span class="op">=</span><span class="va">ncases</span>, fill<span class="op">=</span><span class="va">tobgp</span><span class="op">)</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="06-a2resp_files/figure-html/unnamed-chunk-55-1.png" width="672"></div>
 <p><code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col()</a></code></p>
-<div class="sourceCode" id="cb148"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb149"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df_esoph</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span> <span class="va">agegp</span>, y<span class="op">=</span><span class="va">ncases</span>, fill<span class="op">=</span><span class="va">tobgp</span><span class="op">)</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="06-a2resp_files/figure-html/unnamed-chunk-56-1.png" width="672"></div>
 <p>Default position is “stack”.</p>
-<div class="sourceCode" id="cb149"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb150"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df_esoph</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span> <span class="va">agegp</span>, y<span class="op">=</span><span class="va">ncases</span>, fill<span class="op">=</span><span class="va">tobgp</span><span class="op">)</span><span class="op">)</span><span class="op">+</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="06-a2resp_files/figure-html/unnamed-chunk-57-1.png" width="672"></div>
 </div>
@@ -179,7 +170,7 @@
 <h2>
 <span class="header-section-number">10.2</span> Q2. Combine two charts<a class="anchor" aria-label="anchor" href="#q2.-combine-two-charts"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb150"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb151"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">country</span>, <span class="va">continent</span>, <span class="va">year</span>, <span class="va">gdpPercap</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">continent</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Asia"</span>, <span class="st">"Europe"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -191,7 +182,7 @@
 <span><span class="co">#&gt; `summarise()` has grouped output by 'continent'. You can</span></span>
 <span><span class="co">#&gt; override using the `.groups` argument.</span></span></code></pre></div>
 <div class="inline-figure"><img src="06-a2resp_files/figure-html/unnamed-chunk-58-1.png" width="672"></div>
-<div class="sourceCode" id="cb151"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb152"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">country</span>, <span class="va">year</span>, <span class="va">gdpPercap</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Israel"</span>, <span class="st">"Japan"</span>, <span class="st">"Norway"</span>, <span class="st">"China"</span>, <span class="st">"Ireland"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
@@ -201,7 +192,7 @@
 <p><strong>Question.</strong> I have not managed to add on the same graph of the continents the data for the individual countries, as I would have liked:</p>
 <p><strong>Solution.</strong> Construct two data sets and combine them into one.</p>
 <p><code>ggplot2</code> starts with one data.</p>
-<div class="sourceCode" id="cb152"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb153"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_2c</span> <span class="op">&lt;-</span> <span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">continent</span>, <span class="va">year</span>, <span class="va">gdpPercap</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">continent</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Asia"</span>, <span class="st">"Europe"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -217,7 +208,7 @@
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">gdpPercap</span>, color <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="06-a2resp_files/figure-html/unnamed-chunk-60-1.png" width="672"></div>
 <p>Use <code>mutate</code>.</p>
-<div class="sourceCode" id="cb153"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb154"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">continent</span>, <span class="va">year</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>mean_by_continent <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">gdpPercap</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -229,7 +220,7 @@
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"GDP oer capita of five countries"</span>, subtitle <span class="op">=</span> <span class="st">"Mean of GDP per capita of their continent"</span><span class="op">)</span> </span></code></pre></div>
 <div class="inline-figure"><img src="06-a2resp_files/figure-html/unnamed-chunk-61-1.png" width="672"></div>
 <p>When you want to change the linetype manually, use <code><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_linetype_manual()</a></code>.</p>
-<div class="sourceCode" id="cb154"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb155"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">continent</span>, <span class="va">year</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>mean_by_continent <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">gdpPercap</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -269,7 +260,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>A Minimal Book Example</strong>" was written by John Doe. It was last built on 2023-02-07.</p>
+    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-02-08.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

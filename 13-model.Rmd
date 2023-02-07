@@ -22,37 +22,37 @@ Goal: A simple low-dimensional summary of a dataset. Ideally, the model will cap
 
 ![image](data/data-science.png)
 
----
+
 
 ```{r}
 df0 <- as_tibble(iris) %>% filter(Species != "setosa")
 ```
 
----
+
 
 ```{r}
 df0 %>% ggplot(aes(Petal.Width, Petal.Length)) + geom_point()
 ```
 
----
+
 
 ```{r}
 df0 %>% ggplot(aes(Petal.Width, Petal.Length)) + geom_point() + geom_smooth(method="lm",formula=y~x, se=FALSE)
 ```
 
----
+
 
 ```{r}
 df0 %>% ggplot(aes(Sepal.Width, Sepal.Length)) + geom_point()
 ```
 
----
+
 
 ```{r}
 df0 %>% ggplot(aes(Sepal.Width, Sepal.Length)) + geom_point() + geom_smooth(method="lm",formula=y~x, se=FALSE)
 ```
 
----
+
 
 ## Linear Model: Petal.Length ~ Petal.Width
 
@@ -60,7 +60,7 @@ df0 %>% ggplot(aes(Sepal.Width, Sepal.Length)) + geom_point() + geom_smooth(meth
 df0 %>% lm(Petal.Length ~ Petal.Width, .)
 ```
 
----
+
 
 ## Formula: $\text{Petal.Length} = 2.224 + 1.600\cdot \text{Petal.Width}$
 
@@ -68,7 +68,7 @@ df0 %>% lm(Petal.Length ~ Petal.Width, .)
 df0 %>% ggplot(aes(Petal.Width, Petal.Length)) + geom_point() + geom_smooth(method="lm",formula=y~x, se=FALSE)
 ```
 
----
+
 
 ## Linear Model: Sepal.Length ~ Sepal.Width
 
@@ -76,7 +76,7 @@ df0 %>% ggplot(aes(Petal.Width, Petal.Length)) + geom_point() + geom_smooth(meth
 df0 %>% lm(Sepal.Length ~ Sepal.Width, .)
 ```
 
----
+
 
 ## Formula: $\text{Sepal.Length} = 3.093 + 1.103\cdot \text{Sepal.Width}$
 
@@ -84,7 +84,7 @@ df0 %>% lm(Sepal.Length ~ Sepal.Width, .)
 df0 %>% ggplot(aes(Sepal.Width, Sepal.Length)) + geom_point() + geom_smooth(method="lm",formula=y~x, se=FALSE)
 ```
 
----
+
 
 ## Petal.Length ~ Petal.Width: R squared = 0.6779 - 68%
 
@@ -92,7 +92,7 @@ df0 %>% ggplot(aes(Sepal.Width, Sepal.Length)) + geom_point() + geom_smooth(meth
 df0 %>% lm(Petal.Length ~ Petal.Width, .) %>% summary()
 ```
 
----
+
 
 ## Sepal.Length ~ Sepal.Width: R squared = 0.3068 - 31%
 
@@ -100,7 +100,7 @@ df0 %>% lm(Petal.Length ~ Petal.Width, .) %>% summary()
 df0 %>% lm(Sepal.Length ~ Sepal.Width, .) %>% summary()
 ```
 
----
+
 
 ## Linear Model Basics: y ~ x
 
@@ -123,13 +123,13 @@ data %>% lm(y~x, .) %>% summary()
 
 (Multiple) R Squared: a value between 0 and 1, strength of the model
 
----
+
 
 ```{r echo=FALSE}
 df0 %>% ggplot(aes(Petal.Width, Petal.Length)) + geom_point() + geom_smooth(method="lm",formula=y~x, se=FALSE) + geom_hline(yintercept = mean(df0$Petal.Length), col = "red")
 ```
 
----
+
 
 ```{r eval = FALSE}
 df1 <- data.frame(x = c(1,2,3,4), y = c(1,0.5,2, 1.5))
@@ -144,7 +144,7 @@ augment(mod1) %>% ggplot() + geom_point(aes(x,y)) + geom_smooth(aes(x,y), formul
   - $(x_1, \hat{y}_1)$, $(x_2, \hat{y}_2)$, $(x_3, \hat{y}_3)$, $(x_4, \hat{y}_4)$ are on the regression line.
 * $y_1-\hat{y}_1$, $y_2-\hat{y}_2$, $y_2-\hat{y}_2$, $y_2-\hat{y}_2$ are called residues.
 
----
+
 
 ```{r echo=FALSE}
 df1 <- data.frame(x = c(1,2,3,4), y = c(1,0.5,2, 1.5))
@@ -153,7 +153,7 @@ mod1 <- lm(y~x, df1)
 augment(mod1) %>% ggplot() + geom_point(aes(x,y)) + geom_smooth(aes(x,y), formula = y~x, method = "lm", se = FALSE) + geom_hline(yintercept = ybar, linetype="longdash", col = "red") + geom_point(aes(x, ybar), shape=4) + geom_point(aes(x, .fitted), shape =9, size=2) + geom_text(aes(x, ybar, label = paste0("(",x,",",1.25,")")), nudge_y = -0.1, col = "red") + geom_text(aes(x, .fitted, label = paste0("(",x,",",.fitted,")")), nudge_y = -0.1, col = "blue") + geom_text(aes(x, y, label = paste0("(",x,",",y,")")), nudge_y = -0.1) 
 ```
 
----
+
 
 ## R Squared
 
@@ -161,7 +161,7 @@ $$SS_{tot} = (1-1.25)^2 + (0.5-1.25)^2 + (2-1.25)^2 + (1.5-1.25)^2 = 1.25$$
 $$SS_{res} = (1-0.8)^2 + (0.5-1.1)^2 + (2-1.4)^2 + (1.5-1.7)^2 = 0.8$$
 $$R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = 1- \frac{0.8}{1.25} = 0.36.$$
 
----
+
 
 ```{r}
 summary(mod1)$r.squared
@@ -180,7 +180,7 @@ mod1 %>% summary() %>% glimpse()
 ```
 
 
----
+
 
 ## Useful Mathematical Formula
 
@@ -197,7 +197,7 @@ $$
 \end{aligned}
 $$
 
----
+
 
 ### Adjusted R Squared
 
@@ -206,7 +206,7 @@ $n$: number of observations, the number of rows
 
 $k$: number of variables used for prediction
 
----
+
 
 ```{r}
 df0 %>% select(1:4) %>% cor()
@@ -216,7 +216,7 @@ cormat <- df0 %>% select(1:4) %>% cor()
 cormat*cormat
 ```
 
----
+
 
 ```{r}
 as_tibble(iris) %>% filter(Species == "setosa") %>% select(-5) %>% cor()
@@ -228,13 +228,13 @@ as_tibble(iris) %>% filter(Species == "virginica") %>% select(-5) %>% cor()
 as_tibble(iris) %>% filter(Species == "versicolor") %>% select(-5) %>% cor()
 ```
 
----
+
 
 ```{r}
 as_tibble(iris) %>% filter(Species == "virginica") %>% ggplot(aes(Sepal.Length, Petal.Length)) + geom_point() + geom_smooth(method = "lm", formula = y~x, se = FALSE)
 ```
 
----
+
 
 ```{r}
 as_tibble(iris) %>% filter(Species == "virginica") %>% lm(Petal.Length ~ Sepal.Length, .) %>% glance() %>% pull(r.squared) %>% sqrt()
@@ -247,7 +247,7 @@ Correlations of the data suggest the possible strength of linear model y ~ x.
 iris %>% select(-5) %>% cor()
 ```
 
----
+
 
 ## Examples: WDI
 
@@ -258,21 +258,21 @@ wdi_lifeExp <- WDI(indicator = c(lifeExp = "SP.DYN.LE00.IN"))
 ```
 
 ```{r include=FALSE, eval=FALSE}
-write_csv(wdi_lifeExp, "./data/wdi_lifeExp")
+write_csv(wdi_lifeExp, "./data/wdi_lifeExp.csv")
 ```
 
 ```{r echo=FALSE}
-wdi_lifeExp <- read_csv("./data/wdi_lifeExp")
+wdi_lifeExp <- read_csv("./data/wdi_lifeExp.csv")
 ```
 
----
+
 
 ```{r}
 wdi_lifeExp %>% filter(country == "World") %>% drop_na(lifeExp) %>%
   ggplot(aes(year, lifeExp)) + geom_point() + geom_smooth(method = "lm", se = FALSE)
 ```
 
----
+
 
 ```{r}
 wdi_lifeExp %>% lm(lifeExp ~ year, .) %>% summary()
@@ -281,13 +281,13 @@ wdi_lifeExp %>% lm(lifeExp ~ year, .) %>% summary()
 $$lifeExp \sim -557.4 + 0.3123 \cdot year$$
 Each year, life expectancy at birth increases approximately 0.3123 years. R-squared of this model is 0.2392, and the model explains 24%.
 
----
+
 
 ```{r}
 wdi_lifeExp %>% filter(country == "World", year >= 1962, year <= 2019) %>% drop_na(lifeExp) %>% lm(lifeExp ~ year, .) %>% summary()
 ```
 
----
+
 
 ## BRICs
 
@@ -302,7 +302,7 @@ wdi_lifeExp %>% filter(country %in% c("Brazil", "Russian Federation", "India", "
   ggplot(aes(year, lifeExp)) + geom_point() + geom_smooth(formula = y~x, method = "lm", se = FALSE)
 ```
 
----
+
 
 ```{r echo=FALSE}
 wdi_lifeExp %>% filter(country %in% c("Brazil", "Russian Federation", "India", "China")) %>% drop_na(lifeExp) %>%
@@ -311,15 +311,16 @@ wdi_lifeExp %>% filter(country %in% c("Brazil", "Russian Federation", "India", "
 
 
 
----
+
 
 ```{r}
 wdi_lifeExp %>% filter(country %in% c("Brazil", "Russian Federation", "India", "China")) %>% drop_na(lifeExp) %>%
   ggplot(aes(year, lifeExp, color = country)) + geom_point(aes(shape = country)) + geom_smooth(formula = y~x, method = "lm", se = FALSE)
 ```
 
----
+
 Need to work
+
 ```{r eval=FALSE}
 country_model <- function(df) {
   lm(lifeExp ~ year, data = df)
@@ -339,7 +340,7 @@ by_country %>%
   unnest(glance)
 ```
 
----
+
 
 ## Government Expenditure, (% of GDP)
 
@@ -352,13 +353,13 @@ WDIsearch("expenditure", "name", cache = wdi_cache) %>%
   inner_join(WDIsearch("% of GDP", "name", cache = wdi_cache))
 ```
 
----
+
 
 ```{r}
 wdi_cache$series %>% filter(grepl("expenditure", name), grepl("% of GDP", name))
 ```
 
----
+
 
 * NY.GDP.PCAP.KD: GDP per capita (constant 2015 US$)
 * SP.DYN.LE00.IN: Life expectancy at birth, total (years)
@@ -390,7 +391,7 @@ SE.XPD.TOTL.GD.ZS: Government expenditure on education, total (% of GDP)
 SE.XPD.PRIM.PC.ZS: Government expenditure per student, primary (% of GDP per capita)
 MS.MIL.XPND.ZS: Military expenditure (% of general government expenditure)
 SE.XPD.TERT.ZS: Expenditure on tertiary education (% of government expenditure on education)
----
+
 
 ```{r}
 mod_e <- lm(lifeExp ~ education, wdi_world); mod_e
@@ -464,6 +465,6 @@ For explanation of other indices, please see.
   - http://r-statistics.co/Linear-Regression.html
 
 
----
+
 
 

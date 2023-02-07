@@ -1,72 +1,5 @@
-# R with R Studio
+# R with R Studio {#rwithrstudio}
 
----
-
-### Course Contents  {-}
-
-  1. 2022-12-07: Introduction: About the course　[lead by TK]
-    - An introduction to open and public data, and data science
-  2. **2022-12-14: Exploratory Data Analysis (EDA) 1 [lead by hs]  
-    - R Basics with RStudio and/or RStudio.cloud; Toy Data**
-  3. 2022-12-21: Exploratory Data Analysis (EDA) 2 [lead by hs]   
-    - R Markdown; Introduction to `tidyverse` I; Public Data, WDI
-  4. 2023-01-11: Exploratory Data Analysis (EDA) 3 [lead by hs]  
-    - Introduction to `tidyverse`II; WDI, WIR, etc
-  5. 2023-01-18: Exploratory Data Analysis (EDA) 4 [lead by hs]  
-    - Introduction to `tidyverse` III; WDI, WIR, etc
-  6. 2023-01-25: Exploratory Data Analysis (EDA) 5 [lead by hs]  
-    - Introduction to `tidyverse` III; WDI, WIR, etc
-  7. 2023-02-01: Introduction to PPDAC (Problem-Plan-Data-Analysis-Conclusion) Cycle: [lead by TK]
-  8. 2023-02-08: Model building I [lead by TK]
-    -Collecting and visualizing data and Introduction to WDI  
-         (World Development Indicators by World Bank)
-  9. 2023-02-15: Model building II [lead by TK]
-    -Analyzing data and communications
-  10. 2023-02-22: Project Presentation
-
----
-
-## Learning Resources
-
-### Textbooks and References
-
-* "R for Data Science" by Hadley Wickham and Garrett Grolemund: 
-  - Free Online Book: https://r4ds.had.co.nz
-
-* Visit `bookdown` site: https://bookdown.org 
-  - Many more on the [archive page](https://bookdown.org/home/archive/).
-
-
-## Interactive Exercises
-
-* Posit Primers:https://posit.cloud/learn/primers:  
-  - The Basics, Work with Data, Visualize Data, Tidy Your Data, Report Reproducibly
-
-* {swirl} Learn R, in R: https://swirlstats.com
-  - Designed and developed by a team at Johns Hopkins University for `coursera` courses
-
----
-
-## Posit Primers created by `learnr`
-
-* [`learnr` Interactive Tutorials for R](https://rstudio.github.io/learnr/index.html)
-
-::: {.block}
-### Posit Primers https://posit.cloud/learn/primers
-
-1. The Basics -- [r4ds: Explore, I](https://r4ds.had.co.nz/explore-intro.html#explore-intro)
-  - [Visualization Basics](https://rstudio.cloud/learn/primers/1.1)
-  - [Programming Basics](https://rstudio.cloud/learn/primers/1.2)
-2. Work with Data -- [r4ds: Wrangle, I](https://r4ds.had.co.nz/wrangle-intro.html#wrangle-intro)
-  - Working with Tibbles
-  - Isolating Data with dplyr
-  - Deriving Information with dplyr
-3. Visualize Data -- [r4ds: Explore, II](https://r4ds.had.co.nz/explore-intro.html#explore-intro)
-4. Tidy Your Data -- [r4ds: Wrangle, II](https://r4ds.had.co.nz/wrangle-intro.html#wrangle-intro)
-5. Iterate -- [r4ds: Program](https://r4ds.had.co.nz/program-intro.html#program-intro)
-6. Write Functions -- [r4ds: Program](https://r4ds.had.co.nz/program-intro.html#program-intro)
-:::
----
 
 ## Data Science and EDA
 
@@ -78,7 +11,7 @@
 * Impact Decision Making
 * Maintain & Improve Overtime
 
----
+
 
 ## What is R?
 
@@ -90,7 +23,7 @@
 
 * A **GNU package**, the official R software environment is written primarily in C, Fortran, and R itself (thus, it is partially self-hosting) and is freely available under the GNU General Public License. 
 
----
+
 
 ### History of R and more
 
@@ -99,7 +32,7 @@
 * [Chapter 2. History and Overview of R](https://bookdown.org/rdpeng/rprogdatascience/history-and-overview-of-r.html)
 * [Overview and History of R: Youtube video](https://www.youtube.com/watch?v=STihTnVSZnI&feature=youtu.be)
 
----
+
 
 ## Why R? -- Responses by Hadley Wickham
 
@@ -109,7 +42,7 @@
 * R is not just a programming language, but it is also an interactive environment for doing data science. 
 * To support interaction, R is a much more flexible language than many of its peers. 
 
----
+
 
 ### Why R today?
 
@@ -117,7 +50,7 @@ When you talk about choosing programming languages, I always say you shouldn’t
 
 **Interview**: ["Advice to Young (and Old) Programmers, H. Wickham"](https://www.r-bloggers.com/2018/08/advice-to-young-and-old-programmers-a-conversation-with-hadley-wickham/)
 
----
+
 
 ## What is RStudio? https://posit.com
 
@@ -127,7 +60,7 @@ When you talk about choosing programming languages, I always say you shouldn’t
 
 RStudio is an integrated development environment (IDE) for R, a programming language for statistical computing and graphics. It is available in two formats: RStudio Desktop is a regular desktop application while RStudio Server runs on a remote server and allows accessing RStudio using a web browser.
 
----
+
 
 ## Installation of R and R Studio
 
@@ -143,7 +76,7 @@ Download and install it from http://www.rstudio.com/download.
 
 RStudio is updated a couple of times a year. When a new version is available, RStudio will let you know.
 
----
+
 
 ## R Studio
 
@@ -162,7 +95,7 @@ Or,
 
 _In this way the working directory of the session is set to the project directory and R can search releted files without difficulty_ (`getwd()`, `setwd()`)
 
----
+
 
 ## Posit Cloud
 
@@ -177,7 +110,7 @@ RStudio Cloud is a lightweight, cloud-based solution that allows anyone to do, s
 * Up to 1 CPU per project
 * Up to 1 hour background execution time
 
----
+
 
 ### How to Start Posit Cloud
 
@@ -192,7 +125,7 @@ RStudio Cloud is a lightweight, cloud-based solution that allows anyone to do, s
 
 Start RStudio and create a project, or login to Posit Cloud and create a project.
 
----
+
 
 ### The First Examples
 
@@ -212,7 +145,7 @@ head(cars)
 #> 6     9   10
 ```
 
----
+
 
 
 ```r
@@ -222,7 +155,7 @@ str(cars)
 #>  $ dist : num  2 10 4 22 16 10 18 26 34 17 ...
 ```
 
----
+
 
 * Two more:
 
@@ -238,16 +171,16 @@ summary(cars)
 #>  Max.   :25.0   Max.   :120.00
 ```
 
----
+
 
 
 ```r
 plot(cars)
 ```
 
-![](02-R_and_RStudio_files/figure-epub3/cars_plot-1.png)<!-- -->
+<img src="02-R_and_RStudio_files/figure-html/cars_plot-1.png" width="672" />
 
----
+
 
 * And three more:
 
@@ -256,9 +189,9 @@ plot(cars)
 plot(cars) # cars: Speed and Stopping Distances of Cars
 abline(lm(cars$dist~cars$speed))
 ```
-![](02-R_and_RStudio_files/figure-epub3/unnamed-chunk-6-1.png)<!-- -->
+<img src="02-R_and_RStudio_files/figure-html/unnamed-chunk-6-1.png" width="672" />
 
----
+
 
 
 ```r
@@ -272,7 +205,7 @@ lm(cars$dist~cars$speed)
 #>     -17.579        3.932
 ```
 
----
+
 
 
 ```r
@@ -298,7 +231,7 @@ summary(lm(cars$dist~cars$speed))
 #> F-statistic: 89.57 on 1 and 48 DF,  p-value: 1.49e-12
 ```
 
----
+
 
 #### Brief Explanation
 
@@ -312,23 +245,23 @@ summary(lm(cars$dist~cars$speed))
 * `lm(cars$dist~cars$speed)`: The equation of the regression line
 * `summary(lm(cars$dist~cars$speed)`: The summary of the linear regression model
 
----
+
 
 
 ```r
 hist(cars$dist)
 ```
-![](02-R_and_RStudio_files/figure-epub3/unnamed-chunk-10-1.png)<!-- -->
+<img src="02-R_and_RStudio_files/figure-html/unnamed-chunk-10-1.png" width="672" />
 
----
+
 
 
 ```r
 hist(cars$speed)
 ```
-![](02-R_and_RStudio_files/figure-epub3/unnamed-chunk-12-1.png)<!-- -->
+<img src="02-R_and_RStudio_files/figure-html/unnamed-chunk-12-1.png" width="672" />
 
----
+
 
 #### View and help
 
@@ -343,7 +276,7 @@ hist(cars$speed)
 
 * `data()` shows all data already attached and available.
 
----
+
 
 ### Practicum
 
@@ -355,7 +288,7 @@ Pick a data in the datasets package and try
 
 and some more.
 
----
+
 
 ### `iris`
 
@@ -371,7 +304,7 @@ head(iris)
 #> 6          5.4         3.9          1.7         0.4  setosa
 ```
 
----
+
 
 
 ```r
@@ -384,7 +317,7 @@ str(iris)
 #>  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
 ```
 
----
+
 
 
 ```r
@@ -405,7 +338,7 @@ summary(iris)
 #>  Max.   :2.500
 ```
 
----
+
 
 Can you plot?
 
@@ -413,5 +346,5 @@ Can you plot?
 ```r
 plot(iris$Sepal.Length, iris$Sepal.Width)
 ```
-![](02-R_and_RStudio_files/figure-epub3/unnamed-chunk-17-1.png)<!-- -->
+<img src="02-R_and_RStudio_files/figure-html/unnamed-chunk-17-1.png" width="672" />
 

@@ -1,5 +1,5 @@
 
-# Responses to Assignment Two
+# Responses to Assignment Two {#a2resp}
 
 1. You are supposed to submit an R Notebook File with a file name a2_YourID.nb.html.
   - Some submitted an HTML file, such as a2_YourID.html. You need to create an R Notebook. Use the template in Moodle. It creates a file with *.nb.html at the end automatically.
@@ -178,7 +178,7 @@ df_co2 %>% ggplot(aes(x = conc)) + geom_histogram()
 #> `binwidth`.
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-8-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-8-1.png" width="672" />
 
 
 ```r
@@ -187,7 +187,7 @@ df_co2 %>% ggplot(aes(x = uptake)) + geom_histogram()
 #> `binwidth`.
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-9-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-9-1.png" width="672" />
 
 #### Box Plots
 
@@ -196,20 +196,20 @@ df_co2 %>% ggplot(aes(x = uptake)) + geom_histogram()
 df_co2 %>% ggplot(aes(x = factor(conc), y = uptake)) + geom_boxplot()
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-10-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-10-1.png" width="672" />
 
 
 ```r
 df_co2 %>% ggplot(aes(x = factor(conc), y = uptake, fill = Type)) + geom_boxplot()
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-11-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-11-1.png" width="672" />
 
 ```r
 df_co2 %>% ggplot(aes(x = factor(conc), y = uptake, fill = Treatment)) + geom_boxplot()
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-12-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-12-1.png" width="672" />
 
 
 
@@ -217,7 +217,7 @@ df_co2 %>% ggplot(aes(x = factor(conc), y = uptake, fill = Treatment)) + geom_bo
 df_co2 %>% ggplot(aes(x = Plant, y = uptake, fill = Treatment)) + geom_boxplot()
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-13-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-13-1.png" width="672" />
 
 
 
@@ -225,7 +225,7 @@ df_co2 %>% ggplot(aes(x = Plant, y = uptake, fill = Treatment)) + geom_boxplot()
 df_co2 %>% ggplot(aes(x = Plant, y = uptake, fill = Type)) + geom_boxplot()
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-14-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-14-1.png" width="672" />
 
 
 
@@ -233,7 +233,7 @@ df_co2 %>% ggplot(aes(x = Plant, y = uptake, fill = Type)) + geom_boxplot()
 df_co2 %>% ggplot(aes(x = Plant, y = uptake, fill = Type, color = Treatment)) + geom_boxplot()
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-15-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-15-1.png" width="672" />
 
 What can you see?
 Write your observations.
@@ -245,7 +245,7 @@ Write your observations.
 df_co2 %>% ggplot(aes(x = conc, y = uptake, color = Treatment)) + geom_point()
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-16-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-16-1.png" width="672" />
 
 
 
@@ -253,7 +253,7 @@ df_co2 %>% ggplot(aes(x = conc, y = uptake, color = Treatment)) + geom_point()
 df_co2 %>% ggplot(aes(x = Plant, y = Type, color = Treatment, size = conc)) + geom_point()
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-17-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-17-1.png" width="672" />
 
 
 
@@ -261,7 +261,7 @@ df_co2 %>% ggplot(aes(x = Plant, y = Type, color = Treatment, size = conc)) + ge
 df_co2 %>% ggplot(aes(x = Plant, y = Type, size = conc, shape = Treatment)) + geom_point() + facet_wrap(vars(Treatment))
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-18-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-18-1.png" width="672" />
 
 
 
@@ -270,7 +270,7 @@ ggplot(data = df_co2) +
   geom_point(aes(x = conc, y = uptake))
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-19-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-19-1.png" width="672" />
 
 The following prints a vector.
 
@@ -303,7 +303,7 @@ ggplot(data = CO2) +
   geom_line(aes(x = conc, y = uptake))
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-22-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-22-1.png" width="672" />
 
 The code above did not work, and the line graph is not appropriate in this case. There are so many `update` values at the same `conc`.
 
@@ -404,7 +404,7 @@ Which visualization do you apply?
 df_sb %>% ggplot(aes(x = factor(law), y = DriversKilled)) + geom_boxplot()
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-26-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-26-1.png" width="672" />
 
 What do you observe above?
 
@@ -414,7 +414,7 @@ df_sb %>% ggplot(aes(x = PetrolPrice, y = DriversKilled)) + geom_point() +
   geom_smooth(formula = y~x, method = "lm", se = FALSE)
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-27-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-27-1.png" width="672" />
 
 What can you see above?
 
@@ -424,7 +424,7 @@ df_sb %>% ggplot(aes(x = kms, y = DriversKilled)) + geom_point() +
   geom_smooth(formula = y~x, method = "lm", se = FALSE)
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-28-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-28-1.png" width="672" />
 
 What can you see above?
 
@@ -458,7 +458,7 @@ df_sb %>%
   ggplot() + geom_boxplot(aes(x = seat, y = value, fill = seat))
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-30-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-30-1.png" width="672" />
 
 What can you observe?
 
@@ -470,7 +470,7 @@ df %>% filter(continent == "Asia") %>%
   ggplot(aes(x = year, y = gdpPercap, color = country)) + geom_line()
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-31-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-31-1.png" width="672" />
 
 Appropriate graph?
 
@@ -481,28 +481,28 @@ Appropriate graph?
 ggplot(df, aes(x = continent)) + geom_bar()
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-32-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-32-1.png" width="672" />
 
 
 ```r
 ggplot(df, aes(x = continent, fill = continent)) + geom_bar(width = 0.75)
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-33-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-33-1.png" width="672" />
 
 
 ```r
 ggplot(df, aes(x = continent, y = pop)) + geom_boxplot()
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-34-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-34-1.png" width="672" />
 
 
 ```r
 ggplot(df, aes(x = continent, y = log10(pop))) + geom_boxplot()
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-35-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-35-1.png" width="672" />
 
 Alternately, you can use `coord_trans(x = "identity", y = "log10")` in stead of `y = log10(pop)`.
 Can you see the difference?
@@ -513,7 +513,7 @@ ggplot(df, aes(x = continent, y = pop)) + geom_boxplot() +
   coord_trans(x = "identity", y = "log10")
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-36-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-36-1.png" width="672" />
 
 
 ```r
@@ -522,7 +522,7 @@ df %>% filter(year %in% c(1957, 1982, 2007)) %>%
     coord_trans(x = "identity", y = "log10")
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-37-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-37-1.png" width="672" />
 
 
 
@@ -532,7 +532,7 @@ df %>% filter(year %in% c(1957, 1982, 2007)) %>%
   coord_trans(x = "identity", y = "log10")
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-38-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-38-1.png" width="672" />
 
 
 
@@ -540,7 +540,7 @@ df %>% filter(year %in% c(1957, 1982, 2007)) %>%
 ggplot(df, aes(gdpPercap, lifeExp)) + geom_point(aes(color=continent))
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-39-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-39-1.png" width="672" />
 
 
 
@@ -549,7 +549,7 @@ df %>% ggplot(aes(gdpPercap, lifeExp, color = continent)) + geom_point() +
   coord_trans(x = "log10", y = "identity")
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-40-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-40-1.png" width="672" />
 
 
 ```r
@@ -558,7 +558,7 @@ df %>% filter(year %in% c(2007)) %>%
   coord_trans(x = "log10", y = "log10")
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-41-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-41-1.png" width="672" />
 
 ```r
 df %>% filter(year %in% c(1957)) %>%
@@ -566,7 +566,7 @@ df %>% filter(year %in% c(1957)) %>%
   coord_trans(x = "log10", y = "identity")
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-42-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-42-1.png" width="672" />
 
 
 ```r
@@ -575,7 +575,7 @@ df %>% filter(year %in% c(2007)) %>%
   coord_trans(x = "log10", y = "identity")
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-43-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-43-1.png" width="672" />
 
 
 ```r
@@ -585,7 +585,7 @@ df %>% filter(year %in% c(1957, 2007)) %>%
   facet_wrap(vars(year))
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-44-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-44-1.png" width="672" />
 
 
 
@@ -605,7 +605,7 @@ df_lifeExp %>% ggplot(aes(x = year, y = median_lifeExp, color = continent)) +
   geom_line()
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-46-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-46-1.png" width="672" />
 
 If you do not want to have a message, the following is an option. Otherwise, grouping is kept and you can get the original data back by `ungroup()`.
 
@@ -621,7 +621,7 @@ df_pop %>% ggplot(aes(x = year, y = mean_pop, color = continent)) +
   geom_line()
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-48-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-48-1.png" width="672" />
 The following two codes create the same chart.
 
 
@@ -630,7 +630,7 @@ df_pop %>% ggplot(aes(x = year, y = mean_pop, color = continent, linetype = cont
   geom_line()
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-49-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-49-1.png" width="672" />
 
 
 ```r
@@ -639,7 +639,7 @@ df_pop %>% ggplot() +
   geom_line(aes(x = year, y = median_pop, linetype = continent))
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-50-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-50-1.png" width="672" />
 
 
 
@@ -681,7 +681,7 @@ Scatter plot with size by `geom_point()`.
 ggplot(df_esoph) + geom_point(aes(agegp, tobgp, size=ncases))
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-52-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-52-1.png" width="672" />
 
 Heatmap with `geom_tile()`
 
@@ -690,7 +690,7 @@ Heatmap with `geom_tile()`
 ggplot(df_esoph) + geom_tile(mapping = aes(x = agegp, y = tobgp, fill = ncases))
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-53-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-53-1.png" width="672" />
 
 `geom_boxplot()`
 
@@ -699,14 +699,14 @@ ggplot(df_esoph) + geom_tile(mapping = aes(x = agegp, y = tobgp, fill = ncases))
 ggplot(df_esoph, aes(x= tobgp, y=ncases, fill=agegp))+geom_boxplot()
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-54-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-54-1.png" width="672" />
 
 
 ```r
 ggplot(df_esoph, aes(x= agegp, y=ncases, fill=tobgp))+geom_boxplot()
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-55-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-55-1.png" width="672" />
 
 `geom_col()`
 
@@ -715,7 +715,7 @@ ggplot(df_esoph, aes(x= agegp, y=ncases, fill=tobgp))+geom_boxplot()
 ggplot(df_esoph, aes(x= agegp, y=ncases, fill=tobgp))+geom_col()
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-56-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-56-1.png" width="672" />
 
 Default position is "stack".
 
@@ -724,7 +724,7 @@ Default position is "stack".
 ggplot(df_esoph, aes(x= agegp, y=ncases, fill=tobgp))+geom_col(position = "dodge")
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-57-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-57-1.png" width="672" />
 
 
 ## Q2. Combine two charts
@@ -743,7 +743,7 @@ df %>%
 #> override using the `.groups` argument.
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-58-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-58-1.png" width="672" />
 
 
 
@@ -755,7 +755,7 @@ df %>%
   geom_line(aes(y=gdpPercap, color=country))
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-59-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-59-1.png" width="672" />
 
 **Question.** I have not managed to add on the same graph of the continents the data for the individual countries, as I would have liked:
 
@@ -780,7 +780,7 @@ df_2c %>% bind_rows(df_5c) %>%
   ggplot(aes(x = year, y = gdpPercap, color = country)) + geom_line()
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-60-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-60-1.png" width="672" />
 
 Use `mutate`.
 
@@ -797,7 +797,7 @@ df %>%
     labs(title = "GDP oer capita of five countries", subtitle = "Mean of GDP per capita of their continent") 
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-61-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-61-1.png" width="672" />
 
 When you want to change the linetype manually, use `scale_linetype_manual()`.
 
@@ -815,7 +815,7 @@ df %>%
     labs(title = "GDP oer capita of five countries", subtitle = "Mean of GDP per capita of their continent") 
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-62-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-62-1.png" width="672" />
 
 # Appendix: Change colors, shapes, linetypes, etc. manually
 
@@ -829,7 +829,7 @@ df %>%
     geom_line(aes(x = year, y = gdpPercap, color=country, linetype=continent))
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-63-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-63-1.png" width="672" />
 
 * `scale_color_manual`: https://ggplot2-book.org/scale-colour.html
   - eg1: scale_colour_manual(values = c("red", "blue", "green"))
@@ -854,4 +854,4 @@ df %>%
     scale_shape_manual(values = c("Germany" = 7, "Japan" = 9, "United States" = 12))
 ```
 
-![](06-a2resp_files/figure-epub3/unnamed-chunk-64-1.png)<!-- -->
+<img src="06-a2resp_files/figure-html/unnamed-chunk-64-1.png" width="672" />

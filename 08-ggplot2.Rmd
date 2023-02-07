@@ -11,7 +11,7 @@ library(tidyverse)
   - [Visualize Data](https://posit.cloud/learn/primers/3): Learn how to use ggplot2 to make any type of plot with your data. Then learn the best ways to visualize patterns within values and relationships between variables.
 * [r4ds: Data Visualization](https://r4ds.had.co.nz/data-visualisation.html#data-visualisation)
 
----
+
 
 ## Exploratory Data Analysis
 
@@ -27,7 +27,7 @@ EDA is an iterative cycle that helps you understand what your data says. When yo
 
 EDA is an important part of any data analysis. You can use EDA to make discoveries about the world; or you can use EDA to ensure the quality of your data, asking questions about whether the data meets your standards or not.
 
----
+
 
 ### Two useful questions
 
@@ -38,7 +38,6 @@ There is no rule about which questions you should ask to guide your research. Ho
 
 The rest of this tutorial will look at these two questions. To make the discussion easier, let’s define some terms…
 
----
 
 ## Data Visualization
 
@@ -47,7 +46,7 @@ The rest of this tutorial will look at these two questions. To make the discussi
 ![visualization](data/visualization.png){width=75%}
 
 
----
+
 
 ## Example: World Inequility Report - WIR2022
 
@@ -82,7 +81,7 @@ df_f14
 
 * `\n` for line break in the title.
 
----
+
 
 ### Categorical vs Continuous Value
 
@@ -92,7 +91,7 @@ df_f14 %>%
   geom_col()
 ```
 
----
+
 
 ```{r}
 df_f14 %>% 
@@ -103,7 +102,7 @@ df_f14 %>%
        x = "", y = "Share of world emissions (%)")
 ```
 
----
+
 
 ### Memo
 
@@ -117,7 +116,7 @@ df_f14 %>%
   - title = "": `\n` is for line feed
   - x, y: labels of x-axis and y-axis
 
----
+
 
 ## F12: Female share in global labor incomes, 1990-2020
 
@@ -126,7 +125,7 @@ df_f12 <- read_excel("data/WIR2022s.xlsx", sheet = "data-F12")
 df_f12
 ```
 
----
+
 
 ```{r}
 df_f12 %>% 
@@ -136,7 +135,7 @@ df_f12 %>%
   geom_col(width = 0.5, fill = scales::hue_pal()(2)[2])
 ```
 
----
+
 
 ```{r}
 df_f12 %>% 
@@ -160,7 +159,7 @@ df_f1 <- read_excel("data/WIR2022s.xlsx", sheet = "data-F1")
 df_f1
 ```
 
----
+
 
 ```{r echo=FALSE}
 df_f1_rev <- df_f1 %>% select(cat = ...1, 2:4) %>%
@@ -174,7 +173,7 @@ df_f1_rev %>%
   geom_col(position = "dodge")
 ```
 
----
+
 
 ## References of `ggplot2`
 
@@ -213,7 +212,7 @@ df_f1_rev %>%
     - Explain why you chose the indicator
     - List questions you want to study
 
----
+
 
 2. Explore the data using visualization using `ggplot2`
 

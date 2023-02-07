@@ -6,7 +6,7 @@ What is R Markdown: https://vimeo.com/178485416
 * Text
 * YAML Metadata
 
----
+
 
 ## What is R Markdown and R Notebook
 
@@ -21,7 +21,7 @@ An **R Notebook** is an R Markdown document _with chunks that can be executed in
 
 (Reference: [R Markdown: The Definitive Guide, 3.2 Notebook](https://bookdown.org/yihui/rmarkdown/notebook.html))
 
----
+
 
 ### Two Goodies
 
@@ -29,7 +29,7 @@ An **R Notebook** is an R Markdown document _with chunks that can be executed in
 
 * **Useful** to Render into Various Formats: R Notebook (HTML), R Markdown (HTML), PDF, MS Word, MS Powerpoint, Ioslides Presentation (HTML), Slidy Presentation (HTML), Beamer Presentation (PDF), etc.
 
----
+
 
 ## Reproducible Research and Literate Programming
 
@@ -40,13 +40,13 @@ Literate programming is an approach to programming introduced by Donald Knuth in
 ### [D. Knuth](https://www.brainyquote.com/quotes/donald_knuth_181634)
 Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.
 
----
+
 
 ### Reproducible Research - Quote from a [Coursera Course](https://www.coursera.org/learn/reproducible-research)
 
 Reproducible research is the idea that data analyses, and more generally, scientific claims, are published with their data and software code so that others may verify the findings and build upon them.  The need for reproducibility is increasing dramatically as data analyses become more complex, involving larger datasets and more sophisticated computations. Reproducibility allows for people to focus on the actual content of a data analysis, rather than on superficial details reported in a written summary. In addition, reproducibility makes an analysis more useful to others because the data and code that actually conducted the analysis are available. 
 
----
+
 
 ### R Markdown workflow, [R for Data Science](https://r4ds.had.co.nz/r-markdown-workflow.html#r-markdown-workflow)
 
@@ -58,7 +58,7 @@ R Markdown is also important because it so tightly integrates prose and code. Th
 
 * Helps others understand your work. It is rare to do data analysis by yourself, and you’ll often be working as part of a team. A lab notebook helps you share why you did it with your colleagues or lab mates.
 
----
+
 
 ### Records of EDA and Communication
 
@@ -71,7 +71,7 @@ R Markdown is also important because it so tightly integrates prose and code. Th
   * [BOOKDOWN: Write HTML, PDF, ePub, and Kindle books with R Markdown](https://bookdown.org). Free online document is provided in [pdf as well](https://bookdown.org/yihui/rmarkdown/rmarkdown.pdf)
   - [Arxive Page](https://bookdown.org/home/archive/) 
 
----
+
 
 ## Let's Get Started
 
@@ -91,7 +91,7 @@ R Markdown is also important because it so tightly integrates prose and code. Th
     d. Run Code Chunk `plot(cars)` and then Preview again.
     e. Knit PDF, Word (and HTML)
 
----
+
 
 ## Templates
 
@@ -102,7 +102,7 @@ Template to submit your assignment of this course: [`RNotebook_Template.nb.html`
 ```
 title: "Title of R Notebook"
 author: "ID and Your Name"
-date: "2023-02-07" 
+date: "2023-02-08" 
 output:
   html_notebook: null
 ```
@@ -112,9 +112,9 @@ output:
 
 * Change the title
 * Write ID and your name
-* Date is auto-generated and inserted. If you wish, you can replace "2023-02-07" by your favorite date style.
+* Date is auto-generated and inserted. If you wish, you can replace "2023-02-08" by your favorite date style.
 
----
+
 
 #### Code Chunk
 
@@ -124,7 +124,7 @@ output:
 * When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the Preview button or press Ctrl+Shift+K (Win) or Cmd+Shift+K (Mac) to preview the HTML file).
 * The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike Knit, _Preview does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed_.
 
----
+
 
 ### Testing R Markdown Formats
 
@@ -133,7 +133,7 @@ Various Output Formats: [`test-rmarkdown.nb.html`](https://icu-hsuzuki.github.io
 ```
 title: "Testing R Markdown Formats"
 author: "DS-SL"
-date: "2023-02-07"
+date: "2023-02-08"
 output:
   html_notebook:
     number_sections: yes
@@ -152,7 +152,7 @@ output:
   beamer_presentation: default
 ```
 
----
+
 
 ### Comments on Presentation Formats and Options
 
@@ -174,7 +174,7 @@ output:
 
 * You can use `Output Options` at the bottom of the gear icon next to Preview/knit button.
 
----
+
 
 ## Markdown Language -- or use WYSIWYG editor
 
@@ -192,7 +192,7 @@ output:
 * _Italicized text_ by `_italic_`, **Bold text** by `**bold**`
 * Superscripts, Subscripts, Strikethrough text
 
----
+
 
 ### Visual R Markdown
 
@@ -200,7 +200,7 @@ output:
   
   * https://rstudio.github.io/visual-markdown-editing/
 
----
+
 
 ## References
 

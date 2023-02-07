@@ -4,15 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 5 R Markdown | A Minimal Book Example</title>
-<meta name="author" content="John Doe">
+<title>Chapter 5 R Markdown | Data Analysis for Researchers AY2022</title>
+<meta name="author" content="Hiroshi Suzuki">
 <meta name="description" content="What is R Markdown: https://vimeo.com/178485416 Code Chunks Text YAML Metadata  5.1 What is R Markdown and R Notebook R Markdown provides an authoring framework for data science. You can use a...">
 <meta name="generator" content="bookdown 0.31 with bs4_book()">
-<meta property="og:title" content="Chapter 5 R Markdown | A Minimal Book Example">
+<meta property="og:title" content="Chapter 5 R Markdown | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
+<meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/rmarkdown.html">
 <meta property="og:description" content="What is R Markdown: https://vimeo.com/178485416 Code Chunks Text YAML Metadata  5.1 What is R Markdown and R Notebook R Markdown provides an authoring framework for data science. You can use a...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 5 R Markdown | A Minimal Book Example">
+<meta name="twitter:title" content="Chapter 5 R Markdown | Data Analysis for Researchers AY2022">
 <meta name="twitter:description" content="What is R Markdown: https://vimeo.com/178485416 Code Chunks Text YAML Metadata  5.1 What is R Markdown and R Notebook R Markdown provides an authoring framework for data science. You can use a...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -53,7 +54,7 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="">A Minimal Book Example</a>
+        <a href="index.html" title="">Data Analysis for Researchers AY2022</a>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -67,55 +68,45 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
 <li><a class="" href="intro.html"><span class="header-section-number">2</span> Introduction</a></li>
-<li><a class="" href="r-with-r-studio.html"><span class="header-section-number">3</span> R with R Studio</a></li>
+<li><a class="" href="rwithrstudio.html"><span class="header-section-number">3</span> R with R Studio</a></li>
 <li><a class="" href="tidyverse.html"><span class="header-section-number">4</span> tidyverse Packages</a></li>
 <li><a class="active" href="rmarkdown.html"><span class="header-section-number">5</span> R Markdown</a></li>
 <li><a class="" href="dplyr.html"><span class="header-section-number">6</span> Data Transforamtion with dplyr</a></li>
-<li><a class="" href="responses-to-assignment-two.html"><span class="header-section-number">7</span> Responses to Assignment Two</a></li>
+<li><a class="" href="a2resp.html"><span class="header-section-number">7</span> Responses to Assignment Two</a></li>
 <li><a class="" href="set-up-1.html"><span class="header-section-number">8</span> Set up</a></li>
 <li><a class="" href="general-comments.html"><span class="header-section-number">9</span> General Comments</a></li>
 <li><a class="" href="responses-to-questions.html"><span class="header-section-number">10</span> Responses to Questions</a></li>
 <li><a class="" href="appendix-change-colors-shapes-linetypes-etc.-manually.html"><span class="header-section-number">11</span> Appendix: Change colors, shapes, linetypes, etc. manually</a></li>
-<li><a class="" href="wdi.html"><span class="header-section-number">12</span> Importing Public Data, WDI</a></li>
+<li><a class="" href="wdidata.html"><span class="header-section-number">12</span> Importing Public Data, WDI</a></li>
 <li><a class="" href="ggokit2.html"><span class="header-section-number">13</span> Data Visualization and `ggplot2’</a></li>
-<li><a class="" href="responses-to-assignment-three.html"><span class="header-section-number">14</span> Responses to Assignment Three</a></li>
-<li><a class="" href="set-up-2.html"><span class="header-section-number">15</span> Set up</a></li>
-<li><a class="" href="general-comments-1.html"><span class="header-section-number">16</span> General Comments</a></li>
-<li><a class="" href="world-development-indicators-wdi.html"><span class="header-section-number">17</span> World Development Indicators (WDI)</a></li>
-<li><a class="" href="responses-to-questions-1.html"><span class="header-section-number">18</span> Responses to Questions</a></li>
-<li><a class="" href="regression-lines-topic-of-eda5.html"><span class="header-section-number">19</span> Regression Lines; Topic of EDA5</a></li>
-<li><a class="" href="appendix-a-secondary-axis.html"><span class="header-section-number">20</span> Appendix: A secondary axis</a></li>
-<li><a class="" href="tidy.html"><span class="header-section-number">21</span> Tidy Data</a></li>
-<li><a class="" href="workflow.html"><span class="header-section-number">22</span> EDA Workflow</a></li>
-<li><a class="" href="assignment-four-the-week-five-assignment.html">Assignment Four: The Week Five Assignment</a></li>
-<li><a class="" href="set-up-3.html"><span class="header-section-number">23</span> Set up</a></li>
-<li><a class="" href="general-comments-2.html"><span class="header-section-number">24</span> General Comments</a></li>
-<li><a class="" href="your-work.html"><span class="header-section-number">25</span> Your Work</a></li>
-<li><a class="" href="responses-to-questions-2.html"><span class="header-section-number">26</span> Responses to Questions</a></li>
-<li><a class="" href="model.html"><span class="header-section-number">27</span> Model</a></li>
-<li><a class="" href="roudups.html"><span class="header-section-number">28</span> Roudups</a></li>
-<li><a class="" href="a5resp.html"><span class="header-section-number">29</span> Responses to Assignment Five</a></li>
-<li><a class="" href="set-up-4.html"><span class="header-section-number">30</span> Set up</a></li>
-<li><a class="" href="general-comments-3.html"><span class="header-section-number">31</span> General Comments</a></li>
-<li><a class="" href="your-work-1.html"><span class="header-section-number">32</span> Your Work</a></li>
-<li><a class="" href="responses-to-questions-3.html"><span class="header-section-number">33</span> Responses to Questions</a></li>
-<li><a class="" href="my-comments-after-review.html"><span class="header-section-number">34</span> My Comments after Review</a></li>
-<li><a class="" href="eda.html"><span class="header-section-number">35</span> Exploartory Data analysis</a></li>
-<li><a class="" href="importing.html"><span class="header-section-number">36</span> Impoarting Data</a></li>
-<li><a class="" href="transforming.html"><span class="header-section-number">37</span> Transforming Data</a></li>
-<li><a class="" href="tidying.html"><span class="header-section-number">38</span> Tidying Data</a></li>
-<li><a class="" href="visualizing.html"><span class="header-section-number">39</span> Visualizing Data</a></li>
-<li><a class="" href="modeling.html"><span class="header-section-number">40</span> Modeling Data</a></li>
-<li><a class="" href="communicating-data-communicating.html"><span class="header-section-number">41</span> Communicating Data {communicating}</a></li>
-<li><a class="" href="worldbank.html"><span class="header-section-number">42</span> World Bank</a></li>
-<li><a class="" href="owid.html"><span class="header-section-number">43</span> Our World in Data</a></li>
-<li><a class="" href="oecd.html"><span class="header-section-number">44</span> OECD</a></li>
-<li><a class="" href="undata.html"><span class="header-section-number">45</span> UN Data</a></li>
-<li><a class="" href="wir.html"><span class="header-section-number">46</span> World Inequality Report</a></li>
-<li><a class="" href="histdata.html"><span class="header-section-number">47</span> HistData</a></li>
-<li><a class="" href="covid19.html"><span class="header-section-number">48</span> Covid 19</a></li>
-<li><a class="" href="bookdown.html"><span class="header-section-number">49</span> Bookdown</a></li>
-<li><a class="" href="template.html"><span class="header-section-number">50</span> Template</a></li>
+<li><a class="" href="s3resp.html"><span class="header-section-number">14</span> Responses to Assignment Three</a></li>
+<li><a class="" href="tidy.html"><span class="header-section-number">15</span> Tidy Data</a></li>
+<li><a class="" href="workflow.html"><span class="header-section-number">16</span> EDA Workflow</a></li>
+<li><a class="" href="a4resp.html"><span class="header-section-number">17</span> Assignment Four: The Week Five Assignment</a></li>
+<li><a class="" href="model.html"><span class="header-section-number">18</span> Model</a></li>
+<li><a class="" href="roudups.html"><span class="header-section-number">19</span> Roudups</a></li>
+<li><a class="" href="a5resp.html"><span class="header-section-number">20</span> Responses to Assignment Five</a></li>
+<li><a class="" href="set-up-4.html"><span class="header-section-number">21</span> Set up</a></li>
+<li><a class="" href="general-comments-3.html"><span class="header-section-number">22</span> General Comments</a></li>
+<li><a class="" href="your-work-1.html"><span class="header-section-number">23</span> Your Work</a></li>
+<li><a class="" href="responses-to-questions-3.html"><span class="header-section-number">24</span> Responses to Questions</a></li>
+<li><a class="" href="my-comments-after-review.html"><span class="header-section-number">25</span> My Comments after Review</a></li>
+<li><a class="" href="eda.html"><span class="header-section-number">26</span> Exploartory Data analysis</a></li>
+<li><a class="" href="importing.html"><span class="header-section-number">27</span> Impoarting Data</a></li>
+<li><a class="" href="transforming.html"><span class="header-section-number">28</span> Transforming Data</a></li>
+<li><a class="" href="tidying.html"><span class="header-section-number">29</span> Tidying Data</a></li>
+<li><a class="" href="visualizing.html"><span class="header-section-number">30</span> Visualizing Data</a></li>
+<li><a class="" href="modeling.html"><span class="header-section-number">31</span> Modeling Data</a></li>
+<li><a class="" href="communicating-data-communicating.html"><span class="header-section-number">32</span> Communicating Data {communicating}</a></li>
+<li><a class="" href="worldbank.html"><span class="header-section-number">33</span> World Bank</a></li>
+<li><a class="" href="owid.html"><span class="header-section-number">34</span> Our World in Data</a></li>
+<li><a class="" href="oecd.html"><span class="header-section-number">35</span> OECD</a></li>
+<li><a class="" href="undata.html"><span class="header-section-number">36</span> UN Data</a></li>
+<li><a class="" href="wir.html"><span class="header-section-number">37</span> World Inequality Report</a></li>
+<li><a class="" href="histdata.html"><span class="header-section-number">38</span> HistData</a></li>
+<li><a class="" href="covid19.html"><span class="header-section-number">39</span> Covid 19</a></li>
+<li><a class="" href="bookdown.html"><span class="header-section-number">40</span> Bookdown</a></li>
+<li><a class="" href="template.html"><span class="header-section-number">41</span> Template</a></li>
 </ul>
 
         <div class="book-extra">
@@ -133,7 +124,6 @@
 <li>Text</li>
 <li>YAML Metadata</li>
 </ul>
-<hr>
 <div id="what-is-r-markdown-and-r-notebook" class="section level2" number="5.1">
 <h2>
 <span class="header-section-number">5.1</span> What is R Markdown and R Notebook<a class="anchor" aria-label="anchor" href="#what-is-r-markdown-and-r-notebook"><i class="fas fa-link"></i></a>
@@ -146,7 +136,6 @@
 <p>R Notebooks are an implementation of Literate Programming that allows for direct interaction with R while producing a reproducible document with publication-quality output.</p>
 <p>An <strong>R Notebook</strong> is an R Markdown document <em>with chunks that can be executed independently and interactively, with output visible immediately beneath the input</em>.</p>
 <p>(Reference: <a href="https://bookdown.org/yihui/rmarkdown/notebook.html">R Markdown: The Definitive Guide, 3.2 Notebook</a>)</p>
-<hr>
 <div id="two-goodies" class="section level3" number="5.1.1">
 <h3>
 <span class="header-section-number">5.1.1</span> Two Goodies<a class="anchor" aria-label="anchor" href="#two-goodies"><i class="fas fa-link"></i></a>
@@ -155,7 +144,6 @@
 <li><p><strong>Important</strong>: Implementation of Reproducible Research and Literate Programming</p></li>
 <li><p><strong>Useful</strong> to Render into Various Formats: R Notebook (HTML), R Markdown (HTML), PDF, MS Word, MS Powerpoint, Ioslides Presentation (HTML), Slidy Presentation (HTML), Beamer Presentation (PDF), etc.</p></li>
 </ul>
-<hr>
 </div>
 </div>
 <div id="reproducible-research-and-literate-programming" class="section level2" number="5.2">
@@ -173,14 +161,12 @@
 <span class="header-section-number">5.2.2</span> <a href="https://www.brainyquote.com/quotes/donald_knuth_181634">D. Knuth</a><a class="anchor" aria-label="anchor" href="#d.-knuth"><i class="fas fa-link"></i></a>
 </h3>
 <p>Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.</p>
-<hr>
 </div>
 <div id="reproducible-research---quote-from-a-coursera-course" class="section level3" number="5.2.3">
 <h3>
 <span class="header-section-number">5.2.3</span> Reproducible Research - Quote from a <a href="https://www.coursera.org/learn/reproducible-research">Coursera Course</a><a class="anchor" aria-label="anchor" href="#reproducible-research---quote-from-a-coursera-course"><i class="fas fa-link"></i></a>
 </h3>
 <p>Reproducible research is the idea that data analyses, and more generally, scientific claims, are published with their data and software code so that others may verify the findings and build upon them. The need for reproducibility is increasing dramatically as data analyses become more complex, involving larger datasets and more sophisticated computations. Reproducibility allows for people to focus on the actual content of a data analysis, rather than on superficial details reported in a written summary. In addition, reproducibility makes an analysis more useful to others because the data and code that actually conducted the analysis are available.</p>
-<hr>
 </div>
 <div id="r-markdown-workflow-r-for-data-science" class="section level3" number="5.2.4">
 <h3>
@@ -192,7 +178,6 @@
 <li><p>Supports rigorous thinking. You are more likely to come up with a strong analysis if you record your thoughts as you go, and continue to reflect on them. This also saves you time when you eventually write up your analysis to share with others.</p></li>
 <li><p>Helps others understand your work. It is rare to do data analysis by yourself, and you’ll often be working as part of a team. A lab notebook helps you share why you did it with your colleagues or lab mates.</p></li>
 </ul>
-<hr>
 </div>
 <div id="records-of-eda-and-communication" class="section level3" number="5.2.5">
 <h3>
@@ -212,7 +197,6 @@
 </li>
 <li><a href="https://bookdown.org/home/archive/">Arxive Page</a></li>
 </ul>
-<hr>
 </div>
 </div>
 <div id="lets-get-started-1" class="section level2" number="5.3">
@@ -254,7 +238,6 @@
 </ol>
 </li>
 </ol>
-<hr>
 </div>
 <div id="templates" class="section level2" number="5.4">
 <h2>
@@ -267,7 +250,7 @@
 <p>Template to submit your assignment of this course: <a href="https://icu-hsuzuki.github.io/da4r2022_note/RNotebook_Template.nb.html"><code>RNotebook_Template.nb.html</code></a></p>
 <pre><code>title: "Title of R Notebook"
 author: "ID and Your Name"
-date: "2023-02-07" 
+date: "2023-02-08" 
 output:
   html_notebook: null</code></pre>
 <div id="yaml" class="section level4" number="5.4.1.1">
@@ -277,9 +260,8 @@ output:
 <ul>
 <li>Change the title</li>
 <li>Write ID and your name</li>
-<li>Date is auto-generated and inserted. If you wish, you can replace “2023-02-07” by your favorite date style.</li>
+<li>Date is auto-generated and inserted. If you wish, you can replace “2023-02-08” by your favorite date style.</li>
 </ul>
-<hr>
 </div>
 <div id="code-chunk" class="section level4" number="5.4.1.2">
 <h4>
@@ -292,7 +274,6 @@ output:
 <li>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the Preview button or press Ctrl+Shift+K (Win) or Cmd+Shift+K (Mac) to preview the HTML file).</li>
 <li>The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike Knit, <em>Preview does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed</em>.</li>
 </ul>
-<hr>
 </div>
 </div>
 <div id="testing-r-markdown-formats" class="section level3" number="5.4.2">
@@ -302,7 +283,7 @@ output:
 <p>Various Output Formats: <a href="https://icu-hsuzuki.github.io/da4r2022_note/test-rmarkdown.nb.html"><code>test-rmarkdown.nb.html</code></a></p>
 <pre><code>title: "Testing R Markdown Formats"
 author: "DS-SL"
-date: "2023-02-07"
+date: "2023-02-08"
 output:
   html_notebook:
     number_sections: yes
@@ -319,7 +300,6 @@ output:
     smaller: yes
   slidy_presentation: default
   beamer_presentation: default</code></pre>
-<hr>
 </div>
 <div id="comments-on-presentation-formats-and-options" class="section level3" number="5.4.3">
 <h3>
@@ -348,7 +328,6 @@ output:
 <ul>
 <li>You can use <code>Output Options</code> at the bottom of the gear icon next to Preview/knit button.</li>
 </ul>
-<hr>
 </div>
 </div>
 <div id="markdown-language-or-use-wysiwyg-editor" class="section level2" number="5.5">
@@ -375,7 +354,6 @@ output:
 </li>
 <li>Superscripts, Subscripts, Strikethrough text</li>
 </ul>
-<hr>
 <div id="visual-r-markdown" class="section level3" number="5.5.1">
 <h3>
 <span class="header-section-number">5.5.1</span> Visual R Markdown<a class="anchor" aria-label="anchor" href="#visual-r-markdown"><i class="fas fa-link"></i></a>
@@ -386,7 +364,6 @@ output:
 <ul>
 <li><a href="https://rstudio.github.io/visual-markdown-editing/" class="uri">https://rstudio.github.io/visual-markdown-editing/</a></li>
 </ul>
-<hr>
 </div>
 </div>
 <div id="references" class="section level2" number="5.6">
@@ -470,7 +447,7 @@ output:
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>A Minimal Book Example</strong>" was written by John Doe. It was last built on 2023-02-07.</p>
+    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-02-08.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

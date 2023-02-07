@@ -1,4 +1,4 @@
-# Importing Public Data, WDI {#wdi}
+# Importing Public Data, WDI {#wdidata}
 
 ## Reviews and Previews
 
@@ -16,7 +16,7 @@ library(ggrepel)
 * We will not use `ggrepel` but if you want to use it, install it.
 * `maps` and `readxl` are bundled in `tidyverse` but need to be attached by `library`.
 
----
+
 
 ### Gapminder Package Data
 
@@ -25,7 +25,7 @@ df <- gapminder
 df
 ```
 
----
+
 
 ### `gdpPercap` of ASEAN countries
 
@@ -36,7 +36,7 @@ df %>% filter(country %in% asean) %>%
   ggplot(aes(x = year, y = gdpPercap, col = country)) + geom_line()
 ```
 
----
+
 
 ```{r echo=FALSE}
 asean <- c("Cambodia", "Myanmar", 
@@ -46,14 +46,14 @@ df %>% filter(country %in% asean) %>%
 ```
 
 
----
+
 
 ```{r echo=TRUE}
 df %>% filter(country %in% asean) %>%
   ggplot(aes(x = gdpPercap, y = lifeExp, col = country)) + geom_point()
 ```
 
----
+
 
 ```{r echo=TRUE}
 df %>% filter(country %in% asean) %>%
@@ -63,11 +63,8 @@ df %>% filter(country %in% asean) %>%
 
 $\log_{10}{100}$ = `r log10(100)`, $\log_{10}{1000}$ = `r log10(1000)`, $\log_{10}{10000}$ = `r log10(10000)`
 
-<!-- $10^{2.5}$ = `r sqrt(10)^{5}`, $10^{3}$ = `r 10^{3}`, $10^{3.5}$ = `r sqrt(10)^7`,  -->
 
-<!-- $10^{4}$ = `r 10^4`, $10^{4.5}$ = `r sqrt(10)^9`. -->
 
----
 
 ```{r gapminder-combined, eval=FALSE}
 library(ggrepel)
@@ -81,7 +78,7 @@ df %>% filter(country %in% asean) %>%
        subtitle = "Data: gapminder package", x = "GDP per Capita", y = "Life Expectancy")
 ```
 
----
+
 
 
 ```{r echo=FALSE}
@@ -96,7 +93,7 @@ df %>% filter(country %in% asean) %>%
        subtitle = "Data: gapminder package", x = "GDP per Capita", y = "Life Expectancy")
 ```
 
----
+
 
 
 ```{r echo=FALSE}
@@ -109,7 +106,7 @@ df %>%
   labs(title = "Gapminder Package Data", subtitle="World Map of GDP per Capita Data")
 ```
 
----
+
 
 ### World Bank: World Development Indicators (WDI)
 
@@ -117,7 +114,7 @@ df %>%
 * NY.GDP.PCAP.KD: GDP per capita (constant 2015 US$)
 * SP.POP.TOTL: Population, total
 
-```{r cash=TRUE, eval=FALSE}
+```{r eval=FALSE}
 df_wdi <- WDI(
   country = "all", 
   indicator = c(lifeExp = "SP.DYN.LE00.IN", pop = "SP.POP.TOTL", gdpPercap = "NY.GDP.PCAP.KD")
@@ -133,13 +130,13 @@ df_wdi <- read_csv("./data/df_wdi.csv")
 ```
 
 
----
+
 
 ```{r}
 df_wdi
 ```
 
----
+
 
 ```{r cash=TRUE, eval=FALSE}
 df_wdi_extra <- WDI(
@@ -158,14 +155,14 @@ df_wdi_extra <- read_csv("./data/df_wdi_extra.csv")
 ```
 
 
----
+
 
 ```{r}
 df_wdi_extra
 ```
 
 
----
+
 
 ## Exploratory Data Analysis
 
@@ -181,7 +178,7 @@ Use what you learn to refine your questions and/or generate new questions
 
 EDA is an important part of any data analysis. You can use EDA to make discoveries about the world; or you can use EDA to ensure the quality of your data, asking questions about whether the data meets your standards or not.
 
----
+
 
 ## Open and Public Data, World Bank
 
@@ -192,7 +189,7 @@ The term **Open Data** has a very precise meaning. Data or content is open if an
 1. The data must be _legally open_, which means they must be placed in the public domain or under liberal terms of use with minimal restrictions.
 2. The data must be _technically open_, which means they must be published in electronic formats that are machine readable and non-proprietary, so that anyone can access and use the data using common, freely available software tools. Data must also be publicly available and accessible on a public server, without password or firewall restrictions. To make Open Data easier to find, most organizations create and manage Open Data catalogs.
 
----
+
 
 ## World Bank: WDI - World Development Indicaters
 
@@ -208,7 +205,7 @@ The term **Open Data** has a very precise meaning. Data or content is open if an
   - Bulk Download: Excel, CSV
   - API Documentation
   
----
+
 
 ## R Package [WDI](https://CRAN.R-project.org/package=WDI)
 
@@ -221,7 +218,7 @@ The term **Open Data** has a very precise meaning. Data or content is open if an
 * README: https://cran.r-project.org/web/packages/WDI/readme/README.html
 * Reference manual:	[WDI.pdf](https://cran.r-project.org/web/packages/WDI/WDI.pdf)
 
----
+
 
 ## Function WDI
 
@@ -240,26 +237,26 @@ WDI(country = "all",
   - country: Vector of countries (ISO-2 character codes, e.g. "BR", "US", "CA", or "all") 
   - indicator: If you supply a named vector, the indicators will be automatically renamed: `c('women_private_sector' = 'BI.PWK.PRVS.FE.ZS')`
 
----
+
 
 ## Function WDIsearch
 
 ```{r}
 library(WDI)
 ```
-```{r}
+```{r cache=TRUE}
 WDIsearch(string = "NY.GDP.PCAP.KD", 
           field = "indicator", cache = NULL)
 ```
 
----
 
-```{r}
+
+```{r cache=TRUE}
 WDIsearch(string = "population", 
           field = "name", short=FALSE, cache = NULL)
 ```
 
----
+
 
 ```
 WDIsearch(string = "NY.GDP.PCAP.KD", 
@@ -270,19 +267,19 @@ WDIsearch(string = "gdp",
   field = "name", short = TRUE, cache = NULL) 
 ```
 
----
+
 
 ## Bulk Downloads at WDI site
 
 WDIbulk downloads the zip file of Bulk Downloads in [WDI site](https://datatopics.worldbank.org/world-development-indicators/) , it is a list containing 6 data frames: Data, Country, Series, Country-Series, Series-Time, FootNote.
 
----
+
 
 ## WDIcache
 
 Download an updated list of available WDI indicators from the World Bank website. Returns a list for use in the WDIsearch function.
 
-```{r widcache, cash=TRUE, eval=FALSE}
+```{r widcache, eval=FALSE}
 wdi_cache <- WDIcache()
 ```
 
@@ -298,14 +295,14 @@ wdi_cache <- read_rds("data/wdi_cache.RData", refhook = NULL)
 
 
 
----
 
-```{r eval=FALSE}
-wdi_cache
+
+```{r}
+glimpse(wdi_cache)
 ```
 
 
----
+
 
 ## WDI_data
 
@@ -320,14 +317,14 @@ The first character matrix includes a full list of WDI series. This list is upda
 WDI_data$country  %>% filter(country == "Japan")
 ```
 
----
+
 
 ```{r}
 WDIsearch(string = "gdp", 
   field = "name", short = FALSE, cache = wdi_cache) 
 ```
 
----
+
 
 ## World Development Indicators - Summary
 
@@ -341,7 +338,7 @@ Find indicators:
    - Featured Indicators or All Indicators
    - Obtain the indicator from the detail or the URL
 
----
+
 
 ### Example: CO2 emissions (metric tons per capita)
 
@@ -363,7 +360,7 @@ WDIsearch(string = "EN.ATM.CO2E.PC", field = "indicator",
 
 
 
----
+
 
 ```{r cash=TRUE, eval=FALSE}
 co2pcap <- WDI(country = "all", indicator = "EN.ATM.CO2E.PC", start = 1960, end = NULL, extra = TRUE, cache = wdi_cache)
@@ -382,14 +379,6 @@ co2pcap
 ```
 
 
-<!-- --- -->
-
-<!-- ```{r} -->
-<!-- write_csv(co2pcap, "./data/co2pcap.csv") -->
-<!-- ``` -->
-
-
----
 
 ```{r}
 co2pcap %>% filter(country %in% c("World", "Japan", "United States", "China")) %>%
@@ -397,7 +386,7 @@ co2pcap %>% filter(country %in% c("World", "Japan", "United States", "China")) %
   geom_line()
 ```
 
----
+
 
 ```{r}
 co2pcap %>% filter(!is.na(EN.ATM.CO2E.PC)) %>% pull(year) %>% summary()
@@ -406,7 +395,7 @@ co2pcap %>% filter(!is.na(EN.ATM.CO2E.PC)) %>% pull(year) %>% summary()
 
 
 
----
+
 
 ```{r}
 co2pcap %>% 
@@ -415,7 +404,7 @@ co2pcap %>%
   geom_line()
 ```
 
----
+
 
 ```{r}
 co2pcap %>% 
@@ -424,7 +413,7 @@ co2pcap %>%
   geom_boxplot()
 ```
 
----
+
 
 ```{r}
 co2pcap %>% 
@@ -435,7 +424,7 @@ co2pcap %>%
 
 * What is `boxplot`: https://vimeo.com/222358034
 
----
+
 
 ```{r}
 co2pcap %>% 
@@ -444,7 +433,7 @@ co2pcap %>%
   summarize(min = min(EN.ATM.CO2E.PC), med = median(EN.ATM.CO2E.PC), max = max(EN.ATM.CO2E.PC), IQR = IQR(EN.ATM.CO2E.PC), n = n())
 ```
 
----
+
 ```{r}
 co2pcap %>% 
   filter(income != "Aggregates", year == 2019, !is.na(EN.ATM.CO2E.PC)) %>%
@@ -457,7 +446,7 @@ co2pcap %>%
   filter(income == "Not classified")
 ```
 
----
+
 
 ```{r echo=TRUE, eval=FALSE}
 co2pcap %>% 
@@ -466,7 +455,7 @@ co2pcap %>%
   geom_map(aes(fill = income), map = world_map) + expand_limits(x = world_map$long, y = world_map$lat) +
   labs(title = "Income Levels in 2019")
 ```
----
+
 
 ```{r echo=FALSE}
 co2pcap %>% 
@@ -476,19 +465,19 @@ co2pcap %>%
   labs(title = "Income Levels in 2019")
 ```
 
----
+
 
 ```{r}
 co2pcap %>% distinct(country)
 ```
 
----
+
 
 ```{r}
 world_map %>% distinct(region)
 ```
 
----
+
 
 ```{r}
 world_map0 <- world_map %>% 
@@ -522,7 +511,7 @@ world_map0 <- world_map %>%
                             TRUE ~ region))
 ```
 
----
+
 
 ```{r}
 write_csv(world_map0, "./data/world_map0.csv")
@@ -534,20 +523,20 @@ world_map0 <- read_csv(map0_url)
 ```
 
 
----
+
 
 ```{r}
 co2pcap %>% filter(income != "Aggregates", year == 2019) %>% 
   anti_join(world_map0, by = c("country"="region"))
 ```
 
----
+
 
 ```{r}
 world_map0 %>% anti_join(co2pcap, by = c("region"="country")) %>% distinct(region) %>% arrange(region)
 ```
 
----
+
 
 
 
@@ -557,7 +546,7 @@ world_map0 %>% left_join(iso3166, by = c("region" = "ISOname")) %>%
 ```
 
 
----
+
 
 
 ```{r echo=FALSE}

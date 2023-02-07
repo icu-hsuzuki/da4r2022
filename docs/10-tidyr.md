@@ -2,7 +2,7 @@
 
 ## Reviews and Previews
 
-## Example: World Inequility Report - WIR2022
+### Example: World Inequility Report - WIR2022
 
 * World Inequality Report: https://wir2022.wid.world/
 * Executive Summary: https://wir2022.wid.world/executive-summary/
@@ -42,9 +42,9 @@ excel_sheets("./data/WIR2022s.xlsx")
 #> [29] "data-F12"  "data-F13." "data-F14." "data-F15"
 ```
 
----
 
-## F1: Global income and wealth inequality, 2021
+
+### F1: Global income and wealth inequality, 2021
 
 
 ```r
@@ -72,7 +72,7 @@ df_f1
 #> 6 Wealth Top 10%    0.756
 ```
 
----
+
 
 
 ```r
@@ -81,9 +81,9 @@ df_f1_rev %>%
   geom_col(position = "dodge")
 ```
 
-![](10-tidyr_files/figure-epub3/unnamed-chunk-4-1.png)<!-- -->
+<img src="10-tidyr_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
----
+
 
 ## References of `tidyr`
 
@@ -97,7 +97,7 @@ df_f1_rev %>%
   - Separate and Unite Columns
   - Join Data Sets
   
----
+
 
 ## Variables, values, and observations: Definitions
 
@@ -107,7 +107,7 @@ df_f1_rev %>%
 * **Tabular data** is a table of values, each associated with a variable and an observation. Tabular data is tidy if each value is placed in its own cell, each variable in its own column, and each observation in its own row.
 * So far, all of the data that you’ve seen has been tidy. In real-life, most data isn’t tidy, so we’ll come back to these ideas again in Data Wrangling.
 
----
+
 
 ## Tidy Data
 
@@ -123,7 +123,7 @@ Data can come in a variety of formats, but one format is easier to use in R than
 
 > “all happy families are all alike; each unhappy family is unhappy in its own way” - Tolstoy's Anna Karenina
 
----
+
 
 ## `tidyr` Basics
 
@@ -132,7 +132,7 @@ Data can come in a variety of formats, but one format is easier to use in R than
 1. Each variable is in its own column
 2. Each observation is in its own row
 
----
+
 
 ## Pivot data from wide to long: [`pivot_longer()`](https://tidyr.tidyverse.org/reference/pivot_longer.html)
 
@@ -168,7 +168,7 @@ df_f1
 #> 8 Wealth Top 1%     0.378
 ```
 
----
+
 
 
 ```r
@@ -177,9 +177,9 @@ df_f1_rev %>%
   geom_col(position = "dodge")
 ```
 
-![](10-tidyr_files/figure-epub3/unnamed-chunk-8-1.png)<!-- -->
+<img src="10-tidyr_files/figure-html/unnamed-chunk-8-1.png" width="672" />
 
----
+
 
 
 ```r
@@ -194,13 +194,13 @@ df_f1_rev %>% filter(group != "Top 1%") %>%
        x = "", y = "Share of total income or wealth", fill = "")
 ```
 
----
 
-![](10-tidyr_files/figure-epub3/unnamed-chunk-10-1.png)<!-- -->
+
+<img src="10-tidyr_files/figure-html/unnamed-chunk-10-1.png" width="672" />
 **Interpretation**: The global bottom 50% captures 8.5% of total income measured at Purchasing Power Parity (PPP). The global bottom 50% owns 2% of wealth (at Purchasing Power Parity). The global top 10% owns 76% of total Household wealth and captures 52% of total income in 2021. Note that top wealth holders are not necessarily top income holders. Incomes are measured after the operation of pension and unemployment systems and before taxes and transfers.  
 **Sources and series**: wir2022.wid.world/methodology.
 
----
+
 
 ## F2: The poorest half lags behind: Bottom 50%, middle 40% and top 10% income shares across the world in 2021
 
@@ -223,7 +223,7 @@ df_f2
 #> #   ²​`Top 10%`
 ```
 
----
+
 
 
 ```r
@@ -244,7 +244,7 @@ df_f2 %>% pivot_longer(cols = 3:5, names_to = "group", values_to = "value")
 #> # … with 14 more rows
 ```
 
----
+
 
 
 ```r
@@ -253,9 +253,9 @@ df_f2 %>% pivot_longer(cols = 3:5, names_to = "group", values_to = "value") %>%
   geom_col(position = "dodge")
 ```
 
-![](10-tidyr_files/figure-epub3/unnamed-chunk-13-1.png)<!-- -->
+<img src="10-tidyr_files/figure-html/unnamed-chunk-13-1.png" width="672" />
 
----
+
 
 ## Pivot data from long to wide: 
 [`pivot_wider()`](https://tidyr.tidyverse.org/reference/pivot_wider.html)
@@ -268,7 +268,7 @@ pivot_wider(data,
 ```
 
 
----
+
 
 
 ```
@@ -292,7 +292,7 @@ pivot_wider(data,
 pivot_wider(data, names_from = group, values_from = value) 
 ```
 
----
+
 
 ## Practice: F4 and F13
 
@@ -305,7 +305,7 @@ F4 and F13 are similar. Please use `pivot_longer` to tidy the data and create ch
 * F12: Female share in global labor incomes, 1990-2020
 * F14: Global carbon inequality, 2019. Group contribution to world emissions (%)
 
----
+
 
 ## F3: Top 10/Bottom 50 income gaps across the world, 2021
 
@@ -330,13 +330,13 @@ df_f3
 #> # … with 167 more rows
 ```
 
----
+
 
 ## F3: Top 10/Bottom 50 income gaps across the world, 2021 - Original
 
 <img src="./data/F3.png" width="100%" />
 
----
+
 
 * To 10 / Bottom 50 ratio has 5 classes: 5-12, 12-13, 13-16, 16-19, 19-140
 
@@ -347,7 +347,7 @@ df_f3$T10B50 %>% summary()
 #>   5.394  10.958  15.676  17.635  19.838 139.591
 ```
 
----
+
 
 
 ```r
@@ -356,9 +356,9 @@ df_f3 %>% ggplot() + geom_histogram(aes(T10B50))
 #> `binwidth`.
 ```
 
-![](10-tidyr_files/figure-epub3/unnamed-chunk-18-1.png)<!-- -->
+<img src="10-tidyr_files/figure-html/unnamed-chunk-18-1.png" width="672" />
 
----
+
 
 
 ```r
@@ -379,7 +379,7 @@ df_f3 %>% arrange(desc(T10B50))
 #> # … with 167 more rows
 ```
 
----
+
 
 
 ```r
@@ -403,7 +403,7 @@ df_f3 %>%
 #> #   ¹​`Top 10 Bottom 50 Ratio`
 ```
 
----
+
 
 
 ```r
@@ -415,9 +415,9 @@ df_f3 %>% mutate(`Top 10 Bottom 50 Ratio` = cut(T10B50,breaks = c(5, 12, 13, 16,
   expand_limits(x = world_map$long, y = world_map$lat)
 ```
 
-![](10-tidyr_files/figure-epub3/unnamed-chunk-21-1.png)<!-- -->
+<img src="10-tidyr_files/figure-html/unnamed-chunk-21-1.png" width="672" />
 
----
+
 
 
 ```r
@@ -439,7 +439,7 @@ world_map_wir$region[world_map_wir$region=="Trinidad"]<- "Trinidad and Tobago"
 world_map_wir$region[world_map_wir$region=="Tobago"]<- "Trinidad and Tobago"
 ```
   
----
+
 
 
 ```r
@@ -451,11 +451,11 @@ df_f3 %>% mutate(`Top 10 Bottom 50 Ratio` =
     expand_limits(x = world_map_wir$long, y = world_map_wir$lat)
 ```
 
-![](10-tidyr_files/figure-epub3/unnamed-chunk-23-1.png)<!-- -->
+<img src="10-tidyr_files/figure-html/unnamed-chunk-23-1.png" width="672" />
 
 
 
----
+
 
 
 ```r
@@ -466,9 +466,9 @@ df_f3 %>% mutate(`Top 10 Bottom 50 Ratio` =
   coord_map("orthographic", orientation = c(25, 60, 0))
 ```
 
-![](10-tidyr_files/figure-epub3/unnamed-chunk-24-1.png)<!-- -->
+<img src="10-tidyr_files/figure-html/unnamed-chunk-24-1.png" width="672" />
 
----
+
 
 
 ```r
@@ -479,9 +479,9 @@ df_f3 %>% mutate(`Top 10 Bottom 50 Ratio` =
   coord_map("orthographic", orientation = c(15, -80, 0))
 ```
 
-![](10-tidyr_files/figure-epub3/unnamed-chunk-25-1.png)<!-- -->
+<img src="10-tidyr_files/figure-html/unnamed-chunk-25-1.png" width="672" />
 
----
+
 
 
 
@@ -493,9 +493,9 @@ df_f3 %>% mutate(`Top 10 Bottom 50 Ratio` =
   expand_limits(x = world_map_wir$long, y = world_map_wir$lat)
 ```
 
-![](10-tidyr_files/figure-epub3/unnamed-chunk-26-1.png)<!-- -->
+<img src="10-tidyr_files/figure-html/unnamed-chunk-26-1.png" width="672" />
 
----
+
 
 
 ```r
@@ -513,11 +513,11 @@ df_f3 %>%
   scale_fill_brewer(palette='YlOrRd')
 ```
 
----
 
-![](10-tidyr_files/figure-epub3/unnamed-chunk-28-1.png)<!-- -->
 
----
+<img src="10-tidyr_files/figure-html/unnamed-chunk-28-1.png" width="672" />
+
+
 
 
 ```r
@@ -537,7 +537,7 @@ df_f3 %>% anti_join(world_map_wir, by = c("Country" = "region"))
 
 Check `dplyr` cheat sheet, and Posit Primers Tidy Data.
 
----
+
 
 ## Remaining Charts
 
@@ -555,7 +555,7 @@ Check `dplyr` cheat sheet, and Posit Primers Tidy Data.
 * F15: Per capita emissions acriss the world, 2019 - add row names + dodge
 
 
----
+
 
 ## F5: Global income inequality: T10/B50 ratio, 1820-2020
 
@@ -578,7 +578,7 @@ Check `dplyr` cheat sheet, and Posit Primers Tidy Data.
 #> # … with 14 more rows
 ```
 
----
+
 
 
 ```r
@@ -587,9 +587,9 @@ df_f5 %>% ggplot(aes(x = y, y = t10b50)) + geom_line() + geom_smooth(span=0.25, 
 #> x'
 ```
 
-![](10-tidyr_files/figure-epub3/unnamed-chunk-30-1.png)<!-- -->
+<img src="10-tidyr_files/figure-html/unnamed-chunk-30-1.png" width="672" />
 
----
+
 
 ## F9: Average annual wealth growth rate, 1995-2021 - fit curve + alpha
 
@@ -612,7 +612,7 @@ df_f9 <- read_excel("./data/WIR2022s.xlsx", sheet = "data-F9"); df_f9
 #> # … with 117 more rows
 ```
 
----
+
 
 
 ```r
@@ -622,9 +622,9 @@ df_f9 %>%
 #> x'
 ```
 
-![](10-tidyr_files/figure-epub3/unnamed-chunk-31-1.png)<!-- -->
+<img src="10-tidyr_files/figure-html/unnamed-chunk-31-1.png" width="672" />
 
----
+
 
 ## F7: Global income inequality, 1820-2020 - pivot + fit curve
 
@@ -647,7 +647,7 @@ df_f7 <- read_excel("./data/WIR2022s.xlsx", sheet = "data-F7"); df_f7
 #> # … with 14 more rows
 ```
 
----
+
 
 
 ```r
@@ -657,9 +657,9 @@ df_f7 %>%
   stat_smooth(formula = y~x, method = "loess", span = 0.25, se = FALSE)
 ```
 
-![](10-tidyr_files/figure-epub3/unnamed-chunk-32-1.png)<!-- -->
+<img src="10-tidyr_files/figure-html/unnamed-chunk-32-1.png" width="672" />
 
----
+
 
 ## F10: The share of wealth owned by the global 0.1% and billionaires, 2021 - pivot + fit curve
 
@@ -686,7 +686,7 @@ df_f10 <- read_excel("./data/WIR2022s.xlsx", sheet = "data-F10"); df_f10
 #> # … with 17 more rows
 ```
 
----
+
 
 
 ```r
@@ -709,7 +709,7 @@ df_f10 %>%
 #> # … with 44 more rows
 ```
 
----
+
 
 
 ```r
@@ -720,9 +720,9 @@ df_f10 %>%
   stat_smooth(aes(x = year, y = value, color = group), formula = y~x, method = "loess", span = 0.25, se = FALSE)
 ```
 
-![](10-tidyr_files/figure-epub3/unnamed-chunk-34-1.png)<!-- -->
+<img src="10-tidyr_files/figure-html/unnamed-chunk-34-1.png" width="672" />
 
----
+
 
 ## F6: Global income inequality: Between vs. Within country inequality (Theil index), 1820-2020 - pivot + area
 
@@ -747,7 +747,7 @@ df_f6 <- read_excel("./data/WIR2022s.xlsx", sheet = "data-F6"); df_f6
 #> #   ¹​`Within-country inequality`
 ```
 
----
+
 
 
 ```r
@@ -775,13 +775,13 @@ df_f6 %>% select(year = "...1", 2:3) %>%
                                 of global inequality", width = 20), size = 3)
 ```
 
----
 
 
-![](10-tidyr_files/figure-epub3/unnamed-chunk-36-1.png)<!-- -->
+
+<img src="10-tidyr_files/figure-html/unnamed-chunk-36-1.png" width="672" />
 
 
----
+
 
 ## F11: Top 1% vs bottom 50% wealth shares in Western Europe and the US, 1910-2020 - pivot name_sep + fit curve
 
@@ -805,7 +805,7 @@ df_f11 <- read_excel("./data/WIR2022s.xlsx", sheet = "data-F11"); df_f11
 #> 12  2020 0.0149   0.354  0.0576  0.219
 ```
 
----
+
 
 
 ```r
@@ -830,7 +830,7 @@ df_f11 %>%
 ```
 
 
----
+
 
 ### Step 1.
 
@@ -855,7 +855,7 @@ df_f11 %>% rename(!year, US_bot50 = USbot50, US_top1 = UStop1,
 #> 12  2020  0.0149    0.354   0.0576   0.219
 ```
 
----
+
 
 ### Step 2. 
 
@@ -867,7 +867,7 @@ df_f11 %>%
   pivot_longer(!year, names_to = c("group",".value"), names_sep = "_")
 ```
 
----
+
 
 ### Step 2. 
 
@@ -889,7 +889,7 @@ df_f11 %>%
 #> # … with 14 more rows
 ```
 
----
+
 
 ### Step 3.
 
@@ -903,7 +903,7 @@ df_f11 %>%
   pivot_longer(3:4, names_to = "type", values_to = "value") 
 ```
 
----
+
 
 ### Step 3.
 
@@ -925,11 +925,11 @@ df_f11 %>%
 #> # … with 38 more rows
 ```
 
----
 
-![](10-tidyr_files/figure-epub3/unnamed-chunk-43-1.png)<!-- -->
 
----
+<img src="10-tidyr_files/figure-html/unnamed-chunk-43-1.png" width="672" />
+
+
 
 ## F8: The rise of private versus the decline of public wealth in rich countries, 1970-2020 - rename + pivot + pivot + fit curve
 
@@ -958,7 +958,7 @@ df_f8 <- read_excel("./data/WIR2022s.xlsx", sheet = "data-F8"); df_f8
 #> #   ¹​`Germany (private)`, ²​`Spain (private)`, …
 ```
 
----
+
 
 
 ```r
@@ -981,7 +981,7 @@ df_f8 %>%
        x = "", y = "wealth as as % of national income", color = "", type = "")
 ```
 
----
+
 
 ### Step 1
 
@@ -998,7 +998,7 @@ df_f8 %>%
 ```
 
 
----
+
 
 
 
@@ -1028,7 +1028,7 @@ df_f8 %>%
 
 
 
----
+
 
 ### Step 2.
 
@@ -1046,7 +1046,7 @@ df_f8 %>%
 ```
 
 
----
+
 
 
 ```
@@ -1066,7 +1066,7 @@ df_f8 %>%
 #> # … with 347 more rows
 ```
 
----
+
 
 ### Step 3.
 
@@ -1084,7 +1084,7 @@ df_f8 %>%
   pivot_longer(3:4, names_to = "type", values_to = "value")
 ```
 
----
+
 
 
 
@@ -1105,7 +1105,7 @@ df_f8 %>%
 #> # … with 704 more rows
 ```
 
----
+
 
 ### Step 3. Final Step
 
@@ -1131,11 +1131,11 @@ df_f8 %>%
 ```
 
 
----
 
-![](10-tidyr_files/figure-epub3/unnamed-chunk-52-1.png)<!-- -->
 
----
+<img src="10-tidyr_files/figure-html/unnamed-chunk-52-1.png" width="672" />
+
+
 
 ## F15: Per capita emissions acriss the world, 2019 - add row names + dodge
 
@@ -1158,7 +1158,7 @@ df_f15 <- read_excel("./data/WIR2022s.xlsx", sheet = "data-F15"); df_f15
 #> # … with 14 more rows
 ```
 
----
+
 
 
 ```r
@@ -1172,8 +1172,8 @@ df_f15 %>% mutate(region = rep(regionWID[!is.na(regionWID)], each = 3)) %>%
 ```
 
 
----
 
-![](10-tidyr_files/figure-epub3/unnamed-chunk-54-1.png)<!-- -->
+
+<img src="10-tidyr_files/figure-html/unnamed-chunk-54-1.png" width="672" />
 
 

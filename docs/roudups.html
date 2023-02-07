@@ -4,15 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 28 Roudups | A Minimal Book Example</title>
-<meta name="author" content="John Doe">
+<title>Chapter 19 Roudups | Data Analysis for Researchers AY2022</title>
+<meta name="author" content="Hiroshi Suzuki">
 <meta name="description" content="library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.5.0 #&gt; ✔...">
 <meta name="generator" content="bookdown 0.31 with bs4_book()">
-<meta property="og:title" content="Chapter 28 Roudups | A Minimal Book Example">
+<meta property="og:title" content="Chapter 19 Roudups | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
+<meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/roudups.html">
 <meta property="og:description" content="library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.5.0 #&gt; ✔...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 28 Roudups | A Minimal Book Example">
+<meta name="twitter:title" content="Chapter 19 Roudups | Data Analysis for Researchers AY2022">
 <meta name="twitter:description" content="library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.5.0 #&gt; ✔...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -53,7 +54,7 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="">A Minimal Book Example</a>
+        <a href="index.html" title="">Data Analysis for Researchers AY2022</a>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -67,55 +68,45 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
 <li><a class="" href="intro.html"><span class="header-section-number">2</span> Introduction</a></li>
-<li><a class="" href="r-with-r-studio.html"><span class="header-section-number">3</span> R with R Studio</a></li>
+<li><a class="" href="rwithrstudio.html"><span class="header-section-number">3</span> R with R Studio</a></li>
 <li><a class="" href="tidyverse.html"><span class="header-section-number">4</span> tidyverse Packages</a></li>
 <li><a class="" href="rmarkdown.html"><span class="header-section-number">5</span> R Markdown</a></li>
 <li><a class="" href="dplyr.html"><span class="header-section-number">6</span> Data Transforamtion with dplyr</a></li>
-<li><a class="" href="responses-to-assignment-two.html"><span class="header-section-number">7</span> Responses to Assignment Two</a></li>
+<li><a class="" href="a2resp.html"><span class="header-section-number">7</span> Responses to Assignment Two</a></li>
 <li><a class="" href="set-up-1.html"><span class="header-section-number">8</span> Set up</a></li>
 <li><a class="" href="general-comments.html"><span class="header-section-number">9</span> General Comments</a></li>
 <li><a class="" href="responses-to-questions.html"><span class="header-section-number">10</span> Responses to Questions</a></li>
 <li><a class="" href="appendix-change-colors-shapes-linetypes-etc.-manually.html"><span class="header-section-number">11</span> Appendix: Change colors, shapes, linetypes, etc. manually</a></li>
-<li><a class="" href="wdi.html"><span class="header-section-number">12</span> Importing Public Data, WDI</a></li>
+<li><a class="" href="wdidata.html"><span class="header-section-number">12</span> Importing Public Data, WDI</a></li>
 <li><a class="" href="ggokit2.html"><span class="header-section-number">13</span> Data Visualization and `ggplot2’</a></li>
-<li><a class="" href="responses-to-assignment-three.html"><span class="header-section-number">14</span> Responses to Assignment Three</a></li>
-<li><a class="" href="set-up-2.html"><span class="header-section-number">15</span> Set up</a></li>
-<li><a class="" href="general-comments-1.html"><span class="header-section-number">16</span> General Comments</a></li>
-<li><a class="" href="world-development-indicators-wdi.html"><span class="header-section-number">17</span> World Development Indicators (WDI)</a></li>
-<li><a class="" href="responses-to-questions-1.html"><span class="header-section-number">18</span> Responses to Questions</a></li>
-<li><a class="" href="regression-lines-topic-of-eda5.html"><span class="header-section-number">19</span> Regression Lines; Topic of EDA5</a></li>
-<li><a class="" href="appendix-a-secondary-axis.html"><span class="header-section-number">20</span> Appendix: A secondary axis</a></li>
-<li><a class="" href="tidy.html"><span class="header-section-number">21</span> Tidy Data</a></li>
-<li><a class="" href="workflow.html"><span class="header-section-number">22</span> EDA Workflow</a></li>
-<li><a class="" href="assignment-four-the-week-five-assignment.html">Assignment Four: The Week Five Assignment</a></li>
-<li><a class="" href="set-up-3.html"><span class="header-section-number">23</span> Set up</a></li>
-<li><a class="" href="general-comments-2.html"><span class="header-section-number">24</span> General Comments</a></li>
-<li><a class="" href="your-work.html"><span class="header-section-number">25</span> Your Work</a></li>
-<li><a class="" href="responses-to-questions-2.html"><span class="header-section-number">26</span> Responses to Questions</a></li>
-<li><a class="" href="model.html"><span class="header-section-number">27</span> Model</a></li>
-<li><a class="active" href="roudups.html"><span class="header-section-number">28</span> Roudups</a></li>
-<li><a class="" href="a5resp.html"><span class="header-section-number">29</span> Responses to Assignment Five</a></li>
-<li><a class="" href="set-up-4.html"><span class="header-section-number">30</span> Set up</a></li>
-<li><a class="" href="general-comments-3.html"><span class="header-section-number">31</span> General Comments</a></li>
-<li><a class="" href="your-work-1.html"><span class="header-section-number">32</span> Your Work</a></li>
-<li><a class="" href="responses-to-questions-3.html"><span class="header-section-number">33</span> Responses to Questions</a></li>
-<li><a class="" href="my-comments-after-review.html"><span class="header-section-number">34</span> My Comments after Review</a></li>
-<li><a class="" href="eda.html"><span class="header-section-number">35</span> Exploartory Data analysis</a></li>
-<li><a class="" href="importing.html"><span class="header-section-number">36</span> Impoarting Data</a></li>
-<li><a class="" href="transforming.html"><span class="header-section-number">37</span> Transforming Data</a></li>
-<li><a class="" href="tidying.html"><span class="header-section-number">38</span> Tidying Data</a></li>
-<li><a class="" href="visualizing.html"><span class="header-section-number">39</span> Visualizing Data</a></li>
-<li><a class="" href="modeling.html"><span class="header-section-number">40</span> Modeling Data</a></li>
-<li><a class="" href="communicating-data-communicating.html"><span class="header-section-number">41</span> Communicating Data {communicating}</a></li>
-<li><a class="" href="worldbank.html"><span class="header-section-number">42</span> World Bank</a></li>
-<li><a class="" href="owid.html"><span class="header-section-number">43</span> Our World in Data</a></li>
-<li><a class="" href="oecd.html"><span class="header-section-number">44</span> OECD</a></li>
-<li><a class="" href="undata.html"><span class="header-section-number">45</span> UN Data</a></li>
-<li><a class="" href="wir.html"><span class="header-section-number">46</span> World Inequality Report</a></li>
-<li><a class="" href="histdata.html"><span class="header-section-number">47</span> HistData</a></li>
-<li><a class="" href="covid19.html"><span class="header-section-number">48</span> Covid 19</a></li>
-<li><a class="" href="bookdown.html"><span class="header-section-number">49</span> Bookdown</a></li>
-<li><a class="" href="template.html"><span class="header-section-number">50</span> Template</a></li>
+<li><a class="" href="s3resp.html"><span class="header-section-number">14</span> Responses to Assignment Three</a></li>
+<li><a class="" href="tidy.html"><span class="header-section-number">15</span> Tidy Data</a></li>
+<li><a class="" href="workflow.html"><span class="header-section-number">16</span> EDA Workflow</a></li>
+<li><a class="" href="a4resp.html"><span class="header-section-number">17</span> Assignment Four: The Week Five Assignment</a></li>
+<li><a class="" href="model.html"><span class="header-section-number">18</span> Model</a></li>
+<li><a class="active" href="roudups.html"><span class="header-section-number">19</span> Roudups</a></li>
+<li><a class="" href="a5resp.html"><span class="header-section-number">20</span> Responses to Assignment Five</a></li>
+<li><a class="" href="set-up-4.html"><span class="header-section-number">21</span> Set up</a></li>
+<li><a class="" href="general-comments-3.html"><span class="header-section-number">22</span> General Comments</a></li>
+<li><a class="" href="your-work-1.html"><span class="header-section-number">23</span> Your Work</a></li>
+<li><a class="" href="responses-to-questions-3.html"><span class="header-section-number">24</span> Responses to Questions</a></li>
+<li><a class="" href="my-comments-after-review.html"><span class="header-section-number">25</span> My Comments after Review</a></li>
+<li><a class="" href="eda.html"><span class="header-section-number">26</span> Exploartory Data analysis</a></li>
+<li><a class="" href="importing.html"><span class="header-section-number">27</span> Impoarting Data</a></li>
+<li><a class="" href="transforming.html"><span class="header-section-number">28</span> Transforming Data</a></li>
+<li><a class="" href="tidying.html"><span class="header-section-number">29</span> Tidying Data</a></li>
+<li><a class="" href="visualizing.html"><span class="header-section-number">30</span> Visualizing Data</a></li>
+<li><a class="" href="modeling.html"><span class="header-section-number">31</span> Modeling Data</a></li>
+<li><a class="" href="communicating-data-communicating.html"><span class="header-section-number">32</span> Communicating Data {communicating}</a></li>
+<li><a class="" href="worldbank.html"><span class="header-section-number">33</span> World Bank</a></li>
+<li><a class="" href="owid.html"><span class="header-section-number">34</span> Our World in Data</a></li>
+<li><a class="" href="oecd.html"><span class="header-section-number">35</span> OECD</a></li>
+<li><a class="" href="undata.html"><span class="header-section-number">36</span> UN Data</a></li>
+<li><a class="" href="wir.html"><span class="header-section-number">37</span> World Inequality Report</a></li>
+<li><a class="" href="histdata.html"><span class="header-section-number">38</span> HistData</a></li>
+<li><a class="" href="covid19.html"><span class="header-section-number">39</span> Covid 19</a></li>
+<li><a class="" href="bookdown.html"><span class="header-section-number">40</span> Bookdown</a></li>
+<li><a class="" href="template.html"><span class="header-section-number">41</span> Template</a></li>
 </ul>
 
         <div class="book-extra">
@@ -123,12 +114,12 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="roudups" class="section level1" number="28">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="roudups" class="section level1" number="19">
 <h1>
-<span class="header-section-number">28</span> Roudups<a class="anchor" aria-label="anchor" href="#roudups"><i class="fas fa-link"></i></a>
+<span class="header-section-number">19</span> Roudups<a class="anchor" aria-label="anchor" href="#roudups"><i class="fas fa-link"></i></a>
 </h1>
 <hr>
-<div class="sourceCode" id="cb470"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb472"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
 <span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 </span></span>
@@ -138,17 +129,17 @@
 <span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
 <span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span></code></pre></div>
-<div id="r-markdown-revisited" class="section level2" number="28.1">
+<div id="r-markdown-revisited" class="section level2" number="19.1">
 <h2>
-<span class="header-section-number">28.1</span> R Markdown Revisited<a class="anchor" aria-label="anchor" href="#r-markdown-revisited"><i class="fas fa-link"></i></a>
+<span class="header-section-number">19.1</span> R Markdown Revisited<a class="anchor" aria-label="anchor" href="#r-markdown-revisited"><i class="fas fa-link"></i></a>
 </h2>
 <p>Presentation: Submit an R Notebook (with codes used in the presentation), and PowerPoint file or other files used for your presentation, if any. If you use R Notebook for your presentation, you do not need to submit extra files.</p>
 <p>Final Paper: Submit an R Notebook (with codes as a work file), and a PDF (rendered directly from an R Notebook, or created from Word) - Maximum pages of PDF is eight.</p>
 <p>Format of Presentation - R Notebook is fine and slide presentation in various format is also fine</p>
 <hr>
-<div id="literate-programming-and-reproducible-research" class="section level3" number="28.1.1">
+<div id="literate-programming-and-reproducible-research" class="section level3" number="19.1.1">
 <h3>
-<span class="header-section-number">28.1.1</span> Literate Programming and Reproducible Research<a class="anchor" aria-label="anchor" href="#literate-programming-and-reproducible-research"><i class="fas fa-link"></i></a>
+<span class="header-section-number">19.1.1</span> Literate Programming and Reproducible Research<a class="anchor" aria-label="anchor" href="#literate-programming-and-reproducible-research"><i class="fas fa-link"></i></a>
 </h3>
 <p>Importing Data:</p>
 <ol style="list-style-type: decimal">
@@ -177,9 +168,9 @@
 </ul>
 <hr>
 </div>
-<div id="code-chunk-options" class="section level3" number="28.1.2">
+<div id="code-chunk-options" class="section level3" number="19.1.2">
 <h3>
-<span class="header-section-number">28.1.2</span> Code Chunk Options<a class="anchor" aria-label="anchor" href="#code-chunk-options"><i class="fas fa-link"></i></a>
+<span class="header-section-number">19.1.2</span> Code Chunk Options<a class="anchor" aria-label="anchor" href="#code-chunk-options"><i class="fas fa-link"></i></a>
 </h3>
 <p><a href="https://yihui.org/knitr/options/" class="uri">https://yihui.org/knitr/options/</a></p>
 <ul>
@@ -201,9 +192,9 @@
 </ul>
 <hr>
 </div>
-<div id="presentation-and-paper" class="section level3" number="28.1.3">
+<div id="presentation-and-paper" class="section level3" number="19.1.3">
 <h3>
-<span class="header-section-number">28.1.3</span> Presentation and Paper<a class="anchor" aria-label="anchor" href="#presentation-and-paper"><i class="fas fa-link"></i></a>
+<span class="header-section-number">19.1.3</span> Presentation and Paper<a class="anchor" aria-label="anchor" href="#presentation-and-paper"><i class="fas fa-link"></i></a>
 </h3>
 <ol style="list-style-type: decimal">
 <li><p>Data Source</p></li>
@@ -218,9 +209,9 @@
 </ol>
 <hr>
 </div>
-<div id="word" class="section level3" number="28.1.4">
+<div id="word" class="section level3" number="19.1.4">
 <h3>
-<span class="header-section-number">28.1.4</span> Word<a class="anchor" aria-label="anchor" href="#word"><i class="fas fa-link"></i></a>
+<span class="header-section-number">19.1.4</span> Word<a class="anchor" aria-label="anchor" href="#word"><i class="fas fa-link"></i></a>
 </h3>
 <p>Custom Word templates: <a href="https://bookdown.org/yihui/rmarkdown-cookbook/word-template.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/word-template.html</a></p>
 <p>You can apply the styles defined in a Word template document to new Word documents generated from R Markdown. Such a template document is also called a “style reference document.” The key is that you have to create this template document from Pandoc first, and change the style definitions in it later. Then pass the path of this template to the reference_docx option of word_document</p>
@@ -230,9 +221,9 @@
 ---</code></pre>
 <hr>
 </div>
-<div id="powerpoint" class="section level3" number="28.1.5">
+<div id="powerpoint" class="section level3" number="19.1.5">
 <h3>
-<span class="header-section-number">28.1.5</span> PowerPoint<a class="anchor" aria-label="anchor" href="#powerpoint"><i class="fas fa-link"></i></a>
+<span class="header-section-number">19.1.5</span> PowerPoint<a class="anchor" aria-label="anchor" href="#powerpoint"><i class="fas fa-link"></i></a>
 </h3>
 <p>PowerPoint presentation: <a href="https://bookdown.org/yihui/rmarkdown/powerpoint-presentation.html" class="uri">https://bookdown.org/yihui/rmarkdown/powerpoint-presentation.html</a></p>
 <p>Custom templates: <a href="https://bookdown.org/yihui/rmarkdown/powerpoint-presentation.html#ppt-templates" class="uri">https://bookdown.org/yihui/rmarkdown/powerpoint-presentation.html#ppt-templates</a></p>
@@ -245,9 +236,9 @@
 <hr>
 </div>
 </div>
-<div id="the-week-six-assignment---assignment-five-in-moodle" class="section level2" number="28.2">
+<div id="the-week-six-assignment---assignment-five-in-moodle" class="section level2" number="19.2">
 <h2>
-<span class="header-section-number">28.2</span> The Week Six Assignment - Assignment Five (in Moodle)<a class="anchor" aria-label="anchor" href="#the-week-six-assignment---assignment-five-in-moodle"><i class="fas fa-link"></i></a>
+<span class="header-section-number">19.2</span> The Week Six Assignment - Assignment Five (in Moodle)<a class="anchor" aria-label="anchor" href="#the-week-six-assignment---assignment-five-in-moodle"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>Choose a public data. Clearly state how you obtained the data. Even if you are able to give the URL to download the data, explain the steps you reached and obtained the data.</li>
@@ -285,14 +276,14 @@
 </ol>
 <p><strong>Due:</strong> 2023-01-30 23:59:00. Submit your R Notebook file, and a PDF file (or a MS Word file) in Moodle (The Fifth Assignment). Due on Monday!</p>
 </div>
-<div id="roundup" class="section level2" number="28.3">
+<div id="roundup" class="section level2" number="19.3">
 <h2>
-<span class="header-section-number">28.3</span> Roundup<a class="anchor" aria-label="anchor" href="#roundup"><i class="fas fa-link"></i></a>
+<span class="header-section-number">19.3</span> Roundup<a class="anchor" aria-label="anchor" href="#roundup"><i class="fas fa-link"></i></a>
 </h2>
 <hr>
-<div id="history-of-regression-analysis-slope-0.4465" class="section level3" number="28.3.1">
+<div id="history-of-regression-analysis-slope-0.4465" class="section level3" number="19.3.1">
 <h3>
-<span class="header-section-number">28.3.1</span> History of Regression Analysis: slope = 0.4465<a class="anchor" aria-label="anchor" href="#history-of-regression-analysis-slope-0.4465"><i class="fas fa-link"></i></a>
+<span class="header-section-number">19.3.1</span> History of Regression Analysis: slope = 0.4465<a class="anchor" aria-label="anchor" href="#history-of-regression-analysis-slope-0.4465"><i class="fas fa-link"></i></a>
 </h3>
 <blockquote>
 <p>The heights of descendants of tall ancestors tend to regress down towards a normal average</p>
@@ -300,9 +291,9 @@
 <div class="inline-figure"><img src="14-rmarkdown2_files/figure-html/unnamed-chunk-2-1.png" width="672"></div>
 <hr>
 </div>
-<div id="anna-karenina-principle" class="section level3" number="28.3.2">
+<div id="anna-karenina-principle" class="section level3" number="19.3.2">
 <h3>
-<span class="header-section-number">28.3.2</span> Anna Karenina Principle<a class="anchor" aria-label="anchor" href="#anna-karenina-principle"><i class="fas fa-link"></i></a>
+<span class="header-section-number">19.3.2</span> Anna Karenina Principle<a class="anchor" aria-label="anchor" href="#anna-karenina-principle"><i class="fas fa-link"></i></a>
 </h3>
 <blockquote>
 <p>“Tidy data sets are all alike; but every messy data set is messy in its own way.” — Hadley Wickham</p>
@@ -317,26 +308,26 @@
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="model.html"><span class="header-section-number">27</span> Model</a></div>
-<div class="next"><a href="a5resp.html"><span class="header-section-number">29</span> Responses to Assignment Five</a></div>
+<div class="prev"><a href="model.html"><span class="header-section-number">18</span> Model</a></div>
+<div class="next"><a href="a5resp.html"><span class="header-section-number">20</span> Responses to Assignment Five</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#roudups"><span class="header-section-number">28</span> Roudups</a></li>
+<li><a class="nav-link" href="#roudups"><span class="header-section-number">19</span> Roudups</a></li>
 <li>
-<a class="nav-link" href="#r-markdown-revisited"><span class="header-section-number">28.1</span> R Markdown Revisited</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#literate-programming-and-reproducible-research"><span class="header-section-number">28.1.1</span> Literate Programming and Reproducible Research</a></li>
-<li><a class="nav-link" href="#code-chunk-options"><span class="header-section-number">28.1.2</span> Code Chunk Options</a></li>
-<li><a class="nav-link" href="#presentation-and-paper"><span class="header-section-number">28.1.3</span> Presentation and Paper</a></li>
-<li><a class="nav-link" href="#word"><span class="header-section-number">28.1.4</span> Word</a></li>
-<li><a class="nav-link" href="#powerpoint"><span class="header-section-number">28.1.5</span> PowerPoint</a></li>
+<a class="nav-link" href="#r-markdown-revisited"><span class="header-section-number">19.1</span> R Markdown Revisited</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#literate-programming-and-reproducible-research"><span class="header-section-number">19.1.1</span> Literate Programming and Reproducible Research</a></li>
+<li><a class="nav-link" href="#code-chunk-options"><span class="header-section-number">19.1.2</span> Code Chunk Options</a></li>
+<li><a class="nav-link" href="#presentation-and-paper"><span class="header-section-number">19.1.3</span> Presentation and Paper</a></li>
+<li><a class="nav-link" href="#word"><span class="header-section-number">19.1.4</span> Word</a></li>
+<li><a class="nav-link" href="#powerpoint"><span class="header-section-number">19.1.5</span> PowerPoint</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#the-week-six-assignment---assignment-five-in-moodle"><span class="header-section-number">28.2</span> The Week Six Assignment - Assignment Five (in Moodle)</a></li>
+<li><a class="nav-link" href="#the-week-six-assignment---assignment-five-in-moodle"><span class="header-section-number">19.2</span> The Week Six Assignment - Assignment Five (in Moodle)</a></li>
 <li>
-<a class="nav-link" href="#roundup"><span class="header-section-number">28.3</span> Roundup</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#history-of-regression-analysis-slope-0.4465"><span class="header-section-number">28.3.1</span> History of Regression Analysis: slope = 0.4465</a></li>
-<li><a class="nav-link" href="#anna-karenina-principle"><span class="header-section-number">28.3.2</span> Anna Karenina Principle</a></li>
+<a class="nav-link" href="#roundup"><span class="header-section-number">19.3</span> Roundup</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#history-of-regression-analysis-slope-0.4465"><span class="header-section-number">19.3.1</span> History of Regression Analysis: slope = 0.4465</a></li>
+<li><a class="nav-link" href="#anna-karenina-principle"><span class="header-section-number">19.3.2</span> Anna Karenina Principle</a></li>
 </ul>
 </li>
 </ul>
@@ -356,7 +347,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>A Minimal Book Example</strong>" was written by John Doe. It was last built on 2023-02-07.</p>
+    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-02-08.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

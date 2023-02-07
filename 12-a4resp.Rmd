@@ -1,4 +1,6 @@
-# Assignment Four: The Week Five Assignment {.unnumbered}
+# Assignment Four: The Week Five Assignment {#a4resp}
+
+### Assignment Four: The Week Five Assignment {-}
 
 **`tidyr` and WIR2022**
 
@@ -25,7 +27,7 @@
 
 **Due:** 2023-01-23 23:59:00. Submit your R Notebook file in Moodle (The Fourth Assignment). Due on Monday!
 
-# Set up
+## Set up
 
 ```{r}
 library(tidyverse)
@@ -33,7 +35,7 @@ library(readxl) # for excel files
 library(WDI)
 ```
 
-## World Development Indicator - WDI
+### World Development Indicator - WDI
 
 The following is useful when you use WDI.
 
@@ -57,7 +59,7 @@ wdi_cache <- read_rds("./data/wdi_cache.RData")
 glimpse(wdi_cache)
 ```
 
-## World Inequility Report - WIR2022
+### World Inequility Report - WIR2022
 
 * World Inequality Report: https://wir2022.wid.world/
 * Executive Summary: https://wir2022.wid.world/executive-summary/
@@ -82,15 +84,15 @@ excel_sheets("./data/WIR2022s.xlsx")
 ```
 
 
-# General Comments
+## General Comments
 
-## Reproducibility and Literate Programming
+### Reproducibility and Literate Programming
 
 Reproducibility and Literate Programming are critical to exploratory data analysis (EDA). These are for communication; communication with readers of the paper, graders of the assignments, and communication with yourself, as we always forget. Please think about the reader of the article, and record the procedure and output so that reader can easily understand what you have done.
 
 The data source is critical. Unless the reader obtains the same data quickly, the communication on EDA does not start. If the data is not downloaded automatically through the code chunk, you should explain how to obtain the data and the part of the data you applied. It is crucial when you use copying and paste using `read_delim(clipboard())`. Please describe the way for the reader to retrieve the same data easily. It is best to read your paper; in some cases, it can be a hard copy from the beginning to check whether the reader can reproduce what you have done in the article.
 
-## Varibles
+### Varibles
 
 In this Assignment Four, we required the following:
 
@@ -116,7 +118,7 @@ If you use WIR, the following may be examples you saw in the executive summary:
 
 -   Two categorical and two numerical: F8, F11
 
-## Visualization
+### Visualization
 
 Data visualization is a key to EDA. Create various charts and write your observations you can or cannot obtain from the chart.
 
@@ -125,17 +127,17 @@ The following are the first two fundamental questions you keep in mind.
 -   What type of variation occurs within my variables?
 -   What type of covariation occurs between my variables?
 
-# Your Work
+## Your Work
 
 Here is a list of data your classmates used for Assignment Four.
 
-## World Inequality Report 2022 - WIR
+### World Inequality Report 2022 - WIR
 
 - WIR2022TablesFigures-Summary.xlsx: Data of Exective Summary
 - WIR2022TablesFigures-Chapter6.xlsx: 
 Historical and current emissions, Income and Population by world region
 
-## World Development Indicators - WDI
+### World Development Indicators - WDI
 
 - SP.DYN.TFRT.IN:	Fertility rate, total (births per woman)
 - SP.POP.GROW: Population growth (annual %)
@@ -155,15 +157,15 @@ Historical and current emissions, Income and Population by world region
 - SE.PRM.UNER.MA: Children out of school, primary, male
 
 
-## United Nations - UNdata
+### United Nations - UNdata
 
 - Education: "https://data.un.org/_Docs/SYB/CSV/SYB65_309_202209_Education.csv"
 - Population: "https://data.un.org/_Docs/SYB/CSV/SYB65_246_202209_Population%20Growth,%20Fertility%20and%20Mortality%20Indicators.csv"
 
 
-# Responses to Questions
+## Responses to Questions
 
-## Q. WIR2022, F8 with a fixed year, say 2020 describing the difference of goevernment and private income.
+### Q. WIR2022, F8 with a fixed year, say 2020 describing the difference of goevernment and private income.
 
 As for WIR2022, please refer to: https://ds-sl.github.io/data-analysis/wir2022.nb.html
 
@@ -217,7 +219,7 @@ https://wir2022.wid.world/chapter-3/
 From methodology, I explained on January 25, you can download the data for chapter three: WIR2022TablesFigures-Chapter3.xlsx
 
 
-## Q. The line graph looked strange at first and I couldn’t really see the results clearly. However, I could solve that problem by using “smoothstat” and then the results looked way better and I was able to interpret them easily.
+### Q. The line graph looked strange at first and I couldn’t really see the results clearly. However, I could solve that problem by using “smoothstat” and then the results looked way better and I was able to interpret them easily.
 
 The strange looking line graph is called a sawtooth shape, and happens very often. So let me explain it
 
@@ -326,7 +328,7 @@ df_fdi %>% select(country, year, fdi, income) %>%
   labs(x = "")
 ```
 
-## Q. How is it possible to organize better the name of the value in the x axis so that they are better readable?
+### Q. How is it possible to organize better the name of the value in the x axis so that they are better readable?
 
 * In the example above, the labels are overlapping. One way is to give an angle to the text with `vjust` and `hjust` values to place the labels in appropriate places: `theme(axis.text.x = element_text(angle = 30, vjust = 1, hjust=1))`
 
@@ -380,7 +382,7 @@ df_fdi %>% select(country, year, fdi, income) %>%
   labs(title = "long long long long long long long \nlong long long title", x = "")
 ```
 
-## Q. Position of the labels
+### Q. Position of the labels
 
 * Step 1. If you want to use you own color palette, choose the codes or the color names from the following sites.
 
@@ -450,13 +452,13 @@ df_f1_rev[df_f1_rev$group != "Top 1%",] %>%
             label = scales::label_percent(accuracy=1)(value)), 
             position = position_dodge(0.8))  
 ```
-# My Comments after Review
+## My Comments after Review
 
-## Visualization by Charts
+### Visualization by Charts
 
 Please try as various charts as possible. You can learn only by experience or from others.
 
-### Treat `year` as a group?
+#### Treat `year` as a group?
 
 ```{r eval=FALSE}
 df_wdi <- WDI(
@@ -522,13 +524,13 @@ df_wdi %>% mutate(year = as.character(year)) %>%
 ```
 
 
-## UN Data
+### UN Data
 
 * UNdata: https://data.un.org
 
 Data of World Development Indicators are in a uniform format and downloadable using an R package WDI. So it is easy to handle. However, other data require data transformation to make it tidy. We give a couple of examples. Most of the UN data, they are in CSV, and you can get a link quickly, or download it by clicking. Though the data structure is not uniform, it is relatively easy to handle.
 
-### Education
+#### Education
 
 By the following, you can see that the first row is not the column name. R gives column names such as ...1, ...2, etc., when the column name is void.
 
@@ -643,7 +645,7 @@ un_edu_area %>%
   labs(title = "Upper Secondary Level Education", subtitle = "Ratio = female/male")
 ```
 
-### Population
+#### Population
 
 Data structure is similar to the previous one. So use `skip=1`, and check the variable s briefly.
 

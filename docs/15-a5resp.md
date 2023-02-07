@@ -1707,7 +1707,7 @@ df1 %>% filter(country %in% g7, year == 2013) %>%
   theme(legend.position = "none")
 ```
 
-![](15-a5resp_files/figure-epub3/unnamed-chunk-14-1.png)<!-- -->
+<img src="15-a5resp_files/figure-html/unnamed-chunk-14-1.png" width="672" />
 
 I do not think the following charts are fancy, but you can apply these techniques when appropriate.
 
@@ -1728,7 +1728,7 @@ df1 %>% filter(country %in% g7, year %in% c(2010, 2013)) %>%
   geom_line(arrow = arrow(length = unit(0.03, "npc"), ends="last", type = "closed")) + ylim(5,40) + xlim(29,42)
 ```
 
-![](15-a5resp_files/figure-epub3/unnamed-chunk-15-1.png)<!-- -->
+<img src="15-a5resp_files/figure-html/unnamed-chunk-15-1.png" width="672" />
 
 
 ```r
@@ -1738,7 +1738,7 @@ df1 %>% filter(country %in% g7, year %in% c(2010, 2013)) %>%
   geom_line(aes(gini, parl, color = country), arrow = arrow(length = unit(0.03, "npc"), ends="last", type = "open"))
 ```
 
-![](15-a5resp_files/figure-epub3/unnamed-chunk-16-1.png)<!-- -->
+<img src="15-a5resp_files/figure-html/unnamed-chunk-16-1.png" width="672" />
 
 
 See Responses to Assignment Four, See 4.4. 
@@ -1868,7 +1868,7 @@ df1 %>% ggplot(aes(x = year, y = gini, col = country)) + geom_line()
 #> (`geom_line()`).
 ```
 
-![](15-a5resp_files/figure-epub3/unnamed-chunk-26-1.png)<!-- -->
+<img src="15-a5resp_files/figure-html/unnamed-chunk-26-1.png" width="672" />
 
 
 ```r
@@ -1876,7 +1876,7 @@ df1 %>% drop_na(gini) %>%
   ggplot(aes(x = year, y = gini, col = country)) + geom_line()
 ```
 
-![](15-a5resp_files/figure-epub3/unnamed-chunk-27-1.png)<!-- -->
+<img src="15-a5resp_files/figure-html/unnamed-chunk-27-1.png" width="672" />
 
 ### Reference
 
@@ -1902,7 +1902,7 @@ df2_wona_area %>% filter(region %in% c("East Asia & Pacific", "Europe & Central 
   theme(legend.position = "none")
 ```
 
-![](15-a5resp_files/figure-epub3/unnamed-chunk-28-1.png)<!-- -->
+<img src="15-a5resp_files/figure-html/unnamed-chunk-28-1.png" width="672" />
 
 
 ```r
@@ -1912,7 +1912,7 @@ df2_wona_area %>% filter(region %in% c("East Asia & Pacific", "Europe & Central 
   theme(legend.position = "none")
 ```
 
-![](15-a5resp_files/figure-epub3/unnamed-chunk-29-1.png)<!-- -->
+<img src="15-a5resp_files/figure-html/unnamed-chunk-29-1.png" width="672" />
 
 1. position("dodge")
 
@@ -1924,7 +1924,7 @@ df2_wona_area %>% filter(region %in% c("East Asia & Pacific", "Europe & Central 
   theme(legend.position = "top")
 ```
 
-![](15-a5resp_files/figure-epub3/unnamed-chunk-30-1.png)<!-- -->
+<img src="15-a5resp_files/figure-html/unnamed-chunk-30-1.png" width="672" />
 
 2. `facet_wrap`
 
@@ -1936,7 +1936,7 @@ df2_wona_area %>% filter(region %in% c("East Asia & Pacific", "Europe & Central 
   theme(legend.position = "none") + facet_wrap(.~year)
 ```
 
-![](15-a5resp_files/figure-epub3/unnamed-chunk-31-1.png)<!-- -->
+<img src="15-a5resp_files/figure-html/unnamed-chunk-31-1.png" width="672" />
 
 
 ```r
@@ -1946,7 +1946,7 @@ df2_wona_area %>% filter(region %in% c("East Asia & Pacific", "Europe & Central 
   theme(legend.position = "none") + facet_wrap(.~year, nrow = 2)
 ```
 
-![](15-a5resp_files/figure-epub3/unnamed-chunk-32-1.png)<!-- -->
+<img src="15-a5resp_files/figure-html/unnamed-chunk-32-1.png" width="672" />
 
 See Posit Primers: [Visualize Data](https://posit.cloud/learn/primers/3)
 
@@ -2083,7 +2083,7 @@ Hence, the following two charts are the same.
 mod %>% augment() %>% ggplot(aes(x = Sepal.Width)) + geom_point(aes(y = Sepal.Length)) + geom_line(aes(y = .fitted), col = "blue")
 ```
 
-![](15-a5resp_files/figure-epub3/unnamed-chunk-40-1.png)<!-- -->
+<img src="15-a5resp_files/figure-html/unnamed-chunk-40-1.png" width="672" />
 
 
 
@@ -2091,14 +2091,14 @@ mod %>% augment() %>% ggplot(aes(x = Sepal.Width)) + geom_point(aes(y = Sepal.Le
 df3 %>% ggplot(aes(x = Sepal.Width, y = Sepal.Length)) + geom_point() + geom_smooth(formula = y~x, method = "lm", se = FALSE)
 ```
 
-![](15-a5resp_files/figure-epub3/unnamed-chunk-41-1.png)<!-- -->
+<img src="15-a5resp_files/figure-html/unnamed-chunk-41-1.png" width="672" />
 
 
 ```r
 df3 %>% ggplot(aes(x = Sepal.Width, y = Sepal.Length)) + geom_point() + geom_smooth(formula = y~x, method = "lm")
 ```
 
-![](15-a5resp_files/figure-epub3/unnamed-chunk-42-1.png)<!-- -->
+<img src="15-a5resp_files/figure-html/unnamed-chunk-42-1.png" width="672" />
 
 The shaded band is supposed to tell you the range of the prediction line should be under some assumption. I did not explain it because you need to be careful when interpreting its meaning.
 

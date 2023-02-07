@@ -1,7 +1,7 @@
 
-# Responses to Assignment Three
+# Responses to Assignment Three {#s3resp}
 
-## Assignment Three: The Week Four Assignment {-}
+### Assignment Three: The Week Four Assignment {-}
 
 **WDI and `ggplot2`**
 
@@ -28,11 +28,11 @@
 
 **Due:** 2023-01-16 23:59:00. Submit your R Notebook file in Moodle (The Third Assignment). Due on Monday!
 
-# Set up
+## Set up
 
 Follow the workflow explained in EDA4 on January 18.
 
-## EDA by R Studio: Step 1
+### EDA by R Studio: Step 1
 
 In RStudio,
 
@@ -57,7 +57,7 @@ In RStudio,
   * _Check in your RStudio that your data is in `data`: Press Files at the right bottom pane and click `data`, the data folder._
 
 
-## EDA by R Studio: Step 2
+### EDA by R Studio: Step 2
 
 2.1. Project Notebook: Memo
 
@@ -101,20 +101,20 @@ _When people read a paper, they want to know the minimal set of packages require
 
   - File > Save As...
 
-# General Comments
+## General Comments
 
-## Varibles
+### Varibles
 
 We should know first about the variables. At least you must know if each of the variables is a categorical variable or a numerical variable.
 
-## Visualization
+### Visualization
 
   * What type of variation occurs within my variables?
   * What type of covariation occurs between my variables?
 
-# World Development Indicators (WDI)
+## World Development Indicators (WDI)
 
-## Setup
+### Setup
 
 It is not a must, but it is good to run the following code chunk and use `wdi_cache` for `WDIsearch()` to update the mata data. See `WDIcache` help. 
 
@@ -125,7 +125,7 @@ wdi_cache <- WDIcache()
 
 
 
-## Indicators Used in Assignment Three
+### Indicators Used in Assignment Three
 
 * NY.GDP.PCAP.KD: GDP per capita (constant 2015 US$)
 * NY.GDP.MKTP.CD: GDP (current US$)
@@ -151,7 +151,7 @@ wdi_cache <- WDIcache()
 * SE.XPD.TOTL.GD.ZS: Government expenditure on education, total (% of GDP)
 * SG.GEN.PARL.ZS: Proportion of seats held by women in national parliaments (%)
 
-## WDIsearch
+### WDIsearch
 
 We obtain the information of the data, i.e., meta data of WDI: Name, Indicator, Description, Source, etc. by `WDIsearch`.
 
@@ -438,7 +438,7 @@ WDIsearch("Government expenditure on education", "name", FALSE, wdi_cache)
 ```
 
 
-## Importing Data Using WDI
+### Importing Data Using WDI
 
 * The shortest form. The following is same as:
 `WDI(country = "all", indicator = "NY.GDP.PCAP.KD", start = 1960, end = NULL, extra = FALSE, cache = NULL, latest = NULL, language = "en)`
@@ -549,7 +549,7 @@ df_gdppcap_extra
 #> #   names ¹​NY.GDP.PCAP.KD, ²​lastupdated
 ```
 
-## Writing and reading a csv file
+### Writing and reading a csv file
 
 Since the data is generally huge, it is better to use a data saved in your computer.
 Before saving it check whether you have `data` folder (or directory) in you project folder. Use the `Files` tab of the right bottom pane. You should be able to see the project icon with Rproj at the end, your R Notebook file you are editing, and the `data` folder. Since `.csv` is automatically added, `write_csv(gdppcap_extra, "./data/gdppcap_extra")` does the same as below.
@@ -568,7 +568,7 @@ gdppcap <- read_csv("./data/gdppcap_extra.csv")
 
 "./data/gdpcap_extra.csv" is the way to express the name of the data `gdpcap_extra.csv` in csv format in the data folder. 
 
-## `country` argument
+### `country` argument
 
 If you want to import data for several countries, you can use `iso2c` codes of the countries.
 
@@ -781,9 +781,9 @@ The following is same as `WDIsearch("gdp per cap", "name")`. See WDIsearch help.
 wdi_cache$series %>% filter(grepl("gdp per cap", name, ignore.case = TRUE))
 ```
 
-# Responses to Questions
+## Responses to Questions
 
-## Q1. How do we use histograms.
+### Q1. How do we use histograms.
 
 * [Histograms and frequency polygons](https://ggplot2.tidyverse.org/reference/geom_histogram.html)
 * [Posit Cloud: Histograms](https://posit.cloud/learn/primers/3.3)
@@ -821,7 +821,7 @@ df_women_in_parl %>% filter(year == 2020) %>%
 #> `binwidth`.
 ```
 
-![](09-a3resp_files/figure-epub3/9-37-1.png)<!-- -->
+<img src="09-a3resp_files/figure-html/9-37-1.png" width="672" />
 
 
 ```r
@@ -829,7 +829,7 @@ df_women_in_parl %>% filter(year == 2020) %>%
   ggplot(aes(women_in_parl)) + geom_histogram(binwidth = 5)
 ```
 
-![](09-a3resp_files/figure-epub3/9-38-1.png)<!-- -->
+<img src="09-a3resp_files/figure-html/9-38-1.png" width="672" />
 
 
 ```r
@@ -874,21 +874,21 @@ df_stja %>% filter(income != "Aggregates") %>%
   ggplot(aes(stja)) + geom_histogram(bins = 20)
 ```
 
-![](09-a3resp_files/figure-epub3/9-44-1.png)<!-- -->
+<img src="09-a3resp_files/figure-html/9-44-1.png" width="672" />
 
 ```r
 df_stja %>% filter(income != "Aggregates", stja >0) %>% 
   ggplot(aes(stja)) + geom_histogram(bins = 20) + scale_x_log10()
 ```
 
-![](09-a3resp_files/figure-epub3/9-45-1.png)<!-- -->
+<img src="09-a3resp_files/figure-html/9-45-1.png" width="672" />
 
 ```r
 df_stja %>% filter(income != "Aggregates", income != "Not classified", stja >0) %>% 
   ggplot(aes(stja, fill = income)) + geom_histogram(alpha = 0.7, bins = 20, color = "black") + scale_x_log10()
 ```
 
-![](09-a3resp_files/figure-epub3/9-46-1.png)<!-- -->
+<img src="09-a3resp_files/figure-html/9-46-1.png" width="672" />
 
 
 ```r
@@ -896,7 +896,7 @@ df_stja %>% filter(income != "Aggregates", income != "Not classified", stja >0) 
   ggplot(aes(stja, fill = income)) + geom_density(alpha = 0.3) + scale_x_log10()
 ```
 
-![](09-a3resp_files/figure-epub3/9-47-1.png)<!-- -->
+<img src="09-a3resp_files/figure-html/9-47-1.png" width="672" />
 
 
 ```r
@@ -934,7 +934,7 @@ df_milxpnd %>% filter(income != "Aggregates", year == 2021) %>%
   labs(title = "Military expenditure (% of GDP)")
 ```
 
-![](09-a3resp_files/figure-epub3/9-52-1.png)<!-- -->
+<img src="09-a3resp_files/figure-html/9-52-1.png" width="672" />
 
 
 ```r
@@ -945,9 +945,9 @@ df_milxpnd %>% filter(income != "Aggregates", income != "Not classified", year =
 #> Ignoring unknown parameters: `binwidth`
 ```
 
-![](09-a3resp_files/figure-epub3/9-53-1.png)<!-- -->
+<img src="09-a3resp_files/figure-html/9-53-1.png" width="672" />
 
-## Q2. Effect of unemployed rate under pandemic depending on income groups
+### Q2. Effect of unemployed rate under pandemic depending on income groups
 
 
 ```r
@@ -982,9 +982,9 @@ df_ur %>% filter(income == "Aggregates") %>% filter(grepl('income', country)) %>
   filter(year >= 2018) %>% ggplot() + geom_line(aes(x = year, y = ur, color = country))
 ```
 
-![](09-a3resp_files/figure-epub3/9-58-1.png)<!-- -->
+<img src="09-a3resp_files/figure-html/9-58-1.png" width="672" />
 
-## Q3. Add values at each data point.
+### Q3. Add values at each data point.
 
 
 ```r
@@ -1048,9 +1048,9 @@ labs(title = "Inflation of Japan, Vietnam and China from 2000 to 2020",
      x = "", y = "Inflation, consumer prices (annual %)")
 ```
 
-![](09-a3resp_files/figure-epub3/9-64-1.png)<!-- -->
+<img src="09-a3resp_files/figure-html/9-64-1.png" width="672" />
 
-# Regression Lines; Topic of EDA5
+## Regression Lines; Topic of EDA5
 
 
 ```r
@@ -1093,7 +1093,7 @@ df_wdi_poverty %>%
   labs(x = "GDP per capita", y = "poverty rate (% of population)", title = "Poverty rates and GDP per capita", subtitle="world countries, 1990-2021 average, by income level")
 ```
 
-![](09-a3resp_files/figure-epub3/9-69-1.png)<!-- -->
+<img src="09-a3resp_files/figure-html/9-69-1.png" width="672" />
 
 
 ```r
@@ -1107,17 +1107,17 @@ df_wdi_poverty %>%
   geom_smooth(aes(y = mean_multipoverty), formula = y~x, linetype="longdash", color = "black", method = "lm", se = FALSE) + labs(x = "GDP per capita", y = "Multidimentinal poverty rate (% of population)", title = "Multidimentional Poverty rates and GDP per capita", subtitle="world countries, 1990-2021 average, by region")
 ```
 
-![](09-a3resp_files/figure-epub3/9-70-1.png)<!-- -->
+<img src="09-a3resp_files/figure-html/9-70-1.png" width="672" />
 
 
-# Appendix: A secondary axis
+## Appendix: A secondary axis
 
 * [Specify a secondary axis](https://ggplot2.tidyverse.org/reference/sec_axis.html)
   - This function is used in conjunction with a position scale to create a secondary axis, positioned opposite of the primary axis. All secondary axes must be based on a one-to-one transformation of the primary axes.
 
 `scale_y_continuous(sec.axis = sec_axis(~ . scaling_function))`
 
-## Example
+### Example
 
 Suppose you have two indicators, 
 
@@ -1267,9 +1267,9 @@ wdi_gdp %>% drop_na(gdp, gdpPercap) %>%
   scale_y_continuous(sec.axis = sec_axis(~ . *(10^7), name = "gdp/(10^7)"))
 ```
 
-![](09-a3resp_files/figure-epub3/9-79-1.png)<!-- -->
+<img src="09-a3resp_files/figure-html/9-79-1.png" width="672" />
 
-### BRICs
+#### BRICs
 
 
 ```r
@@ -1324,6 +1324,6 @@ wdi_gdp %>% drop_na(gdp, gdpPercap) %>%
   scale_y_continuous(sec.axis = sec_axis(~ . *(10^7), name = "gdp/(10^9)"))
 ```
 
-![](09-a3resp_files/figure-epub3/9-81-1.png)<!-- -->
+<img src="09-a3resp_files/figure-html/9-81-1.png" width="672" />
 
 

@@ -20,7 +20,7 @@ library(tidyverse)
   - [Visualize Data](https://posit.cloud/learn/primers/3): Learn how to use ggplot2 to make any type of plot with your data. Then learn the best ways to visualize patterns within values and relationships between variables.
 * [r4ds: Data Visualization](https://r4ds.had.co.nz/data-visualisation.html#data-visualisation)
 
----
+
 
 ## Exploratory Data Analysis
 
@@ -36,7 +36,7 @@ EDA is an iterative cycle that helps you understand what your data says. When yo
 
 EDA is an important part of any data analysis. You can use EDA to make discoveries about the world; or you can use EDA to ensure the quality of your data, asking questions about whether the data meets your standards or not.
 
----
+
 
 ### Two useful questions
 
@@ -47,7 +47,6 @@ There is no rule about which questions you should ask to guide your research. Ho
 
 The rest of this tutorial will look at these two questions. To make the discussion easier, let’s define some terms…
 
----
 
 ## Data Visualization
 
@@ -56,7 +55,7 @@ The rest of this tutorial will look at these two questions. To make the discussi
 ![visualization](data/visualization.png){width=75%}
 
 
----
+
 
 ## Example: World Inequility Report - WIR2022
 
@@ -110,7 +109,7 @@ df_f14
 
 * `\n` for line break in the title.
 
----
+
 
 ### Categorical vs Continuous Value
 
@@ -121,9 +120,9 @@ df_f14 %>%
   geom_col()
 ```
 
-![](08-ggplot2_files/figure-epub3/unnamed-chunk-4-1.png)<!-- -->
+<img src="08-ggplot2_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
----
+
 
 
 ```r
@@ -135,9 +134,9 @@ df_f14 %>%
        x = "", y = "Share of world emissions (%)")
 ```
 
-![](08-ggplot2_files/figure-epub3/unnamed-chunk-5-1.png)<!-- -->
+<img src="08-ggplot2_files/figure-html/unnamed-chunk-5-1.png" width="672" />
 
----
+
 
 ### Memo
 
@@ -151,7 +150,7 @@ df_f14 %>%
   - title = "": `\n` is for line feed
   - x, y: labels of x-axis and y-axis
 
----
+
 
 ## F12: Female share in global labor incomes, 1990-2020
 
@@ -175,7 +174,7 @@ df_f12
 #> 9 2015-2020                   0.347
 ```
 
----
+
 
 
 ```r
@@ -186,9 +185,9 @@ df_f12 %>%
   geom_col(width = 0.5, fill = scales::hue_pal()(2)[2])
 ```
 
-![](08-ggplot2_files/figure-epub3/unnamed-chunk-6-1.png)<!-- -->
+<img src="08-ggplot2_files/figure-html/unnamed-chunk-6-1.png" width="672" />
 
----
+
 
 
 ```r
@@ -205,7 +204,7 @@ df_f12 %>%
   annotate("text", x = 5.2, y = 0.47, label = stringr::str_wrap("Women make only 35% of global labor incomes, men make the remaining  65%.", width = 40), size = 3)
 ```
 
-![](08-ggplot2_files/figure-epub3/unnamed-chunk-7-1.png)<!-- -->
+<img src="08-ggplot2_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 
 
 ## F1: Global income and wealth inequality, 2021
@@ -223,7 +222,7 @@ df_f1
 #> 2 Wealth       0.0199        0.224     0.756    0.378
 ```
 
----
+
 
 
 ```
@@ -245,9 +244,9 @@ df_f1_rev %>%
   geom_col(position = "dodge")
 ```
 
-![](08-ggplot2_files/figure-epub3/unnamed-chunk-9-1.png)<!-- -->
+<img src="08-ggplot2_files/figure-html/unnamed-chunk-9-1.png" width="672" />
 
----
+
 
 ## References of `ggplot2`
 
@@ -286,7 +285,7 @@ df_f1_rev %>%
     - Explain why you chose the indicator
     - List questions you want to study
 
----
+
 
 2. Explore the data using visualization using `ggplot2`
 

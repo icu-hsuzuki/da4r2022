@@ -20,7 +20,7 @@ You can learn more about them in vignette("dplyr"). As well as these single-tabl
 
 If you are new to dplyr, the best place to start is [the data transformation chapter in R for data science](http://r4ds.had.co.nz/transform.html).
 
----
+
 
 ## [`select`](https://dplyr.tidyverse.org/reference/select.html): Subset columns using their names and types
 
@@ -35,7 +35,7 @@ num_range()	| Columns with a numerical suffix in the range | Not applicable with
 one_of() |	Columns whose name appear in the given set |	select(babynames, one_of(c("sex", "gender")))
 starts_with()	| Columns that starts with a string	| select(babynames, starts_with("n"))
 
----
+
 
 ## [`filter`](https://dplyr.tidyverse.org/reference/filter.html): Subset rows using column values
 
@@ -50,7 +50,7 @@ Logical operator	| tests	| Example
 is.na()	| Is x an NA?	| is.na(x)
 !is.na() |	Is x not an NA? |	!is.na(x)
 
----
+
 
 ## [`arrange`](https://dplyr.tidyverse.org/reference/arrange.html) and `Pipe %>%`
 
@@ -60,7 +60,7 @@ Unlike other `dplyr` verbs, `arrange()` largely ignores grouping; you need to ex
 
 * [`pipes`](https://r4ds.had.co.nz/pipes.html) in R for Data Science.
 
----
+
 
 ## [`mutate`](https://dplyr.tidyverse.org/reference/mutate.html) 
 
@@ -78,11 +78,11 @@ Unlike other `dplyr` verbs, `arrange()` largely ignores grouping; you need to ex
 
   - na_if(), coalesce()### `group_by()` and `summarise()`
 
----
+
 
 ## [`group_by`](https://dplyr.tidyverse.org/reference/group_by.html)
 
----
+
 
 ## [`summarise` or `summarize`](https://dplyr.tidyverse.org/reference/summarise.html)
 
@@ -99,7 +99,7 @@ So far our summarise() examples have relied on sum(), max(), and mean(). But you
 
   - if_else(), recode(), case_when()
 
----
+
 
 ## Learn `dplyr` by Examples
 
@@ -110,13 +110,13 @@ iris
 ```
 
 
----
+
 
 ```{r}
 summary(iris)
 ```
 
----
+
 
 ### `select` 1 - columns 1, 2, 5
 
@@ -124,7 +124,7 @@ summary(iris)
 select(iris, c(1,2,5))
 ```
 
----
+
 
 ### `select` 2 - except Species
 
@@ -132,7 +132,7 @@ select(iris, c(1,2,5))
 select(iris, -Species)
 ```
 
----
+
 
 ### `select` 3 - change column names
 
@@ -140,7 +140,7 @@ select(iris, -Species)
 select(iris, sl = Sepal.Length, sw = Sepal.Width, sp = Species)
 ```
 
----
+
 
 ### `filter` - by names
 
@@ -149,7 +149,7 @@ filter(iris, Species == "virginica")
 ```
 
 
----
+
 
 ### `arrange`  - ascending and descending order
 
@@ -157,7 +157,7 @@ filter(iris, Species == "virginica")
 arrange(iris, Sepal.Length, desc(Sepal.Width))
 ```
 
----
+
 
 ### `mutate` - rank
 
@@ -165,7 +165,7 @@ arrange(iris, Sepal.Length, desc(Sepal.Width))
 iris %>% mutate(sl_rank = min_rank(Sepal.Length)) %>% arrange(sl_rank)
 ```
 
----
+
 
 ### `group_by` and `summarize`
 
@@ -179,7 +179,7 @@ iris %>%
 * mean: `mean()` or `mean(x, na.rm = TRUE)` - arithmetic mean (average)
 * median: `median()` or `median(x, na.rm = TRUE)` - mid value
 
----
+
 
 For more examples see 
 
@@ -190,7 +190,7 @@ For more examples see
 
 * Textbook: [R for Data Science, Part II Explore](https://r4ds.had.co.nz/wrangle-intro.html#wrangle-intro)
 
-::: {.block}
+
 ### RStudio Primers: See References in Moodle at the bottom
 
 1. The Basics -- [r4ds: Explore, I](https://r4ds.had.co.nz/explore-intro.html#explore-intro)
@@ -204,9 +204,9 @@ For more examples see
 4. Tidy Your Data -- [r4ds: Wrangle, II](https://r4ds.had.co.nz/wrangle-intro.html#wrangle-intro)
 5. Iterate -- [r4ds: Program](https://r4ds.had.co.nz/program-intro.html#program-intro)
 6. Write Functions -- [r4ds: Program](https://r4ds.had.co.nz/program-intro.html#program-intro)
-::: 
 
----
+
+
 
 ## Learn `dplyr` by Examples II - `gapminder`
 
@@ -232,7 +232,7 @@ ggplot(data = <DATA>) +
   <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
 ```
 
----
+
 
 #### Gapminder and R Package `gapminder`
 
@@ -261,7 +261,7 @@ ggplot(data = <DATA>) +
         -   pop: population
         -   gdpPercap: GDP per capita (US\$, inflation-adjusted)
 
----
+
 
 ```{r packages, message=FALSE}
 library(tidyverse)
@@ -269,7 +269,7 @@ library(gapminder)
 library(WDI)
 ```
 
----
+
 
 #### R Package `gapminder` data
 
@@ -278,19 +278,19 @@ df <- gapminder
 df %>% slice(1:10)
 ```
 
----
+
 
 ```{r}
 glimpse(df)
 ```
 
----
+
 
 ```{r}
 summary(df)
 ```
 
----
+
 
 #### Tidyverse::ggplot
 
@@ -300,31 +300,31 @@ summary(df)
 ggplot(df, aes(x = year, y = lifeExp)) + geom_point()
 ```
 
----
+
 
 ```{r}
 ggplot(df, aes(x = year, y = lifeExp)) + geom_line()
 ```
 
----
+
 
 ```{r}
 ggplot(df, aes(x = year, y = lifeExp)) + geom_boxplot()
 ```
 
----
+
 
 ```{r}
 typeof(pull(df, year)) # same as typeof(df$year)
 ```
 
----
+
 
 ```{r}
 ggplot(df, aes(y = lifeExp, group = year)) + geom_boxplot()
 ```
 
----
+
 
 ##### Box Plot
 
@@ -332,7 +332,7 @@ ggplot(df, aes(y = lifeExp, group = year)) + geom_boxplot()
 ggplot(df, aes(x = as_factor(year), y = lifeExp)) + geom_boxplot()
 ```
 
----
+
 
 #### Applications of `dplyr`
 
@@ -343,20 +343,20 @@ df %>% filter(country == "Afghanistan") %>%
   ggplot(aes(x = year, y = lifeExp)) + geom_line()
 ```
 
----
+
 
 ```{r}
 df %>% filter(country %in% c("Afghanistan", "Japan")) %>%
   ggplot(aes(x = year, y = lifeExp, color = country)) + geom_line()
 ```
 
----
+
 
 ```{r}
 df %>% distinct(country) %>% pull()
 ```
 
----
+
 
 ```{r}
 df %>% filter(country %in% c("Brazil", "Russia", "India", "China")) %>%
@@ -365,7 +365,7 @@ df %>% filter(country %in% c("Brazil", "Russia", "India", "China")) %>%
 
 Russian data is missing.
 
----
+
 
 ### Exercises
 
@@ -376,7 +376,7 @@ Russian data is missing.
 
 3.  Choose several countries by yourself and do the similar investigations.
 
----
+
 
 ### `group_by` and `summarize`
 
@@ -387,13 +387,13 @@ df_lifeExp <- df %>% group_by(continent, year) %>%
   summarize(mean_lifeExp = mean(lifeExp), median_lifeExp = median(lifeExp), max_lifeExp = max(lifeExp), min_lifeExp = min(lifeExp), .groups = "keep")
 ```
 
----
+
 
 ```{r}
 df_lifeExp %>% slice(1:10)
 ```
 
----
+
 
 ```{r}
 df %>% filter(year %in% c(1952, 1987, 2007)) %>%
@@ -401,21 +401,21 @@ df %>% filter(year %in% c(1952, 1987, 2007)) %>%
   geom_boxplot()
 ```
 
----
+
 
 ```{r}
 df_lifeExp %>% ggplot(aes(x = year, y = mean_lifeExp, color = continent)) +
   geom_line()
 ```
 
----
+
 
 ```{r}
 df_lifeExp %>% ggplot(aes(x = year, y = mean_lifeExp, color = continent, linetype = continent)) +
   geom_line()
 ```
 
----
+
 
 ```{r}
 df_lifeExp %>% ggplot() +
@@ -442,7 +442,7 @@ df_lifeExp %>% ggplot() +
       + Don't forget to add `library(tidyverse)` in the first code chunk.
     - An observation of the chart - in your own words.
 
----
+
 
 2. Load `gapminder` by `library(gapminder)`.
 
@@ -453,7 +453,7 @@ df_lifeExp %>% ggplot() +
 
 **Due:** 2023-01-09 23:59:00. Submit your R Notebook file in Moodle (The Second Assignment). Due on Monday!
 
----
+
 
 ### Original Data? WDI?
 
@@ -461,7 +461,7 @@ df_lifeExp %>% ggplot() +
 gapminder %>% slice(1:10)
 ```
 
----
+
 
 #### WDI
 
@@ -486,13 +486,13 @@ write_csv(df_wdi, "./data/wdi.csv")
 df_wdi <- read_csv("./data/wdi.csv")
 ```
 
----
+
 
 ```{r}
 df_wdi %>% slice(1:10)
 ```
 
----
+
 
 ```{r eval=FALSE}
 df_wdi_extra <- WDI(
@@ -513,7 +513,7 @@ write_csv(df_wdi_extra, "./data/wdi_extra.csv")
 df_wdi_extra <- read_csv("./data/wdi_extra.csv")
 ```
 
----
+
 
 ```{r}
 df_wdi_extra

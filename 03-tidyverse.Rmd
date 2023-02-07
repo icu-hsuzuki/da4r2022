@@ -1,17 +1,17 @@
 # `tidyverse` Packages {#tidyverse}
 
-### Brief Introduction to R on RStudio
+## Brief Introduction to R on RStudio
 
-#### Four Panes and Tabs
+### Four Panes and Tabs
 
 1. Top Left: Source Editor
 2. Top Right: Environment, History, etc.
 3. Bottom Left: Console, Terminal, Render, Background Jobs
 4. Bottom Right: Files, Plots, Packages, Help, Viewer, Presentation
 
----
 
-#### Set up
+
+## Set up
 
 * Highly recommend to set the language to be "English".
 * Create "data" directory.
@@ -21,19 +21,19 @@ Sys.setenv(LANG = "en")
 dir.create("data")
 ```
 
----
 
-#### Three Ways to Run Codes
+
+## Three Ways to Run Codes
 
 1. Console - Bottom Left Pane
 2. R Script - pull down menu under File
 3. R Notebook, R Markdown - pull down menu under File
 
----
 
-### Second Way: R Script
 
-#### Examples: R Scripts in Moodle
+## R Script - Second Way to Run Codes
+
+### Examples: R Scripts in Moodle
 
 * `basics.R`
 * `coronavirus.R`
@@ -44,22 +44,22 @@ dir.create("data")
 
 To run a code: at the cursor press *Ctrl+Shift+Enter* (Win) or *Cmd+Shift+Enter* (Mac). 
 
----
 
-### Packages
+
+## Packages
 
 R packages are extensions to the R statistical programming language. R packages contain code, data, and documentation in a standardised collection format that can be installed by users of R, typically via a centralised software repository such as CRAN (the Comprehensive R Archive Network).
 
-#### Installation and attachement
+### Installation and attachement
 
 You can install packages by "Install Packages..." under "Tool" in the top menu.
 
 * `install.packages("tidyverse")`
 * `install.packages("rmarkdown")`
 
----
 
-### Third Way: R Notebook
+
+## R Notebook - Third Way to Run Codes
 
 Choose R Notebook from the pull down File menu in the top bar.
 
@@ -68,18 +68,18 @@ Choose R Notebook from the pull down File menu in the top bar.
 **Default* is as follows**
 
 ```
----
+
 title: "R Notebook"
 output: html_notebook
----
+
 ```
 
----
+
 
 **Template**
 
 ```
----
+
 title: "Title of R Notebook"
 author: "ID and Your Name"
 date: "`r Sys.Date()`" 
@@ -88,7 +88,7 @@ output:
 #    number_sections: yes
 #    toc: true
 #    toc_float: true
----
+
 ```
 
 * Don't change the format. Indention matters.
@@ -99,7 +99,7 @@ output:
 * Table of contents, `toc: true` - default is `toc: false`.
 * Floating table of contents in HTML output, `toc_float: true` - default is `toc_float: false`
 
----
+
 
 ### Create a Code Chunk to Attach Packages
 
@@ -108,6 +108,7 @@ Insert Chunk in Code pull down menu in the top bar, or use the <kbd>C</kbd> butt
 ```{r}
 library(tidyverse)
 ```
+
 
 ## First Example
 
@@ -130,7 +131,7 @@ class(tbl_iris)
 * `df_iris <- iris` can replace  `df_iris <- datasets::iris` because the package `datasets` is installed and attached as default. Since you may have other data called `iris` included in a different package or you may have changed `iris` before, it is safer to specify the name of the package with the name of the data.
 * Within R Notebook or in Console, you may get different output, and `tf_iris` and `tbl_iris` behave differently. It is because of the default settings of R Markdown. 
 
----
+
 
 ### Look at the data
 
@@ -142,16 +143,19 @@ The `View` command open up a window to show the contents of the data and you can
 View(df_iris)
 ```
 
----
 
 The following simple command also shows the data. 
-```{r dfiris}
+
+```{r dfiris, eval=FALSE}
 df_iris
+```
+```{r echo=FALSE, eval=TRUE}
+df_iris %>% slice(1:10)
 ```
 
 The output within R Notebook is a tibble style. Try the same command in Console.
 
----
+
 
 ```{r slice10iris}
 slice(df_iris, 1:10)
@@ -162,7 +166,7 @@ slice(df_iris, 1:10)
 1:10
 ```
 `
----
+
 
 #### Data Structure
 
@@ -178,7 +182,7 @@ The names after $ are column names. If you call `df_iris$Species`, you have the 
 
 `df_iris[2,4] = ``r df_iris[2,4]` is the fourth entry of Sepal.Width.
 
----
+
 
 ```{r}
 typeof(df_iris$Species)
@@ -190,7 +194,7 @@ class(df_iris$Species)
 
 For `factors = fct` see [the R Document](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/factor) or an explanation in [Factor in R: Categorical Variable & Continuous Variables](https://www.guru99.com/r-factor-categorical-continuous.html).
 
----
+
 
 ```{r}
 typeof(df_iris$Sepal.Length)
@@ -202,7 +206,7 @@ class(df_iris$Sepal.Length)
 
 **Q2.** What are the differences of`df_iris`, `slice(df_iris, 1:10)` and `glimpse(df_iris)` in the console?
 
----
+
 
 #### Summary of the Data
 
@@ -214,7 +218,7 @@ summary(df_iris)
 
 Minimum, 1st Quadrant (25%),  Median, Mean, 3rd Quadrant (75%), Maximum, and the count of each factor.
 
----
+
 
 ### Visualizing Data
 
@@ -230,7 +234,7 @@ ggplot(data = df_iris, aes(x = Sepal.Length, y = Sepal.Width)) +
   geom_point()
 ```
 
----
+
 
 
 ```{r message=FALSE, warning=FALSE, comment=FALSE}
@@ -238,7 +242,7 @@ ggplot(data = df_iris, aes(x = Sepal.Length, y = Sepal.Width)) +
   geom_point()
 ```
 
----
+
 
 #### Scatter Plot with [Labels](https://ggplot2.tidyverse.org/reference/labs.html)
 
@@ -249,7 +253,7 @@ ggplot(data = <data>, aes(x = <column name for x>, y = <column name for y>)) +
   geom_point() +
   labs(title = "Title", x = "Label for x", y = "Label for y")
 ```
----
+
 
 ```{r}
 ggplot(data = df_iris, aes(x = Sepal.Length, y = Sepal.Width)) +
@@ -257,7 +261,7 @@ ggplot(data = df_iris, aes(x = Sepal.Length, y = Sepal.Width)) +
   labs(title = "Scatter Plot of Sepal Data of Iris", x = "Sepal Length", y = "Sepal Width")
 ```
 
----
+
 
 #### Scatter Plot with [Colors](https://ggplot2.tidyverse.org/reference/aes_colour_fill_alpha.html)
 
@@ -268,7 +272,7 @@ ggplot(data = df_iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) 
   geom_point()
 ```
 
----
+
 
 #### Scatter Plot with Shapes
 
@@ -277,7 +281,7 @@ ggplot(data = df_iris, aes(x = Sepal.Length, y = Sepal.Width, shape = Species)) 
   geom_point()
 ```
 
----
+
 
 #### [Boxplot](https://ggplot2.tidyverse.org/reference/geom_boxplot.html)
 
@@ -288,7 +292,7 @@ ggplot(data = df_iris, aes(x = Species, y = Sepal.Length)) +
   geom_boxplot()
 ```
 
----
+
 
 #### [Histogram](https://ggplot2.tidyverse.org/reference/geom_histogram.html)
 
@@ -299,7 +303,7 @@ ggplot(data = df_iris, aes(x = Sepal.Length)) +
   geom_histogram()
 ```
 
----
+
 
 Change the number of bins by `bins =` `<number>`.
 
@@ -308,7 +312,7 @@ ggplot(data = df_iris, aes(x = Sepal.Length)) +
   geom_histogram(bins = 10)
 ```
 
----
+
 
 ### Data Modeling 
 
@@ -320,9 +324,9 @@ ggplot(data = df_iris, aes(x = Sepal.Length, y = Sepal.Width)) +
   geom_smooth(method = "lm", se = FALSE)
 ```
 
-## Comments on Week 2
+## Comments
 
-#### Helpful Resources
+### Helpful Resources
 
 * Cheat Sheet in RStudio: https://www.rstudio.com/resources/cheatsheets/  
   - [RStudio IED](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf)
@@ -332,15 +336,15 @@ ggplot(data = df_iris, aes(x = Sepal.Length, y = Sepal.Width)) +
 * [An Introduction to R](https://cran.rstudio.com)
 
 
-:::{.alertblock}
-#### Practicum
+
+### Practicum
 
 * Posit Primers: The Basics: https://posit.cloud/learn/primers/1
   - Complete Visualization Basics and Programming Basics
 
----
 
-#### Assignments - See Moodle
+
+## First Assignment - See Moodle
 
 1. Assignment Week 2-1: Introduction Plus Forum  
   - Due: Tuesday, 20 December 2022, 11:59 PM
@@ -348,7 +352,7 @@ ggplot(data = df_iris, aes(x = Sepal.Length, y = Sepal.Width)) +
 2. Assignment Week 2-2: Quiz 1 on R Basics 
   - Due: Tuesday, 20 December 2022, 11:59 PM
 
-:::
+
 
 
 ## Swirl: An interactive learning environment for R and statistics
@@ -370,7 +374,7 @@ You can install other `swirl` courses as well
 * [Github: swirl courses](https://github.com/swirldev/swirl_courses#swirl-courses) 
   - `install_course("Course Name Here")`
 
----
+
 
 ### Install and Start Swirl Courses
 
@@ -382,9 +386,8 @@ library(swirl) # Everytime you start swirl
 swirl() # Everytime you start or resume swirl
 ```
 
-#### R Programming: The basics of programming in R
+### R Programming: The basics of programming in R
 
-\scriptsize
 ```
  1: Basic Building Blocks      2: Workspace and Files     3: Sequences of Numbers    
  4: Vectors                    5: Missing Values          6: Subsetting Vectors      
@@ -394,16 +397,16 @@ swirl() # Everytime you start or resume swirl
 ```
 
 
-#### Recommended Sections in Order
+### Recommended Sections in Order
 
 1, 3, 4, 5, 6, 7, 12, 15, 14, 8, 9, 10, 11, 13, 2
 
 * Section 2 discusses the directories and file systems of a computer
 * Sections 9, 10, 11 are for programming
 
----
 
-#### Controling a `swirl` Session
+
+### Controling a `swirl` Session
 
 * ...  <-- That's your cue to press Enter to continue
 
@@ -421,9 +424,9 @@ When you are at the R prompt (>):
 5. Typing main() returns you to swirl's main menu.
 6. Typing info() displays these options again.
 
----
 
-#### Final Remark
+
+### Final Remarks
 
 You will encounter the message like ‘Would you like to receive credit for completing this course on Coursera.org?’ at the end of each course. This is for `coursera` courses. Select 'NO'. 
 
@@ -440,7 +443,7 @@ You will encounter the message like ‘Would you like to receive credit for comp
 2. In RStudio (Workspace in RStudio.cloud, Project in RStudio) choose File > New File > R Script and paste it.
 3. Choose File > Save with a name; e.g. _{file names}_ (.R will be added automatically)
 
----
+
 
 ### `basics.R`
 
@@ -667,7 +670,7 @@ hist(cars$dist)
 hist(cars$dist, breaks = seq(0,120, 10))
 ```
 
----
+
 
 ### coronavirus.R
 
@@ -760,7 +763,7 @@ plot(df_confirmed$date, df_confirmed$cases, type = "h",
      xlab = "Date", ylab = "Number of Cases")
 ```
 
-:::
+
 
 ## `gapminder` Package
 
@@ -777,7 +780,7 @@ plot(df_confirmed$date, df_confirmed$cases, type = "h",
     + How many variables?
 * Videos: [The best stats you’ve ever seen, Hans Rosling](http://www.edtech.events/the-best-stats-youve-ever-seen-hans-rosling/)
 
----
+
 
 ### Factfulness is ... \hfill _From the book_
 
@@ -790,7 +793,7 @@ To control the urgency instinct, take small steps.
 * Beware of fortune-tellers. Any prediction about the future is uncertain. Be wary of predictions that fail to acknowledge that. Insist on a full range of scenarios, never just the best or worst case. Ask how often such predictions have been right before.
 * Be wary of drastic action. Ask what the side effects will be. Ask how the idea has been tested. Step-by-step practical improvements, and evaluation of their impact, are less dramatic but usually more effective.
 
----
+
 
 ```{r}
 # install.packages("gapminder")
@@ -801,19 +804,19 @@ df <- gapminder
 df
 ```
 
----
+
 
 ```{r}
 glimpse(df)
 ```
 
----
+
 
 ```{r}
 summary(df)
 ```
 
----
+
 
 ### Questions
 

@@ -1,4 +1,6 @@
-# Assignment Four: The Week Five Assignment {.unnumbered}
+# Assignment Four: The Week Five Assignment {#a4resp}
+
+### Assignment Four: The Week Five Assignment {-}
 
 **`tidyr` and WIR2022**
 
@@ -25,7 +27,7 @@
 
 **Due:** 2023-01-23 23:59:00. Submit your R Notebook file in Moodle (The Fourth Assignment). Due on Monday!
 
-# Set up
+## Set up
 
 
 ```r
@@ -42,7 +44,7 @@ library(readxl) # for excel files
 library(WDI)
 ```
 
-## World Development Indicator - WDI
+### World Development Indicator - WDI
 
 The following is useful when you use WDI.
 
@@ -87,7 +89,7 @@ glimpse(wdi_cache)
 #>   ..$ lending  : chr [1:299] "Not classified" "Aggregates" "IDA" "Aggregates" ...
 ```
 
-## World Inequility Report - WIR2022
+### World Inequility Report - WIR2022
 
 * World Inequality Report: https://wir2022.wid.world/
 * Executive Summary: https://wir2022.wid.world/executive-summary/
@@ -122,15 +124,15 @@ excel_sheets("./data/WIR2022s.xlsx")
 ```
 
 
-# General Comments
+## General Comments
 
-## Reproducibility and Literate Programming
+### Reproducibility and Literate Programming
 
 Reproducibility and Literate Programming are critical to exploratory data analysis (EDA). These are for communication; communication with readers of the paper, graders of the assignments, and communication with yourself, as we always forget. Please think about the reader of the article, and record the procedure and output so that reader can easily understand what you have done.
 
 The data source is critical. Unless the reader obtains the same data quickly, the communication on EDA does not start. If the data is not downloaded automatically through the code chunk, you should explain how to obtain the data and the part of the data you applied. It is crucial when you use copying and paste using `read_delim(clipboard())`. Please describe the way for the reader to retrieve the same data easily. It is best to read your paper; in some cases, it can be a hard copy from the beginning to check whether the reader can reproduce what you have done in the article.
 
-## Varibles
+### Varibles
 
 In this Assignment Four, we required the following:
 
@@ -156,7 +158,7 @@ If you use WIR, the following may be examples you saw in the executive summary:
 
 -   Two categorical and two numerical: F8, F11
 
-## Visualization
+### Visualization
 
 Data visualization is a key to EDA. Create various charts and write your observations you can or cannot obtain from the chart.
 
@@ -165,17 +167,17 @@ The following are the first two fundamental questions you keep in mind.
 -   What type of variation occurs within my variables?
 -   What type of covariation occurs between my variables?
 
-# Your Work
+## Your Work
 
 Here is a list of data your classmates used for Assignment Four.
 
-## World Inequality Report 2022 - WIR
+### World Inequality Report 2022 - WIR
 
 - WIR2022TablesFigures-Summary.xlsx: Data of Exective Summary
 - WIR2022TablesFigures-Chapter6.xlsx: 
 Historical and current emissions, Income and Population by world region
 
-## World Development Indicators - WDI
+### World Development Indicators - WDI
 
 - SP.DYN.TFRT.IN:	Fertility rate, total (births per woman)
 - SP.POP.GROW: Population growth (annual %)
@@ -195,15 +197,15 @@ Historical and current emissions, Income and Population by world region
 - SE.PRM.UNER.MA: Children out of school, primary, male
 
 
-## United Nations - UNdata
+### United Nations - UNdata
 
 - Education: "https://data.un.org/_Docs/SYB/CSV/SYB65_309_202209_Education.csv"
 - Population: "https://data.un.org/_Docs/SYB/CSV/SYB65_246_202209_Population%20Growth,%20Fertility%20and%20Mortality%20Indicators.csv"
 
 
-# Responses to Questions
+## Responses to Questions
 
-## Q. WIR2022, F8 with a fixed year, say 2020 describing the difference of goevernment and private income.
+### Q. WIR2022, F8 with a fixed year, say 2020 describing the difference of goevernment and private income.
 
 As for WIR2022, please refer to: https://ds-sl.github.io/data-analysis/wir2022.nb.html
 
@@ -287,7 +289,7 @@ df_f8_rev %>%
        x = "", y = "wealth as % of national income", color = "", type = "")
 ```
 
-![](12-a4resp_files/figure-epub3/unnamed-chunk-8-1.png)<!-- -->
+<img src="12-a4resp_files/figure-html/unnamed-chunk-8-1.png" width="672" />
 
 
 Can you find a similar data of other countries of this type?
@@ -299,7 +301,7 @@ https://wir2022.wid.world/chapter-3/
 From methodology, I explained on January 25, you can download the data for chapter three: WIR2022TablesFigures-Chapter3.xlsx
 
 
-## Q. The line graph looked strange at first and I couldn’t really see the results clearly. However, I could solve that problem by using “smoothstat” and then the results looked way better and I was able to interpret them easily.
+### Q. The line graph looked strange at first and I couldn’t really see the results clearly. However, I could solve that problem by using “smoothstat” and then the results looked way better and I was able to interpret them easily.
 
 The strange looking line graph is called a sawtooth shape, and happens very often. So let me explain it
 
@@ -354,7 +356,7 @@ df_fdi %>% ggplot(aes(x=year, y=fdi, color=income)) + geom_line()
 #> (`geom_line()`).
 ```
 
-![](12-a4resp_files/figure-epub3/unnamed-chunk-13-1.png)<!-- -->
+<img src="12-a4resp_files/figure-html/unnamed-chunk-13-1.png" width="672" />
 
 We observe several problems. But the most significant issue is it looks like a sawtooth. It is because there are so many `y` values at the same `x` value. When you draw a line graph, you need to choose only several countries or use group_by and summarize and use summarized data. However, there is an option; we can use a model to summarize the data of each group using `geom_smooth()`. Since you do not want a line but a curve, we use "loess" with `span`, we used to draw some of WIR2022 charts.
 
@@ -371,7 +373,7 @@ df_fdi %>% drop_na(fdi) %>% drop_na(income) %>%
 #> override using the `.groups` argument.
 ```
 
-![](12-a4resp_files/figure-epub3/unnamed-chunk-14-1.png)<!-- -->
+<img src="12-a4resp_files/figure-html/unnamed-chunk-14-1.png" width="672" />
 
 If you do not want the message '`summarise()` has grouped output by 'income'. You can override using the `.groups` argument.' try the following by adding `.group = drop`.
 
@@ -384,7 +386,7 @@ df_fdi %>% drop_na(fdi) %>% drop_na(income) %>%
   geom_line()
 ```
 
-![](12-a4resp_files/figure-epub3/unnamed-chunk-15-1.png)<!-- -->
+<img src="12-a4resp_files/figure-html/unnamed-chunk-15-1.png" width="672" />
 
 
 * Step 5. Let us try `geom_smooth` with `loess` and `span`.
@@ -399,7 +401,7 @@ df_fdi  %>% drop_na(fdi) %>% drop_na(income) %>%
   geom_smooth(formula = y~x, method = "loess", span = 0.25, se = FALSE)
 ```
 
-![](12-a4resp_files/figure-epub3/unnamed-chunk-16-1.png)<!-- -->
+<img src="12-a4resp_files/figure-html/unnamed-chunk-16-1.png" width="672" />
 
 * Step 6. Change of the scale.
 
@@ -413,7 +415,7 @@ df_fdi %>% filter(!income %in% c(NA, "Aggregates")) %>% filter(fdi <= 0) %>%
   theme(legend.position = "none")
 ```
 
-![](12-a4resp_files/figure-epub3/unnamed-chunk-17-1.png)<!-- -->
+<img src="12-a4resp_files/figure-html/unnamed-chunk-17-1.png" width="672" />
 
 
 
@@ -425,7 +427,7 @@ df_fdi %>% drop_na(income) %>% filter(fdi > 0) %>%
   scale_y_log10() + labs(title="The Value FID < 0 or Zero Excluded")
 ```
 
-![](12-a4resp_files/figure-epub3/unnamed-chunk-18-1.png)<!-- -->
+<img src="12-a4resp_files/figure-html/unnamed-chunk-18-1.png" width="672" />
 
 **Note.** If this is the target chart, it may be better to check the number of NA values, 0 values, negative values, and nonzero values in each income group. I add `  mutate(value = factor(value, levels = c("Positive", "Zero", "Negative", "NA"), labels = c("Positive", "Zero", "Negative", "NA")))` in order to set the order of the labels. Please try the same without the line.
 
@@ -444,9 +446,9 @@ df_fdi %>% select(country, year, fdi, income) %>%
   labs(x = "")
 ```
 
-![](12-a4resp_files/figure-epub3/unnamed-chunk-19-1.png)<!-- -->
+<img src="12-a4resp_files/figure-html/unnamed-chunk-19-1.png" width="672" />
 
-## Q. How is it possible to organize better the name of the value in the x axis so that they are better readable?
+### Q. How is it possible to organize better the name of the value in the x axis so that they are better readable?
 
 * In the example above, the labels are overlapping. One way is to give an angle to the text with `vjust` and `hjust` values to place the labels in appropriate places: `theme(axis.text.x = element_text(angle = 30, vjust = 1, hjust=1))`
 
@@ -466,7 +468,7 @@ df_fdi %>% select(country, year, fdi, income) %>%
   labs(x = "")
 ```
 
-![](12-a4resp_files/figure-epub3/unnamed-chunk-20-1.png)<!-- -->
+<img src="12-a4resp_files/figure-html/unnamed-chunk-20-1.png" width="672" />
 
 * You can use another package `stringr` included in `tidyverse` but not loaded. `scale_x_discrete(labels = function(x) stringr::str_wrap(x, width = 15))`
 Change the width value to fit to your chart. If you add library(stringr), then `scale_x_discrete(labels = function(x) str_wrap(x, width = 15))` is enough.
@@ -487,7 +489,7 @@ df_fdi %>% select(country, year, fdi, income) %>%
   labs(x = "")
 ```
 
-![](12-a4resp_files/figure-epub3/unnamed-chunk-21-1.png)<!-- -->
+<img src="12-a4resp_files/figure-html/unnamed-chunk-21-1.png" width="672" />
 
 * If you have a long name for the title, use `\n` for the line feed.
 
@@ -507,9 +509,9 @@ df_fdi %>% select(country, year, fdi, income) %>%
   labs(title = "long long long long long long long \nlong long long title", x = "")
 ```
 
-![](12-a4resp_files/figure-epub3/unnamed-chunk-22-1.png)<!-- -->
+<img src="12-a4resp_files/figure-html/unnamed-chunk-22-1.png" width="672" />
 
-## Q. Position of the labels
+### Q. Position of the labels
 
 * Step 1. If you want to use you own color palette, choose the codes or the color names from the following sites.
 
@@ -555,7 +557,7 @@ df_f1_rev[df_f1_rev$group != "Top 1%",] %>%
   labs(x = "")
 ```
 
-![](12-a4resp_files/figure-epub3/unnamed-chunk-25-1.png)<!-- -->
+<img src="12-a4resp_files/figure-html/unnamed-chunk-25-1.png" width="672" />
 
 * Step 4. Add the values in the text. Do not forget that the values should be in percentages.
 
@@ -572,7 +574,7 @@ df_f1_rev[df_f1_rev$group != "Top 1%",] %>%
             position = position_dodge(0.8))  
 ```
 
-![](12-a4resp_files/figure-epub3/unnamed-chunk-26-1.png)<!-- -->
+<img src="12-a4resp_files/figure-html/unnamed-chunk-26-1.png" width="672" />
 * Step 5. If you want to change the locations of texts use `vjust = -0.2`. 
 
 
@@ -588,7 +590,7 @@ df_f1_rev[df_f1_rev$group != "Top 1%",] %>%
             position = position_dodge(0.8))  
 ```
 
-![](12-a4resp_files/figure-epub3/unnamed-chunk-27-1.png)<!-- -->
+<img src="12-a4resp_files/figure-html/unnamed-chunk-27-1.png" width="672" />
 
 * One student used another method to add `0.03` to the value of `y` by `y = value+0.03`. Great!
 
@@ -605,14 +607,14 @@ df_f1_rev[df_f1_rev$group != "Top 1%",] %>%
             position = position_dodge(0.8))  
 ```
 
-![](12-a4resp_files/figure-epub3/unnamed-chunk-28-1.png)<!-- -->
-# My Comments after Review
+<img src="12-a4resp_files/figure-html/unnamed-chunk-28-1.png" width="672" />
+## My Comments after Review
 
-## Visualization by Charts
+### Visualization by Charts
 
 Please try as various charts as possible. You can learn only by experience or from others.
 
-### Treat `year` as a group?
+#### Treat `year` as a group?
 
 
 ```r
@@ -645,7 +647,7 @@ df_wdi %>%
   geom_boxplot(aes(y=lifeExp, fill=country))
 ```
 
-![](12-a4resp_files/figure-epub3/unnamed-chunk-31-1.png)<!-- -->
+<img src="12-a4resp_files/figure-html/unnamed-chunk-31-1.png" width="672" />
 
 I erased the second line: `filter(year %in% c("1988", "1998", "2008", "2018"))` but the result is very similar. 
 
@@ -660,7 +662,7 @@ df_wdi %>%
 #> (`stat_boxplot()`).
 ```
 
-![](12-a4resp_files/figure-epub3/unnamed-chunk-32-1.png)<!-- -->
+<img src="12-a4resp_files/figure-html/unnamed-chunk-32-1.png" width="672" />
 
 If you look at the table, you can see that year is a integer vector, not a character vector. Then what happens if we remove quotation marks. The next chart is not a box plot anymore. It is because, for each year there is only one value for each country.
 
@@ -673,7 +675,7 @@ df_wdi %>%
   geom_boxplot(aes(y=lifeExp, fill=country))
 ```
 
-![](12-a4resp_files/figure-epub3/unnamed-chunk-33-1.png)<!-- -->
+<img src="12-a4resp_files/figure-html/unnamed-chunk-33-1.png" width="672" />
 
 If we want to take `year` as a group after selecting some years, then we should try the next using `factor(year)`. You can change the label of x axis by
   `labs(x = "year")` easily. We should also notice that there are no values for 1988. We should check basic information as such first.
@@ -688,7 +690,7 @@ df_wdi %>%
   geom_col(position = "dodge", col = "black")
 ```
 
-![](12-a4resp_files/figure-epub3/unnamed-chunk-34-1.png)<!-- -->
+<img src="12-a4resp_files/figure-html/unnamed-chunk-34-1.png" width="672" />
 It is possible if you change year to a character vector by `mutate(year = as.character(year))`.
 
 
@@ -701,16 +703,16 @@ df_wdi %>% mutate(year = as.character(year)) %>%
   labs(x = "year")
 ```
 
-![](12-a4resp_files/figure-epub3/unnamed-chunk-35-1.png)<!-- -->
+<img src="12-a4resp_files/figure-html/unnamed-chunk-35-1.png" width="672" />
 
 
-## UN Data
+### UN Data
 
 * UNdata: https://data.un.org
 
 Data of World Development Indicators are in a uniform format and downloadable using an R package WDI. So it is easy to handle. However, other data require data transformation to make it tidy. We give a couple of examples. Most of the UN data, they are in CSV, and you can get a link quickly, or download it by clicking. Though the data structure is not uniform, it is relatively easy to handle.
 
-### Education
+#### Education
 
 By the following, you can see that the first row is not the column name. R gives column names such as ...1, ...2, etc., when the column name is void.
 
@@ -1002,7 +1004,7 @@ un_edu_area %>%
   ggplot(aes(Year, Value, color = Region, linetype = Series)) + geom_line()
 ```
 
-![](12-a4resp_files/figure-epub3/unnamed-chunk-54-1.png)<!-- -->
+<img src="12-a4resp_files/figure-html/unnamed-chunk-54-1.png" width="672" />
 
 
 ```r
@@ -1014,9 +1016,9 @@ un_edu_area %>%
   labs(title = "Upper Secondary Level Education", subtitle = "Ratio = female/male")
 ```
 
-![](12-a4resp_files/figure-epub3/unnamed-chunk-55-1.png)<!-- -->
+<img src="12-a4resp_files/figure-html/unnamed-chunk-55-1.png" width="672" />
 
-### Population
+#### Population
 
 Data structure is similar to the previous one. So use `skip=1`, and check the variable s briefly.
 
@@ -1600,7 +1602,7 @@ df_pub_priv %>%
   ggplot(aes(year, value, color = country, linetype = category)) + geom_line()
 ```
 
-![](12-a4resp_files/figure-epub3/unnamed-chunk-77-1.png)<!-- -->
+<img src="12-a4resp_files/figure-html/unnamed-chunk-77-1.png" width="672" />
 
 We choose two indicators: 'wealg' and 'wealp'. WIR2022 indicators consists of 6 characters; 1 letter code plus 5 letter code. You can find the list in the codebook.
 

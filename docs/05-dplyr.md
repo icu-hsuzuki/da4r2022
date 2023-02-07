@@ -29,7 +29,7 @@ You can learn more about them in vignette("dplyr"). As well as these single-tabl
 
 If you are new to dplyr, the best place to start is [the data transformation chapter in R for data science](http://r4ds.had.co.nz/transform.html).
 
----
+
 
 ## [`select`](https://dplyr.tidyverse.org/reference/select.html): Subset columns using their names and types
 
@@ -44,7 +44,7 @@ num_range()	| Columns with a numerical suffix in the range | Not applicable with
 one_of() |	Columns whose name appear in the given set |	select(babynames, one_of(c("sex", "gender")))
 starts_with()	| Columns that starts with a string	| select(babynames, starts_with("n"))
 
----
+
 
 ## [`filter`](https://dplyr.tidyverse.org/reference/filter.html): Subset rows using column values
 
@@ -59,7 +59,7 @@ Logical operator	| tests	| Example
 is.na()	| Is x an NA?	| is.na(x)
 !is.na() |	Is x not an NA? |	!is.na(x)
 
----
+
 
 ## [`arrange`](https://dplyr.tidyverse.org/reference/arrange.html) and `Pipe %>%`
 
@@ -69,7 +69,7 @@ Unlike other `dplyr` verbs, `arrange()` largely ignores grouping; you need to ex
 
 * [`pipes`](https://r4ds.had.co.nz/pipes.html) in R for Data Science.
 
----
+
 
 ## [`mutate`](https://dplyr.tidyverse.org/reference/mutate.html) 
 
@@ -87,11 +87,11 @@ Unlike other `dplyr` verbs, `arrange()` largely ignores grouping; you need to ex
 
   - na_if(), coalesce()### `group_by()` and `summarise()`
 
----
+
 
 ## [`group_by`](https://dplyr.tidyverse.org/reference/group_by.html)
 
----
+
 
 ## [`summarise` or `summarize`](https://dplyr.tidyverse.org/reference/summarise.html)
 
@@ -108,7 +108,7 @@ So far our summarise() examples have relied on sum(), max(), and mean(). But you
 
   - if_else(), recode(), case_when()
 
----
+
 
 ## Learn `dplyr` by Examples
 
@@ -422,7 +422,7 @@ iris
 ```
 
 
----
+
 
 
 ```r
@@ -443,7 +443,7 @@ summary(iris)
 #>  Max.   :2.500
 ```
 
----
+
 
 ### `select` 1 - columns 1, 2, 5
 
@@ -603,7 +603,7 @@ select(iris, c(1,2,5))
 #> 150          5.9         3.0  virginica
 ```
 
----
+
 
 ### `select` 2 - except Species
 
@@ -763,7 +763,7 @@ select(iris, -Species)
 #> 150          5.9         3.0          5.1         1.8
 ```
 
----
+
 
 ### `select` 3 - change column names
 
@@ -923,7 +923,7 @@ select(iris, sl = Sepal.Length, sw = Sepal.Width, sp = Species)
 #> 150 5.9 3.0  virginica
 ```
 
----
+
 
 ### `filter` - by names
 
@@ -1035,7 +1035,7 @@ filter(iris, Species == "virginica")
 ```
 
 
----
+
 
 ### `arrange`  - ascending and descending order
 
@@ -1346,7 +1346,7 @@ arrange(iris, Sepal.Length, desc(Sepal.Width))
 #> 150  virginica
 ```
 
----
+
 
 ### `mutate` - rank
 
@@ -1657,7 +1657,7 @@ iris %>% mutate(sl_rank = min_rank(Sepal.Length)) %>% arrange(sl_rank)
 #> 150  virginica     150
 ```
 
----
+
 
 ### `group_by` and `summarize`
 
@@ -1678,7 +1678,7 @@ iris %>%
 * mean: `mean()` or `mean(x, na.rm = TRUE)` - arithmetic mean (average)
 * median: `median()` or `median(x, na.rm = TRUE)` - mid value
 
----
+
 
 For more examples see 
 
@@ -1689,7 +1689,7 @@ For more examples see
 
 * Textbook: [R for Data Science, Part II Explore](https://r4ds.had.co.nz/wrangle-intro.html#wrangle-intro)
 
-::: {.block}
+
 ### RStudio Primers: See References in Moodle at the bottom
 
 1. The Basics -- [r4ds: Explore, I](https://r4ds.had.co.nz/explore-intro.html#explore-intro)
@@ -1703,9 +1703,9 @@ For more examples see
 4. Tidy Your Data -- [r4ds: Wrangle, II](https://r4ds.had.co.nz/wrangle-intro.html#wrangle-intro)
 5. Iterate -- [r4ds: Program](https://r4ds.had.co.nz/program-intro.html#program-intro)
 6. Write Functions -- [r4ds: Program](https://r4ds.had.co.nz/program-intro.html#program-intro)
-::: 
 
----
+
+
 
 ## Learn `dplyr` by Examples II - `gapminder`
 
@@ -1731,7 +1731,7 @@ ggplot(data = <DATA>) +
   <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
 ```
 
----
+
 
 #### Gapminder and R Package `gapminder`
 
@@ -1760,7 +1760,7 @@ ggplot(data = <DATA>) +
         -   pop: population
         -   gdpPercap: GDP per capita (US\$, inflation-adjusted)
 
----
+
 
 
 ```r
@@ -1769,7 +1769,7 @@ library(gapminder)
 library(WDI)
 ```
 
----
+
 
 #### R Package `gapminder` data
 
@@ -1792,7 +1792,7 @@ df %>% slice(1:10)
 #> 10 Afghanistan Asia       1997    41.8 22227415      635.
 ```
 
----
+
 
 
 ```r
@@ -1807,7 +1807,7 @@ glimpse(df)
 #> $ gdpPercap <dbl> 779.4453, 820.8530, 853.1007, 836.1971, …
 ```
 
----
+
 
 
 ```r
@@ -1830,7 +1830,7 @@ summary(df)
 #> 
 ```
 
----
+
 
 #### Tidyverse::ggplot
 
@@ -1841,18 +1841,18 @@ summary(df)
 ggplot(df, aes(x = year, y = lifeExp)) + geom_point()
 ```
 
-![](05-dplyr_files/figure-epub3/unnamed-chunk-14-1.png)<!-- -->
+<img src="05-dplyr_files/figure-html/unnamed-chunk-14-1.png" width="672" />
 
----
+
 
 
 ```r
 ggplot(df, aes(x = year, y = lifeExp)) + geom_line()
 ```
 
-![](05-dplyr_files/figure-epub3/unnamed-chunk-15-1.png)<!-- -->
+<img src="05-dplyr_files/figure-html/unnamed-chunk-15-1.png" width="672" />
 
----
+
 
 
 ```r
@@ -1861,9 +1861,9 @@ ggplot(df, aes(x = year, y = lifeExp)) + geom_boxplot()
 #> ℹ did you forget `aes(group = ...)`?
 ```
 
-![](05-dplyr_files/figure-epub3/unnamed-chunk-16-1.png)<!-- -->
+<img src="05-dplyr_files/figure-html/unnamed-chunk-16-1.png" width="672" />
 
----
+
 
 
 ```r
@@ -1871,16 +1871,16 @@ typeof(pull(df, year)) # same as typeof(df$year)
 #> [1] "integer"
 ```
 
----
+
 
 
 ```r
 ggplot(df, aes(y = lifeExp, group = year)) + geom_boxplot()
 ```
 
-![](05-dplyr_files/figure-epub3/unnamed-chunk-18-1.png)<!-- -->
+<img src="05-dplyr_files/figure-html/unnamed-chunk-18-1.png" width="672" />
 
----
+
 
 ##### Box Plot
 
@@ -1889,9 +1889,9 @@ ggplot(df, aes(y = lifeExp, group = year)) + geom_boxplot()
 ggplot(df, aes(x = as_factor(year), y = lifeExp)) + geom_boxplot()
 ```
 
-![](05-dplyr_files/figure-epub3/unnamed-chunk-19-1.png)<!-- -->
+<img src="05-dplyr_files/figure-html/unnamed-chunk-19-1.png" width="672" />
 
----
+
 
 #### Applications of `dplyr`
 
@@ -1903,9 +1903,9 @@ df %>% filter(country == "Afghanistan") %>%
   ggplot(aes(x = year, y = lifeExp)) + geom_line()
 ```
 
-![](05-dplyr_files/figure-epub3/unnamed-chunk-20-1.png)<!-- -->
+<img src="05-dplyr_files/figure-html/unnamed-chunk-20-1.png" width="672" />
 
----
+
 
 
 ```r
@@ -1913,9 +1913,9 @@ df %>% filter(country %in% c("Afghanistan", "Japan")) %>%
   ggplot(aes(x = year, y = lifeExp, color = country)) + geom_line()
 ```
 
-![](05-dplyr_files/figure-epub3/unnamed-chunk-21-1.png)<!-- -->
+<img src="05-dplyr_files/figure-html/unnamed-chunk-21-1.png" width="672" />
 
----
+
 
 
 ```r
@@ -1994,7 +1994,7 @@ df %>% distinct(country) %>% pull()
 #> 142 Levels: Afghanistan Albania Algeria Angola ... Zimbabwe
 ```
 
----
+
 
 
 ```r
@@ -2002,11 +2002,11 @@ df %>% filter(country %in% c("Brazil", "Russia", "India", "China")) %>%
   ggplot(aes(x = year, y = lifeExp, color = country)) + geom_line()
 ```
 
-![](05-dplyr_files/figure-epub3/unnamed-chunk-23-1.png)<!-- -->
+<img src="05-dplyr_files/figure-html/unnamed-chunk-23-1.png" width="672" />
 
 Russian data is missing.
 
----
+
 
 ### Exercises
 
@@ -2017,7 +2017,7 @@ Russian data is missing.
 
 3.  Choose several countries by yourself and do the similar investigations.
 
----
+
 
 ### `group_by` and `summarize`
 
@@ -2029,7 +2029,7 @@ df_lifeExp <- df %>% group_by(continent, year) %>%
   summarize(mean_lifeExp = mean(lifeExp), median_lifeExp = median(lifeExp), max_lifeExp = max(lifeExp), min_lifeExp = min(lifeExp), .groups = "keep")
 ```
 
----
+
 
 
 ```r
@@ -2052,7 +2052,7 @@ df_lifeExp %>% slice(1:10)
 #> #   ¹​median_lifeExp, ²​max_lifeExp, ³​min_lifeExp
 ```
 
----
+
 
 
 ```r
@@ -2061,9 +2061,9 @@ df %>% filter(year %in% c(1952, 1987, 2007)) %>%
   geom_boxplot()
 ```
 
-![](05-dplyr_files/figure-epub3/unnamed-chunk-26-1.png)<!-- -->
+<img src="05-dplyr_files/figure-html/unnamed-chunk-26-1.png" width="672" />
 
----
+
 
 
 ```r
@@ -2071,9 +2071,9 @@ df_lifeExp %>% ggplot(aes(x = year, y = mean_lifeExp, color = continent)) +
   geom_line()
 ```
 
-![](05-dplyr_files/figure-epub3/unnamed-chunk-27-1.png)<!-- -->
+<img src="05-dplyr_files/figure-html/unnamed-chunk-27-1.png" width="672" />
 
----
+
 
 
 ```r
@@ -2081,9 +2081,9 @@ df_lifeExp %>% ggplot(aes(x = year, y = mean_lifeExp, color = continent, linetyp
   geom_line()
 ```
 
-![](05-dplyr_files/figure-epub3/unnamed-chunk-28-1.png)<!-- -->
+<img src="05-dplyr_files/figure-html/unnamed-chunk-28-1.png" width="672" />
 
----
+
 
 
 ```r
@@ -2092,7 +2092,7 @@ df_lifeExp %>% ggplot() +
   geom_line(aes(x = year, y = median_lifeExp, linetype = continent))
 ```
 
-![](05-dplyr_files/figure-epub3/unnamed-chunk-29-1.png)<!-- -->
+<img src="05-dplyr_files/figure-html/unnamed-chunk-29-1.png" width="672" />
 
 
 ## The Week Two Assignment (in Moodle)
@@ -2113,7 +2113,7 @@ df_lifeExp %>% ggplot() +
       + Don't forget to add `library(tidyverse)` in the first code chunk.
     - An observation of the chart - in your own words.
 
----
+
 
 2. Load `gapminder` by `library(gapminder)`.
 
@@ -2124,7 +2124,7 @@ df_lifeExp %>% ggplot() +
 
 **Due:** 2023-01-09 23:59:00. Submit your R Notebook file in Moodle (The Second Assignment). Due on Monday!
 
----
+
 
 ### Original Data? WDI?
 
@@ -2146,7 +2146,7 @@ gapminder %>% slice(1:10)
 #> 10 Afghanistan Asia       1997    41.8 22227415      635.
 ```
 
----
+
 
 #### WDI
 
@@ -2174,7 +2174,7 @@ df_wdi <- WDI(
 #> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ```
 
----
+
 
 
 ```r
@@ -2194,7 +2194,7 @@ df_wdi %>% slice(1:10)
 #> 10 Afghanistan AF    AFG    1969    36.9 10494489        NA
 ```
 
----
+
 
 
 ```r
@@ -2219,7 +2219,7 @@ df_wdi_extra <- WDI(
 #> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ```
 
----
+
 
 
 ```r

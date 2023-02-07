@@ -4,15 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 14 Responses to Assignment Three | A Minimal Book Example</title>
-<meta name="author" content="John Doe">
+<title>Chapter 10 Responses to Assignment Three | Data Analysis for Researchers AY2022</title>
+<meta name="author" content="Hiroshi Suzuki">
 <meta name="description" content="Assignment Three: The Week Four Assignment WDI and ggplot2 Create an R Notebook of a Data Analysis containing the following and submit the rendered HTML file (eg. a3_123456.nb.html by replacing...">
 <meta name="generator" content="bookdown 0.31 with bs4_book()">
-<meta property="og:title" content="Chapter 14 Responses to Assignment Three | A Minimal Book Example">
+<meta property="og:title" content="Chapter 10 Responses to Assignment Three | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
+<meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/responses-to-assignment-three.html">
 <meta property="og:description" content="Assignment Three: The Week Four Assignment WDI and ggplot2 Create an R Notebook of a Data Analysis containing the following and submit the rendered HTML file (eg. a3_123456.nb.html by replacing...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 14 Responses to Assignment Three | A Minimal Book Example">
+<meta name="twitter:title" content="Chapter 10 Responses to Assignment Three | Data Analysis for Researchers AY2022">
 <meta name="twitter:description" content="Assignment Three: The Week Four Assignment WDI and ggplot2 Create an R Notebook of a Data Analysis containing the following and submit the rendered HTML file (eg. a3_123456.nb.html by replacing...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -20,28 +21,6 @@
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  </style>
-<style type="text/css">
-    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-        }
-    .hanging div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }
   </style>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -53,7 +32,7 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="">A Minimal Book Example</a>
+        <a href="index.html" title="">Data Analysis for Researchers AY2022</a>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
@@ -64,72 +43,20 @@
 </form>
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
-<li><a class="" href="intro.html"><span class="header-section-number">2</span> Introduction</a></li>
-<li><a class="" href="r-with-r-studio.html"><span class="header-section-number">3</span> R with R Studio</a></li>
-<li><a class="" href="tidyverse.html"><span class="header-section-number">4</span> tidyverse Packages</a></li>
-<li><a class="" href="rmarkdown.html"><span class="header-section-number">5</span> R Markdown</a></li>
-<li><a class="" href="dplyr.html"><span class="header-section-number">6</span> Data Transforamtion with dplyr</a></li>
-<li><a class="" href="responses-to-assignment-two.html"><span class="header-section-number">7</span> Responses to Assignment Two</a></li>
-<li><a class="" href="set-up-1.html"><span class="header-section-number">8</span> Set up</a></li>
-<li><a class="" href="general-comments.html"><span class="header-section-number">9</span> General Comments</a></li>
-<li><a class="" href="responses-to-questions.html"><span class="header-section-number">10</span> Responses to Questions</a></li>
-<li><a class="" href="appendix-change-colors-shapes-linetypes-etc.-manually.html"><span class="header-section-number">11</span> Appendix: Change colors, shapes, linetypes, etc. manually</a></li>
-<li><a class="" href="wdi.html"><span class="header-section-number">12</span> Importing Public Data, WDI</a></li>
-<li><a class="" href="ggokit2.html"><span class="header-section-number">13</span> Data Visualization and `ggplot2’</a></li>
-<li><a class="active" href="responses-to-assignment-three.html"><span class="header-section-number">14</span> Responses to Assignment Three</a></li>
-<li><a class="" href="set-up-2.html"><span class="header-section-number">15</span> Set up</a></li>
-<li><a class="" href="general-comments-1.html"><span class="header-section-number">16</span> General Comments</a></li>
-<li><a class="" href="world-development-indicators-wdi.html"><span class="header-section-number">17</span> World Development Indicators (WDI)</a></li>
-<li><a class="" href="responses-to-questions-1.html"><span class="header-section-number">18</span> Responses to Questions</a></li>
-<li><a class="" href="regression-lines-topic-of-eda5.html"><span class="header-section-number">19</span> Regression Lines; Topic of EDA5</a></li>
-<li><a class="" href="appendix-a-secondary-axis.html"><span class="header-section-number">20</span> Appendix: A secondary axis</a></li>
-<li><a class="" href="tidy.html"><span class="header-section-number">21</span> Tidy Data</a></li>
-<li><a class="" href="workflow.html"><span class="header-section-number">22</span> EDA Workflow</a></li>
-<li><a class="" href="assignment-four-the-week-five-assignment.html">Assignment Four: The Week Five Assignment</a></li>
-<li><a class="" href="set-up-3.html"><span class="header-section-number">23</span> Set up</a></li>
-<li><a class="" href="general-comments-2.html"><span class="header-section-number">24</span> General Comments</a></li>
-<li><a class="" href="your-work.html"><span class="header-section-number">25</span> Your Work</a></li>
-<li><a class="" href="responses-to-questions-2.html"><span class="header-section-number">26</span> Responses to Questions</a></li>
-<li><a class="" href="model.html"><span class="header-section-number">27</span> Model</a></li>
-<li><a class="" href="roudups.html"><span class="header-section-number">28</span> Roudups</a></li>
-<li><a class="" href="a5resp.html"><span class="header-section-number">29</span> Responses to Assignment Five</a></li>
-<li><a class="" href="set-up-4.html"><span class="header-section-number">30</span> Set up</a></li>
-<li><a class="" href="general-comments-3.html"><span class="header-section-number">31</span> General Comments</a></li>
-<li><a class="" href="your-work-1.html"><span class="header-section-number">32</span> Your Work</a></li>
-<li><a class="" href="responses-to-questions-3.html"><span class="header-section-number">33</span> Responses to Questions</a></li>
-<li><a class="" href="my-comments-after-review.html"><span class="header-section-number">34</span> My Comments after Review</a></li>
-<li><a class="" href="eda.html"><span class="header-section-number">35</span> Exploartory Data analysis</a></li>
-<li><a class="" href="importing.html"><span class="header-section-number">36</span> Impoarting Data</a></li>
-<li><a class="" href="transforming.html"><span class="header-section-number">37</span> Transforming Data</a></li>
-<li><a class="" href="tidying.html"><span class="header-section-number">38</span> Tidying Data</a></li>
-<li><a class="" href="visualizing.html"><span class="header-section-number">39</span> Visualizing Data</a></li>
-<li><a class="" href="modeling.html"><span class="header-section-number">40</span> Modeling Data</a></li>
-<li><a class="" href="communicating-data-communicating.html"><span class="header-section-number">41</span> Communicating Data {communicating}</a></li>
-<li><a class="" href="worldbank.html"><span class="header-section-number">42</span> World Bank</a></li>
-<li><a class="" href="owid.html"><span class="header-section-number">43</span> Our World in Data</a></li>
-<li><a class="" href="oecd.html"><span class="header-section-number">44</span> OECD</a></li>
-<li><a class="" href="undata.html"><span class="header-section-number">45</span> UN Data</a></li>
-<li><a class="" href="wir.html"><span class="header-section-number">46</span> World Inequality Report</a></li>
-<li><a class="" href="histdata.html"><span class="header-section-number">47</span> HistData</a></li>
-<li><a class="" href="covid19.html"><span class="header-section-number">48</span> Covid 19</a></li>
-<li><a class="" href="bookdown.html"><span class="header-section-number">49</span> Bookdown</a></li>
-<li><a class="" href="template.html"><span class="header-section-number">50</span> Template</a></li>
-</ul>
+        <ul class="book-toc list-unstyled"><li><a class="" href="index.html"><span class="header-section-number">Chapter 10</span> Responses to Assignment Three</a></li></ul>
 
         <div class="book-extra">
           <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="responses-to-assignment-three" class="section level1" number="14">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="responses-to-assignment-three" class="section level1" number="10">
 <h1>
-<span class="header-section-number">14</span> Responses to Assignment Three<a class="anchor" aria-label="anchor" href="#responses-to-assignment-three"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10</span> Responses to Assignment Three<a class="anchor" aria-label="anchor" href="#responses-to-assignment-three"><i class="fas fa-link"></i></a>
 </h1>
-<div id="assignment-three-the-week-four-assignment" class="section level2 unnumbered">
-<h2>Assignment Three: The Week Four Assignment<a class="anchor" aria-label="anchor" href="#assignment-three-the-week-four-assignment"><i class="fas fa-link"></i></a>
-</h2>
+<div id="assignment-three-the-week-four-assignment" class="section level3 unnumbered">
+<h3>Assignment Three: The Week Four Assignment<a class="anchor" aria-label="anchor" href="#assignment-three-the-week-four-assignment"><i class="fas fa-link"></i></a>
+</h3>
 <p><strong>WDI and <code>ggplot2</code></strong></p>
 <ul>
 <li>Create an R Notebook of a Data Analysis containing the following and submit the rendered HTML file (eg. <code>a3_123456.nb.html</code> by replacing 123456 with your ID)
@@ -164,21 +91,1138 @@
 </ol>
 <p><strong>Due:</strong> 2023-01-16 23:59:00. Submit your R Notebook file in Moodle (The Third Assignment). Due on Monday!</p>
 </div>
+<div id="set-up-1" class="section level2" number="10.1">
+<h2>
+<span class="header-section-number">10.1</span> Set up<a class="anchor" aria-label="anchor" href="#set-up-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Follow the workflow explained in EDA4 on January 18.</p>
+<div id="eda-by-r-studio-step-1" class="section level3" number="10.1.1">
+<h3>
+<span class="header-section-number">10.1.1</span> EDA by R Studio: Step 1<a class="anchor" aria-label="anchor" href="#eda-by-r-studio-step-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>In RStudio,</p>
+<p>1.1. Project</p>
+<ul>
+<li>Create a new project: File &gt; New Project; or<br>
+</li>
+<li>Open a project: File &gt; Open Project, Open Project in New Session, Open Recent Project
+<ul>
+<li>It is easier to find an existing project from: File &gt; Recent Project</li>
+</ul>
+</li>
+<li><em>Check there is a file <code>project_name.Rproj</code> in your project folder (directory)</em></li>
+</ul>
+<p>1.2. data folder (directory) <code>data</code></p>
+<ul>
+<li>Create a data folder: Press New Folder at the right bottom pane; or</li>
+<li>Confirm the data folder previously created: Press Files at the right bottom pane</li>
+<li><em>If you follow 1, the data folder exists in your project folder</em></li>
+</ul>
+<p>1.3. Move (or copy) data for the project to the data folder</p>
+<ul>
+<li>If you downloaded the data, it is in your Download folder. Move it to <code>data</code>.</li>
+<li><em>Check in your RStudio that your data is in <code>data</code>: Press Files at the right bottom pane and click <code>data</code>, the data folder.</em></li>
+</ul>
+</div>
+<div id="eda-by-r-studio-step-2" class="section level3" number="10.1.2">
+<h3>
+<span class="header-section-number">10.1.2</span> EDA by R Studio: Step 2<a class="anchor" aria-label="anchor" href="#eda-by-r-studio-step-2"><i class="fas fa-link"></i></a>
+</h3>
+<p>2.1. Project Notebook: Memo</p>
+<ul>
+<li>
+<p>Create an R Notebook: File &gt; New File &gt; R Notebook</p>
+<ul>
+<li>You can use R Notebook template in Moodle by moving the template (template.Rmd or template.nb.Rmd) file in your project folder or copy and paste the text file into your new R Notebook.</li>
+<li>If you use template.nb.Rmd (R Notebook File), choose Open in Editor.</li>
+</ul>
+</li>
+<li><p>Add descriptive title.</p></li>
+</ul>
+<p>2.2. Setup Code Chunk</p>
+<ul>
+<li>
+<p>Create a code chunk and add packages to use in the project and RUN the code.</p>
+<ul>
+<li>library(tidyverse)</li>
+<li>library(WDI)</li>
+<li>or any other packages</li>
+</ul>
+</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
+<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 </span></span>
+<span><span class="co">#&gt; ✔ tibble  3.1.8      ✔ dplyr   1.0.10</span></span>
+<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.5.0 </span></span>
+<span><span class="co">#&gt; ✔ readr   2.1.3      ✔ forcats 0.5.2 </span></span>
+<span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
+<span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
+<span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/WDI/">WDI</a></span><span class="op">)</span></span></code></pre></div>
+<p><em>When people read a paper, they want to know the minimal set of packages required to install. So it is better to load the packages by library() you actually need in the paper.</em></p>
+<p>2.3. Choose <code>Source</code> or <code>Visual</code> editor mode, and start editing Project Notebook</p>
+<ul>
+<li>Set up Headings such as: About, Data, Analysis and Visualizations, Conclusions</li>
+<li>Under About or Data, paste url of the sites and/or the data</li>
+</ul>
+<p>2.4. Edit a new file by saving as for a report</p>
+<ul>
+<li>File &gt; Save As…</li>
+</ul>
+</div>
+</div>
+<div id="general-comments" class="section level2" number="10.2">
+<h2>
+<span class="header-section-number">10.2</span> General Comments<a class="anchor" aria-label="anchor" href="#general-comments"><i class="fas fa-link"></i></a>
+</h2>
+<div id="varibles-1" class="section level3" number="10.2.1">
+<h3>
+<span class="header-section-number">10.2.1</span> Varibles<a class="anchor" aria-label="anchor" href="#varibles-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>We should know first about the variables. At least you must know if each of the variables is a categorical variable or a numerical variable.</p>
+</div>
+<div id="visualization" class="section level3" number="10.2.2">
+<h3>
+<span class="header-section-number">10.2.2</span> Visualization<a class="anchor" aria-label="anchor" href="#visualization"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>What type of variation occurs within my variables?</li>
+<li>What type of covariation occurs between my variables?</li>
+</ul>
+</div>
+</div>
+<div id="world-development-indicators-wdi" class="section level2" number="10.3">
+<h2>
+<span class="header-section-number">10.3</span> World Development Indicators (WDI)<a class="anchor" aria-label="anchor" href="#world-development-indicators-wdi"><i class="fas fa-link"></i></a>
+</h2>
+<div id="setup-1" class="section level3" number="10.3.1">
+<h3>
+<span class="header-section-number">10.3.1</span> Setup<a class="anchor" aria-label="anchor" href="#setup-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>It is not a must, but it is good to run the following code chunk and use <code>wdi_cache</code> for <code><a href="https://vincentarelbundock.github.io/WDI/reference/WDIsearch.html">WDIsearch()</a></code> to update the mata data. See <code>WDIcache</code> help.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDIcache.html">WDIcache</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div id="indicators-used-in-assignment-three" class="section level3" number="10.3.2">
+<h3>
+<span class="header-section-number">10.3.2</span> Indicators Used in Assignment Three<a class="anchor" aria-label="anchor" href="#indicators-used-in-assignment-three"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>NY.GDP.PCAP.KD: GDP per capita (constant 2015 US$)</li>
+<li>NY.GDP.MKTP.CD: GDP (current US$)</li>
+<li>NY.GDP.PCAP.KD.ZG: GDP per capita growth (annual%)</li>
+<li>SP.POP.TOTL: Total Population</li>
+<li>IP.JRN.ARTC.SC: Scientific and technical journal articles</li>
+<li>FP.CPI.TOTL.ZG: Inflation, consumer prices (% annual growth)</li>
+<li>DT.ODA.ODAT.PC.ZS: Net ODA received per capita (current US$)</li>
+<li>BX.KLT.DINV.CD.WD: Foreign direct investment, net inflows (BoP, current US$)</li>
+<li>MS.MIL.XPND.GD.ZS: Military expenditure (% of GDP)</li>
+<li>MS.MIL.TOTL.P1: Total Armed Forces Personnel</li>
+<li>SI.POV.MDIM: Multidimensional poverty headcount ratio (% of total population)</li>
+<li>SI.POV.NAHC: Poverty headcount ratio at national poverty lines (% of population)</li>
+<li>SI.POV.GINI: Gini index</li>
+<li>NY.GNS.ICTR.ZS: Gross savings (% of GDP)</li>
+<li>SL.UEM.TOTL.ZS: Unemployment, total (% of total labor force) (modeled ILO estimate)</li>
+<li>SP.URB.TOTL.IN.ZS (Urban population (% of total population))</li>
+<li>AG.LND.AGRI.ZS: Agricultural land (% of land area)</li>
+<li>SE.ADT.LITR.FE.ZS: Literacy rate, adult female (% of females ages 15 and above))</li>
+<li>SE.ADT.LITR.MA.ZS: Literacy rate, adult male (% of males ages 15 and above))</li>
+<li>SE.ADT.LITR.ZS: Literacy rate, adult total</li>
+<li>SE.ADT.1524.LT.FE.ZS: Literacy rate, youth female (% of females ages 15-24)</li>
+<li>SE.XPD.TOTL.GD.ZS: Government expenditure on education, total (% of GDP)</li>
+<li>SG.GEN.PARL.ZS: Proportion of seats held by women in national parliaments (%)</li>
+</ul>
+</div>
+<div id="wdisearch" class="section level3" number="10.3.3">
+<h3>
+<span class="header-section-number">10.3.3</span> WDIsearch<a class="anchor" aria-label="anchor" href="#wdisearch"><i class="fas fa-link"></i></a>
+</h3>
+<p>We obtain the information of the data, i.e., meta data of WDI: Name, Indicator, Description, Source, etc. by <code>WDIsearch</code>.</p>
+<ul>
+<li>Usage</li>
+</ul>
+<pre><code>WDIsearch(string = "gdp", field = "name", short = TRUE, cache = NULL)</code></pre>
+<ul>
+<li>
+<p>Arguments</p>
+<ul>
+<li><p><code>string</code>: Character string. Search for this string using grep with ignore.case=TRUE.</p></li>
+<li><p><code>field</code>: Character string. Search this field. Admissible fields: ‘indicator’, ‘name’, ‘description’, ‘sourceDatabase’, ‘sourceOrganization’</p></li>
+<li><p><code>short</code>: TRUE: Returns only the indicator’s code and name. FALSE: Returns the indicator’s code, name, description, and source.</p></li>
+<li><p><code>cache</code>: Data list generated by the WDIcache function. If omitted, WDIsearch will search a local list of series.</p></li>
+</ul>
+</li>
+</ul>
+<p>If you follow the order of the arguments, you can omit argument names: <code>string</code>, <code>field</code>, <code>short</code>, <code>cache</code>.</p>
+<ul>
+<li>The simplest format 1.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDIsearch.html">WDIsearch</a></span><span class="op">(</span><span class="st">"NY.GNS.ICTR.ZS"</span>, <span class="st">"indicator"</span><span class="op">)</span></span>
+<span><span class="co">#&gt;            indicator                     name</span></span>
+<span><span class="co">#&gt; 11497 NY.GNS.ICTR.ZS Gross savings (% of GDP)</span></span></code></pre></div>
+<ul>
+<li>The simplest format 2.</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDIsearch.html">WDIsearch</a></span><span class="op">(</span><span class="st">"Literacy rate"</span>, <span class="st">"name"</span><span class="op">)</span></span>
+<span><span class="co">#&gt;                             indicator</span></span>
+<span><span class="co">#&gt; 27            1.1_YOUTH.LITERACY.RATE</span></span>
+<span><span class="co">#&gt; 8841            IN.POV.LIT.RAT.FEMALE</span></span>
+<span><span class="co">#&gt; 8842              IN.POV.LIT.RAT.MALE</span></span>
+<span><span class="co">#&gt; 8843              IN.POV.LIT.RAT.RURL</span></span>
+<span><span class="co">#&gt; 8844  IN.POV.LIT.RAT.SLUMS.FEMALE.PCT</span></span>
+<span><span class="co">#&gt; 8845    IN.POV.LIT.RAT.SLUMS.MALE.PCT</span></span>
+<span><span class="co">#&gt; 8846    IN.POV.LIT.RAT.SLUMS.TOTL.PCT</span></span>
+<span><span class="co">#&gt; 8847              IN.POV.LIT.RAT.TOTL</span></span>
+<span><span class="co">#&gt; 8848              IN.POV.LIT.RAT.URBN</span></span>
+<span><span class="co">#&gt; 15160            SE.ADT.1524.IL.FE.ZS</span></span>
+<span><span class="co">#&gt; 15161            SE.ADT.1524.IL.MA.ZS</span></span>
+<span><span class="co">#&gt; 15162               SE.ADT.1524.IL.ZS</span></span>
+<span><span class="co">#&gt; 15163            SE.ADT.1524.LT.FE.ZS</span></span>
+<span><span class="co">#&gt; 15164            SE.ADT.1524.LT.FM.ZS</span></span>
+<span><span class="co">#&gt; 15165            SE.ADT.1524.LT.MA.ZS</span></span>
+<span><span class="co">#&gt; 15166               SE.ADT.1524.LT.ZS</span></span>
+<span><span class="co">#&gt; 15167               SE.ADT.ILIT.FE.ZS</span></span>
+<span><span class="co">#&gt; 15168               SE.ADT.ILIT.MA.ZS</span></span>
+<span><span class="co">#&gt; 15169                  SE.ADT.ILIT.ZS</span></span>
+<span><span class="co">#&gt; 15170               SE.ADT.LITR.FE.ZS</span></span>
+<span><span class="co">#&gt; 15171               SE.ADT.LITR.MA.ZS</span></span>
+<span><span class="co">#&gt; 15172                  SE.ADT.LITR.ZS</span></span>
+<span><span class="co">#&gt; 15186                 SE.LITR.15UP.ZS</span></span>
+<span><span class="co">#&gt; 18792           UIS.LR.AG15T24.F.LPIA</span></span>
+<span><span class="co">#&gt; 18793             UIS.LR.AG15T24.GPIA</span></span>
+<span><span class="co">#&gt; 18794             UIS.LR.AG15T24.LPIA</span></span>
+<span><span class="co">#&gt; 18795           UIS.LR.AG15T24.M.LPIA</span></span>
+<span><span class="co">#&gt; 18796              UIS.LR.AG15T24.RUR</span></span>
+<span><span class="co">#&gt; 18797            UIS.LR.AG15T24.RUR.F</span></span>
+<span><span class="co">#&gt; 18798         UIS.LR.AG15T24.RUR.GPIA</span></span>
+<span><span class="co">#&gt; 18799            UIS.LR.AG15T24.RUR.M</span></span>
+<span><span class="co">#&gt; 18800              UIS.LR.AG15T24.URB</span></span>
+<span><span class="co">#&gt; 18801            UIS.LR.AG15T24.URB.F</span></span>
+<span><span class="co">#&gt; 18802         UIS.LR.AG15T24.URB.GPIA</span></span>
+<span><span class="co">#&gt; 18803            UIS.LR.AG15T24.URB.M</span></span>
+<span><span class="co">#&gt; 18804           UIS.LR.AG15T99.F.LPIA</span></span>
+<span><span class="co">#&gt; 18805             UIS.LR.AG15T99.GPIA</span></span>
+<span><span class="co">#&gt; 18806             UIS.LR.AG15T99.LPIA</span></span>
+<span><span class="co">#&gt; 18807           UIS.LR.AG15T99.M.LPIA</span></span>
+<span><span class="co">#&gt; 18808              UIS.LR.AG15T99.RUR</span></span>
+<span><span class="co">#&gt; 18809            UIS.LR.AG15T99.RUR.F</span></span>
+<span><span class="co">#&gt; 18810         UIS.LR.AG15T99.RUR.GPIA</span></span>
+<span><span class="co">#&gt; 18811            UIS.LR.AG15T99.RUR.M</span></span>
+<span><span class="co">#&gt; 18812              UIS.LR.AG15T99.URB</span></span>
+<span><span class="co">#&gt; 18813            UIS.LR.AG15T99.URB.F</span></span>
+<span><span class="co">#&gt; 18814         UIS.LR.AG15T99.URB.GPIA</span></span>
+<span><span class="co">#&gt; 18815            UIS.LR.AG15T99.URB.M</span></span>
+<span><span class="co">#&gt; 18816                  UIS.LR.AG25T64</span></span>
+<span><span class="co">#&gt; 18817                UIS.LR.AG25T64.F</span></span>
+<span><span class="co">#&gt; 18818           UIS.LR.AG25T64.F.LPIA</span></span>
+<span><span class="co">#&gt; 18819             UIS.LR.AG25T64.GPIA</span></span>
+<span><span class="co">#&gt; 18820             UIS.LR.AG25T64.LPIA</span></span>
+<span><span class="co">#&gt; 18821                UIS.LR.AG25T64.M</span></span>
+<span><span class="co">#&gt; 18822           UIS.LR.AG25T64.M.LPIA</span></span>
+<span><span class="co">#&gt; 18823              UIS.LR.AG25T64.RUR</span></span>
+<span><span class="co">#&gt; 18824            UIS.LR.AG25T64.RUR.F</span></span>
+<span><span class="co">#&gt; 18825         UIS.LR.AG25T64.RUR.GPIA</span></span>
+<span><span class="co">#&gt; 18826            UIS.LR.AG25T64.RUR.M</span></span>
+<span><span class="co">#&gt; 18827              UIS.LR.AG25T64.URB</span></span>
+<span><span class="co">#&gt; 18828            UIS.LR.AG25T64.URB.F</span></span>
+<span><span class="co">#&gt; 18829         UIS.LR.AG25T64.URB.GPIA</span></span>
+<span><span class="co">#&gt; 18830            UIS.LR.AG25T64.URB.M</span></span>
+<span><span class="co">#&gt; 18831                     UIS.LR.AG65</span></span>
+<span><span class="co">#&gt; 18832                   UIS.LR.AG65.F</span></span>
+<span><span class="co">#&gt; 18833                   UIS.LR.AG65.M</span></span>
+<span><span class="co">#&gt; 18834           UIS.LR.AG65T99.F.LPIA</span></span>
+<span><span class="co">#&gt; 18835             UIS.LR.AG65T99.GPIA</span></span>
+<span><span class="co">#&gt; 18836             UIS.LR.AG65T99.LPIA</span></span>
+<span><span class="co">#&gt; 18837           UIS.LR.AG65T99.M.LPIA</span></span>
+<span><span class="co">#&gt; 18838              UIS.LR.AG65T99.RUR</span></span>
+<span><span class="co">#&gt; 18839            UIS.LR.AG65T99.RUR.F</span></span>
+<span><span class="co">#&gt; 18840         UIS.LR.AG65T99.RUR.GPIA</span></span>
+<span><span class="co">#&gt; 18841            UIS.LR.AG65T99.RUR.M</span></span>
+<span><span class="co">#&gt; 18842              UIS.LR.AG65T99.URB</span></span>
+<span><span class="co">#&gt; 18843            UIS.LR.AG65T99.URB.F</span></span>
+<span><span class="co">#&gt; 18844         UIS.LR.AG65T99.URB.GPIA</span></span>
+<span><span class="co">#&gt; 18845            UIS.LR.AG65T99.URB.M</span></span>
+<span><span class="co">#&gt;                                                                                             name</span></span>
+<span><span class="co">#&gt; 27                                          Literacy rate, youth total (% of people ages 15-24) </span></span>
+<span><span class="co">#&gt; 8841                                                                    Literacy Rate Female (%)</span></span>
+<span><span class="co">#&gt; 8842                                                                      Literacy Rate Male (%)</span></span>
+<span><span class="co">#&gt; 8843                                                                    Literacy rate, Rural (%)</span></span>
+<span><span class="co">#&gt; 8844                                                           Literacy Rate in Slums-Female (%)</span></span>
+<span><span class="co">#&gt; 8845                                                           Literacy Rate in Slums - Male (%)</span></span>
+<span><span class="co">#&gt; 8846                                                         Literacy Rate in Slums  - Total (%)</span></span>
+<span><span class="co">#&gt; 8847                                                                           Literacy Rate (%)</span></span>
+<span><span class="co">#&gt; 8848                                                                    Literacy rate, Urban (%)</span></span>
+<span><span class="co">#&gt; 15160                                    Illiteracy rate, youth female (% of females ages 15-24)</span></span>
+<span><span class="co">#&gt; 15161                                        Illiteracy rate, youth male (% of males ages 15-24)</span></span>
+<span><span class="co">#&gt; 15162                                      Illiteracy rate, youth total (% of people ages 15-24)</span></span>
+<span><span class="co">#&gt; 15163                                      Literacy rate, youth female (% of females ages 15-24)</span></span>
+<span><span class="co">#&gt; 15164                               Literacy rate, youth (ages 15-24), gender parity index (GPI)</span></span>
+<span><span class="co">#&gt; 15165                                          Literacy rate, youth male (% of males ages 15-24)</span></span>
+<span><span class="co">#&gt; 15166                                        Literacy rate, youth total (% of people ages 15-24)</span></span>
+<span><span class="co">#&gt; 15167                             Illiteracy rate, adult female (% of females ages 15 and above)</span></span>
+<span><span class="co">#&gt; 15168                                 Illiteracy rate, adult male (% of males ages 15 and above)</span></span>
+<span><span class="co">#&gt; 15169                               Illiteracy rate, adult total (% of people ages 15 and above)</span></span>
+<span><span class="co">#&gt; 15170                               Literacy rate, adult female (% of females ages 15 and above)</span></span>
+<span><span class="co">#&gt; 15171                                   Literacy rate, adult male (% of males ages 15 and above)</span></span>
+<span><span class="co">#&gt; 15172                                 Literacy rate, adult total (% of people ages 15 and above)</span></span>
+<span><span class="co">#&gt; 15186                    Literacy Rate for Population age 15 and over (in % of total population)</span></span>
+<span><span class="co">#&gt; 18792 Youth literacy rate, population 15-24 years, female, adjusted location parity index (LPIA)</span></span>
+<span><span class="co">#&gt; 18793           Youth literacy rate, population 15-24 years, adjusted gender parity index (GPIA)</span></span>
+<span><span class="co">#&gt; 18794         Youth literacy rate, population 15-24 years, adjusted location parity index (LPIA)</span></span>
+<span><span class="co">#&gt; 18795   Youth literacy rate, population 15-24 years, male, adjusted location parity index (LPIA)</span></span>
+<span><span class="co">#&gt; 18796                         Youth literacy rate, population 15-24 years, rural, both sexes (%)</span></span>
+<span><span class="co">#&gt; 18797                             Youth literacy rate, population 15-24 years, rural, female (%)</span></span>
+<span><span class="co">#&gt; 18798    Youth literacy rate, population 15-24 years, rural, adjusted gender parity index (GPIA)</span></span>
+<span><span class="co">#&gt; 18799                               Youth literacy rate, population 15-24 years, rural, male (%)</span></span>
+<span><span class="co">#&gt; 18800                         Youth literacy rate, population 15-24 years, urban, both sexes (%)</span></span>
+<span><span class="co">#&gt; 18801                             Youth literacy rate, population 15-24 years, urban, female (%)</span></span>
+<span><span class="co">#&gt; 18802    Youth literacy rate, population 15-24 years, urban, adjusted gender parity index (GPIA)</span></span>
+<span><span class="co">#&gt; 18803                               Youth literacy rate, population 15-24 years, urban, male (%)</span></span>
+<span><span class="co">#&gt; 18804   Adult literacy rate, population 15+ years, female, adjusted location parity index (LPIA)</span></span>
+<span><span class="co">#&gt; 18805             Adult literacy rate, population 15+ years, adjusted gender parity index (GPIA)</span></span>
+<span><span class="co">#&gt; 18806           Adult literacy rate, population 15+ years, adjusted location parity index (LPIA)</span></span>
+<span><span class="co">#&gt; 18807     Adult literacy rate, population 15+ years, male, adjusted location parity index (LPIA)</span></span>
+<span><span class="co">#&gt; 18808                           Adult literacy rate, population 15+ years, rural, both sexes (%)</span></span>
+<span><span class="co">#&gt; 18809                               Adult literacy rate, population 15+ years, rural, female (%)</span></span>
+<span><span class="co">#&gt; 18810      Adult literacy rate, population 15+ years, rural, adjusted gender parity index (GPIA)</span></span>
+<span><span class="co">#&gt; 18811                                 Adult literacy rate, population 15+ years, rural, male (%)</span></span>
+<span><span class="co">#&gt; 18812                           Adult literacy rate, population 15+ years, urban, both sexes (%)</span></span>
+<span><span class="co">#&gt; 18813                               Adult literacy rate, population 15+ years, urban, female (%)</span></span>
+<span><span class="co">#&gt; 18814      Adult literacy rate, population 15+ years, urban, adjusted gender parity index (GPIA)</span></span>
+<span><span class="co">#&gt; 18815                                 Adult literacy rate, population 15+ years, urban, male (%)</span></span>
+<span><span class="co">#&gt; 18816                                      Literacy rate, population 25-64 years, both sexes (%)</span></span>
+<span><span class="co">#&gt; 18817                                          Literacy rate, population 25-64 years, female (%)</span></span>
+<span><span class="co">#&gt; 18818       Literacy rate, population 25-64 years, female, adjusted location parity index (LPIA)</span></span>
+<span><span class="co">#&gt; 18819                 Literacy rate, population 25-64 years, adjusted gender parity index (GPIA)</span></span>
+<span><span class="co">#&gt; 18820               Literacy rate, population 25-64 years, adjusted location parity index (LPIA)</span></span>
+<span><span class="co">#&gt; 18821                                            Literacy rate, population 25-64 years, male (%)</span></span>
+<span><span class="co">#&gt; 18822         Literacy rate, population 25-64 years, male, adjusted location parity index (LPIA)</span></span>
+<span><span class="co">#&gt; 18823                               Literacy rate, population 25-64 years, rural, both sexes (%)</span></span>
+<span><span class="co">#&gt; 18824                                   Literacy rate, population 25-64 years, rural, female (%)</span></span>
+<span><span class="co">#&gt; 18825          Literacy rate, population 25-64 years, rural, adjusted gender parity index (GPIA)</span></span>
+<span><span class="co">#&gt; 18826                                     Literacy rate, population 25-64 years, rural, male (%)</span></span>
+<span><span class="co">#&gt; 18827                               Literacy rate, population 25-64 years, urban, both sexes (%)</span></span>
+<span><span class="co">#&gt; 18828                                   Literacy rate, population 25-64 years, urban, female (%)</span></span>
+<span><span class="co">#&gt; 18829          Literacy rate, population 25-64 years, urban, adjusted gender parity index (GPIA)</span></span>
+<span><span class="co">#&gt; 18830                                     Literacy rate, population 25-64 years, urban, male (%)</span></span>
+<span><span class="co">#&gt; 18831                                Elderly literacy rate, population 65+ years, both sexes (%)</span></span>
+<span><span class="co">#&gt; 18832                                    Elderly literacy rate, population 65+ years, female (%)</span></span>
+<span><span class="co">#&gt; 18833                                      Elderly literacy rate, population 65+ years, male (%)</span></span>
+<span><span class="co">#&gt; 18834 Elderly literacy rate, population 65+ years, female, adjusted location parity index (LPIA)</span></span>
+<span><span class="co">#&gt; 18835           Elderly literacy rate, population 65+ years, adjusted gender parity index (GPIA)</span></span>
+<span><span class="co">#&gt; 18836         Elderly literacy rate, population 65+ years, adjusted location parity index (LPIA)</span></span>
+<span><span class="co">#&gt; 18837   Elderly literacy rate, population 65+ years, male, adjusted location parity index (LPIA)</span></span>
+<span><span class="co">#&gt; 18838                         Elderly literacy rate, population 65+ years, rural, both sexes (%)</span></span>
+<span><span class="co">#&gt; 18839                             Elderly literacy rate, population 65+ years, rural, female (%)</span></span>
+<span><span class="co">#&gt; 18840    Elderly literacy rate, population 65+ years, rural, adjusted gender parity index (GPIA)</span></span>
+<span><span class="co">#&gt; 18841                               Elderly literacy rate, population 65+ years, rural, male (%)</span></span>
+<span><span class="co">#&gt; 18842                         Elderly literacy rate, population 65+ years, urban, both sexes (%)</span></span>
+<span><span class="co">#&gt; 18843                             Elderly literacy rate, population 65+ years, urban, female (%)</span></span>
+<span><span class="co">#&gt; 18844    Elderly literacy rate, population 65+ years, urban, adjusted gender parity index (GPIA)</span></span>
+<span><span class="co">#&gt; 18845                               Elderly literacy rate, population 65+ years, urban, male (%)</span></span></code></pre></div>
+<ul>
+<li>Detailed with short = FALSE</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDIsearch.html">WDIsearch</a></span><span class="op">(</span><span class="st">"IP.JRN.ARTC.SC"</span>, <span class="st">"indicator"</span>, <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="co">#&gt;           indicator</span></span>
+<span><span class="co">#&gt; 8885 IP.JRN.ARTC.SC</span></span>
+<span><span class="co">#&gt;                                           name</span></span>
+<span><span class="co">#&gt; 8885 Scientific and technical journal articles</span></span>
+<span><span class="co">#&gt;                                                                                                                                                                                                                                                                              description</span></span>
+<span><span class="co">#&gt; 8885 Scientific and technical journal articles refer to the number of scientific and engineering articles published in the following fields: physics, biology, chemistry, mathematics, clinical medicine, biomedical research, engineering and technology, and earth and space sciences.</span></span>
+<span><span class="co">#&gt;                    sourceDatabase</span></span>
+<span><span class="co">#&gt; 8885 World Development Indicators</span></span>
+<span><span class="co">#&gt;                                                    sourceOrganization</span></span>
+<span><span class="co">#&gt; 8885 National Science Foundation, Science and Engineering Indicators.</span></span></code></pre></div>
+<ul>
+<li>You can use <code>wdi_cache</code> downloaded above to use the updated meta data.</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDIsearch.html">WDIsearch</a></span><span class="op">(</span><span class="st">"Government expenditure on education"</span>, <span class="st">"name"</span>, <span class="cn">FALSE</span>, <span class="va">wdi_cache</span><span class="op">)</span></span>
+<span><span class="co">#&gt;                     indicator</span></span>
+<span><span class="co">#&gt; 16703          SE.XPD.PRIM.ZS</span></span>
+<span><span class="co">#&gt; 16707          SE.XPD.SECO.ZS</span></span>
+<span><span class="co">#&gt; 16712          SE.XPD.TERT.ZS</span></span>
+<span><span class="co">#&gt; 16713       SE.XPD.TOTL.GB.ZS</span></span>
+<span><span class="co">#&gt; 16714       SE.XPD.TOTL.GD.ZS</span></span>
+<span><span class="co">#&gt; 20830         UIS.X.PPP.FSGOV</span></span>
+<span><span class="co">#&gt; 20831      UIS.X.PPP.UK.FSGOV</span></span>
+<span><span class="co">#&gt; 20840    UIS.X.PPPCONST.FSGOV</span></span>
+<span><span class="co">#&gt; 20841 UIS.X.PPPCONST.UK.FSGOV</span></span>
+<span><span class="co">#&gt; 20850          UIS.X.US.FSGOV</span></span>
+<span><span class="co">#&gt; 20851       UIS.X.US.UK.FSGOV</span></span>
+<span><span class="co">#&gt; 20860     UIS.X.USCONST.FSGOV</span></span>
+<span><span class="co">#&gt; 20861  UIS.X.USCONST.UK.FSGOV</span></span>
+<span><span class="co">#&gt;                                                                                       name</span></span>
+<span><span class="co">#&gt; 16703          Expenditure on primary education (% of government expenditure on education)</span></span>
+<span><span class="co">#&gt; 16707        Expenditure on secondary education (% of government expenditure on education)</span></span>
+<span><span class="co">#&gt; 16712         Expenditure on tertiary education (% of government expenditure on education)</span></span>
+<span><span class="co">#&gt; 16713             Government expenditure on education, total (% of government expenditure)</span></span>
+<span><span class="co">#&gt; 16714                                Government expenditure on education, total (% of GDP)</span></span>
+<span><span class="co">#&gt; 20830                                 Government expenditure on education, PPP$ (millions)</span></span>
+<span><span class="co">#&gt; 20831          Government expenditure on education not specified by level, PPP$ (millions)</span></span>
+<span><span class="co">#&gt; 20840                        Government expenditure on education, constant PPP$ (millions)</span></span>
+<span><span class="co">#&gt; 20841 Government expenditure on education not specified by level, constant PPP$ (millions)</span></span>
+<span><span class="co">#&gt; 20850                                  Government expenditure on education, US$ (millions)</span></span>
+<span><span class="co">#&gt; 20851           Government expenditure on education not specified by level, US$ (millions)</span></span>
+<span><span class="co">#&gt; 20860                         Government expenditure on education, constant US$ (millions)</span></span>
+<span><span class="co">#&gt; 20861  Government expenditure on education not specified by level, constant US$ (millions)</span></span>
+<span><span class="co">#&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      description</span></span>
+<span><span class="co">#&gt; 16703                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          Expenditure on primary education is expressed as a percentage of total general government expenditure on education. General government usually refers to local, regional and central governments.</span></span>
+<span><span class="co">#&gt; 16707                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Expenditure on secondary education is expressed as a percentage of total general government expenditure on education. General government usually refers to local, regional and central governments.</span></span>
+<span><span class="co">#&gt; 16712                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         Expenditure on tertiary education is expressed as a percentage of total general government expenditure on education. General government usually refers to local, regional and central governments.</span></span>
+<span><span class="co">#&gt; 16713                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                General government expenditure on education (current, capital, and transfers) is expressed as a percentage of total general government expenditure on all sectors (including health, education, social services, etc.). It includes expenditure funded by transfers from international sources to government. General government usually refers to local, regional and central governments.</span></span>
+<span><span class="co">#&gt; 16714                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     General government expenditure on education (current, capital, and transfers) is expressed as a percentage of GDP. It includes expenditure funded by transfers from international sources to government. General government usually refers to local, regional and central governments.</span></span>
+<span><span class="co">#&gt; 20830                                                                                                                                                                                                                                                                                                                                             Total general (local, regional and central) government expenditure on education (current, capital, and transfers), in millions PPP$ (at purchasing power parity), in nominal value. It includes expenditure funded by transfers from international sources to government. Total government expenditure for a given level of education (e.g. primary, secondary, or all levels combined) in national currency is converted to PPP$. Limitations: In some instances data on total government expenditure on education refers only to the Ministry of Education, excluding other ministries which may also spend a part of their budget on educational activities. For more information, consult the UNESCO Institute of Statistics website: http://www.uis.unesco.org/Education/</span></span>
+<span><span class="co">#&gt; 20831                                                                                                                                                                                                                                                                                                                      Total general (local, regional and central) government expenditure on education (current, capital, and transfers) not specified by level, in millions PPP$ (at purchasing power parity), in nominal value. It includes expenditure funded by transfers from international sources to government. Total government expenditure for a given level of education (e.g. primary, secondary, or all levels combined) in national currency is converted to PPP$. Limitations: In some instances data on total government expenditure on education refers only to the Ministry of Education, excluding other ministries which may also spend a part of their budget on educational activities. For more information, consult the UNESCO Institute of Statistics website: http://www.uis.unesco.org/Education/</span></span>
+<span><span class="co">#&gt; 20840                        Total general (local, regional and central) government expenditure on education (current, capital, and transfers), in millions PPP$ (at purchasing power parity) in constant value (taking into account inflation). It includes expenditure funded by transfers from international sources to government. Total government expenditure for a given level of education (e.g. primary, secondary, or all levels combined) in national currency is converted to PPP$, and where it is expressed in constant value, uses a GDP deflator to account for inflation. The constant prices base year is normally three years before the year of the data release. For example, in the July 2017 data release, constant PPP$ values are expressed in 2014 prices. Limitations: In some instances data on total government expenditure on education refers only to the Ministry of Education, excluding other ministries which may also spend a part of their budget on educational activities. For more information, consult the UNESCO Institute of Statistics website: http://www.uis.unesco.org/Education/</span></span>
+<span><span class="co">#&gt; 20841 Total general (local, regional and central) government expenditure on education (current, capital, and transfers) not specified by level, in millions PPP$ (at purchasing power parity) in constant value (taking into account inflation). It includes expenditure funded by transfers from international sources to government. Total government expenditure for a given level of education (e.g. primary, secondary, or all levels combined) in national currency is converted to PPP$, and where it is expressed in constant value, uses a GDP deflator to account for inflation. The constant prices base year is normally three years before the year of the data release. For example, in the July 2017 data release, constant PPP$ values are expressed in 2014 prices. Limitations: In some instances data on total government expenditure on education refers only to the Ministry of Education, excluding other ministries which may also spend a part of their budget on educational activities. For more information, consult the UNESCO Institute of Statistics website: http://www.uis.unesco.org/Education/</span></span>
+<span><span class="co">#&gt; 20850                                                                                                                                                                                                                                                                                                                                                                               Total general (local, regional and central) government expenditure on education (current, capital, and transfers) in millions US$ (nominal value). It includes expenditure funded by transfers from international sources to government. Total government expenditure for a given level of education (e.g. primary, secondary, or all levels combined) in national currency is converted to US$. Limitations: In some instances data on total government expenditure on education refers only to the Ministry of Education, excluding other ministries which may also spend a part of their budget on educational activities. For more information, consult the UNESCO Institute of Statistics website: http://www.uis.unesco.org/Education/</span></span>
+<span><span class="co">#&gt; 20851                                                                                                                                                                                                                                                                                                                                                        Total general (local, regional and central) government expenditure on education (current, capital, and transfers) not specified by level in millions US$ (nominal value). It includes expenditure funded by transfers from international sources to government. Total government expenditure for a given level of education (e.g. primary, secondary, or all levels combined) in national currency is converted to US$. Limitations: In some instances data on total government expenditure on education refers only to the Ministry of Education, excluding other ministries which may also spend a part of their budget on educational activities. For more information, consult the UNESCO Institute of Statistics website: http://www.uis.unesco.org/Education/</span></span>
+<span><span class="co">#&gt; 20860                                                         Total general (local, regional and central) government expenditure on education (current, capital, and transfers) in millions US$ in constant value (taking into account inflation). It includes expenditure funded by transfers from international sources to government. Total government expenditure for a given level of education (e.g. primary, secondary, or all levels combined) in national currency is converted to US$, and where it is expressed in constant value, uses a GDP deflator to account for inflation. The constant prices base year is normally three years before the year of the data release. For example, in the July 2017 data release, constant US$ values are expressed in 2014 prices. Limitations: In some instances data on total government expenditure on education refers only to the Ministry of Education, excluding other ministries which may also spend a part of their budget on educational activities. For more information, consult the UNESCO Institute of Statistics website: http://www.uis.unesco.org/Education/</span></span>
+<span><span class="co">#&gt; 20861                                  Total general (local, regional and central) government expenditure on education (current, capital, and transfers) not specified by level in millions US$ in constant value (taking into account inflation). It includes expenditure funded by transfers from international sources to government. Total government expenditure for a given level of education (e.g. primary, secondary, or all levels combined) in national currency is converted to US$, and where it is expressed in constant value, uses a GDP deflator to account for inflation. The constant prices base year is normally three years before the year of the data release. For example, in the July 2017 data release, constant US$ values are expressed in 2014 prices. Limitations: In some instances data on total government expenditure on education refers only to the Ministry of Education, excluding other ministries which may also spend a part of their budget on educational activities. For more information, consult the UNESCO Institute of Statistics website: http://www.uis.unesco.org/Education/</span></span>
+<span><span class="co">#&gt;                     sourceDatabase</span></span>
+<span><span class="co">#&gt; 16703 World Development Indicators</span></span>
+<span><span class="co">#&gt; 16707 World Development Indicators</span></span>
+<span><span class="co">#&gt; 16712 World Development Indicators</span></span>
+<span><span class="co">#&gt; 16713 World Development Indicators</span></span>
+<span><span class="co">#&gt; 16714 World Development Indicators</span></span>
+<span><span class="co">#&gt; 20830         Education Statistics</span></span>
+<span><span class="co">#&gt; 20831         Education Statistics</span></span>
+<span><span class="co">#&gt; 20840         Education Statistics</span></span>
+<span><span class="co">#&gt; 20841         Education Statistics</span></span>
+<span><span class="co">#&gt; 20850         Education Statistics</span></span>
+<span><span class="co">#&gt; 20851         Education Statistics</span></span>
+<span><span class="co">#&gt; 20860         Education Statistics</span></span>
+<span><span class="co">#&gt; 20861         Education Statistics</span></span>
+<span><span class="co">#&gt;                                                                                                                                  sourceOrganization</span></span>
+<span><span class="co">#&gt; 16703                                                           UNESCO Institute for Statistics (http://uis.unesco.org/). Data as of February 2020.</span></span>
+<span><span class="co">#&gt; 16707                                                           UNESCO Institute for Statistics (http://uis.unesco.org/). Data as of February 2020.</span></span>
+<span><span class="co">#&gt; 16712                                                           UNESCO Institute for Statistics (http://uis.unesco.org/). Data as of February 2020.</span></span>
+<span><span class="co">#&gt; 16713 UNESCO Institute for Statistics (UIS). UIS.Stat Bulk Data Download Service. Accessed October 24, 2022. https://apiportal.uis.unesco.org/bdds.</span></span>
+<span><span class="co">#&gt; 16714 UNESCO Institute for Statistics (UIS). UIS.Stat Bulk Data Download Service. Accessed October 24, 2022. https://apiportal.uis.unesco.org/bdds.</span></span>
+<span><span class="co">#&gt; 20830                                                                                                               UNESCO Institute for Statistics</span></span>
+<span><span class="co">#&gt; 20831                                                                                                               UNESCO Institute for Statistics</span></span>
+<span><span class="co">#&gt; 20840                                                                                                               UNESCO Institute for Statistics</span></span>
+<span><span class="co">#&gt; 20841                                                                                                               UNESCO Institute for Statistics</span></span>
+<span><span class="co">#&gt; 20850                                                                                                               UNESCO Institute for Statistics</span></span>
+<span><span class="co">#&gt; 20851                                                                                                               UNESCO Institute for Statistics</span></span>
+<span><span class="co">#&gt; 20860                                                                                                               UNESCO Institute for Statistics</span></span>
+<span><span class="co">#&gt; 20861                                                                                                               UNESCO Institute for Statistics</span></span></code></pre></div>
+</div>
+<div id="importing-data-using-wdi" class="section level3" number="10.3.4">
+<h3>
+<span class="header-section-number">10.3.4</span> Importing Data Using WDI<a class="anchor" aria-label="anchor" href="#importing-data-using-wdi"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>The shortest form. The following is same as:
+<code>WDI(country = "all", indicator = "NY.GDP.PCAP.KD", start = 1960, end = NULL, extra = FALSE, cache = NULL, latest = NULL, language = "en)</code>
+</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span>indicator <span class="op">=</span> <span class="st">"NY.GDP.PCAP.KD"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>#&gt; Rows: 16492 Columns: 5
+#&gt; ── Column specification ────────────────────────────────────
+#&gt; Delimiter: ","
+#&gt; chr (3): country, iso2c, iso3c
+#&gt; dbl (2): year, NY.GDP.PCAP.KD
+#&gt; 
+#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
+#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+#&gt; # A tibble: 16,492 × 5
+#&gt;    country                     iso2c iso3c  year NY.GDP.PC…¹
+#&gt;    &lt;chr&gt;                       &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;       &lt;dbl&gt;
+#&gt;  1 Africa Eastern and Southern ZH    AFE    2021       1461.
+#&gt;  2 Africa Eastern and Southern ZH    AFE    2020       1437.
+#&gt;  3 Africa Eastern and Southern ZH    AFE    2019       1520.
+#&gt;  4 Africa Eastern and Southern ZH    AFE    2018       1529.
+#&gt;  5 Africa Eastern and Southern ZH    AFE    2017       1532.
+#&gt;  6 Africa Eastern and Southern ZH    AFE    2016       1533.
+#&gt;  7 Africa Eastern and Southern ZH    AFE    2015       1541.
+#&gt;  8 Africa Eastern and Southern ZH    AFE    2014       1538.
+#&gt;  9 Africa Eastern and Southern ZH    AFE    2013       1520.
+#&gt; 10 Africa Eastern and Southern ZH    AFE    2012       1499.
+#&gt; # … with 16,482 more rows, and abbreviated variable name
+#&gt; #   ¹​NY.GDP.PCAP.KD</code></pre>
+<ul>
+<li>In order to use the downloaded data, we need to assign a name to it. It can be <code>df</code> if you download and use only one data, but it is better to assign the data to be a more descriptive name.</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_gdppcap</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span>indicator <span class="op">=</span> <span class="st">"NY.GDP.PCAP.KD"</span><span class="op">)</span></span>
+<span><span class="va">df_gdppcap</span></span></code></pre></div>
+<pre><code>#&gt; Rows: 16492 Columns: 5
+#&gt; ── Column specification ────────────────────────────────────
+#&gt; Delimiter: ","
+#&gt; chr (3): country, iso2c, iso3c
+#&gt; dbl (2): year, NY.GDP.PCAP.KD
+#&gt; 
+#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
+#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+#&gt; # A tibble: 16,492 × 5
+#&gt;    country                     iso2c iso3c  year NY.GDP.PC…¹
+#&gt;    &lt;chr&gt;                       &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;       &lt;dbl&gt;
+#&gt;  1 Africa Eastern and Southern ZH    AFE    2021       1461.
+#&gt;  2 Africa Eastern and Southern ZH    AFE    2020       1437.
+#&gt;  3 Africa Eastern and Southern ZH    AFE    2019       1520.
+#&gt;  4 Africa Eastern and Southern ZH    AFE    2018       1529.
+#&gt;  5 Africa Eastern and Southern ZH    AFE    2017       1532.
+#&gt;  6 Africa Eastern and Southern ZH    AFE    2016       1533.
+#&gt;  7 Africa Eastern and Southern ZH    AFE    2015       1541.
+#&gt;  8 Africa Eastern and Southern ZH    AFE    2014       1538.
+#&gt;  9 Africa Eastern and Southern ZH    AFE    2013       1520.
+#&gt; 10 Africa Eastern and Southern ZH    AFE    2012       1499.
+#&gt; # … with 16,482 more rows, and abbreviated variable name
+#&gt; #   ¹​NY.GDP.PCAP.KD</code></pre>
+<ul>
+<li>If you want to use extra information such as <code>region</code>, <code>income</code>, <code>lending</code>, use <code>extra = TRUE</code>.</li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_gdppcap_extra</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span>indicator <span class="op">=</span> <span class="st">"NY.GDP.PCAP.KD"</span>, extra <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="va">df_gdppcap_extra</span></span></code></pre></div>
+<pre><code>#&gt; Rows: 16492 Columns: 13
+#&gt; ── Column specification ────────────────────────────────────
+#&gt; Delimiter: ","
+#&gt; chr  (7): country, iso2c, iso3c, region, capital, income...
+#&gt; dbl  (4): year, NY.GDP.PCAP.KD, longitude, latitude
+#&gt; lgl  (1): status
+#&gt; date (1): lastupdated
+#&gt; 
+#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
+#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+#&gt; # A tibble: 16,492 × 13
+#&gt;    country     iso2c iso3c  year NY.GDP.…¹ status lastupda…²
+#&gt;    &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;lgl&gt;  &lt;date&gt;    
+#&gt;  1 Afghanistan AF    AFG    2015      592. NA     2022-12-22
+#&gt;  2 Afghanistan AF    AFG    2011      551. NA     2022-12-22
+#&gt;  3 Afghanistan AF    AFG    2014      603. NA     2022-12-22
+#&gt;  4 Afghanistan AF    AFG    2013      608. NA     2022-12-22
+#&gt;  5 Afghanistan AF    AFG    2012      596. NA     2022-12-22
+#&gt;  6 Afghanistan AF    AFG    2007      429. NA     2022-12-22
+#&gt;  7 Afghanistan AF    AFG    2010      569. NA     2022-12-22
+#&gt;  8 Afghanistan AF    AFG    2009      512. NA     2022-12-22
+#&gt;  9 Afghanistan AF    AFG    2008      437. NA     2022-12-22
+#&gt; 10 Afghanistan AF    AFG    2003      363. NA     2022-12-22
+#&gt; # … with 16,482 more rows, 6 more variables: region &lt;chr&gt;,
+#&gt; #   capital &lt;chr&gt;, longitude &lt;dbl&gt;, latitude &lt;dbl&gt;,
+#&gt; #   income &lt;chr&gt;, lending &lt;chr&gt;, and abbreviated variable
+#&gt; #   names ¹​NY.GDP.PCAP.KD, ²​lastupdated</code></pre>
+</div>
+<div id="writing-and-reading-a-csv-file" class="section level3" number="10.3.5">
+<h3>
+<span class="header-section-number">10.3.5</span> Writing and reading a csv file<a class="anchor" aria-label="anchor" href="#writing-and-reading-a-csv-file"><i class="fas fa-link"></i></a>
+</h3>
+<p>Since the data is generally huge, it is better to use a data saved in your computer.
+Before saving it check whether you have <code>data</code> folder (or directory) in you project folder. Use the <code>Files</code> tab of the right bottom pane. You should be able to see the project icon with Rproj at the end, your R Notebook file you are editing, and the <code>data</code> folder. Since <code>.csv</code> is automatically added, <code>write_csv(gdppcap_extra, "./data/gdppcap_extra")</code> does the same as below.</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://readr.tidyverse.org/reference/write_delim.html">write_csv</a></span><span class="op">(</span><span class="va">df_gdppcap_extra</span>, <span class="st">"./data/gdppcap_extra.csv"</span><span class="op">)</span></span></code></pre></div>
+<p>To read the data, run the next code chunk. You do not have to run the code <code>df_gdppcap_extra &lt;- WDI(indicator = "NY.GDP.PCAP.KD", extra = TRUE)</code> again.</p>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">gdppcap</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"./data/gdppcap_extra.csv"</span><span class="op">)</span></span></code></pre></div>
+<p>“./data/gdpcap_extra.csv” is the way to express the name of the data <code>gdpcap_extra.csv</code> in csv format in the data folder.</p>
+</div>
+<div id="country-argument" class="section level3" number="10.3.6">
+<h3>
+<span class="header-section-number">10.3.6</span> <code>country</code> argument<a class="anchor" aria-label="anchor" href="#country-argument"><i class="fas fa-link"></i></a>
+</h3>
+<p>If you want to import data for several countries, you can use <code>iso2c</code> codes of the countries.</p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ASEAN</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"BN"</span>, <span class="st">"ID"</span>, <span class="st">"KH"</span>, <span class="st">"LA"</span>, <span class="st">"MM"</span>, <span class="st">"MY"</span>, <span class="st">"PH"</span>, <span class="st">"SG"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_gdppcap_asean</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span><span class="va">ASEAN</span>, <span class="st">"NY.GDP.PCAP.KD"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>#&gt; Rows: 496 Columns: 5
+#&gt; ── Column specification ────────────────────────────────────
+#&gt; Delimiter: ","
+#&gt; chr (3): country, iso2c, iso3c
+#&gt; dbl (2): year, NY.GDP.PCAP.KD
+#&gt; 
+#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
+#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+#&gt; # A tibble: 496 × 5
+#&gt;    country           iso2c iso3c  year NY.GDP.PCAP.KD
+#&gt;    &lt;chr&gt;             &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;          &lt;dbl&gt;
+#&gt;  1 Brunei Darussalam BN    BRN    2021         29673.
+#&gt;  2 Brunei Darussalam BN    BRN    2020         30402.
+#&gt;  3 Brunei Darussalam BN    BRN    2019         30314.
+#&gt;  4 Brunei Darussalam BN    BRN    2018         29438.
+#&gt;  5 Brunei Darussalam BN    BRN    2017         29696.
+#&gt;  6 Brunei Darussalam BN    BRN    2016         29601.
+#&gt;  7 Brunei Darussalam BN    BRN    2015         30682.
+#&gt;  8 Brunei Darussalam BN    BRN    2014         31156.
+#&gt;  9 Brunei Darussalam BN    BRN    2013         32342.
+#&gt; 10 Brunei Darussalam BN    BRN    2012         33457.
+#&gt; # … with 486 more rows</code></pre>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_gdppcap_asean</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">country</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "Brunei Darussalam" "Indonesia"        </span></span>
+<span><span class="co">#&gt; [3] "Cambodia"          "Lao PDR"          </span></span>
+<span><span class="co">#&gt; [5] "Myanmar"           "Malaysia"         </span></span>
+<span><span class="co">#&gt; [7] "Philippines"       "Singapore"</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">iso2c</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">ASEAN</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">country</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "Brunei Darussalam" "Indonesia"        </span></span>
+<span><span class="co">#&gt; [3] "Cambodia"          "Lao PDR"          </span></span>
+<span><span class="co">#&gt; [5] "Myanmar"           "Malaysia"         </span></span>
+<span><span class="co">#&gt; [7] "Philippines"       "Singapore"</span></span></code></pre></div>
+<p>You can also use <code>wdi_cache$country</code>.</p>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="co">#&gt;    iso3c iso2c                     country</span></span>
+<span><span class="co">#&gt; 1    ABW    AW                       Aruba</span></span>
+<span><span class="co">#&gt; 2    AFE    ZH Africa Eastern and Southern</span></span>
+<span><span class="co">#&gt; 3    AFG    AF                 Afghanistan</span></span>
+<span><span class="co">#&gt; 4    AFR    A9                      Africa</span></span>
+<span><span class="co">#&gt; 5    AFW    ZI  Africa Western and Central</span></span>
+<span><span class="co">#&gt; 6    AGO    AO                      Angola</span></span>
+<span><span class="co">#&gt; 7    ALB    AL                     Albania</span></span>
+<span><span class="co">#&gt; 8    AND    AD                     Andorra</span></span>
+<span><span class="co">#&gt; 9    ARB    1A                  Arab World</span></span>
+<span><span class="co">#&gt; 10   ARE    AE        United Arab Emirates</span></span>
+<span><span class="co">#&gt;                        region          capital longitude</span></span>
+<span><span class="co">#&gt; 1   Latin America &amp; Caribbean       Oranjestad  -70.0167</span></span>
+<span><span class="co">#&gt; 2                  Aggregates                           </span></span>
+<span><span class="co">#&gt; 3                  South Asia            Kabul   69.1761</span></span>
+<span><span class="co">#&gt; 4                  Aggregates                           </span></span>
+<span><span class="co">#&gt; 5                  Aggregates                           </span></span>
+<span><span class="co">#&gt; 6          Sub-Saharan Africa           Luanda    13.242</span></span>
+<span><span class="co">#&gt; 7       Europe &amp; Central Asia           Tirane   19.8172</span></span>
+<span><span class="co">#&gt; 8       Europe &amp; Central Asia Andorra la Vella    1.5218</span></span>
+<span><span class="co">#&gt; 9                  Aggregates                           </span></span>
+<span><span class="co">#&gt; 10 Middle East &amp; North Africa        Abu Dhabi   54.3705</span></span>
+<span><span class="co">#&gt;    latitude              income        lending</span></span>
+<span><span class="co">#&gt; 1   12.5167         High income Not classified</span></span>
+<span><span class="co">#&gt; 2                    Aggregates     Aggregates</span></span>
+<span><span class="co">#&gt; 3   34.5228          Low income            IDA</span></span>
+<span><span class="co">#&gt; 4                    Aggregates     Aggregates</span></span>
+<span><span class="co">#&gt; 5                    Aggregates     Aggregates</span></span>
+<span><span class="co">#&gt; 6  -8.81155 Lower middle income           IBRD</span></span>
+<span><span class="co">#&gt; 7   41.3317 Upper middle income           IBRD</span></span>
+<span><span class="co">#&gt; 8   42.5075         High income Not classified</span></span>
+<span><span class="co">#&gt; 9                    Aggregates     Aggregates</span></span>
+<span><span class="co">#&gt; 10  24.4764         High income Not classified</span></span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">iso2c</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">ASEAN</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">country</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "Brunei Darussalam" "Indonesia"        </span></span>
+<span><span class="co">#&gt; [3] "Cambodia"          "Lao PDR"          </span></span>
+<span><span class="co">#&gt; [5] "Myanmar"           "Malaysia"         </span></span>
+<span><span class="co">#&gt; [7] "Philippines"       "Singapore"</span></span></code></pre></div>
+<p>You can find iso2c codes from the downloaded data, or using wdi_cache$country</p>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Brunei Darussalam"</span>, <span class="st">"Indonesia"</span>, <span class="st">"Cambodia"</span>, <span class="st">"Lao PDR"</span>, <span class="st">"Myanmar"</span>, <span class="st">"Malaysia"</span>, <span class="st">"Philippines"</span>, <span class="st">"Singapore"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">iso2c</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "BN" "ID" "KH" "LA" "MM" "MY" "PH" "SG"</span></span></code></pre></div>
+<p>You can also find countries in some category.</p>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">region</span> <span class="op">==</span> <span class="st">"South Asia"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">country</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "Afghanistan" "Bangladesh"  "Bhutan"      "India"      </span></span>
+<span><span class="co">#&gt; [5] "Sri Lanka"   "Maldives"    "Nepal"       "Pakistan"</span></span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">income</span> <span class="op">==</span> <span class="st">"Lower middle income"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">iso2c</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "AO" "BJ" "BD" "BO" "BT" "CI" "CM" "CG" "KM" "CV" "DJ"</span></span>
+<span><span class="co">#&gt; [12] "DZ" "EG" "FM" "GH" "HN" "HT" "ID" "IN" "IR" "KE" "KG"</span></span>
+<span><span class="co">#&gt; [23] "KH" "KI" "LA" "LB" "LK" "LS" "MA" "MM" "MN" "MR" "NG"</span></span>
+<span><span class="co">#&gt; [34] "NI" "NP" "PK" "PH" "PG" "PS" "SN" "SB" "SV" "ST" "SZ"</span></span>
+<span><span class="co">#&gt; [45] "TJ" "TL" "TN" "TZ" "UA" "UZ" "VN" "VU" "WS" "ZW"</span></span></code></pre></div>
+<p>The following shows a list of indicators</p>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">series</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="co">#&gt;               indicator</span></span>
+<span><span class="co">#&gt; 1    1.0.HCount.1.90usd</span></span>
+<span><span class="co">#&gt; 2     1.0.HCount.2.5usd</span></span>
+<span><span class="co">#&gt; 3  1.0.HCount.Mid10to50</span></span>
+<span><span class="co">#&gt; 4       1.0.HCount.Ofcl</span></span>
+<span><span class="co">#&gt; 5   1.0.HCount.Poor4uds</span></span>
+<span><span class="co">#&gt; 6   1.0.HCount.Vul4to10</span></span>
+<span><span class="co">#&gt; 7      1.0.PGap.1.90usd</span></span>
+<span><span class="co">#&gt; 8       1.0.PGap.2.5usd</span></span>
+<span><span class="co">#&gt; 9     1.0.PGap.Poor4uds</span></span>
+<span><span class="co">#&gt; 10     1.0.PSev.1.90usd</span></span>
+<span><span class="co">#&gt;                                       name</span></span>
+<span><span class="co">#&gt; 1          Poverty Headcount ($1.90 a day)</span></span>
+<span><span class="co">#&gt; 2          Poverty Headcount ($2.50 a day)</span></span>
+<span><span class="co">#&gt; 3    Middle Class ($10-50 a day) Headcount</span></span>
+<span><span class="co">#&gt; 4  Official Moderate Poverty Rate-National</span></span>
+<span><span class="co">#&gt; 5             Poverty Headcount ($4 a day)</span></span>
+<span><span class="co">#&gt; 6       Vulnerable ($4-10 a day) Headcount</span></span>
+<span><span class="co">#&gt; 7                Poverty Gap ($1.90 a day)</span></span>
+<span><span class="co">#&gt; 8                Poverty Gap ($2.50 a day)</span></span>
+<span><span class="co">#&gt; 9                   Poverty Gap ($4 a day)</span></span>
+<span><span class="co">#&gt; 10          Poverty Severity ($1.90 a day)</span></span>
+<span><span class="co">#&gt;                                                                                                                                                                                                                                                                    description</span></span>
+<span><span class="co">#&gt; 1                                                                                                                                     The poverty headcount index measures the proportion of the population with daily per capita income (in 2011 PPP) below the poverty line.</span></span>
+<span><span class="co">#&gt; 2                                                                                                                                     The poverty headcount index measures the proportion of the population with daily per capita income (in 2005 PPP) below the poverty line.</span></span>
+<span><span class="co">#&gt; 3                                                                                                                                     The poverty headcount index measures the proportion of the population with daily per capita income (in 2005 PPP) below the poverty line.</span></span>
+<span><span class="co">#&gt; 4                                                                                                                The poverty headcount index measures the proportion of the population with daily per capita income below the official poverty line developed by each country.</span></span>
+<span><span class="co">#&gt; 5                                                                                                                                     The poverty headcount index measures the proportion of the population with daily per capita income (in 2005 PPP) below the poverty line.</span></span>
+<span><span class="co">#&gt; 6                                                                                                                                     The poverty headcount index measures the proportion of the population with daily per capita income (in 2005 PPP) below the poverty line.</span></span>
+<span><span class="co">#&gt; 7  The poverty gap captures the mean aggregate income or consumption shortfall relative to the poverty line across the entire population. It measures the total resources needed to bring all the poor to the level of the poverty line (averaged over the total population). </span></span>
+<span><span class="co">#&gt; 8  The poverty gap captures the mean aggregate income or consumption shortfall relative to the poverty line across the entire population. It measures the total resources needed to bring all the poor to the level of the poverty line (averaged over the total population). </span></span>
+<span><span class="co">#&gt; 9  The poverty gap captures the mean aggregate income or consumption shortfall relative to the poverty line across the entire population. It measures the total resources needed to bring all the poor to the level of the poverty line (averaged over the total population). </span></span>
+<span><span class="co">#&gt; 10                                                                                                        The poverty severity index combines information on both poverty and inequality among the poor by averaging the squares of the poverty gaps relative the poverty line</span></span>
+<span><span class="co">#&gt;    sourceDatabase</span></span>
+<span><span class="co">#&gt; 1  LAC Equity Lab</span></span>
+<span><span class="co">#&gt; 2  LAC Equity Lab</span></span>
+<span><span class="co">#&gt; 3  LAC Equity Lab</span></span>
+<span><span class="co">#&gt; 4  LAC Equity Lab</span></span>
+<span><span class="co">#&gt; 5  LAC Equity Lab</span></span>
+<span><span class="co">#&gt; 6  LAC Equity Lab</span></span>
+<span><span class="co">#&gt; 7  LAC Equity Lab</span></span>
+<span><span class="co">#&gt; 8  LAC Equity Lab</span></span>
+<span><span class="co">#&gt; 9  LAC Equity Lab</span></span>
+<span><span class="co">#&gt; 10 LAC Equity Lab</span></span>
+<span><span class="co">#&gt;                                                       sourceOrganization</span></span>
+<span><span class="co">#&gt; 1      LAC Equity Lab tabulations of SEDLAC (CEDLAS and the World Bank).</span></span>
+<span><span class="co">#&gt; 2      LAC Equity Lab tabulations of SEDLAC (CEDLAS and the World Bank).</span></span>
+<span><span class="co">#&gt; 3      LAC Equity Lab tabulations of SEDLAC (CEDLAS and the World Bank).</span></span>
+<span><span class="co">#&gt; 4  LAC Equity Lab tabulations of data from National Statistical Offices.</span></span>
+<span><span class="co">#&gt; 5      LAC Equity Lab tabulations of SEDLAC (CEDLAS and the World Bank).</span></span>
+<span><span class="co">#&gt; 6      LAC Equity Lab tabulations of SEDLAC (CEDLAS and the World Bank).</span></span>
+<span><span class="co">#&gt; 7      LAC Equity Lab tabulations of SEDLAC (CEDLAS and the World Bank).</span></span>
+<span><span class="co">#&gt; 8      LAC Equity Lab tabulations of SEDLAC (CEDLAS and the World Bank).</span></span>
+<span><span class="co">#&gt; 9      LAC Equity Lab tabulations of SEDLAC (CEDLAS and the World Bank).</span></span>
+<span><span class="co">#&gt; 10     LAC Equity Lab tabulations of SEDLAC (CEDLAS and the World Bank).</span></span></code></pre></div>
+<p>The following is same as <code>WDIsearch("gdp per cap", "name")</code>. See WDIsearch help.</p>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">series</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"gdp per cap"</span>, <span class="va">name</span>, ignore.case <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+</div>
+</div>
+<div id="responses-to-questions" class="section level2" number="10.4">
+<h2>
+<span class="header-section-number">10.4</span> Responses to Questions<a class="anchor" aria-label="anchor" href="#responses-to-questions"><i class="fas fa-link"></i></a>
+</h2>
+<div id="q1.-how-do-we-use-histograms." class="section level3" number="10.4.1">
+<h3>
+<span class="header-section-number">10.4.1</span> Q1. How do we use histograms.<a class="anchor" aria-label="anchor" href="#q1.-how-do-we-use-histograms."><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">Histograms and frequency polygons</a></li>
+<li><a href="https://posit.cloud/learn/primers/3.3">Posit Cloud: Histograms</a></li>
+</ul>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">series</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">indicator</span> <span class="op">==</span> <span class="st">"SG.GEN.PARL.ZS"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">name</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "Proportion of seats held by women in national parliaments (%)"</span></span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_women_in_parl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span>indicator <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>women_in_parl <span class="op">=</span> <span class="st">"SG.GEN.PARL.ZS"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">women_in_parl</span><span class="op">)</span></span></code></pre></div>
+<pre><code>#&gt; Rows: 5675 Columns: 5
+#&gt; ── Column specification ────────────────────────────────────
+#&gt; Delimiter: ","
+#&gt; chr (3): country, iso2c, iso3c
+#&gt; dbl (2): year, women_in_parl
+#&gt; 
+#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
+#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_women_in_parl</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2020</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">women_in_parl</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; `stat_bin()` using `bins = 30`. Pick better value with</span></span>
+<span><span class="co">#&gt; `binwidth`.</span></span></code></pre></div>
+<div class="inline-figure"><img src="09-a3resp_files/figure-html/9-37-1.png" width="672"></div>
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_women_in_parl</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2020</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">women_in_parl</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>binwidth <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="09-a3resp_files/figure-html/9-38-1.png" width="672"></div>
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">series</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">indicator</span> <span class="op">==</span> <span class="st">"IP.JRN.ARTC.SC"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">name</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "Scientific and technical journal articles"</span></span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_stja</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span>indicator <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>stja <span class="op">=</span> <span class="st">"IP.JRN.ARTC.SC"</span><span class="op">)</span>, extra <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">stja</span><span class="op">)</span></span></code></pre></div>
+<pre><code>#&gt; Rows: 4655 Columns: 13
+#&gt; ── Column specification ────────────────────────────────────
+#&gt; Delimiter: ","
+#&gt; chr  (7): country, iso2c, iso3c, region, capital, income...
+#&gt; dbl  (4): year, stja, longitude, latitude
+#&gt; lgl  (1): status
+#&gt; date (1): lastupdated
+#&gt; 
+#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
+#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_stja</span><span class="op">$</span><span class="va">year</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span></span>
+<span><span class="co">#&gt;    2000    2004    2009    2009    2014    2018</span></span></code></pre></div>
+<p>Default of the number of bins is 30. Change and find an appropriate one.</p>
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_stja</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">income</span> <span class="op">!=</span> <span class="st">"Aggregates"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">stja</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="09-a3resp_files/figure-html/9-44-1.png" width="672"></div>
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_stja</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">income</span> <span class="op">!=</span> <span class="st">"Aggregates"</span>, <span class="va">stja</span> <span class="op">&gt;</span><span class="fl">0</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">stja</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">20</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_log10</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="09-a3resp_files/figure-html/9-45-1.png" width="672"></div>
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_stja</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">income</span> <span class="op">!=</span> <span class="st">"Aggregates"</span>, <span class="va">income</span> <span class="op">!=</span> <span class="st">"Not classified"</span>, <span class="va">stja</span> <span class="op">&gt;</span><span class="fl">0</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">stja</span>, fill <span class="op">=</span> <span class="va">income</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.7</span>, bins <span class="op">=</span> <span class="fl">20</span>, color <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_log10</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="09-a3resp_files/figure-html/9-46-1.png" width="672"></div>
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_stja</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">income</span> <span class="op">!=</span> <span class="st">"Aggregates"</span>, <span class="va">income</span> <span class="op">!=</span> <span class="st">"Not classified"</span>, <span class="va">stja</span> <span class="op">&gt;</span><span class="fl">0</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">stja</span>, fill <span class="op">=</span> <span class="va">income</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.3</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_log10</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="09-a3resp_files/figure-html/9-47-1.png" width="672"></div>
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">series</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">indicator</span> <span class="op">==</span> <span class="st">"MS.MIL.XPND.GD.ZS"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">name</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "Military expenditure (% of GDP)"</span></span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_milxpnd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span>indicator <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>milxpnd <span class="op">=</span> <span class="st">"MS.MIL.XPND.GD.ZS"</span><span class="op">)</span>, extra <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">milxpnd</span><span class="op">)</span></span></code></pre></div>
+<pre><code>#&gt; Rows: 9915 Columns: 13
+#&gt; ── Column specification ────────────────────────────────────
+#&gt; Delimiter: ","
+#&gt; chr  (7): country, iso2c, iso3c, region, capital, income...
+#&gt; dbl  (4): year, milxpnd, longitude, latitude
+#&gt; lgl  (1): status
+#&gt; date (1): lastupdated
+#&gt; 
+#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
+#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<p>Default of the number of bins is 30. Here I chose binwidth = 0.5 (%).</p>
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_milxpnd</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">income</span> <span class="op">!=</span> <span class="st">"Aggregates"</span>, <span class="va">year</span> <span class="op">==</span> <span class="fl">2021</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">milxpnd</span>, fill <span class="op">=</span> <span class="va">income</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"black"</span>, binwidth <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Military expenditure (% of GDP)"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="09-a3resp_files/figure-html/9-52-1.png" width="672"></div>
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_milxpnd</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">income</span> <span class="op">!=</span> <span class="st">"Aggregates"</span>, <span class="va">income</span> <span class="op">!=</span> <span class="st">"Not classified"</span>, <span class="va">year</span> <span class="op">==</span> <span class="fl">2021</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">milxpnd</span>, fill <span class="op">=</span> <span class="va">income</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density</a></span><span class="op">(</span>binwidth <span class="op">=</span> <span class="fl">0.5</span>, alpha <span class="op">=</span> <span class="fl">0.3</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Military expenditure (% of GDP)"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in geom_density(binwidth = 0.5, alpha = 0.3):</span></span>
+<span><span class="co">#&gt; Ignoring unknown parameters: `binwidth`</span></span></code></pre></div>
+<div class="inline-figure"><img src="09-a3resp_files/figure-html/9-53-1.png" width="672"></div>
+</div>
+<div id="q2.-effect-of-unemployed-rate-under-pandemic-depending-on-income-groups" class="section level3" number="10.4.2">
+<h3>
+<span class="header-section-number">10.4.2</span> Q2. Effect of unemployed rate under pandemic depending on income groups<a class="anchor" aria-label="anchor" href="#q2.-effect-of-unemployed-rate-under-pandemic-depending-on-income-groups"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">series</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">indicator</span> <span class="op">==</span> <span class="st">"SL.UEM.TOTL.ZS"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">name</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "Unemployment, total (% of total labor force) (modeled ILO estimate)"</span></span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_ur</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span>indicator <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>ur <span class="op">=</span> <span class="st">"SL.UEM.TOTL.ZS"</span><span class="op">)</span>, </span>
+<span>             extra <span class="op">=</span> <span class="cn">TRUE</span>, cache <span class="op">=</span> <span class="va">wdi_cache</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">ur</span><span class="op">)</span></span></code></pre></div>
+<pre><code>#&gt; Rows: 7285 Columns: 13
+#&gt; ── Column specification ────────────────────────────────────
+#&gt; Delimiter: ","
+#&gt; chr  (7): country, iso2c, iso3c, region, capital, income...
+#&gt; dbl  (4): year, ur, longitude, latitude
+#&gt; lgl  (1): status
+#&gt; date (1): lastupdated
+#&gt; 
+#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
+#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_ur</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">income</span> <span class="op">==</span> <span class="st">"Aggregates"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">'income'</span>, <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">&gt;=</span> <span class="fl">2018</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">ur</span>, color <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="09-a3resp_files/figure-html/9-58-1.png" width="672"></div>
+</div>
+<div id="q3.-add-values-at-each-data-point." class="section level3" number="10.4.3">
+<h3>
+<span class="header-section-number">10.4.3</span> Q3. Add values at each data point.<a class="anchor" aria-label="anchor" href="#q3.-add-values-at-each-data-point."><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">series</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">indicator</span> <span class="op">==</span> <span class="st">"FP.CPI.TOTL.ZG"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">name</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "Inflation, consumer prices (annual %)"</span></span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_infl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span>country <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"VN"</span>,<span class="st">"CN"</span>,<span class="st">"JP"</span><span class="op">)</span>, </span>
+<span>               indicator <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>inf <span class="op">=</span> <span class="st">"FP.CPI.TOTL.ZG"</span><span class="op">)</span>, extra <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">inf</span><span class="op">)</span></span></code></pre></div>
+<pre><code>#&gt; Rows: 123 Columns: 13
+#&gt; ── Column specification ────────────────────────────────────
+#&gt; Delimiter: ","
+#&gt; chr  (7): country, iso2c, iso3c, region, capital, income...
+#&gt; dbl  (4): year, inf, longitude, latitude
+#&gt; lgl  (1): status
+#&gt; date (1): lastupdated
+#&gt; 
+#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
+#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_infl_s</span> <span class="op">&lt;-</span> <span class="va">df_infl</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2000</span>, <span class="fl">2005</span>, <span class="fl">2010</span>, <span class="fl">2015</span>, <span class="fl">2020</span><span class="op">)</span>, </span>
+<span>                   <span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Japan"</span>, <span class="st">"Vietnam"</span>, <span class="st">"China"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">df_infl_s</span></span>
+<span><span class="co">#&gt; # A tibble: 15 × 13</span></span>
+<span><span class="co">#&gt;    country iso2c iso3c  year     inf status lastupdated</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;lgl&gt;  &lt;date&gt;     </span></span>
+<span><span class="co">#&gt;  1 China   CN    CHN    2020  2.42   NA     2022-12-22 </span></span>
+<span><span class="co">#&gt;  2 China   CN    CHN    2015  1.44   NA     2022-12-22 </span></span>
+<span><span class="co">#&gt;  3 China   CN    CHN    2010  3.18   NA     2022-12-22 </span></span>
+<span><span class="co">#&gt;  4 China   CN    CHN    2005  1.78   NA     2022-12-22 </span></span>
+<span><span class="co">#&gt;  5 China   CN    CHN    2000  0.348  NA     2022-12-22 </span></span>
+<span><span class="co">#&gt;  6 Japan   JP    JPN    2020 -0.0250 NA     2022-12-22 </span></span>
+<span><span class="co">#&gt;  7 Japan   JP    JPN    2015  0.795  NA     2022-12-22 </span></span>
+<span><span class="co">#&gt;  8 Japan   JP    JPN    2010 -0.728  NA     2022-12-22 </span></span>
+<span><span class="co">#&gt;  9 Japan   JP    JPN    2005 -0.283  NA     2022-12-22 </span></span>
+<span><span class="co">#&gt; 10 Japan   JP    JPN    2000 -0.677  NA     2022-12-22 </span></span>
+<span><span class="co">#&gt; 11 Vietnam VN    VNM    2020  3.22   NA     2022-12-22 </span></span>
+<span><span class="co">#&gt; 12 Vietnam VN    VNM    2015  0.631  NA     2022-12-22 </span></span>
+<span><span class="co">#&gt; 13 Vietnam VN    VNM    2010  9.21   NA     2022-12-22 </span></span>
+<span><span class="co">#&gt; 14 Vietnam VN    VNM    2005  8.28   NA     2022-12-22 </span></span>
+<span><span class="co">#&gt; 15 Vietnam VN    VNM    2000 -1.71   NA     2022-12-22 </span></span>
+<span><span class="co">#&gt; # … with 6 more variables: region &lt;chr&gt;, capital &lt;chr&gt;,</span></span>
+<span><span class="co">#&gt; #   longitude &lt;dbl&gt;, latitude &lt;dbl&gt;, income &lt;chr&gt;,</span></span>
+<span><span class="co">#&gt; #   lending &lt;chr&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_infl_s</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">inf</span>, color<span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">inf</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span>, nudge_y <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span> <span class="op">+</span> </span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Inflation of Japan, Vietnam and China from 2000 to 2020"</span>, </span>
+<span>     x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">"Inflation, consumer prices (annual %)"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="09-a3resp_files/figure-html/9-64-1.png" width="672"></div>
+</div>
+</div>
+<div id="regression-lines-topic-of-eda5" class="section level2" number="10.5">
+<h2>
+<span class="header-section-number">10.5</span> Regression Lines; Topic of EDA5<a class="anchor" aria-label="anchor" href="#regression-lines-topic-of-eda5"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">series</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">indicator</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"SI.POV.NAHC"</span>,<span class="st">"SI.POV.MDIM"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">name</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "Multidimensional poverty headcount ratio (% of total population)"   </span></span>
+<span><span class="co">#&gt; [2] "Poverty headcount ratio at national poverty lines (% of population)"</span></span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_wdi_poverty</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span></span>
+<span>  indicator <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>poverty <span class="op">=</span> <span class="st">"SI.POV.NAHC"</span>, multipoverty <span class="op">=</span> <span class="st">"SI.POV.MDIM"</span>, gdppercap <span class="op">=</span> <span class="st">"NY.GDP.PCAP.KD"</span><span class="op">)</span>, start <span class="op">=</span> <span class="fl">1990</span>,</span>
+<span>  extra <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">poverty</span>, <span class="va">multipoverty</span>, <span class="va">gdppercap</span><span class="op">)</span></span></code></pre></div>
+<pre><code>#&gt; Rows: 292 Columns: 15
+#&gt; ── Column specification ────────────────────────────────────
+#&gt; Delimiter: ","
+#&gt; chr  (7): country, iso2c, iso3c, region, capital, income...
+#&gt; dbl  (6): year, poverty, multipoverty, gdppercap, longit...
+#&gt; lgl  (1): status
+#&gt; date (1): lastupdated
+#&gt; 
+#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
+#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_wdi_poverty</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>  </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">country</span>, <span class="va">year</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>mean_gdp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">gdppercap</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>mean_poverty<span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">poverty</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">income</span> <span class="op">!=</span> <span class="st">"Aggregates"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">mean_gdp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">mean_poverty</span>, color <span class="op">=</span> <span class="va">income</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_log10</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">mean_poverty</span><span class="op">)</span>, formula <span class="op">=</span> <span class="va">y</span><span class="op">~</span><span class="va">x</span>, linetype<span class="op">=</span><span class="st">"longdash"</span>, color <span class="op">=</span> <span class="st">"black"</span>, method <span class="op">=</span> <span class="st">"lm"</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"GDP per capita"</span>, y <span class="op">=</span> <span class="st">"poverty rate (% of population)"</span>, title <span class="op">=</span> <span class="st">"Poverty rates and GDP per capita"</span>, subtitle<span class="op">=</span><span class="st">"world countries, 1990-2021 average, by income level"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="09-a3resp_files/figure-html/9-69-1.png" width="672"></div>
+<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_wdi_poverty</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>  </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">country</span>, <span class="va">year</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>mean_gdp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">gdppercap</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>mean_multipoverty<span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">multipoverty</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">region</span> <span class="op">!=</span><span class="st">"Aggregates"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">mean_gdp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">mean_multipoverty</span>, color <span class="op">=</span> <span class="va">region</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>  </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_log10</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>  </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">mean_multipoverty</span><span class="op">)</span>, formula <span class="op">=</span> <span class="va">y</span><span class="op">~</span><span class="va">x</span>, linetype<span class="op">=</span><span class="st">"longdash"</span>, color <span class="op">=</span> <span class="st">"black"</span>, method <span class="op">=</span> <span class="st">"lm"</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"GDP per capita"</span>, y <span class="op">=</span> <span class="st">"Multidimentinal poverty rate (% of population)"</span>, title <span class="op">=</span> <span class="st">"Multidimentional Poverty rates and GDP per capita"</span>, subtitle<span class="op">=</span><span class="st">"world countries, 1990-2021 average, by region"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="09-a3resp_files/figure-html/9-70-1.png" width="672"></div>
+</div>
+<div id="appendix-a-secondary-axis" class="section level2" number="10.6">
+<h2>
+<span class="header-section-number">10.6</span> Appendix: A secondary axis<a class="anchor" aria-label="anchor" href="#appendix-a-secondary-axis"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>
+<a href="https://ggplot2.tidyverse.org/reference/sec_axis.html">Specify a secondary axis</a>
+<ul>
+<li>This function is used in conjunction with a position scale to create a secondary axis, positioned opposite of the primary axis. All secondary axes must be based on a one-to-one transformation of the primary axes.</li>
+</ul>
+</li>
+</ul>
+<p><code>scale_y_continuous(sec.axis = sec_axis(~ . scaling_function))</code></p>
+<div id="example" class="section level3" number="10.6.1">
+<h3>
+<span class="header-section-number">10.6.1</span> Example<a class="anchor" aria-label="anchor" href="#example"><i class="fas fa-link"></i></a>
+</h3>
+<p>Suppose you have two indicators,</p>
+<ul>
+<li>NY.GDP.MKTP.KD: GDP (constant 2015 US$)</li>
+<li>NY.GDP.PCAP.KD: GDP per capita (constant 2015 US$)</li>
+</ul>
+<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDIsearch.html">WDIsearch</a></span><span class="op">(</span>string <span class="op">=</span> <span class="st">"NY.GDP.MKTP.KD"</span>, field <span class="op">=</span> <span class="st">"indicator"</span>, short <span class="op">=</span> <span class="cn">FALSE</span>, cache <span class="op">=</span> <span class="va">wdi_cache</span><span class="op">)</span></span>
+<span><span class="co">#&gt;               indicator</span></span>
+<span><span class="co">#&gt; 12112    NY.GDP.MKTP.KD</span></span>
+<span><span class="co">#&gt; 12113 NY.GDP.MKTP.KD.87</span></span>
+<span><span class="co">#&gt; 12114 NY.GDP.MKTP.KD.ZG</span></span>
+<span><span class="co">#&gt;                                           name</span></span>
+<span><span class="co">#&gt; 12112                  GDP (constant 2015 US$)</span></span>
+<span><span class="co">#&gt; 12113 GDP at market prices (constant 1987 US$)</span></span>
+<span><span class="co">#&gt; 12114                    GDP growth (annual %)</span></span>
+<span><span class="co">#&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     description</span></span>
+<span><span class="co">#&gt; 12112 GDP at purchaser's prices is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources. Data are in constant 2015 prices, expressed in U.S. dollars. Dollar figures for GDP are converted from domestic currencies using 2015 official exchange rates. For a few countries where the official exchange rate does not reflect the rate effectively applied to actual foreign exchange transactions, an alternative conversion factor is used.</span></span>
+<span><span class="co">#&gt; 12113                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </span></span>
+<span><span class="co">#&gt; 12114                                                                                                                                                                                                           Annual percentage growth rate of GDP at market prices based on constant local currency. Aggregates are based on constant 2015 prices, expressed in U.S. dollars. GDP is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources.</span></span>
+<span><span class="co">#&gt;                     sourceDatabase</span></span>
+<span><span class="co">#&gt; 12112 World Development Indicators</span></span>
+<span><span class="co">#&gt; 12113        WDI Database Archives</span></span>
+<span><span class="co">#&gt; 12114 World Development Indicators</span></span>
+<span><span class="co">#&gt;                                                              sourceOrganization</span></span>
+<span><span class="co">#&gt; 12112 World Bank national accounts data, and OECD National Accounts data files.</span></span>
+<span><span class="co">#&gt; 12113                                                                          </span></span>
+<span><span class="co">#&gt; 12114 World Bank national accounts data, and OECD National Accounts data files.</span></span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDIsearch.html">WDIsearch</a></span><span class="op">(</span>string <span class="op">=</span> <span class="st">"NY.GDP.PCAP.KD"</span>, field <span class="op">=</span> <span class="st">"indicator"</span>, short <span class="op">=</span> <span class="cn">FALSE</span>, cache <span class="op">=</span> <span class="va">wdi_cache</span><span class="op">)</span></span>
+<span><span class="co">#&gt;               indicator                               name</span></span>
+<span><span class="co">#&gt; 12127    NY.GDP.PCAP.KD GDP per capita (constant 2015 US$)</span></span>
+<span><span class="co">#&gt; 12128 NY.GDP.PCAP.KD.ZG   GDP per capita growth (annual %)</span></span>
+<span><span class="co">#&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          description</span></span>
+<span><span class="co">#&gt; 12127                                                                 GDP per capita is gross domestic product divided by midyear population. GDP is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources. Data are in constant 2015 U.S. dollars.</span></span>
+<span><span class="co">#&gt; 12128 Annual percentage growth rate of GDP per capita based on constant local currency. GDP per capita is gross domestic product divided by midyear population. GDP at purchaser's prices is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources.</span></span>
+<span><span class="co">#&gt;                     sourceDatabase</span></span>
+<span><span class="co">#&gt; 12127 World Development Indicators</span></span>
+<span><span class="co">#&gt; 12128 World Development Indicators</span></span>
+<span><span class="co">#&gt;                                                              sourceOrganization</span></span>
+<span><span class="co">#&gt; 12127 World Bank national accounts data, and OECD National Accounts data files.</span></span>
+<span><span class="co">#&gt; 12128 World Bank national accounts data, and OECD National Accounts data files.</span></span></code></pre></div>
+<p>List the name of countries of ASEAN and BRICs using <code>wdi_cache$country</code>.</p>
+<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">asean</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Brunei Darussalam"</span>, <span class="st">"Cambodia"</span>, <span class="st">"Lao PDR"</span>, <span class="st">"Myanmar"</span>, </span>
+<span>           <span class="st">"Philippines"</span>, <span class="st">"Indonesia"</span>, <span class="st">"Malaysia"</span>, <span class="st">"Singapore"</span><span class="op">)</span></span>
+<span><span class="va">brics</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Brazil"</span>, <span class="st">"Russian Federation"</span>, <span class="st">"India"</span>, <span class="st">"China"</span><span class="op">)</span></span></code></pre></div>
+<p>Find the <code>iso2c</code> of the countries using <code>wdi_cache$country</code>.</p>
+<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> </span>
+<span>           <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Brunei Darussalam"</span>, <span class="st">"Cambodia"</span>, <span class="st">"Lao PDR"</span>, <span class="st">"Myanmar"</span>, </span>
+<span>           <span class="st">"Philippines"</span>, <span class="st">"Indonesia"</span>, <span class="st">"Malaysia"</span>, <span class="st">"Singapore"</span>,</span>
+<span>           <span class="st">"Brazil"</span>, <span class="st">"Russian Federation"</span>, <span class="st">"India"</span>, <span class="st">"China"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">iso2c</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "BR" "BN" "CN" "ID" "IN" "KH" "LA" "MM" "MY" "PH" "RU"</span></span>
+<span><span class="co">#&gt; [12] "SG"</span></span></code></pre></div>
+<p>Separate the iso3c’s of the countries with commas and read data using <code>WDI</code>.</p>
+<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_gdp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span></span>
+<span>  country <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"BR"</span>, <span class="st">"BN"</span>, <span class="st">"CN"</span>, <span class="st">"ID"</span>, <span class="st">"IN"</span>, <span class="st">"KH"</span>, <span class="st">"LA"</span>, <span class="st">"MM"</span>, <span class="st">"MY"</span>, <span class="st">"PH"</span>, <span class="st">"RU"</span>, <span class="st">"SG"</span><span class="op">)</span>,</span>
+<span>  indicator <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>gdp <span class="op">=</span> <span class="st">"NY.GDP.MKTP.KD"</span>, gdpPercap <span class="op">=</span> <span class="st">"NY.GDP.PCAP.KD"</span><span class="op">)</span>,</span>
+<span>  start <span class="op">=</span> <span class="fl">1960</span>, extra <span class="op">=</span> <span class="cn">TRUE</span>, cache <span class="op">=</span> <span class="va">wdi_cache</span><span class="op">)</span></span></code></pre></div>
+<pre><code>#&gt; Rows: 744 Columns: 14
+#&gt; ── Column specification ────────────────────────────────────
+#&gt; Delimiter: ","
+#&gt; chr  (7): country, iso2c, iso3c, region, capital, income...
+#&gt; dbl  (5): year, gdp, gdpPercap, longitude, latitude
+#&gt; lgl  (1): status
+#&gt; date (1): lastupdated
+#&gt; 
+#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
+#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_gdp</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">asean</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">gdp</span>, <span class="va">gdpPercap</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span> </span>
+<span><span class="co">#&gt;    country             iso2c              iso3c          </span></span>
+<span><span class="co">#&gt;  Length:424         Length:424         Length:424        </span></span>
+<span><span class="co">#&gt;  Class :character   Class :character   Class :character  </span></span>
+<span><span class="co">#&gt;  Mode  :character   Mode  :character   Mode  :character  </span></span>
+<span><span class="co">#&gt;                                                          </span></span>
+<span><span class="co">#&gt;                                                          </span></span>
+<span><span class="co">#&gt;                                                          </span></span>
+<span><span class="co">#&gt;       year       status         lastupdated        </span></span>
+<span><span class="co">#&gt;  Min.   :1960   Mode:logical   Min.   :2022-12-22  </span></span>
+<span><span class="co">#&gt;  1st Qu.:1980   NA's:424       1st Qu.:2022-12-22  </span></span>
+<span><span class="co">#&gt;  Median :1995                  Median :2022-12-22  </span></span>
+<span><span class="co">#&gt;  Mean   :1994                  Mean   :2022-12-22  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:2008                  3rd Qu.:2022-12-22  </span></span>
+<span><span class="co">#&gt;  Max.   :2021                  Max.   :2022-12-22  </span></span>
+<span><span class="co">#&gt;       gdp              gdpPercap          region         </span></span>
+<span><span class="co">#&gt;  Min.   :2.109e+09   Min.   :  144.0   Length:424        </span></span>
+<span><span class="co">#&gt;  1st Qu.:1.069e+10   1st Qu.:  978.2   Class :character  </span></span>
+<span><span class="co">#&gt;  Median :4.099e+10   Median : 1891.2   Mode  :character  </span></span>
+<span><span class="co">#&gt;  Mean   :1.149e+11   Mean   : 9718.5                     </span></span>
+<span><span class="co">#&gt;  3rd Qu.:1.430e+11   3rd Qu.: 8777.6                     </span></span>
+<span><span class="co">#&gt;  Max.   :1.066e+12   Max.   :66176.4                     </span></span>
+<span><span class="co">#&gt;    capital            longitude         latitude     </span></span>
+<span><span class="co">#&gt;  Length:424         Min.   : 95.96   Min.   :-6.198  </span></span>
+<span><span class="co">#&gt;  Class :character   1st Qu.:101.68   1st Qu.: 1.289  </span></span>
+<span><span class="co">#&gt;  Mode  :character   Median :103.85   Median : 4.942  </span></span>
+<span><span class="co">#&gt;                     Mean   :106.52   Mean   : 8.035  </span></span>
+<span><span class="co">#&gt;                     3rd Qu.:114.95   3rd Qu.:14.552  </span></span>
+<span><span class="co">#&gt;                     Max.   :121.03   Max.   :21.914  </span></span>
+<span><span class="co">#&gt;     income            lending         </span></span>
+<span><span class="co">#&gt;  Length:424         Length:424        </span></span>
+<span><span class="co">#&gt;  Class :character   Class :character  </span></span>
+<span><span class="co">#&gt;  Mode  :character   Mode  :character  </span></span>
+<span><span class="co">#&gt;                                       </span></span>
+<span><span class="co">#&gt;                                       </span></span>
+<span><span class="co">#&gt; </span></span></code></pre></div>
+<p>Using the summary, decide the scaling of two variables, <code>gdpPercap</code> and <code>gdp</code>.</p>
+<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_gdp</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">gdp</span>, <span class="va">gdpPercap</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">asean</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">gdpPercap</span>, linetype <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">gdp</span><span class="op">/</span><span class="op">(</span><span class="fl">10</span><span class="op">^</span><span class="fl">7</span><span class="op">)</span>, col <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_trans.html">coord_trans</a></span><span class="op">(</span>x <span class="op">=</span><span class="st">"identity"</span>, y<span class="op">=</span><span class="st">"log10"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>sec.axis <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/sec_axis.html">sec_axis</a></span><span class="op">(</span><span class="op">~</span> <span class="va">.</span> <span class="op">*</span><span class="op">(</span><span class="fl">10</span><span class="op">^</span><span class="fl">7</span><span class="op">)</span>, name <span class="op">=</span> <span class="st">"gdp/(10^7)"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="09-a3resp_files/figure-html/9-79-1.png" width="672"></div>
+<div id="brics" class="section level4" number="10.6.1.1">
+<h4>
+<span class="header-section-number">10.6.1.1</span> BRICs<a class="anchor" aria-label="anchor" href="#brics"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_gdp</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">brics</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">gdp</span>, <span class="va">gdpPercap</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span> </span>
+<span><span class="co">#&gt;    country             iso2c              iso3c          </span></span>
+<span><span class="co">#&gt;  Length:219         Length:219         Length:219        </span></span>
+<span><span class="co">#&gt;  Class :character   Class :character   Class :character  </span></span>
+<span><span class="co">#&gt;  Mode  :character   Mode  :character   Mode  :character  </span></span>
+<span><span class="co">#&gt;                                                          </span></span>
+<span><span class="co">#&gt;                                                          </span></span>
+<span><span class="co">#&gt;                                                          </span></span>
+<span><span class="co">#&gt;       year       status         lastupdated        </span></span>
+<span><span class="co">#&gt;  Min.   :1960   Mode:logical   Min.   :2022-12-22  </span></span>
+<span><span class="co">#&gt;  1st Qu.:1978   NA's:219       1st Qu.:2022-12-22  </span></span>
+<span><span class="co">#&gt;  Median :1994                  Median :2022-12-22  </span></span>
+<span><span class="co">#&gt;  Mean   :1993                  Mean   :2022-12-22  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:2008                  3rd Qu.:2022-12-22  </span></span>
+<span><span class="co">#&gt;  Max.   :2021                  Max.   :2022-12-22  </span></span>
+<span><span class="co">#&gt;       gdp              gdpPercap          region         </span></span>
+<span><span class="co">#&gt;  Min.   :1.091e+11   Min.   :  163.9   Length:219        </span></span>
+<span><span class="co">#&gt;  1st Qu.:3.564e+11   1st Qu.:  531.7   Class :character  </span></span>
+<span><span class="co">#&gt;  Median :9.215e+11   Median : 2758.9   Mode  :character  </span></span>
+<span><span class="co">#&gt;  Mean   :1.644e+12   Mean   : 3825.8                     </span></span>
+<span><span class="co">#&gt;  3rd Qu.:1.500e+12   3rd Qu.: 6579.5                     </span></span>
+<span><span class="co">#&gt;  Max.   :1.580e+13   Max.   :11188.3                     </span></span>
+<span><span class="co">#&gt;    capital            longitude         latitude     </span></span>
+<span><span class="co">#&gt;  Length:219         Min.   :-47.93   Min.   :-15.78  </span></span>
+<span><span class="co">#&gt;  Class :character   1st Qu.:-47.93   1st Qu.:-15.78  </span></span>
+<span><span class="co">#&gt;  Mode  :character   Median : 77.22   Median : 28.64  </span></span>
+<span><span class="co">#&gt;                     Mean   : 46.88   Mean   : 23.38  </span></span>
+<span><span class="co">#&gt;                     3rd Qu.:116.29   3rd Qu.: 40.05  </span></span>
+<span><span class="co">#&gt;                     Max.   :116.29   Max.   : 55.76  </span></span>
+<span><span class="co">#&gt;     income            lending         </span></span>
+<span><span class="co">#&gt;  Length:219         Length:219        </span></span>
+<span><span class="co">#&gt;  Class :character   Class :character  </span></span>
+<span><span class="co">#&gt;  Mode  :character   Mode  :character  </span></span>
+<span><span class="co">#&gt;                                       </span></span>
+<span><span class="co">#&gt;                                       </span></span>
+<span><span class="co">#&gt; </span></span></code></pre></div>
+<p>Using the summary, decide the scaling of two variables, <code>gdpPercap</code> and <code>gdp</code>.</p>
+<div class="sourceCode" id="cb69"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_gdp</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">gdp</span>, <span class="va">gdpPercap</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">brics</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">gdpPercap</span>, linetype <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">gdp</span><span class="op">/</span><span class="op">(</span><span class="fl">10</span><span class="op">^</span><span class="fl">9</span><span class="op">)</span>, col <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_trans.html">coord_trans</a></span><span class="op">(</span>x <span class="op">=</span><span class="st">"identity"</span>, y<span class="op">=</span><span class="st">"log10"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>sec.axis <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/sec_axis.html">sec_axis</a></span><span class="op">(</span><span class="op">~</span> <span class="va">.</span> <span class="op">*</span><span class="op">(</span><span class="fl">10</span><span class="op">^</span><span class="fl">7</span><span class="op">)</span>, name <span class="op">=</span> <span class="st">"gdp/(10^9)"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="09-a3resp_files/figure-html/9-81-1.png" width="672"></div>
+
+</div>
+</div>
+</div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="ggokit2.html"><span class="header-section-number">13</span> Data Visualization and `ggplot2’</a></div>
-<div class="next"><a href="set-up-2.html"><span class="header-section-number">15</span> Set up</a></div>
+<div class="empty"></div>
+<div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#responses-to-assignment-three"><span class="header-section-number">14</span> Responses to Assignment Three</a></li>
-<li><a class="nav-link" href="#assignment-three-the-week-four-assignment">Assignment Three: The Week Four Assignment</a></li>
-</ul>
+      <div id="book-on-this-page"></div>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/09-a3resp.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/09-a3resp.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+          
         </ul>
 </div>
     </nav>
@@ -190,7 +1234,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>A Minimal Book Example</strong>" was written by John Doe. It was last built on 2023-02-07.</p>
+    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-02-07.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
