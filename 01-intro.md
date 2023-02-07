@@ -1,2 +1,0 @@
-# Intdoduction {#intro}
-

@@ -1,0 +1,745 @@
+country,iso2c,iso3c,year,status,lastupdated,gdp,gdpPercap,region,capital,longitude,latitude,income,lending
+Brazil,BR,BRA,1960,,2022-12-22,188464088773.788,2578.43212501018,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1961,,2022-12-22,204672000408.334,2717.00489409658,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1962,,2022-12-22,218180352435.284,2811.63081353841,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1963,,2022-12-22,219489434549.896,2746.5170522797,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1964,,2022-12-22,226952075324.592,2758.86660650734,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1965,,2022-12-22,232398925132.383,2746.26134354914,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1966,,2022-12-22,247969653116.252,2850.90477368332,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1967,,2022-12-22,258384378547.135,2892.6877226814,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1968,,2022-12-22,283706047644.754,3095.22563217195,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1969,,2022-12-22,310658122171.006,3304.86024488566,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1970,,2022-12-22,342966566876.79,3558.85661236761,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1971,,2022-12-22,381868997020.349,3866.39008869453,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1972,,2022-12-22,427465484612.615,4224.20123996804,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1973,,2022-12-22,487176948862.304,4699.44533949141,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1974,,2022-12-22,526901058557.905,4962.92833317853,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1975,,2022-12-22,554124187273.806,5097.71446136945,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1976,,2022-12-22,610961422946.065,5489.98666492448,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1977,,2022-12-22,641108263934.078,5626.72376145855,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1978,,2022-12-22,672970688728.912,5768.43315150731,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1979,,2022-12-22,718460547037.255,6014.87458479707,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1980,,2022-12-22,784558917364.681,6415.64552672743,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1981,,2022-12-22,751215163376.685,6001.65220565602,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1982,,2022-12-22,757450249232.708,5914.5721887194,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1983,,2022-12-22,735256956930.19,5613.61826802745,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1984,,2022-12-22,774960832604.42,5788.09412965665,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1985,,2022-12-22,835795257963.87,6110.36574792215,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1986,,2022-12-22,898396322785.362,6433.50571737096,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1987,,2022-12-22,930109712979.684,6528.63131849716,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1988,,2022-12-22,929551647151.897,6399.49206175515,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1989,,2022-12-22,958925479201.9,6479.07688561245,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1990,,2022-12-22,917212220856.615,6086.08487029556,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1991,,2022-12-22,926679589877.167,6043.43990026094,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1992,,2022-12-22,921637785237.654,5911.69413084856,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1993,,2022-12-22,967025589117.641,6103.38455349758,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1994,,2022-12-22,1023624343217.9,6358.68643258731,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1995,,2022-12-22,1066860123057.74,6524.52669793585,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1996,,2022-12-22,1090425612783.91,6567.36035682375,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1997,,2022-12-22,1127443882933.16,6689.20741912308,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1998,,2022-12-22,1131255747038.65,6613.99113295669,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,1999,,2022-12-22,1136549317651.98,6551.2345477737,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,2000,,2022-12-22,1186420527155.95,6745.8658812468,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,2001,,2022-12-22,1202910543363.1,6749.88971898625,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,2002,,2022-12-22,1239640958003.7,6868.70416532586,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,2003,,2022-12-22,1253783141526.78,6865.18150461494,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,2004,,2022-12-22,1326000607099.75,7178.35611584129,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,2005,,2022-12-22,1368460897672.78,7325.91235843215,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,2006,,2022-12-22,1422679163956.12,7534.55155911426,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,2007,,2022-12-22,1509033948357.92,7909.83475750883,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,2008,,2022-12-22,1585907087042.63,8231.1102691656,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,2009,,2022-12-22,1583911825584.01,8142.77083855301,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,2010,,2022-12-22,1703152284574.41,8673.9088122477,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,2011,,2022-12-22,1770842762050.66,8935.28805708641,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,2012,,2022-12-22,1804863767940.85,9025.32484753836,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,2013,,2022-12-22,1859096723592.52,9216.14336043625,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,2014,,2022-12-22,1868465748247.72,9183.4707680256,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,2015,,2022-12-22,1802214373741.32,8783.22598387817,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,2016,,2022-12-22,1743175328356.73,8426.85335245502,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,2017,,2022-12-22,1766235255333.29,8470.95078857257,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,2018,,2022-12-22,1797739006514.93,8553.87618653936,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,2019,,2022-12-22,1819685405632.83,8592.22153753537,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,2020,,2022-12-22,1749105698451.8,8204.20272600881,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brazil,BR,BRA,2021,,2022-12-22,1829904265254.51,8537.93922013226,Latin America & Caribbean,Brasilia,-47.9292,-15.7801,Upper middle income,IBRD
+Brunei Darussalam,BN,BRN,1960,,2022-12-22,NA,NA,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1961,,2022-12-22,NA,NA,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1962,,2022-12-22,NA,NA,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1963,,2022-12-22,NA,NA,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1964,,2022-12-22,NA,NA,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1965,,2022-12-22,NA,NA,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1966,,2022-12-22,NA,NA,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1967,,2022-12-22,NA,NA,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1968,,2022-12-22,NA,NA,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1969,,2022-12-22,NA,NA,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1970,,2022-12-22,NA,NA,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1971,,2022-12-22,NA,NA,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1972,,2022-12-22,NA,NA,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1973,,2022-12-22,NA,NA,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1974,,2022-12-22,6708427942.90657,43472.5815085253,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1975,,2022-12-22,6732273926.70735,42168.1642481341,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1976,,2022-12-22,8089190285.80907,49006.3871335305,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1977,,2022-12-22,8972262683.56723,52604.7296175377,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1978,,2022-12-22,9580208346.93608,54378.6233478798,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1979,,2022-12-22,11741736030.6392,64532.407245023,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1980,,2022-12-22,10920201635.4071,58110.5977267423,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1981,,2022-12-22,8755084285.29789,45106.2822853178,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1982,,2022-12-22,9101492760.0317,45364.5654190884,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1983,,2022-12-22,9147133648.60828,44077.6860811008,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1984,,2022-12-22,9202005157.60646,42863.4219804476,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1985,,2022-12-22,9064826350.34696,40810.6751351616,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1986,,2022-12-22,8818673714.48953,38372.9248068644,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1987,,2022-12-22,8995852317.25395,37843.4926181848,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1988,,2022-12-22,9094569846.86158,37010.5679299618,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1989,,2022-12-22,8996877926.29455,35445.7587287677,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1990,,2022-12-22,9094891761.97635,34722.8694983978,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1991,,2022-12-22,9381011723.71481,34762.5128722849,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1992,,2022-12-22,9827414750.71564,35424.8304016915,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1993,,2022-12-22,9857346390.27574,34622.0453238023,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1994,,2022-12-22,10167399106.887,34827.6126770924,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1995,,2022-12-22,10622767156.9577,35516.1273999996,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1996,,2022-12-22,10928524149.2814,35691.2701318157,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1997,,2022-12-22,10767746808.7381,34378.1326205262,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1998,,2022-12-22,10707607989.7475,33445.388408467,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,1999,,2022-12-22,11034421011.7014,33739.7636768682,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,2000,,2022-12-22,11348838215.8935,33986.0873843111,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,2001,,2022-12-22,11660254934.8204,34219.5843697406,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,2002,,2022-12-22,12111751312.501,34857.6720758786,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,2003,,2022-12-22,12463471178.0442,35203.0707340712,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,2004,,2022-12-22,12526326738.1135,34750.8516541693,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,2005,,2022-12-22,12574867157.1504,34290.3851120903,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,2006,,2022-12-22,13127874564.5426,35213.5001516669,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,2007,,2022-12-22,13148167870.8878,34714.8179551782,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,2008,,2022-12-22,12893130934.0876,33526.2708651983,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,2009,,2022-12-22,12665627056.3659,32450.0899445978,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,2010,,2022-12-22,12994802365.1317,32810.7661477926,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,2011,,2022-12-22,13481499082.9269,33577.3290633936,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,2012,,2022-12-22,13604563824.4265,33456.5329618933,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,2013,,2022-12-22,13315326917.8511,32342.1477618547,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,2014,,2022-12-22,12981331573.3766,31155.993369534,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,2015,,2022-12-22,12930394937.8137,30681.6794391894,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,2016,,2022-12-22,12609990390.5992,29601.3333300451,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,2017,,2022-12-22,12777527044.6874,29696.1184093173,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,2018,,2022-12-22,12784201742.5315,29438.1006980189,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,2019,,2022-12-22,13278836553.322,30313.6563877064,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,2020,,2022-12-22,13429361905.6174,30402.0870578242,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Brunei Darussalam,BN,BRN,2021,,2022-12-22,13215732655.1727,29673.4033162602,East Asia & Pacific,Bandar Seri Begawan,114.946,4.94199,High income,Not classified
+Cambodia,KH,KHM,1960,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1961,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1962,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1963,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1964,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1965,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1966,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1967,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1968,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1969,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1970,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1971,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1972,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1973,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1974,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1975,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1976,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1977,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1978,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1979,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1980,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1981,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1982,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1983,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1984,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1985,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1986,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1987,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1988,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1989,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1990,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1991,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1992,,2022-12-22,NA,NA,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1993,,2022-12-22,5775009072.99655,563.770282079607,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1994,,2022-12-22,3764807025.70302,353.956570048307,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1995,,2022-12-22,4137653518.67972,378.922378208996,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1996,,2022-12-22,4381671867.05688,391.829016964631,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1997,,2022-12-22,4557228855.43715,398.652963161675,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1998,,2022-12-22,4770581544.77099,408.822526817759,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,1999,,2022-12-22,5376702112.3593,451.861450642121,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,2000,,2022-12-22,5914027156.61207,488.002702289111,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,2001,,2022-12-22,6395924923.30211,518.384291904527,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,2002,,2022-12-22,6816708954.65046,542.654742982698,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,2003,,2022-12-22,7396531098.76289,578.409355448543,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,2004,,2022-12-22,8161371525.5189,627.008213389039,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,2005,,2022-12-22,9242760345.99552,697.746758239126,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,2006,,2022-12-22,10238305796.2966,759.64339497603,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,2007,,2022-12-22,11283900343.1446,822.754086675081,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,2008,,2022-12-22,12038971276.7753,863.38697476452,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,2009,,2022-12-22,12049408698.7997,851.203024271407,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,2010,,2022-12-22,12767924407.3787,888.912588308966,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,2011,,2022-12-22,13670561753.9969,938.01767709824,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,2012,,2022-12-22,14670337167.5821,992.134600394822,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,2013,,2022-12-22,15749584749.2127,1049.99450649809,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,2014,,2022-12-22,16874510037.997,1109.3756527343,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,2015,,2022-12-22,18049954289.4229,1170.74281578324,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,2016,,2022-12-22,19301414292.3071,1235.32340395796,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,2017,,2022-12-22,20651915662.9509,1304.54938903486,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,2018,,2022-12-22,22194442188.3034,1384.96802283394,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,2019,,2022-12-22,23760061873.3006,1465.96953538762,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,2020,,2022-12-22,23024448758.5057,1404.19865501722,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+Cambodia,KH,KHM,2021,,2022-12-22,23721258226.5713,1429.93702682619,East Asia & Pacific,Phnom Penh,104.874,11.5556,Lower middle income,IDA
+China,CN,CHN,1960,,2022-12-22,158907168210.357,238.216631253627,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1961,,2022-12-22,115573183433.159,175.023372303484,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1962,,2022-12-22,109124199808.912,163.906754297899,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1963,,2022-12-22,120363992385.387,176.400144189273,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1964,,2022-12-22,142246166193.496,203.687474412722,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1965,,2022-12-22,166356891368.928,232.606795960385,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1966,,2022-12-22,184073900297.069,250.304460561693,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1967,,2022-12-22,173452836242.473,229.875868057084,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1968,,2022-12-22,166341269979.928,214.769686614669,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1969,,2022-12-22,194519481107.989,244.363532688029,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1970,,2022-12-22,232061740955.439,283.58485541074,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1971,,2022-12-22,248445299863.509,295.379649227514,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1972,,2022-12-22,257911065788.84,299.190359719313,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1973,,2022-12-22,277924964496.186,315.129106851017,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1974,,2022-12-22,284345031184.263,315.816106163451,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1975,,2022-12-22,309139917896.427,337.343523149326,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1976,,2022-12-22,304286421180.249,326.948883005795,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1977,,2022-12-22,327320903267.764,346.938543192589,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1978,,2022-12-22,364393196721.71,381.098656321566,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1979,,2022-12-22,392055467396.687,404.595917871102,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1980,,2022-12-22,422769661255.457,430.854648739045,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1981,,2022-12-22,444384863998.942,447.118996663539,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1982,,2022-12-22,484455553401.509,480.310474010796,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1983,,2022-12-22,536632397557.183,524.408436893203,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1984,,2022-12-22,618155123011.759,596.200055951351,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1985,,2022-12-22,701177544159.34,667.127363525023,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1986,,2022-12-22,763932666262.02,716.104075086962,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1987,,2022-12-22,852987565219.692,786.863491695094,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1988,,2022-12-22,948714904915.565,861.191965465324,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1989,,2022-12-22,988621025896.57,883.762594105905,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1990,,2022-12-22,1027377455186.3,905.030858570453,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1991,,2022-12-22,1122541231141.84,975.46119253188,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1992,,2022-12-22,1282217440753.01,1100.64417174091,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1993,,2022-12-22,1460237039290.75,1239.1271844903,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1994,,2022-12-22,1650605318482.01,1384.92771103551,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1995,,2022-12-22,1831411871435.46,1520.02678449727,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1996,,2022-12-22,2013134753757.7,1653.43086834849,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1997,,2022-12-22,2199083579885.44,1787.76381918618,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1998,,2022-12-22,2371622617326.55,1909.61895536123,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,1999,,2022-12-22,2553328077171.96,2038.20287384959,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,2000,,2022-12-22,2770108015885.86,2193.89299120961,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,2001,,2022-12-22,3001016837148.73,2359.56821728091,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,2002,,2022-12-22,3275118634996.31,2557.88709387403,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,2003,,2022-12-22,3603876041860.81,2797.1717183024,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,2004,,2022-12-22,3968358419663.33,3061.8277643372,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,2005,,2022-12-22,4420536663136.43,3390.7101702332,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,2006,,2022-12-22,4982871172216.7,3800.7590824066,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,2007,,2022-12-22,5691976639219.75,4319.02376855321,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,2008,,2022-12-22,6241291028834.91,4711.63512675747,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,2009,,2022-12-22,6827892848566.12,5128.89506825573,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,2010,,2022-12-22,7554098728364.74,5647.05875238916,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,2011,,2022-12-22,8275578020536.57,6152.68600485234,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,2012,,2022-12-22,8926347665673.95,6591.65085082149,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,2013,,2022-12-22,9619581223626.48,7056.41062734843,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,2014,,2022-12-22,10333908590021.3,7532.77199570021,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,2015,,2022-12-22,11061553079876.4,8016.43143498352,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,2016,,2022-12-22,11819132546490.1,8516.51369911163,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,2017,,2022-12-22,12640231416521.9,9053.21273336976,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,2018,,2022-12-22,13493418449047,9619.19248413627,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,2019,,2022-12-22,14296344415554,10155.4929447833,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,2020,,2022-12-22,14616539906901.3,10358.2594478784,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+China,CN,CHN,2021,,2022-12-22,15801910975837,11188.3025403134,East Asia & Pacific,Beijing,116.286,40.0495,Upper middle income,IBRD
+India,IN,IND,1960,,2022-12-22,136368084184.196,305.789178104159,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1961,,2022-12-22,141444716855.709,309.946609829887,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1962,,2022-12-22,145590642181.843,311.741113980883,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1963,,2022-12-22,154317859590.471,322.885550326751,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1964,,2022-12-22,165819092695.861,339.057226075337,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1965,,2022-12-22,161448482613.567,322.823138158022,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1966,,2022-12-22,161359155153.22,315.775903183392,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1967,,2022-12-22,173987062982.359,333.316806708786,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1968,,2022-12-22,179881621452.198,337.215712853423,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1969,,2022-12-22,191645340388.663,351.439913378202,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1970,,2022-12-22,201528930873.125,361.486027945835,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1971,,2022-12-22,204839910893.408,359.368782972891,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1972,,2022-12-22,203706528992.569,349.507990949946,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1973,,2022-12-22,210419720708.316,352.989564313716,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1974,,2022-12-22,212913901944.846,349.198354423107,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1975,,2022-12-22,232395336642.008,372.712606119326,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1976,,2022-12-22,236260311940.546,370.632638268862,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1977,,2022-12-22,253400441385.771,388.83846827104003,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1978,,2022-12-22,267876022912.823,402.054607764337,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1979,,2022-12-22,253844187411.203,372.616205404194,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1980,,2022-12-22,270942678836.504,388.822678106754,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1981,,2022-12-22,287216047837.204,402.901413545242,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1982,,2022-12-22,297198911481.634,407.58551384766,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1983,,2022-12-22,318861421848.581,427.527584742983,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1984,,2022-12-22,331044280901.668,433.93155441882,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1985,,2022-12-22,348438337981.247,446.577216387686,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1986,,2022-12-22,365081718782.49,457.565272410286,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1987,,2022-12-22,379558507289.919,465.307103362605,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1988,,2022-12-22,416101576411.3,499.084518512302,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1989,,2022-12-22,440848565769.567,517.420197773944,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1990,,2022-12-22,465242720840.362,534.483960804855,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1991,,2022-12-22,470159552155.668,528.898039699766,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1992,,2022-12-22,495935560738.554,546.440878609293,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1993,,2022-12-22,519496349422.92,560.798426153572,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1994,,2022-12-22,554089216863.597,586.175305347047,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1995,,2022-12-22,596058659383.044,618.139127413432,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1996,,2022-12-22,641058240489.184,651.958187295696,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1997,,2022-12-22,667019950767.341,665.465934752529,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1998,,2022-12-22,708271238131.198,693.408324696459,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,1999,,2022-12-22,770923180565.542,740.91604089964,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,2000,,2022-12-22,800534271756.884,755.482097864514,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,2001,,2022-12-22,839151774957.445,777.733458347497,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,2002,,2022-12-22,871072901385.714,793.100755845359,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,2003,,2022-12-22,939542554364.62,840.8178259143,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,2004,,2022-12-22,1013981915397.82,892.381871765004,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,2005,,2022-12-22,1094324068978.9,947.763189175956,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,2006,,2022-12-22,1182534605661.62,1008.66687550133,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,2007,,2022-12-22,1273126394881.57,1070.13126025613,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,2008,,2022-12-22,1312423962607.78,1087.58275313042,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,2009,,2022-12-22,1415605275566.11,1156.8803655203,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,2010,,2022-12-22,1535897532897.39,1238.01440524036,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,2011,,2022-12-22,1616398760695.38,1285.28270059611,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,2012,,2022-12-22,1704595760877.17,1337.47576344041,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,2013,,2022-12-22,1813453059872.84,1404.54498175748,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,2014,,2022-12-22,1947834059120.86,1490.02812071832,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,2015,,2022-12-22,2103587813812.75,1590.17391842781,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,2016,,2022-12-22,2277266450219.57,1701.18379590649,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,2017,,2022-12-22,2432015436983.77,1795.91138334142,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,2018,,2022-12-22,2588974097973.61,1891.13794439121,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,2019,,2022-12-22,2685747840248.32,1941.81508305731,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,2020,,2022-12-22,2508593750079.03,1796.48873981565,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+India,IN,IND,2021,,2022-12-22,2726370511450.72,1936.94270206376,South Asia,New Delhi,77.225,28.6353,Lower middle income,IBRD
+Indonesia,ID,IDN,1960,,2022-12-22,52777607990.4692,597.147404489668,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1961,,2022-12-22,55807383538.918,614.504130704319,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1962,,2022-12-22,56835343099.8106,608.870805741996,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1963,,2022-12-22,55563919432.9709,579.016843032603,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1964,,2022-12-22,57525158068.4178,582.97565246418,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1965,,2022-12-22,58147344118.7596,574.817809710655,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1966,,2022-12-22,59770438162.8795,577.151413775273,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1967,,2022-12-22,60595510968.0175,570.253000644834,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1968,,2022-12-22,67209619196.9915,615.818266418524,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1969,,2022-12-22,71794859870.3364,640.172470444754,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1970,,2022-12-22,77218699133.8141,670.136035514078,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1971,,2022-12-22,82642538396.3335,698.306202311813,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1972,,2022-12-22,88458625386.3256,728.029693030847,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1973,,2022-12-22,95627290746.4176,766.80308776302,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1974,,2022-12-22,102545202114.854,801.4775491442,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1975,,2022-12-22,108295400364.285,825.339127345408,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1976,,2022-12-22,115962331363.527,862.038713751451,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1977,,2022-12-22,125545995112.579,910.667290620565,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1978,,2022-12-22,134171292486.725,949.878773830706,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1979,,2022-12-22,143754956235.777,993.516409224008,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1980,,2022-12-22,158130451859.355,1067.17202677096,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1981,,2022-12-22,170589214733.122,1124.61819638457,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1982,,2022-12-22,174422680232.743,1123.64999143871,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1983,,2022-12-22,182089611231.984,1146.72782027386,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1984,,2022-12-22,194548374105.752,1198.46006731411,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1985,,2022-12-22,199340205980.277,1202.35339401428,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1986,,2022-12-22,210840602479.14,1246.57972721716,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1987,,2022-12-22,221382632603.097,1283.96269513369,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1988,,2022-12-22,233841395476.864,1330.95344377148,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1989,,2022-12-22,252050356600.062,1408.50248685732,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1990,,2022-12-22,270259317723.261,1483.63803613117,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1991,,2022-12-22,288571595709.615,1556.8066678411,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1992,,2022-12-22,307321553946.56,1629.84798274164,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1993,,2022-12-22,327286416333.046,1706.95236932734,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1994,,2022-12-22,351963717524.103,1805.6038903453,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1995,,2022-12-22,380895161146.503,1922.35212337468,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1996,,2022-12-22,410674257411.067,2039.36299441801,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1997,,2022-12-22,429975449993.557,2101.25415527092,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1998,,2022-12-22,373533752988.269,1797.08392680225,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,1999,,2022-12-22,376488875933.227,1784.33359964005,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,2000,,2022-12-22,395012383689.125,1845.22780582336,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,2001,,2022-12-22,409404527351.182,1885.67975657323,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,2002,,2022-12-22,427825583308.405,1943.64493329883,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,2003,,2022-12-22,448277225387.513,2009.48978948919,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,2004,,2022-12-22,470829487520.977,2083.88251472033,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,2005,,2022-12-22,497631791817.584,2174.91522750723,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,2006,,2022-12-22,525006276753.314,2264.93573957279,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,2007,,2022-12-22,558318041704.736,2377.25499952329,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,2008,,2022-12-22,591893633878.692,2487.61130348394,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,2009,,2022-12-22,619291627728.719,2569.87421969503,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,2010,,2022-12-22,657835435591.365,2695.86817752185,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,2011,,2022-12-22,698422462409.202,2826.48044853411,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,2012,,2022-12-22,740537690664.799,2959.51448634505,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,2013,,2022-12-22,781691322850.807,3086.32312548091,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,2014,,2022-12-22,820828015498.845,3203.48429587321,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,2015,,2022-12-22,860854235065.079,3322.58168813599,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,2016,,2022-12-22,904181624278.983,3453.04943984718,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,2017,,2022-12-22,950021696789.269,3591.7800383847,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,2018,,2022-12-22,999178589070.128,3741.30527715913,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,2019,,2022-12-22,1049330236897.15,3892.42167262992,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,2020,,2022-12-22,1027661515658.56,3780.14120998019,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Indonesia,ID,IDN,2021,,2022-12-22,1065594969739.24,3892.5389904925,East Asia & Pacific,Jakarta,106.83,-6.19752,Lower middle income,IBRD
+Lao PDR,LA,LAO,1960,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1961,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1962,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1963,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1964,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1965,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1966,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1967,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1968,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1969,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1970,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1971,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1972,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1973,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1974,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1975,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1976,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1977,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1978,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1979,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1980,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1981,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1982,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1983,,2022-12-22,NA,NA,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1984,,2022-12-22,2109468110.46025,579.531211492734,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1985,,2022-12-22,2216417383.13928,592.370914489957,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1986,,2022-12-22,2324692325.96448,604.06879915094,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1987,,2022-12-22,2291547039.85423,578.717775590969,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1988,,2022-12-22,2245482337.12795,551.043884132375,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1989,,2022-12-22,2564130576.16039,611.448911361685,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1990,,2022-12-22,2736044728.37432,634.159433413378,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1991,,2022-12-22,2853600631.33539,643.104785386225,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1992,,2022-12-22,3012256767.69759,660.42244308674,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1993,,2022-12-22,3190358152.70913,680.929903406131,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1994,,2022-12-22,3450660065.57787,717.698824983178,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1995,,2022-12-22,3693284750.7703,749.535407240588,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1996,,2022-12-22,3949167474.39645,782.956940660853,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1997,,2022-12-22,4220557867.76554,819.440195910706,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1998,,2022-12-22,4388013063.22522,836.302324148372,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,1999,,2022-12-22,4708617799.75876,881.754386051151,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,2000,,2022-12-22,4981660296.53754,917.288738350594,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,2001,,2022-12-22,5268176148.57955,954.43039795039,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,2002,,2022-12-22,5579985991.51835,995.341680700784,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,2003,,2022-12-22,5918523870.17316,1040.33331842283,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,2004,,2022-12-22,6294805594.75746,1091.30085775212,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,2005,,2022-12-22,6742213206.10435,1151.9302518387,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,2006,,2022-12-22,7323342510.69867,1231.51904135673,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,2007,,2022-12-22,7879684303.71102,1304.29240356805,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,2008,,2022-12-22,8496261938.47692,1384.68944105431,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,2009,,2022-12-22,9133632385.08677,1466.0890868897,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,2010,,2022-12-22,9912448588.85412,1567.57762793067,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,2011,,2022-12-22,10709275903.0759,1669.06641495608,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,2012,,2022-12-22,11568812928.6298,1777.41021331108,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,2013,,2022-12-22,12497360586.9096,1893.32662705338,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,2014,,2022-12-22,13448655105.8431,2009.82553356013,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,2015,,2022-12-22,14426381187.0894,2125.45905698314,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,2016,,2022-12-22,15439522315.3825,2240.41634657505,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,2017,,2022-12-22,16503696157.5675,2358.37266397522,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,2018,,2022-12-22,17534840493.2613,2467.95576150974,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,2019,,2022-12-22,18491845636.2733,2564.0196538036,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,2020,,2022-12-22,18584865505.7243,2539.12452453054,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Lao PDR,LA,LAO,2021,,2022-12-22,19054756138.7783,2566.27742235222,East Asia & Pacific,Vientiane,102.177,18.5826,Lower middle income,IDA
+Malaysia,MY,MYS,1960,,2022-12-22,10075036570.766,1286.10121787483,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1961,,2022-12-22,10840537244.939,1342.51381240031,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1962,,2022-12-22,11536611351.2159,1385.90932520219,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1963,,2022-12-22,12383260591.9349,1443.37981221595,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1964,,2022-12-22,13046874934.0695,1476.57148901439,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1965,,2022-12-22,14049509460.4641,1545.42786641934,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1966,,2022-12-22,15147719015.5855,1621.7697848861999,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1967,,2022-12-22,15731988728.1556,1641.81251641402,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1968,,2022-12-22,16987085945.9697,1729.61543879591,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1969,,2022-12-22,17817505359.028,1770.8273643883,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1970,,2022-12-22,18884157200.3055,1832.25561948872,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1971,,2022-12-22,20779118278.8147,1969.1074190658,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1972,,2022-12-22,22729954368.0339,2104.30995279818,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1973,,2022-12-22,25389604879.0066,2295.07150167506,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1974,,2022-12-22,27501680285.3289,2426.22201868649,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1975,,2022-12-22,27721987470.9114,2386.13478533784,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1976,,2022-12-22,30927616658.162,2596.75955672863,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1977,,2022-12-22,33325452833.3171,2727.36395064877,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1978,,2022-12-22,35542892545.0082,2833.48202814631,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1979,,2022-12-22,38865833087.3234,3018.70290342458,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1980,,2022-12-22,41758161062.031,3159.73720225721,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1981,,2022-12-22,44657056115.4545,3292.1778650695,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1982,,2022-12-22,47311093043.6552,3398.53419195199,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1983,,2022-12-22,50269091779.9168,3517.07669044288,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1984,,2022-12-22,54170873180.2044,3688.492346771,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1985,,2022-12-22,53615486165.6441,3548.78257082321,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1986,,2022-12-22,54280637167.3733,3488.75533413202,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1987,,2022-12-22,57098850999.459,3561.31005953489,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1988,,2022-12-22,62773174750.299,3798.76753264941,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1989,,2022-12-22,68460173833.9093,4022.30309310029,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1990,,2022-12-22,74627427172.2853,4260.2727132248,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1991,,2022-12-22,81750963915.2437,4537.31801075022,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1992,,2022-12-22,89014633507.5282,4804.66543260293,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1993,,2022-12-22,97822581051.8617,5135.02286903416,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1994,,2022-12-22,106834038101.692,5453.85971198254,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1995,,2022-12-22,117334846726.431,5826.86096910463,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1996,,2022-12-22,129071500245.07,6238.63802380639,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1997,,2022-12-22,138523073010.402,6518.98501722758,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1998,,2022-12-22,128328584936.147,5883.78706664634,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,1999,,2022-12-22,136204895578.191,6089.09635282905,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,2000,,2022-12-22,148271107718.132,6461.98031907102,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,2001,,2022-12-22,149038670648.283,6330.61752268387,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,2002,,2022-12-22,157073327955.733,6506.10689827533,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,2003,,2022-12-22,166165516422.77,6716.63187222889,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,2004,,2022-12-22,177437250747.578,7004.12587251758,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,2005,,2022-12-22,186898451881.628,7209.60488884031,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,2006,,2022-12-22,197336444590.09,7444.01411642311,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,2007,,2022-12-22,209766244791.581,7742.56490042748,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,2008,,2022-12-22,219901667044.982,7948.93414403105,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,2009,,2022-12-22,216573392167.321,7675.22509201554,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,2010,,2022-12-22,232653636008.496,8101.39338684161,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,2011,,2022-12-22,244970116704.243,8393.94874962513,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,2012,,2022-12-22,258378443827.458,8711.28108684653,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,2013,,2022-12-22,270506011046.628,8976.53039711282,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,2014,,2022-12-22,286754554976.284,9369.08627607932,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,2015,,2022-12-22,301354756113.174,9699.58402084731,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,2016,,2022-12-22,314764383991.527,9984.14675563608,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,2017,,2022-12-22,333060763877.976,10416.0240363597,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,2018,,2022-12-22,349191186356.678,10777.748251085,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,2019,,2022-12-22,364601657599.112,11114.5419859856,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,2020,,2022-12-22,344422938490.553,10374.1870816224,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Malaysia,MY,MYS,2021,,2022-12-22,355073045619.288,10575.8735384331,East Asia & Pacific,Kuala Lumpur,101.684,3.12433,Upper middle income,IBRD
+Myanmar,MM,MMR,1960,,2022-12-22,NA,NA,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1961,,2022-12-22,3221543633.59251,145.094258357805,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1962,,2022-12-22,3295106579.94796,145.160779414072,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1963,,2022-12-22,3585432637.08437,154.473352601944,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1964,,2022-12-22,3697499265.23606,155.764075082051,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1965,,2022-12-22,3776902641.91722,155.512068777108,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1966,,2022-12-22,3872307037.44421,155.79775311121,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1967,,2022-12-22,3664163782.82671,144.031431050126,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1968,,2022-12-22,3766485500.39092,144.619468884575,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1969,,2022-12-22,4046193895.6169,151.773179649044,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1970,,2022-12-22,4214078522.3514,154.451738152643,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1971,,2022-12-22,4405580163.21811,157.821514627594,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1972,,2022-12-22,4549456021.25254,159.339596090359,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1973,,2022-12-22,4581910882.61714,157.101147080706,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1974,,2022-12-22,4681419806.69307,157.348409417561,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1975,,2022-12-22,4902947714.95085,161.577350369172,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1976,,2022-12-22,5154770877.52604,166.597989828378,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1977,,2022-12-22,5464802071.09579,173.185602652767,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1978,,2022-12-22,5805981910.85781,180.390663230362,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1979,,2022-12-22,6144979950.69803,187.222635028346,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1980,,2022-12-22,6550831218.10288,195.747148949038,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1981,,2022-12-22,7017049494.30592,205.717658574476,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1982,,2022-12-22,7435843609.68291,214.026774221208,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1983,,2022-12-22,7806219776.60447,220.363652928167,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1984,,2022-12-22,8170592925.04054,225.957675060396,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1985,,2022-12-22,8486534274.4347,230.105736621023,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1986,,2022-12-22,8560312851.09271,227.835499494913,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1987,,2022-12-22,8344280049.97027,218.247135451315,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1988,,2022-12-22,7709784291.03053,198.356764811774,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1989,,2022-12-22,7379702008.3119,186.877958582067,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1990,,2022-12-22,7619405652.5689,190.01223411565,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1991,,2022-12-22,7700101079.07332,189.282207267867,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1992,,2022-12-22,8045707475.98406,195.105096285879,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1993,,2022-12-22,8670596516.47112,207.4886056981,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1994,,2022-12-22,9258442809.42931,218.683869260636,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1995,,2022-12-22,9925370607.6155,231.4675269276,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1996,,2022-12-22,10589070248.7679,243.85648770752599,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1997,,2022-12-22,11228099907.8168,255.34631497058,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1998,,2022-12-22,11875045870.3498,266.757941417256,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,1999,,2022-12-22,12881816310.8367,285.997966655489,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,2000,,2022-12-22,14481504947.5327,318.006925408086,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,2001,,2022-12-22,16287019889.651,353.951569645206,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,2002,,2022-12-22,18193097257.6832,391.415818245374,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,2003,,2022-12-22,20555711975.6276,438.061197333918,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,2004,,2022-12-22,23370875796.0079,493.697570807625,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,2005,,2022-12-22,26541588962.2179,556.142130149917,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,2006,,2022-12-22,30073443517.7559,625.379973457892,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,2007,,2022-12-22,33832770202.7987,698.365535355503,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,2008,,2022-12-22,37579501729.177,771.186089038104,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,2009,,2022-12-22,41491469386.6113,846.491109253166,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,2010,,2022-12-22,45669364143.7476,924.649738607124,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,2011,,2022-12-22,49103726462.6752,986.127077646717,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,2012,,2022-12-22,52288473368.0409,1041.22587003176,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,2013,,2022-12-22,56418567054.599,1113.92740094075,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,2014,,2022-12-22,61044699845.8848,1195.25725864897,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,2015,,2022-12-22,63045305229.1046,1224.56234328693,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,2016,,2022-12-22,69669967695.1085,1342.58650914239,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,2017,,2022-12-22,73676035774.912,1409.03372273586,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,2018,,2022-12-22,78394969160.3623,1488.53051913825,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,2019,,2022-12-22,83686990310.177,1577.80271146309,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,2020,,2022-12-22,86343026585.1156,1616.20849776001,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Myanmar,MM,MMR,2021,,2022-12-22,70876447890.5865,1317.45301357919,East Asia & Pacific,Naypyidaw,95.9562,21.914,Lower middle income,IDA
+Philippines,PH,PHL,1960,,2022-12-22,31344442132.0346,1100.31186408766,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1961,,2022-12-22,33129655728.1974,1129.07067276092,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1962,,2022-12-22,34735216308.6414,1150.70696592751,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1963,,2022-12-22,37172331197.1493,1197.41905847369,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1964,,2022-12-22,38437117697.757,1204.29780124466,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1965,,2022-12-22,40491615974.3189,1234.29208733961,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1966,,2022-12-22,42289912832.7273,1254.71674133302,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1967,,2022-12-22,44498582861.7369,1285.45993825311,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1968,,2022-12-22,46740492395.686,1314.9677282266,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1969,,2022-12-22,48932375372.7781,1341.45207462032,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1970,,2022-12-22,50739197210.2886,1355.37339285376,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1971,,2022-12-22,53473536818.2698,1391.75186932603,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1972,,2022-12-22,56377357074.2076,1430.44432891947,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1973,,2022-12-22,61328421715.4162,1517.79603403317,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1974,,2022-12-22,63410280230.8023,1532.0813722924,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1975,,2022-12-22,66866839836.1197,1577.25519848608,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1976,,2022-12-22,72736680731.3027,1673.09338194671,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1977,,2022-12-22,76783000642.3228,1719.79818543347,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1978,,2022-12-22,80769869289.5581,1760.04725680182,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1979,,2022-12-22,85289404733.576,1808.73277150556,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1980,,2022-12-22,89725060254.8636,1853.07520757967,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1981,,2022-12-22,92795639106.6656,1867.89232275607,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1982,,2022-12-22,96227598682.5388,1889.09286929328,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1983,,2022-12-22,98052989837.8276,1877.70167203857,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1984,,2022-12-22,91150669045.5334,1703.27457497507,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1985,,2022-12-22,84899212334.1854,1548.89787020344,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1986,,2022-12-22,87879755423.2442,1566.20939492365,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1987,,2022-12-22,91712903095.708,1597.36346872944,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1988,,2022-12-22,97854853030.1312,1665.44661429506,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1989,,2022-12-22,103906117099.018,1728.10092571391,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1990,,2022-12-22,107109202426.321,1739.94671617288,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1991,,2022-12-22,106641788491.595,1691.65941806456,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1992,,2022-12-22,107087155596.942,1659.14637598337,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1993,,2022-12-22,109423679520.79,1655.84413532712,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1994,,2022-12-22,114209505698.421,1688.23396789664,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1995,,2022-12-22,119491952442.439,1725.50389756844,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1996,,2022-12-22,126494596534.178,1782.99600827477,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1997,,2022-12-22,133055127055.883,1829.72022855486,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1998,,2022-12-22,132371103155.48,1776.98610412314,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,1999,,2022-12-22,136800837504.278,1794.13136801624,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,2000,,2022-12-22,142796140820.134,1831.70081775894,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,2001,,2022-12-22,147150325740.884,1848.01656257327,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,2002,,2022-12-22,152618807081.076,1877.56330337536,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,2003,,2022-12-22,160382390172.787,1933.64967939048,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,2004,,2022-12-22,170918275875.934,2020.13147600157,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,2005,,2022-12-22,179365920410.027,2079.33365688565,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,2006,,2022-12-22,188901760374.51,2149.00815636567,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,2007,,2022-12-22,201216816876.764,2246.69186223839,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,2008,,2022-12-22,209958655941.685,2300.85812762389,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,2009,,2022-12-22,212999535577.942,2291.6247739847,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,2010,,2022-12-22,228621986430.442,2415.78569868183,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,2011,,2022-12-22,237442754962.828,2464.68651405006,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,2012,,2022-12-22,253819067112.719,2589.13667329437,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,2013,,2022-12-22,270953202687.142,2717.68216544784,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,2014,,2022-12-22,288153278077.449,2843.84610376888,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,2015,,2022-12-22,306446140628.709,2974.29953130009,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,2016,,2022-12-22,328355374915.025,3130.91339301133,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,2017,,2022-12-22,351113647617.654,3289.47515964885,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,2018,,2022-12-22,373379468921.017,3439.10354644511,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,2019,,2022-12-22,396224787544.859,3589.61679192751,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,2020,,2022-12-22,358510944430.631,3195.54169165164,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Philippines,PH,PHL,2021,,2022-12-22,378957382755.316,3327.68081556031,East Asia & Pacific,Manila,121.035,14.5515,Lower middle income,IBRD
+Russian Federation,RU,RUS,1960,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1961,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1962,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1963,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1964,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1965,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1966,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1967,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1968,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1969,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1970,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1971,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1972,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1973,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1974,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1975,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1976,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1977,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1978,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1979,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1980,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1981,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1982,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1983,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1984,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1985,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1986,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1987,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1988,,2022-12-22,NA,NA,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1989,,2022-12-22,1197409941525.87,8105.88818359375,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1990,,2022-12-22,1161487695458.05,7849.51220703125,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1991,,2022-12-22,1102868114734.13,7432.015625,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1992,,2022-12-22,942609535354.691,6345.90673828125,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1993,,2022-12-22,860899047519.714,5798.90966796875,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1994,,2022-12-22,752686138014.082,5071.73876953125,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1995,,2022-12-22,721498374080.086,4862.64208984375,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1996,,2022-12-22,694405609132.078,4686.85888671875,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1997,,2022-12-22,704126703002.417,4760.33544921875,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1998,,2022-12-22,666808257949.712,4515.505859375,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,1999,,2022-12-22,709483417602.604,4819.37646484375,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,2000,,2022-12-22,780432233409.801,5323.66259765625,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,2001,,2022-12-22,820234677092.259,5618.95068359375,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,2002,,2022-12-22,858785640548.236,5910.1669921875,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,2003,,2022-12-22,921476583049.999,6370.44873046875,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,2004,,2022-12-22,987822416663.347,6856.67236328125,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,2005,,2022-12-22,1051042710015.96,7323.37939453125,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,2006,,2022-12-22,1137228929627.05,7949.89013671875,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,2007,,2022-12-22,1233893135821.89,8640.3984375,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,2008,,2022-12-22,1298055199647.43,9093.6923828125,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,2009,,2022-12-22,1196806973081.95,8381.861328125,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,2010,,2022-12-22,1250663286871.01,8755.11328125,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,2011,,2022-12-22,1304442173222.47,9124.4677734375,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,2012,,2022-12-22,1356934050143.93,9475.6826171875,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,2013,,2022-12-22,1380753971008.75,9621.509765625,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,2014,,2022-12-22,1390920009905.68,9520.9404296875,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,2015,,2022-12-22,1363481063446.77,9313.013671875,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,2016,,2022-12-22,1366121990896.57,9313.9677734375,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,2017,,2022-12-22,1391064510462.35,9473.1796875,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,2018,,2022-12-22,1430115105089.32,9739.900390625,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,2019,,2022-12-22,1461550117893.8,9958.4609375,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,2020,,2022-12-22,1422617966849.71,9713.3681640625,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Russian Federation,RU,RUS,2021,,2022-12-22,1490186403606.44,10216.251953125,Europe & Central Asia,Moscow,37.6176,55.7558,Upper middle income,IBRD
+Singapore,SG,SGP,1960,,2022-12-22,5946828629.61885,3612.01933285887,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1961,,2022-12-22,6430753564.15478,3777.46332480896,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1962,,2022-12-22,6916496945.01018,3951.8323305966,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1963,,2022-12-22,7610925225.48734,4240.06976350269,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1964,,2022-12-22,7374745417.51527,4004.53161246485,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1965,,2022-12-22,7952502182.13558,4214.58592513412,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1966,,2022-12-22,8762074483.56124,4529.60839720908,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1967,,2022-12-22,9858088449.22897,4984.87482262792,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1968,,2022-12-22,11191591504.2188,5562.42122476083,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1969,,2022-12-22,12739816700.611,6237.36435770428,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1970,,2022-12-22,14516002327.6113,6997.32626962034,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1971,,2022-12-22,16317937154.4952,7723.00494793657,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1972,,2022-12-22,18490762292.6971,8590.76486373216,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1973,,2022-12-22,20451338376.4911,9325.7356937944,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1974,,2022-12-22,21702429444.2828,9732.90404712655,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1975,,2022-12-22,22568082630.2007,9974.40229390999,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1976,,2022-12-22,24246508583.0666,10572.7591606273,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1977,,2022-12-22,25907986616.2351,11141.7824006516,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1978,,2022-12-22,27922897876.0547,11863.9097026065,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1979,,2022-12-22,30590776840.2677,12834.3934718975,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1980,,2022-12-22,33684535932.4993,13954.1439148362,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1981,,2022-12-22,37327829502.4731,14737.568575321,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1982,,2022-12-22,39978906022.6942,15106.5254655432,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1983,,2022-12-22,43398894384.6378,16187.2088641914,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1984,,2022-12-22,47214649403.5496,17280.6846164895,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1985,,2022-12-22,46920643002.6185,17149.6273525565,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1986,,2022-12-22,47550698283.3867,17396.3444738009,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1987,,2022-12-22,52685190573.1743,18987.0979642684,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1988,,2022-12-22,58619435554.2624,20596.3496656706,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1989,,2022-12-22,64574483561.2453,22032.2977682444,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1990,,2022-12-22,70916278731.4518,23273.1232947742,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1991,,2022-12-22,75659441373.2906,24133.1541695357,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1992,,2022-12-22,80683081175.4437,24973.8852642505,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1993,,2022-12-22,89929080593.5409,27140.4459533646,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1994,,2022-12-22,99907331975.5601,29220.8041465227,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1995,,2022-12-22,107076083794.006,30380.4515566171,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1996,,2022-12-22,115076156531.859,31349.8872510176,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1997,,2022-12-22,124646130346.232,32835.848942037,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1998,,2022-12-22,121915114925.807,31043.6726823341,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,1999,,2022-12-22,128886674425.371,32557.6390228291,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,2000,,2022-12-22,140535859761.42,34890.7155939131,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,2001,,2022-12-22,139030913587.431,33598.4800400363,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,2002,,2022-12-22,144485597905.15,34599.4559094697,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,2003,,2022-12-22,151057171952.284,36710.4640517689,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,2004,,2022-12-22,166072228687.809,39857.3603937848,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,2005,,2022-12-22,178305644457.376,41799.2481665352,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,2006,,2022-12-22,194365216758.801,44160.2131972243,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,2007,,2022-12-22,211899912714.577,46179.6536839625,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,2008,,2022-12-22,215848632528.368,44602.3909860585,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,2009,,2022-12-22,216124818155.368,43332.6626307761,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,2010,,2022-12-22,247505600814.664,48752.9380740728,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,2011,,2022-12-22,262887910968.868,50714.4548377272,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,2012,,2022-12-22,274548297934.245,51680.2924786205,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,2013,,2022-12-22,287775021821.356,53299.9420690388,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,2014,,2022-12-22,299100523712.54,54682.9280074351,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,2015,,2022-12-22,308004146057.608,55646.6187469505,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,2016,,2022-12-22,318974323537.969,56885.7187229482,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,2017,,2022-12-22,333843104451.557,59484.685464386,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,2018,,2022-12-22,346066118708.176,61373.6484785038,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,2019,,2022-12-22,349857870235.671,61340.1661723862,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,2020,,2022-12-22,335362889147.512,58982.4609149611,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified
+Singapore,SG,SGP,2021,,2022-12-22,360897294151.877,66176.3870010699,East Asia & Pacific,Singapore,103.85,1.28941,High income,Not classified

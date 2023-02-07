@@ -1,4 +1,5 @@
 
+# Responses to Assignment Three
 
 ## Assignment Three: The Week Four Assignment {-}
 
@@ -75,7 +76,7 @@ In RStudio,
       + library(WDI)
       + or any other packages
       
-```{r}
+```{r 9-1}
 library(tidyverse)
 library(WDI)
 ```
@@ -108,10 +109,16 @@ We should know first about the variables. At least you must know if each of the 
 
 It is not a must, but it is good to run the following code chunk and use `wdi_cache` for `WDIsearch()` to update the mata data. See `WDIcache` help. 
 
-```{r cache = TRUE}
+```{r 9-2, eval=FALSE}
 wdi_cache <- WDIcache()
 ```
-
+```{r 9-3, echo=FALSE, eval=FALSE}
+wdi_cache <- WDIcache()
+write_rds(wdi_cache, "./data/wdi_cache.RData")
+```
+```{r 9-4, echo=FALSE, eval=TRUE}
+wdi_cache <- read_rds("./data/wdi_cache.RData")
+```
 
 ## Indicators Used in Assignment Three
 
@@ -163,23 +170,23 @@ If you follow the order of the arguments, you can omit argument names: `string`,
 
 * The simplest format 1.
 
-```{r}
+```{r 9-5}
 WDIsearch("NY.GNS.ICTR.ZS", "indicator")
 ```
 * The simplest format 2.
 
-```{r}
+```{r 9-6}
 WDIsearch("Literacy rate", "name")
 ```
 
 * Detailed with short = FALSE
 
-```{r}
+```{r 9-7}
 WDIsearch("IP.JRN.ARTC.SC", "indicator", FALSE)
 ```
 * You can use `wdi_cache` downloaded above to use the updated meta data.
 
-```{r}
+```{r 0-8}
 WDIsearch("Government expenditure on education", "name", FALSE, wdi_cache)
 ```
 
@@ -189,21 +196,45 @@ WDIsearch("Government expenditure on education", "name", FALSE, wdi_cache)
 * The shortest form. The following is same as:
 `WDI(country = "all", indicator = "NY.GDP.PCAP.KD", start = 1960, end = NULL, extra = FALSE, cache = NULL, latest = NULL, language = "en)`
 
-```{r}
+```{r 9-9, eval=FALSE}
 WDI(indicator = "NY.GDP.PCAP.KD")
+```
+```{r 9-10, echo=FALSE, eval=FALSE}
+df_gdp <- WDI(indicator = "NY.GDP.PCAP.KD")
+write_csv(df_gdp, "./data/gdp.csv")
+```
+```{r 9-11, echo=FALSE, eval=TRUE}
+df_gdp <- read_csv("./data/gdp.csv")
+df_gdp
 ```
 
 * In order to use the downloaded data, we need to assign a name to it. It can be `df` if you download and use only one data, but it is better to assign the data to be a more descriptive name.
 
-```{r cache = TRUE}
+```{r 9-12, eval=FALSE}
 df_gdppcap <- WDI(indicator = "NY.GDP.PCAP.KD")
+df_gdppcap
+```
+```{r 9-13, echo=FALSE, eval=FALSE}
+df_gdppcap <- WDI(indicator = "NY.GDP.PCAP.KD")
+write_csv(df_gdp, "./data/gdppcap.csv")
+```
+```{r 9-14, echo=FALSE, eval=TRUE}
+df_gdppcap <- read_csv("./data/gdppcap.csv")
 df_gdppcap
 ```
 
 * If you want to use extra information such as `region`, `income`, `lending`, use `extra = TRUE`.
 
-```{r cache = TRUE}
+```{r 9-15, eval=FALSE}
 df_gdppcap_extra <- WDI(indicator = "NY.GDP.PCAP.KD", extra = TRUE)
+df_gdppcap_extra
+```
+```{r 9-16, echo=FALSE, eval=FALSE}
+df_gdppcap_extra <- WDI(indicator = "NY.GDP.PCAP.KD", extra = TRUE)
+write_csv(df_gdppcap_extra, "./data/gdppcap_extra.csv")
+```
+```{r 9-17, echo=FALSE, eval=TRUE}
+df_gdppcap_extra <- read_csv("./data/gdppcap_extra.csv")
 df_gdppcap_extra
 ```
 
@@ -212,13 +243,13 @@ df_gdppcap_extra
 Since the data is generally huge, it is better to use a data saved in your computer.
 Before saving it check whether you have `data` folder (or directory) in you project folder. Use the `Files` tab of the right bottom pane. You should be able to see the project icon with Rproj at the end, your R Notebook file you are editing, and the `data` folder. Since `.csv` is automatically added, `write_csv(gdppcap_extra, "./data/gdppcap_extra")` does the same as below.
 
-```{r eval = FALSE}
+```{r 9-18, eval = FALSE}
 write_csv(df_gdppcap_extra, "./data/gdppcap_extra.csv")
 ```
 
 To read the data, run the next code chunk. You do not have to run the code `df_gdppcap_extra <- WDI(indicator = "NY.GDP.PCAP.KD", extra = TRUE)` again.
 
-```{r eval = FALSE}
+```{r 9-19, eval = FALSE}
 gdppcap <- read_csv("./data/gdppcap_extra.csv")
 ```
 
@@ -228,32 +259,46 @@ gdppcap <- read_csv("./data/gdppcap_extra.csv")
 
 If you want to import data for several countries, you can use `iso2c` codes of the countries.
 
-```{r cache = TRUE}
+```{r 9-20}
 ASEAN <- c("BN", "ID", "KH", "LA", "MM", "MY", "PH", "SG")
+```
+
+```{r 9-21, eval=FALSE}
 df_gdppcap_asean <- WDI(ASEAN, "NY.GDP.PCAP.KD")
+```
+```{r 9-22, echo=FALSE, eval=FALSE}
+df_gdppcap_asean <- WDI(ASEAN, "NY.GDP.PCAP.KD")
+write_csv(df_gdppcap_asean, "./data/gdppcap_asean.csv")
+```
+```{r 9-23, echo=FALSE, eval=TRUE}
+df_gdppcap_asean <- read_csv("./data/gdppcap_asean.csv")
+df_gdppcap_asean
+```
+
+```{r 9-24}
 df_gdppcap_asean %>% distinct(country) %>% pull()
 ```
 
 
-```{r}
+```{r 9-25}
 wdi_cache$country %>% filter(iso2c %in% ASEAN) %>% distinct(country) %>% pull()
 ```
 
 
 You can also use `wdi_cache$country`.
 
-```{r}
-wdi_cache$country
+```{r 9-26}
+wdi_cache$country %>% slice(1:10)
 ```
 
-```{r}
+```{r 9-27}
 wdi_cache$country %>% filter(iso2c %in% ASEAN) %>% pull(country)
 ```
 
 
 You can find iso2c codes from the downloaded data, or using wdi_cache$country
 
-```{r}
+```{r 9-28}
 wdi_cache$country %>% 
   filter(country %in% c("Brunei Darussalam", "Indonesia", "Cambodia", "Lao PDR", "Myanmar", "Malaysia", "Philippines", "Singapore")) %>%
   pull(iso2c)
@@ -261,14 +306,14 @@ wdi_cache$country %>%
 
 You can also find countries in some category.
 
-```{r}
+```{r 9-29}
 wdi_cache$country %>% 
   filter(region == "South Asia") %>%
   pull(country)
 ```
 
 
-```{r}
+```{r 9-30}
 wdi_cache$country %>% 
   filter(income == "Lower middle income") %>%
   pull(iso2c)
@@ -276,13 +321,13 @@ wdi_cache$country %>%
 
 The following shows a list of indicators
 
-```{r}
-wdi_cache$series
+```{r 9-31}
+wdi_cache$series %>% slice(1:10)
 ```
 
 The following is same as `WDIsearch("gdp per cap", "name")`. See WDIsearch help.
 
-```{r}
+```{r 9-32, eval=FALSE}
 wdi_cache$series %>% filter(grepl("gdp per cap", name, ignore.case = TRUE))
 ```
 
@@ -294,69 +339,97 @@ wdi_cache$series %>% filter(grepl("gdp per cap", name, ignore.case = TRUE))
 * [Posit Cloud: Histograms](https://posit.cloud/learn/primers/3.3)
 
 
-```{r cache = TRUE}
+```{r 9-33}
 wdi_cache$series %>% filter(indicator == "SG.GEN.PARL.ZS") %>% pull(name)
+```
+```{r 9-34, eval=FALSE}
 df_women_in_parl <- WDI(indicator = c(women_in_parl = "SG.GEN.PARL.ZS")) %>%
   drop_na(women_in_parl)
 ```
 
-```{r}
+```{r 9-35, echo=FALSE, eval=FALSE}
+write_csv(df_women_in_parl, "./data/women_in.parl.csv")
+```
+```{r 9-36, echo=FALSE, eval=TRUE}
+df_women_in_parl <-read_csv("./data/women_in.parl.csv")
+```
+
+```{r 9-37, }
 df_women_in_parl %>% filter(year == 2020) %>%
   ggplot(aes(women_in_parl)) + geom_histogram()
 ```
 
-```{r}
+```{r 9-38}
 df_women_in_parl %>% filter(year == 2020) %>%
   ggplot(aes(women_in_parl)) + geom_histogram(binwidth = 5)
 ```
 
-```{r cache = TRUE}
+```{r 9-39}
 wdi_cache$series %>% filter(indicator == "IP.JRN.ARTC.SC") %>% pull(name)
+```
+
+```{r 9-40, eval=FALSE}
 df_stja <- WDI(indicator = c(stja = "IP.JRN.ARTC.SC"), extra = TRUE) %>%
   drop_na(stja)
+```
+```{r 9-41, echo=FALSE, eval=FALSE}
+write_csv(df_stja, "./data/stja.csv")
+```
+```{r 9-42, echo=FALSE, eval=TRUE}
+df_stja <-read_csv("./data/stja.csv")
+```
+
+
+```{r 9-43}
+df_stja$year %>% summary()
 ```
 
 Default of the number of bins is 30. Change and find an appropriate one.
 
-```{r}
-df_stja$year %>% summary()
-```
 
-
-```{r}
+```{r 9-44}
 df_stja %>% filter(income != "Aggregates") %>% 
   ggplot(aes(stja)) + geom_histogram(bins = 20)
 ```
-```{r}
+```{r 9-45}
 df_stja %>% filter(income != "Aggregates", stja >0) %>% 
   ggplot(aes(stja)) + geom_histogram(bins = 20) + scale_x_log10()
 ```
-```{r}
+```{r 9-46}
 df_stja %>% filter(income != "Aggregates", income != "Not classified", stja >0) %>% 
   ggplot(aes(stja, fill = income)) + geom_histogram(alpha = 0.7, bins = 20, color = "black") + scale_x_log10()
 ```
 
-```{r}
+```{r 9-47}
 df_stja %>% filter(income != "Aggregates", income != "Not classified", stja >0) %>% 
   ggplot(aes(stja, fill = income)) + geom_density(alpha = 0.3) + scale_x_log10()
 ```
 
-```{r cache = TRUE}
+```{r 9-48}
 wdi_cache$series %>% filter(indicator == "MS.MIL.XPND.GD.ZS") %>% pull(name)
-df_milxpnd <- WDI(indicator = c(milxpnd = "MS.MIL.XPND.GD.ZS"), extra = TRUE) %>%
-  drop_na(milxpnd)
 ```
 
 
+```{r 9-49, eval=FALSE}
+df_milxpnd <- WDI(indicator = c(milxpnd = "MS.MIL.XPND.GD.ZS"), extra = TRUE) %>%
+  drop_na(milxpnd)
+```
+```{r 9-50, echo=FALSE, eval=FALSE}
+write_csv(df_milxpnd, "./data/milxpnd.csv")
+```
+```{r 9-51, echo=FALSE, eval=TRUE}
+df_milxpnd <-read_csv("./data/milxpnd.csv")
+```
+
 Default of the number of bins is 30. Here I chose binwidth = 0.5 (%).
 
-```{r}
+```{r 9-52}
 df_milxpnd %>% filter(income != "Aggregates", year == 2021) %>% 
   ggplot(aes(milxpnd, fill = income)) + geom_histogram(color = "black", binwidth = 0.5) + 
   labs(title = "Military expenditure (% of GDP)")
 ```
 
-```{r}
+```{r 9-53}
 df_milxpnd %>% filter(income != "Aggregates", income != "Not classified", year == 2021) %>% 
   ggplot(aes(milxpnd, fill = income)) + geom_density(binwidth = 0.5, alpha = 0.3) + 
   labs(title = "Military expenditure (% of GDP)")
@@ -364,32 +437,49 @@ df_milxpnd %>% filter(income != "Aggregates", income != "Not classified", year =
 
 ## Q2. Effect of unemployed rate under pandemic depending on income groups
 
-```{r cache = TRUE}
+```{r 9-54}
 wdi_cache$series %>% filter(indicator == "SL.UEM.TOTL.ZS") %>% pull(name)
+```
+
+```{r 9-55, eval=FALSE}
 df_ur <- WDI(indicator = c(ur = "SL.UEM.TOTL.ZS"), 
              extra = TRUE, cache = wdi_cache) %>% drop_na(ur)
 ```
 
+```{r 9-56, echo=FALSE, eval=FALSE}
+write_csv(df_ur, "./data/ur.csv")
+```
+```{r 9-57, echo=FALSE, eval=TRUE}
+df_ur <-read_csv("./data/ur.csv")
+```
 
-```{r}
+```{r 9-58}
 df_ur %>% filter(income == "Aggregates") %>% filter(grepl('income', country)) %>% 
   filter(year >= 2018) %>% ggplot() + geom_line(aes(x = year, y = ur, color = country))
 ```
 
 ## Q3. Add values at each data point.
 
-```{r cache = TRUE}
+```{r 9-59}
 wdi_cache$series %>% filter(indicator == "FP.CPI.TOTL.ZG") %>% pull(name)
+```
+
+```{r 9-60, eval=FALSE}
 df_infl <- WDI(country = c("VN","CN","JP"), 
                indicator = c(inf = "FP.CPI.TOTL.ZG"), extra = TRUE) %>% drop_na(inf)
 ```
-
-```{r}
+```{r 9-61, echo=FALSE, eval=FALSE}
+write_csv(df_infl, "./data/infl.csv")
+```
+```{r 9-62, echo=FALSE, eval=TRUE}
+df_infl <-read_csv("./data/infl.csv")
+```
+```{r 9-63}
 df_infl_s <- df_infl %>% filter(year %in% c(2000, 2005, 2010, 2015, 2020), 
                    country %in% c("Japan", "Vietnam", "China"))
 df_infl_s
 ```
-```{r}
+```{r 9-64}
 df_infl_s %>%
   ggplot(aes(x = year, y = inf, color= country)) + 
   geom_line() + geom_point() + 
@@ -400,14 +490,24 @@ labs(title = "Inflation of Japan, Vietnam and China from 2000 to 2020",
 
 # Regression Lines; Topic of EDA5
 
-```{r cache = TRUE}
+```{r 9-65}
 wdi_cache$series %>% filter(indicator %in% c("SI.POV.NAHC","SI.POV.MDIM")) %>% pull(name)
+```
+
+```{r 9-66, cash = TRUE, eval=FALSE}
 df_wdi_poverty <- WDI(
   indicator = c(poverty = "SI.POV.NAHC", multipoverty = "SI.POV.MDIM", gdppercap = "NY.GDP.PCAP.KD"), start = 1990,
   extra = TRUE) %>% drop_na(poverty, multipoverty, gdppercap)
 ```
 
-```{r}
+```{r 9-67, echo=FALSE, eval=FALSE}
+write_csv(df_wdi_poverty, "./data/wdi_poverty.csv")
+```
+```{r 9-68, echo=FALSE, eval=TRUE}
+df_wdi_poverty <-read_csv("./data/wdi_poverty.csv")
+```
+
+```{r 9-69}
 df_wdi_poverty %>%  
   group_by(country, year) %>%
   mutate(mean_gdp = mean(gdppercap)) %>%
@@ -418,7 +518,7 @@ df_wdi_poverty %>%
   labs(x = "GDP per capita", y = "poverty rate (% of population)", title = "Poverty rates and GDP per capita", subtitle="world countries, 1990-2021 average, by income level")
 ```
 
-```{r}
+```{r 9-70}
 df_wdi_poverty %>%  
   group_by(country, year) %>%
   mutate(mean_gdp = mean(gdppercap)) %>%
@@ -444,17 +544,17 @@ Suppose you have two indicators,
 * NY.GDP.MKTP.KD: GDP (constant 2015 US$)
 * NY.GDP.PCAP.KD: GDP per capita (constant 2015 US$)
 
-```{r}
+```{r 9-71}
 WDIsearch(string = "NY.GDP.MKTP.KD", field = "indicator", short = FALSE, cache = wdi_cache)
 ```
 
-```{r}
+```{r 9-72}
 WDIsearch(string = "NY.GDP.PCAP.KD", field = "indicator", short = FALSE, cache = wdi_cache)
 ```
 
 List the name of countries of ASEAN and BRICs using `wdi_cache$country`.
 
-```{r}
+```{r 9-73}
 asean <- c("Brunei Darussalam", "Cambodia", "Lao PDR", "Myanmar", 
            "Philippines", "Indonesia", "Malaysia", "Singapore")
 brics <- c("Brazil", "Russian Federation", "India", "China")
@@ -462,7 +562,7 @@ brics <- c("Brazil", "Russian Federation", "India", "China")
 
 Find the `iso2c` of the countries using `wdi_cache$country`.
 
-```{r}
+```{r 9-74}
 wdi_cache$country %>% 
   filter(country %in% 
            c("Brunei Darussalam", "Cambodia", "Lao PDR", "Myanmar", 
@@ -473,21 +573,27 @@ wdi_cache$country %>%
 
 Separate the iso3c's of the countries with commas and read data using `WDI`.
 
-```{r cache=TRUE}
+```{r 9-75, eval=FALSE}
 wdi_gdp <- WDI(
   country = c("BR", "BN", "CN", "ID", "IN", "KH", "LA", "MM", "MY", "PH", "RU", "SG"),
   indicator = c(gdp = "NY.GDP.MKTP.KD", gdpPercap = "NY.GDP.PCAP.KD"),
   start = 1960, extra = TRUE, cache = wdi_cache)
 ```
 
+```{r 9-76, echo=FALSE, eval=FALSE}
+write_csv(wdi_gdp, "./data/wdi_gdp.csv")
+```
+```{r 9-77, echo=FALSE, eval=TRUE}
+wdi_gdp <-read_csv("./data/wdi_gdp.csv")
+```
 
-```{r}
+```{r 9-78}
 wdi_gdp %>% filter(country %in% asean) %>% drop_na(gdp, gdpPercap) %>% summary() 
 ```
 
 Using the summary, decide the scaling of two variables, `gdpPercap` and `gdp`.
 
-```{r}
+```{r 9-79}
 wdi_gdp %>% drop_na(gdp, gdpPercap) %>%
   filter(country %in% asean) %>%
   ggplot() + 
@@ -499,13 +605,13 @@ wdi_gdp %>% drop_na(gdp, gdpPercap) %>%
 
 ### BRICs
 
-```{r}
+```{r 9-80}
 wdi_gdp %>% filter(country %in% brics) %>% drop_na(gdp, gdpPercap) %>% summary() 
 ```
 
 Using the summary, decide the scaling of two variables, `gdpPercap` and `gdp`.
 
-```{r}
+```{r 9-81}
 wdi_gdp %>% drop_na(gdp, gdpPercap) %>%
   filter(country %in% brics) %>%
   ggplot() + 

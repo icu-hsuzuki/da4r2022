@@ -1,0 +1,293 @@
+country,iso2c,iso3c,year,status,lastupdated,poverty,multipoverty,gdppercap,region,capital,longitude,latitude,income,lending
+Afghanistan,AF,AFG,2016,,2022-12-22,54.5,51.7,590.427738791141,South Asia,Kabul,69.1761,34.5228,Low income,IDA
+Albania,AL,ALB,2017,,2022-12-22,23.4,51.8,4249.80373367726,Europe & Central Asia,Tirane,19.8172,41.3317,Upper middle income,IBRD
+Albania,AL,ALB,2019,,2022-12-22,21.8,46.2,4543.38652018643,Europe & Central Asia,Tirane,19.8172,41.3317,Upper middle income,IBRD
+Albania,AL,ALB,2018,,2022-12-22,23,49,4431.53918098494,Europe & Central Asia,Tirane,19.8172,41.3317,Upper middle income,IBRD
+Armenia,AM,ARM,2020,,2022-12-22,27,19.1,4256.13129015707,Europe & Central Asia,Yerevan,44.509,40.1596,Upper middle income,IBRD
+Austria,AT,AUT,2015,,2022-12-22,14.1,18.3,44195.8175947748,Europe & Central Asia,Vienna,16.3798,48.2201,High income,Not classified
+Austria,AT,AUT,2016,,2022-12-22,14.4,18,44590.2516278164,Europe & Central Asia,Vienna,16.3798,48.2201,High income,Not classified
+Austria,AT,AUT,2012,,2022-12-22,14.4,18.5,44549.881698231,Europe & Central Asia,Vienna,16.3798,48.2201,High income,Not classified
+Austria,AT,AUT,2013,,2022-12-22,14.1,18.8,44299.3781845446,Europe & Central Asia,Vienna,16.3798,48.2201,High income,Not classified
+Austria,AT,AUT,2017,,2022-12-22,14.3,18.1,45281.723399938,Europe & Central Asia,Vienna,16.3798,48.2201,High income,Not classified
+Austria,AT,AUT,2014,,2022-12-22,13.9,19.2,44245.1687398338,Europe & Central Asia,Vienna,16.3798,48.2201,High income,Not classified
+Austria,AT,AUT,2018,,2022-12-22,13.3,17.5,46154.6250956541,Europe & Central Asia,Vienna,16.3798,48.2201,High income,Not classified
+Austria,AT,AUT,2011,,2022-12-22,14.4,19.2,44451.0001918473,Europe & Central Asia,Vienna,16.3798,48.2201,High income,Not classified
+Austria,AT,AUT,2010,,2022-12-22,14.5,18.9,43334.5089644691,Europe & Central Asia,Vienna,16.3798,48.2201,High income,Not classified
+Austria,AT,AUT,2019,,2022-12-22,13.9,16.9,46647.0809634335,Europe & Central Asia,Vienna,16.3798,48.2201,High income,Not classified
+Austria,AT,AUT,2020,,2022-12-22,14.7,17.5,43455.7000665738,Europe & Central Asia,Vienna,16.3798,48.2201,High income,Not classified
+Belgium,BE,BEL,2018,,2022-12-22,14.8,20,42382.3182763247,Europe & Central Asia,Brussels,4.36761,50.8371,High income,Not classified
+Belgium,BE,BEL,2019,,2022-12-22,14.1,19.5,43098.4847198889,Europe & Central Asia,Brussels,4.36761,50.8371,High income,Not classified
+Belgium,BE,BEL,2020,,2022-12-22,13.1,18.9,40612.3924560653,Europe & Central Asia,Brussels,4.36761,50.8371,High income,Not classified
+Bhutan,BT,BTN,2012,,2022-12-22,12,12.4,2411.89805675837,South Asia,Thimphu,89.6177,27.5768,Lower middle income,IDA
+Bhutan,BT,BTN,2017,,2022-12-22,8.2,5.8,2998.4752634982,South Asia,Thimphu,89.6177,27.5768,Lower middle income,IDA
+Bulgaria,BG,BGR,2020,,2022-12-22,22.1,32.1,7956.46908962689,Europe & Central Asia,Sofia,23.3238,42.7105,Upper middle income,IBRD
+Burundi,BI,BDI,2013,,2022-12-22,64.9,64.8,305.290841647852,Sub-Saharan Africa,Bujumbura,29.3639,-3.3784,Low income,IDA
+Chile,CL,CHL,2017,,2022-12-22,8.6,20.7,13615.5235299929,Latin America & Caribbean,Santiago,-70.6475,-33.475,High income,IBRD
+Chile,CL,CHL,2015,,2022-12-22,11.7,20.9,13569.9478008231,Latin America & Caribbean,Santiago,-70.6475,-33.475,High income,IBRD
+Chile,CL,CHL,2013,,2022-12-22,14.4,20.4,13318.5948942352,Latin America & Caribbean,Santiago,-70.6475,-33.475,High income,IBRD
+Chile,CL,CHL,2011,,2022-12-22,22.2,24.3,12382.3791654878,Latin America & Caribbean,Santiago,-70.6475,-33.475,High income,IBRD
+Colombia,CO,COL,2019,,2022-12-22,35.7,17.5,6403.87709573135,Latin America & Caribbean,Bogota,-74.082,4.60987,Upper middle income,IBRD
+Colombia,CO,COL,2020,,2022-12-22,42.5,18.1,5865.65409477439,Latin America & Caribbean,Bogota,-74.082,4.60987,Upper middle income,IBRD
+Costa Rica,CR,CRI,2011,,2022-12-22,24.8,28.79957923639,10453.5219794245,Latin America & Caribbean,San Jose,-84.0089,9.63701,Upper middle income,IBRD
+Costa Rica,CR,CRI,2017,,2022-12-22,22.1,23.0765411694186,12267.1613498322,Latin America & Caribbean,San Jose,-84.0089,9.63701,Upper middle income,IBRD
+Costa Rica,CR,CRI,2018,,2022-12-22,22.9,23.6210876691913,12470.95672073,Latin America & Caribbean,San Jose,-84.0089,9.63701,Upper middle income,IBRD
+Costa Rica,CR,CRI,2019,,2022-12-22,23.9,20.715601092999,12662.4221428116,Latin America & Caribbean,San Jose,-84.0089,9.63701,Upper middle income,IBRD
+Costa Rica,CR,CRI,2016,,2022-12-22,22.9,25.0396719237987,11893.3225863446,Latin America & Caribbean,San Jose,-84.0089,9.63701,Upper middle income,IBRD
+Costa Rica,CR,CRI,2015,,2022-12-22,23.6,26.1669480887656,11529.9545258398,Latin America & Caribbean,San Jose,-84.0089,9.63701,Upper middle income,IBRD
+Costa Rica,CR,CRI,2012,,2022-12-22,23.5,26.2,10832.7561537334,Latin America & Caribbean,San Jose,-84.0089,9.63701,Upper middle income,IBRD
+Costa Rica,CR,CRI,2013,,2022-12-22,23.3,25.3472112211607,10975.695756397,Latin America & Caribbean,San Jose,-84.0089,9.63701,Upper middle income,IBRD
+Costa Rica,CR,CRI,2014,,2022-12-22,24.6,25.7069427635349,11240.7109558371,Latin America & Caribbean,San Jose,-84.0089,9.63701,Upper middle income,IBRD
+Croatia,HR,HRV,2019,,2022-12-22,18.3,23.3,14071.9114694775,Europe & Central Asia,Zagreb,15.9614,45.8069,High income,IBRD
+Croatia,HR,HRV,2014,,2022-12-22,20,29.3,11562.5750919826,Europe & Central Asia,Zagreb,15.9614,45.8069,High income,IBRD
+Croatia,HR,HRV,2018,,2022-12-22,18.3,24.8,13531.2435029842,Europe & Central Asia,Zagreb,15.9614,45.8069,High income,IBRD
+Croatia,HR,HRV,2017,,2022-12-22,19.3,26.4,13045.5193626136,Europe & Central Asia,Zagreb,15.9614,45.8069,High income,IBRD
+Croatia,HR,HRV,2015,,2022-12-22,19.5,29.1,11952.3111753908,Europe & Central Asia,Zagreb,15.9614,45.8069,High income,IBRD
+Croatia,HR,HRV,2016,,2022-12-22,20,27.9,12464.4835228917,Europe & Central Asia,Zagreb,15.9614,45.8069,High income,IBRD
+Croatia,HR,HRV,2012,,2022-12-22,19.5,32.6,11579.1276366176,Europe & Central Asia,Zagreb,15.9614,45.8069,High income,IBRD
+Croatia,HR,HRV,2013,,2022-12-22,19.4,29.9,11565.2280592202,Europe & Central Asia,Zagreb,15.9614,45.8069,High income,IBRD
+Croatia,HR,HRV,2011,,2022-12-22,20.4,32.6,11819.377265251,Europe & Central Asia,Zagreb,15.9614,45.8069,High income,IBRD
+Croatia,HR,HRV,2010,,2022-12-22,20.9,31.1,11788.8503191383,Europe & Central Asia,Zagreb,15.9614,45.8069,High income,IBRD
+Cyprus,CY,CYP,2017,,2022-12-22,15.4,25.2,26101.181640625,Europe & Central Asia,Nicosia,33.3736,35.1676,High income,Not classified
+Cyprus,CY,CYP,2018,,2022-12-22,14.7,23.9,27241.0078125,Europe & Central Asia,Nicosia,33.3736,35.1676,High income,Not classified
+Cyprus,CY,CYP,2016,,2022-12-22,15.7,27.7,24916.51953125,Europe & Central Asia,Nicosia,33.3736,35.1676,High income,Not classified
+Cyprus,CY,CYP,2010,,2022-12-22,14.8,24.6,26089.93359375,Europe & Central Asia,Nicosia,33.3736,35.1676,High income,Not classified
+Cyprus,CY,CYP,2011,,2022-12-22,14.7,24.6,25538.669921875,Europe & Central Asia,Nicosia,33.3736,35.1676,High income,Not classified
+Cyprus,CY,CYP,2019,,2022-12-22,14.3,22.3,28359.919921875,Europe & Central Asia,Nicosia,33.3736,35.1676,High income,Not classified
+Cyprus,CY,CYP,2015,,2022-12-22,16.1,28.9,23487.125,Europe & Central Asia,Nicosia,33.3736,35.1676,High income,Not classified
+Cyprus,CY,CYP,2013,,2022-12-22,14.4,27.8,22738.390625,Europe & Central Asia,Nicosia,33.3736,35.1676,High income,Not classified
+Cyprus,CY,CYP,2012,,2022-12-22,15.3,27.1,24285.388671875,Europe & Central Asia,Nicosia,33.3736,35.1676,High income,Not classified
+Cyprus,CY,CYP,2014,,2022-12-22,16.2,27.4,22581.7265625,Europe & Central Asia,Nicosia,33.3736,35.1676,High income,Not classified
+Czechia,CZ,CZE,2014,,2022-12-22,9.7,14.8,16951.3791150445,NA,NA,NA,NA,NA,NA
+Czechia,CZ,CZE,2015,,2022-12-22,9.7,14,17829.6983223668,NA,NA,NA,NA,NA,NA
+Czechia,CZ,CZE,2016,,2022-12-22,9.1,13.3,18247.0117295456,NA,NA,NA,NA,NA,NA
+Czechia,CZ,CZE,2017,,2022-12-22,9.6,12.2,19139.2398841383,NA,NA,NA,NA,NA,NA
+Czechia,CZ,CZE,2018,,2022-12-22,10.1,12.2,19689.5827032979,NA,NA,NA,NA,NA,NA
+Czechia,CZ,CZE,2019,,2022-12-22,9.5,12.5,20206.4256384905,NA,NA,NA,NA,NA,NA
+Czechia,CZ,CZE,2020,,2022-12-22,8.6,11.9,19048.0868543829,NA,NA,NA,NA,NA,NA
+Denmark,DK,DNK,2019,,2022-12-22,12.1,16.5,57203.0277943447,Europe & Central Asia,Copenhagen,12.5681,55.6763,High income,Not classified
+Denmark,DK,DNK,2020,,2022-12-22,12.3,15.9,55898.7900294456,Europe & Central Asia,Copenhagen,12.5681,55.6763,High income,Not classified
+Dominican Republic,DO,DOM,2018,,2022-12-22,22.8,18.8,7894.95501697125,Latin America & Caribbean,Santo Domingo,-69.8908,18.479,Upper middle income,IBRD
+Dominican Republic,DO,DOM,2019,,2022-12-22,21,16.4,8205.14240945814,Latin America & Caribbean,Santo Domingo,-69.8908,18.479,Upper middle income,IBRD
+Dominican Republic,DO,DOM,2017,,2022-12-22,25.6,20.9,7461.65310335113,Latin America & Caribbean,Santo Domingo,-69.8908,18.479,Upper middle income,IBRD
+Ecuador,EC,ECU,2010,,2022-12-22,32.8,46.08,5331.38377418858,Latin America & Caribbean,Quito,-78.5243,-0.229498,Upper middle income,IBRD
+Ecuador,EC,ECU,2013,,2022-12-22,25.6,38.66,6078.43956295669,Latin America & Caribbean,Quito,-78.5243,-0.229498,Upper middle income,IBRD
+Ecuador,EC,ECU,2011,,2022-12-22,28.6,40.71,5657.21301645404,Latin America & Caribbean,Quito,-78.5243,-0.229498,Upper middle income,IBRD
+Ecuador,EC,ECU,2012,,2022-12-22,27.3,37.83,5881.38116724978,Latin America & Caribbean,Quito,-78.5243,-0.229498,Upper middle income,IBRD
+Ecuador,EC,ECU,2018,,2022-12-22,23.2,37.86,5976.24534526558,Latin America & Caribbean,Quito,-78.5243,-0.229498,Upper middle income,IBRD
+Ecuador,EC,ECU,2019,,2022-12-22,25,38.13,5863.91056629908,Latin America & Caribbean,Quito,-78.5243,-0.229498,Upper middle income,IBRD
+Ecuador,EC,ECU,2014,,2022-12-22,22.5,37.37,6215.83809210677,Latin America & Caribbean,Quito,-78.5243,-0.229498,Upper middle income,IBRD
+Ecuador,EC,ECU,2015,,2022-12-22,23.3,34.95,6130.58667556768,Latin America & Caribbean,Quito,-78.5243,-0.229498,Upper middle income,IBRD
+Ecuador,EC,ECU,2016,,2022-12-22,22.9,35.1,5965.64327318051,Latin America & Caribbean,Quito,-78.5243,-0.229498,Upper middle income,IBRD
+Ecuador,EC,ECU,2017,,2022-12-22,21.5,34.59,6012.80331742787,Latin America & Caribbean,Quito,-78.5243,-0.229498,Upper middle income,IBRD
+Estonia,EE,EST,2012,,2022-12-22,18.6,23.4,16257.4722043516,Europe & Central Asia,Tallinn,24.7586,59.4392,High income,Not classified
+Estonia,EE,EST,2011,,2022-12-22,17.5,23.1,15692.788829336,Europe & Central Asia,Tallinn,24.7586,59.4392,High income,Not classified
+Estonia,EE,EST,2010,,2022-12-22,17.5,21.7,14585.8386603429,Europe & Central Asia,Tallinn,24.7586,59.4392,High income,Not classified
+Estonia,EE,EST,2014,,2022-12-22,21.6,26,17096.6445771582,Europe & Central Asia,Tallinn,24.7586,59.4392,High income,Not classified
+Estonia,EE,EST,2017,,2022-12-22,21.9,23.4,18962.4103006448,Europe & Central Asia,Tallinn,24.7586,59.4392,High income,Not classified
+Estonia,EE,EST,2015,,2022-12-22,21.7,24.2,17402.0376128079,Europe & Central Asia,Tallinn,24.7586,59.4392,High income,Not classified
+Estonia,EE,EST,2016,,2022-12-22,21,24.4,17945.9449641749,Europe & Central Asia,Tallinn,24.7586,59.4392,High income,Not classified
+Estonia,EE,EST,2018,,2022-12-22,21.7,24.4,19611.6109936281,Europe & Central Asia,Tallinn,24.7586,59.4392,High income,Not classified
+Estonia,EE,EST,2019,,2022-12-22,20.7,24.3,20269.575137379,Europe & Central Asia,Tallinn,24.7586,59.4392,High income,Not classified
+Estonia,EE,EST,2020,,2022-12-22,20.6,23.3,20118.1050729983,Europe & Central Asia,Tallinn,24.7586,59.4392,High income,Not classified
+Finland,FI,FIN,2015,,2022-12-22,11.6,16.8,42801.9081167285,Europe & Central Asia,Helsinki,24.9525,60.1608,High income,Not classified
+Finland,FI,FIN,2013,,2022-12-22,12.8,16,43044.997120147404,Europe & Central Asia,Helsinki,24.9525,60.1608,High income,Not classified
+Finland,FI,FIN,2012,,2022-12-22,11.8,17.2,43637.2486713657,Europe & Central Asia,Helsinki,24.9525,60.1608,High income,Not classified
+Finland,FI,FIN,2011,,2022-12-22,13.2,17.9,44466.8176978572,Europe & Central Asia,Helsinki,24.9525,60.1608,High income,Not classified
+Finland,FI,FIN,2017,,2022-12-22,12,15.7,45173.6294067199,Europe & Central Asia,Helsinki,24.9525,60.1608,High income,Not classified
+Finland,FI,FIN,2016,,2022-12-22,11.5,16.6,43878.9667273579,Europe & Central Asia,Helsinki,24.9525,60.1608,High income,Not classified
+Finland,FI,FIN,2014,,2022-12-22,12.4,17.3,42710.9212889729,Europe & Central Asia,Helsinki,24.9525,60.1608,High income,Not classified
+Finland,FI,FIN,2010,,2022-12-22,13.7,16.9,43563.5721974365,Europe & Central Asia,Helsinki,24.9525,60.1608,High income,Not classified
+Finland,FI,FIN,2019,,2022-12-22,12.2,15.6,46135.8814242631,Europe & Central Asia,Helsinki,24.9525,60.1608,High income,Not classified
+Finland,FI,FIN,2018,,2022-12-22,11.6,16.5,45627.9198947233,Europe & Central Asia,Helsinki,24.9525,60.1608,High income,Not classified
+Finland,FI,FIN,2020,,2022-12-22,10.8,16,45053.758678116,Europe & Central Asia,Helsinki,24.9525,60.1608,High income,Not classified
+France,FR,FRA,2019,,2022-12-22,13.8,17.9,38832.0242014303,Europe & Central Asia,Paris,2.35097,48.8566,High income,Not classified
+Germany,DE,DEU,2019,,2022-12-22,16.1,17.4,43284.6024553493,Europe & Central Asia,Berlin,13.4115,52.5235,High income,Not classified
+Germany,DE,DEU,2020,,2022-12-22,15.8,24,41650.4227126493,Europe & Central Asia,Berlin,13.4115,52.5235,High income,Not classified
+Ghana,GH,GHA,2016,,2022-12-22,23.4,45.6,1728.11661627866,Sub-Saharan Africa,Accra,-0.20795,5.57045,Lower middle income,IDA
+Greece,GR,GRC,2017,,2022-12-22,18.5,34.8,18304.3076770645,Europe & Central Asia,Athens,23.7166,37.9792,High income,Not classified
+Greece,GR,GRC,2014,,2022-12-22,21.4,36,18000.4184639065,Europe & Central Asia,Athens,23.7166,37.9792,High income,Not classified
+Greece,GR,GRC,2020,,2022-12-22,19.6,28.9,17343.6099878902,Europe & Central Asia,Athens,23.7166,37.9792,High income,Not classified
+Greece,GR,GRC,2019,,2022-12-22,17.7,30,19018.9021220823,Europe & Central Asia,Athens,23.7166,37.9792,High income,Not classified
+Greece,GR,GRC,2015,,2022-12-22,21.2,35.7,18083.8779056547,Europe & Central Asia,Athens,23.7166,37.9792,High income,Not classified
+Greece,GR,GRC,2018,,2022-12-22,17.9,31.8,18647.4957207515,Europe & Central Asia,Athens,23.7166,37.9792,High income,Not classified
+Greece,GR,GRC,2012,,2022-12-22,23.1,34.6,18123.6710971914,Europe & Central Asia,Athens,23.7166,37.9792,High income,Not classified
+Greece,GR,GRC,2013,,2022-12-22,22.1,35.7,17796.2576680722,Europe & Central Asia,Athens,23.7166,37.9792,High income,Not classified
+Greece,GR,GRC,2016,,2022-12-22,20.2,35.6,18070.7807322854,Europe & Central Asia,Athens,23.7166,37.9792,High income,Not classified
+Greece,GR,GRC,2011,,2022-12-22,23.1,31,19400.8077326583,Europe & Central Asia,Athens,23.7166,37.9792,High income,Not classified
+Greece,GR,GRC,2010,,2022-12-22,21.4,27.7,21560.3533533658,Europe & Central Asia,Athens,23.7166,37.9792,High income,Not classified
+Guatemala,GT,GTM,2014,,2022-12-22,59.3,61.62,3903.05961459334,Latin America & Caribbean,Guatemala City,-90.5328,14.6248,Upper middle income,IBRD
+Guinea-Bissau,GW,GNB,2010,,2022-12-22,48.7,65.1,569.017624127637,Sub-Saharan Africa,Bissau,-15.1804,11.8037,Low income,IDA
+Hungary,HU,HUN,2015,,2022-12-22,14.5,28.2,12717.038597002,Europe & Central Asia,Budapest,19.0408,47.4984,High income,Not classified
+Hungary,HU,HUN,2019,,2022-12-22,12.3,18.9,15082.6714945249,Europe & Central Asia,Budapest,19.0408,47.4984,High income,Not classified
+Hungary,HU,HUN,2020,,2022-12-22,12.7,17.8,14427.8188846629,Europe & Central Asia,Budapest,19.0408,47.4984,High income,Not classified
+Hungary,HU,HUN,2018,,2022-12-22,12.3,19.6,14377.421963001,Europe & Central Asia,Budapest,19.0408,47.4984,High income,Not classified
+Hungary,HU,HUN,2016,,2022-12-22,13.4,26.3,13035.3528590909,Europe & Central Asia,Budapest,19.0408,47.4984,High income,Not classified
+Hungary,HU,HUN,2017,,2022-12-22,12.8,25.6,13628.4044885706,Europe & Central Asia,Budapest,19.0408,47.4984,High income,Not classified
+Iceland,IS,ISL,2017,,2022-12-22,8.8,12.8,56501.4576788793,Europe & Central Asia,Reykjavik,-21.8952,64.1353,High income,Not classified
+Iceland,IS,ISL,2015,,2022-12-22,8.8,12.5,52951.6815110898,Europe & Central Asia,Reykjavik,-21.8952,64.1353,High income,Not classified
+Iceland,IS,ISL,2016,,2022-12-22,10.1,12.2,55513.6423015865,Europe & Central Asia,Reykjavik,-21.8952,64.1353,High income,Not classified
+Iceland,IS,ISL,2010,,2022-12-22,9.2,13.7,48193.7014041013,Europe & Central Asia,Reykjavik,-21.8952,64.1353,High income,Not classified
+Iceland,IS,ISL,2013,,2022-12-22,7.9,13,50946.8162625339,Europe & Central Asia,Reykjavik,-21.8952,64.1353,High income,Not classified
+Iceland,IS,ISL,2011,,2022-12-22,7.9,13.7,48933.5456614347,Europe & Central Asia,Reykjavik,-21.8952,64.1353,High income,Not classified
+Iceland,IS,ISL,2012,,2022-12-22,9.3,12.7,49191.574417162,Europe & Central Asia,Reykjavik,-21.8952,64.1353,High income,Not classified
+Iceland,IS,ISL,2014,,2022-12-22,9.2,11.2,51233.2440468041,Europe & Central Asia,Reykjavik,-21.8952,64.1353,High income,Not classified
+Ireland,IE,IRL,2020,,2022-12-22,12.9,20.8,79074.5401350894,Europe & Central Asia,Dublin,-6.26749,53.3441,High income,Not classified
+Ireland,IE,IRL,2019,,2022-12-22,13.8,20.6,75239.3028933993,Europe & Central Asia,Dublin,-6.26749,53.3441,High income,Not classified
+Italy,IT,ITA,2016,,2022-12-22,20.3,30,30685.645898943,Europe & Central Asia,Rome,12.4823,41.8955,High income,Not classified
+Italy,IT,ITA,2017,,2022-12-22,20.3,28.9,31244.2270989224,Europe & Central Asia,Rome,12.4823,41.8955,High income,Not classified
+Italy,IT,ITA,2018,,2022-12-22,20.1,27.3,31593.4802621599,Europe & Central Asia,Rome,12.4823,41.8955,High income,Not classified
+Italy,IT,ITA,2011,,2022-12-22,19.5,28.1,32229.4567910904,Europe & Central Asia,Rome,12.4823,41.8955,High income,Not classified
+Italy,IT,ITA,2012,,2022-12-22,19.3,29.9,31184.5584255896,Europe & Central Asia,Rome,12.4823,41.8955,High income,Not classified
+Italy,IT,ITA,2013,,2022-12-22,19.4,28.5,30257.6274259351,Europe & Central Asia,Rome,12.4823,41.8955,High income,Not classified
+Italy,IT,ITA,2014,,2022-12-22,19.9,28.3,29979.9187217358,Europe & Central Asia,Rome,12.4823,41.8955,High income,Not classified
+Italy,IT,ITA,2010,,2022-12-22,19.8,25,32058.1739940798,Europe & Central Asia,Rome,12.4823,41.8955,High income,Not classified
+Italy,IT,ITA,2015,,2022-12-22,20.6,28.7,30242.3861352184,Europe & Central Asia,Rome,12.4823,41.8955,High income,Not classified
+Italy,IT,ITA,2019,,2022-12-22,20,25.6,32114.2998563994,Europe & Central Asia,Rome,12.4823,41.8955,High income,Not classified
+Latvia,LV,LVA,2015,,2022-12-22,21.8,30.9,13786.4567953114,Europe & Central Asia,Riga,24.1048,56.9465,High income,Not classified
+Latvia,LV,LVA,2016,,2022-12-22,22.1,28.5,14242.5726741319,Europe & Central Asia,Riga,24.1048,56.9465,High income,Not classified
+Latvia,LV,LVA,2017,,2022-12-22,23.3,28.2,14845.3348946383,Europe & Central Asia,Riga,24.1048,56.9465,High income,Not classified
+Latvia,LV,LVA,2018,,2022-12-22,22.9,28.4,15558.6917797211,Europe & Central Asia,Riga,24.1048,56.9465,High income,Not classified
+Latvia,LV,LVA,2019,,2022-12-22,21.6,27.3,16069.8404323203,Europe & Central Asia,Riga,24.1048,56.9465,High income,Not classified
+Latvia,LV,LVA,2020,,2022-12-22,23.4,26,15826.4126578529,Europe & Central Asia,Riga,24.1048,56.9465,High income,Not classified
+Lithuania,LT,LTU,2018,,2022-12-22,20.6,28.3,16443.5852875776,Europe & Central Asia,Vilnius,25.2799,54.6896,High income,Not classified
+Lithuania,LT,LTU,2019,,2022-12-22,20.9,26.3,17249.7184431077,Europe & Central Asia,Vilnius,25.2799,54.6896,High income,Not classified
+Lithuania,LT,LTU,2015,,2022-12-22,21.9,29.3,14263.9645773495,Europe & Central Asia,Vilnius,25.2799,54.6896,High income,Not classified
+Lithuania,LT,LTU,2016,,2022-12-22,22.9,30.1,14810.2517786273,Europe & Central Asia,Vilnius,25.2799,54.6896,High income,Not classified
+Lithuania,LT,LTU,2017,,2022-12-22,22.9,29.6,15661.9962536775,Europe & Central Asia,Vilnius,25.2799,54.6896,High income,Not classified
+Luxembourg,LU,LUX,2019,,2022-12-22,17.4,20.6,106729.024882424,Europe & Central Asia,Luxembourg,6.1296,49.61,High income,Not classified
+Mali,ML,MLI,2016,,2022-12-22,46.8,39.8,741.797632173717,Sub-Saharan Africa,Bamako,-7.50034,13.5667,Low income,IDA
+Malta,MT,MLT,2018,,2022-12-22,17.1,19,27864.2011519772,Middle East & North Africa,Valletta,14.5189,35.9042,High income,Not classified
+Malta,MT,MLT,2017,,2022-12-22,16.8,19.3,27177.8003836611,Middle East & North Africa,Valletta,14.5189,35.9042,High income,Not classified
+Malta,MT,MLT,2019,,2022-12-22,16.9,20.1,28375.2709332443,Middle East & North Africa,Valletta,14.5189,35.9042,High income,Not classified
+Malta,MT,MLT,2013,,2022-12-22,15.8,24.6,22071.0316097563,Middle East & North Africa,Valletta,14.5189,35.9042,High income,Not classified
+Malta,MT,MLT,2014,,2022-12-22,16.6,23.9,23286.100386101,Middle East & North Africa,Valletta,14.5189,35.9042,High income,Not classified
+Malta,MT,MLT,2015,,2022-12-22,16.5,23,24921.5790015791,Middle East & North Africa,Valletta,14.5189,35.9042,High income,Not classified
+Malta,MT,MLT,2016,,2022-12-22,16.7,20.3,25181.2589891115,Middle East & North Africa,Valletta,14.5189,35.9042,High income,Not classified
+Malta,MT,MLT,2011,,2022-12-22,15.1,22.1,20566.266064771,Middle East & North Africa,Valletta,14.5189,35.9042,High income,Not classified
+Malta,MT,MLT,2010,,2022-12-22,15.6,21.2,20557.7649608427,Middle East & North Africa,Valletta,14.5189,35.9042,High income,Not classified
+Malta,MT,MLT,2012,,2022-12-22,15.8,23.1,21221.633414091,Middle East & North Africa,Valletta,14.5189,35.9042,High income,Not classified
+Mexico,MX,MEX,2020,,2022-12-22,43.9,43.9,9147.05350478398,Latin America & Caribbean,Mexico City,-99.1276,19.427,Upper middle income,IBRD
+Mexico,MX,MEX,2018,,2022-12-22,41.9,41.9,10120.3635433028,Latin America & Caribbean,Mexico City,-99.1276,19.427,Upper middle income,IBRD
+Montenegro,ME,MNE,2018,,2022-12-22,24.5,31.4,7381.77487961644,Europe & Central Asia,Podgorica,19.2595,42.4602,Upper middle income,IBRD
+Montenegro,ME,MNE,2019,,2022-12-22,22.6,30.5,7684.1498693025,Europe & Central Asia,Podgorica,19.2595,42.4602,Upper middle income,IBRD
+Montenegro,ME,MNE,2016,,2022-12-22,23.6,34.6,6707.82064054038,Europe & Central Asia,Podgorica,19.2595,42.4602,Upper middle income,IBRD
+Montenegro,ME,MNE,2017,,2022-12-22,23.8,33.7,7023.40264157475,Europe & Central Asia,Podgorica,19.2595,42.4602,Upper middle income,IBRD
+Montenegro,ME,MNE,2013,,2022-12-22,24.1,37.3,6202.47917601252,Europe & Central Asia,Podgorica,19.2595,42.4602,Upper middle income,IBRD
+Montenegro,ME,MNE,2015,,2022-12-22,24,35.9,6517.16375162528,Europe & Central Asia,Podgorica,19.2595,42.4602,Upper middle income,IBRD
+Montenegro,ME,MNE,2014,,2022-12-22,24.4,37.5,6306.99057052924,Europe & Central Asia,Podgorica,19.2595,42.4602,Upper middle income,IBRD
+Mozambique,MZ,MOZ,2014,,2022-12-22,46.1,53,573.99557916019,Sub-Saharan Africa,Maputo,32.5713,-25.9664,Low income,IDA
+Namibia,NA,NAM,2015,,2022-12-22,17.4,43.3,4965.68085962392,Sub-Saharan Africa,Windhoek,17.0931,-22.5648,Upper middle income,IBRD
+Netherlands,NL,NLD,2015,,2022-12-22,12.7,16.4,45193.4032187971,Europe & Central Asia,Amsterdam,4.89095,52.3738,High income,Not classified
+Netherlands,NL,NLD,2016,,2022-12-22,13.2,16.7,45938.7850440865,Europe & Central Asia,Amsterdam,4.89095,52.3738,High income,Not classified
+Netherlands,NL,NLD,2017,,2022-12-22,13.3,17,46997.3454541962,Europe & Central Asia,Amsterdam,4.89095,52.3738,High income,Not classified
+Netherlands,NL,NLD,2020,,2022-12-22,14.4,16.3,46303.21886247,Europe & Central Asia,Amsterdam,4.89095,52.3738,High income,Not classified
+Netherlands,NL,NLD,2018,,2022-12-22,13.2,16.7,47826.8191172843,Europe & Central Asia,Amsterdam,4.89095,52.3738,High income,Not classified
+Netherlands,NL,NLD,2019,,2022-12-22,13.4,16.5,48443.7320540283,Europe & Central Asia,Amsterdam,4.89095,52.3738,High income,Not classified
+North Macedonia,MK,MKD,2017,,2022-12-22,21.9,41.6,5043.69224811274,Europe & Central Asia,Skopje,21.4361,42.0024,Upper middle income,IBRD
+North Macedonia,MK,MKD,2018,,2022-12-22,21.6,41.1,5184.69447115249,Europe & Central Asia,Skopje,21.4361,42.0024,Upper middle income,IBRD
+North Macedonia,MK,MKD,2016,,2022-12-22,22.2,41.1,4994.55895240773,Europe & Central Asia,Skopje,21.4361,42.0024,Upper middle income,IBRD
+North Macedonia,MK,MKD,2012,,2022-12-22,24.2,50.3,4408.29643693647,Europe & Central Asia,Skopje,21.4361,42.0024,Upper middle income,IBRD
+North Macedonia,MK,MKD,2013,,2022-12-22,22.1,48.1,4530.68210673617,Europe & Central Asia,Skopje,21.4361,42.0024,Upper middle income,IBRD
+North Macedonia,MK,MKD,2014,,2022-12-22,21.5,43.3,4687.29638777264,Europe & Central Asia,Skopje,21.4361,42.0024,Upper middle income,IBRD
+North Macedonia,MK,MKD,2015,,2022-12-22,21.9,41.6,4861.55397141497,Europe & Central Asia,Skopje,21.4361,42.0024,Upper middle income,IBRD
+North Macedonia,MK,MKD,2010,,2022-12-22,26.8,47.2,4339.96438006305,Europe & Central Asia,Skopje,21.4361,42.0024,Upper middle income,IBRD
+North Macedonia,MK,MKD,2011,,2022-12-22,26.2,50.4,4433.88746631908,Europe & Central Asia,Skopje,21.4361,42.0024,Upper middle income,IBRD
+Norway,NO,NOR,2019,,2022-12-22,12.7,16.1,76005.224786526,Europe & Central Asia,Oslo,10.7387,59.9138,High income,Not classified
+Norway,NO,NOR,2016,,2022-12-22,12.3,15.3,74493.1179371245,Europe & Central Asia,Oslo,10.7387,59.9138,High income,Not classified
+Norway,NO,NOR,2017,,2022-12-22,12.9,16,75610.6494832583,Europe & Central Asia,Oslo,10.7387,59.9138,High income,Not classified
+Norway,NO,NOR,2018,,2022-12-22,12.7,16.2,75953.5819514803,Europe & Central Asia,Oslo,10.7387,59.9138,High income,Not classified
+Norway,NO,NOR,2015,,2022-12-22,12.2,15,74355.5158575643,Europe & Central Asia,Oslo,10.7387,59.9138,High income,Not classified
+Norway,NO,NOR,2010,,2022-12-22,10.5,14.9,72426.5652172527,Europe & Central Asia,Oslo,10.7387,59.9138,High income,Not classified
+Norway,NO,NOR,2014,,2022-12-22,11.9,13.5,73650.3135435049,Europe & Central Asia,Oslo,10.7387,59.9138,High income,Not classified
+Norway,NO,NOR,2011,,2022-12-22,10,14.5,72194.7810014983,Europe & Central Asia,Oslo,10.7387,59.9138,High income,Not classified
+Norway,NO,NOR,2012,,2022-12-22,10.9,13.7,73178.784945419,Europe & Central Asia,Oslo,10.7387,59.9138,High income,Not classified
+Norway,NO,NOR,2013,,2022-12-22,10.9,14.1,73046.9050292415,Europe & Central Asia,Oslo,10.7387,59.9138,High income,Not classified
+Pakistan,PK,PAK,2010,,2022-12-22,36.8,44.7,1143.11797784055,South Asia,Islamabad,72.8,30.5167,Lower middle income,Blend
+Panama,PA,PAN,2017,,2022-12-22,20.7,19.1,14634.8425025331,Latin America & Caribbean,Panama City,-79.5188,8.99427,High income,IBRD
+Paraguay,PY,PRY,2016,,2022-12-22,28.9,34.28,6025.09676890452,Latin America & Caribbean,Asuncion,-57.6362,-25.3005,Upper middle income,IBRD
+Paraguay,PY,PRY,2017,,2022-12-22,26.4,30.55,6226.6854198333,Latin America & Caribbean,Asuncion,-57.6362,-25.3005,Upper middle income,IBRD
+Paraguay,PY,PRY,2019,,2022-12-22,23.5,26.75,6229.22489536642,Latin America & Caribbean,Asuncion,-57.6362,-25.3005,Upper middle income,IBRD
+Paraguay,PY,PRY,2020,,2022-12-22,26.9,24.93,6095.39137530699,Latin America & Caribbean,Asuncion,-57.6362,-25.3005,Upper middle income,IBRD
+Paraguay,PY,PRY,2018,,2022-12-22,24.2,29.57,6338.51367820775,Latin America & Caribbean,Asuncion,-57.6362,-25.3005,Upper middle income,IBRD
+Poland,PL,POL,2010,,2022-12-22,17.7,27.8,10755.6564372745,Europe & Central Asia,Warsaw,21.02,52.26,High income,IBRD
+Poland,PL,POL,2011,,2022-12-22,17.1,27.2,11291.9035865592,Europe & Central Asia,Warsaw,21.02,52.26,High income,IBRD
+Poland,PL,POL,2012,,2022-12-22,17.3,26.7,11466.4159300003,Europe & Central Asia,Warsaw,21.02,52.26,High income,IBRD
+Poland,PL,POL,2013,,2022-12-22,17,25.8,11571.6148487478,Europe & Central Asia,Warsaw,21.02,52.26,High income,IBRD
+Poland,PL,POL,2017,,2022-12-22,14.8,19.5,13599.8180191148,Europe & Central Asia,Warsaw,21.02,52.26,High income,IBRD
+Poland,PL,POL,2018,,2022-12-22,15.4,18.9,14408.384388723,Europe & Central Asia,Warsaw,21.02,52.26,High income,IBRD
+Poland,PL,POL,2019,,2022-12-22,14.8,18.2,15053.2323676784,Europe & Central Asia,Warsaw,21.02,52.26,High income,IBRD
+Poland,PL,POL,2014,,2022-12-22,17.6,24.7,12024.6095070994,Europe & Central Asia,Warsaw,21.02,52.26,High income,IBRD
+Poland,PL,POL,2015,,2022-12-22,17.3,23.4,12560.051419682,Europe & Central Asia,Warsaw,21.02,52.26,High income,IBRD
+Poland,PL,POL,2016,,2022-12-22,15,21.9,12936.5732568387,Europe & Central Asia,Warsaw,21.02,52.26,High income,IBRD
+Romania,RO,ROU,2019,,2022-12-22,23.4,31.2,11252.7929110931,Europe & Central Asia,Bucharest,26.0979,44.4479,High income,IBRD
+Romania,RO,ROU,2020,,2022-12-22,22.6,30.4,10898.8316332686,Europe & Central Asia,Bucharest,26.0979,44.4479,High income,IBRD
+Romania,RO,ROU,2011,,2022-12-22,22.9,40.9,8042.83716012627,Europe & Central Asia,Bucharest,26.0979,44.4479,High income,IBRD
+Romania,RO,ROU,2012,,2022-12-22,23,43.2,8234.23676535452,Europe & Central Asia,Bucharest,26.0979,44.4479,High income,IBRD
+Romania,RO,ROU,2010,,2022-12-22,22.3,41.5,7657.47929439108,Europe & Central Asia,Bucharest,26.0979,44.4479,High income,IBRD
+Romania,RO,ROU,2015,,2022-12-22,25.3,37.4,8976.88053477541,Europe & Central Asia,Bucharest,26.0979,44.4479,High income,IBRD
+Romania,RO,ROU,2016,,2022-12-22,23.6,38.8,9286.51964587238,Europe & Central Asia,Bucharest,26.0979,44.4479,High income,IBRD
+Romania,RO,ROU,2014,,2022-12-22,25.4,40.3,8661.05068227593,Europe & Central Asia,Bucharest,26.0979,44.4479,High income,IBRD
+Romania,RO,ROU,2017,,2022-12-22,23.5,35.7,10105.9343511933,Europe & Central Asia,Bucharest,26.0979,44.4479,High income,IBRD
+Romania,RO,ROU,2018,,2022-12-22,23.8,32.5,10778.3595556176,Europe & Central Asia,Bucharest,26.0979,44.4479,High income,IBRD
+Romania,RO,ROU,2013,,2022-12-22,25.1,41.9,8287.18138452781,Europe & Central Asia,Bucharest,26.0979,44.4479,High income,IBRD
+Rwanda,RW,RWA,2013,,2022-12-22,39.1,32.9,665.590001088917,Sub-Saharan Africa,Kigali,30.0587,-1.95325,Low income,IDA
+Rwanda,RW,RWA,2016,,2022-12-22,38.2,28.7,758.475294777665,Sub-Saharan Africa,Kigali,30.0587,-1.95325,Low income,IDA
+Serbia,RS,SRB,2019,,2022-12-22,21.7,31.7,6567.90956383791,Europe & Central Asia,Belgrade,20.4656,44.8024,Upper middle income,IBRD
+Serbia,RS,SRB,2013,,2022-12-22,25,42,5524.96913472342,Europe & Central Asia,Belgrade,20.4656,44.8024,Upper middle income,IBRD
+Serbia,RS,SRB,2014,,2022-12-22,26.7,42.6,5462.73603006633,Europe & Central Asia,Belgrade,20.4656,44.8024,Upper middle income,IBRD
+Serbia,RS,SRB,2016,,2022-12-22,25.7,38.5,5805.89939594274,Europe & Central Asia,Belgrade,20.4656,44.8024,Upper middle income,IBRD
+Serbia,RS,SRB,2017,,2022-12-22,24.3,36.7,5959.52267314354,Europe & Central Asia,Belgrade,20.4656,44.8024,Upper middle income,IBRD
+Serbia,RS,SRB,2018,,2022-12-22,23.2,34.3,6261.52713908381,Europe & Central Asia,Belgrade,20.4656,44.8024,Upper middle income,IBRD
+Serbia,RS,SRB,2015,,2022-12-22,25.9,41.7,5588.98072768556,Europe & Central Asia,Belgrade,20.4656,44.8024,Upper middle income,IBRD
+Seychelles,SC,SYC,2018,,2022-12-22,25.3,31.99,16628.1304254762,Sub-Saharan Africa,Victoria,55.4466,-4.6309,High income,IBRD
+Slovak Republic,SK,SVK,2010,,2022-12-22,13,20.6,14584.2606782101,Europe & Central Asia,Bratislava,17.1073,48.1484,High income,Not classified
+Slovak Republic,SK,SVK,2011,,2022-12-22,13.2,20.6,14954.577975505,Europe & Central Asia,Bratislava,17.1073,48.1484,High income,Not classified
+Slovak Republic,SK,SVK,2018,,2022-12-22,11.9,16.3,17818.2341072167,Europe & Central Asia,Bratislava,17.1073,48.1484,High income,Not classified
+Slovak Republic,SK,SVK,2019,,2022-12-22,11.4,16.4,18242.4950003779,Europe & Central Asia,Bratislava,17.1073,48.1484,High income,Not classified
+Slovak Republic,SK,SVK,2012,,2022-12-22,12.8,20.5,15126.0352987762,Europe & Central Asia,Bratislava,17.1073,48.1484,High income,Not classified
+Slovak Republic,SK,SVK,2013,,2022-12-22,12.6,19.8,15205.3955780546,Europe & Central Asia,Bratislava,17.1073,48.1484,High income,Not classified
+Slovak Republic,SK,SVK,2014,,2022-12-22,12.3,18.4,15600.3671671802,Europe & Central Asia,Bratislava,17.1073,48.1484,High income,Not classified
+Slovak Republic,SK,SVK,2017,,2022-12-22,12.2,16.3,17151.652477668,Europe & Central Asia,Bratislava,17.1073,48.1484,High income,Not classified
+Slovak Republic,SK,SVK,2015,,2022-12-22,12.7,18.4,16390.8821748507,Europe & Central Asia,Bratislava,17.1073,48.1484,High income,Not classified
+Slovak Republic,SK,SVK,2016,,2022-12-22,12.4,18.1,16687.9844571492,Europe & Central Asia,Bratislava,17.1073,48.1484,High income,Not classified
+Slovenia,SI,SVN,2018,,2022-12-22,12,16.2,23483.529124564,Europe & Central Asia,Ljubljana,14.5044,46.0546,High income,Not classified
+Slovenia,SI,SVN,2019,,2022-12-22,12.4,14.4,24125.3920363107,Europe & Central Asia,Ljubljana,14.5044,46.0546,High income,Not classified
+Slovenia,SI,SVN,2016,,2022-12-22,13.3,18.4,21541.176421949,Europe & Central Asia,Ljubljana,14.5044,46.0546,High income,Not classified
+Slovenia,SI,SVN,2017,,2022-12-22,13.3,17.1,22563.7589398118,Europe & Central Asia,Ljubljana,14.5044,46.0546,High income,Not classified
+Slovenia,SI,SVN,2020,,2022-12-22,11.7,15,22928.7627401934,Europe & Central Asia,Ljubljana,14.5044,46.0546,High income,Not classified
+Slovenia,SI,SVN,2015,,2022-12-22,13.9,19.2,20890.1664304173,Europe & Central Asia,Ljubljana,14.5044,46.0546,High income,Not classified
+Spain,ES,ESP,2017,,2022-12-22,21.5,26.6,27239.3524364815,Europe & Central Asia,Madrid,-3.70327,40.4167,High income,Not classified
+Spain,ES,ESP,2018,,2022-12-22,20.7,26.1,27739.8647682529,Europe & Central Asia,Madrid,-3.70327,40.4167,High income,Not classified
+Spain,ES,ESP,2019,,2022-12-22,21,25.3,28087.8979203438,Europe & Central Asia,Madrid,-3.70327,40.4167,High income,Not classified
+Spain,ES,ESP,2016,,2022-12-22,21.6,27.9,26514.3248119679,Europe & Central Asia,Madrid,-3.70327,40.4167,High income,Not classified
+Spain,ES,ESP,2010,,2022-12-22,20.6,26.1,25702.3468448149,Europe & Central Asia,Madrid,-3.70327,40.4167,High income,Not classified
+Spain,ES,ESP,2011,,2022-12-22,20.8,26.7,25402.6050717462,Europe & Central Asia,Madrid,-3.70327,40.4167,High income,Not classified
+Spain,ES,ESP,2012,,2022-12-22,20.4,27.2,24634.9620884239,Europe & Central Asia,Madrid,-3.70327,40.4167,High income,Not classified
+Spain,ES,ESP,2013,,2022-12-22,22.2,27.3,24368.9682370919,Europe & Central Asia,Madrid,-3.70327,40.4167,High income,Not classified
+Spain,ES,ESP,2014,,2022-12-22,22.1,29.2,24783.0829468685,Europe & Central Asia,Madrid,-3.70327,40.4167,High income,Not classified
+Spain,ES,ESP,2015,,2022-12-22,22.3,28.6,25754.36102944,Europe & Central Asia,Madrid,-3.70327,40.4167,High income,Not classified
+Spain,ES,ESP,2020,,2022-12-22,21.7,26.4,24785.446714692,Europe & Central Asia,Madrid,-3.70327,40.4167,High income,Not classified
+Sri Lanka,LK,LKA,2016,,2022-12-22,4.1,2.37,4218.44401553777,South Asia,Colombo,79.8528,6.92148,Lower middle income,IBRD
+Sweden,SE,SWE,2017,,2022-12-22,16.4,17.7,52576.8102821051,Europe & Central Asia,Stockholm,18.0645,59.3327,High income,Not classified
+Sweden,SE,SWE,2018,,2022-12-22,17.1,18,52983.0068617482,Europe & Central Asia,Stockholm,18.0645,59.3327,High income,Not classified
+Sweden,SE,SWE,2019,,2022-12-22,16.1,18.8,53490.3518198746,Europe & Central Asia,Stockholm,18.0645,59.3327,High income,Not classified
+Sweden,SE,SWE,2020,,2022-12-22,15.7,17.9,51952.6731328342,Europe & Central Asia,Stockholm,18.0645,59.3327,High income,Not classified
+Sweden,SE,SWE,2016,,2022-12-22,15.8,18.3,51955.8610703634,Europe & Central Asia,Stockholm,18.0645,59.3327,High income,Not classified
+Sweden,SE,SWE,2012,,2022-12-22,16,17.7,48885.5484179725,Europe & Central Asia,Stockholm,18.0645,59.3327,High income,Not classified
+Sweden,SE,SWE,2013,,2022-12-22,15.6,18.3,49048.8187500238,Europe & Central Asia,Stockholm,18.0645,59.3327,High income,Not classified
+Sweden,SE,SWE,2010,,2022-12-22,15.4,17.7,48369.9100407876,Europe & Central Asia,Stockholm,18.0645,59.3327,High income,Not classified
+Sweden,SE,SWE,2011,,2022-12-22,15.2,18.5,49539.9726076492,Europe & Central Asia,Stockholm,18.0645,59.3327,High income,Not classified
+Sweden,SE,SWE,2014,,2022-12-22,16.3,18.2,49855.301012313,Europe & Central Asia,Stockholm,18.0645,59.3327,High income,Not classified
+Sweden,SE,SWE,2015,,2022-12-22,16.2,18.6,51545.4836095322,Europe & Central Asia,Stockholm,18.0645,59.3327,High income,Not classified
+Thailand,TH,THA,2017,,2022-12-22,7.9,17.61,6099.20105389487,East Asia & Pacific,Bangkok,100.521,13.7308,Upper middle income,IBRD
+Turkiye,TR,TUR,2014,,2022-12-22,14.7,41.6,10430.4451988451,Europe & Central Asia,Ankara,32.3606,39.7153,Upper middle income,IBRD
+Turkiye,TR,TUR,2015,,2022-12-22,14.3,41.3,10851.9541305658,Europe & Central Asia,Ankara,32.3606,39.7153,Upper middle income,IBRD
+Turkiye,TR,TUR,2016,,2022-12-22,13.5,45.1,11022.5292614965,Europe & Central Asia,Ankara,32.3606,39.7153,Upper middle income,IBRD
+Turkiye,TR,TUR,2017,,2022-12-22,13.9,41.3,11694.9252340653,Europe & Central Asia,Ankara,32.3606,39.7153,Upper middle income,IBRD
+Turkiye,TR,TUR,2018,,2022-12-22,14.4,39.8,11938.7828744092,Europe & Central Asia,Ankara,32.3606,39.7153,Upper middle income,IBRD
+Turkiye,TR,TUR,2019,,2022-12-22,15,39.8,11935.4252883628,Europe & Central Asia,Ankara,32.3606,39.7153,Upper middle income,IBRD
+Turkiye,TR,TUR,2010,,2022-12-22,16.1,65.7,8390.84868744479,Europe & Central Asia,Ankara,32.3606,39.7153,Upper middle income,IBRD
+Turkiye,TR,TUR,2011,,2022-12-22,16.3,63.8,9207.54236280529,Europe & Central Asia,Ankara,32.3606,39.7153,Upper middle income,IBRD
+Turkiye,TR,TUR,2012,,2022-12-22,15,61.3,9506.99638178994,Europe & Central Asia,Ankara,32.3606,39.7153,Upper middle income,IBRD
+Turkiye,TR,TUR,2013,,2022-12-22,15,51.2,10138.8287513476,Europe & Central Asia,Ankara,32.3606,39.7153,Upper middle income,IBRD
+West Bank and Gaza,PS,PSE,2016,,2022-12-22,29.2,24,3483.09903532972,Middle East & North Africa,,,,Lower middle income,Not classified
