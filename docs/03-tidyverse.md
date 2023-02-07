@@ -83,7 +83,7 @@ output: html_notebook
 ---
 title: "Title of R Notebook"
 author: "ID and Your Name"
-date: "2023-02-06" 
+date: "2023-02-07" 
 output: 
   html_notebook:
 #    number_sections: yes
@@ -95,7 +95,7 @@ output:
 * Don't change the format. Indention matters.
 * The statement after \# is ignored.
 * Date is automatically inserted when you compile the file.
-* You can replace "2023-02-06" by "2022-12-14" or in any date format surrounded by double quotation marks.
+* You can replace "2023-02-07" by "2022-12-14" or in any date format surrounded by double quotation marks.
 * Section numbers: - default is `number_sections: no`.
 * Table of contents, `toc: true` - default is `toc: false`.
 * Floating table of contents in HTML output, `toc_float: true` - default is `toc_float: false`

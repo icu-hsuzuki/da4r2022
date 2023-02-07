@@ -273,9 +273,9 @@ library(WDI)
 
 #### R Package `gapminder` data
 
-```{r}
+```{r cash=TRUE}
 df <- gapminder
-df
+df %>% slice(1:10)
 ```
 
 ---
@@ -390,7 +390,7 @@ df_lifeExp <- df %>% group_by(continent, year) %>%
 ---
 
 ```{r}
-df_lifeExp
+df_lifeExp %>% slice(1:10)
 ```
 
 ---
@@ -458,7 +458,7 @@ df_lifeExp %>% ggplot() +
 ### Original Data? WDI?
 
 ```{r}
-gapminder
+gapminder %>% slice(1:10)
 ```
 
 ---
@@ -469,27 +469,48 @@ gapminder
 * NY.GDP.PCAP.KD: GDP per capita (constant 2015 US$)
 * SP.POP.TOTL: Population, total
 
-```{r cash=TRUE}
+```{r eval=FALSE}
 df_wdi <- WDI(
   country = "all", 
   indicator = c(lifeExp = "SP.DYN.LE00.IN", pop = "SP.POP.TOTL", gdpPercap = "NY.GDP.PCAP.KD")
 )
 ```
-
----
-
-```{r}
-df_wdi
+```{r echo=FALSE, eval=FALSE}
+df_wdi <- WDI(
+  country = "all", 
+  indicator = c(lifeExp = "SP.DYN.LE00.IN", pop = "SP.POP.TOTL", gdpPercap = "NY.GDP.PCAP.KD")
+)
+write_csv(df_wdi, "./data/wdi.csv")
+```
+```{r echo=FALSE, eval=TRUE}
+df_wdi <- read_csv("./data/wdi.csv")
 ```
 
 ---
 
-```{r cash=TRUE}
+```{r}
+df_wdi %>% slice(1:10)
+```
+
+---
+
+```{r eval=FALSE}
 df_wdi_extra <- WDI(
   country = "all", 
   indicator = c(lifeExp = "SP.DYN.LE00.IN", pop = "SP.POP.TOTL", gdpPercap = "NY.GDP.PCAP.KD"), 
   extra = TRUE
 )
+```
+```{r eval=FALSE, echo=FALSE}
+df_wdi_extra <- WDI(
+  country = "all", 
+  indicator = c(lifeExp = "SP.DYN.LE00.IN", pop = "SP.POP.TOTL", gdpPercap = "NY.GDP.PCAP.KD"), 
+  extra = TRUE
+)
+write_csv(df_wdi_extra, "./data/wdi_extra.csv")
+```
+```{r eval=TRUE, echo=FALSE}
+df_wdi_extra <- read_csv("./data/wdi_extra.csv")
 ```
 
 ---

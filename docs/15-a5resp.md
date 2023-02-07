@@ -138,9 +138,6 @@ wdi_cache$series %>% filter(indicator %in% c("SG.GEN.PARL.ZS","SI.POV.GINI"))
 df1 <- WDI(country = G7, 
            indicator=c(parl = "SG.GEN.PARL.ZS", gini = "SI.POV.GINI"),
            extra=TRUE, cache=wdi_cache)
-#> Warning in open.connection(con, "rb"): cannot open URL
-#> 'https://api.worldbank.org/v2/en/country/CA;DE;FR;GB;IT;JP;US/indicator/SI.POV.GINI?format=json&date=1960:2028&per_page=32500&page=10':
-#> HTTP status was '400 Bad Request'
 df1  # for R Notebook use this line, for PDF delete by adding #
 #>            country iso2c iso3c year status lastupdated
 #> 1           Canada    CA   CAN 1960         2022-12-22

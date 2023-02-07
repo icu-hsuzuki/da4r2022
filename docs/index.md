@@ -1,7 +1,7 @@
 --- 
 title: "A Minimal Book Example"
 author: "John Doe"
-date: "2023-02-05"
+date: "2023-02-07"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -17,41 +17,18 @@ csl: chicago-fullnote-bibliography.csl
 
 # About
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
 
-## Usage 
-
-Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading.
-
-Use second-level and higher headings within chapters like: `## A short section` or `### An even shorter section`.
-
-The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book.
-
-## Render book
-
-You can render the HTML version of this example book without changing anything:
-
-1. Find the **Build** pane in the RStudio IDE, and
-
-1. Click on **Build Book**, then select your output format, or select "All formats" if you'd like to use multiple formats from the same book source files.
-
-Or build the book from the R console:
+## Setup
 
 
 ```r
-bookdown::render_book()
+library(tidyverse)
+#> ── Attaching packages ─────────────────── tidyverse 1.3.2 ──
+#> ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 
+#> ✔ tibble  3.1.8      ✔ dplyr   1.0.10
+#> ✔ tidyr   1.2.1      ✔ stringr 1.5.0 
+#> ✔ readr   2.1.3      ✔ forcats 0.5.2 
+#> ── Conflicts ────────────────────── tidyverse_conflicts() ──
+#> ✖ dplyr::filter() masks stats::filter()
+#> ✖ dplyr::lag()    masks stats::lag()
 ```
-
-To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
-
-## Preview book
-
-As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console:
-
-
-```r
-bookdown::serve_book()
-```
-
-
-
