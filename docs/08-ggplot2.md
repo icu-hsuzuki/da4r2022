@@ -121,7 +121,7 @@ df_f14 %>%
   geom_col()
 ```
 
-<img src="08-ggplot2_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+![](08-ggplot2_files/figure-epub3/unnamed-chunk-4-1.png)<!-- -->
 
 ---
 
@@ -135,7 +135,7 @@ df_f14 %>%
        x = "", y = "Share of world emissions (%)")
 ```
 
-<img src="08-ggplot2_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+![](08-ggplot2_files/figure-epub3/unnamed-chunk-5-1.png)<!-- -->
 
 ---
 
@@ -186,7 +186,7 @@ df_f12 %>%
   geom_col(width = 0.5, fill = scales::hue_pal()(2)[2])
 ```
 
-<img src="08-ggplot2_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+![](08-ggplot2_files/figure-epub3/unnamed-chunk-6-1.png)<!-- -->
 
 ---
 
@@ -205,7 +205,7 @@ df_f12 %>%
   annotate("text", x = 5.2, y = 0.47, label = stringr::str_wrap("Women make only 35% of global labor incomes, men make the remaining  65%.", width = 40), size = 3)
 ```
 
-<img src="08-ggplot2_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+![](08-ggplot2_files/figure-epub3/unnamed-chunk-7-1.png)<!-- -->
 
 
 ## F1: Global income and wealth inequality, 2021
@@ -245,7 +245,7 @@ df_f1_rev %>%
   geom_col(position = "dodge")
 ```
 
-<img src="08-ggplot2_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+![](08-ggplot2_files/figure-epub3/unnamed-chunk-9-1.png)<!-- -->
 
 ---
 

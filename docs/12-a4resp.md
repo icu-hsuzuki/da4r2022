@@ -287,7 +287,7 @@ df_f8_rev %>%
        x = "", y = "wealth as % of national income", color = "", type = "")
 ```
 
-<img src="12-a4resp_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+![](12-a4resp_files/figure-epub3/unnamed-chunk-8-1.png)<!-- -->
 
 
 Can you find a similar data of other countries of this type?
@@ -354,7 +354,7 @@ df_fdi %>% ggplot(aes(x=year, y=fdi, color=income)) + geom_line()
 #> (`geom_line()`).
 ```
 
-<img src="12-a4resp_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+![](12-a4resp_files/figure-epub3/unnamed-chunk-13-1.png)<!-- -->
 
 We observe several problems. But the most significant issue is it looks like a sawtooth. It is because there are so many `y` values at the same `x` value. When you draw a line graph, you need to choose only several countries or use group_by and summarize and use summarized data. However, there is an option; we can use a model to summarize the data of each group using `geom_smooth()`. Since you do not want a line but a curve, we use "loess" with `span`, we used to draw some of WIR2022 charts.
 
@@ -371,7 +371,7 @@ df_fdi %>% drop_na(fdi) %>% drop_na(income) %>%
 #> override using the `.groups` argument.
 ```
 
-<img src="12-a4resp_files/figure-html/unnamed-chunk-14-1.png" width="672" />
+![](12-a4resp_files/figure-epub3/unnamed-chunk-14-1.png)<!-- -->
 
 If you do not want the message '`summarise()` has grouped output by 'income'. You can override using the `.groups` argument.' try the following by adding `.group = drop`.
 
@@ -384,7 +384,7 @@ df_fdi %>% drop_na(fdi) %>% drop_na(income) %>%
   geom_line()
 ```
 
-<img src="12-a4resp_files/figure-html/unnamed-chunk-15-1.png" width="672" />
+![](12-a4resp_files/figure-epub3/unnamed-chunk-15-1.png)<!-- -->
 
 
 * Step 5. Let us try `geom_smooth` with `loess` and `span`.
@@ -399,7 +399,7 @@ df_fdi  %>% drop_na(fdi) %>% drop_na(income) %>%
   geom_smooth(formula = y~x, method = "loess", span = 0.25, se = FALSE)
 ```
 
-<img src="12-a4resp_files/figure-html/unnamed-chunk-16-1.png" width="672" />
+![](12-a4resp_files/figure-epub3/unnamed-chunk-16-1.png)<!-- -->
 
 * Step 6. Change of the scale.
 
@@ -413,7 +413,7 @@ df_fdi %>% filter(!income %in% c(NA, "Aggregates")) %>% filter(fdi <= 0) %>%
   theme(legend.position = "none")
 ```
 
-<img src="12-a4resp_files/figure-html/unnamed-chunk-17-1.png" width="672" />
+![](12-a4resp_files/figure-epub3/unnamed-chunk-17-1.png)<!-- -->
 
 
 
@@ -425,7 +425,7 @@ df_fdi %>% drop_na(income) %>% filter(fdi > 0) %>%
   scale_y_log10() + labs(title="The Value FID < 0 or Zero Excluded")
 ```
 
-<img src="12-a4resp_files/figure-html/unnamed-chunk-18-1.png" width="672" />
+![](12-a4resp_files/figure-epub3/unnamed-chunk-18-1.png)<!-- -->
 
 **Note.** If this is the target chart, it may be better to check the number of NA values, 0 values, negative values, and nonzero values in each income group. I add `  mutate(value = factor(value, levels = c("Positive", "Zero", "Negative", "NA"), labels = c("Positive", "Zero", "Negative", "NA")))` in order to set the order of the labels. Please try the same without the line.
 
@@ -444,7 +444,7 @@ df_fdi %>% select(country, year, fdi, income) %>%
   labs(x = "")
 ```
 
-<img src="12-a4resp_files/figure-html/unnamed-chunk-19-1.png" width="672" />
+![](12-a4resp_files/figure-epub3/unnamed-chunk-19-1.png)<!-- -->
 
 ## Q. How is it possible to organize better the name of the value in the x axis so that they are better readable?
 
@@ -466,7 +466,7 @@ df_fdi %>% select(country, year, fdi, income) %>%
   labs(x = "")
 ```
 
-<img src="12-a4resp_files/figure-html/unnamed-chunk-20-1.png" width="672" />
+![](12-a4resp_files/figure-epub3/unnamed-chunk-20-1.png)<!-- -->
 
 * You can use another package `stringr` included in `tidyverse` but not loaded. `scale_x_discrete(labels = function(x) stringr::str_wrap(x, width = 15))`
 Change the width value to fit to your chart. If you add library(stringr), then `scale_x_discrete(labels = function(x) str_wrap(x, width = 15))` is enough.
@@ -487,7 +487,7 @@ df_fdi %>% select(country, year, fdi, income) %>%
   labs(x = "")
 ```
 
-<img src="12-a4resp_files/figure-html/unnamed-chunk-21-1.png" width="672" />
+![](12-a4resp_files/figure-epub3/unnamed-chunk-21-1.png)<!-- -->
 
 * If you have a long name for the title, use `\n` for the line feed.
 
@@ -507,7 +507,7 @@ df_fdi %>% select(country, year, fdi, income) %>%
   labs(title = "long long long long long long long \nlong long long title", x = "")
 ```
 
-<img src="12-a4resp_files/figure-html/unnamed-chunk-22-1.png" width="672" />
+![](12-a4resp_files/figure-epub3/unnamed-chunk-22-1.png)<!-- -->
 
 ## Q. Position of the labels
 
@@ -555,7 +555,7 @@ df_f1_rev[df_f1_rev$group != "Top 1%",] %>%
   labs(x = "")
 ```
 
-<img src="12-a4resp_files/figure-html/unnamed-chunk-25-1.png" width="672" />
+![](12-a4resp_files/figure-epub3/unnamed-chunk-25-1.png)<!-- -->
 
 * Step 4. Add the values in the text. Do not forget that the values should be in percentages.
 
@@ -572,7 +572,7 @@ df_f1_rev[df_f1_rev$group != "Top 1%",] %>%
             position = position_dodge(0.8))  
 ```
 
-<img src="12-a4resp_files/figure-html/unnamed-chunk-26-1.png" width="672" />
+![](12-a4resp_files/figure-epub3/unnamed-chunk-26-1.png)<!-- -->
 * Step 5. If you want to change the locations of texts use `vjust = -0.2`. 
 
 
@@ -588,7 +588,7 @@ df_f1_rev[df_f1_rev$group != "Top 1%",] %>%
             position = position_dodge(0.8))  
 ```
 
-<img src="12-a4resp_files/figure-html/unnamed-chunk-27-1.png" width="672" />
+![](12-a4resp_files/figure-epub3/unnamed-chunk-27-1.png)<!-- -->
 
 * One student used another method to add `0.03` to the value of `y` by `y = value+0.03`. Great!
 
@@ -605,7 +605,7 @@ df_f1_rev[df_f1_rev$group != "Top 1%",] %>%
             position = position_dodge(0.8))  
 ```
 
-<img src="12-a4resp_files/figure-html/unnamed-chunk-28-1.png" width="672" />
+![](12-a4resp_files/figure-epub3/unnamed-chunk-28-1.png)<!-- -->
 # My Comments after Review
 
 ## Visualization by Charts
@@ -645,7 +645,7 @@ df_wdi %>%
   geom_boxplot(aes(y=lifeExp, fill=country))
 ```
 
-<img src="12-a4resp_files/figure-html/unnamed-chunk-31-1.png" width="672" />
+![](12-a4resp_files/figure-epub3/unnamed-chunk-31-1.png)<!-- -->
 
 I erased the second line: `filter(year %in% c("1988", "1998", "2008", "2018"))` but the result is very similar. 
 
@@ -660,7 +660,7 @@ df_wdi %>%
 #> (`stat_boxplot()`).
 ```
 
-<img src="12-a4resp_files/figure-html/unnamed-chunk-32-1.png" width="672" />
+![](12-a4resp_files/figure-epub3/unnamed-chunk-32-1.png)<!-- -->
 
 If you look at the table, you can see that year is a integer vector, not a character vector. Then what happens if we remove quotation marks. The next chart is not a box plot anymore. It is because, for each year there is only one value for each country.
 
@@ -673,7 +673,7 @@ df_wdi %>%
   geom_boxplot(aes(y=lifeExp, fill=country))
 ```
 
-<img src="12-a4resp_files/figure-html/unnamed-chunk-33-1.png" width="672" />
+![](12-a4resp_files/figure-epub3/unnamed-chunk-33-1.png)<!-- -->
 
 If we want to take `year` as a group after selecting some years, then we should try the next using `factor(year)`. You can change the label of x axis by
   `labs(x = "year")` easily. We should also notice that there are no values for 1988. We should check basic information as such first.
@@ -688,7 +688,7 @@ df_wdi %>%
   geom_col(position = "dodge", col = "black")
 ```
 
-<img src="12-a4resp_files/figure-html/unnamed-chunk-34-1.png" width="672" />
+![](12-a4resp_files/figure-epub3/unnamed-chunk-34-1.png)<!-- -->
 It is possible if you change year to a character vector by `mutate(year = as.character(year))`.
 
 
@@ -701,7 +701,7 @@ df_wdi %>% mutate(year = as.character(year)) %>%
   labs(x = "year")
 ```
 
-<img src="12-a4resp_files/figure-html/unnamed-chunk-35-1.png" width="672" />
+![](12-a4resp_files/figure-epub3/unnamed-chunk-35-1.png)<!-- -->
 
 
 ## UN Data
@@ -1002,7 +1002,7 @@ un_edu_area %>%
   ggplot(aes(Year, Value, color = Region, linetype = Series)) + geom_line()
 ```
 
-<img src="12-a4resp_files/figure-html/unnamed-chunk-54-1.png" width="672" />
+![](12-a4resp_files/figure-epub3/unnamed-chunk-54-1.png)<!-- -->
 
 
 ```r
@@ -1014,7 +1014,7 @@ un_edu_area %>%
   labs(title = "Upper Secondary Level Education", subtitle = "Ratio = female/male")
 ```
 
-<img src="12-a4resp_files/figure-html/unnamed-chunk-55-1.png" width="672" />
+![](12-a4resp_files/figure-epub3/unnamed-chunk-55-1.png)<!-- -->
 
 ### Population
 
@@ -1600,7 +1600,7 @@ df_pub_priv %>%
   ggplot(aes(year, value, color = country, linetype = category)) + geom_line()
 ```
 
-<img src="12-a4resp_files/figure-html/unnamed-chunk-77-1.png" width="672" />
+![](12-a4resp_files/figure-epub3/unnamed-chunk-77-1.png)<!-- -->
 
 We choose two indicators: 'wealg' and 'wealp'. WIR2022 indicators consists of 6 characters; 1 letter code plus 5 letter code. You can find the list in the codebook.
 

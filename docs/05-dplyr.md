@@ -1841,7 +1841,7 @@ summary(df)
 ggplot(df, aes(x = year, y = lifeExp)) + geom_point()
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-14-1.png" width="672" />
+![](05-dplyr_files/figure-epub3/unnamed-chunk-14-1.png)<!-- -->
 
 ---
 
@@ -1850,7 +1850,7 @@ ggplot(df, aes(x = year, y = lifeExp)) + geom_point()
 ggplot(df, aes(x = year, y = lifeExp)) + geom_line()
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-15-1.png" width="672" />
+![](05-dplyr_files/figure-epub3/unnamed-chunk-15-1.png)<!-- -->
 
 ---
 
@@ -1861,7 +1861,7 @@ ggplot(df, aes(x = year, y = lifeExp)) + geom_boxplot()
 #> ℹ did you forget `aes(group = ...)`?
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-16-1.png" width="672" />
+![](05-dplyr_files/figure-epub3/unnamed-chunk-16-1.png)<!-- -->
 
 ---
 
@@ -1878,7 +1878,7 @@ typeof(pull(df, year)) # same as typeof(df$year)
 ggplot(df, aes(y = lifeExp, group = year)) + geom_boxplot()
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-18-1.png" width="672" />
+![](05-dplyr_files/figure-epub3/unnamed-chunk-18-1.png)<!-- -->
 
 ---
 
@@ -1889,7 +1889,7 @@ ggplot(df, aes(y = lifeExp, group = year)) + geom_boxplot()
 ggplot(df, aes(x = as_factor(year), y = lifeExp)) + geom_boxplot()
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-19-1.png" width="672" />
+![](05-dplyr_files/figure-epub3/unnamed-chunk-19-1.png)<!-- -->
 
 ---
 
@@ -1903,7 +1903,7 @@ df %>% filter(country == "Afghanistan") %>%
   ggplot(aes(x = year, y = lifeExp)) + geom_line()
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-20-1.png" width="672" />
+![](05-dplyr_files/figure-epub3/unnamed-chunk-20-1.png)<!-- -->
 
 ---
 
@@ -1913,7 +1913,7 @@ df %>% filter(country %in% c("Afghanistan", "Japan")) %>%
   ggplot(aes(x = year, y = lifeExp, color = country)) + geom_line()
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-21-1.png" width="672" />
+![](05-dplyr_files/figure-epub3/unnamed-chunk-21-1.png)<!-- -->
 
 ---
 
@@ -2002,7 +2002,7 @@ df %>% filter(country %in% c("Brazil", "Russia", "India", "China")) %>%
   ggplot(aes(x = year, y = lifeExp, color = country)) + geom_line()
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-23-1.png" width="672" />
+![](05-dplyr_files/figure-epub3/unnamed-chunk-23-1.png)<!-- -->
 
 Russian data is missing.
 
@@ -2061,7 +2061,7 @@ df %>% filter(year %in% c(1952, 1987, 2007)) %>%
   geom_boxplot()
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-26-1.png" width="672" />
+![](05-dplyr_files/figure-epub3/unnamed-chunk-26-1.png)<!-- -->
 
 ---
 
@@ -2071,7 +2071,7 @@ df_lifeExp %>% ggplot(aes(x = year, y = mean_lifeExp, color = continent)) +
   geom_line()
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-27-1.png" width="672" />
+![](05-dplyr_files/figure-epub3/unnamed-chunk-27-1.png)<!-- -->
 
 ---
 
@@ -2081,7 +2081,7 @@ df_lifeExp %>% ggplot(aes(x = year, y = mean_lifeExp, color = continent, linetyp
   geom_line()
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-28-1.png" width="672" />
+![](05-dplyr_files/figure-epub3/unnamed-chunk-28-1.png)<!-- -->
 
 ---
 
@@ -2092,7 +2092,7 @@ df_lifeExp %>% ggplot() +
   geom_line(aes(x = year, y = median_lifeExp, linetype = continent))
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-29-1.png" width="672" />
+![](05-dplyr_files/figure-epub3/unnamed-chunk-29-1.png)<!-- -->
 
 
 ## The Week Two Assignment (in Moodle)

@@ -821,7 +821,7 @@ df_women_in_parl %>% filter(year == 2020) %>%
 #> `binwidth`.
 ```
 
-<img src="09-a3resp_files/figure-html/9-37-1.png" width="672" />
+![](09-a3resp_files/figure-epub3/9-37-1.png)<!-- -->
 
 
 ```r
@@ -829,7 +829,7 @@ df_women_in_parl %>% filter(year == 2020) %>%
   ggplot(aes(women_in_parl)) + geom_histogram(binwidth = 5)
 ```
 
-<img src="09-a3resp_files/figure-html/9-38-1.png" width="672" />
+![](09-a3resp_files/figure-epub3/9-38-1.png)<!-- -->
 
 
 ```r
@@ -874,21 +874,21 @@ df_stja %>% filter(income != "Aggregates") %>%
   ggplot(aes(stja)) + geom_histogram(bins = 20)
 ```
 
-<img src="09-a3resp_files/figure-html/9-44-1.png" width="672" />
+![](09-a3resp_files/figure-epub3/9-44-1.png)<!-- -->
 
 ```r
 df_stja %>% filter(income != "Aggregates", stja >0) %>% 
   ggplot(aes(stja)) + geom_histogram(bins = 20) + scale_x_log10()
 ```
 
-<img src="09-a3resp_files/figure-html/9-45-1.png" width="672" />
+![](09-a3resp_files/figure-epub3/9-45-1.png)<!-- -->
 
 ```r
 df_stja %>% filter(income != "Aggregates", income != "Not classified", stja >0) %>% 
   ggplot(aes(stja, fill = income)) + geom_histogram(alpha = 0.7, bins = 20, color = "black") + scale_x_log10()
 ```
 
-<img src="09-a3resp_files/figure-html/9-46-1.png" width="672" />
+![](09-a3resp_files/figure-epub3/9-46-1.png)<!-- -->
 
 
 ```r
@@ -896,7 +896,7 @@ df_stja %>% filter(income != "Aggregates", income != "Not classified", stja >0) 
   ggplot(aes(stja, fill = income)) + geom_density(alpha = 0.3) + scale_x_log10()
 ```
 
-<img src="09-a3resp_files/figure-html/9-47-1.png" width="672" />
+![](09-a3resp_files/figure-epub3/9-47-1.png)<!-- -->
 
 
 ```r
@@ -934,7 +934,7 @@ df_milxpnd %>% filter(income != "Aggregates", year == 2021) %>%
   labs(title = "Military expenditure (% of GDP)")
 ```
 
-<img src="09-a3resp_files/figure-html/9-52-1.png" width="672" />
+![](09-a3resp_files/figure-epub3/9-52-1.png)<!-- -->
 
 
 ```r
@@ -945,7 +945,7 @@ df_milxpnd %>% filter(income != "Aggregates", income != "Not classified", year =
 #> Ignoring unknown parameters: `binwidth`
 ```
 
-<img src="09-a3resp_files/figure-html/9-53-1.png" width="672" />
+![](09-a3resp_files/figure-epub3/9-53-1.png)<!-- -->
 
 ## Q2. Effect of unemployed rate under pandemic depending on income groups
 
@@ -982,7 +982,7 @@ df_ur %>% filter(income == "Aggregates") %>% filter(grepl('income', country)) %>
   filter(year >= 2018) %>% ggplot() + geom_line(aes(x = year, y = ur, color = country))
 ```
 
-<img src="09-a3resp_files/figure-html/9-58-1.png" width="672" />
+![](09-a3resp_files/figure-epub3/9-58-1.png)<!-- -->
 
 ## Q3. Add values at each data point.
 
@@ -1048,7 +1048,7 @@ labs(title = "Inflation of Japan, Vietnam and China from 2000 to 2020",
      x = "", y = "Inflation, consumer prices (annual %)")
 ```
 
-<img src="09-a3resp_files/figure-html/9-64-1.png" width="672" />
+![](09-a3resp_files/figure-epub3/9-64-1.png)<!-- -->
 
 # Regression Lines; Topic of EDA5
 
@@ -1093,7 +1093,7 @@ df_wdi_poverty %>%
   labs(x = "GDP per capita", y = "poverty rate (% of population)", title = "Poverty rates and GDP per capita", subtitle="world countries, 1990-2021 average, by income level")
 ```
 
-<img src="09-a3resp_files/figure-html/9-69-1.png" width="672" />
+![](09-a3resp_files/figure-epub3/9-69-1.png)<!-- -->
 
 
 ```r
@@ -1107,7 +1107,7 @@ df_wdi_poverty %>%
   geom_smooth(aes(y = mean_multipoverty), formula = y~x, linetype="longdash", color = "black", method = "lm", se = FALSE) + labs(x = "GDP per capita", y = "Multidimentinal poverty rate (% of population)", title = "Multidimentional Poverty rates and GDP per capita", subtitle="world countries, 1990-2021 average, by region")
 ```
 
-<img src="09-a3resp_files/figure-html/9-70-1.png" width="672" />
+![](09-a3resp_files/figure-epub3/9-70-1.png)<!-- -->
 
 
 # Appendix: A secondary axis
@@ -1267,7 +1267,7 @@ wdi_gdp %>% drop_na(gdp, gdpPercap) %>%
   scale_y_continuous(sec.axis = sec_axis(~ . *(10^7), name = "gdp/(10^7)"))
 ```
 
-<img src="09-a3resp_files/figure-html/9-79-1.png" width="672" />
+![](09-a3resp_files/figure-epub3/9-79-1.png)<!-- -->
 
 ### BRICs
 
@@ -1324,6 +1324,6 @@ wdi_gdp %>% drop_na(gdp, gdpPercap) %>%
   scale_y_continuous(sec.axis = sec_axis(~ . *(10^7), name = "gdp/(10^9)"))
 ```
 
-<img src="09-a3resp_files/figure-html/9-81-1.png" width="672" />
+![](09-a3resp_files/figure-epub3/9-81-1.png)<!-- -->
 
 

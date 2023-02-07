@@ -245,7 +245,7 @@ summary(cars)
 plot(cars)
 ```
 
-<img src="02-R_and_RStudio_files/figure-html/cars_plot-1.png" width="672" />
+![](02-R_and_RStudio_files/figure-epub3/cars_plot-1.png)<!-- -->
 
 ---
 
@@ -256,7 +256,7 @@ plot(cars)
 plot(cars) # cars: Speed and Stopping Distances of Cars
 abline(lm(cars$dist~cars$speed))
 ```
-<img src="02-R_and_RStudio_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+![](02-R_and_RStudio_files/figure-epub3/unnamed-chunk-6-1.png)<!-- -->
 
 ---
 
@@ -318,7 +318,7 @@ summary(lm(cars$dist~cars$speed))
 ```r
 hist(cars$dist)
 ```
-<img src="02-R_and_RStudio_files/figure-html/unnamed-chunk-10-1.png" width="672" />
+![](02-R_and_RStudio_files/figure-epub3/unnamed-chunk-10-1.png)<!-- -->
 
 ---
 
@@ -326,7 +326,7 @@ hist(cars$dist)
 ```r
 hist(cars$speed)
 ```
-<img src="02-R_and_RStudio_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+![](02-R_and_RStudio_files/figure-epub3/unnamed-chunk-12-1.png)<!-- -->
 
 ---
 
@@ -413,5 +413,5 @@ Can you plot?
 ```r
 plot(iris$Sepal.Length, iris$Sepal.Width)
 ```
-<img src="02-R_and_RStudio_files/figure-html/unnamed-chunk-17-1.png" width="672" />
+![](02-R_and_RStudio_files/figure-epub3/unnamed-chunk-17-1.png)<!-- -->
 

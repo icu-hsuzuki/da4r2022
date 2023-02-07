@@ -612,7 +612,7 @@ ggplot(data = df_iris, aes(x = Sepal.Length, y = Sepal.Width)) +
   geom_point()
 ```
 
-<img src="03-tidyverse_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+![](03-tidyverse_files/figure-epub3/unnamed-chunk-9-1.png)<!-- -->
 
 ---
 
@@ -634,7 +634,7 @@ ggplot(data = df_iris, aes(x = Sepal.Length, y = Sepal.Width)) +
   labs(title = "Scatter Plot of Sepal Data of Iris", x = "Sepal Length", y = "Sepal Width")
 ```
 
-<img src="03-tidyverse_files/figure-html/unnamed-chunk-10-1.png" width="672" />
+![](03-tidyverse_files/figure-epub3/unnamed-chunk-10-1.png)<!-- -->
 
 ---
 
@@ -648,7 +648,7 @@ ggplot(data = df_iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) 
   geom_point()
 ```
 
-<img src="03-tidyverse_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+![](03-tidyverse_files/figure-epub3/unnamed-chunk-11-1.png)<!-- -->
 
 ---
 
@@ -660,7 +660,7 @@ ggplot(data = df_iris, aes(x = Sepal.Length, y = Sepal.Width, shape = Species)) 
   geom_point()
 ```
 
-<img src="03-tidyverse_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+![](03-tidyverse_files/figure-epub3/unnamed-chunk-12-1.png)<!-- -->
 
 ---
 
@@ -674,7 +674,7 @@ ggplot(data = df_iris, aes(x = Species, y = Sepal.Length)) +
   geom_boxplot()
 ```
 
-<img src="03-tidyverse_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+![](03-tidyverse_files/figure-epub3/unnamed-chunk-13-1.png)<!-- -->
 
 ---
 
@@ -688,7 +688,7 @@ ggplot(data = df_iris, aes(x = Sepal.Length)) +
   geom_histogram()
 ```
 
-<img src="03-tidyverse_files/figure-html/unnamed-chunk-14-1.png" width="672" />
+![](03-tidyverse_files/figure-epub3/unnamed-chunk-14-1.png)<!-- -->
 
 ---
 
@@ -700,7 +700,7 @@ ggplot(data = df_iris, aes(x = Sepal.Length)) +
   geom_histogram(bins = 10)
 ```
 
-<img src="03-tidyverse_files/figure-html/unnamed-chunk-15-1.png" width="672" />
+![](03-tidyverse_files/figure-epub3/unnamed-chunk-15-1.png)<!-- -->
 
 ---
 
@@ -715,7 +715,7 @@ ggplot(data = df_iris, aes(x = Sepal.Length, y = Sepal.Width)) +
   geom_smooth(method = "lm", se = FALSE)
 ```
 
-<img src="03-tidyverse_files/figure-html/unnamed-chunk-16-1.png" width="672" />
+![](03-tidyverse_files/figure-epub3/unnamed-chunk-16-1.png)<!-- -->
 
 ## Comments on Week 2
 

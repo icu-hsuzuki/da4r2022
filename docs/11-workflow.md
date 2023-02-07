@@ -230,7 +230,7 @@ df_f8
 ```
 
 
-<img src="11-workflow_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+![](11-workflow_files/figure-epub3/unnamed-chunk-3-1.png)<!-- -->
 
 ## The Week Five Assignment (in Moodle)
 

@@ -81,7 +81,7 @@ df_f1_rev %>%
   geom_col(position = "dodge")
 ```
 
-<img src="10-tidyr_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+![](10-tidyr_files/figure-epub3/unnamed-chunk-4-1.png)<!-- -->
 
 ---
 
@@ -177,7 +177,7 @@ df_f1_rev %>%
   geom_col(position = "dodge")
 ```
 
-<img src="10-tidyr_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+![](10-tidyr_files/figure-epub3/unnamed-chunk-8-1.png)<!-- -->
 
 ---
 
@@ -196,7 +196,7 @@ df_f1_rev %>% filter(group != "Top 1%") %>%
 
 ---
 
-<img src="10-tidyr_files/figure-html/unnamed-chunk-10-1.png" width="672" />
+![](10-tidyr_files/figure-epub3/unnamed-chunk-10-1.png)<!-- -->
 **Interpretation**: The global bottom 50% captures 8.5% of total income measured at Purchasing Power Parity (PPP). The global bottom 50% owns 2% of wealth (at Purchasing Power Parity). The global top 10% owns 76% of total Household wealth and captures 52% of total income in 2021. Note that top wealth holders are not necessarily top income holders. Incomes are measured after the operation of pension and unemployment systems and before taxes and transfers.  
 **Sources and series**: wir2022.wid.world/methodology.
 
@@ -253,7 +253,7 @@ df_f2 %>% pivot_longer(cols = 3:5, names_to = "group", values_to = "value") %>%
   geom_col(position = "dodge")
 ```
 
-<img src="10-tidyr_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+![](10-tidyr_files/figure-epub3/unnamed-chunk-13-1.png)<!-- -->
 
 ---
 
@@ -356,7 +356,7 @@ df_f3 %>% ggplot() + geom_histogram(aes(T10B50))
 #> `binwidth`.
 ```
 
-<img src="10-tidyr_files/figure-html/unnamed-chunk-18-1.png" width="672" />
+![](10-tidyr_files/figure-epub3/unnamed-chunk-18-1.png)<!-- -->
 
 ---
 
@@ -415,7 +415,7 @@ df_f3 %>% mutate(`Top 10 Bottom 50 Ratio` = cut(T10B50,breaks = c(5, 12, 13, 16,
   expand_limits(x = world_map$long, y = world_map$lat)
 ```
 
-<img src="10-tidyr_files/figure-html/unnamed-chunk-21-1.png" width="672" />
+![](10-tidyr_files/figure-epub3/unnamed-chunk-21-1.png)<!-- -->
 
 ---
 
@@ -451,7 +451,7 @@ df_f3 %>% mutate(`Top 10 Bottom 50 Ratio` =
     expand_limits(x = world_map_wir$long, y = world_map_wir$lat)
 ```
 
-<img src="10-tidyr_files/figure-html/unnamed-chunk-23-1.png" width="672" />
+![](10-tidyr_files/figure-epub3/unnamed-chunk-23-1.png)<!-- -->
 
 
 
@@ -466,7 +466,7 @@ df_f3 %>% mutate(`Top 10 Bottom 50 Ratio` =
   coord_map("orthographic", orientation = c(25, 60, 0))
 ```
 
-<img src="10-tidyr_files/figure-html/unnamed-chunk-24-1.png" width="672" />
+![](10-tidyr_files/figure-epub3/unnamed-chunk-24-1.png)<!-- -->
 
 ---
 
@@ -479,7 +479,7 @@ df_f3 %>% mutate(`Top 10 Bottom 50 Ratio` =
   coord_map("orthographic", orientation = c(15, -80, 0))
 ```
 
-<img src="10-tidyr_files/figure-html/unnamed-chunk-25-1.png" width="672" />
+![](10-tidyr_files/figure-epub3/unnamed-chunk-25-1.png)<!-- -->
 
 ---
 
@@ -493,7 +493,7 @@ df_f3 %>% mutate(`Top 10 Bottom 50 Ratio` =
   expand_limits(x = world_map_wir$long, y = world_map_wir$lat)
 ```
 
-<img src="10-tidyr_files/figure-html/unnamed-chunk-26-1.png" width="672" />
+![](10-tidyr_files/figure-epub3/unnamed-chunk-26-1.png)<!-- -->
 
 ---
 
@@ -515,7 +515,7 @@ df_f3 %>%
 
 ---
 
-<img src="10-tidyr_files/figure-html/unnamed-chunk-28-1.png" width="672" />
+![](10-tidyr_files/figure-epub3/unnamed-chunk-28-1.png)<!-- -->
 
 ---
 
@@ -587,7 +587,7 @@ df_f5 %>% ggplot(aes(x = y, y = t10b50)) + geom_line() + geom_smooth(span=0.25, 
 #> x'
 ```
 
-<img src="10-tidyr_files/figure-html/unnamed-chunk-30-1.png" width="672" />
+![](10-tidyr_files/figure-epub3/unnamed-chunk-30-1.png)<!-- -->
 
 ---
 
@@ -622,7 +622,7 @@ df_f9 %>%
 #> x'
 ```
 
-<img src="10-tidyr_files/figure-html/unnamed-chunk-31-1.png" width="672" />
+![](10-tidyr_files/figure-epub3/unnamed-chunk-31-1.png)<!-- -->
 
 ---
 
@@ -657,7 +657,7 @@ df_f7 %>%
   stat_smooth(formula = y~x, method = "loess", span = 0.25, se = FALSE)
 ```
 
-<img src="10-tidyr_files/figure-html/unnamed-chunk-32-1.png" width="672" />
+![](10-tidyr_files/figure-epub3/unnamed-chunk-32-1.png)<!-- -->
 
 ---
 
@@ -720,7 +720,7 @@ df_f10 %>%
   stat_smooth(aes(x = year, y = value, color = group), formula = y~x, method = "loess", span = 0.25, se = FALSE)
 ```
 
-<img src="10-tidyr_files/figure-html/unnamed-chunk-34-1.png" width="672" />
+![](10-tidyr_files/figure-epub3/unnamed-chunk-34-1.png)<!-- -->
 
 ---
 
@@ -778,7 +778,7 @@ df_f6 %>% select(year = "...1", 2:3) %>%
 ---
 
 
-<img src="10-tidyr_files/figure-html/unnamed-chunk-36-1.png" width="672" />
+![](10-tidyr_files/figure-epub3/unnamed-chunk-36-1.png)<!-- -->
 
 
 ---
@@ -927,7 +927,7 @@ df_f11 %>%
 
 ---
 
-<img src="10-tidyr_files/figure-html/unnamed-chunk-43-1.png" width="672" />
+![](10-tidyr_files/figure-epub3/unnamed-chunk-43-1.png)<!-- -->
 
 ---
 
@@ -1133,7 +1133,7 @@ df_f8 %>%
 
 ---
 
-<img src="10-tidyr_files/figure-html/unnamed-chunk-52-1.png" width="672" />
+![](10-tidyr_files/figure-epub3/unnamed-chunk-52-1.png)<!-- -->
 
 ---
 
@@ -1174,6 +1174,6 @@ df_f15 %>% mutate(region = rep(regionWID[!is.na(regionWID)], each = 3)) %>%
 
 ---
 
-<img src="10-tidyr_files/figure-html/unnamed-chunk-54-1.png" width="672" />
+![](10-tidyr_files/figure-epub3/unnamed-chunk-54-1.png)<!-- -->
 
 
