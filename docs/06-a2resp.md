@@ -10,7 +10,7 @@
   
 3. Cheat Sheets, Posit Primers, and the textbook 'R for Data Science' are the first set of references you should look at together wih my lecture materials.
 
-# Set up
+## Set up
 
 
 ```r
@@ -52,17 +52,17 @@ df
 #> # … with 1,694 more rows
 ```
 
-# General Comments
+## General Comments
 
-## Varibles
+### Varibles
 
 We should know first about the variables. At least you must know if each of the variables is a categorical variable or a numerical variable.
 
 For example, in the `gapminder` data, `country`, `continent` are categorical variables, and `year`, `lifeExp`, `pop`, `gdpPercap` are numerical variables. It is possible to treat `year` as a categorical variable. 
 
-## Example: `datasets::CO2`
+### Example: `datasets::CO2`
 
-### The first step
+#### The first step
 
 You can obtain basic information of the data by the following or typing CO2 in the search box under Help tab. You can see the same at: https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html
 
@@ -164,11 +164,11 @@ summary(df_co2)
 #> 
 ```
 
-### Try as many visualizations as possible
+#### Try as many visualizations as possible
 
 Then you can choose appropriate ones later in your research.
 
-#### Histogram
+##### Histogram
 
 
 
@@ -189,7 +189,7 @@ df_co2 %>% ggplot(aes(x = uptake)) + geom_histogram()
 
 <img src="06-a2resp_files/figure-html/unnamed-chunk-9-1.png" width="672" />
 
-#### Box Plots
+##### Box Plots
 
 
 ```r
@@ -238,7 +238,7 @@ df_co2 %>% ggplot(aes(x = Plant, y = uptake, fill = Type, color = Treatment)) + 
 What can you see?
 Write your observations.
 
-#### Scatter Plots
+##### Scatter Plots
 
 
 ```r
@@ -307,7 +307,7 @@ ggplot(data = CO2) +
 
 The code above did not work, and the line graph is not appropriate in this case. There are so many `update` values at the same `conc`.
 
-### Example. `datasets::Seatbelts`
+#### Example. `datasets::Seatbelts`
 
 Search the data information.
 
@@ -474,7 +474,7 @@ df %>% filter(continent == "Asia") %>%
 
 Appropriate graph?
 
-## Gapminder
+### Gapminder
 
 
 ```r
@@ -643,9 +643,9 @@ df_pop %>% ggplot() +
 
 
 
-# Responses to Questions
+## Responses to Questions
 
-## Q1. Two categorical variables and one numerical variables
+### Q1. Two categorical variables and one numerical variables
 
 Eg. [Smoking, Alcohol and (O)esophageal Cancer](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/esoph.html)
 
@@ -727,7 +727,7 @@ ggplot(df_esoph, aes(x= agegp, y=ncases, fill=tobgp))+geom_col(position = "dodge
 <img src="06-a2resp_files/figure-html/unnamed-chunk-57-1.png" width="672" />
 
 
-## Q2. Combine two charts
+### Q2. Combine two charts
 
 
 ```r
@@ -817,7 +817,7 @@ df %>%
 
 <img src="06-a2resp_files/figure-html/unnamed-chunk-62-1.png" width="672" />
 
-# Appendix: Change colors, shapes, linetypes, etc. manually
+## Appendix: Change colors, shapes, linetypes, etc. manually
 
 Example: Default
 
