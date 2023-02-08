@@ -83,7 +83,7 @@ output: html_notebook
 
 title: "Title of R Notebook"
 author: "ID and Your Name"
-date: "2023-02-08" 
+date: "2023-02-09" 
 output: 
   html_notebook:
 #    number_sections: yes
@@ -95,7 +95,7 @@ output:
 * Don't change the format. Indention matters.
 * The statement after \# is ignored.
 * Date is automatically inserted when you compile the file.
-* You can replace "2023-02-08" by "2022-12-14" or in any date format surrounded by double quotation marks.
+* You can replace "2023-02-09" by "2022-12-14" or in any date format surrounded by double quotation marks.
 * Section numbers: - default is `number_sections: no`.
 * Table of contents, `toc: true` - default is `toc: false`.
 * Floating table of contents in HTML output, `toc_float: true` - default is `toc_float: false`
@@ -110,9 +110,9 @@ Insert Chunk in Code pull down menu in the top bar, or use the <kbd>C</kbd> butt
 ```r
 library(tidyverse)
 #> ── Attaching packages ─────────────────── tidyverse 1.3.2 ──
-#> ✔ ggplot2 3.4.0      ✔ purrr   0.3.5 
+#> ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 
 #> ✔ tibble  3.1.8      ✔ dplyr   1.0.10
-#> ✔ tidyr   1.2.1      ✔ stringr 1.4.1 
+#> ✔ tidyr   1.2.1      ✔ stringr 1.5.0 
 #> ✔ readr   2.1.3      ✔ forcats 0.5.2 
 #> ── Conflicts ────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
