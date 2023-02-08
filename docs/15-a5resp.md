@@ -27,7 +27,7 @@
 **Due:** 2023-01-30 23:59:00. Submit your R Notebook file, and a PDF file (or a MS Word file) in Moodle (The Fifth Assignment). Due on Monday!
 
 
-# Set up
+## Set up
 
 It is better to use the following, because you can search by error message when you get an error. Error messages are important. If you get used to it, you can correct most of the errors. You can use the information given by `message` as well.
 
@@ -41,9 +41,9 @@ Sys.setenv(LANG = "en")
 ```r
 library(tidyverse)
 #> ── Attaching packages ─────────────────── tidyverse 1.3.2 ──
-#> ✔ ggplot2 3.4.0      ✔ purrr   0.3.5 
+#> ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 
 #> ✔ tibble  3.1.8      ✔ dplyr   1.0.10
-#> ✔ tidyr   1.2.1      ✔ stringr 1.4.1 
+#> ✔ tidyr   1.2.1      ✔ stringr 1.5.0 
 #> ✔ readr   2.1.3      ✔ forcats 0.5.2 
 #> ── Conflicts ────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
@@ -52,7 +52,7 @@ library(readxl) # for excel files
 library(WDI)
 ```
 
-## World Development Indicator - WDI
+### World Development Indicator - WDI
 
 The following is useful when you use WDI.
 
@@ -61,7 +61,7 @@ The following is useful when you use WDI.
 wdi_cache <- WDIcache()
 ```
 
-### Creating a vector with `iso2` codes
+#### Creating a vector with `iso2` codes
 
 It is convenient to have a vector with `iso2c` codes when you import data from WDI.
 
@@ -1447,7 +1447,7 @@ df1  # for R Notebook use this line, for PDF delete by adding #
 ```
 
 
-## World Inequility Report - WIR2022
+### World Inequility Report - WIR2022
 
 * World Inequality Report: https://wir2022.wid.world/
 * Executive Summary: https://wir2022.wid.world/executive-summary/
@@ -1482,9 +1482,9 @@ excel_sheets("./data/WIR2022s.xlsx")
 ```
 
 
-# General Comments
+## General Comments
 
-## Create a PDF or Word file.
+### Create a PDF or Word file.
 
 A Notebook file is created by pressing the Preview button, and the outputs appear as is. However, making a file with another format, R runs all code chunks from the top. So if the object is not defined above the code used, the knit program stops with an error message. I recommend the following steps.
 
@@ -1511,7 +1511,7 @@ Creating a Word file is similar, and should be more accessible.
 
 If you fail to create a PDF using `Knit to PDF` or `Knit to Word,` the alternative is to open the notebook wile with nb.html at the end in your web browser, such as Google Chrome, Edge, or Safari, and use the functionality of printing to PDF of your browser. 
 
-### Other Code Chunk Options
+#### Other Code Chunk Options
 
 Please review EDA5, and try options under the gear mark at the top right of each code chunk. I will add two useful options, I use often
 
@@ -1527,12 +1527,12 @@ Please review EDA5, and try options under the gear mark at the top right of each
 
 2. `echo = FALSE` option. When you create a PDF with a limit of pages, you do not want to include some code chunks. Then use this option. The output is included, but the code chunk is not. You can select this option by choosing 'Show output only` option.
 
-### Reference
+#### Reference
 
 * https://yihui.org/knitr/options/
 * Cheat Sheet. We distributed in class. You can download the same from Help: Cheatsheet at the top menu of R Stduio.
 
-### Long Table
+#### Long Table
 
 If you do not want to include a long table in your PDF or Word, use the following.
 
@@ -1636,11 +1636,11 @@ head(wdi_cache$country, 10)
 #> 10  24.4764         High income Not classified
 ```
 
-# Your Work
+## Your Work
 
 Here is a list of data your classmates used for Assignment Five.
 
-## World Development Indicators - WDI
+### World Development Indicators - WDI
 
 - SP.POP.TOTL: Population, total
 - NY.GDP.MKTP.KD.ZG: GDP annual growth
@@ -1668,27 +1668,27 @@ Here is a list of data your classmates used for Assignment Five.
 - IP.JRN.ARTC.SC: Scientific and technical journal articles
 - BM.GSR.ROYL.CD: Intellectual Property Payments (BOP, Current US$)
 
-## Worldbank
+### Worldbank
 
 - Climate Change Knowledge Portal: https://climateknowledgeportal.worldbank.org
   + country summary
 
-## OECD Data
+### OECD Data
 
 * Public spending on education: https://data.oecd.org/eduresource/public-spending-on-education.htm
 * Private spending on education: https://data.oecd.org/eduresource/private-spending-on-education.htm
 
-## WIR DAta
+### WIR DAta
 
 * Executive Summary: https://wir2022.wid.world/executive-summary/
 
-## Toy Data
+### Toy Data
 
 * `datasets::mtcars`: Motor Trend Car Road Tests
 
-# Responses to Questions
+## Responses to Questions
 
-## Q. How can we include values in the graphs
+### Q. How can we include values in the graphs
 
 A. Use `geom_text()`. Sometimes `geom_label()` works better.
 
@@ -1751,9 +1751,9 @@ https://ds-sl.github.io/data-analysis/wir2022.nb.html
 
 Explanation of F1.
 
-# My Comments after Review
+## My Comments after Review
 
-## NA values
+### NA values
 
 It is challenging to handle NA values properly. Let me introduce basics. In the following we use two data sets. One is `df1` used above, containing the indicator related the women's sheet in parliament and the GINI index, and the following data on the forest area.
 
@@ -1878,12 +1878,12 @@ df1 %>% drop_na(gini) %>%
 
 <img src="15-a5resp_files/figure-html/unnamed-chunk-27-1.png" width="672" />
 
-### Reference
+#### Reference
 
 * Posit Primers: [Tidy Your Data](https://posit.cloud/learn/primers/4)
 
 
-## Comparing Two
+### Comparing Two
 
 There are several ways if you want to compare two charts. You can incllude them in one chart, as I gave examples above using `geom_line` with arrows. 
 
@@ -1950,7 +1950,7 @@ df2_wona_area %>% filter(region %in% c("East Asia & Pacific", "Europe & Central 
 
 See Posit Primers: [Visualize Data](https://posit.cloud/learn/primers/3)
 
-## The package `broom` for models
+### The package `broom` for models
 
 There is another package for models in `tidyverse`, i.e., `modelr`. Some of the functions of `modelr` can be useful, but it is mainly for sampling and machine learning. So we explain the package `broom` only.
 
@@ -2032,7 +2032,7 @@ mod %>% tidy()
 ```
 
 
-### `glance`
+#### `glance`
 
 It produces the latter half of the model summary. The fist is the R squared followed by adjusted R squared, and other values.
 
@@ -2047,7 +2047,7 @@ mod %>% glance()
 #> #   df.residual <int>, nobs <int>, and abbreviated variable
 #> #   names ¹​adj.r.squared, ²​statistic
 ```
-### `augment`
+#### `augment`
 
 * The first column is the vector corresponding to y.
 * The second column is the vector corresponding to x.
@@ -2103,7 +2103,7 @@ df3 %>% ggplot(aes(x = Sepal.Width, y = Sepal.Length)) + geom_point() + geom_smo
 The shaded band is supposed to tell you the range of the prediction line should be under some assumption. I did not explain it because you need to be careful when interpreting its meaning.
 
 
-### References of `broom`
+#### References of `broom`
 
 * Official site of R project:  https://CRAN.R-project.org/package=broom
 * Manual: https://cran.r-project.org/web/packages/broom/broom.pdf

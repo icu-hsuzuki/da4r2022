@@ -1,1 +1,1 @@
-# Impoarting Data {#importing}
+# Importing Data {#importing}
