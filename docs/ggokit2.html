@@ -4,20 +4,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 13 Data Visualization and `ggplot2’ | Data Analysis for Researchers AY2022</title>
+<title>Chapter 9 Data Visualization and `ggplot2’ | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
-<meta name="description" content="library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.5.0 #&gt; ✔...">
-<meta name="generator" content="bookdown 0.31 with bs4_book()">
-<meta property="og:title" content="Chapter 13 Data Visualization and `ggplot2’ | Data Analysis for Researchers AY2022">
+<meta name="description" content="library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  0.3.5 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.4.1 #&gt; ✔...">
+<meta name="generator" content="bookdown 0.30 with bs4_book()">
+<meta property="og:title" content="Chapter 9 Data Visualization and `ggplot2’ | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/ggokit2.html">
-<meta property="og:description" content="library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.5.0 #&gt; ✔...">
+<meta property="og:description" content="library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  0.3.5 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.4.1 #&gt; ✔...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 13 Data Visualization and `ggplot2’ | Data Analysis for Researchers AY2022">
-<meta name="twitter:description" content="library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.5.0 #&gt; ✔...">
+<meta name="twitter:title" content="Chapter 9 Data Visualization and `ggplot2’ | Data Analysis for Researchers AY2022">
+<meta name="twitter:description" content="library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  0.3.5 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.4.1 #&gt; ✔...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
@@ -73,40 +73,36 @@
 <li><a class="" href="rmarkdown.html"><span class="header-section-number">5</span> R Markdown</a></li>
 <li><a class="" href="dplyr.html"><span class="header-section-number">6</span> Data Transforamtion with dplyr</a></li>
 <li><a class="" href="a2resp.html"><span class="header-section-number">7</span> Responses to Assignment Two</a></li>
-<li><a class="" href="set-up-1.html"><span class="header-section-number">8</span> Set up</a></li>
-<li><a class="" href="general-comments.html"><span class="header-section-number">9</span> General Comments</a></li>
-<li><a class="" href="responses-to-questions.html"><span class="header-section-number">10</span> Responses to Questions</a></li>
-<li><a class="" href="appendix-change-colors-shapes-linetypes-etc.-manually.html"><span class="header-section-number">11</span> Appendix: Change colors, shapes, linetypes, etc. manually</a></li>
-<li><a class="" href="wdidata.html"><span class="header-section-number">12</span> Importing Public Data, WDI</a></li>
-<li><a class="active" href="ggokit2.html"><span class="header-section-number">13</span> Data Visualization and `ggplot2’</a></li>
-<li><a class="" href="s3resp.html"><span class="header-section-number">14</span> Responses to Assignment Three</a></li>
-<li><a class="" href="tidy.html"><span class="header-section-number">15</span> Tidy Data</a></li>
-<li><a class="" href="workflow.html"><span class="header-section-number">16</span> EDA Workflow</a></li>
-<li><a class="" href="a4resp.html"><span class="header-section-number">17</span> Assignment Four: The Week Five Assignment</a></li>
-<li><a class="" href="model.html"><span class="header-section-number">18</span> Model</a></li>
-<li><a class="" href="roudups.html"><span class="header-section-number">19</span> Roudups</a></li>
-<li><a class="" href="a5resp.html"><span class="header-section-number">20</span> Responses to Assignment Five</a></li>
-<li><a class="" href="set-up-4.html"><span class="header-section-number">21</span> Set up</a></li>
-<li><a class="" href="general-comments-3.html"><span class="header-section-number">22</span> General Comments</a></li>
-<li><a class="" href="your-work-1.html"><span class="header-section-number">23</span> Your Work</a></li>
-<li><a class="" href="responses-to-questions-3.html"><span class="header-section-number">24</span> Responses to Questions</a></li>
-<li><a class="" href="my-comments-after-review.html"><span class="header-section-number">25</span> My Comments after Review</a></li>
-<li><a class="" href="eda.html"><span class="header-section-number">26</span> Exploartory Data analysis</a></li>
-<li><a class="" href="importing.html"><span class="header-section-number">27</span> Impoarting Data</a></li>
-<li><a class="" href="transforming.html"><span class="header-section-number">28</span> Transforming Data</a></li>
-<li><a class="" href="tidying.html"><span class="header-section-number">29</span> Tidying Data</a></li>
-<li><a class="" href="visualizing.html"><span class="header-section-number">30</span> Visualizing Data</a></li>
-<li><a class="" href="modeling.html"><span class="header-section-number">31</span> Modeling Data</a></li>
-<li><a class="" href="communicating-data-communicating.html"><span class="header-section-number">32</span> Communicating Data {communicating}</a></li>
-<li><a class="" href="worldbank.html"><span class="header-section-number">33</span> World Bank</a></li>
-<li><a class="" href="owid.html"><span class="header-section-number">34</span> Our World in Data</a></li>
-<li><a class="" href="oecd.html"><span class="header-section-number">35</span> OECD</a></li>
-<li><a class="" href="undata.html"><span class="header-section-number">36</span> UN Data</a></li>
-<li><a class="" href="wir.html"><span class="header-section-number">37</span> World Inequality Report</a></li>
-<li><a class="" href="histdata.html"><span class="header-section-number">38</span> HistData</a></li>
-<li><a class="" href="covid19.html"><span class="header-section-number">39</span> Covid 19</a></li>
-<li><a class="" href="bookdown.html"><span class="header-section-number">40</span> Bookdown</a></li>
-<li><a class="" href="template.html"><span class="header-section-number">41</span> Template</a></li>
+<li><a class="" href="wdidata.html"><span class="header-section-number">8</span> Importing Public Data, WDI</a></li>
+<li><a class="active" href="ggokit2.html"><span class="header-section-number">9</span> Data Visualization and `ggplot2’</a></li>
+<li><a class="" href="s3resp.html"><span class="header-section-number">10</span> Responses to Assignment Three</a></li>
+<li><a class="" href="tidy.html"><span class="header-section-number">11</span> Tidy Data</a></li>
+<li><a class="" href="workflow.html"><span class="header-section-number">12</span> EDA Workflow</a></li>
+<li><a class="" href="a4resp.html"><span class="header-section-number">13</span> Assignment Four: The Week Five Assignment</a></li>
+<li><a class="" href="model.html"><span class="header-section-number">14</span> Model</a></li>
+<li><a class="" href="roudups.html"><span class="header-section-number">15</span> Roudups</a></li>
+<li><a class="" href="a5resp.html"><span class="header-section-number">16</span> Responses to Assignment Five</a></li>
+<li><a class="" href="set-up-4.html"><span class="header-section-number">17</span> Set up</a></li>
+<li><a class="" href="general-comments-3.html"><span class="header-section-number">18</span> General Comments</a></li>
+<li><a class="" href="your-work-1.html"><span class="header-section-number">19</span> Your Work</a></li>
+<li><a class="" href="responses-to-questions-3.html"><span class="header-section-number">20</span> Responses to Questions</a></li>
+<li><a class="" href="my-comments-after-review.html"><span class="header-section-number">21</span> My Comments after Review</a></li>
+<li><a class="" href="eda.html"><span class="header-section-number">22</span> Exploartory Data analysis</a></li>
+<li><a class="" href="importing.html"><span class="header-section-number">23</span> Impoarting Data</a></li>
+<li><a class="" href="transforming.html"><span class="header-section-number">24</span> Transforming Data</a></li>
+<li><a class="" href="tidying.html"><span class="header-section-number">25</span> Tidying Data</a></li>
+<li><a class="" href="visualizing.html"><span class="header-section-number">26</span> Visualizing Data</a></li>
+<li><a class="" href="modeling.html"><span class="header-section-number">27</span> Modeling Data</a></li>
+<li><a class="" href="communicating.html"><span class="header-section-number">28</span> Communicating Data</a></li>
+<li><a class="" href="worldbank.html"><span class="header-section-number">29</span> World Bank</a></li>
+<li><a class="" href="owid.html"><span class="header-section-number">30</span> Our World in Data</a></li>
+<li><a class="" href="oecd.html"><span class="header-section-number">31</span> OECD</a></li>
+<li><a class="" href="undata.html"><span class="header-section-number">32</span> UN Data</a></li>
+<li><a class="" href="wir.html"><span class="header-section-number">33</span> World Inequality Report</a></li>
+<li><a class="" href="histdata.html"><span class="header-section-number">34</span> HistData</a></li>
+<li><a class="" href="covid19.html"><span class="header-section-number">35</span> Covid 19</a></li>
+<li><a class="" href="bookdown.html"><span class="header-section-number">36</span> Bookdown</a></li>
+<li><a class="" href="template.html"><span class="header-section-number">37</span> Template</a></li>
 </ul>
 
         <div class="book-extra">
@@ -114,23 +110,23 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="ggokit2" class="section level1" number="13">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="ggokit2" class="section level1" number="9">
 <h1>
-<span class="header-section-number">13</span> Data Visualization and `ggplot2’<a class="anchor" aria-label="anchor" href="#ggokit2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9</span> Data Visualization and `ggplot2’<a class="anchor" aria-label="anchor" href="#ggokit2"><i class="fas fa-link"></i></a>
 </h1>
 <div class="sourceCode" id="cb199"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
-<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 </span></span>
+<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   0.3.5 </span></span>
 <span><span class="co">#&gt; ✔ tibble  3.1.8      ✔ dplyr   1.0.10</span></span>
-<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.5.0 </span></span>
+<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.4.1 </span></span>
 <span><span class="co">#&gt; ✔ readr   2.1.3      ✔ forcats 0.5.2 </span></span>
 <span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
 <span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span></code></pre></div>
-<div id="learning-resouces" class="section level2" number="13.1">
+<div id="learning-resouces" class="section level2" number="9.1">
 <h2>
-<span class="header-section-number">13.1</span> Learning Resouces<a class="anchor" aria-label="anchor" href="#learning-resouces"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.1</span> Learning Resouces<a class="anchor" aria-label="anchor" href="#learning-resouces"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>Posit Primers:
@@ -142,13 +138,13 @@
 <li><a href="https://r4ds.had.co.nz/data-visualisation.html#data-visualisation">r4ds: Data Visualization</a></li>
 </ul>
 </div>
-<div id="exploratory-data-analysis-1" class="section level2" number="13.2">
+<div id="exploratory-data-analysis-1" class="section level2" number="9.2">
 <h2>
-<span class="header-section-number">13.2</span> Exploratory Data Analysis<a class="anchor" aria-label="anchor" href="#exploratory-data-analysis-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.2</span> Exploratory Data Analysis<a class="anchor" aria-label="anchor" href="#exploratory-data-analysis-1"><i class="fas fa-link"></i></a>
 </h2>
-<div id="what-is-eda" class="section level3" number="13.2.1">
+<div id="what-is-eda" class="section level3" number="9.2.1">
 <h3>
-<span class="header-section-number">13.2.1</span> What is EDA?<a class="anchor" aria-label="anchor" href="#what-is-eda"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.2.1</span> What is EDA?<a class="anchor" aria-label="anchor" href="#what-is-eda"><i class="fas fa-link"></i></a>
 </h3>
 <p>EDA is an iterative cycle that helps you understand what your data says. When you do EDA, you:</p>
 <ol style="list-style-type: decimal">
@@ -158,9 +154,9 @@
 </ol>
 <p>EDA is an important part of any data analysis. You can use EDA to make discoveries about the world; or you can use EDA to ensure the quality of your data, asking questions about whether the data meets your standards or not.</p>
 </div>
-<div id="two-useful-questions" class="section level3" number="13.2.2">
+<div id="two-useful-questions" class="section level3" number="9.2.2">
 <h3>
-<span class="header-section-number">13.2.2</span> Two useful questions<a class="anchor" aria-label="anchor" href="#two-useful-questions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.2.2</span> Two useful questions<a class="anchor" aria-label="anchor" href="#two-useful-questions"><i class="fas fa-link"></i></a>
 </h3>
 <p>There is no rule about which questions you should ask to guide your research. However, two types of questions will always be useful for making discoveries within your data. You can loosely word these questions as:</p>
 <ol style="list-style-type: decimal">
@@ -170,22 +166,22 @@
 <p>The rest of this tutorial will look at these two questions. To make the discussion easier, let’s define some terms…</p>
 </div>
 </div>
-<div id="data-visualization" class="section level2" number="13.3">
+<div id="data-visualization" class="section level2" number="9.3">
 <h2>
-<span class="header-section-number">13.3</span> Data Visualization<a class="anchor" aria-label="anchor" href="#data-visualization"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.3</span> Data Visualization<a class="anchor" aria-label="anchor" href="#data-visualization"><i class="fas fa-link"></i></a>
 </h2>
 </div>
-<div id="ggplot2-basics" class="section level2" number="13.4">
+<div id="ggplot2-basics" class="section level2" number="9.4">
 <h2>
-<span class="header-section-number">13.4</span> <code>ggplot2</code> Basics<a class="anchor" aria-label="anchor" href="#ggplot2-basics"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.4</span> <code>ggplot2</code> Basics<a class="anchor" aria-label="anchor" href="#ggplot2-basics"><i class="fas fa-link"></i></a>
 </h2>
 <div class="figure">
 <img src="data/visualization.png" style="width:75.0%" alt=""><p class="caption">visualization</p>
 </div>
 </div>
-<div id="example-world-inequility-report---wir2022" class="section level2" number="13.5">
+<div id="example-world-inequility-report---wir2022" class="section level2" number="9.5">
 <h2>
-<span class="header-section-number">13.5</span> Example: World Inequility Report - WIR2022<a class="anchor" aria-label="anchor" href="#example-world-inequility-report---wir2022"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.5</span> Example: World Inequility Report - WIR2022<a class="anchor" aria-label="anchor" href="#example-world-inequility-report---wir2022"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>World Inequality Report: <a href="https://wir2022.wid.world/" class="uri">https://wir2022.wid.world/</a>
@@ -213,9 +209,9 @@
 <span><span class="co">#&gt; [25] "data-F8"   "data-F9"   "data-F10"  "data-F11" </span></span>
 <span><span class="co">#&gt; [29] "data-F12"  "data-F13." "data-F14." "data-F15"</span></span></code></pre></div>
 </div>
-<div id="f14-global-carbon-inequality-2019.-group-contribution-to-world-emissions" class="section level2" number="13.6">
+<div id="f14-global-carbon-inequality-2019.-group-contribution-to-world-emissions" class="section level2" number="9.6">
 <h2>
-<span class="header-section-number">13.6</span> F14: Global carbon inequality, 2019. Group contribution to world emissions (%)<a class="anchor" aria-label="anchor" href="#f14-global-carbon-inequality-2019.-group-contribution-to-world-emissions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.6</span> F14: Global carbon inequality, 2019. Group contribution to world emissions (%)<a class="anchor" aria-label="anchor" href="#f14-global-carbon-inequality-2019.-group-contribution-to-world-emissions"><i class="fas fa-link"></i></a>
 </h2>
 <p>Note that the sheet name of F14 has period at the end.</p>
 <div class="sourceCode" id="cb203"><pre class="downlit sourceCode r">
@@ -232,9 +228,9 @@
 <li>
 <code>\n</code> for line break in the title.</li>
 </ul>
-<div id="categorical-vs-continuous-value" class="section level3" number="13.6.1">
+<div id="categorical-vs-continuous-value" class="section level3" number="9.6.1">
 <h3>
-<span class="header-section-number">13.6.1</span> Categorical vs Continuous Value<a class="anchor" aria-label="anchor" href="#categorical-vs-continuous-value"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.6.1</span> Categorical vs Continuous Value<a class="anchor" aria-label="anchor" href="#categorical-vs-continuous-value"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb204"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f14</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
@@ -250,9 +246,9 @@
 <span>       x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">"Share of world emissions (%)"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="08-ggplot2_files/figure-html/unnamed-chunk-5-1.png" width="672"></div>
 </div>
-<div id="memo" class="section level3" number="13.6.2">
+<div id="memo" class="section level3" number="9.6.2">
 <h3>
-<span class="header-section-number">13.6.2</span> Memo<a class="anchor" aria-label="anchor" href="#memo"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.6.2</span> Memo<a class="anchor" aria-label="anchor" href="#memo"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>
@@ -280,9 +276,9 @@
 </ul>
 </div>
 </div>
-<div id="f12-female-share-in-global-labor-incomes-1990-2020" class="section level2" number="13.7">
+<div id="f12-female-share-in-global-labor-incomes-1990-2020" class="section level2" number="9.7">
 <h2>
-<span class="header-section-number">13.7</span> F12: Female share in global labor incomes, 1990-2020<a class="anchor" aria-label="anchor" href="#f12-female-share-in-global-labor-incomes-1990-2020"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.7</span> F12: Female share in global labor incomes, 1990-2020<a class="anchor" aria-label="anchor" href="#f12-female-share-in-global-labor-incomes-1990-2020"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb206"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f12</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"data/WIR2022s.xlsx"</span>, sheet <span class="op">=</span> <span class="st">"data-F12"</span><span class="op">)</span></span>
@@ -322,9 +318,9 @@
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span><span class="st">"text"</span>, x <span class="op">=</span> <span class="fl">5.2</span>, y <span class="op">=</span> <span class="fl">0.47</span>, label <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_wrap.html">str_wrap</a></span><span class="op">(</span><span class="st">"Women make only 35% of global labor incomes, men make the remaining  65%."</span>, width <span class="op">=</span> <span class="fl">40</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="08-ggplot2_files/figure-html/unnamed-chunk-7-1.png" width="672"></div>
 </div>
-<div id="f1-global-income-and-wealth-inequality-2021" class="section level2" number="13.8">
+<div id="f1-global-income-and-wealth-inequality-2021" class="section level2" number="9.8">
 <h2>
-<span class="header-section-number">13.8</span> F1: Global income and wealth inequality, 2021<a class="anchor" aria-label="anchor" href="#f1-global-income-and-wealth-inequality-2021"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.8</span> F1: Global income and wealth inequality, 2021<a class="anchor" aria-label="anchor" href="#f1-global-income-and-wealth-inequality-2021"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb209"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"data/WIR2022s.xlsx"</span>, sheet <span class="op">=</span> <span class="st">"data-F1"</span><span class="op">)</span></span>
@@ -351,17 +347,17 @@
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="08-ggplot2_files/figure-html/unnamed-chunk-9-1.png" width="672"></div>
 </div>
-<div id="references-of-ggplot2" class="section level2" number="13.9">
+<div id="references-of-ggplot2" class="section level2" number="9.9">
 <h2>
-<span class="header-section-number">13.9</span> References of <code>ggplot2</code><a class="anchor" aria-label="anchor" href="#references-of-ggplot2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.9</span> References of <code>ggplot2</code><a class="anchor" aria-label="anchor" href="#references-of-ggplot2"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>Textbook: <a href="https://r4ds.had.co.nz/data-visualisation.html#data-visualisation">R for Data Science, Data Visualization</a>
 </li>
 </ul>
-<div id="rstudio-primers-see-references-in-moodle-at-the-bottom-1" class="section level3" number="13.9.1">
+<div id="rstudio-primers-see-references-in-moodle-at-the-bottom-1" class="section level3" number="9.9.1">
 <h3>
-<span class="header-section-number">13.9.1</span> RStudio Primers: See References in Moodle at the bottom<a class="anchor" aria-label="anchor" href="#rstudio-primers-see-references-in-moodle-at-the-bottom-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.9.1</span> RStudio Primers: See References in Moodle at the bottom<a class="anchor" aria-label="anchor" href="#rstudio-primers-see-references-in-moodle-at-the-bottom-1"><i class="fas fa-link"></i></a>
 </h3>
 <p><strong>Visualize Data</strong></p>
 <ul>
@@ -376,9 +372,9 @@
 </ul>
 </div>
 </div>
-<div id="the-week-three-assignment-in-moodle" class="section level2" number="13.10">
+<div id="the-week-three-assignment-in-moodle" class="section level2" number="9.10">
 <h2>
-<span class="header-section-number">13.10</span> The Week Three Assignment (in Moodle)<a class="anchor" aria-label="anchor" href="#the-week-three-assignment-in-moodle"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.10</span> The Week Three Assignment (in Moodle)<a class="anchor" aria-label="anchor" href="#the-week-three-assignment-in-moodle"><i class="fas fa-link"></i></a>
 </h2>
 <p><strong>WDI and <code>ggplot2</code></strong></p>
 <ul>
@@ -417,34 +413,34 @@
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="wdidata.html"><span class="header-section-number">12</span> Importing Public Data, WDI</a></div>
-<div class="next"><a href="s3resp.html"><span class="header-section-number">14</span> Responses to Assignment Three</a></div>
+<div class="prev"><a href="wdidata.html"><span class="header-section-number">8</span> Importing Public Data, WDI</a></div>
+<div class="next"><a href="s3resp.html"><span class="header-section-number">10</span> Responses to Assignment Three</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#ggokit2"><span class="header-section-number">13</span> Data Visualization and `ggplot2’</a></li>
-<li><a class="nav-link" href="#learning-resouces"><span class="header-section-number">13.1</span> Learning Resouces</a></li>
+<li><a class="nav-link" href="#ggokit2"><span class="header-section-number">9</span> Data Visualization and `ggplot2’</a></li>
+<li><a class="nav-link" href="#learning-resouces"><span class="header-section-number">9.1</span> Learning Resouces</a></li>
 <li>
-<a class="nav-link" href="#exploratory-data-analysis-1"><span class="header-section-number">13.2</span> Exploratory Data Analysis</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#what-is-eda"><span class="header-section-number">13.2.1</span> What is EDA?</a></li>
-<li><a class="nav-link" href="#two-useful-questions"><span class="header-section-number">13.2.2</span> Two useful questions</a></li>
+<a class="nav-link" href="#exploratory-data-analysis-1"><span class="header-section-number">9.2</span> Exploratory Data Analysis</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#what-is-eda"><span class="header-section-number">9.2.1</span> What is EDA?</a></li>
+<li><a class="nav-link" href="#two-useful-questions"><span class="header-section-number">9.2.2</span> Two useful questions</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#data-visualization"><span class="header-section-number">13.3</span> Data Visualization</a></li>
-<li><a class="nav-link" href="#ggplot2-basics"><span class="header-section-number">13.4</span> ggplot2 Basics</a></li>
-<li><a class="nav-link" href="#example-world-inequility-report---wir2022"><span class="header-section-number">13.5</span> Example: World Inequility Report - WIR2022</a></li>
+<li><a class="nav-link" href="#data-visualization"><span class="header-section-number">9.3</span> Data Visualization</a></li>
+<li><a class="nav-link" href="#ggplot2-basics"><span class="header-section-number">9.4</span> ggplot2 Basics</a></li>
+<li><a class="nav-link" href="#example-world-inequility-report---wir2022"><span class="header-section-number">9.5</span> Example: World Inequility Report - WIR2022</a></li>
 <li>
-<a class="nav-link" href="#f14-global-carbon-inequality-2019.-group-contribution-to-world-emissions"><span class="header-section-number">13.6</span> F14: Global carbon inequality, 2019. Group contribution to world emissions (%)</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#categorical-vs-continuous-value"><span class="header-section-number">13.6.1</span> Categorical vs Continuous Value</a></li>
-<li><a class="nav-link" href="#memo"><span class="header-section-number">13.6.2</span> Memo</a></li>
+<a class="nav-link" href="#f14-global-carbon-inequality-2019.-group-contribution-to-world-emissions"><span class="header-section-number">9.6</span> F14: Global carbon inequality, 2019. Group contribution to world emissions (%)</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#categorical-vs-continuous-value"><span class="header-section-number">9.6.1</span> Categorical vs Continuous Value</a></li>
+<li><a class="nav-link" href="#memo"><span class="header-section-number">9.6.2</span> Memo</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#f12-female-share-in-global-labor-incomes-1990-2020"><span class="header-section-number">13.7</span> F12: Female share in global labor incomes, 1990-2020</a></li>
-<li><a class="nav-link" href="#f1-global-income-and-wealth-inequality-2021"><span class="header-section-number">13.8</span> F1: Global income and wealth inequality, 2021</a></li>
+<li><a class="nav-link" href="#f12-female-share-in-global-labor-incomes-1990-2020"><span class="header-section-number">9.7</span> F12: Female share in global labor incomes, 1990-2020</a></li>
+<li><a class="nav-link" href="#f1-global-income-and-wealth-inequality-2021"><span class="header-section-number">9.8</span> F1: Global income and wealth inequality, 2021</a></li>
 <li>
-<a class="nav-link" href="#references-of-ggplot2"><span class="header-section-number">13.9</span> References of ggplot2</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#rstudio-primers-see-references-in-moodle-at-the-bottom-1"><span class="header-section-number">13.9.1</span> RStudio Primers: See References in Moodle at the bottom</a></li></ul>
+<a class="nav-link" href="#references-of-ggplot2"><span class="header-section-number">9.9</span> References of ggplot2</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#rstudio-primers-see-references-in-moodle-at-the-bottom-1"><span class="header-section-number">9.9.1</span> RStudio Primers: See References in Moodle at the bottom</a></li></ul>
 </li>
-<li><a class="nav-link" href="#the-week-three-assignment-in-moodle"><span class="header-section-number">13.10</span> The Week Three Assignment (in Moodle)</a></li>
+<li><a class="nav-link" href="#the-week-three-assignment-in-moodle"><span class="header-section-number">9.10</span> The Week Three Assignment (in Moodle)</a></li>
 </ul>
 
       <div class="book-extra">

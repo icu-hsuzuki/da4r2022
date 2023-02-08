@@ -4,20 +4,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 18 Model | Data Analysis for Researchers AY2022</title>
+<title>Chapter 14 Model | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
-<meta name="description" content="Setup library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.5.0...">
-<meta name="generator" content="bookdown 0.31 with bs4_book()">
-<meta property="og:title" content="Chapter 18 Model | Data Analysis for Researchers AY2022">
+<meta name="description" content="Setup library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  0.3.5 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.4.1...">
+<meta name="generator" content="bookdown 0.30 with bs4_book()">
+<meta property="og:title" content="Chapter 14 Model | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/model.html">
-<meta property="og:description" content="Setup library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.5.0...">
+<meta property="og:description" content="Setup library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  0.3.5 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.4.1...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 18 Model | Data Analysis for Researchers AY2022">
-<meta name="twitter:description" content="Setup library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.5.0...">
+<meta name="twitter:title" content="Chapter 14 Model | Data Analysis for Researchers AY2022">
+<meta name="twitter:description" content="Setup library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  0.3.5 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.4.1...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
@@ -73,40 +73,36 @@
 <li><a class="" href="rmarkdown.html"><span class="header-section-number">5</span> R Markdown</a></li>
 <li><a class="" href="dplyr.html"><span class="header-section-number">6</span> Data Transforamtion with dplyr</a></li>
 <li><a class="" href="a2resp.html"><span class="header-section-number">7</span> Responses to Assignment Two</a></li>
-<li><a class="" href="set-up-1.html"><span class="header-section-number">8</span> Set up</a></li>
-<li><a class="" href="general-comments.html"><span class="header-section-number">9</span> General Comments</a></li>
-<li><a class="" href="responses-to-questions.html"><span class="header-section-number">10</span> Responses to Questions</a></li>
-<li><a class="" href="appendix-change-colors-shapes-linetypes-etc.-manually.html"><span class="header-section-number">11</span> Appendix: Change colors, shapes, linetypes, etc. manually</a></li>
-<li><a class="" href="wdidata.html"><span class="header-section-number">12</span> Importing Public Data, WDI</a></li>
-<li><a class="" href="ggokit2.html"><span class="header-section-number">13</span> Data Visualization and `ggplot2’</a></li>
-<li><a class="" href="s3resp.html"><span class="header-section-number">14</span> Responses to Assignment Three</a></li>
-<li><a class="" href="tidy.html"><span class="header-section-number">15</span> Tidy Data</a></li>
-<li><a class="" href="workflow.html"><span class="header-section-number">16</span> EDA Workflow</a></li>
-<li><a class="" href="a4resp.html"><span class="header-section-number">17</span> Assignment Four: The Week Five Assignment</a></li>
-<li><a class="active" href="model.html"><span class="header-section-number">18</span> Model</a></li>
-<li><a class="" href="roudups.html"><span class="header-section-number">19</span> Roudups</a></li>
-<li><a class="" href="a5resp.html"><span class="header-section-number">20</span> Responses to Assignment Five</a></li>
-<li><a class="" href="set-up-4.html"><span class="header-section-number">21</span> Set up</a></li>
-<li><a class="" href="general-comments-3.html"><span class="header-section-number">22</span> General Comments</a></li>
-<li><a class="" href="your-work-1.html"><span class="header-section-number">23</span> Your Work</a></li>
-<li><a class="" href="responses-to-questions-3.html"><span class="header-section-number">24</span> Responses to Questions</a></li>
-<li><a class="" href="my-comments-after-review.html"><span class="header-section-number">25</span> My Comments after Review</a></li>
-<li><a class="" href="eda.html"><span class="header-section-number">26</span> Exploartory Data analysis</a></li>
-<li><a class="" href="importing.html"><span class="header-section-number">27</span> Impoarting Data</a></li>
-<li><a class="" href="transforming.html"><span class="header-section-number">28</span> Transforming Data</a></li>
-<li><a class="" href="tidying.html"><span class="header-section-number">29</span> Tidying Data</a></li>
-<li><a class="" href="visualizing.html"><span class="header-section-number">30</span> Visualizing Data</a></li>
-<li><a class="" href="modeling.html"><span class="header-section-number">31</span> Modeling Data</a></li>
-<li><a class="" href="communicating-data-communicating.html"><span class="header-section-number">32</span> Communicating Data {communicating}</a></li>
-<li><a class="" href="worldbank.html"><span class="header-section-number">33</span> World Bank</a></li>
-<li><a class="" href="owid.html"><span class="header-section-number">34</span> Our World in Data</a></li>
-<li><a class="" href="oecd.html"><span class="header-section-number">35</span> OECD</a></li>
-<li><a class="" href="undata.html"><span class="header-section-number">36</span> UN Data</a></li>
-<li><a class="" href="wir.html"><span class="header-section-number">37</span> World Inequality Report</a></li>
-<li><a class="" href="histdata.html"><span class="header-section-number">38</span> HistData</a></li>
-<li><a class="" href="covid19.html"><span class="header-section-number">39</span> Covid 19</a></li>
-<li><a class="" href="bookdown.html"><span class="header-section-number">40</span> Bookdown</a></li>
-<li><a class="" href="template.html"><span class="header-section-number">41</span> Template</a></li>
+<li><a class="" href="wdidata.html"><span class="header-section-number">8</span> Importing Public Data, WDI</a></li>
+<li><a class="" href="ggokit2.html"><span class="header-section-number">9</span> Data Visualization and `ggplot2’</a></li>
+<li><a class="" href="s3resp.html"><span class="header-section-number">10</span> Responses to Assignment Three</a></li>
+<li><a class="" href="tidy.html"><span class="header-section-number">11</span> Tidy Data</a></li>
+<li><a class="" href="workflow.html"><span class="header-section-number">12</span> EDA Workflow</a></li>
+<li><a class="" href="a4resp.html"><span class="header-section-number">13</span> Assignment Four: The Week Five Assignment</a></li>
+<li><a class="active" href="model.html"><span class="header-section-number">14</span> Model</a></li>
+<li><a class="" href="roudups.html"><span class="header-section-number">15</span> Roudups</a></li>
+<li><a class="" href="a5resp.html"><span class="header-section-number">16</span> Responses to Assignment Five</a></li>
+<li><a class="" href="set-up-4.html"><span class="header-section-number">17</span> Set up</a></li>
+<li><a class="" href="general-comments-3.html"><span class="header-section-number">18</span> General Comments</a></li>
+<li><a class="" href="your-work-1.html"><span class="header-section-number">19</span> Your Work</a></li>
+<li><a class="" href="responses-to-questions-3.html"><span class="header-section-number">20</span> Responses to Questions</a></li>
+<li><a class="" href="my-comments-after-review.html"><span class="header-section-number">21</span> My Comments after Review</a></li>
+<li><a class="" href="eda.html"><span class="header-section-number">22</span> Exploartory Data analysis</a></li>
+<li><a class="" href="importing.html"><span class="header-section-number">23</span> Impoarting Data</a></li>
+<li><a class="" href="transforming.html"><span class="header-section-number">24</span> Transforming Data</a></li>
+<li><a class="" href="tidying.html"><span class="header-section-number">25</span> Tidying Data</a></li>
+<li><a class="" href="visualizing.html"><span class="header-section-number">26</span> Visualizing Data</a></li>
+<li><a class="" href="modeling.html"><span class="header-section-number">27</span> Modeling Data</a></li>
+<li><a class="" href="communicating.html"><span class="header-section-number">28</span> Communicating Data</a></li>
+<li><a class="" href="worldbank.html"><span class="header-section-number">29</span> World Bank</a></li>
+<li><a class="" href="owid.html"><span class="header-section-number">30</span> Our World in Data</a></li>
+<li><a class="" href="oecd.html"><span class="header-section-number">31</span> OECD</a></li>
+<li><a class="" href="undata.html"><span class="header-section-number">32</span> UN Data</a></li>
+<li><a class="" href="wir.html"><span class="header-section-number">33</span> World Inequality Report</a></li>
+<li><a class="" href="histdata.html"><span class="header-section-number">34</span> HistData</a></li>
+<li><a class="" href="covid19.html"><span class="header-section-number">35</span> Covid 19</a></li>
+<li><a class="" href="bookdown.html"><span class="header-section-number">36</span> Bookdown</a></li>
+<li><a class="" href="template.html"><span class="header-section-number">37</span> Template</a></li>
 </ul>
 
         <div class="book-extra">
@@ -114,9 +110,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="model" class="section level1" number="18">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="model" class="section level1" number="14">
 <h1>
-<span class="header-section-number">18</span> Model<a class="anchor" aria-label="anchor" href="#model"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14</span> Model<a class="anchor" aria-label="anchor" href="#model"><i class="fas fa-link"></i></a>
 </h1>
 <div id="setup-2" class="section level3 unnumbered">
 <h3>Setup<a class="anchor" aria-label="anchor" href="#setup-2"><i class="fas fa-link"></i></a>
@@ -124,9 +120,9 @@
 <div class="sourceCode" id="cb415"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
-<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 </span></span>
+<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   0.3.5 </span></span>
 <span><span class="co">#&gt; ✔ tibble  3.1.8      ✔ dplyr   1.0.10</span></span>
-<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.5.0 </span></span>
+<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.4.1 </span></span>
 <span><span class="co">#&gt; ✔ readr   2.1.3      ✔ forcats 0.5.2 </span></span>
 <span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
@@ -141,9 +137,9 @@
 </li>
 </ul>
 </div>
-<div id="what-is-modeling-in-eda" class="section level2" number="18.1">
+<div id="what-is-modeling-in-eda" class="section level2" number="14.1">
 <h2>
-<span class="header-section-number">18.1</span> What is modeling in EDA<a class="anchor" aria-label="anchor" href="#what-is-modeling-in-eda"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.1</span> What is modeling in EDA<a class="anchor" aria-label="anchor" href="#what-is-modeling-in-eda"><i class="fas fa-link"></i></a>
 </h2>
 <p>Model is a simple summary of data</p>
 <p>Goal: A simple low-dimensional summary of a dataset. Ideally, the model will capture true “signals” (i.e. patterns generated by the phenomenon of interest), and ignore “noise” (i.e. random variation that you’re not interested in).</p>
@@ -165,9 +161,9 @@
 <code class="sourceCode R"><span><span class="va">df0</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Sepal.Width</span>, <span class="va">Sepal.Length</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method<span class="op">=</span><span class="st">"lm"</span>,formula<span class="op">=</span><span class="va">y</span><span class="op">~</span><span class="va">x</span>, se<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="13-model_files/figure-html/unnamed-chunk-6-1.png" width="672"></div>
 </div>
-<div id="linear-model-petal.length-petal.width" class="section level2" number="18.2">
+<div id="linear-model-petal.length-petal.width" class="section level2" number="14.2">
 <h2>
-<span class="header-section-number">18.2</span> Linear Model: Petal.Length ~ Petal.Width<a class="anchor" aria-label="anchor" href="#linear-model-petal.length-petal.width"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.2</span> Linear Model: Petal.Length ~ Petal.Width<a class="anchor" aria-label="anchor" href="#linear-model-petal.length-petal.width"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb421"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df0</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Petal.Length</span> <span class="op">~</span> <span class="va">Petal.Width</span>, <span class="va">.</span><span class="op">)</span></span>
@@ -179,15 +175,15 @@
 <span><span class="co">#&gt; (Intercept)  Petal.Width  </span></span>
 <span><span class="co">#&gt;       2.224        1.600</span></span></code></pre></div>
 </div>
-<div id="formula-textpetal.length-2.224-1.600cdot-textpetal.width" class="section level2" number="18.3">
+<div id="formula-textpetal.length-2.224-1.600cdot-textpetal.width" class="section level2" number="14.3">
 <h2>
-<span class="header-section-number">18.3</span> Formula: <span class="math inline">\(\text{Petal.Length} = 2.224 + 1.600\cdot \text{Petal.Width}\)</span><a class="anchor" aria-label="anchor" href="#formula-textpetal.length-2.224-1.600cdot-textpetal.width"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.3</span> Formula: <span class="math inline">\(\text{Petal.Length} = 2.224 + 1.600\cdot \text{Petal.Width}\)</span><a class="anchor" aria-label="anchor" href="#formula-textpetal.length-2.224-1.600cdot-textpetal.width"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-figure"><img src="13-model_files/figure-html/unnamed-chunk-8-1.png" width="672"></div>
 </div>
-<div id="linear-model-sepal.length-sepal.width" class="section level2" number="18.4">
+<div id="linear-model-sepal.length-sepal.width" class="section level2" number="14.4">
 <h2>
-<span class="header-section-number">18.4</span> Linear Model: Sepal.Length ~ Sepal.Width<a class="anchor" aria-label="anchor" href="#linear-model-sepal.length-sepal.width"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.4</span> Linear Model: Sepal.Length ~ Sepal.Width<a class="anchor" aria-label="anchor" href="#linear-model-sepal.length-sepal.width"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb422"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df0</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Sepal.Length</span> <span class="op">~</span> <span class="va">Sepal.Width</span>, <span class="va">.</span><span class="op">)</span></span>
@@ -199,15 +195,15 @@
 <span><span class="co">#&gt; (Intercept)  Sepal.Width  </span></span>
 <span><span class="co">#&gt;       3.093        1.103</span></span></code></pre></div>
 </div>
-<div id="formula-textsepal.length-3.093-1.103cdot-textsepal.width" class="section level2" number="18.5">
+<div id="formula-textsepal.length-3.093-1.103cdot-textsepal.width" class="section level2" number="14.5">
 <h2>
-<span class="header-section-number">18.5</span> Formula: <span class="math inline">\(\text{Sepal.Length} = 3.093 + 1.103\cdot \text{Sepal.Width}\)</span><a class="anchor" aria-label="anchor" href="#formula-textsepal.length-3.093-1.103cdot-textsepal.width"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.5</span> Formula: <span class="math inline">\(\text{Sepal.Length} = 3.093 + 1.103\cdot \text{Sepal.Width}\)</span><a class="anchor" aria-label="anchor" href="#formula-textsepal.length-3.093-1.103cdot-textsepal.width"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-figure"><img src="13-model_files/figure-html/unnamed-chunk-10-1.png" width="672"></div>
 </div>
-<div id="petal.length-petal.width-r-squared-0.6779---68" class="section level2" number="18.6">
+<div id="petal.length-petal.width-r-squared-0.6779---68" class="section level2" number="14.6">
 <h2>
-<span class="header-section-number">18.6</span> Petal.Length ~ Petal.Width: R squared = 0.6779 - 68%<a class="anchor" aria-label="anchor" href="#petal.length-petal.width-r-squared-0.6779---68"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.6</span> Petal.Length ~ Petal.Width: R squared = 0.6779 - 68%<a class="anchor" aria-label="anchor" href="#petal.length-petal.width-r-squared-0.6779---68"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb423"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df0</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Petal.Length</span> <span class="op">~</span> <span class="va">Petal.Width</span>, <span class="va">.</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -231,9 +227,9 @@
 <span><span class="co">#&gt; Multiple R-squared:  0.6779, Adjusted R-squared:  0.6746 </span></span>
 <span><span class="co">#&gt; F-statistic: 206.3 on 1 and 98 DF,  p-value: &lt; 2.2e-16</span></span></code></pre></div>
 </div>
-<div id="sepal.length-sepal.width-r-squared-0.3068---31" class="section level2" number="18.7">
+<div id="sepal.length-sepal.width-r-squared-0.3068---31" class="section level2" number="14.7">
 <h2>
-<span class="header-section-number">18.7</span> Sepal.Length ~ Sepal.Width: R squared = 0.3068 - 31%<a class="anchor" aria-label="anchor" href="#sepal.length-sepal.width-r-squared-0.3068---31"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.7</span> Sepal.Length ~ Sepal.Width: R squared = 0.3068 - 31%<a class="anchor" aria-label="anchor" href="#sepal.length-sepal.width-r-squared-0.3068---31"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb424"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df0</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Sepal.Length</span> <span class="op">~</span> <span class="va">Sepal.Width</span>, <span class="va">.</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -257,9 +253,9 @@
 <span><span class="co">#&gt; Multiple R-squared:  0.3068, Adjusted R-squared:  0.2997 </span></span>
 <span><span class="co">#&gt; F-statistic: 43.36 on 1 and 98 DF,  p-value: 2.27e-09</span></span></code></pre></div>
 </div>
-<div id="linear-model-basics-y-x" class="section level2" number="18.8">
+<div id="linear-model-basics-y-x" class="section level2" number="14.8">
 <h2>
-<span class="header-section-number">18.8</span> Linear Model Basics: y ~ x<a class="anchor" aria-label="anchor" href="#linear-model-basics-y-x"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.8</span> Linear Model Basics: y ~ x<a class="anchor" aria-label="anchor" href="#linear-model-basics-y-x"><i class="fas fa-link"></i></a>
 </h2>
 <pre><code>lm(y~x, data)</code></pre>
 <pre><code>data %&gt;% lm(y~x, .)</code></pre>
@@ -290,9 +286,9 @@
 </ul>
 <div class="inline-figure"><img src="13-model_files/figure-html/unnamed-chunk-15-1.png" width="672"></div>
 </div>
-<div id="r-squared" class="section level2" number="18.9">
+<div id="r-squared" class="section level2" number="14.9">
 <h2>
-<span class="header-section-number">18.9</span> R Squared<a class="anchor" aria-label="anchor" href="#r-squared"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.9</span> R Squared<a class="anchor" aria-label="anchor" href="#r-squared"><i class="fas fa-link"></i></a>
 </h2>
 <p><span class="math display">\[SS_{tot} = (1-1.25)^2 + (0.5-1.25)^2 + (2-1.25)^2 + (1.5-1.25)^2 = 1.25\]</span>
 <span class="math display">\[SS_{res} = (1-0.8)^2 + (0.5-1.1)^2 + (2-1.4)^2 + (1.5-1.7)^2 = 0.8\]</span>
@@ -345,9 +341,9 @@
 <span><span class="co">#&gt;   .. ..$ : chr [1:2] "(Intercept)" "x"</span></span>
 <span><span class="co">#&gt;  - attr(*, "class")= chr "summary.lm"</span></span></code></pre></div>
 </div>
-<div id="useful-mathematical-formula" class="section level2" number="18.10">
+<div id="useful-mathematical-formula" class="section level2" number="14.10">
 <h2>
-<span class="header-section-number">18.10</span> Useful Mathematical Formula<a class="anchor" aria-label="anchor" href="#useful-mathematical-formula"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.10</span> Useful Mathematical Formula<a class="anchor" aria-label="anchor" href="#useful-mathematical-formula"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>Let <span class="math inline">\(x = c(x_1, x_2, \ldots, x_n)\)</span> be the independent variable, i.e., Sepal.L</li>
@@ -362,9 +358,9 @@
 \mbox{R squared} = R^2 &amp; = 1 - \frac{SS_{res}}{SS_{tot}} = cor(x,y)^2
 \end{aligned}
 \]</span></p>
-<div id="adjusted-r-squared" class="section level3" number="18.10.1">
+<div id="adjusted-r-squared" class="section level3" number="14.10.1">
 <h3>
-<span class="header-section-number">18.10.1</span> Adjusted R Squared<a class="anchor" aria-label="anchor" href="#adjusted-r-squared"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.10.1</span> Adjusted R Squared<a class="anchor" aria-label="anchor" href="#adjusted-r-squared"><i class="fas fa-link"></i></a>
 </h3>
 <p><span class="math display">\[\text{Adjusted }R^2 = 1- \frac{(1-R^2)(n-1)}{n-k-1}\]</span>
 <span class="math inline">\(n\)</span>: number of observations, the number of rows</p>
@@ -451,9 +447,9 @@
 <span><span class="co">#&gt; Petal.Width    1.0000000</span></span></code></pre></div>
 </div>
 </div>
-<div id="examples-wdi" class="section level2" number="18.11">
+<div id="examples-wdi" class="section level2" number="14.11">
 <h2>
-<span class="header-section-number">18.11</span> Examples: WDI<a class="anchor" aria-label="anchor" href="#examples-wdi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.11</span> Examples: WDI<a class="anchor" aria-label="anchor" href="#examples-wdi"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>SP.DYN.LE00.IN: Life expectancy at birth, total (years)</li>
@@ -519,9 +515,9 @@ Each year, life expectancy at birth increases approximately 0.3123 years. R-squa
 <span><span class="co">#&gt; Multiple R-squared:  0.991,  Adjusted R-squared:  0.9908 </span></span>
 <span><span class="co">#&gt; F-statistic:  6166 on 1 and 56 DF,  p-value: &lt; 2.2e-16</span></span></code></pre></div>
 </div>
-<div id="brics-1" class="section level2" number="18.12">
+<div id="brics-1" class="section level2" number="14.12">
 <h2>
-<span class="header-section-number">18.12</span> BRICs<a class="anchor" aria-label="anchor" href="#brics-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.12</span> BRICs<a class="anchor" aria-label="anchor" href="#brics-1"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb447"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mod_brics</span> <span class="op">&lt;-</span> <span class="va">wdi_lifeExp</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Brazil"</span>, <span class="st">"Russian Federation"</span>, <span class="st">"India"</span>, <span class="st">"China"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">lifeExp</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">lifeExp</span> <span class="op">~</span> <span class="va">year</span>, <span class="va">.</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -554,9 +550,9 @@ Each year, life expectancy at birth increases approximately 0.3123 years. R-squa
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>glance <span class="op">=</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">model</span>, <span class="fu">broom</span><span class="fu">::</span><span class="va"><a href="https://generics.r-lib.org/reference/glance.html">glance</a></span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/nest.html">unnest</a></span><span class="op">(</span><span class="va">glance</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="government-expenditure-of-gdp" class="section level2" number="18.13">
+<div id="government-expenditure-of-gdp" class="section level2" number="14.13">
 <h2>
-<span class="header-section-number">18.13</span> Government Expenditure, (% of GDP)<a class="anchor" aria-label="anchor" href="#government-expenditure-of-gdp"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.13</span> Government Expenditure, (% of GDP)<a class="anchor" aria-label="anchor" href="#government-expenditure-of-gdp"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb451"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">wdi_cache</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_rds.html">read_rds</a></span><span class="op">(</span><span class="st">"./data/wdi_cache.RData"</span><span class="op">)</span></span></code></pre></div>
@@ -947,9 +943,9 @@ SE.XPD.TERT.ZS: Expenditure on tertiary education (% of government expenditure o
 <span><span class="co">#&gt; (Intercept)    education  </span></span>
 <span><span class="co">#&gt;     65.9047       0.9748</span></span></code></pre></div>
 </div>
-<div id="model-and-linear-regression-quick-reference" class="section level2" number="18.14">
+<div id="model-and-linear-regression-quick-reference" class="section level2" number="14.14">
 <h2>
-<span class="header-section-number">18.14</span> model and Linear Regression Quick Reference<a class="anchor" aria-label="anchor" href="#model-and-linear-regression-quick-reference"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.14</span> model and Linear Regression Quick Reference<a class="anchor" aria-label="anchor" href="#model-and-linear-regression-quick-reference"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>R4DS: Model basics
@@ -969,30 +965,30 @@ SE.XPD.TERT.ZS: Expenditure on tertiary education (% of government expenditure o
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="a4resp.html"><span class="header-section-number">17</span> Assignment Four: The Week Five Assignment</a></div>
-<div class="next"><a href="roudups.html"><span class="header-section-number">19</span> Roudups</a></div>
+<div class="prev"><a href="a4resp.html"><span class="header-section-number">13</span> Assignment Four: The Week Five Assignment</a></div>
+<div class="next"><a href="roudups.html"><span class="header-section-number">15</span> Roudups</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li>
-<a class="nav-link" href="#model"><span class="header-section-number">18</span> Model</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#setup-2">Setup</a></li></ul>
+<a class="nav-link" href="#model"><span class="header-section-number">14</span> Model</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#setup-2">Setup</a></li></ul>
 </li>
-<li><a class="nav-link" href="#what-is-modeling-in-eda"><span class="header-section-number">18.1</span> What is modeling in EDA</a></li>
-<li><a class="nav-link" href="#linear-model-petal.length-petal.width"><span class="header-section-number">18.2</span> Linear Model: Petal.Length ~ Petal.Width</a></li>
-<li><a class="nav-link" href="#formula-textpetal.length-2.224-1.600cdot-textpetal.width"><span class="header-section-number">18.3</span> Formula: \(\text{Petal.Length} = 2.224 + 1.600\cdot \text{Petal.Width}\)</a></li>
-<li><a class="nav-link" href="#linear-model-sepal.length-sepal.width"><span class="header-section-number">18.4</span> Linear Model: Sepal.Length ~ Sepal.Width</a></li>
-<li><a class="nav-link" href="#formula-textsepal.length-3.093-1.103cdot-textsepal.width"><span class="header-section-number">18.5</span> Formula: \(\text{Sepal.Length} = 3.093 + 1.103\cdot \text{Sepal.Width}\)</a></li>
-<li><a class="nav-link" href="#petal.length-petal.width-r-squared-0.6779---68"><span class="header-section-number">18.6</span> Petal.Length ~ Petal.Width: R squared = 0.6779 - 68%</a></li>
-<li><a class="nav-link" href="#sepal.length-sepal.width-r-squared-0.3068---31"><span class="header-section-number">18.7</span> Sepal.Length ~ Sepal.Width: R squared = 0.3068 - 31%</a></li>
-<li><a class="nav-link" href="#linear-model-basics-y-x"><span class="header-section-number">18.8</span> Linear Model Basics: y ~ x</a></li>
-<li><a class="nav-link" href="#r-squared"><span class="header-section-number">18.9</span> R Squared</a></li>
+<li><a class="nav-link" href="#what-is-modeling-in-eda"><span class="header-section-number">14.1</span> What is modeling in EDA</a></li>
+<li><a class="nav-link" href="#linear-model-petal.length-petal.width"><span class="header-section-number">14.2</span> Linear Model: Petal.Length ~ Petal.Width</a></li>
+<li><a class="nav-link" href="#formula-textpetal.length-2.224-1.600cdot-textpetal.width"><span class="header-section-number">14.3</span> Formula: \(\text{Petal.Length} = 2.224 + 1.600\cdot \text{Petal.Width}\)</a></li>
+<li><a class="nav-link" href="#linear-model-sepal.length-sepal.width"><span class="header-section-number">14.4</span> Linear Model: Sepal.Length ~ Sepal.Width</a></li>
+<li><a class="nav-link" href="#formula-textsepal.length-3.093-1.103cdot-textsepal.width"><span class="header-section-number">14.5</span> Formula: \(\text{Sepal.Length} = 3.093 + 1.103\cdot \text{Sepal.Width}\)</a></li>
+<li><a class="nav-link" href="#petal.length-petal.width-r-squared-0.6779---68"><span class="header-section-number">14.6</span> Petal.Length ~ Petal.Width: R squared = 0.6779 - 68%</a></li>
+<li><a class="nav-link" href="#sepal.length-sepal.width-r-squared-0.3068---31"><span class="header-section-number">14.7</span> Sepal.Length ~ Sepal.Width: R squared = 0.3068 - 31%</a></li>
+<li><a class="nav-link" href="#linear-model-basics-y-x"><span class="header-section-number">14.8</span> Linear Model Basics: y ~ x</a></li>
+<li><a class="nav-link" href="#r-squared"><span class="header-section-number">14.9</span> R Squared</a></li>
 <li>
-<a class="nav-link" href="#useful-mathematical-formula"><span class="header-section-number">18.10</span> Useful Mathematical Formula</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#adjusted-r-squared"><span class="header-section-number">18.10.1</span> Adjusted R Squared</a></li></ul>
+<a class="nav-link" href="#useful-mathematical-formula"><span class="header-section-number">14.10</span> Useful Mathematical Formula</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#adjusted-r-squared"><span class="header-section-number">14.10.1</span> Adjusted R Squared</a></li></ul>
 </li>
-<li><a class="nav-link" href="#examples-wdi"><span class="header-section-number">18.11</span> Examples: WDI</a></li>
-<li><a class="nav-link" href="#brics-1"><span class="header-section-number">18.12</span> BRICs</a></li>
-<li><a class="nav-link" href="#government-expenditure-of-gdp"><span class="header-section-number">18.13</span> Government Expenditure, (% of GDP)</a></li>
-<li><a class="nav-link" href="#model-and-linear-regression-quick-reference"><span class="header-section-number">18.14</span> model and Linear Regression Quick Reference</a></li>
+<li><a class="nav-link" href="#examples-wdi"><span class="header-section-number">14.11</span> Examples: WDI</a></li>
+<li><a class="nav-link" href="#brics-1"><span class="header-section-number">14.12</span> BRICs</a></li>
+<li><a class="nav-link" href="#government-expenditure-of-gdp"><span class="header-section-number">14.13</span> Government Expenditure, (% of GDP)</a></li>
+<li><a class="nav-link" href="#model-and-linear-regression-quick-reference"><span class="header-section-number">14.14</span> model and Linear Regression Quick Reference</a></li>
 </ul>
 
       <div class="book-extra">

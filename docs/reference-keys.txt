@@ -336,7 +336,7 @@ transforming
 tidying
 visualizing
 modeling
-communicating-data-communicating
+communicating
 owid
 oecd
 undata
@@ -365,5 +365,3 @@ publishing
 pages
 metadata-for-sharing
 template
-cover-image-path-to-the-social-sharing-image-like-imagescover.jpg
-communicating
