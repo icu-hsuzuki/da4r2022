@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 13 Assignment Four | Data Analysis for Researchers AY2022</title>
+<title>Chapter 12 Assignment Four | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
 <meta name="description" content="Assignment Four: The Week Five Assignment tidyr and WIR2022 Create an R Notebook of a Data Analysis containing the following and submit the rendered HTML file (e.g., a3_123456.nb.html by replacing...">
 <meta name="generator" content="bookdown 0.30 with bs4_book()">
-<meta property="og:title" content="Chapter 13 Assignment Four | Data Analysis for Researchers AY2022">
+<meta property="og:title" content="Chapter 12 Assignment Four | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/a4resp.html">
 <meta property="og:description" content="Assignment Four: The Week Five Assignment tidyr and WIR2022 Create an R Notebook of a Data Analysis containing the following and submit the rendered HTML file (e.g., a3_123456.nb.html by replacing...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 13 Assignment Four | Data Analysis for Researchers AY2022">
+<meta name="twitter:title" content="Chapter 12 Assignment Four | Data Analysis for Researchers AY2022">
 <meta name="twitter:description" content="Assignment Four: The Week Five Assignment tidyr and WIR2022 Create an R Notebook of a Data Analysis containing the following and submit the rendered HTML file (e.g., a3_123456.nb.html by replacing...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -66,37 +66,37 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
-<li class="book-part">PART I</li>
-<li><a class="" href="intro.html"><span class="header-section-number">2</span> Introduction</a></li>
-<li><a class="" href="randrstudio.html"><span class="header-section-number">3</span> R and R Studio</a></li>
-<li><a class="" href="tidyverse.html"><span class="header-section-number">4</span> tidyverse</a></li>
-<li><a class="" href="rmarkdown.html"><span class="header-section-number">5</span> R Markdown</a></li>
-<li><a class="" href="dplyr.html"><span class="header-section-number">6</span> dplyr</a></li>
-<li><a class="" href="a2resp.html"><span class="header-section-number">7</span> Assignment Two</a></li>
-<li><a class="" href="wdidata.html"><span class="header-section-number">8</span> WDI</a></li>
-<li><a class="" href="ggplot2.html"><span class="header-section-number">9</span> ggplot2</a></li>
-<li><a class="" href="a3resp.html"><span class="header-section-number">10</span> Assignment Three</a></li>
-<li><a class="" href="tidy.html"><span class="header-section-number">11</span> tidyr</a></li>
-<li><a class="" href="workflow.html"><span class="header-section-number">12</span> Workflow</a></li>
-<li><a class="active" href="a4resp.html"><span class="header-section-number">13</span> Assignment Four</a></li>
-<li><a class="" href="model.html"><span class="header-section-number">14</span> Linear Model</a></li>
-<li><a class="" href="roudups.html"><span class="header-section-number">15</span> Roudups</a></li>
-<li><a class="" href="a5resp.html"><span class="header-section-number">16</span> Assignment Five</a></li>
+<li><a class="" href="index.html">About</a></li>
+<li class="book-part">PART I. Introduction</li>
+<li><a class="" href="intro.html"><span class="header-section-number">1</span> About the Course</a></li>
+<li><a class="" href="randrstudio.html"><span class="header-section-number">2</span> R and R Studio</a></li>
+<li><a class="" href="tidyverse.html"><span class="header-section-number">3</span> tidyverse</a></li>
+<li><a class="" href="rmarkdown.html"><span class="header-section-number">4</span> R Markdown</a></li>
+<li><a class="" href="dplyr.html"><span class="header-section-number">5</span> dplyr</a></li>
+<li><a class="" href="a2resp.html"><span class="header-section-number">6</span> Assignment Two</a></li>
+<li><a class="" href="wdidata.html"><span class="header-section-number">7</span> WDI</a></li>
+<li><a class="" href="ggplot2.html"><span class="header-section-number">8</span> ggplot2</a></li>
+<li><a class="" href="a3resp.html"><span class="header-section-number">9</span> Assignment Three</a></li>
+<li><a class="" href="tidy.html"><span class="header-section-number">10</span> tidyr</a></li>
+<li><a class="" href="workflow.html"><span class="header-section-number">11</span> Workflow</a></li>
+<li><a class="active" href="a4resp.html"><span class="header-section-number">12</span> Assignment Four</a></li>
+<li><a class="" href="model.html"><span class="header-section-number">13</span> Linear Model</a></li>
+<li><a class="" href="roudups.html"><span class="header-section-number">14</span> Roudups</a></li>
+<li><a class="" href="a5resp.html"><span class="header-section-number">15</span> Assignment Five</a></li>
 <li class="book-part">PART II</li>
-<li><a class="" href="eda.html"><span class="header-section-number">17</span> Exploratory Data analysis</a></li>
-<li><a class="" href="importing.html"><span class="header-section-number">18</span> Importing</a></li>
-<li><a class="" href="transforming.html"><span class="header-section-number">19</span> Transforming</a></li>
-<li><a class="" href="tidying.html"><span class="header-section-number">20</span> Tidying</a></li>
-<li><a class="" href="visualizing.html"><span class="header-section-number">21</span> Visualizing</a></li>
-<li><a class="" href="modeling.html"><span class="header-section-number">22</span> Modeling</a></li>
-<li><a class="" href="communicating.html"><span class="header-section-number">23</span> Communicating</a></li>
+<li><a class="" href="eda.html"><span class="header-section-number">16</span> Exploratory Data analysis</a></li>
+<li><a class="" href="importing.html"><span class="header-section-number">17</span> Importing</a></li>
+<li><a class="" href="transforming.html"><span class="header-section-number">18</span> Transforming</a></li>
+<li><a class="" href="tidying.html"><span class="header-section-number">19</span> Tidying</a></li>
+<li><a class="" href="visualizing.html"><span class="header-section-number">20</span> Visualizing</a></li>
+<li><a class="" href="modeling.html"><span class="header-section-number">21</span> Modeling</a></li>
+<li><a class="" href="communicating.html"><span class="header-section-number">22</span> Communicating</a></li>
 <li class="book-part">PART III</li>
-<li><a class="" href="worldbank.html"><span class="header-section-number">24</span> World Bank</a></li>
-<li><a class="" href="owid.html"><span class="header-section-number">25</span> Our World in Data</a></li>
-<li><a class="" href="oecd.html"><span class="header-section-number">26</span> OECD</a></li>
-<li><a class="" href="undata.html"><span class="header-section-number">27</span> UN Data</a></li>
-<li><a class="" href="wir.html"><span class="header-section-number">28</span> World Inequality Report</a></li>
+<li><a class="" href="worldbank.html"><span class="header-section-number">23</span> World Bank</a></li>
+<li><a class="" href="owid.html"><span class="header-section-number">24</span> Our World in Data</a></li>
+<li><a class="" href="oecd.html"><span class="header-section-number">25</span> OECD</a></li>
+<li><a class="" href="undata.html"><span class="header-section-number">26</span> UN Data</a></li>
+<li><a class="" href="wir.html"><span class="header-section-number">27</span> World Inequality Report</a></li>
 <li class="book-part">(APPENDIX)</li>
 <li><a class="" href="histdata.html"><span class="header-section-number">A</span> HistData</a></li>
 <li><a class="" href="covid19.html"><span class="header-section-number">B</span> Covid 19</a></li>
@@ -109,9 +109,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="a4resp" class="section level1" number="13">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="a4resp" class="section level1" number="12">
 <h1>
-<span class="header-section-number">13</span> Assignment Four<a class="anchor" aria-label="anchor" href="#a4resp"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12</span> Assignment Four<a class="anchor" aria-label="anchor" href="#a4resp"><i class="fas fa-link"></i></a>
 </h1>
 <div id="assignment-four-the-week-five-assignment" class="section level3 unnumbered">
 <h3>Assignment Four: The Week Five Assignment<a class="anchor" aria-label="anchor" href="#assignment-four-the-week-five-assignment"><i class="fas fa-link"></i></a>
@@ -149,9 +149,9 @@
 </ol>
 <p><strong>Due:</strong> 2023-01-23 23:59:00. Submit your R Notebook file in Moodle (The Fourth Assignment). Due on Monday!</p>
 </div>
-<div id="set-up-3" class="section level2" number="13.1">
+<div id="set-up-3" class="section level2" number="12.1">
 <h2>
-<span class="header-section-number">13.1</span> Set up<a class="anchor" aria-label="anchor" href="#set-up-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.1</span> Set up<a class="anchor" aria-label="anchor" href="#set-up-3"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb342"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
@@ -165,9 +165,9 @@
 <span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span> <span class="co"># for excel files</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/WDI/">WDI</a></span><span class="op">)</span></span></code></pre></div>
-<div id="world-development-indicator---wdi" class="section level3" number="13.1.1">
+<div id="world-development-indicator---wdi" class="section level3" number="12.1.1">
 <h3>
-<span class="header-section-number">13.1.1</span> World Development Indicator - WDI<a class="anchor" aria-label="anchor" href="#world-development-indicator---wdi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.1.1</span> World Development Indicator - WDI<a class="anchor" aria-label="anchor" href="#world-development-indicator---wdi"><i class="fas fa-link"></i></a>
 </h3>
 <p>The following is useful when you use WDI.</p>
 <div class="sourceCode" id="cb343"><pre class="downlit sourceCode r">
@@ -198,9 +198,9 @@
 <span><span class="co">#&gt;   ..$ income   : chr [1:299] "High income" "Aggregates" "Low income" "Aggregates" ...</span></span>
 <span><span class="co">#&gt;   ..$ lending  : chr [1:299] "Not classified" "Aggregates" "IDA" "Aggregates" ...</span></span></code></pre></div>
 </div>
-<div id="world-inequility-report---wir2022" class="section level3" number="13.1.2">
+<div id="world-inequility-report---wir2022" class="section level3" number="12.1.2">
 <h3>
-<span class="header-section-number">13.1.2</span> World Inequility Report - WIR2022<a class="anchor" aria-label="anchor" href="#world-inequility-report---wir2022"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.1.2</span> World Inequility Report - WIR2022<a class="anchor" aria-label="anchor" href="#world-inequility-report---wir2022"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>World Inequality Report: <a href="https://wir2022.wid.world/" class="uri">https://wir2022.wid.world/</a>
@@ -232,20 +232,20 @@
 <span><span class="co">#&gt; [29] "data-F12"  "data-F13." "data-F14." "data-F15"</span></span></code></pre></div>
 </div>
 </div>
-<div id="general-comments-2" class="section level2" number="13.2">
+<div id="general-comments-2" class="section level2" number="12.2">
 <h2>
-<span class="header-section-number">13.2</span> General Comments<a class="anchor" aria-label="anchor" href="#general-comments-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.2</span> General Comments<a class="anchor" aria-label="anchor" href="#general-comments-2"><i class="fas fa-link"></i></a>
 </h2>
-<div id="reproducibility-and-literate-programming" class="section level3" number="13.2.1">
+<div id="reproducibility-and-literate-programming" class="section level3" number="12.2.1">
 <h3>
-<span class="header-section-number">13.2.1</span> Reproducibility and Literate Programming<a class="anchor" aria-label="anchor" href="#reproducibility-and-literate-programming"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.2.1</span> Reproducibility and Literate Programming<a class="anchor" aria-label="anchor" href="#reproducibility-and-literate-programming"><i class="fas fa-link"></i></a>
 </h3>
 <p>Reproducibility and Literate Programming are critical to exploratory data analysis (EDA). These are for communication; communication with readers of the paper, graders of the assignments, and communication with yourself, as we always forget. Please think about the reader of the article, and record the procedure and output so that reader can easily understand what you have done.</p>
 <p>The data source is critical. Unless the reader obtains the same data quickly, the communication on EDA does not start. If the data is not downloaded automatically through the code chunk, you should explain how to obtain the data and the part of the data you applied. It is crucial when you use copying and paste using <code>read_delim(clipboard())</code>. Please describe the way for the reader to retrieve the same data easily. It is best to read your paper; in some cases, it can be a hard copy from the beginning to check whether the reader can reproduce what you have done in the article.</p>
 </div>
-<div id="varibles-2" class="section level3" number="13.2.2">
+<div id="varibles-2" class="section level3" number="12.2.2">
 <h3>
-<span class="header-section-number">13.2.2</span> Varibles<a class="anchor" aria-label="anchor" href="#varibles-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.2.2</span> Varibles<a class="anchor" aria-label="anchor" href="#varibles-2"><i class="fas fa-link"></i></a>
 </h3>
 <p>In this Assignment Four, we required the following:</p>
 <ul>
@@ -267,9 +267,9 @@
 <li><p>Two categorical and two numerical: F8, F11</p></li>
 </ul>
 </div>
-<div id="visualization-1" class="section level3" number="13.2.3">
+<div id="visualization-1" class="section level3" number="12.2.3">
 <h3>
-<span class="header-section-number">13.2.3</span> Visualization<a class="anchor" aria-label="anchor" href="#visualization-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.2.3</span> Visualization<a class="anchor" aria-label="anchor" href="#visualization-1"><i class="fas fa-link"></i></a>
 </h3>
 <p>Data visualization is a key to EDA. Create various charts and write your observations you can or cannot obtain from the chart.</p>
 <p>The following are the first two fundamental questions you keep in mind.</p>
@@ -279,14 +279,14 @@
 </ul>
 </div>
 </div>
-<div id="your-work" class="section level2" number="13.3">
+<div id="your-work" class="section level2" number="12.3">
 <h2>
-<span class="header-section-number">13.3</span> Your Work<a class="anchor" aria-label="anchor" href="#your-work"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.3</span> Your Work<a class="anchor" aria-label="anchor" href="#your-work"><i class="fas fa-link"></i></a>
 </h2>
 <p>Here is a list of data your classmates used for Assignment Four.</p>
-<div id="world-inequality-report-2022---wir" class="section level3" number="13.3.1">
+<div id="world-inequality-report-2022---wir" class="section level3" number="12.3.1">
 <h3>
-<span class="header-section-number">13.3.1</span> World Inequality Report 2022 - WIR<a class="anchor" aria-label="anchor" href="#world-inequality-report-2022---wir"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.3.1</span> World Inequality Report 2022 - WIR<a class="anchor" aria-label="anchor" href="#world-inequality-report-2022---wir"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>WIR2022TablesFigures-Summary.xlsx: Data of Exective Summary</li>
@@ -294,9 +294,9 @@
 Historical and current emissions, Income and Population by world region</li>
 </ul>
 </div>
-<div id="world-development-indicators---wdi" class="section level3" number="13.3.2">
+<div id="world-development-indicators---wdi" class="section level3" number="12.3.2">
 <h3>
-<span class="header-section-number">13.3.2</span> World Development Indicators - WDI<a class="anchor" aria-label="anchor" href="#world-development-indicators---wdi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.3.2</span> World Development Indicators - WDI<a class="anchor" aria-label="anchor" href="#world-development-indicators---wdi"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>SP.DYN.TFRT.IN: Fertility rate, total (births per woman)</li>
@@ -317,9 +317,9 @@ Historical and current emissions, Income and Population by world region</li>
 <li>SE.PRM.UNER.MA: Children out of school, primary, male</li>
 </ul>
 </div>
-<div id="united-nations---undata" class="section level3" number="13.3.3">
+<div id="united-nations---undata" class="section level3" number="12.3.3">
 <h3>
-<span class="header-section-number">13.3.3</span> United Nations - UNdata<a class="anchor" aria-label="anchor" href="#united-nations---undata"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.3.3</span> United Nations - UNdata<a class="anchor" aria-label="anchor" href="#united-nations---undata"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>Education: “<a href="https://data.un.org/_Docs/SYB/CSV/SYB65_309_202209_Education.csv" class="uri">https://data.un.org/_Docs/SYB/CSV/SYB65_309_202209_Education.csv</a>”</li>
@@ -327,13 +327,13 @@ Historical and current emissions, Income and Population by world region</li>
 </ul>
 </div>
 </div>
-<div id="responses-to-questions-2" class="section level2" number="13.4">
+<div id="responses-to-questions-2" class="section level2" number="12.4">
 <h2>
-<span class="header-section-number">13.4</span> Responses to Questions<a class="anchor" aria-label="anchor" href="#responses-to-questions-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.4</span> Responses to Questions<a class="anchor" aria-label="anchor" href="#responses-to-questions-2"><i class="fas fa-link"></i></a>
 </h2>
-<div id="q.-wir2022-f8-with-a-fixed-year-say-2020-describing-the-difference-of-goevernment-and-private-income." class="section level3" number="13.4.1">
+<div id="q.-wir2022-f8-with-a-fixed-year-say-2020-describing-the-difference-of-goevernment-and-private-income." class="section level3" number="12.4.1">
 <h3>
-<span class="header-section-number">13.4.1</span> Q. WIR2022, F8 with a fixed year, say 2020 describing the difference of goevernment and private income.<a class="anchor" aria-label="anchor" href="#q.-wir2022-f8-with-a-fixed-year-say-2020-describing-the-difference-of-goevernment-and-private-income."><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.4.1</span> Q. WIR2022, F8 with a fixed year, say 2020 describing the difference of goevernment and private income.<a class="anchor" aria-label="anchor" href="#q.-wir2022-f8-with-a-fixed-year-say-2020-describing-the-difference-of-goevernment-and-private-income."><i class="fas fa-link"></i></a>
 </h3>
 <p>As for WIR2022, please refer to: <a href="https://ds-sl.github.io/data-analysis/wir2022.nb.html" class="uri">https://ds-sl.github.io/data-analysis/wir2022.nb.html</a></p>
 <p>I added explanations to each chart.</p>
@@ -413,9 +413,9 @@ Historical and current emissions, Income and Population by world region</li>
 <p><a href="https://wir2022.wid.world/chapter-3/" class="uri">https://wir2022.wid.world/chapter-3/</a></p>
 <p>From methodology, I explained on January 25, you can download the data for chapter three: WIR2022TablesFigures-Chapter3.xlsx</p>
 </div>
-<div id="q.-the-line-graph-looked-strange-at-first-and-i-couldnt-really-see-the-results-clearly.-however-i-could-solve-that-problem-by-using-smoothstat-and-then-the-results-looked-way-better-and-i-was-able-to-interpret-them-easily." class="section level3" number="13.4.2">
+<div id="q.-the-line-graph-looked-strange-at-first-and-i-couldnt-really-see-the-results-clearly.-however-i-could-solve-that-problem-by-using-smoothstat-and-then-the-results-looked-way-better-and-i-was-able-to-interpret-them-easily." class="section level3" number="12.4.2">
 <h3>
-<span class="header-section-number">13.4.2</span> Q. The line graph looked strange at first and I couldn’t really see the results clearly. However, I could solve that problem by using “smoothstat” and then the results looked way better and I was able to interpret them easily.<a class="anchor" aria-label="anchor" href="#q.-the-line-graph-looked-strange-at-first-and-i-couldnt-really-see-the-results-clearly.-however-i-could-solve-that-problem-by-using-smoothstat-and-then-the-results-looked-way-better-and-i-was-able-to-interpret-them-easily."><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.4.2</span> Q. The line graph looked strange at first and I couldn’t really see the results clearly. However, I could solve that problem by using “smoothstat” and then the results looked way better and I was able to interpret them easily.<a class="anchor" aria-label="anchor" href="#q.-the-line-graph-looked-strange-at-first-and-i-couldnt-really-see-the-results-clearly.-however-i-could-solve-that-problem-by-using-smoothstat-and-then-the-results-looked-way-better-and-i-was-able-to-interpret-them-easily."><i class="fas fa-link"></i></a>
 </h3>
 <p>The strange looking line graph is called a sawtooth shape, and happens very often. So let me explain it</p>
 <ul>
@@ -518,9 +518,9 @@ If the list is long, it may be better to check using <code>tibble</code> by `<co
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="12-a4resp_files/figure-html/unnamed-chunk-19-1.png" width="672"></div>
 </div>
-<div id="q.-how-is-it-possible-to-organize-better-the-name-of-the-value-in-the-x-axis-so-that-they-are-better-readable" class="section level3" number="13.4.3">
+<div id="q.-how-is-it-possible-to-organize-better-the-name-of-the-value-in-the-x-axis-so-that-they-are-better-readable" class="section level3" number="12.4.3">
 <h3>
-<span class="header-section-number">13.4.3</span> Q. How is it possible to organize better the name of the value in the x axis so that they are better readable?<a class="anchor" aria-label="anchor" href="#q.-how-is-it-possible-to-organize-better-the-name-of-the-value-in-the-x-axis-so-that-they-are-better-readable"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.4.3</span> Q. How is it possible to organize better the name of the value in the x axis so that they are better readable?<a class="anchor" aria-label="anchor" href="#q.-how-is-it-possible-to-organize-better-the-name-of-the-value-in-the-x-axis-so-that-they-are-better-readable"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>In the example above, the labels are overlapping. One way is to give an angle to the text with <code>vjust</code> and <code>hjust</code> values to place the labels in appropriate places: <code>theme(axis.text.x = element_text(angle = 30, vjust = 1, hjust=1))</code>
@@ -576,9 +576,9 @@ Change the width value to fit to your chart. If you add library(stringr), then <
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"long long long long long long long \nlong long long title"</span>, x <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="12-a4resp_files/figure-html/unnamed-chunk-22-1.png" width="672"></div>
 </div>
-<div id="q.-position-of-the-labels" class="section level3" number="13.4.4">
+<div id="q.-position-of-the-labels" class="section level3" number="12.4.4">
 <h3>
-<span class="header-section-number">13.4.4</span> Q. Position of the labels<a class="anchor" aria-label="anchor" href="#q.-position-of-the-labels"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.4.4</span> Q. Position of the labels<a class="anchor" aria-label="anchor" href="#q.-position-of-the-labels"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>
@@ -667,14 +667,14 @@ Change the width value to fit to your chart. If you add library(stringr), then <
 <img src="12-a4resp_files/figure-html/unnamed-chunk-28-1.png" width="672">
 ## My Comments after Review</div>
 </div>
-<div id="visualization-by-charts" class="section level3" number="13.4.5">
+<div id="visualization-by-charts" class="section level3" number="12.4.5">
 <h3>
-<span class="header-section-number">13.4.5</span> Visualization by Charts<a class="anchor" aria-label="anchor" href="#visualization-by-charts"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.4.5</span> Visualization by Charts<a class="anchor" aria-label="anchor" href="#visualization-by-charts"><i class="fas fa-link"></i></a>
 </h3>
 <p>Please try as various charts as possible. You can learn only by experience or from others.</p>
-<div id="treat-year-as-a-group" class="section level4" number="13.4.5.1">
+<div id="treat-year-as-a-group" class="section level4" number="12.4.5.1">
 <h4>
-<span class="header-section-number">13.4.5.1</span> Treat <code>year</code> as a group?<a class="anchor" aria-label="anchor" href="#treat-year-as-a-group"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.4.5.1</span> Treat <code>year</code> as a group?<a class="anchor" aria-label="anchor" href="#treat-year-as-a-group"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb371"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_wdi</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span></span>
@@ -736,18 +736,18 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 <div class="inline-figure"><img src="12-a4resp_files/figure-html/unnamed-chunk-35-1.png" width="672"></div>
 </div>
 </div>
-<div id="un-data" class="section level3" number="13.4.6">
+<div id="un-data" class="section level3" number="12.4.6">
 <h3>
-<span class="header-section-number">13.4.6</span> UN Data<a class="anchor" aria-label="anchor" href="#un-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.4.6</span> UN Data<a class="anchor" aria-label="anchor" href="#un-data"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>UNdata: <a href="https://data.un.org" class="uri">https://data.un.org</a>
 </li>
 </ul>
 <p>Data of World Development Indicators are in a uniform format and downloadable using an R package WDI. So it is easy to handle. However, other data require data transformation to make it tidy. We give a couple of examples. Most of the UN data, they are in CSV, and you can get a link quickly, or download it by clicking. Though the data structure is not uniform, it is relatively easy to handle.</p>
-<div id="education" class="section level4" number="13.4.6.1">
+<div id="education" class="section level4" number="12.4.6.1">
 <h4>
-<span class="header-section-number">13.4.6.1</span> Education<a class="anchor" aria-label="anchor" href="#education"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.4.6.1</span> Education<a class="anchor" aria-label="anchor" href="#education"><i class="fas fa-link"></i></a>
 </h4>
 <p>By the following, you can see that the first row is not the column name. R gives column names such as …1, …2, etc., when the column name is void.</p>
 <p>You can copy the link (url) by right click or ctrl+click.</p>
@@ -992,9 +992,9 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Upper Secondary Level Education"</span>, subtitle <span class="op">=</span> <span class="st">"Ratio = female/male"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="12-a4resp_files/figure-html/unnamed-chunk-55-1.png" width="672"></div>
 </div>
-<div id="population" class="section level4" number="13.4.6.2">
+<div id="population" class="section level4" number="12.4.6.2">
 <h4>
-<span class="header-section-number">13.4.6.2</span> Population<a class="anchor" aria-label="anchor" href="#population"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.4.6.2</span> Population<a class="anchor" aria-label="anchor" href="#population"><i class="fas fa-link"></i></a>
 </h4>
 <p>Data structure is similar to the previous one. So use <code>skip=1</code>, and check the variable s briefly.</p>
 <div class="sourceCode" id="cb395"><pre class="downlit sourceCode r">
@@ -1181,9 +1181,9 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 </div>
 </div>
 </div>
-<div id="wir" class="section level2" number="13.5">
+<div id="wir" class="section level2" number="12.5">
 <h2>
-<span class="header-section-number">13.5</span> WIR<a class="anchor" aria-label="anchor" href="#wir"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.5</span> WIR<a class="anchor" aria-label="anchor" href="#wir"><i class="fas fa-link"></i></a>
 </h2>
 <p>In the following, we explain how to download data by an R package <code>wir</code>. First, you need to install the package. However, it is not an official R package yet; you need to use the package <code>devtools</code> to install it.</p>
 <div class="sourceCode" id="cb406"><pre class="downlit sourceCode r">
@@ -1520,45 +1520,45 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="workflow.html"><span class="header-section-number">12</span> Workflow</a></div>
-<div class="next"><a href="model.html"><span class="header-section-number">14</span> Linear Model</a></div>
+<div class="prev"><a href="workflow.html"><span class="header-section-number">11</span> Workflow</a></div>
+<div class="next"><a href="model.html"><span class="header-section-number">13</span> Linear Model</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li>
-<a class="nav-link" href="#a4resp"><span class="header-section-number">13</span> Assignment Four</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#assignment-four-the-week-five-assignment">Assignment Four: The Week Five Assignment</a></li></ul>
+<a class="nav-link" href="#a4resp"><span class="header-section-number">12</span> Assignment Four</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#assignment-four-the-week-five-assignment">Assignment Four: The Week Five Assignment</a></li></ul>
 </li>
 <li>
-<a class="nav-link" href="#set-up-3"><span class="header-section-number">13.1</span> Set up</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#world-development-indicator---wdi"><span class="header-section-number">13.1.1</span> World Development Indicator - WDI</a></li>
-<li><a class="nav-link" href="#world-inequility-report---wir2022"><span class="header-section-number">13.1.2</span> World Inequility Report - WIR2022</a></li>
+<a class="nav-link" href="#set-up-3"><span class="header-section-number">12.1</span> Set up</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#world-development-indicator---wdi"><span class="header-section-number">12.1.1</span> World Development Indicator - WDI</a></li>
+<li><a class="nav-link" href="#world-inequility-report---wir2022"><span class="header-section-number">12.1.2</span> World Inequility Report - WIR2022</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#general-comments-2"><span class="header-section-number">13.2</span> General Comments</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#reproducibility-and-literate-programming"><span class="header-section-number">13.2.1</span> Reproducibility and Literate Programming</a></li>
-<li><a class="nav-link" href="#varibles-2"><span class="header-section-number">13.2.2</span> Varibles</a></li>
-<li><a class="nav-link" href="#visualization-1"><span class="header-section-number">13.2.3</span> Visualization</a></li>
+<a class="nav-link" href="#general-comments-2"><span class="header-section-number">12.2</span> General Comments</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#reproducibility-and-literate-programming"><span class="header-section-number">12.2.1</span> Reproducibility and Literate Programming</a></li>
+<li><a class="nav-link" href="#varibles-2"><span class="header-section-number">12.2.2</span> Varibles</a></li>
+<li><a class="nav-link" href="#visualization-1"><span class="header-section-number">12.2.3</span> Visualization</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#your-work"><span class="header-section-number">13.3</span> Your Work</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#world-inequality-report-2022---wir"><span class="header-section-number">13.3.1</span> World Inequality Report 2022 - WIR</a></li>
-<li><a class="nav-link" href="#world-development-indicators---wdi"><span class="header-section-number">13.3.2</span> World Development Indicators - WDI</a></li>
-<li><a class="nav-link" href="#united-nations---undata"><span class="header-section-number">13.3.3</span> United Nations - UNdata</a></li>
+<a class="nav-link" href="#your-work"><span class="header-section-number">12.3</span> Your Work</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#world-inequality-report-2022---wir"><span class="header-section-number">12.3.1</span> World Inequality Report 2022 - WIR</a></li>
+<li><a class="nav-link" href="#world-development-indicators---wdi"><span class="header-section-number">12.3.2</span> World Development Indicators - WDI</a></li>
+<li><a class="nav-link" href="#united-nations---undata"><span class="header-section-number">12.3.3</span> United Nations - UNdata</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#responses-to-questions-2"><span class="header-section-number">13.4</span> Responses to Questions</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#q.-wir2022-f8-with-a-fixed-year-say-2020-describing-the-difference-of-goevernment-and-private-income."><span class="header-section-number">13.4.1</span> Q. WIR2022, F8 with a fixed year, say 2020 describing the difference of goevernment and private income.</a></li>
-<li><a class="nav-link" href="#q.-the-line-graph-looked-strange-at-first-and-i-couldnt-really-see-the-results-clearly.-however-i-could-solve-that-problem-by-using-smoothstat-and-then-the-results-looked-way-better-and-i-was-able-to-interpret-them-easily."><span class="header-section-number">13.4.2</span> Q. The line graph looked strange at first and I couldn’t really see the results clearly. However, I could solve that problem by using “smoothstat” and then the results looked way better and I was able to interpret them easily.</a></li>
-<li><a class="nav-link" href="#q.-how-is-it-possible-to-organize-better-the-name-of-the-value-in-the-x-axis-so-that-they-are-better-readable"><span class="header-section-number">13.4.3</span> Q. How is it possible to organize better the name of the value in the x axis so that they are better readable?</a></li>
-<li><a class="nav-link" href="#q.-position-of-the-labels"><span class="header-section-number">13.4.4</span> Q. Position of the labels</a></li>
-<li><a class="nav-link" href="#visualization-by-charts"><span class="header-section-number">13.4.5</span> Visualization by Charts</a></li>
-<li><a class="nav-link" href="#un-data"><span class="header-section-number">13.4.6</span> UN Data</a></li>
+<a class="nav-link" href="#responses-to-questions-2"><span class="header-section-number">12.4</span> Responses to Questions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#q.-wir2022-f8-with-a-fixed-year-say-2020-describing-the-difference-of-goevernment-and-private-income."><span class="header-section-number">12.4.1</span> Q. WIR2022, F8 with a fixed year, say 2020 describing the difference of goevernment and private income.</a></li>
+<li><a class="nav-link" href="#q.-the-line-graph-looked-strange-at-first-and-i-couldnt-really-see-the-results-clearly.-however-i-could-solve-that-problem-by-using-smoothstat-and-then-the-results-looked-way-better-and-i-was-able-to-interpret-them-easily."><span class="header-section-number">12.4.2</span> Q. The line graph looked strange at first and I couldn’t really see the results clearly. However, I could solve that problem by using “smoothstat” and then the results looked way better and I was able to interpret them easily.</a></li>
+<li><a class="nav-link" href="#q.-how-is-it-possible-to-organize-better-the-name-of-the-value-in-the-x-axis-so-that-they-are-better-readable"><span class="header-section-number">12.4.3</span> Q. How is it possible to organize better the name of the value in the x axis so that they are better readable?</a></li>
+<li><a class="nav-link" href="#q.-position-of-the-labels"><span class="header-section-number">12.4.4</span> Q. Position of the labels</a></li>
+<li><a class="nav-link" href="#visualization-by-charts"><span class="header-section-number">12.4.5</span> Visualization by Charts</a></li>
+<li><a class="nav-link" href="#un-data"><span class="header-section-number">12.4.6</span> UN Data</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#wir"><span class="header-section-number">13.5</span> WIR</a></li>
+<li><a class="nav-link" href="#wir"><span class="header-section-number">12.5</span> WIR</a></li>
 </ul>
 
       <div class="book-extra">

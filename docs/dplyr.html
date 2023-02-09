@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 6 dplyr | Data Analysis for Researchers AY2022</title>
+<title>Chapter 5 dplyr | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
 <meta name="description" content="library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  0.3.5 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.4.1 #&gt; ✔...">
 <meta name="generator" content="bookdown 0.30 with bs4_book()">
-<meta property="og:title" content="Chapter 6 dplyr | Data Analysis for Researchers AY2022">
+<meta property="og:title" content="Chapter 5 dplyr | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/dplyr.html">
 <meta property="og:description" content="library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  0.3.5 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.4.1 #&gt; ✔...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 6 dplyr | Data Analysis for Researchers AY2022">
+<meta name="twitter:title" content="Chapter 5 dplyr | Data Analysis for Researchers AY2022">
 <meta name="twitter:description" content="library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  0.3.5 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.4.1 #&gt; ✔...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -66,37 +66,37 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
-<li class="book-part">PART I</li>
-<li><a class="" href="intro.html"><span class="header-section-number">2</span> Introduction</a></li>
-<li><a class="" href="randrstudio.html"><span class="header-section-number">3</span> R and R Studio</a></li>
-<li><a class="" href="tidyverse.html"><span class="header-section-number">4</span> tidyverse</a></li>
-<li><a class="" href="rmarkdown.html"><span class="header-section-number">5</span> R Markdown</a></li>
-<li><a class="active" href="dplyr.html"><span class="header-section-number">6</span> dplyr</a></li>
-<li><a class="" href="a2resp.html"><span class="header-section-number">7</span> Assignment Two</a></li>
-<li><a class="" href="wdidata.html"><span class="header-section-number">8</span> WDI</a></li>
-<li><a class="" href="ggplot2.html"><span class="header-section-number">9</span> ggplot2</a></li>
-<li><a class="" href="a3resp.html"><span class="header-section-number">10</span> Assignment Three</a></li>
-<li><a class="" href="tidy.html"><span class="header-section-number">11</span> tidyr</a></li>
-<li><a class="" href="workflow.html"><span class="header-section-number">12</span> Workflow</a></li>
-<li><a class="" href="a4resp.html"><span class="header-section-number">13</span> Assignment Four</a></li>
-<li><a class="" href="model.html"><span class="header-section-number">14</span> Linear Model</a></li>
-<li><a class="" href="roudups.html"><span class="header-section-number">15</span> Roudups</a></li>
-<li><a class="" href="a5resp.html"><span class="header-section-number">16</span> Assignment Five</a></li>
+<li><a class="" href="index.html">About</a></li>
+<li class="book-part">PART I. Introduction</li>
+<li><a class="" href="intro.html"><span class="header-section-number">1</span> About the Course</a></li>
+<li><a class="" href="randrstudio.html"><span class="header-section-number">2</span> R and R Studio</a></li>
+<li><a class="" href="tidyverse.html"><span class="header-section-number">3</span> tidyverse</a></li>
+<li><a class="" href="rmarkdown.html"><span class="header-section-number">4</span> R Markdown</a></li>
+<li><a class="active" href="dplyr.html"><span class="header-section-number">5</span> dplyr</a></li>
+<li><a class="" href="a2resp.html"><span class="header-section-number">6</span> Assignment Two</a></li>
+<li><a class="" href="wdidata.html"><span class="header-section-number">7</span> WDI</a></li>
+<li><a class="" href="ggplot2.html"><span class="header-section-number">8</span> ggplot2</a></li>
+<li><a class="" href="a3resp.html"><span class="header-section-number">9</span> Assignment Three</a></li>
+<li><a class="" href="tidy.html"><span class="header-section-number">10</span> tidyr</a></li>
+<li><a class="" href="workflow.html"><span class="header-section-number">11</span> Workflow</a></li>
+<li><a class="" href="a4resp.html"><span class="header-section-number">12</span> Assignment Four</a></li>
+<li><a class="" href="model.html"><span class="header-section-number">13</span> Linear Model</a></li>
+<li><a class="" href="roudups.html"><span class="header-section-number">14</span> Roudups</a></li>
+<li><a class="" href="a5resp.html"><span class="header-section-number">15</span> Assignment Five</a></li>
 <li class="book-part">PART II</li>
-<li><a class="" href="eda.html"><span class="header-section-number">17</span> Exploratory Data analysis</a></li>
-<li><a class="" href="importing.html"><span class="header-section-number">18</span> Importing</a></li>
-<li><a class="" href="transforming.html"><span class="header-section-number">19</span> Transforming</a></li>
-<li><a class="" href="tidying.html"><span class="header-section-number">20</span> Tidying</a></li>
-<li><a class="" href="visualizing.html"><span class="header-section-number">21</span> Visualizing</a></li>
-<li><a class="" href="modeling.html"><span class="header-section-number">22</span> Modeling</a></li>
-<li><a class="" href="communicating.html"><span class="header-section-number">23</span> Communicating</a></li>
+<li><a class="" href="eda.html"><span class="header-section-number">16</span> Exploratory Data analysis</a></li>
+<li><a class="" href="importing.html"><span class="header-section-number">17</span> Importing</a></li>
+<li><a class="" href="transforming.html"><span class="header-section-number">18</span> Transforming</a></li>
+<li><a class="" href="tidying.html"><span class="header-section-number">19</span> Tidying</a></li>
+<li><a class="" href="visualizing.html"><span class="header-section-number">20</span> Visualizing</a></li>
+<li><a class="" href="modeling.html"><span class="header-section-number">21</span> Modeling</a></li>
+<li><a class="" href="communicating.html"><span class="header-section-number">22</span> Communicating</a></li>
 <li class="book-part">PART III</li>
-<li><a class="" href="worldbank.html"><span class="header-section-number">24</span> World Bank</a></li>
-<li><a class="" href="owid.html"><span class="header-section-number">25</span> Our World in Data</a></li>
-<li><a class="" href="oecd.html"><span class="header-section-number">26</span> OECD</a></li>
-<li><a class="" href="undata.html"><span class="header-section-number">27</span> UN Data</a></li>
-<li><a class="" href="wir.html"><span class="header-section-number">28</span> World Inequality Report</a></li>
+<li><a class="" href="worldbank.html"><span class="header-section-number">23</span> World Bank</a></li>
+<li><a class="" href="owid.html"><span class="header-section-number">24</span> Our World in Data</a></li>
+<li><a class="" href="oecd.html"><span class="header-section-number">25</span> OECD</a></li>
+<li><a class="" href="undata.html"><span class="header-section-number">26</span> UN Data</a></li>
+<li><a class="" href="wir.html"><span class="header-section-number">27</span> World Inequality Report</a></li>
 <li class="book-part">(APPENDIX)</li>
 <li><a class="" href="histdata.html"><span class="header-section-number">A</span> HistData</a></li>
 <li><a class="" href="covid19.html"><span class="header-section-number">B</span> Covid 19</a></li>
@@ -109,9 +109,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="dplyr" class="section level1" number="6">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="dplyr" class="section level1" number="5">
 <h1>
-<span class="header-section-number">6</span> <code>dplyr</code><a class="anchor" aria-label="anchor" href="#dplyr"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5</span> <code>dplyr</code><a class="anchor" aria-label="anchor" href="#dplyr"><i class="fas fa-link"></i></a>
 </h1>
 <div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
@@ -123,9 +123,9 @@
 <span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
 <span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span></code></pre></div>
-<div id="dplyr-overview" class="section level2" number="6.1">
+<div id="dplyr-overview" class="section level2" number="5.1">
 <h2>
-<span class="header-section-number">6.1</span> <code>dplyr</code> <a href="https://dplyr.tidyverse.org">Overview</a><a class="anchor" aria-label="anchor" href="#dplyr-overview"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1</span> <code>dplyr</code> <a href="https://dplyr.tidyverse.org">Overview</a><a class="anchor" aria-label="anchor" href="#dplyr-overview"><i class="fas fa-link"></i></a>
 </h2>
 <p>dplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges:</p>
 <ul>
@@ -145,9 +145,9 @@
 <p>You can learn more about them in vignette(“dplyr”). As well as these single-table verbs, dplyr also provides a variety of two-table verbs, which you can learn about in vignette(“two-table”).</p>
 <p>If you are new to dplyr, the best place to start is <a href="http://r4ds.had.co.nz/transform.html">the data transformation chapter in R for data science</a>.</p>
 </div>
-<div id="select-subset-columns-using-their-names-and-types" class="section level2" number="6.2">
+<div id="select-subset-columns-using-their-names-and-types" class="section level2" number="5.2">
 <h2>
-<span class="header-section-number">6.2</span> <a href="https://dplyr.tidyverse.org/reference/select.html"><code>select</code></a>: Subset columns using their names and types<a class="anchor" aria-label="anchor" href="#select-subset-columns-using-their-names-and-types"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2</span> <a href="https://dplyr.tidyverse.org/reference/select.html"><code>select</code></a>: Subset columns using their names and types<a class="anchor" aria-label="anchor" href="#select-subset-columns-using-their-names-and-types"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -204,9 +204,9 @@
 </tbody>
 </table></div>
 </div>
-<div id="filter-subset-rows-using-column-values" class="section level2" number="6.3">
+<div id="filter-subset-rows-using-column-values" class="section level2" number="5.3">
 <h2>
-<span class="header-section-number">6.3</span> <a href="https://dplyr.tidyverse.org/reference/filter.html"><code>filter</code></a>: Subset rows using column values<a class="anchor" aria-label="anchor" href="#filter-subset-rows-using-column-values"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3</span> <a href="https://dplyr.tidyverse.org/reference/filter.html"><code>filter</code></a>: Subset rows using column values<a class="anchor" aria-label="anchor" href="#filter-subset-rows-using-column-values"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -258,9 +258,9 @@
 </tbody>
 </table></div>
 </div>
-<div id="arrange-and-pipe" class="section level2" number="6.4">
+<div id="arrange-and-pipe" class="section level2" number="5.4">
 <h2>
-<span class="header-section-number">6.4</span> <a href="https://dplyr.tidyverse.org/reference/arrange.html"><code>arrange</code></a> and <code>Pipe %&gt;%</code><a class="anchor" aria-label="anchor" href="#arrange-and-pipe"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4</span> <a href="https://dplyr.tidyverse.org/reference/arrange.html"><code>arrange</code></a> and <code>Pipe %&gt;%</code><a class="anchor" aria-label="anchor" href="#arrange-and-pipe"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>
@@ -272,9 +272,9 @@
 <a href="https://r4ds.had.co.nz/pipes.html"><code>pipes</code></a> in R for Data Science.</li>
 </ul>
 </div>
-<div id="mutate" class="section level2" number="6.5">
+<div id="mutate" class="section level2" number="5.5">
 <h2>
-<span class="header-section-number">6.5</span> <a href="https://dplyr.tidyverse.org/reference/mutate.html"><code>mutate</code></a><a class="anchor" aria-label="anchor" href="#mutate"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.5</span> <a href="https://dplyr.tidyverse.org/reference/mutate.html"><code>mutate</code></a><a class="anchor" aria-label="anchor" href="#mutate"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Create, modify, and delete columns</p></li>
@@ -290,18 +290,18 @@
 </li>
 </ul>
 </div>
-<div id="group_by" class="section level2" number="6.6">
+<div id="group_by" class="section level2" number="5.6">
 <h2>
-<span class="header-section-number">6.6</span> <a href="https://dplyr.tidyverse.org/reference/group_by.html"><code>group_by</code></a><a class="anchor" aria-label="anchor" href="#group_by"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6</span> <a href="https://dplyr.tidyverse.org/reference/group_by.html"><code>group_by</code></a><a class="anchor" aria-label="anchor" href="#group_by"><i class="fas fa-link"></i></a>
 </h2>
 </div>
-<div id="summarise-or-summarize" class="section level2" number="6.7">
+<div id="summarise-or-summarize" class="section level2" number="5.7">
 <h2>
-<span class="header-section-number">6.7</span> <a href="https://dplyr.tidyverse.org/reference/summarise.html"><code>summarise</code> or <code>summarize</code></a><a class="anchor" aria-label="anchor" href="#summarise-or-summarize"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.7</span> <a href="https://dplyr.tidyverse.org/reference/summarise.html"><code>summarise</code> or <code>summarize</code></a><a class="anchor" aria-label="anchor" href="#summarise-or-summarize"><i class="fas fa-link"></i></a>
 </h2>
-<div id="summary-functions" class="section level4" number="6.7.0.1">
+<div id="summary-functions" class="section level4" number="5.7.0.1">
 <h4>
-<span class="header-section-number">6.7.0.1</span> Summary functions<a class="anchor" aria-label="anchor" href="#summary-functions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.7.0.1</span> Summary functions<a class="anchor" aria-label="anchor" href="#summary-functions"><i class="fas fa-link"></i></a>
 </h4>
 <p>So far our summarise() examples have relied on sum(), max(), and mean(). But you can use any function in summarise() so long as it meets one criteria: the function must take a vector of values as input and return a single value as output. Functions that do this are known as summary functions and they are common in the field of descriptive statistics. Some of the most useful summary functions include:</p>
 <ol style="list-style-type: decimal">
@@ -316,13 +316,13 @@
 </ul>
 </div>
 </div>
-<div id="learn-dplyr-by-examples" class="section level2" number="6.8">
+<div id="learn-dplyr-by-examples" class="section level2" number="5.8">
 <h2>
-<span class="header-section-number">6.8</span> Learn <code>dplyr</code> by Examples<a class="anchor" aria-label="anchor" href="#learn-dplyr-by-examples"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8</span> Learn <code>dplyr</code> by Examples<a class="anchor" aria-label="anchor" href="#learn-dplyr-by-examples"><i class="fas fa-link"></i></a>
 </h2>
-<div id="data-iris" class="section level3" number="6.8.1">
+<div id="data-iris" class="section level3" number="5.8.1">
 <h3>
-<span class="header-section-number">6.8.1</span> Data <code>iris</code><a class="anchor" aria-label="anchor" href="#data-iris"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8.1</span> Data <code>iris</code><a class="anchor" aria-label="anchor" href="#data-iris"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">iris</span></span>
@@ -645,9 +645,9 @@
 <span><span class="co">#&gt;  3rd Qu.:1.800                  </span></span>
 <span><span class="co">#&gt;  Max.   :2.500</span></span></code></pre></div>
 </div>
-<div id="select-1---columns-1-2-5" class="section level3" number="6.8.2">
+<div id="select-1---columns-1-2-5" class="section level3" number="5.8.2">
 <h3>
-<span class="header-section-number">6.8.2</span> <code>select</code> 1 - columns 1, 2, 5<a class="anchor" aria-label="anchor" href="#select-1---columns-1-2-5"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8.2</span> <code>select</code> 1 - columns 1, 2, 5<a class="anchor" aria-label="anchor" href="#select-1---columns-1-2-5"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">iris</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">5</span><span class="op">)</span><span class="op">)</span></span>
@@ -803,9 +803,9 @@
 <span><span class="co">#&gt; 149          6.2         3.4  virginica</span></span>
 <span><span class="co">#&gt; 150          5.9         3.0  virginica</span></span></code></pre></div>
 </div>
-<div id="select-2---except-species" class="section level3" number="6.8.3">
+<div id="select-2---except-species" class="section level3" number="5.8.3">
 <h3>
-<span class="header-section-number">6.8.3</span> <code>select</code> 2 - except Species<a class="anchor" aria-label="anchor" href="#select-2---except-species"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8.3</span> <code>select</code> 2 - except Species<a class="anchor" aria-label="anchor" href="#select-2---except-species"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">iris</span>, <span class="op">-</span><span class="va">Species</span><span class="op">)</span></span>
@@ -961,9 +961,9 @@
 <span><span class="co">#&gt; 149          6.2         3.4          5.4         2.3</span></span>
 <span><span class="co">#&gt; 150          5.9         3.0          5.1         1.8</span></span></code></pre></div>
 </div>
-<div id="select-3---change-column-names" class="section level3" number="6.8.4">
+<div id="select-3---change-column-names" class="section level3" number="5.8.4">
 <h3>
-<span class="header-section-number">6.8.4</span> <code>select</code> 3 - change column names<a class="anchor" aria-label="anchor" href="#select-3---change-column-names"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8.4</span> <code>select</code> 3 - change column names<a class="anchor" aria-label="anchor" href="#select-3---change-column-names"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">iris</span>, sl <span class="op">=</span> <span class="va">Sepal.Length</span>, sw <span class="op">=</span> <span class="va">Sepal.Width</span>, sp <span class="op">=</span> <span class="va">Species</span><span class="op">)</span></span>
@@ -1119,9 +1119,9 @@
 <span><span class="co">#&gt; 149 6.2 3.4  virginica</span></span>
 <span><span class="co">#&gt; 150 5.9 3.0  virginica</span></span></code></pre></div>
 </div>
-<div id="filter---by-names" class="section level3" number="6.8.5">
+<div id="filter---by-names" class="section level3" number="5.8.5">
 <h3>
-<span class="header-section-number">6.8.5</span> <code>filter</code> - by names<a class="anchor" aria-label="anchor" href="#filter---by-names"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8.5</span> <code>filter</code> - by names<a class="anchor" aria-label="anchor" href="#filter---by-names"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">iris</span>, <span class="va">Species</span> <span class="op">==</span> <span class="st">"virginica"</span><span class="op">)</span></span>
@@ -1228,9 +1228,9 @@
 <span><span class="co">#&gt; 49 virginica</span></span>
 <span><span class="co">#&gt; 50 virginica</span></span></code></pre></div>
 </div>
-<div id="arrange---ascending-and-descending-order" class="section level3" number="6.8.6">
+<div id="arrange---ascending-and-descending-order" class="section level3" number="5.8.6">
 <h3>
-<span class="header-section-number">6.8.6</span> <code>arrange</code> - ascending and descending order<a class="anchor" aria-label="anchor" href="#arrange---ascending-and-descending-order"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8.6</span> <code>arrange</code> - ascending and descending order<a class="anchor" aria-label="anchor" href="#arrange---ascending-and-descending-order"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">iris</span>, <span class="va">Sepal.Length</span>, <span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">Sepal.Width</span><span class="op">)</span><span class="op">)</span></span>
@@ -1537,9 +1537,9 @@
 <span><span class="co">#&gt; 149  virginica</span></span>
 <span><span class="co">#&gt; 150  virginica</span></span></code></pre></div>
 </div>
-<div id="mutate---rank" class="section level3" number="6.8.7">
+<div id="mutate---rank" class="section level3" number="5.8.7">
 <h3>
-<span class="header-section-number">6.8.7</span> <code>mutate</code> - rank<a class="anchor" aria-label="anchor" href="#mutate---rank"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8.7</span> <code>mutate</code> - rank<a class="anchor" aria-label="anchor" href="#mutate---rank"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">iris</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>sl_rank <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/ranking.html">min_rank</a></span><span class="op">(</span><span class="va">Sepal.Length</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">sl_rank</span><span class="op">)</span></span>
@@ -1846,9 +1846,9 @@
 <span><span class="co">#&gt; 149  virginica     146</span></span>
 <span><span class="co">#&gt; 150  virginica     150</span></span></code></pre></div>
 </div>
-<div id="group_by-and-summarize" class="section level3" number="6.8.8">
+<div id="group_by-and-summarize" class="section level3" number="5.8.8">
 <h3>
-<span class="header-section-number">6.8.8</span> <code>group_by</code> and <code>summarize</code><a class="anchor" aria-label="anchor" href="#group_by-and-summarize"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8.8</span> <code>group_by</code> and <code>summarize</code><a class="anchor" aria-label="anchor" href="#group_by-and-summarize"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">iris</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
@@ -1869,17 +1869,17 @@
 <p><a href="https://icu-hsuzuki.github.io/da4r2022_note/dplyr-iris.nb.html">dplr_iris</a></p>
 </div>
 </div>
-<div id="references-of-dplyr" class="section level2" number="6.9">
+<div id="references-of-dplyr" class="section level2" number="5.9">
 <h2>
-<span class="header-section-number">6.9</span> References of <code>dplyr</code><a class="anchor" aria-label="anchor" href="#references-of-dplyr"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.9</span> References of <code>dplyr</code><a class="anchor" aria-label="anchor" href="#references-of-dplyr"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>Textbook: <a href="https://r4ds.had.co.nz/wrangle-intro.html#wrangle-intro">R for Data Science, Part II Explore</a>
 </li>
 </ul>
-<div id="rstudio-primers-see-references-in-moodle-at-the-bottom" class="section level3" number="6.9.1">
+<div id="rstudio-primers-see-references-in-moodle-at-the-bottom" class="section level3" number="5.9.1">
 <h3>
-<span class="header-section-number">6.9.1</span> RStudio Primers: See References in Moodle at the bottom<a class="anchor" aria-label="anchor" href="#rstudio-primers-see-references-in-moodle-at-the-bottom"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.9.1</span> RStudio Primers: See References in Moodle at the bottom<a class="anchor" aria-label="anchor" href="#rstudio-primers-see-references-in-moodle-at-the-bottom"><i class="fas fa-link"></i></a>
 </h3>
 <ol style="list-style-type: decimal">
 <li>The Basics – <a href="https://r4ds.had.co.nz/explore-intro.html#explore-intro">r4ds: Explore, I</a>
@@ -1911,13 +1911,13 @@
 </ol>
 </div>
 </div>
-<div id="learn-dplyr-by-examples-ii---gapminder" class="section level2" number="6.10">
+<div id="learn-dplyr-by-examples-ii---gapminder" class="section level2" number="5.10">
 <h2>
-<span class="header-section-number">6.10</span> Learn <code>dplyr</code> by Examples II - <code>gapminder</code><a class="anchor" aria-label="anchor" href="#learn-dplyr-by-examples-ii---gapminder"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10</span> Learn <code>dplyr</code> by Examples II - <code>gapminder</code><a class="anchor" aria-label="anchor" href="#learn-dplyr-by-examples-ii---gapminder"><i class="fas fa-link"></i></a>
 </h2>
-<div id="ggplot2-overview" class="section level3" number="6.10.1">
+<div id="ggplot2-overview" class="section level3" number="5.10.1">
 <h3>
-<span class="header-section-number">6.10.1</span> <code>ggplot2</code> <a href="https://ggplot2.tidyverse.org">Overview</a><a class="anchor" aria-label="anchor" href="#ggplot2-overview"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10.1</span> <code>ggplot2</code> <a href="https://ggplot2.tidyverse.org">Overview</a><a class="anchor" aria-label="anchor" href="#ggplot2-overview"><i class="fas fa-link"></i></a>
 </h3>
 <p><code>ggplot2</code> is a system for declaratively creating graphics, based on <a href="https://amzn.to/2ef1eWp">The Grammar of Graphics</a>. You provide the data, tell ggplot2 how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details.</p>
 <p><strong>Examples</strong></p>
@@ -1928,9 +1928,9 @@
 <p><strong>Template</strong></p>
 <pre><code>ggplot(data = &lt;DATA&gt;) + 
   &lt;GEOM_FUNCTION&gt;(mapping = aes(&lt;MAPPINGS&gt;))</code></pre>
-<div id="gapminder-and-r-package-gapminder" class="section level4" number="6.10.1.1">
+<div id="gapminder-and-r-package-gapminder" class="section level4" number="5.10.1.1">
 <h4>
-<span class="header-section-number">6.10.1.1</span> Gapminder and R Package <code>gapminder</code><a class="anchor" aria-label="anchor" href="#gapminder-and-r-package-gapminder"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10.1.1</span> Gapminder and R Package <code>gapminder</code><a class="anchor" aria-label="anchor" href="#gapminder-and-r-package-gapminder"><i class="fas fa-link"></i></a>
 </h4>
 <blockquote>
 <p>Gapminder was founded by Ola Rosling, Anna Rosling Rönnlund, and Hans Rosling</p>
@@ -1980,9 +1980,9 @@
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/WDI/">WDI</a></span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="r-package-gapminder-data" class="section level4" number="6.10.1.2">
+<div id="r-package-gapminder-data" class="section level4" number="5.10.1.2">
 <h4>
-<span class="header-section-number">6.10.1.2</span> R Package <code>gapminder</code> data<a class="anchor" aria-label="anchor" href="#r-package-gapminder-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10.1.2</span> R Package <code>gapminder</code> data<a class="anchor" aria-label="anchor" href="#r-package-gapminder-data"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">gapminder</span></span>
@@ -2029,13 +2029,13 @@
 <span><span class="co">#&gt;  Max.   :82.60   Max.   :1.319e+09   Max.   :113523.1  </span></span>
 <span><span class="co">#&gt; </span></span></code></pre></div>
 </div>
-<div id="tidyverseggplot" class="section level4" number="6.10.1.3">
+<div id="tidyverseggplot" class="section level4" number="5.10.1.3">
 <h4>
-<span class="header-section-number">6.10.1.3</span> Tidyverse::ggplot<a class="anchor" aria-label="anchor" href="#tidyverseggplot"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10.1.3</span> Tidyverse::ggplot<a class="anchor" aria-label="anchor" href="#tidyverseggplot"><i class="fas fa-link"></i></a>
 </h4>
-<div id="first-try---with-failures" class="section level5" number="6.10.1.3.1">
+<div id="first-try---with-failures" class="section level5" number="5.10.1.3.1">
 <h5>
-<span class="header-section-number">6.10.1.3.1</span> First Try - with failures<a class="anchor" aria-label="anchor" href="#first-try---with-failures"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10.1.3.1</span> First Try - with failures<a class="anchor" aria-label="anchor" href="#first-try---with-failures"><i class="fas fa-link"></i></a>
 </h5>
 <div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -2055,22 +2055,22 @@
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">lifeExp</span>, group <span class="op">=</span> <span class="va">year</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-18-1.png" width="672"></div>
 </div>
-<div id="box-plot" class="section level5" number="6.10.1.3.2">
+<div id="box-plot" class="section level5" number="5.10.1.3.2">
 <h5>
-<span class="header-section-number">6.10.1.3.2</span> Box Plot<a class="anchor" aria-label="anchor" href="#box-plot"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10.1.3.2</span> Box Plot<a class="anchor" aria-label="anchor" href="#box-plot"><i class="fas fa-link"></i></a>
 </h5>
 <div class="sourceCode" id="cb75"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/as_factor.html">as_factor</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-19-1.png" width="672"></div>
 </div>
 </div>
-<div id="applications-of-dplyr" class="section level4" number="6.10.1.4">
+<div id="applications-of-dplyr" class="section level4" number="5.10.1.4">
 <h4>
-<span class="header-section-number">6.10.1.4</span> Applications of <code>dplyr</code><a class="anchor" aria-label="anchor" href="#applications-of-dplyr"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10.1.4</span> Applications of <code>dplyr</code><a class="anchor" aria-label="anchor" href="#applications-of-dplyr"><i class="fas fa-link"></i></a>
 </h4>
-<div id="filter" class="section level5" number="6.10.1.4.1">
+<div id="filter" class="section level5" number="5.10.1.4.1">
 <h5>
-<span class="header-section-number">6.10.1.4.1</span> <code>filter</code><a class="anchor" aria-label="anchor" href="#filter"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10.1.4.1</span> <code>filter</code><a class="anchor" aria-label="anchor" href="#filter"><i class="fas fa-link"></i></a>
 </h5>
 <div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op">==</span> <span class="st">"Afghanistan"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -2162,9 +2162,9 @@
 </div>
 </div>
 </div>
-<div id="exercises" class="section level3" number="6.10.2">
+<div id="exercises" class="section level3" number="5.10.2">
 <h3>
-<span class="header-section-number">6.10.2</span> Exercises<a class="anchor" aria-label="anchor" href="#exercises"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10.2</span> Exercises<a class="anchor" aria-label="anchor" href="#exercises"><i class="fas fa-link"></i></a>
 </h3>
 <ol style="list-style-type: decimal">
 <li>Change <code>lifeExp</code> to <code>pop</code> and <code>gdpPercap</code> and do the same.</li>
@@ -2177,9 +2177,9 @@
 <li>Choose several countries by yourself and do the similar investigations.</li>
 </ol>
 </div>
-<div id="group_by-and-summarize-1" class="section level3" number="6.10.3">
+<div id="group_by-and-summarize-1" class="section level3" number="5.10.3">
 <h3>
-<span class="header-section-number">6.10.3</span> <code>group_by</code> and <code>summarize</code><a class="anchor" aria-label="anchor" href="#group_by-and-summarize-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10.3</span> <code>group_by</code> and <code>summarize</code><a class="anchor" aria-label="anchor" href="#group_by-and-summarize-1"><i class="fas fa-link"></i></a>
 </h3>
 <p>Let us use the variable <code>continent</code> and summarize the data.</p>
 <div class="sourceCode" id="cb80"><pre class="downlit sourceCode r">
@@ -2223,9 +2223,9 @@
 <div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-29-1.png" width="672"></div>
 </div>
 </div>
-<div id="the-week-two-assignment-in-moodle" class="section level2" number="6.11">
+<div id="the-week-two-assignment-in-moodle" class="section level2" number="5.11">
 <h2>
-<span class="header-section-number">6.11</span> The Week Two Assignment (in Moodle)<a class="anchor" aria-label="anchor" href="#the-week-two-assignment-in-moodle"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.11</span> The Week Two Assignment (in Moodle)<a class="anchor" aria-label="anchor" href="#the-week-two-assignment-in-moodle"><i class="fas fa-link"></i></a>
 </h2>
 <p><strong>R Markdown and <code>dplyr</code></strong></p>
 <ul>
@@ -2263,9 +2263,9 @@
 </li>
 </ol>
 <p><strong>Due:</strong> 2023-01-09 23:59:00. Submit your R Notebook file in Moodle (The Second Assignment). Due on Monday!</p>
-<div id="original-data-wdi" class="section level3" number="6.11.1">
+<div id="original-data-wdi" class="section level3" number="5.11.1">
 <h3>
-<span class="header-section-number">6.11.1</span> Original Data? WDI?<a class="anchor" aria-label="anchor" href="#original-data-wdi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.11.1</span> Original Data? WDI?<a class="anchor" aria-label="anchor" href="#original-data-wdi"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb86"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
@@ -2282,9 +2282,9 @@
 <span><span class="co">#&gt;  8 Afghanistan Asia       1987    40.8 13867957      852.</span></span>
 <span><span class="co">#&gt;  9 Afghanistan Asia       1992    41.7 16317921      649.</span></span>
 <span><span class="co">#&gt; 10 Afghanistan Asia       1997    41.8 22227415      635.</span></span></code></pre></div>
-<div id="wdi" class="section level4" number="6.11.1.1">
+<div id="wdi" class="section level4" number="5.11.1.1">
 <h4>
-<span class="header-section-number">6.11.1.1</span> WDI<a class="anchor" aria-label="anchor" href="#wdi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.11.1.1</span> WDI<a class="anchor" aria-label="anchor" href="#wdi"><i class="fas fa-link"></i></a>
 </h4>
 <ul>
 <li>SP.DYN.LE00.IN: Life expectancy at birth, total (years)</li>
@@ -2360,43 +2360,43 @@
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="rmarkdown.html"><span class="header-section-number">5</span> R Markdown</a></div>
-<div class="next"><a href="a2resp.html"><span class="header-section-number">7</span> Assignment Two</a></div>
+<div class="prev"><a href="rmarkdown.html"><span class="header-section-number">4</span> R Markdown</a></div>
+<div class="next"><a href="a2resp.html"><span class="header-section-number">6</span> Assignment Two</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#dplyr"><span class="header-section-number">6</span> dplyr</a></li>
-<li><a class="nav-link" href="#dplyr-overview"><span class="header-section-number">6.1</span> dplyr Overview</a></li>
-<li><a class="nav-link" href="#select-subset-columns-using-their-names-and-types"><span class="header-section-number">6.2</span> select: Subset columns using their names and types</a></li>
-<li><a class="nav-link" href="#filter-subset-rows-using-column-values"><span class="header-section-number">6.3</span> filter: Subset rows using column values</a></li>
-<li><a class="nav-link" href="#arrange-and-pipe"><span class="header-section-number">6.4</span> arrange and Pipe %&gt;%</a></li>
-<li><a class="nav-link" href="#mutate"><span class="header-section-number">6.5</span> mutate</a></li>
-<li><a class="nav-link" href="#group_by"><span class="header-section-number">6.6</span> group_by</a></li>
-<li><a class="nav-link" href="#summarise-or-summarize"><span class="header-section-number">6.7</span> summarise or summarize</a></li>
+<li><a class="nav-link" href="#dplyr"><span class="header-section-number">5</span> dplyr</a></li>
+<li><a class="nav-link" href="#dplyr-overview"><span class="header-section-number">5.1</span> dplyr Overview</a></li>
+<li><a class="nav-link" href="#select-subset-columns-using-their-names-and-types"><span class="header-section-number">5.2</span> select: Subset columns using their names and types</a></li>
+<li><a class="nav-link" href="#filter-subset-rows-using-column-values"><span class="header-section-number">5.3</span> filter: Subset rows using column values</a></li>
+<li><a class="nav-link" href="#arrange-and-pipe"><span class="header-section-number">5.4</span> arrange and Pipe %&gt;%</a></li>
+<li><a class="nav-link" href="#mutate"><span class="header-section-number">5.5</span> mutate</a></li>
+<li><a class="nav-link" href="#group_by"><span class="header-section-number">5.6</span> group_by</a></li>
+<li><a class="nav-link" href="#summarise-or-summarize"><span class="header-section-number">5.7</span> summarise or summarize</a></li>
 <li>
-<a class="nav-link" href="#learn-dplyr-by-examples"><span class="header-section-number">6.8</span> Learn dplyr by Examples</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#data-iris"><span class="header-section-number">6.8.1</span> Data iris</a></li>
-<li><a class="nav-link" href="#select-1---columns-1-2-5"><span class="header-section-number">6.8.2</span> select 1 - columns 1, 2, 5</a></li>
-<li><a class="nav-link" href="#select-2---except-species"><span class="header-section-number">6.8.3</span> select 2 - except Species</a></li>
-<li><a class="nav-link" href="#select-3---change-column-names"><span class="header-section-number">6.8.4</span> select 3 - change column names</a></li>
-<li><a class="nav-link" href="#filter---by-names"><span class="header-section-number">6.8.5</span> filter - by names</a></li>
-<li><a class="nav-link" href="#arrange---ascending-and-descending-order"><span class="header-section-number">6.8.6</span> arrange - ascending and descending order</a></li>
-<li><a class="nav-link" href="#mutate---rank"><span class="header-section-number">6.8.7</span> mutate - rank</a></li>
-<li><a class="nav-link" href="#group_by-and-summarize"><span class="header-section-number">6.8.8</span> group_by and summarize</a></li>
+<a class="nav-link" href="#learn-dplyr-by-examples"><span class="header-section-number">5.8</span> Learn dplyr by Examples</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#data-iris"><span class="header-section-number">5.8.1</span> Data iris</a></li>
+<li><a class="nav-link" href="#select-1---columns-1-2-5"><span class="header-section-number">5.8.2</span> select 1 - columns 1, 2, 5</a></li>
+<li><a class="nav-link" href="#select-2---except-species"><span class="header-section-number">5.8.3</span> select 2 - except Species</a></li>
+<li><a class="nav-link" href="#select-3---change-column-names"><span class="header-section-number">5.8.4</span> select 3 - change column names</a></li>
+<li><a class="nav-link" href="#filter---by-names"><span class="header-section-number">5.8.5</span> filter - by names</a></li>
+<li><a class="nav-link" href="#arrange---ascending-and-descending-order"><span class="header-section-number">5.8.6</span> arrange - ascending and descending order</a></li>
+<li><a class="nav-link" href="#mutate---rank"><span class="header-section-number">5.8.7</span> mutate - rank</a></li>
+<li><a class="nav-link" href="#group_by-and-summarize"><span class="header-section-number">5.8.8</span> group_by and summarize</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#references-of-dplyr"><span class="header-section-number">6.9</span> References of dplyr</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#rstudio-primers-see-references-in-moodle-at-the-bottom"><span class="header-section-number">6.9.1</span> RStudio Primers: See References in Moodle at the bottom</a></li></ul>
+<a class="nav-link" href="#references-of-dplyr"><span class="header-section-number">5.9</span> References of dplyr</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#rstudio-primers-see-references-in-moodle-at-the-bottom"><span class="header-section-number">5.9.1</span> RStudio Primers: See References in Moodle at the bottom</a></li></ul>
 </li>
 <li>
-<a class="nav-link" href="#learn-dplyr-by-examples-ii---gapminder"><span class="header-section-number">6.10</span> Learn dplyr by Examples II - gapminder</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#ggplot2-overview"><span class="header-section-number">6.10.1</span> ggplot2 Overview</a></li>
-<li><a class="nav-link" href="#exercises"><span class="header-section-number">6.10.2</span> Exercises</a></li>
-<li><a class="nav-link" href="#group_by-and-summarize-1"><span class="header-section-number">6.10.3</span> group_by and summarize</a></li>
+<a class="nav-link" href="#learn-dplyr-by-examples-ii---gapminder"><span class="header-section-number">5.10</span> Learn dplyr by Examples II - gapminder</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#ggplot2-overview"><span class="header-section-number">5.10.1</span> ggplot2 Overview</a></li>
+<li><a class="nav-link" href="#exercises"><span class="header-section-number">5.10.2</span> Exercises</a></li>
+<li><a class="nav-link" href="#group_by-and-summarize-1"><span class="header-section-number">5.10.3</span> group_by and summarize</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#the-week-two-assignment-in-moodle"><span class="header-section-number">6.11</span> The Week Two Assignment (in Moodle)</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#original-data-wdi"><span class="header-section-number">6.11.1</span> Original Data? WDI?</a></li></ul>
+<a class="nav-link" href="#the-week-two-assignment-in-moodle"><span class="header-section-number">5.11</span> The Week Two Assignment (in Moodle)</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#original-data-wdi"><span class="header-section-number">5.11.1</span> Original Data? WDI?</a></li></ul>
 </li>
 </ul>
 
