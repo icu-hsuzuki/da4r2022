@@ -1,1 +1,1 @@
-# Visualizing Data {#visualizing}
+# Visualizing {#visualizing}

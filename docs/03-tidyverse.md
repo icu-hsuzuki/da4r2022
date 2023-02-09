@@ -1,4 +1,4 @@
-# `tidyverse` Packages {#tidyverse}
+# `tidyverse`  {#tidyverse}
 
 ## Brief Introduction to R on RStudio
 

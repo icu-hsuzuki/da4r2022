@@ -1,4 +1,4 @@
-# Assignment Four: The Week Five Assignment {#a4resp}
+# Assignment Four {#a4resp}
 
 ### Assignment Four: The Week Five Assignment {-}
 

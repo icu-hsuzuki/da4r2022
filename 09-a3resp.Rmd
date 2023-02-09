@@ -1,5 +1,5 @@
 
-# Responses to Assignment Three {#s3resp}
+# Assignment Three {#a3resp}
 
 ### Assignment Three: The Week Four Assignment {-}
 

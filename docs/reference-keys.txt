@@ -10,7 +10,7 @@ textbooks-and-references
 interactive-exercises
 posit-primers-created-by-learnr
 posit-primers-httpsposit.cloudlearnprimers
-rwithrstudio
+randrstudio
 data-science-and-eda
 wikipedia-httpsen.wikipedia.orgwikidata_science
 what-is-r
@@ -170,7 +170,7 @@ wdicache
 wdi_data
 world-development-indicators---summary
 example-co2-emissions-metric-tons-per-capita
-ggokit2
+ggplot2
 learning-resouces
 exploratory-data-analysis-1
 what-is-eda
@@ -186,7 +186,7 @@ f1-global-income-and-wealth-inequality-2021
 references-of-ggplot2
 rstudio-primers-see-references-in-moodle-at-the-bottom-1
 the-week-three-assignment-in-moodle
-s3resp
+a3resp
 set-up-2
 eda-by-r-studio-step-1
 eda-by-r-studio-step-2

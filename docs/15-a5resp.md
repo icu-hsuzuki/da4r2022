@@ -1,4 +1,4 @@
-# Responses to Assignment Five {#a5resp}
+# Assignment Five {#a5resp}
 
 ## Assignment Five: The Week Six Assignment {.unnumbered}
 

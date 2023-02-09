@@ -1,4 +1,4 @@
-# Data Transforamtion with `dplyr` {#dplyr}
+#  `dplyr` {#dplyr}
 
 ```{r}
 library(tidyverse)

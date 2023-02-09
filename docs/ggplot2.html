@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 9 ggplot2 | Data Analysis for Researchers AY2022</title>
+<meta name="author" content="Hiroshi Suzuki">
+<meta name="description" content="library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.5.0 #&gt; ✔...">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
+<meta property="og:title" content="Chapter 9 ggplot2 | Data Analysis for Researchers AY2022">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/ggplot2.html">
+<meta property="og:description" content="library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.5.0 #&gt; ✔...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 9 ggplot2 | Data Analysis for Researchers AY2022">
+<meta name="twitter:description" content="library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.5.0 #&gt; ✔...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Data Analysis for Researchers AY2022</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li class="book-part">(PART)</li>
+<li><a class="" href="intro.html"><span class="header-section-number">2</span> Introduction</a></li>
+<li><a class="" href="randrstudio.html"><span class="header-section-number">3</span> R and R Studio</a></li>
+<li><a class="" href="tidyverse.html"><span class="header-section-number">4</span> tidyverse</a></li>
+<li><a class="" href="rmarkdown.html"><span class="header-section-number">5</span> R Markdown</a></li>
+<li><a class="" href="dplyr.html"><span class="header-section-number">6</span> dplyr</a></li>
+<li><a class="" href="a2resp.html"><span class="header-section-number">7</span> Assignment Two</a></li>
+<li><a class="" href="wdidata.html"><span class="header-section-number">8</span> WDI</a></li>
+<li><a class="active" href="ggplot2.html"><span class="header-section-number">9</span> ggplot2</a></li>
+<li><a class="" href="a3resp.html"><span class="header-section-number">10</span> Assignment Three</a></li>
+<li><a class="" href="tidy.html"><span class="header-section-number">11</span> tidyr</a></li>
+<li><a class="" href="workflow.html"><span class="header-section-number">12</span> Workflow</a></li>
+<li><a class="" href="a4resp.html"><span class="header-section-number">13</span> Assignment Four</a></li>
+<li><a class="" href="model.html"><span class="header-section-number">14</span> Linear Model</a></li>
+<li><a class="" href="roudups.html"><span class="header-section-number">15</span> Roudups</a></li>
+<li><a class="" href="a5resp.html"><span class="header-section-number">16</span> Assignment Five</a></li>
+<li class="book-part">(PART)</li>
+<li><a class="" href="eda.html"><span class="header-section-number">17</span> Exploratory Data analysis</a></li>
+<li><a class="" href="importing.html"><span class="header-section-number">18</span> Importing</a></li>
+<li><a class="" href="transforming.html"><span class="header-section-number">19</span> Transforming</a></li>
+<li><a class="" href="tidying.html"><span class="header-section-number">20</span> Tidying</a></li>
+<li><a class="" href="visualizing.html"><span class="header-section-number">21</span> Visualizing</a></li>
+<li><a class="" href="modeling.html"><span class="header-section-number">22</span> Modeling</a></li>
+<li><a class="" href="communicating.html"><span class="header-section-number">23</span> Communicating</a></li>
+<li class="book-part">(PART)</li>
+<li><a class="" href="worldbank.html"><span class="header-section-number">24</span> World Bank</a></li>
+<li><a class="" href="owid.html"><span class="header-section-number">25</span> Our World in Data</a></li>
+<li><a class="" href="oecd.html"><span class="header-section-number">26</span> OECD</a></li>
+<li><a class="" href="undata.html"><span class="header-section-number">27</span> UN Data</a></li>
+<li><a class="" href="wir.html"><span class="header-section-number">28</span> World Inequality Report</a></li>
+<li class="book-part">(APPENDIX)</li>
+<li><a class="" href="histdata.html"><span class="header-section-number">A</span> HistData</a></li>
+<li><a class="" href="covid19.html"><span class="header-section-number">B</span> Covid 19</a></li>
+<li><a class="" href="bookdown.html"><span class="header-section-number">C</span> Bookdown</a></li>
+<li><a class="" href="template.html"><span class="header-section-number">D</span> Template</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="ggplot2" class="section level1" number="9">
+<h1>
+<span class="header-section-number">9</span> <code>ggplot2</code><a class="anchor" aria-label="anchor" href="#ggplot2"><i class="fas fa-link"></i></a>
+</h1>
+<div class="sourceCode" id="cb199"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
+<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 </span></span>
+<span><span class="co">#&gt; ✔ tibble  3.1.8      ✔ dplyr   1.0.10</span></span>
+<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.5.0 </span></span>
+<span><span class="co">#&gt; ✔ readr   2.1.3      ✔ forcats 0.5.2 </span></span>
+<span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
+<span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
+<span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span></code></pre></div>
+<div id="learning-resouces" class="section level2" number="9.1">
+<h2>
+<span class="header-section-number">9.1</span> Learning Resouces<a class="anchor" aria-label="anchor" href="#learning-resouces"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Posit Primers:
+<ul>
+<li>
+<a href="https://posit.cloud/learn/primers/3">Visualize Data</a>: Learn how to use ggplot2 to make any type of plot with your data. Then learn the best ways to visualize patterns within values and relationships between variables.</li>
+</ul>
+</li>
+<li><a href="https://r4ds.had.co.nz/data-visualisation.html#data-visualisation">r4ds: Data Visualization</a></li>
+</ul>
+</div>
+<div id="exploratory-data-analysis-1" class="section level2" number="9.2">
+<h2>
+<span class="header-section-number">9.2</span> Exploratory Data Analysis<a class="anchor" aria-label="anchor" href="#exploratory-data-analysis-1"><i class="fas fa-link"></i></a>
+</h2>
+<div id="what-is-eda" class="section level3" number="9.2.1">
+<h3>
+<span class="header-section-number">9.2.1</span> What is EDA?<a class="anchor" aria-label="anchor" href="#what-is-eda"><i class="fas fa-link"></i></a>
+</h3>
+<p>EDA is an iterative cycle that helps you understand what your data says. When you do EDA, you:</p>
+<ol style="list-style-type: decimal">
+<li><p>Generate questions about your data</p></li>
+<li><p>Search for answers by visualising, transforming, and/or modeling your data</p></li>
+<li><p>Use what you learn to refine your questions and/or generate new questions</p></li>
+</ol>
+<p>EDA is an important part of any data analysis. You can use EDA to make discoveries about the world; or you can use EDA to ensure the quality of your data, asking questions about whether the data meets your standards or not.</p>
+</div>
+<div id="two-useful-questions" class="section level3" number="9.2.2">
+<h3>
+<span class="header-section-number">9.2.2</span> Two useful questions<a class="anchor" aria-label="anchor" href="#two-useful-questions"><i class="fas fa-link"></i></a>
+</h3>
+<p>There is no rule about which questions you should ask to guide your research. However, two types of questions will always be useful for making discoveries within your data. You can loosely word these questions as:</p>
+<ol style="list-style-type: decimal">
+<li>What type of variation occurs within my variables?</li>
+<li>What type of covariation occurs between my variables?</li>
+</ol>
+<p>The rest of this tutorial will look at these two questions. To make the discussion easier, let’s define some terms…</p>
+</div>
+</div>
+<div id="data-visualization" class="section level2" number="9.3">
+<h2>
+<span class="header-section-number">9.3</span> Data Visualization<a class="anchor" aria-label="anchor" href="#data-visualization"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="ggplot2-basics" class="section level2" number="9.4">
+<h2>
+<span class="header-section-number">9.4</span> <code>ggplot2</code> Basics<a class="anchor" aria-label="anchor" href="#ggplot2-basics"><i class="fas fa-link"></i></a>
+</h2>
+<div class="figure">
+<img src="data/visualization.png" style="width:75.0%" alt=""><p class="caption">visualization</p>
+</div>
+</div>
+<div id="example-world-inequility-report---wir2022" class="section level2" number="9.5">
+<h2>
+<span class="header-section-number">9.5</span> Example: World Inequility Report - WIR2022<a class="anchor" aria-label="anchor" href="#example-world-inequility-report---wir2022"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>World Inequality Report: <a href="https://wir2022.wid.world/" class="uri">https://wir2022.wid.world/</a>
+</li>
+<li>Executive Summary: <a href="https://wir2022.wid.world/executive-summary/" class="uri">https://wir2022.wid.world/executive-summary/</a>
+</li>
+<li>Methodology: <a href="https://wir2022.wid.world/methodology/" class="uri">https://wir2022.wid.world/methodology/</a>
+</li>
+<li>Data URL: <a href="https://wir2022.wid.world/www-site/uploads/2022/03/WIR2022TablesFigures-Summary.xlsx" class="uri">https://wir2022.wid.world/www-site/uploads/2022/03/WIR2022TablesFigures-Summary.xlsx</a>
+</li>
+</ul>
+<div class="sourceCode" id="cb200"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb201"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">url_summary</span> <span class="op">&lt;-</span> <span class="st">"https://wir2022.wid.world/www-site/uploads/2022/03/WIR2022TablesFigures-Summary.xlsx"</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span><span class="op">(</span>url <span class="op">=</span> <span class="va">url_summary</span>, destfile <span class="op">=</span> <span class="st">"./data/WIR2022s.xlsx"</span>, mode <span class="op">=</span> <span class="st">"wb"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://readxl.tidyverse.org/reference/excel_sheets.html">excel_sheets</a></span><span class="op">(</span><span class="st">"data/WIR2022s.xlsx"</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "Index"     "F1"        "F2"        "F3"       </span></span>
+<span><span class="co">#&gt;  [5] "F4"        "F5."       "F6"        "F7"       </span></span>
+<span><span class="co">#&gt;  [9] "F8"        "F9"        "F10"       "F11"      </span></span>
+<span><span class="co">#&gt; [13] "F12"       "F13"       "F14"       "F15"      </span></span>
+<span><span class="co">#&gt; [17] "T1"        "data-F1"   "data-F2"   "data-F3"  </span></span>
+<span><span class="co">#&gt; [21] "data-F4"   "data-F5"   "data-F6"   "data-F7"  </span></span>
+<span><span class="co">#&gt; [25] "data-F8"   "data-F9"   "data-F10"  "data-F11" </span></span>
+<span><span class="co">#&gt; [29] "data-F12"  "data-F13." "data-F14." "data-F15"</span></span></code></pre></div>
+</div>
+<div id="f14-global-carbon-inequality-2019.-group-contribution-to-world-emissions" class="section level2" number="9.6">
+<h2>
+<span class="header-section-number">9.6</span> F14: Global carbon inequality, 2019. Group contribution to world emissions (%)<a class="anchor" aria-label="anchor" href="#f14-global-carbon-inequality-2019.-group-contribution-to-world-emissions"><i class="fas fa-link"></i></a>
+</h2>
+<p>Note that the sheet name of F14 has period at the end.</p>
+<div class="sourceCode" id="cb203"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f14</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"data/WIR2022s.xlsx"</span>, sheet <span class="op">=</span> <span class="st">"data-F14."</span><span class="op">)</span></span>
+<span><span class="va">df_f14</span></span>
+<span><span class="co">#&gt; # A tibble: 4 × 2</span></span>
+<span><span class="co">#&gt;   Group      Share</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;      &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 Bottom 50% 0.12 </span></span>
+<span><span class="co">#&gt; 2 Middle 40% 0.404</span></span>
+<span><span class="co">#&gt; 3 Top 10%    0.476</span></span>
+<span><span class="co">#&gt; 4 Top 1%     0.168</span></span></code></pre></div>
+<ul>
+<li>
+<code>\n</code> for line break in the title.</li>
+</ul>
+<div id="categorical-vs-continuous-value" class="section level3" number="9.6.1">
+<h3>
+<span class="header-section-number">9.6.1</span> Categorical vs Continuous Value<a class="anchor" aria-label="anchor" href="#categorical-vs-continuous-value"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb204"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f14</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Group</span>, y <span class="op">=</span> <span class="va">Share</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="08-ggplot2_files/figure-html/unnamed-chunk-4-1.png" width="672"></div>
+<div class="sourceCode" id="cb205"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f14</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Group</span>, y <span class="op">=</span> <span class="va">Share</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">0.5</span>, fill <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/hue_pal.html">hue_pal</a></span><span class="op">(</span><span class="op">)</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent_format</a></span><span class="op">(</span>accuracy <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Figure 14. Global carbon inequality, \n2019 Group contribution to world emissions (%)"</span>, </span>
+<span>       x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">"Share of world emissions (%)"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="08-ggplot2_files/figure-html/unnamed-chunk-5-1.png" width="672"></div>
+</div>
+<div id="memo" class="section level3" number="9.6.2">
+<h3>
+<span class="header-section-number">9.6.2</span> Memo<a class="anchor" aria-label="anchor" href="#memo"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>
+<code>width = 0.5</code>: width of bars</li>
+<li>
+<code>fill = scales::hue_pal()(1)[1])</code>: hue scale
+<ul>
+<li>
+<a href="https://ggplot2.tidyverse.org/reference/scale_hue.html" class="uri">https://ggplot2.tidyverse.org/reference/scale_hue.html</a>.</li>
+</ul>
+</li>
+<li>
+<code>scale_y_continuous(labels = scales::percent_format(accuracy = 1))</code>: percent format
+<ul>
+<li>if accuracy = 0.1, we have 10.0% etc.</li>
+</ul>
+</li>
+<li>
+<code>labs(title = "Figure 14. Global carbon inequality, \n2019 Group contribution to world emissions (%)",    x = "", y = "Share of world emissions (%)")</code>
+<ul>
+<li>title = ““: <code>\n</code> is for line feed</li>
+<li>x, y: labels of x-axis and y-axis</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="f12-female-share-in-global-labor-incomes-1990-2020" class="section level2" number="9.7">
+<h2>
+<span class="header-section-number">9.7</span> F12: Female share in global labor incomes, 1990-2020<a class="anchor" aria-label="anchor" href="#f12-female-share-in-global-labor-incomes-1990-2020"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb206"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f12</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"data/WIR2022s.xlsx"</span>, sheet <span class="op">=</span> <span class="st">"data-F12"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; New names:</span></span>
+<span><span class="co">#&gt; • `` -&gt; `...2`</span></span>
+<span><span class="va">df_f12</span></span>
+<span><span class="co">#&gt; # A tibble: 9 × 2</span></span>
+<span><span class="co">#&gt;   `Data needs to be updated`   ...2</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;                       &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 &lt;NA&gt;                       NA    </span></span>
+<span><span class="co">#&gt; 2 &lt;NA&gt;                       NA    </span></span>
+<span><span class="co">#&gt; 3 &lt;NA&gt;                       NA    </span></span>
+<span><span class="co">#&gt; 4 1990                        0.306</span></span>
+<span><span class="co">#&gt; 5 1995                        0.313</span></span>
+<span><span class="co">#&gt; 6 2000                        0.325</span></span>
+<span><span class="co">#&gt; 7 2005                        0.335</span></span>
+<span><span class="co">#&gt; 8 2010                        0.342</span></span>
+<span><span class="co">#&gt; 9 2015-2020                   0.347</span></span></code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f12</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span>year <span class="op">=</span> <span class="st">"Data needs to be updated"</span>, value <span class="op">=</span> <span class="va">...2</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">value</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">0.5</span>, fill <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/hue_pal.html">hue_pal</a></span><span class="op">(</span><span class="op">)</span><span class="op">(</span><span class="fl">2</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="08-ggplot2_files/figure-html/unnamed-chunk-6-1.png" width="672"></div>
+<div class="sourceCode" id="cb208"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f12</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span>year <span class="op">=</span> <span class="st">"Data needs to be updated"</span>, value <span class="op">=</span> <span class="va">...2</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">value</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">0.5</span>, fill <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/hue_pal.html">hue_pal</a></span><span class="op">(</span><span class="op">)</span><span class="op">(</span><span class="fl">2</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_hline</a></span><span class="op">(</span>yintercept <span class="op">=</span> <span class="fl">0.5</span>, linetype <span class="op">=</span> <span class="fl">2</span>, colour <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/hue_pal.html">hue_pal</a></span><span class="op">(</span><span class="op">)</span><span class="op">(</span><span class="fl">2</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/percent_format.html">percent_format</a></span><span class="op">(</span>accuracy <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Figure 12. Female share in global labor incomes, 1990-2020"</span>, </span>
+<span>        x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">""</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span><span class="st">"text"</span>, x <span class="op">=</span> <span class="fl">1</span>, y <span class="op">=</span> <span class="fl">0.48</span>, label <span class="op">=</span> <span class="st">"Gender parity"</span>, size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span><span class="st">"text"</span>, x <span class="op">=</span> <span class="fl">5.2</span>, y <span class="op">=</span> <span class="fl">0.47</span>, label <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_wrap.html">str_wrap</a></span><span class="op">(</span><span class="st">"Women make only 35% of global labor incomes, men make the remaining  65%."</span>, width <span class="op">=</span> <span class="fl">40</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="08-ggplot2_files/figure-html/unnamed-chunk-7-1.png" width="672"></div>
+</div>
+<div id="f1-global-income-and-wealth-inequality-2021" class="section level2" number="9.8">
+<h2>
+<span class="header-section-number">9.8</span> F1: Global income and wealth inequality, 2021<a class="anchor" aria-label="anchor" href="#f1-global-income-and-wealth-inequality-2021"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb209"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"data/WIR2022s.xlsx"</span>, sheet <span class="op">=</span> <span class="st">"data-F1"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; New names:</span></span>
+<span><span class="co">#&gt; • `` -&gt; `...1`</span></span>
+<span><span class="va">df_f1</span></span>
+<span><span class="co">#&gt; # A tibble: 2 × 5</span></span>
+<span><span class="co">#&gt;   ...1   `Bottom 50%` `Middle 40%` `Top 10%` `Top 1%`</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;         &lt;dbl&gt;        &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 Income       0.084         0.394     0.522    0.192</span></span>
+<span><span class="co">#&gt; 2 Wealth       0.0199        0.224     0.756    0.378</span></span></code></pre></div>
+<pre><code>#&gt; # A tibble: 6 × 3
+#&gt;   cat    group       value
+#&gt;   &lt;chr&gt;  &lt;chr&gt;       &lt;dbl&gt;
+#&gt; 1 Income Bottom 50% 0.084 
+#&gt; 2 Income Middle 40% 0.394 
+#&gt; 3 Income Top 10%    0.522 
+#&gt; 4 Wealth Bottom 50% 0.0199
+#&gt; 5 Wealth Middle 40% 0.224 
+#&gt; 6 Wealth Top 10%    0.756</code></pre>
+<div class="sourceCode" id="cb211"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_f1_rev</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cat</span>, y <span class="op">=</span> <span class="va">value</span>, fill <span class="op">=</span> <span class="va">group</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="08-ggplot2_files/figure-html/unnamed-chunk-9-1.png" width="672"></div>
+</div>
+<div id="references-of-ggplot2" class="section level2" number="9.9">
+<h2>
+<span class="header-section-number">9.9</span> References of <code>ggplot2</code><a class="anchor" aria-label="anchor" href="#references-of-ggplot2"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Textbook: <a href="https://r4ds.had.co.nz/data-visualisation.html#data-visualisation">R for Data Science, Data Visualization</a>
+</li>
+</ul>
+<div id="rstudio-primers-see-references-in-moodle-at-the-bottom-1" class="section level3" number="9.9.1">
+<h3>
+<span class="header-section-number">9.9.1</span> RStudio Primers: See References in Moodle at the bottom<a class="anchor" aria-label="anchor" href="#rstudio-primers-see-references-in-moodle-at-the-bottom-1"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>Visualize Data</strong></p>
+<ul>
+<li>Exploratory Data Analysis</li>
+<li>Bar Charts</li>
+<li>Histograms</li>
+<li>Boxplots and Counts</li>
+<li>Scatterplots</li>
+<li>Line Plots</li>
+<li>Overplotting and Big Data</li>
+<li>Customize Your Plots</li>
+</ul>
+</div>
+</div>
+<div id="the-week-three-assignment-in-moodle" class="section level2" number="9.10">
+<h2>
+<span class="header-section-number">9.10</span> The Week Three Assignment (in Moodle)<a class="anchor" aria-label="anchor" href="#the-week-three-assignment-in-moodle"><i class="fas fa-link"></i></a>
+</h2>
+<p><strong>WDI and <code>ggplot2</code></strong></p>
+<ul>
+<li>Create an R Notebook of a Data Analysis containing the following and submit the rendered HTML file (eg. <code>a3_123456.nb.html</code> by replacing 123456 with your ID)
+<ol style="list-style-type: decimal">
+<li>create an R Notebook using the R Notebook Template in Moodle, save as <code>a3_123456.Rmd</code>,</li>
+<li>write your name and ID and the contents,</li>
+<li>run each code block,</li>
+<li>preview to create <code>a3_123456.nb.html</code>,</li>
+<li>submit <code>a3_123456.nb.html</code> to Moodle.</li>
+</ol>
+</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>
+<p>Choose at least one indicator of WDI</p>
+<ul>
+<li>Information of the data: Name, Indicator, Description, Source, etc.</li>
+<li>Download the data with <code>WDI</code>
+</li>
+<li>Explain why you chose the indicator</li>
+<li>List questions you want to study</li>
+</ul>
+</li>
+<li>
+<p>Explore the data using visualization using <code>ggplot2</code></p>
+<ul>
+<li>Use a histogram (geom_histogram), boxplot (geom_boxplot), a scatter plot (geom_point), a line plot (geom_line)</li>
+<li>For at least one chart, add title, and labels of axis, and add an explanation of it</li>
+</ul>
+</li>
+<li><p>Observations and difficulties encountered.</p></li>
+</ol>
+<p><strong>Due:</strong> 2023-01-16 23:59:00. Submit your R Notebook file in Moodle (The Third Assignment). Due on Monday!</p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="wdidata.html"><span class="header-section-number">8</span> WDI</a></div>
+<div class="next"><a href="a3resp.html"><span class="header-section-number">10</span> Assignment Three</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#ggplot2"><span class="header-section-number">9</span> ggplot2</a></li>
+<li><a class="nav-link" href="#learning-resouces"><span class="header-section-number">9.1</span> Learning Resouces</a></li>
+<li>
+<a class="nav-link" href="#exploratory-data-analysis-1"><span class="header-section-number">9.2</span> Exploratory Data Analysis</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#what-is-eda"><span class="header-section-number">9.2.1</span> What is EDA?</a></li>
+<li><a class="nav-link" href="#two-useful-questions"><span class="header-section-number">9.2.2</span> Two useful questions</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#data-visualization"><span class="header-section-number">9.3</span> Data Visualization</a></li>
+<li><a class="nav-link" href="#ggplot2-basics"><span class="header-section-number">9.4</span> ggplot2 Basics</a></li>
+<li><a class="nav-link" href="#example-world-inequility-report---wir2022"><span class="header-section-number">9.5</span> Example: World Inequility Report - WIR2022</a></li>
+<li>
+<a class="nav-link" href="#f14-global-carbon-inequality-2019.-group-contribution-to-world-emissions"><span class="header-section-number">9.6</span> F14: Global carbon inequality, 2019. Group contribution to world emissions (%)</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#categorical-vs-continuous-value"><span class="header-section-number">9.6.1</span> Categorical vs Continuous Value</a></li>
+<li><a class="nav-link" href="#memo"><span class="header-section-number">9.6.2</span> Memo</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#f12-female-share-in-global-labor-incomes-1990-2020"><span class="header-section-number">9.7</span> F12: Female share in global labor incomes, 1990-2020</a></li>
+<li><a class="nav-link" href="#f1-global-income-and-wealth-inequality-2021"><span class="header-section-number">9.8</span> F1: Global income and wealth inequality, 2021</a></li>
+<li>
+<a class="nav-link" href="#references-of-ggplot2"><span class="header-section-number">9.9</span> References of ggplot2</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#rstudio-primers-see-references-in-moodle-at-the-bottom-1"><span class="header-section-number">9.9.1</span> RStudio Primers: See References in Moodle at the bottom</a></li></ul>
+</li>
+<li><a class="nav-link" href="#the-week-three-assignment-in-moodle"><span class="header-section-number">9.10</span> The Week Three Assignment (in Moodle)</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/08-ggplot2.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/08-ggplot2.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-02-09.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-# R with R Studio {#rwithrstudio}
+# R and R Studio {#randrstudio}
 
 
 ## Data Science and EDA

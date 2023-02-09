@@ -1,4 +1,4 @@
-# Tidy Data {#tidy}
+# `tidyr` {#tidy}
 
 ## Reviews and Previews
 

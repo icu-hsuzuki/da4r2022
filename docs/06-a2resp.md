@@ -1,5 +1,5 @@
 
-# Responses to Assignment Two {#a2resp}
+# Assignment Two {#a2resp}
 
 1. You are supposed to submit an R Notebook File with a file name a2_YourID.nb.html.
   - Some submitted an HTML file, such as a2_YourID.html. You need to create an R Notebook. Use the template in Moodle. It creates a file with *.nb.html at the end automatically.

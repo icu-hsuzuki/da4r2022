@@ -1,5 +1,5 @@
 
-# Model {#model}
+# Linear Model {#model}
 
 ### Setup {-}
 

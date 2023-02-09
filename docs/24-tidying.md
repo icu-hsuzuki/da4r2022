@@ -1,1 +1,1 @@
-# Tidying Data {#tidying}
+# Tidying {#tidying}

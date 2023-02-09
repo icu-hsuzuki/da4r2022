@@ -1,4 +1,4 @@
-# EDA Workflow {#workflow}
+# Workflow {#workflow}
 
 
 ```{r}

@@ -1,4 +1,4 @@
-# Importing Public Data, WDI {#wdidata}
+# `WDI` {#wdidata}
 
 ## Reviews and Previews
 

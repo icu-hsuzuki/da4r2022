@@ -1,5 +1,5 @@
 
-# Data Visualization and `ggplot2' {#ggokit2}
+# `ggplot2` {#ggplot2}
 
 
 ```r
