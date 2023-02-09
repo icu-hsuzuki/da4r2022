@@ -102,7 +102,7 @@ Template to submit your assignment of this course: [`RNotebook_Template.nb.html`
 ```
 title: "Title of R Notebook"
 author: "ID and Your Name"
-date: "2023-02-09" 
+date: "2023-02-10" 
 output:
   html_notebook: null
 ```
@@ -112,7 +112,7 @@ output:
 
 * Change the title
 * Write ID and your name
-* Date is auto-generated and inserted. If you wish, you can replace "2023-02-09" by your favorite date style.
+* Date is auto-generated and inserted. If you wish, you can replace "2023-02-10" by your favorite date style.
 
 
 
@@ -133,7 +133,7 @@ Various Output Formats: [`test-rmarkdown.nb.html`](https://icu-hsuzuki.github.io
 ```
 title: "Testing R Markdown Formats"
 author: "DS-SL"
-date: "2023-02-09"
+date: "2023-02-10"
 output:
   html_notebook:
     number_sections: yes

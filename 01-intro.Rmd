@@ -171,6 +171,7 @@ Wikipedia https://en.wikipedia.org/wiki/Data_science
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Sm5xF-UYgdg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+* [How not to be ignorant about the world | Hans and Ola Rosling](https://www.youtube.com/watch?v=Sm5xF-UYgdg)
 
 ### Factfulness is ... \hfill _From the book_
 

@@ -7,7 +7,7 @@
 <title>Chapter 15 Assignment Five | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
 <meta name="description" content="Assignment Five: The Week Six Assignment Choose a public data. Clearly state how you obtained the data. Even if you are able to give the URL to download the data, explain the steps you reached and...">
-<meta name="generator" content="bookdown 0.30 with bs4_book()">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
 <meta property="og:title" content="Chapter 15 Assignment Five | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/a5resp.html">
@@ -17,7 +17,7 @@
 <meta name="twitter:description" content="Assignment Five: The Week Six Assignment Choose a public data. Clearly state how you obtained the data. Even if you are able to give the URL to download the data, explain the steps you reached and...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
@@ -149,19 +149,19 @@
 </ol>
 <p><strong>Due:</strong> 2023-01-30 23:59:00. Submit your R Notebook file, and a PDF file (or a MS Word file) in Moodle (The Fifth Assignment). Due on Monday!</p>
 </div>
-<div id="set-up-4" class="section level2" number="15.1">
+<div id="set-up-5" class="section level2" number="15.1">
 <h2>
-<span class="header-section-number">15.1</span> Set up<a class="anchor" aria-label="anchor" href="#set-up-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.1</span> Set up<a class="anchor" aria-label="anchor" href="#set-up-5"><i class="fas fa-link"></i></a>
 </h2>
 <p>It is better to use the following, because you can search by error message when you get an error. Error messages are important. If you get used to it, you can correct most of the errors. You can use the information given by <code>message</code> as well.</p>
-<div class="sourceCode" id="cb471"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span><span class="op">(</span>LANG <span class="op">=</span> <span class="st">"en"</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb472"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span><span class="op">(</span>LANG <span class="op">=</span> <span class="st">"en"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb473"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
-<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   0.3.5 </span></span>
+<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 </span></span>
 <span><span class="co">#&gt; ✔ tibble  3.1.8      ✔ dplyr   1.0.10</span></span>
-<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.4.1 </span></span>
+<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.5.0 </span></span>
 <span><span class="co">#&gt; ✔ readr   2.1.3      ✔ forcats 0.5.2 </span></span>
 <span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
@@ -173,36 +173,36 @@
 <span class="header-section-number">15.1.1</span> World Development Indicator - WDI<a class="anchor" aria-label="anchor" href="#world-development-indicator---wdi-1"><i class="fas fa-link"></i></a>
 </h3>
 <p>The following is useful when you use WDI.</p>
-<div class="sourceCode" id="cb473"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb474"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">wdi_cache</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDIcache.html">WDIcache</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div id="creating-a-vector-with-iso2-codes" class="section level4" number="15.1.1.1">
 <h4>
 <span class="header-section-number">15.1.1.1</span> Creating a vector with <code>iso2</code> codes<a class="anchor" aria-label="anchor" href="#creating-a-vector-with-iso2-codes"><i class="fas fa-link"></i></a>
 </h4>
 <p>It is convenient to have a vector with <code>iso2c</code> codes when you import data from WDI.</p>
-<div class="sourceCode" id="cb474"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb475"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">asean</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Brunei Darussalam"</span>, <span class="st">"Cambodia"</span>, <span class="st">"Lao PDR"</span>, <span class="st">"Myanmar"</span>, </span>
 <span>           <span class="st">"Philippines"</span>, <span class="st">"Indonesia"</span>, <span class="st">"Malaysia"</span>, <span class="st">"Singapore"</span><span class="op">)</span></span>
 <span><span class="va">brics</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Brazil"</span>, <span class="st">"Russian Federation"</span>, <span class="st">"India"</span>, <span class="st">"China"</span><span class="op">)</span></span>
 <span><span class="va">g7</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Canada"</span>, <span class="st">"France"</span>, <span class="st">"Italy"</span>, <span class="st">"Japan"</span>, <span class="st">"Germany"</span>, <span class="st">"United Kingdom"</span>, <span class="st">"United States"</span><span class="op">)</span></span>
 <span><span class="va">income_levels</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"High income"</span>,<span class="st">"Upper middle income"</span>, <span class="st">"Middle income"</span>, </span>
 <span>                   <span class="st">"Lower middle income"</span>,<span class="st">"Low income"</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb475"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb476"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ASEAN</span> <span class="op">&lt;-</span> <span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">asean</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">iso2c</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">ASEAN</span></span>
 <span><span class="co">#&gt; [1] "BN" "ID" "KH" "LA" "MM" "MY" "PH" "SG"</span></span></code></pre></div>
-<div class="sourceCode" id="cb476"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb477"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">BRICs</span> <span class="op">&lt;-</span> <span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">brics</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">iso2c</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">BRICs</span></span>
 <span><span class="co">#&gt; [1] "BR" "CN" "IN" "RU"</span></span></code></pre></div>
-<div class="sourceCode" id="cb477"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb478"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">G7</span> <span class="op">&lt;-</span> <span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">g7</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">iso2c</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">G7</span></span>
 <span><span class="co">#&gt; [1] "CA" "DE" "FR" "GB" "IT" "JP" "US"</span></span></code></pre></div>
-<div class="sourceCode" id="cb478"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb479"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">INCOME_LEVELS</span> <span class="op">&lt;-</span> <span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">income_levels</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">iso2c</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">INCOME_LEVELS</span></span>
@@ -210,7 +210,7 @@
 <ul>
 <li>In the following code chunk, we import only the G7 countries.</li>
 </ul>
-<div class="sourceCode" id="cb479"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb480"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">series</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">indicator</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"SG.GEN.PARL.ZS"</span>,<span class="st">"SI.POV.GINI"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt;        indicator</span></span>
 <span><span class="co">#&gt; 1 SG.GEN.PARL.ZS</span></span>
@@ -227,7 +227,7 @@
 <span><span class="co">#&gt;                                                                                                                                                                                                                                                                                                                               sourceOrganization</span></span>
 <span><span class="co">#&gt; 1                                                                                                                                                                                                                                       Inter-Parliamentary Union (IPU) (www.ipu.org).  For the year of 1998, the data is as of August 10, 1998.</span></span>
 <span><span class="co">#&gt; 2 World Bank, Poverty and Inequality Platform. Data are based on primary household survey data obtained from government statistical agencies and World Bank country departments. Data for high-income economies are mostly from the Luxembourg Income Study database. For more information and methodology, please see http://pip.worldbank.org.</span></span></code></pre></div>
-<div class="sourceCode" id="cb480"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb481"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span>country <span class="op">=</span> <span class="va">G7</span>, </span>
 <span>           indicator<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>parl <span class="op">=</span> <span class="st">"SG.GEN.PARL.ZS"</span>, gini <span class="op">=</span> <span class="st">"SI.POV.GINI"</span><span class="op">)</span>,</span>
 <span>           extra<span class="op">=</span><span class="cn">TRUE</span>, cache<span class="op">=</span><span class="va">wdi_cache</span><span class="op">)</span></span>
@@ -1554,14 +1554,14 @@
 </li>
 </ul>
 <p>Please add <code>mode="wb"</code> (web binary). This should work better.</p>
-<div class="sourceCode" id="cb481"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb482"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">url_summary</span> <span class="op">&lt;-</span> <span class="st">"https://wir2022.wid.world/www-site/uploads/2022/03/WIR2022TablesFigures-Summary.xlsx"</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span><span class="op">(</span>url <span class="op">=</span> <span class="va">url_summary</span>, </span>
 <span>              destfile <span class="op">=</span> <span class="st">"./data/WIR2022s.xlsx"</span>, </span>
 <span>              mode <span class="op">=</span> <span class="st">"wb"</span><span class="op">)</span> </span></code></pre></div>
 <p>If you get an error, download the file directory from the methodology site into your computer, then open it with Excel and save it in the data folder of your R Studio project. Then R studio can recognize it easily as an Excel data.</p>
 <p>Generally, a text file such as a CSV file is easy to import, but a binary file is difficult to handle. It is because unless R can recognize its file type, for example, Excel or so, R cannot import the data.</p>
-<div class="sourceCode" id="cb482"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb483"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://readxl.tidyverse.org/reference/excel_sheets.html">excel_sheets</a></span><span class="op">(</span><span class="st">"./data/WIR2022s.xlsx"</span><span class="op">)</span></span>
 <span><span class="co">#&gt;  [1] "Index"     "F1"        "F2"        "F3"       </span></span>
 <span><span class="co">#&gt;  [5] "F4"        "F5."       "F6"        "F7"       </span></span>
@@ -1587,9 +1587,9 @@
 <li><p>Run all codes before you preview Notebook. You can use ‘Run All’, and ‘Run All Code Chunks Below’ under the ‘Run’ button if there is an incomplete code chunk.</p></li>
 <li><p>Before you create a PDF or word, you need to correct all errors. But if you could not, add <code>eval = FALSE</code> as an option.</p></li>
 </ol>
-<div class="sourceCode" id="cb483"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb483-1"><a href="a5resp.html#cb483-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
-<span id="cb483-2"><a href="a5resp.html#cb483-2" aria-hidden="true" tabindex="-1"></a><span class="in"># code chunk with errors</span></span>
-<span id="cb483-3"><a href="a5resp.html#cb483-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb484"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb484-1"><a href="a5resp.html#cb484-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb484-2"><a href="a5resp.html#cb484-2" aria-hidden="true" tabindex="-1"></a><span class="in"># code chunk with errors</span></span>
+<span id="cb484-3"><a href="a5resp.html#cb484-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <p>You can add a similar option from the gear mark at the top right in the code chunk. Select show nothing (don’t run code); it adds <code>{r eval = FALSE, include = FALSE}</code>, and the code chunk itself is skipped.</p>
 <ol start="3" style="list-style-type: decimal">
 <li>Rerun all. If you can reach the end of the file without having an error, ‘Knit to PDF’ or ‘Knit to Word’.</li>
@@ -1605,9 +1605,9 @@
 <li>
 <code>cash = TRUE</code> option. Downloading data and accessing to the internet takes time, and may cause trouble for the hosting site. With this option, you can avoid it, and shorten the compilation time to render. I always add this option to <code><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI()</a></code>. As for <code><a href="https://vincentarelbundock.github.io/WDI/reference/WDIsearch.html">WDIsearch()</a></code>, if you use <code>cache = wdi_cache</code>, you do not need to add this option. It is another benefit to use <code>cache = wdi_cache</code>.</li>
 </ol>
-<div class="sourceCode" id="cb484"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb484-1"><a href="a5resp.html#cb484-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r cash = TRUE}</span></span>
-<span id="cb484-2"><a href="a5resp.html#cb484-2" aria-hidden="true" tabindex="-1"></a><span class="in"># download from the internet</span></span>
-<span id="cb484-3"><a href="a5resp.html#cb484-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb485"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb485-1"><a href="a5resp.html#cb485-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r cash = TRUE}</span></span>
+<span id="cb485-2"><a href="a5resp.html#cb485-2" aria-hidden="true" tabindex="-1"></a><span class="in"># download from the internet</span></span>
+<span id="cb485-3"><a href="a5resp.html#cb485-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>
 <code>echo = FALSE</code> option. When you create a PDF with a limit of pages, you do not want to include some code chunks. Then use this option. The output is included, but the code chunk is not. You can select this option by choosing ’Show output only` option.</li>
@@ -1627,7 +1627,7 @@
 <span class="header-section-number">15.2.1.3</span> Long Table<a class="anchor" aria-label="anchor" href="#long-table"><i class="fas fa-link"></i></a>
 </h4>
 <p>If you do not want to include a long table in your PDF or Word, use the following.</p>
-<div class="sourceCode" id="cb485"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb486"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">series</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt;               indicator</span></span>
 <span><span class="co">#&gt; 1    1.0.HCount.1.90usd</span></span>
@@ -1685,7 +1685,7 @@
 <span><span class="co">#&gt; 9      LAC Equity Lab tabulations of SEDLAC (CEDLAS and the World Bank).</span></span>
 <span><span class="co">#&gt; 10     LAC Equity Lab tabulations of SEDLAC (CEDLAS and the World Bank).</span></span></code></pre></div>
 <p>This will print only the first ten rows. The following R Basic code does almost the same.</p>
-<div class="sourceCode" id="cb486"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb487"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span>, <span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt;    iso3c iso2c                     country</span></span>
 <span><span class="co">#&gt; 1    ABW    AW                       Aruba</span></span>
@@ -1823,7 +1823,7 @@
 </ul>
 </li>
 </ul>
-<div class="sourceCode" id="cb487"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb488"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">g7</span>, <span class="va">year</span> <span class="op">==</span> <span class="fl">2013</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">country</span>, <span class="va">gini</span>, fill <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">gini</span><span class="op">)</span>, vjust <span class="op">=</span> <span class="op">-</span><span class="fl">0.1</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span><span class="op">)</span> <span class="op">+</span></span>
@@ -1851,13 +1851,13 @@
 </ul>
 </li>
 </ul>
-<div class="sourceCode" id="cb488"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb489"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">g7</span>, <span class="va">year</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2010</span>, <span class="fl">2013</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">gini</span>, <span class="va">parl</span>, color <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>shape <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"("</span>,<span class="va">gini</span>,<span class="st">","</span>, <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">parl</span>,<span class="fl">1</span><span class="op">)</span>,<span class="st">")"</span><span class="op">)</span><span class="op">)</span>, vjust <span class="op">=</span> <span class="op">-</span><span class="fl">0.1</span>, size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span>arrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/arrow.html">arrow</a></span><span class="op">(</span>length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/unit.html">unit</a></span><span class="op">(</span><span class="fl">0.03</span>, <span class="st">"npc"</span><span class="op">)</span>, ends<span class="op">=</span><span class="st">"last"</span>, type <span class="op">=</span> <span class="st">"closed"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/lims.html">ylim</a></span><span class="op">(</span><span class="fl">5</span>,<span class="fl">40</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/lims.html">xlim</a></span><span class="op">(</span><span class="fl">29</span>,<span class="fl">42</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15-a5resp_files/figure-html/unnamed-chunk-15-1.png" width="672"></div>
-<div class="sourceCode" id="cb489"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb490"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">g7</span>, <span class="va">year</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2010</span>, <span class="fl">2013</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">gini</span>, <span class="va">parl</span>, color <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>shape <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_label</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">gini</span>, <span class="va">parl</span>, label <span class="op">=</span> <span class="va">iso2c</span><span class="op">)</span>, vjust <span class="op">=</span> <span class="op">-</span><span class="fl">0.1</span>, size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span> </span>
@@ -1879,7 +1879,7 @@
 <span class="header-section-number">15.5.1</span> NA values<a class="anchor" aria-label="anchor" href="#na-values"><i class="fas fa-link"></i></a>
 </h3>
 <p>It is challenging to handle NA values properly. Let me introduce basics. In the following we use two data sets. One is <code>df1</code> used above, containing the indicator related the women’s sheet in parliament and the GINI index, and the following data on the forest area.</p>
-<div class="sourceCode" id="cb490"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb491"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">series</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">indicator</span> <span class="op">==</span> <span class="st">"AG.LND.FRST.K2"</span><span class="op">)</span></span>
 <span><span class="co">#&gt;        indicator                 name</span></span>
 <span><span class="co">#&gt; 1 AG.LND.FRST.K2 Forest area (sq. km)</span></span>
@@ -1889,7 +1889,7 @@
 <span><span class="co">#&gt; 1 World Development Indicators</span></span>
 <span><span class="co">#&gt;                                                  sourceOrganization</span></span>
 <span><span class="co">#&gt; 1 Food and Agriculture Organization, electronic files and web site.</span></span></code></pre></div>
-<div class="sourceCode" id="cb491"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb492"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span>country <span class="op">=</span> <span class="st">"all"</span>, indicator <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>area <span class="op">=</span> <span class="st">"AG.LND.FRST.K2"</span><span class="op">)</span>, extra <span class="op">=</span> <span class="cn">TRUE</span>, cache <span class="op">=</span> <span class="va">wdi_cache</span><span class="op">)</span> </span>
 <span><span class="va">df2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt;        country iso2c iso3c year    area status lastupdated</span></span>
@@ -1917,25 +1917,25 @@
 <ol style="list-style-type: decimal">
 <li>Get rid of all NA values. nrow(data) gives the number of rows, the length of data.</li>
 </ol>
-<div class="sourceCode" id="cb492"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb493"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df1_wona</span> <span class="op">&lt;-</span> <span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">df1_wona</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 114</span></span></code></pre></div>
-<div class="sourceCode" id="cb493"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb494"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df2_wona</span> <span class="op">&lt;-</span> <span class="va">df2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">df2_wona</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 7723</span></span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>Drop data only a specified indicator.</li>
 </ol>
-<div class="sourceCode" id="cb494"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb495"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df1_wona_parl</span> <span class="op">&lt;-</span> <span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">parl</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">df1_wona_parl</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 173</span></span></code></pre></div>
-<div class="sourceCode" id="cb495"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb496"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df1_wona_gini</span> <span class="op">&lt;-</span> <span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">gini</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">df1_wona_gini</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 155</span></span></code></pre></div>
-<div class="sourceCode" id="cb496"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb497"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df1_wona_parl_gini</span> <span class="op">&lt;-</span> <span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">parl</span>, <span class="va">gini</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">df1_wona_parl_gini</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 114</span></span></code></pre></div>
-<div class="sourceCode" id="cb497"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb498"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df2_wona_area</span> <span class="op">&lt;-</span> <span class="va">df2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">area</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">df2_wona_area</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 7909</span></span></code></pre></div>
 <p>Can you see why the number above is larger than the row number of <code>df2_wona</code>? Since there are many column imported using <code>extra=TRUE</code>, there may be NA values in the othre columns.</p>
@@ -1944,7 +1944,7 @@
 <li>Selecting year or other conditions with many data.</li>
 </ol>
 <p>I chose the year 2013 and 2010, because those are the only years we had data for all G7 countries with two indicator values, i.e., <code>parl</code> and <code>gini</code>.</p>
-<div class="sourceCode" id="cb498"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb499"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">parl</span>, <span class="va">gini</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span>, <span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/top_n.html">top_n</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
@@ -1957,12 +1957,12 @@
 <ol start="4" style="list-style-type: decimal">
 <li>Compare the following charts. In the second chart, we can get rid of the warnings. You can simply remove the warning by adding a chunk optiion <code>warning=FALSE</code> by {r warning=FALSE} or choosing an option using the gear mark.</li>
 </ol>
-<div class="sourceCode" id="cb499"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb500"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">gini</span>, col <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Warning: Removed 184 rows containing missing values</span></span>
 <span><span class="co">#&gt; (`geom_line()`).</span></span></code></pre></div>
 <div class="inline-figure"><img src="15-a5resp_files/figure-html/unnamed-chunk-26-1.png" width="672"></div>
-<div class="sourceCode" id="cb500"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb501"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">gini</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">gini</span>, col <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15-a5resp_files/figure-html/unnamed-chunk-27-1.png" width="672"></div>
@@ -1989,13 +1989,13 @@
 <li>
 <code>theme(legend. position = "none")</code>: Since the legend is the same as the labels, we removed it.</li>
 </ul>
-<div class="sourceCode" id="cb501"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb502"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df2_wona_area</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"East Asia &amp; Pacific"</span>, <span class="st">"Europe &amp; Central Asia"</span>, <span class="st">"Latin America &amp; Caribbean"</span>, <span class="st">"Middle East &amp; North Africa"</span>, <span class="st">"North America"</span>, <span class="st">"South Asia"</span>, <span class="st">"Sub-Saharan Africa"</span><span class="op">)</span>, <span class="va">year</span> <span class="op">==</span> <span class="fl">1990</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">region</span>, y <span class="op">=</span> <span class="va">area</span>, fill <span class="op">=</span> <span class="va">region</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Graph 1. Forest areas in 1990"</span>, x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">"Forest area (sq. km)"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_wrap.html">str_wrap</a></span><span class="op">(</span><span class="va">x</span>, width <span class="op">=</span> <span class="fl">7</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15-a5resp_files/figure-html/unnamed-chunk-28-1.png" width="672"></div>
-<div class="sourceCode" id="cb502"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb503"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df2_wona_area</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"East Asia &amp; Pacific"</span>, <span class="st">"Europe &amp; Central Asia"</span>, <span class="st">"Latin America &amp; Caribbean"</span>, <span class="st">"Middle East &amp; North Africa"</span>, <span class="st">"North America"</span>, <span class="st">"South Asia"</span>, <span class="st">"Sub-Saharan Africa"</span><span class="op">)</span>, <span class="va">year</span> <span class="op">==</span> <span class="fl">2020</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">region</span>, y <span class="op">=</span> <span class="va">area</span>, fill <span class="op">=</span> <span class="va">region</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Graph 2. Forest areas in 2020"</span>, subtitle <span class="op">=</span> <span class="st">"Regions of the world"</span>, x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">"Forest area (sq. km)"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_wrap.html">str_wrap</a></span><span class="op">(</span><span class="va">x</span>, width <span class="op">=</span> <span class="fl">7</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
@@ -2004,7 +2004,7 @@
 <ol style="list-style-type: decimal">
 <li>position(“dodge”)</li>
 </ol>
-<div class="sourceCode" id="cb503"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb504"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df2_wona_area</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"East Asia &amp; Pacific"</span>, <span class="st">"Europe &amp; Central Asia"</span>, <span class="st">"Latin America &amp; Caribbean"</span>, <span class="st">"Middle East &amp; North Africa"</span>, <span class="st">"North America"</span>, <span class="st">"South Asia"</span>, <span class="st">"Sub-Saharan Africa"</span><span class="op">)</span>, <span class="va">year</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1990</span>,<span class="fl">2020</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">region</span>, y <span class="op">=</span> <span class="va">area</span>, fill <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position<span class="op">=</span><span class="st">"dodge"</span>, width <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Forest areas"</span>, x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">"Forest area (sq. km)"</span>, fill <span class="op">=</span> <span class="st">"year: "</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_wrap.html">str_wrap</a></span><span class="op">(</span><span class="va">x</span>, width <span class="op">=</span> <span class="fl">12</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
@@ -2013,13 +2013,13 @@
 <ol start="2" style="list-style-type: decimal">
 <li><code>facet_wrap</code></li>
 </ol>
-<div class="sourceCode" id="cb504"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb505"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df2_wona_area</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"East Asia &amp; Pacific"</span>, <span class="st">"Europe &amp; Central Asia"</span>, <span class="st">"Latin America &amp; Caribbean"</span>, <span class="st">"Middle East &amp; North Africa"</span>, <span class="st">"North America"</span>, <span class="st">"South Asia"</span>, <span class="st">"Sub-Saharan Africa"</span><span class="op">)</span>, <span class="va">year</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1990</span>,<span class="fl">2020</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">region</span>, y <span class="op">=</span> <span class="va">area</span>, fill <span class="op">=</span> <span class="va">region</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position<span class="op">=</span><span class="st">"dodge"</span>, width <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Forest areas"</span>, x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">"Forest area (sq. km)"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_wrap.html">str_wrap</a></span><span class="op">(</span><span class="va">x</span>, width <span class="op">=</span> <span class="fl">3</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="va">.</span><span class="op">~</span><span class="va">year</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15-a5resp_files/figure-html/unnamed-chunk-31-1.png" width="672"></div>
-<div class="sourceCode" id="cb505"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb506"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df2_wona_area</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"East Asia &amp; Pacific"</span>, <span class="st">"Europe &amp; Central Asia"</span>, <span class="st">"Latin America &amp; Caribbean"</span>, <span class="st">"Middle East &amp; North Africa"</span>, <span class="st">"North America"</span>, <span class="st">"South Asia"</span>, <span class="st">"Sub-Saharan Africa"</span><span class="op">)</span>, <span class="va">year</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1990</span>,<span class="fl">2020</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">region</span>, y <span class="op">=</span> <span class="va">area</span>, fill <span class="op">=</span> <span class="va">region</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position<span class="op">=</span><span class="st">"dodge"</span>, width <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Forest areas"</span>, x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">"Forest area (sq. km)"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_wrap.html">str_wrap</a></span><span class="op">(</span><span class="va">x</span>, width <span class="op">=</span> <span class="fl">3</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
@@ -2033,9 +2033,9 @@
 </h3>
 <p>There is another package for models in <code>tidyverse</code>, i.e., <code>modelr</code>. Some of the functions of <code>modelr</code> can be useful, but it is mainly for sampling and machine learning. So we explain the package <code>broom</code> only.</p>
 <p>Although, <code>broom</code> is installed when you install <code>tidyverse</code>, it is not loaded. So you need to add <code><a href="https://broom.tidymodels.org/">library(broom)</a></code>.</p>
-<div class="sourceCode" id="cb506"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://broom.tidymodels.org/">broom</a></span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb507"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://broom.tidymodels.org/">broom</a></span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb508"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df3</span> <span class="op">&lt;-</span> <span class="fu">datasets</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/r/datasets/iris.html">iris</a></span></span></code></pre></div>
 <p>There are two ways to set a model.</p>
 <ul>
@@ -2047,7 +2047,7 @@
 <li>
 <code>summary(lm(y~x, data))</code> and <code>data %&gt;% lm(y~x, .) %&gt;% summary()</code>.</li>
 </ul>
-<div class="sourceCode" id="cb508"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb509"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mod</span> <span class="op">&lt;-</span> <span class="va">df3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Sepal.Length</span> <span class="op">~</span> <span class="va">Sepal.Width</span>, <span class="va">.</span><span class="op">)</span></span>
 <span><span class="va">mod</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -2057,7 +2057,7 @@
 <span><span class="co">#&gt; Coefficients:</span></span>
 <span><span class="co">#&gt; (Intercept)  Sepal.Width  </span></span>
 <span><span class="co">#&gt;      6.5262      -0.2234</span></span></code></pre></div>
-<div class="sourceCode" id="cb509"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb510"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Sepal.Length</span> <span class="op">~</span> <span class="va">Sepal.Width</span>, <span class="va">.</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Call:</span></span>
@@ -2087,7 +2087,7 @@
 <span class="header-section-number">15.5.4</span> <code>tidy</code><a class="anchor" aria-label="anchor" href="#tidy-1"><i class="fas fa-link"></i></a>
 </h3>
 <p>It produces the coefficients part of the model summary. So, the two values under estimate is the y-intercept and the slope.</p>
-<div class="sourceCode" id="cb510"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb511"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mod</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html">tidy</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 2 × 5</span></span>
 <span><span class="co">#&gt;   term        estimate std.error statistic  p.value</span></span>
@@ -2099,7 +2099,7 @@
 <span class="header-section-number">15.5.4.1</span> <code>glance</code><a class="anchor" aria-label="anchor" href="#glance"><i class="fas fa-link"></i></a>
 </h4>
 <p>It produces the latter half of the model summary. The fist is the R squared followed by adjusted R squared, and other values.</p>
-<div class="sourceCode" id="cb511"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb512"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mod</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/glance.html">glance</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 1 × 12</span></span>
 <span><span class="co">#&gt;   r.squared adj.r…¹ sigma stati…² p.value    df logLik   AIC</span></span>
@@ -2123,7 +2123,7 @@
 <li>
 <code>.resid</code> is the residue, i.e., y-value minus .fitted (or predicted) value.</li>
 </ul>
-<div class="sourceCode" id="cb512"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb513"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mod</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/augment.html">augment</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">Sepal.Width</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 150 × 8</span></span>
 <span><span class="co">#&gt;    Sepal.Len…¹ Sepal…² .fitted  .resid   .hat .sigma .cooksd</span></span>
@@ -2142,13 +2142,13 @@
 <span><span class="co">#&gt; #   and abbreviated variable names ¹​Sepal.Length,</span></span>
 <span><span class="co">#&gt; #   ²​Sepal.Width</span></span></code></pre></div>
 <p>Hence, the following two charts are the same.</p>
-<div class="sourceCode" id="cb513"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb514"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mod</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/augment.html">augment</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sepal.Width</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">Sepal.Length</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">.fitted</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15-a5resp_files/figure-html/unnamed-chunk-40-1.png" width="672"></div>
-<div class="sourceCode" id="cb514"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb515"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sepal.Width</span>, y <span class="op">=</span> <span class="va">Sepal.Length</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>formula <span class="op">=</span> <span class="va">y</span><span class="op">~</span><span class="va">x</span>, method <span class="op">=</span> <span class="st">"lm"</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15-a5resp_files/figure-html/unnamed-chunk-41-1.png" width="672"></div>
-<div class="sourceCode" id="cb515"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb516"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sepal.Width</span>, y <span class="op">=</span> <span class="va">Sepal.Length</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>formula <span class="op">=</span> <span class="va">y</span><span class="op">~</span><span class="va">x</span>, method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15-a5resp_files/figure-html/unnamed-chunk-42-1.png" width="672"></div>
 <p>The shaded band is supposed to tell you the range of the prediction line should be under some assumption. I did not explain it because you need to be careful when interpreting its meaning.</p>
@@ -2184,7 +2184,7 @@
 <li><a class="nav-link" href="#a5resp"><span class="header-section-number">15</span> Assignment Five</a></li>
 <li><a class="nav-link" href="#assignment-five-the-week-six-assignment">Assignment Five: The Week Six Assignment</a></li>
 <li>
-<a class="nav-link" href="#set-up-4"><span class="header-section-number">15.1</span> Set up</a><ul class="nav navbar-nav">
+<a class="nav-link" href="#set-up-5"><span class="header-section-number">15.1</span> Set up</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#world-development-indicator---wdi-1"><span class="header-section-number">15.1.1</span> World Development Indicator - WDI</a></li>
 <li><a class="nav-link" href="#world-inequility-report---wir2022-1"><span class="header-section-number">15.1.2</span> World Inequility Report - WIR2022</a></li>
 </ul>
