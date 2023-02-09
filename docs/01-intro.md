@@ -142,3 +142,44 @@ It is a console-based interactive tutorial containing several courses. We did no
 ## Introduction to Exploratory Data Analysis
 
 
+### What is data science?
+
+Wikipedia https://en.wikipedia.org/wiki/Data_science
+
+> An inter-disciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge and insights from many structural and unstructured data.
+
+* Create Insights
+* Impact Decision Making
+* Maintain & Improve Overtime
+
+
+## Gapminder
+
+### Hans Rosling (1948 – 2017)
+
+> Hans Rosling was a Swedish physician, academic, and public speaker. He was a professor of international health at Karolinska Institute[4] and was the co-founder and chairman of the Gapminder Foundation, which developed the Trendalyzer software system. ([wikipedia](https://en.wikipedia.org/wiki/Hans_Rosling))
+
+* Books: 
+  - Factfulness: Ten Reasons We're Wrong About The World - And Why Things Are Better Than You Think, 2018
+  - How I Learned to Understand the World: A Memoir, 2020
+* Gapminder: https://www.gapminder.org
+  - [You are probably wrong about: Upgrade Your World View](https://upgrader.gapminder.org)
+  - [Bubble Chart](https://www.gapminder.org/tools/#$state$time$value=2020;;&chart-type=bubbles): Income vs Life Expectancy over time, 1800 - 2020
+    + How many variables?
+* Videos: [The best stats you’ve ever seen, Hans Rosling](http://www.edtech.events/the-best-stats-youve-ever-seen-hans-rosling/)
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Sm5xF-UYgdg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+### Factfulness is ... \hfill _From the book_
+
+recognizing when a decision feels urgent and remembering that it rarely is.
+
+To control the urgency instinct, take small steps.
+
+* Take a breath. When your urgency instinct is triggered, your other instincts kick in and your analysis shuts down. Ask for more time and more information. It’s rarely now or never and it’s rarely either/or.
+* Insist on the data. If something is urgent and important, it should be measured. Beware of data that is relevant but inaccurate, or accurate but irrelevant. Only relevant and accurate data is useful.
+* Beware of fortune-tellers. Any prediction about the future is uncertain. Be wary of predictions that fail to acknowledge that. Insist on a full range of scenarios, never just the best or worst case. Ask how often such predictions have been right before.
+* Be wary of drastic action. Ask what the side effects will be. Ask how the idea has been tested. Step-by-step practical improvements, and evaluation of their impact, are less dramatic but usually more effective.
+

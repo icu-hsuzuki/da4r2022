@@ -1,18 +1,5 @@
 # R and R Studio {#randrstudio}
 
-
-## Data Science and EDA
-
-### Wikipedia https://en.wikipedia.org/wiki/Data_science
-
-> An inter-disciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge and insights from many structural and unstructured data.
-
-* Create Insights
-* Impact Decision Making
-* Maintain & Improve Overtime
-
-
-
 ## What is R?
 
 ### R (programming language), [Wikipedia](https://en.wikipedia.org/wiki/R_(programming_language))
@@ -235,8 +222,10 @@ summary(lm(cars$dist~cars$speed))
 
 #### Brief Explanation
 
-* `head(cars)`: The first 6 rows of the pre-installed data `cars`.
-* `str(cars)`: The data structure of the pre-installed data `cars`.
+* `cars`: A pre-installed data which is a part of package `datasets`.
+
+* `head(cars)`: The first six rows of the pre-installed data `cars`.
+* `str(cars)`: The pre-installed data `cars` data structure.
 * `summary(cars)`: The summary of the pre-installed data `cars`.
 * `plot(cars)`: A scatter plot of the pre-installed data `cars`.
   - `plot(cars$dist~cars$speed)`
@@ -245,7 +234,9 @@ summary(lm(cars$dist~cars$speed))
 * `lm(cars$dist~cars$speed)`: The equation of the regression line
 * `summary(lm(cars$dist~cars$speed)`: The summary of the linear regression model
 
+#### Histograms
 
+`cars` is a data frame consisting of two columns, `dist` and `speed`.
 
 
 ```r
@@ -271,12 +262,14 @@ hist(cars$speed)
 
 #### `datasets`
 
+`datasets` is a pre-installed datasets which contains a variety of datasets.
+
 * `?datasets`
 * `library(help = "datasets")`
 
 * `data()` shows all data already attached and available.
 
-
+By `library(help = "datasets")` and/or `data()`, you can see the complete list of data in `datasets`.
 
 ### Practicum
 

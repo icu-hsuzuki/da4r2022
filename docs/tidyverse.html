@@ -4,45 +4,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 3 tidyverse | Data Analysis for Researchers AY2022</title>
+<title>Chapter 4 tidyverse | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
-<meta name="description" content="3.1 Brief Introduction to R on RStudio  3.1.1 Four Panes and Tabs Top Left: Source Editor Top Right: Environment, History, etc. Bottom Left: Console, Terminal, Render, Background Jobs Bottom...">
-<meta name="generator" content="bookdown 0.30 with bs4_book()">
-<meta property="og:title" content="Chapter 3 tidyverse | Data Analysis for Researchers AY2022">
+<meta name="description" content="4.1 Brief Introduction to R on RStudio  4.1.1 Create a New Project After starting RStudio, create a new project using New Project under the top File menu. From next time, you can find your project...">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
+<meta property="og:title" content="Chapter 4 tidyverse | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/tidyverse.html">
-<meta property="og:description" content="3.1 Brief Introduction to R on RStudio  3.1.1 Four Panes and Tabs Top Left: Source Editor Top Right: Environment, History, etc. Bottom Left: Console, Terminal, Render, Background Jobs Bottom...">
+<meta property="og:description" content="4.1 Brief Introduction to R on RStudio  4.1.1 Create a New Project After starting RStudio, create a new project using New Project under the top File menu. From next time, you can find your project...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 3 tidyverse | Data Analysis for Researchers AY2022">
-<meta name="twitter:description" content="3.1 Brief Introduction to R on RStudio  3.1.1 Four Panes and Tabs Top Left: Source Editor Top Right: Environment, History, etc. Bottom Left: Console, Terminal, Render, Background Jobs Bottom...">
+<meta name="twitter:title" content="Chapter 4 tidyverse | Data Analysis for Researchers AY2022">
+<meta name="twitter:description" content="4.1 Brief Introduction to R on RStudio  4.1.1 Create a New Project After starting RStudio, create a new project using New Project under the top File menu. From next time, you can find your project...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  </style>
-<style type="text/css">
-    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-        }
-    .hanging div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }
   </style>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -65,61 +43,31 @@
 </form>
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html">About</a></li>
-<li class="book-part">PART I. Introduction</li>
-<li><a class="" href="intro.html"><span class="header-section-number">1</span> About the Course</a></li>
-<li><a class="" href="randrstudio.html"><span class="header-section-number">2</span> R and R Studio</a></li>
-<li><a class="active" href="tidyverse.html"><span class="header-section-number">3</span> tidyverse</a></li>
-<li><a class="" href="rmarkdown.html"><span class="header-section-number">4</span> R Markdown</a></li>
-<li><a class="" href="dplyr.html"><span class="header-section-number">5</span> dplyr</a></li>
-<li><a class="" href="a2resp.html"><span class="header-section-number">6</span> Assignment Two</a></li>
-<li><a class="" href="wdidata.html"><span class="header-section-number">7</span> WDI</a></li>
-<li><a class="" href="ggplot2.html"><span class="header-section-number">8</span> ggplot2</a></li>
-<li><a class="" href="a3resp.html"><span class="header-section-number">9</span> Assignment Three</a></li>
-<li><a class="" href="tidy.html"><span class="header-section-number">10</span> tidyr</a></li>
-<li><a class="" href="workflow.html"><span class="header-section-number">11</span> Workflow</a></li>
-<li><a class="" href="a4resp.html"><span class="header-section-number">12</span> Assignment Four</a></li>
-<li><a class="" href="model.html"><span class="header-section-number">13</span> Linear Model</a></li>
-<li><a class="" href="roudups.html"><span class="header-section-number">14</span> Roudups</a></li>
-<li><a class="" href="a5resp.html"><span class="header-section-number">15</span> Assignment Five</a></li>
-<li class="book-part">PART II</li>
-<li><a class="" href="eda.html"><span class="header-section-number">16</span> Exploratory Data analysis</a></li>
-<li><a class="" href="importing.html"><span class="header-section-number">17</span> Importing</a></li>
-<li><a class="" href="transforming.html"><span class="header-section-number">18</span> Transforming</a></li>
-<li><a class="" href="tidying.html"><span class="header-section-number">19</span> Tidying</a></li>
-<li><a class="" href="visualizing.html"><span class="header-section-number">20</span> Visualizing</a></li>
-<li><a class="" href="modeling.html"><span class="header-section-number">21</span> Modeling</a></li>
-<li><a class="" href="communicating.html"><span class="header-section-number">22</span> Communicating</a></li>
-<li class="book-part">PART III</li>
-<li><a class="" href="worldbank.html"><span class="header-section-number">23</span> World Bank</a></li>
-<li><a class="" href="owid.html"><span class="header-section-number">24</span> Our World in Data</a></li>
-<li><a class="" href="oecd.html"><span class="header-section-number">25</span> OECD</a></li>
-<li><a class="" href="undata.html"><span class="header-section-number">26</span> UN Data</a></li>
-<li><a class="" href="wir.html"><span class="header-section-number">27</span> World Inequality Report</a></li>
-<li class="book-part">(APPENDIX)</li>
-<li><a class="" href="histdata.html"><span class="header-section-number">A</span> HistData</a></li>
-<li><a class="" href="covid19.html"><span class="header-section-number">B</span> Covid 19</a></li>
-<li><a class="" href="bookdown.html"><span class="header-section-number">C</span> Bookdown</a></li>
-<li><a class="" href="template.html"><span class="header-section-number">D</span> Template</a></li>
-</ul>
+        <ul class="book-toc list-unstyled"><li><a class="" href="index.html"><span class="header-section-number">Chapter 4</span> tidyverse</a></li></ul>
 
         <div class="book-extra">
           <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="tidyverse" class="section level1" number="3">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="tidyverse" class="section level1" number="4">
 <h1>
-<span class="header-section-number">3</span> <code>tidyverse</code><a class="anchor" aria-label="anchor" href="#tidyverse"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4</span> <code>tidyverse</code><a class="anchor" aria-label="anchor" href="#tidyverse"><i class="fas fa-link"></i></a>
 </h1>
-<div id="brief-introduction-to-r-on-rstudio" class="section level2" number="3.1">
+<div id="brief-introduction-to-r-on-rstudio" class="section level2" number="4.1">
 <h2>
-<span class="header-section-number">3.1</span> Brief Introduction to R on RStudio<a class="anchor" aria-label="anchor" href="#brief-introduction-to-r-on-rstudio"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1</span> Brief Introduction to R on RStudio<a class="anchor" aria-label="anchor" href="#brief-introduction-to-r-on-rstudio"><i class="fas fa-link"></i></a>
 </h2>
-<div id="four-panes-and-tabs" class="section level3" number="3.1.1">
+<div id="create-a-new-project" class="section level3" number="4.1.1">
 <h3>
-<span class="header-section-number">3.1.1</span> Four Panes and Tabs<a class="anchor" aria-label="anchor" href="#four-panes-and-tabs"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1.1</span> Create a New Project<a class="anchor" aria-label="anchor" href="#create-a-new-project"><i class="fas fa-link"></i></a>
+</h3>
+<p>After starting RStudio, create a new project using <code>New Project</code> under the top <code>File</code> menu. From next time, you can find your project from <code>Open Project</code> or <code>Recent Project</code> under the top <code>File</code> menu.</p>
+<p>You can also start the project by clicking or opening the <code>project_name</code>.Rpoj file.</p>
+</div>
+<div id="four-panes-and-tabs" class="section level3" number="4.1.2">
+<h3>
+<span class="header-section-number">4.1.2</span> Four Panes and Tabs<a class="anchor" aria-label="anchor" href="#four-panes-and-tabs"><i class="fas fa-link"></i></a>
 </h3>
 <ol style="list-style-type: decimal">
 <li>Top Left: Source Editor</li>
@@ -129,35 +77,41 @@
 </ol>
 </div>
 </div>
-<div id="set-up" class="section level2" number="3.2">
+<div id="set-up" class="section level2" number="4.2">
 <h2>
-<span class="header-section-number">3.2</span> Set up<a class="anchor" aria-label="anchor" href="#set-up"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2</span> Set up<a class="anchor" aria-label="anchor" href="#set-up"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>Highly recommend to set the language to be “English”.</li>
 <li>Create “data” directory.</li>
 </ul>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span><span class="op">(</span>LANG <span class="op">=</span> <span class="st">"en"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/files2.html">dir.create</a></span><span class="op">(</span><span class="st">"data"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/base/files2.html">dir.create</a></span><span class="op">(</span><span class="st">"./data"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="three-ways-to-run-codes" class="section level2" number="3.3">
+<div id="three-ways-to-run-codes" class="section level2" number="4.3">
 <h2>
-<span class="header-section-number">3.3</span> Three Ways to Run Codes<a class="anchor" aria-label="anchor" href="#three-ways-to-run-codes"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.3</span> Three Ways to Run Codes<a class="anchor" aria-label="anchor" href="#three-ways-to-run-codes"><i class="fas fa-link"></i></a>
 </h2>
 <ol style="list-style-type: decimal">
-<li>Console - Bottom Left Pane</li>
-<li>R Script - pull down menu under File</li>
+<li>Console - Bottom Left Pane<br>
+</li>
+</ol>
+<ul>
+<li>We have run codes on the console already!</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>R Script - pull-down menu under File</li>
 <li>R Notebook, R Markdown - pull down menu under File</li>
 </ol>
 </div>
-<div id="r-script---second-way-to-run-codes" class="section level2" number="3.4">
+<div id="r-script---second-way-to-run-codes" class="section level2" number="4.4">
 <h2>
-<span class="header-section-number">3.4</span> R Script - Second Way to Run Codes<a class="anchor" aria-label="anchor" href="#r-script---second-way-to-run-codes"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.4</span> R Script - Second Way to Run Codes<a class="anchor" aria-label="anchor" href="#r-script---second-way-to-run-codes"><i class="fas fa-link"></i></a>
 </h2>
-<div id="examples-r-scripts-in-moodle" class="section level3" number="3.4.1">
+<div id="examples-r-scripts-in-moodle" class="section level3" number="4.4.1">
 <h3>
-<span class="header-section-number">3.4.1</span> Examples: R Scripts in Moodle<a class="anchor" aria-label="anchor" href="#examples-r-scripts-in-moodle"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.4.1</span> Examples: R Scripts in Moodle<a class="anchor" aria-label="anchor" href="#examples-r-scripts-in-moodle"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><code>basics.R</code></li>
@@ -167,35 +121,40 @@
 <li>Copy a script in Moodle: <em>{file name}.R</em>
 </li>
 <li>In RStudio (create Project in RStudio) choose File &gt; New File &gt; R Script and paste it.</li>
-<li>Choose File &gt; Save with a name; e.g. <em>{file names}</em> (.R will be added automatically)</li>
+<li>Choose File &gt; Save As, save with a name; e.g. <em>{file names}</em> (.R will be added automatically)</li>
 </ol>
 <p>To run a code: at the cursor press <em>Ctrl+Shift+Enter</em> (Win) or <em>Cmd+Shift+Enter</em> (Mac).</p>
+<ul>
+<li>Top Manu: Help &gt; Keyboard Short Cut Help contains many shortcuts.</li>
+<li>Bottom Right Pane: Check the files by selecting the <code>Files</code> tab.</li>
+</ul>
 </div>
 </div>
-<div id="packages" class="section level2" number="3.5">
+<div id="packages" class="section level2" number="4.5">
 <h2>
-<span class="header-section-number">3.5</span> Packages<a class="anchor" aria-label="anchor" href="#packages"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5</span> Packages<a class="anchor" aria-label="anchor" href="#packages"><i class="fas fa-link"></i></a>
 </h2>
 <p>R packages are extensions to the R statistical programming language. R packages contain code, data, and documentation in a standardised collection format that can be installed by users of R, typically via a centralised software repository such as CRAN (the Comprehensive R Archive Network).</p>
-<div id="installation-and-attachement" class="section level3" number="3.5.1">
+<div id="installation-and-attachement" class="section level3" number="4.5.1">
 <h3>
-<span class="header-section-number">3.5.1</span> Installation and attachement<a class="anchor" aria-label="anchor" href="#installation-and-attachement"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.1</span> Installation and attachement<a class="anchor" aria-label="anchor" href="#installation-and-attachement"><i class="fas fa-link"></i></a>
 </h3>
-<p>You can install packages by “Install Packages…” under “Tool” in the top menu.</p>
+<p>You can install packages by “Install Packages…” under “Tool” in the top menu.
+It is also possible to install packages by running the following codes in the console.</p>
 <ul>
 <li><code>install.packages("tidyverse")</code></li>
 <li><code>install.packages("rmarkdown")</code></li>
 </ul>
 </div>
 </div>
-<div id="r-notebook---third-way-to-run-codes" class="section level2" number="3.6">
+<div id="r-notebook---third-way-to-run-codes" class="section level2" number="4.6">
 <h2>
-<span class="header-section-number">3.6</span> R Notebook - Third Way to Run Codes<a class="anchor" aria-label="anchor" href="#r-notebook---third-way-to-run-codes"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.6</span> R Notebook - Third Way to Run Codes<a class="anchor" aria-label="anchor" href="#r-notebook---third-way-to-run-codes"><i class="fas fa-link"></i></a>
 </h2>
 <p>Choose R Notebook from the pull down File menu in the top bar.</p>
-<div id="edit-yaml" class="section level3" number="3.6.1">
+<div id="edit-yaml" class="section level3" number="4.6.1">
 <h3>
-<span class="header-section-number">3.6.1</span> Edit YAML<a class="anchor" aria-label="anchor" href="#edit-yaml"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.6.1</span> Edit YAML<a class="anchor" aria-label="anchor" href="#edit-yaml"><i class="fas fa-link"></i></a>
 </h3>
 <p><strong>Default* is as follows</strong></p>
 <pre><code>
@@ -224,60 +183,62 @@ output:
 </li>
 </ul>
 </div>
-<div id="create-a-code-chunk-to-attach-packages" class="section level3" number="3.6.2">
+<div id="create-a-code-chunk-to-attach-packages" class="section level3" number="4.6.2">
 <h3>
-<span class="header-section-number">3.6.2</span> Create a Code Chunk to Attach Packages<a class="anchor" aria-label="anchor" href="#create-a-code-chunk-to-attach-packages"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.6.2</span> Create a Code Chunk to Attach Packages<a class="anchor" aria-label="anchor" href="#create-a-code-chunk-to-attach-packages"><i class="fas fa-link"></i></a>
 </h3>
 <p>Insert Chunk in Code pull down menu in the top bar, or use the <kbd>C</kbd> button on top. You can use shortcut keys listed under Tools in the top bar.</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<p>We have installed the package <code>tidyverse</code>. However, in order to use it, we need to attach, or load, by calling <code><a href="https://tidyverse.tidyverse.org">library(tidyverse)</a></code>.</p>
+<p>You can run the code in a code chunk by clicking the triangle mark at the top right corner.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
-<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   0.3.5 </span></span>
+<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 </span></span>
 <span><span class="co">#&gt; ✔ tibble  3.1.8      ✔ dplyr   1.0.10</span></span>
-<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.4.1 </span></span>
+<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.5.0 </span></span>
 <span><span class="co">#&gt; ✔ readr   2.1.3      ✔ forcats 0.5.2 </span></span>
 <span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
 <span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span></code></pre></div>
 </div>
 </div>
-<div id="first-example" class="section level2" number="3.7">
+<div id="first-example" class="section level2" number="4.7">
 <h2>
-<span class="header-section-number">3.7</span> First Example<a class="anchor" aria-label="anchor" href="#first-example"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7</span> First Example<a class="anchor" aria-label="anchor" href="#first-example"><i class="fas fa-link"></i></a>
 </h2>
-<div id="importing-data" class="section level3" number="3.7.1">
+<div id="importing-data" class="section level3" number="4.7.1">
 <h3>
-<span class="header-section-number">3.7.1</span> Importing data<a class="anchor" aria-label="anchor" href="#importing-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7.1</span> Importing data<a class="anchor" aria-label="anchor" href="#importing-data"><i class="fas fa-link"></i></a>
 </h3>
 <p>Let us assign the <code>iris</code> data in the pre-installed package <code>datasets</code> to <code>df_iris</code>. You can give any name starting from an alphabet, though there are some rules.</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_iris</span> <span class="op">&lt;-</span> <span class="fu">datasets</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/r/datasets/iris.html">iris</a></span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">df_iris</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "data.frame"</span></span></code></pre></div>
 <p>The class of data <code>iris</code> is <code>data.frame</code>, the basic data class of R. You can assign the same data as a <code>tibble</code>, the data class of <code>tidyverse</code> as follows.</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tbl_iris</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="fu">datasets</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/r/datasets/iris.html">iris</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">tbl_iris</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "tbl_df"     "tbl"        "data.frame"</span></span></code></pre></div>
 <ul>
 <li>
-<code>df_iris &lt;- iris</code> can replace <code>df_iris &lt;- datasets::iris</code> because the package <code>datasets</code> is installed and attached as default. Since you may have other data called <code>iris</code> included in a different package or you may have changed <code>iris</code> before, it is safer to specify the name of the package with the name of the data.</li>
+<code>df_iris &lt;- iris</code> can replace <code>df_iris &lt;- datasets::iris</code> because the package <code>datasets</code> is installed and attached as default. Since you may have other data called <code>iris</code> included in a different package or you may have changed <code>iris</code> before, it is safer to specify the package’s name with the data’s name.</li>
 <li>Within R Notebook or in Console, you may get different output, and <code>tf_iris</code> and <code>tbl_iris</code> behave differently. It is because of the default settings of R Markdown.</li>
 </ul>
 </div>
-<div id="look-at-the-data" class="section level3" number="3.7.2">
+<div id="look-at-the-data" class="section level3" number="4.7.2">
 <h3>
-<span class="header-section-number">3.7.2</span> Look at the data<a class="anchor" aria-label="anchor" href="#look-at-the-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7.2</span> Look at the data<a class="anchor" aria-label="anchor" href="#look-at-the-data"><i class="fas fa-link"></i></a>
 </h3>
-<div id="several-ways-to-view-the-data." class="section level4" number="3.7.2.1">
+<div id="several-ways-to-view-the-data." class="section level4" number="4.7.2.1">
 <h4>
-<span class="header-section-number">3.7.2.1</span> Several ways to view the data.<a class="anchor" aria-label="anchor" href="#several-ways-to-view-the-data."><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7.2.1</span> Several ways to view the data.<a class="anchor" aria-label="anchor" href="#several-ways-to-view-the-data."><i class="fas fa-link"></i></a>
 </h4>
-<p>The <code>View</code> command open up a window to show the contents of the data and you can use the filter as well.</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<p>The <code>View</code> command opens up a window to show the contents of the data, and you can also use the filter.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/View.html">View</a></span><span class="op">(</span><span class="va">df_iris</span><span class="op">)</span></span></code></pre></div>
 <p>The following simple command also shows the data.</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_iris</span></span></code></pre></div>
 <pre><code>#&gt;    Sepal.Length Sepal.Width Petal.Length Petal.Width
 #&gt; 1           5.1         3.5          1.4         0.2
@@ -301,8 +262,9 @@ output:
 #&gt; 8   setosa
 #&gt; 9   setosa
 #&gt; 10  setosa</code></pre>
+<p><code>%&gt;%</code> is called a pipe command, and we use it often.</p>
 <p>The output within R Notebook is a tibble style. Try the same command in Console.</p>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="va">df_iris</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt;    Sepal.Length Sepal.Width Petal.Length Petal.Width</span></span>
 <span><span class="co">#&gt; 1           5.1         3.5          1.4         0.2</span></span>
@@ -326,17 +288,16 @@ output:
 <span><span class="co">#&gt; 8   setosa</span></span>
 <span><span class="co">#&gt; 9   setosa</span></span>
 <span><span class="co">#&gt; 10  setosa</span></span></code></pre></div>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span></span>
 <span><span class="co">#&gt;  [1]  1  2  3  4  5  6  7  8  9 10</span></span></code></pre></div>
-<p>`</p>
 </div>
-<div id="data-structure" class="section level4" number="3.7.2.2">
+<div id="data-structure" class="section level4" number="4.7.2.2">
 <h4>
-<span class="header-section-number">3.7.2.2</span> Data Structure<a class="anchor" aria-label="anchor" href="#data-structure"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7.2.2</span> Data Structure<a class="anchor" aria-label="anchor" href="#data-structure"><i class="fas fa-link"></i></a>
 </h4>
 <p>Let us look at the structure of the data. You can try <code>str(df_iris)</code> on Console or by adding a code chunk in R Notebook introducing later.</p>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">df_iris</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Rows: 150</span></span>
 <span><span class="co">#&gt; Columns: 5</span></span>
@@ -345,30 +306,30 @@ output:
 <span><span class="co">#&gt; $ Petal.Length &lt;dbl&gt; 1.4, 1.4, 1.3, 1.5, 1.4, 1.7, 1.4, 1.…</span></span>
 <span><span class="co">#&gt; $ Petal.Width  &lt;dbl&gt; 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.…</span></span>
 <span><span class="co">#&gt; $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setos…</span></span></code></pre></div>
-<p>There are six types of data in R; Double, Integer, Character, Logical, Raw, Complex.</p>
-<p>The names after $ are column names. If you call <code>df_iris$Species</code>, you have the Species column. Species is in the 5th collumn, <code>typeof(df_iris[[5]])</code> does the same as the next.</p>
+<p>There are six types of data in R; Double, Integer, Character, Logical, Raw, and Complex. In this course, we use only the first four.</p>
+<p>The names after $ are column names. If you call <code>df_iris$Species</code>, you have the Species column. Species is in the 5th column, <code>typeof(df_iris[[5]])</code> does the same as the next.</p>
 <p><code>df_iris[2,4] =</code>0.2 is the fourth entry of Sepal.Width.</p>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="va">df_iris</span><span class="op">$</span><span class="va">Species</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "integer"</span></span></code></pre></div>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">df_iris</span><span class="op">$</span><span class="va">Species</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "factor"</span></span></code></pre></div>
 <p>For <code>factors = fct</code> see <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/factor">the R Document</a> or an explanation in <a href="https://www.guru99.com/r-factor-categorical-continuous.html">Factor in R: Categorical Variable &amp; Continuous Variables</a>.</p>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="va">df_iris</span><span class="op">$</span><span class="va">Sepal.Length</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "double"</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">df_iris</span><span class="op">$</span><span class="va">Sepal.Length</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "numeric"</span></span></code></pre></div>
-<p><strong>Q1.</strong> What are the differences of<code>df_iris</code>, <code>slice(df_iris, 1:10)</code> and <code>glimpse(df_iris)</code> above?</p>
+<p><strong>Q1.</strong> What are the differences of <code>df_iris</code>, <code>slice(df_iris, 1:10)</code> and <code>glimpse(df_iris)</code> above?</p>
 <p><strong>Q2.</strong> What are the differences of<code>df_iris</code>, <code>slice(df_iris, 1:10)</code> and <code>glimpse(df_iris)</code> in the console?</p>
 </div>
-<div id="summary-of-the-data" class="section level4" number="3.7.2.3">
+<div id="summary-of-the-data" class="section level4" number="4.7.2.3">
 <h4>
-<span class="header-section-number">3.7.2.3</span> Summary of the Data<a class="anchor" aria-label="anchor" href="#summary-of-the-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7.2.3</span> Summary of the Data<a class="anchor" aria-label="anchor" href="#summary-of-the-data"><i class="fas fa-link"></i></a>
 </h4>
 <p>The following is very convenient to get the summary information of a data.</p>
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">df_iris</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   Sepal.Length    Sepal.Width     Petal.Length  </span></span>
 <span><span class="co">#&gt;  Min.   :4.300   Min.   :2.000   Min.   :1.000  </span></span>
@@ -387,102 +348,102 @@ output:
 <p>Minimum, 1st Quadrant (25%), Median, Mean, 3rd Quadrant (75%), Maximum, and the count of each factor.</p>
 </div>
 </div>
-<div id="visualizing-data" class="section level3" number="3.7.3">
+<div id="visualizing-data" class="section level3" number="4.7.3">
 <h3>
-<span class="header-section-number">3.7.3</span> Visualizing Data<a class="anchor" aria-label="anchor" href="#visualizing-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7.3</span> Visualizing Data<a class="anchor" aria-label="anchor" href="#visualizing-data"><i class="fas fa-link"></i></a>
 </h3>
-<div id="scatter-plot" class="section level4" number="3.7.3.1">
+<div id="scatter-plot" class="section level4" number="4.7.3.1">
 <h4>
-<span class="header-section-number">3.7.3.1</span> Scatter Plot<a class="anchor" aria-label="anchor" href="#scatter-plot"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7.3.1</span> Scatter Plot<a class="anchor" aria-label="anchor" href="#scatter-plot"><i class="fas fa-link"></i></a>
 </h4>
 <p>We use <code>ggplot</code> to draw graphs. The scatter plot is a projection of data with two variables <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
 <pre><code>ggplot(data = &lt;data&gt;, aes(x = &lt;column name for x&gt;, y = &lt;column name for y&gt;)) +
   geom_point()</code></pre>
 <pre><code>ggplot(data = df_iris, aes(x = Sepal.Length, y = Sepal.Width)) +
   geom_point()</code></pre>
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">df_iris</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sepal.Length</span>, y <span class="op">=</span> <span class="va">Sepal.Width</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="03-tidyverse_files/figure-html/unnamed-chunk-10-1.png" width="672"></div>
 </div>
-<div id="scatter-plot-with-labels" class="section level4" number="3.7.3.2">
+<div id="scatter-plot-with-labels" class="section level4" number="4.7.3.2">
 <h4>
-<span class="header-section-number">3.7.3.2</span> Scatter Plot with <a href="https://ggplot2.tidyverse.org/reference/labs.html">Labels</a><a class="anchor" aria-label="anchor" href="#scatter-plot-with-labels"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7.3.2</span> Scatter Plot with <a href="https://ggplot2.tidyverse.org/reference/labs.html">Labels</a><a class="anchor" aria-label="anchor" href="#scatter-plot-with-labels"><i class="fas fa-link"></i></a>
 </h4>
 <p>Add title and labels adding <code><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs()</a></code>.</p>
 <pre><code>ggplot(data = &lt;data&gt;, aes(x = &lt;column name for x&gt;, y = &lt;column name for y&gt;)) +
   geom_point() +
   labs(title = "Title", x = "Label for x", y = "Label for y")</code></pre>
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">df_iris</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sepal.Length</span>, y <span class="op">=</span> <span class="va">Sepal.Width</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Scatter Plot of Sepal Data of Iris"</span>, x <span class="op">=</span> <span class="st">"Sepal Length"</span>, y <span class="op">=</span> <span class="st">"Sepal Width"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="03-tidyverse_files/figure-html/unnamed-chunk-11-1.png" width="672"></div>
 </div>
-<div id="scatter-plot-with-colors" class="section level4" number="3.7.3.3">
+<div id="scatter-plot-with-colors" class="section level4" number="4.7.3.3">
 <h4>
-<span class="header-section-number">3.7.3.3</span> Scatter Plot with <a href="https://ggplot2.tidyverse.org/reference/aes_colour_fill_alpha.html">Colors</a><a class="anchor" aria-label="anchor" href="#scatter-plot-with-colors"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7.3.3</span> Scatter Plot with <a href="https://ggplot2.tidyverse.org/reference/aes_colour_fill_alpha.html">Colors</a><a class="anchor" aria-label="anchor" href="#scatter-plot-with-colors"><i class="fas fa-link"></i></a>
 </h4>
 <p>Add different colors automatically to each species. Can you see each group?</p>
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">df_iris</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sepal.Length</span>, y <span class="op">=</span> <span class="va">Sepal.Width</span>, color <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="03-tidyverse_files/figure-html/unnamed-chunk-12-1.png" width="672"></div>
 </div>
-<div id="scatter-plot-with-shapes" class="section level4" number="3.7.3.4">
+<div id="scatter-plot-with-shapes" class="section level4" number="4.7.3.4">
 <h4>
-<span class="header-section-number">3.7.3.4</span> Scatter Plot with Shapes<a class="anchor" aria-label="anchor" href="#scatter-plot-with-shapes"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7.3.4</span> Scatter Plot with Shapes<a class="anchor" aria-label="anchor" href="#scatter-plot-with-shapes"><i class="fas fa-link"></i></a>
 </h4>
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">df_iris</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sepal.Length</span>, y <span class="op">=</span> <span class="va">Sepal.Width</span>, shape <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="03-tidyverse_files/figure-html/unnamed-chunk-13-1.png" width="672"></div>
 </div>
-<div id="boxplot" class="section level4" number="3.7.3.5">
+<div id="boxplot" class="section level4" number="4.7.3.5">
 <h4>
-<span class="header-section-number">3.7.3.5</span> <a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">Boxplot</a><a class="anchor" aria-label="anchor" href="#boxplot"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7.3.5</span> <a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">Boxplot</a><a class="anchor" aria-label="anchor" href="#boxplot"><i class="fas fa-link"></i></a>
 </h4>
 <p>The boxplot compactly displays the distribution of a continuous variable.</p>
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">df_iris</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Species</span>, y <span class="op">=</span> <span class="va">Sepal.Length</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="03-tidyverse_files/figure-html/unnamed-chunk-14-1.png" width="672"></div>
 </div>
-<div id="histogram" class="section level4" number="3.7.3.6">
+<div id="histogram" class="section level4" number="4.7.3.6">
 <h4>
-<span class="header-section-number">3.7.3.6</span> <a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">Histogram</a><a class="anchor" aria-label="anchor" href="#histogram"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7.3.6</span> <a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">Histogram</a><a class="anchor" aria-label="anchor" href="#histogram"><i class="fas fa-link"></i></a>
 </h4>
 <p>Visualize the distribution of a single continuous variable by dividing the x axis into bins and counting the number of observations in each bin. Histograms (geom_histogram()) display the counts with bars.</p>
-<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">df_iris</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sepal.Length</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="03-tidyverse_files/figure-html/unnamed-chunk-15-1.png" width="672"></div>
 <p>Change the number of bins by <code>bins =</code> <code>&lt;number&gt;</code>.</p>
-<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">df_iris</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sepal.Length</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="03-tidyverse_files/figure-html/unnamed-chunk-16-1.png" width="672"></div>
 </div>
 </div>
-<div id="data-modeling" class="section level3" number="3.7.4">
+<div id="data-modeling" class="section level3" number="4.7.4">
 <h3>
-<span class="header-section-number">3.7.4</span> Data Modeling<a class="anchor" aria-label="anchor" href="#data-modeling"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7.4</span> Data Modeling<a class="anchor" aria-label="anchor" href="#data-modeling"><i class="fas fa-link"></i></a>
 </h3>
 <p>Professor Kaizoji will cover the mathematical models and hypothesis testings.</p>
-<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">df_iris</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sepal.Length</span>, y <span class="op">=</span> <span class="va">Sepal.Width</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="03-tidyverse_files/figure-html/unnamed-chunk-17-1.png" width="672"></div>
 </div>
 </div>
-<div id="comments" class="section level2" number="3.8">
+<div id="comments" class="section level2" number="4.8">
 <h2>
-<span class="header-section-number">3.8</span> Comments<a class="anchor" aria-label="anchor" href="#comments"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.8</span> Comments<a class="anchor" aria-label="anchor" href="#comments"><i class="fas fa-link"></i></a>
 </h2>
-<div id="helpful-resources" class="section level3" number="3.8.1">
+<div id="helpful-resources" class="section level3" number="4.8.1">
 <h3>
-<span class="header-section-number">3.8.1</span> Helpful Resources<a class="anchor" aria-label="anchor" href="#helpful-resources"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.8.1</span> Helpful Resources<a class="anchor" aria-label="anchor" href="#helpful-resources"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>
@@ -496,9 +457,9 @@ output:
 <li><p><a href="https://cran.rstudio.com">An Introduction to R</a></p></li>
 </ul>
 </div>
-<div id="practicum-1" class="section level3" number="3.8.2">
+<div id="practicum-1" class="section level3" number="4.8.2">
 <h3>
-<span class="header-section-number">3.8.2</span> Practicum<a class="anchor" aria-label="anchor" href="#practicum-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.8.2</span> Practicum<a class="anchor" aria-label="anchor" href="#practicum-1"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>Posit Primers: The Basics: <a href="https://posit.cloud/learn/primers/1" class="uri">https://posit.cloud/learn/primers/1</a>
@@ -509,36 +470,18 @@ output:
 </ul>
 </div>
 </div>
-<div id="first-assignment---see-moodle" class="section level2" number="3.9">
+<div id="swirl-an-interactive-learning-environment-for-r-and-statistics-1" class="section level2" number="4.9">
 <h2>
-<span class="header-section-number">3.9</span> First Assignment - See Moodle<a class="anchor" aria-label="anchor" href="#first-assignment---see-moodle"><i class="fas fa-link"></i></a>
-</h2>
-<ol style="list-style-type: decimal">
-<li>Assignment Week 2-1: Introduction Plus Forum<br>
-</li>
-</ol>
-<ul>
-<li>Due: Tuesday, 20 December 2022, 11:59 PM</li>
-</ul>
-<ol start="2" style="list-style-type: decimal">
-<li>Assignment Week 2-2: Quiz 1 on R Basics</li>
-</ol>
-<ul>
-<li>Due: Tuesday, 20 December 2022, 11:59 PM</li>
-</ul>
-</div>
-<div id="swirl-an-interactive-learning-environment-for-r-and-statistics-1" class="section level2" number="3.10">
-<h2>
-<span class="header-section-number">3.10</span> Swirl: An interactive learning environment for R and statistics<a class="anchor" aria-label="anchor" href="#swirl-an-interactive-learning-environment-for-r-and-statistics-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.9</span> Swirl: An interactive learning environment for R and statistics<a class="anchor" aria-label="anchor" href="#swirl-an-interactive-learning-environment-for-r-and-statistics-1"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>{<code>swirl</code>} website: <a href="https://swirlstats.com" class="uri">https://swirlstats.com</a>
 </li>
 <li>JHU Data Science in coursera uses <code>swirl</code> for exercises.</li>
 </ul>
-<div id="swirl-courses" class="section level3" number="3.10.1">
+<div id="swirl-courses" class="section level3" number="4.9.1">
 <h3>
-<span class="header-section-number">3.10.1</span> Swirl Courses<a class="anchor" aria-label="anchor" href="#swirl-courses"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.9.1</span> Swirl Courses<a class="anchor" aria-label="anchor" href="#swirl-courses"><i class="fas fa-link"></i></a>
 </h3>
 <ol style="list-style-type: decimal">
 <li>R Programming: The basics of programming in R</li>
@@ -558,22 +501,22 @@ output:
 </li>
 </ul>
 </div>
-<div id="install-and-start-swirl-courses" class="section level3" number="3.10.2">
+<div id="install-and-start-swirl-courses" class="section level3" number="4.9.2">
 <h3>
-<span class="header-section-number">3.10.2</span> Install and Start Swirl Courses<a class="anchor" aria-label="anchor" href="#install-and-start-swirl-courses"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.9.2</span> Install and Start Swirl Courses<a class="anchor" aria-label="anchor" href="#install-and-start-swirl-courses"><i class="fas fa-link"></i></a>
 </h3>
-<div id="three-steps-to-start-swirl" class="section level4" number="3.10.2.1">
+<div id="three-steps-to-start-swirl" class="section level4" number="4.9.2.1">
 <h4>
-<span class="header-section-number">3.10.2.1</span> Three Steps to Start Swirl<a class="anchor" aria-label="anchor" href="#three-steps-to-start-swirl"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.9.2.1</span> Three Steps to Start Swirl<a class="anchor" aria-label="anchor" href="#three-steps-to-start-swirl"><i class="fas fa-link"></i></a>
 </h4>
 <pre><code>install.packages("swirl") # Only the first time.
 library(swirl) # Everytime you start swirl
 swirl() # Everytime you start or resume swirl</code></pre>
 </div>
 </div>
-<div id="r-programming-the-basics-of-programming-in-r" class="section level3" number="3.10.3">
+<div id="r-programming-the-basics-of-programming-in-r" class="section level3" number="4.9.3">
 <h3>
-<span class="header-section-number">3.10.3</span> R Programming: The basics of programming in R<a class="anchor" aria-label="anchor" href="#r-programming-the-basics-of-programming-in-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.9.3</span> R Programming: The basics of programming in R<a class="anchor" aria-label="anchor" href="#r-programming-the-basics-of-programming-in-r"><i class="fas fa-link"></i></a>
 </h3>
 <pre><code> 1: Basic Building Blocks      2: Workspace and Files     3: Sequences of Numbers    
  4: Vectors                    5: Missing Values          6: Subsetting Vectors      
@@ -581,9 +524,9 @@ swirl() # Everytime you start or resume swirl</code></pre>
 10: lapply and sapply         11: vapply and tapply      12: Looking at Data         
 13: Simulation                14: Dates and Times        15: Base Graphics          </code></pre>
 </div>
-<div id="recommended-sections-in-order" class="section level3" number="3.10.4">
+<div id="recommended-sections-in-order" class="section level3" number="4.9.4">
 <h3>
-<span class="header-section-number">3.10.4</span> Recommended Sections in Order<a class="anchor" aria-label="anchor" href="#recommended-sections-in-order"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.9.4</span> Recommended Sections in Order<a class="anchor" aria-label="anchor" href="#recommended-sections-in-order"><i class="fas fa-link"></i></a>
 </h3>
 <p>1, 3, 4, 5, 6, 7, 12, 15, 14, 8, 9, 10, 11, 13, 2</p>
 <ul>
@@ -591,9 +534,9 @@ swirl() # Everytime you start or resume swirl</code></pre>
 <li>Sections 9, 10, 11 are for programming</li>
 </ul>
 </div>
-<div id="controling-a-swirl-session" class="section level3" number="3.10.5">
+<div id="controling-a-swirl-session" class="section level3" number="4.9.5">
 <h3>
-<span class="header-section-number">3.10.5</span> Controling a <code>swirl</code> Session<a class="anchor" aria-label="anchor" href="#controling-a-swirl-session"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.9.5</span> Controling a <code>swirl</code> Session<a class="anchor" aria-label="anchor" href="#controling-a-swirl-session"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><p>… &lt;– That’s your cue to press Enter to continue</p></li>
@@ -610,20 +553,21 @@ swirl() # Everytime you start or resume swirl</code></pre>
 <li>Typing info() displays these options again.</li>
 </ol>
 </div>
-<div id="final-remarks" class="section level3" number="3.10.6">
+<div id="final-remarks" class="section level3" number="4.9.6">
 <h3>
-<span class="header-section-number">3.10.6</span> Final Remarks<a class="anchor" aria-label="anchor" href="#final-remarks"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.9.6</span> Final Remarks<a class="anchor" aria-label="anchor" href="#final-remarks"><i class="fas fa-link"></i></a>
 </h3>
 <p>You will encounter the message like ‘Would you like to receive credit for completing this course on Coursera.org?’ at the end of each course. This is for <code>coursera</code> courses. Select ‘NO’.</p>
 </div>
 </div>
-<div id="more-on-r-script-examples" class="section level2" number="3.11">
+<div id="practicum-2" class="section level2" number="4.10">
 <h2>
-<span class="header-section-number">3.11</span> More on R Script: Examples<a class="anchor" aria-label="anchor" href="#more-on-r-script-examples"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.10</span> Practicum<a class="anchor" aria-label="anchor" href="#practicum-2"><i class="fas fa-link"></i></a>
 </h2>
-<div id="r-scripts-in-moodle" class="section level3" number="3.11.1">
+<p>Run the following and see what happens. You do not have to understand everything. Please guess what each code does.</p>
+<div id="r-scripts-in-moodle" class="section level3" number="4.10.1">
 <h3>
-<span class="header-section-number">3.11.1</span> R Scripts in Moodle<a class="anchor" aria-label="anchor" href="#r-scripts-in-moodle"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.10.1</span> R Scripts in Moodle<a class="anchor" aria-label="anchor" href="#r-scripts-in-moodle"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>basics.R</li>
@@ -636,12 +580,12 @@ swirl() # Everytime you start or resume swirl</code></pre>
 <li>Choose File &gt; Save with a name; e.g. <em>{file names}</em> (.R will be added automatically)</li>
 </ol>
 </div>
-<div id="basics.r" class="section level3" number="3.11.2">
+<div id="basics.r" class="section level3" number="4.10.2">
 <h3>
-<span class="header-section-number">3.11.2</span> <code>basics.R</code><a class="anchor" aria-label="anchor" href="#basics.r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.10.2</span> <code>basics.R</code><a class="anchor" aria-label="anchor" href="#basics.r"><i class="fas fa-link"></i></a>
 </h3>
 <p>The script with the outputs.</p>
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#################</span></span>
 <span><span class="co">#</span></span>
 <span><span class="co"># basics.R</span></span>
@@ -861,13 +805,13 @@ swirl() # Everytime you start or resume swirl</code></pre>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">cars</span><span class="op">$</span><span class="va">dist</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">cars</span><span class="op">$</span><span class="va">dist</span>, breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">120</span>, <span class="fl">10</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="coronavirus.r" class="section level3" number="3.11.3">
+<div id="coronavirus.r" class="section level3" number="4.10.3">
 <h3>
-<span class="header-section-number">3.11.3</span> coronavirus.R<a class="anchor" aria-label="anchor" href="#coronavirus.r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.10.3</span> coronavirus.R<a class="anchor" aria-label="anchor" href="#coronavirus.r"><i class="fas fa-link"></i></a>
 </h3>
 <p>The script and its outputs.
 <strong>coronavirus.csv</strong> is very large</p>
-<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># https://coronavirus.jhu.edu/map.html</span></span>
 <span><span class="co"># JHU Covid-19 global time series data</span></span>
 <span><span class="co"># See R pakage coronavirus at: https://github.com/RamiKrispin/coronavirus</span></span>
@@ -952,104 +896,9 @@ swirl() # Everytime you start or resume swirl</code></pre>
 <span>     main <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Comfirmed Cases in"</span>,<span class="va">COUNTRY</span><span class="op">)</span>, </span>
 <span>     xlab <span class="op">=</span> <span class="st">"Date"</span>, ylab <span class="op">=</span> <span class="st">"Number of Cases"</span><span class="op">)</span></span></code></pre></div>
 </div>
-</div>
-<div id="gapminder-package" class="section level2" number="3.12">
-<h2>
-<span class="header-section-number">3.12</span> <code>gapminder</code> Package<a class="anchor" aria-label="anchor" href="#gapminder-package"><i class="fas fa-link"></i></a>
-</h2>
-<div id="hans-rosling-1948-2017" class="section level3" number="3.12.1">
+<div id="questions" class="section level3" number="4.10.4">
 <h3>
-<span class="header-section-number">3.12.1</span> Hans Rosling (1948 – 2017)<a class="anchor" aria-label="anchor" href="#hans-rosling-1948-2017"><i class="fas fa-link"></i></a>
-</h3>
-<blockquote>
-<p>Hans Rosling was a Swedish physician, academic, and public speaker. He was a professor of international health at Karolinska Institute[4] and was the co-founder and chairman of the Gapminder Foundation, which developed the Trendalyzer software system. (<a href="https://en.wikipedia.org/wiki/Hans_Rosling">wikipedia</a>)</p>
-</blockquote>
-<ul>
-<li>Books:
-<ul>
-<li>Factfulness: Ten Reasons We’re Wrong About The World - And Why Things Are Better Than You Think, 2018</li>
-<li>How I Learned to Understand the World: A Memoir, 2020</li>
-</ul>
-</li>
-<li>Gapminder: <a href="https://www.gapminder.org" class="uri">https://www.gapminder.org</a>
-<ul>
-<li><a href="https://upgrader.gapminder.org">You are probably wrong about: Upgrade Your World View</a></li>
-<li>
-<a href="https://www.gapminder.org/tools/#%24state%24time%24value=2020;;&amp;chart-type=bubbles">Bubble Chart</a>: Income vs Life Expectancy over time, 1800 - 2020
-<ul>
-<li>How many variables?</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Videos: <a href="http://www.edtech.events/the-best-stats-youve-ever-seen-hans-rosling/">The best stats you’ve ever seen, Hans Rosling</a>
-</li>
-</ul>
-</div>
-<div id="factfulness-is-from-the-book" class="section level3" number="3.12.2">
-<h3>
-<span class="header-section-number">3.12.2</span> Factfulness is … <em>From the book</em><a class="anchor" aria-label="anchor" href="#factfulness-is-from-the-book"><i class="fas fa-link"></i></a>
-</h3>
-<p>recognizing when a decision feels urgent and remembering that it rarely is.</p>
-<p>To control the urgency instinct, take small steps.</p>
-<ul>
-<li>Take a breath. When your urgency instinct is triggered, your other instincts kick in and your analysis shuts down. Ask for more time and more information. It’s rarely now or never and it’s rarely either/or.</li>
-<li>Insist on the data. If something is urgent and important, it should be measured. Beware of data that is relevant but inaccurate, or accurate but irrelevant. Only relevant and accurate data is useful.</li>
-<li>Beware of fortune-tellers. Any prediction about the future is uncertain. Be wary of predictions that fail to acknowledge that. Insist on a full range of scenarios, never just the best or worst case. Ask how often such predictions have been right before.</li>
-<li>Be wary of drastic action. Ask what the side effects will be. Ask how the idea has been tested. Step-by-step practical improvements, and evaluation of their impact, are less dramatic but usually more effective.</li>
-</ul>
-<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># install.packages("gapminder")</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">gapminder</span></span>
-<span><span class="va">df</span></span>
-<span><span class="co">#&gt; # A tibble: 1,704 × 6</span></span>
-<span><span class="co">#&gt;    country     continent  year lifeExp      pop gdpPercap</span></span>
-<span><span class="co">#&gt;    &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 Afghanistan Asia       1952    28.8  8425333      779.</span></span>
-<span><span class="co">#&gt;  2 Afghanistan Asia       1957    30.3  9240934      821.</span></span>
-<span><span class="co">#&gt;  3 Afghanistan Asia       1962    32.0 10267083      853.</span></span>
-<span><span class="co">#&gt;  4 Afghanistan Asia       1967    34.0 11537966      836.</span></span>
-<span><span class="co">#&gt;  5 Afghanistan Asia       1972    36.1 13079460      740.</span></span>
-<span><span class="co">#&gt;  6 Afghanistan Asia       1977    38.4 14880372      786.</span></span>
-<span><span class="co">#&gt;  7 Afghanistan Asia       1982    39.9 12881816      978.</span></span>
-<span><span class="co">#&gt;  8 Afghanistan Asia       1987    40.8 13867957      852.</span></span>
-<span><span class="co">#&gt;  9 Afghanistan Asia       1992    41.7 16317921      649.</span></span>
-<span><span class="co">#&gt; 10 Afghanistan Asia       1997    41.8 22227415      635.</span></span>
-<span><span class="co">#&gt; # … with 1,694 more rows</span></span></code></pre></div>
-<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Rows: 1,704</span></span>
-<span><span class="co">#&gt; Columns: 6</span></span>
-<span><span class="co">#&gt; $ country   &lt;fct&gt; "Afghanistan", "Afghanistan", "Afghanist…</span></span>
-<span><span class="co">#&gt; $ continent &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia…</span></span>
-<span><span class="co">#&gt; $ year      &lt;int&gt; 1952, 1957, 1962, 1967, 1972, 1977, 1982…</span></span>
-<span><span class="co">#&gt; $ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, …</span></span>
-<span><span class="co">#&gt; $ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 13…</span></span>
-<span><span class="co">#&gt; $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, …</span></span></code></pre></div>
-<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span>
-<span><span class="co">#&gt;         country        continent        year     </span></span>
-<span><span class="co">#&gt;  Afghanistan:  12   Africa  :624   Min.   :1952  </span></span>
-<span><span class="co">#&gt;  Albania    :  12   Americas:300   1st Qu.:1966  </span></span>
-<span><span class="co">#&gt;  Algeria    :  12   Asia    :396   Median :1980  </span></span>
-<span><span class="co">#&gt;  Angola     :  12   Europe  :360   Mean   :1980  </span></span>
-<span><span class="co">#&gt;  Argentina  :  12   Oceania : 24   3rd Qu.:1993  </span></span>
-<span><span class="co">#&gt;  Australia  :  12                  Max.   :2007  </span></span>
-<span><span class="co">#&gt;  (Other)    :1632                                </span></span>
-<span><span class="co">#&gt;     lifeExp           pop              gdpPercap       </span></span>
-<span><span class="co">#&gt;  Min.   :23.60   Min.   :6.001e+04   Min.   :   241.2  </span></span>
-<span><span class="co">#&gt;  1st Qu.:48.20   1st Qu.:2.794e+06   1st Qu.:  1202.1  </span></span>
-<span><span class="co">#&gt;  Median :60.71   Median :7.024e+06   Median :  3531.8  </span></span>
-<span><span class="co">#&gt;  Mean   :59.47   Mean   :2.960e+07   Mean   :  7215.3  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:70.85   3rd Qu.:1.959e+07   3rd Qu.:  9325.5  </span></span>
-<span><span class="co">#&gt;  Max.   :82.60   Max.   :1.319e+09   Max.   :113523.1  </span></span>
-<span><span class="co">#&gt; </span></span></code></pre></div>
-</div>
-<div id="questions" class="section level3" number="3.12.3">
-<h3>
-<span class="header-section-number">3.12.3</span> Questions<a class="anchor" aria-label="anchor" href="#questions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.10.4</span> Questions<a class="anchor" aria-label="anchor" href="#questions"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>List questions based on this data.</li>
@@ -1079,77 +928,331 @@ swirl() # Everytime you start or resume swirl</code></pre>
 </li>
 </ul>
 </div>
+<div id="first-assignment" class="section level2" number="4.11">
+<h2>
+<span class="header-section-number">4.11</span> First Assignment<a class="anchor" aria-label="anchor" href="#first-assignment"><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li>Assignment Week 2-1: Introduction Plus Forum</li>
+</ol>
+<p>Please write the following.</p>
+<ul>
+<li>A brief self-introduction. … please call me ……</li>
+<li>What do you expect from this course?</li>
+<li>A list of five to ten questions on Covid-19 or other topics you want to study by data.</li>
+</ul>
+<p>My response (an example):</p>
+<ul>
+<li>Hiroshi Suzuki, an instructor of this course, retired from ICU in 2019. Please call me Suzuki-san or Suzuki-sensei.</li>
+<li>I hope to develop a learning community on data science.</li>
+<li>Questions (on Covid-19).</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>How can we prepare for the next pandemic?</li>
+<li>What are the key ethical issues of vaccine mandate and vaccine passport?</li>
+<li>How can we assess the efficacy of various vaccines?</li>
+<li>What are the determining factors of the mortality rate of each country?</li>
+<li>What can we do in this pandemic for the most vulnerable people?</li>
+</ol>
+<ul>
+<li>Due: Tuesday, 20 December 2022, 11:59 PM</li>
+</ul>
+<div id="responses---except-the-self-introduction" class="section level3" number="4.11.1">
+<h3>
+<span class="header-section-number">4.11.1</span> Responses - Except the self-introduction<a class="anchor" aria-label="anchor" href="#responses---except-the-self-introduction"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>A.</strong></p>
+<ul>
+<li><p>As I have no prior knowledge of using applications such as R studio for data analysis, I would like to understand and obtain the knowledge of the techniques and put it into use in my studies and career in the future.</p></li>
+<li>
+<p>Questions about covid</p>
+<ol style="list-style-type: decimal">
+<li>What are the impacts of COVID-19 on mental health?</li>
+<li>What group of people is the most affected by COVID-19 on their menntal health issue? (age, gender, work class, etc)</li>
+<li>What can we do to alleviate the impact of COVID-19 on mental health?</li>
+<li>What are the impacts of COVID-19 on envrionment?</li>
+<li>How do the governments in different countries deal with solid waste expose during the pandemic?</li>
+</ol>
+</li>
+</ul>
+<p><strong>B.</strong></p>
+<ul>
+<li><p>From this course I expect to learn how to use R, strengthen my skills in doing quantitative research in coalition with qualitative approaches (mixed-methods) and visualizing data, and process some data related to my thesis research topic.</p></li>
+<li>
+<p>Questions</p>
+<ol style="list-style-type: decimal">
+<li>Can a gender approach give new understandings of the armed conflict in Colombia?</li>
+<li>How can we assess the relationship between gender and the occurrence of violence within the Colombian armed conflict?</li>
+<li>How are masculine values and patriarchy related to violence within the Colombian armed conflict?</li>
+<li>How can be the relationship between gender and violence be quantified?</li>
+<li>What kind of initiatives could be effective to promote cultural and gender values for peace in Colombia?</li>
+</ol>
+</li>
+</ul>
+<p><strong>C.</strong></p>
+<ul>
+<li><p>I have no prior knowledge or skill when it comes to data analysis and collection so I hope to gain some knowledge and understand how to analyse data in my academic career.</p></li>
+<li>
+<p>COVID-19 questions:</p>
+<ol style="list-style-type: decimal">
+<li>How can countries be better prepared for future pandemic outbreaks?</li>
+<li>What various methods were adopted by different communities when dealing with the mental health effects of lockdown?</li>
+<li>How has the pandemic impacted the socialisation of toddlers and young children?</li>
+<li>Will the use of face masks become the new normal or will people eventually defer back to a mask-less existence?</li>
+<li>What are the chances of recovering from long covid in young people?</li>
+</ol>
+</li>
+</ul>
+<p><strong>D.</strong></p>
+<ul>
+<li><p>I hope to develop my skills in data science and data analysis through this course.</p></li>
+<li>
+<p>Questions on Global Health issues:</p>
+<ol style="list-style-type: decimal">
+<li><p>Is the COVID-19 pandemic over?</p></li>
+<li><p>Were underrepresented communities less or more affected by the COVID-19 pandemic?</p></li>
+<li><p>How can access to healthcare barriers in remote areas be reduced?</p></li>
+<li><p>Is there a correlation between income levels and the prevalence of non-communicable diseases?</p></li>
+<li><p>Can basic health education help decrease the prevalence of non-communicable diseases in communities?</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>E.</strong></p>
+<ul>
+<li>My expectation from this course</li>
+</ul>
+<p>I hope to learn the fundamentals of data science by using the free software, R and its IDE, R Studio. This course will be helped me to learn, how to collect data, transform data into appropriate forms, visualize data, how to analyze data and present the findings to others.</p>
+<ul>
+<li>Questions (on Covid-19)</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><p>How does Covid-19 compare to other public health threats?</p></li>
+<li><p>How effective are masks and do they also need to cover my nose?</p></li>
+<li><p>Is Covid-19 worse than flu?</p></li>
+<li><p>Why do governments benefit from helping to ensure other countries access vaccines?</p></li>
+<li><p>What are the determining factors of the mortality rate of each country?</p></li>
+<li><p>What are the risks of re-infection?</p></li>
+<li><p>Should I be concerned that the sample sizes in vaccine clinical trails were not bigger?</p></li>
+<li><p>Do I still need to worry about infection even though I am fit and healthy?</p></li>
+<li><p>How can we prepare for the next pandemic?</p></li>
+<li><p>How can we trust vaccines that have been developed so fast?</p></li>
+</ol>
+<p><strong>F.</strong></p>
+<ul>
+<li><p>In this course I would like to review basic statistical skills with the application of R programming.</p></li>
+<li>
+<p>Questions on Covid-19:</p>
+<ol style="list-style-type: decimal">
+<li>What are the key characteristics of Covid-19 related data?</li>
+<li>What are the major data issues of Covid-19?</li>
+<li>How can data accuracy during a pandemic such as Covid-19 be improved?</li>
+<li>What is to be considered when comparing Covid-19 data across countries?</li>
+<li>How can data support measures of disaster risk reduction to reduce further outbreaks?</li>
+</ol>
+</li>
+</ul>
+<p><strong>G.</strong></p>
+<ul>
+<li><p>I hope to learn how to effectively use R for data analysis and visualization for my thesis and future work.</p></li>
+<li>
+<p>I would like to look at poverty data:</p>
+<ol style="list-style-type: decimal">
+<li><p>What is the best way to measure poverty?</p></li>
+<li><p>Is poverty to be regarded as absolute or relative?</p></li>
+<li><p>is it possible to compare poverty data across societies?</p></li>
+<li><p>What policies are most effective to alleviate poverty?</p></li>
+<li><p>How do we evaluate policies and programs with regard to multi-dimensional poverty?</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>H.</strong></p>
+<ul>
+<li><p>From this course, I wish to gain skill which will enable me analyze data using Rstudio applications related to my field of research and other aspect of life and the world in general.</p></li>
+<li>
+<p>questions (Food Inflection)</p>
+<ol style="list-style-type: decimal">
+<li><p>What are the targeted areas of the world is the world bank more concern in term of food crises?</p></li>
+<li><p>what are the interest rate attributed to the support given to these countries by the world bank?</p></li>
+<li><p>it is possible for countries with the most fertile and unused land ranked as countries with high food inflection rate? why?</p></li>
+<li><p>On what facts are the data between the world bank, developed nations and developing nations analyzed?</p></li>
+<li><p>How will the raise of modified genetic food affect the world in generations to come?</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>I.</strong></p>
+<ul>
+<li><p>Data analysis is an essential aspect of the research process. R is a free, convenient, and popular program among scholars. I hope to learn the R program and use R in data analysis for my final thesis.</p></li>
+<li>
+<p>Questions</p>
+<ol style="list-style-type: decimal">
+<li><p>What adverse effects are associated with vaccination?</p></li>
+<li><p>How does the risk-benefit ratio for COVID-19 vaccination differ in children?</p></li>
+<li><p>How does the COVID-19 pandemic affect economic growth?</p></li>
+<li><p>How efficacious is vaccination at preventing symptomatic COVID-19?</p></li>
+<li><p>How effective is vaccination against Omicron and its subvariants?</p></li>
+<li><p>What are the indications and contraindications of vaccination?</p></li>
+<li><p>What factors affect the high mortality in elderly people?</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>J.</strong></p>
+<ul>
+<li><p>I hope I can learn more about analyzing data via R. It will help me a lot in my assignments and research.</p></li>
+<li>
+<p>Questions (about climate change):</p>
+<ol style="list-style-type: decimal">
+<li><p>What is the greenhouse effect?</p></li>
+<li><p>How can we assess the effect of climate change to economic?</p></li>
+<li><p>What are the most vunerable countries effected by climate change? Developed countries or Developing countries</p></li>
+<li><p>Which countries have the largest CO2 emissions?</p></li>
+<li><p>What can we do to stop global warming?</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>K.</strong></p>
+<ul>
+<li><p>From this course I hope to gain skills that I can use in my current research, or future research/career.</p></li>
+<li>
+<p>Questions (on Covid-19).</p>
+<ol style="list-style-type: decimal">
+<li><p>What is the prevalence of long COVID?</p></li>
+<li><p>What groups of people does long COVID most impact?</p></li>
+<li><p>Are there certain music genres that may help people with alzheimer’s?</p></li>
+<li><p>will we actually run out of fossil fuel, if ever?</p></li>
+<li><p>What present day animal species are on the brink of extinction?</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>L.</strong></p>
+<ul>
+<li><p>My expectation on the course is to learn the way of mulivarible analyses including PCA (principal component analysis) and other mochine learning methods with R.</p></li>
+<li>
+<p>Questions (Japanese views on Religion, Nature, and Science)</p>
+<ol style="list-style-type: decimal">
+<li><p>What percentage of Japanese are religious?</p></li>
+<li><p>What kind of religions are Japanese believe in?</p></li>
+<li><p>What do Japanese expect on religions?</p></li>
+<li><p>What percentage of Japanese believe existence of Heaven?</p></li>
+<li><p>What percentage of Japanese believe Creation of Earth and human by God?</p></li>
+<li><p>What percentage of Japanese disbelieve Evolution theory?</p></li>
+<li><p>What percentage of Japanese believe existence of extra-terrestrials?</p></li>
+</ol>
+<p>8.Correlations among above items.</p>
+</li>
+</ul>
+<p><strong>M.</strong></p>
+<ul>
+<li><p>I hope to review R basics and learn about using R for data cleaning and visualisation. I had the opportunity before to use R to run various linear regressions, so I. hope to learn R programming knowledge that would complete that.</p></li>
+<li>
+<p>Questions on COVID-19:</p>
+<ol style="list-style-type: decimal">
+<li><p>What was the effect of COVID-19 on worldwide inequalities, particularly concerning health care access?</p></li>
+<li><p>Did the Japanese government actions, such as distributing 100,000 Yen to households during the COVID, stimulated consumption or savings?</p></li>
+<li><p>What percentage of government spendings were allocated to the COVID-19 when the pandemic started compared to now?</p></li>
+<li><p>How did the COVID-19 affected economic development of underdeveloped countries?</p></li>
+<li><p>How was the job market affected by the COVID-19?</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>N.</strong></p>
+<ul>
+<li>
+<p>Questions.</p>
+<ol style="list-style-type: decimal">
+<li><p>Impact of workers remmitance of savings rate in Pakistan.</p></li>
+<li><p>How the exchange rate affects the worker’s remittances in Pakistan.</p></li>
+<li><p>What is the impact of the interest rate on the savings rate?</p></li>
+<li><p>How fiscal policy affects the savings rate.</p></li>
+</ol>
+</li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li>What is the relationship between savings and consumption?</li>
+</ol>
+<p><strong>O.</strong></p>
+<ul>
+<li><p>I am interested in learning analysis by using R software and intend to use R in data analysis for my thesis.</p></li>
+<li>
+<p>Questions:</p>
+<ol style="list-style-type: decimal">
+<li><p>What is impact of FDI on Economic growth of a country?</p></li>
+<li><p>What is impact of FDI on stock exchange performance of a country?</p></li>
+<li><p>How inward FDI contributes to GDP growth of a country?</p></li>
+<li><p>How can we analyze timeseries data?</p></li>
+<li><p>How do we analyze the impact of an incident on time series data? How to perform Pre and post incident analysis?</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>P.</strong></p>
+<ul>
+<li><p>Learning R-Studio will help me in my research methodology. I am hopeful to learn how to assess the different databases using R-studio and make graphs.</p></li>
+<li>
+<p>Questions (Climate Change).</p>
+<ol style="list-style-type: decimal">
+<li><p>How can we save the world from the effects of climate change?</p></li>
+<li><p>What are the key ethical issues of Climate change on temperature and precipitation?</p></li>
+<li><p>How can we assess climate change’s impact on countries’ economic growth?</p></li>
+<li><p>What factors determine the climate change impact on the economic growth of each country?</p></li>
+<li><p>How can we reduce the effect of climate change on countries?</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>Q.</strong></p>
+<ul>
+<li><p>I hope I can learn more on how I can analyze data via R. There are a lot of different models in R, if I can learn more about these models will be perfect.</p></li>
+<li>
+<p>Questions:</p>
+<ol style="list-style-type: decimal">
+<li><p>P value and T check and etc, I only have a very sensitive feeling about them. Can we learn more about this?</p></li>
+<li><p>How can I do time seris analysis in R?</p></li>
+<li><p>If I have my own hypothesis about a specific topic, how can I check the data via R?</p></li>
+</ol>
+<p>4.Will we learn more about economic analysis?</p>
+<p>5.From the data analysis, we know a lot of corelation check, what’s more we can explore ?</p>
+</li>
+</ul>
+<p><strong>R.</strong></p>
+<ul>
+<li><p>I want to explore and compare the different data related to global higher Education from this course.</p></li>
+<li>
+<p>Questions:</p>
+<ol style="list-style-type: decimal">
+<li><p>After Japan released international traveling, how is Covid-19 impacted Japan’s health system?</p></li>
+<li><p>What necessary methods have been done in Japan during the post-pandemic period?</p></li>
+<li><p>Compared to the previous vaccination policy, how does data show the percentage of people who got the fourth vaccination?</p></li>
+<li><p>What are the differences between Japan and other developed countries to Covid-19 prevention measures in universities?</p></li>
+<li><p>How do students and faculties react to these pandemic precautionary approaches? Whether international and local students have similar perspectives?</p></li>
+</ol>
+</li>
+</ul>
+<p><strong>S.</strong></p>
+<ul>
+<li><p>I hope to experience using R, hopefully become more comfortable with playing with numerical data. My quantitative research method skill right now is very limited.</p></li>
+<li>
+<p>Questions (Covid-19):</p>
+<ol style="list-style-type: decimal">
+<li><p>How pandemic affected the movement of foreign technical trainees?</p></li>
+<li><p>How can we assist social rights of foreigner’s living in Japan during the pandemic?</p></li>
+<li><p>What are the key factors that affected college student’s mental health during pandemic?</p></li>
+<li><p>What were the key reinforcement during the pandemic for high criminal rates of foreign technical trainees?</p></li>
+<li><p>How pandemic affected the domestic violence in Japan?</p></li>
+<li><p>How public education were impacted from pandemic on students’ study habit?</p></li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="randrstudio.html"><span class="header-section-number">2</span> R and R Studio</a></div>
-<div class="next"><a href="rmarkdown.html"><span class="header-section-number">4</span> R Markdown</a></div>
+<div class="empty"></div>
+<div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#tidyverse"><span class="header-section-number">3</span> tidyverse</a></li>
-<li>
-<a class="nav-link" href="#brief-introduction-to-r-on-rstudio"><span class="header-section-number">3.1</span> Brief Introduction to R on RStudio</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#four-panes-and-tabs"><span class="header-section-number">3.1.1</span> Four Panes and Tabs</a></li></ul>
-</li>
-<li><a class="nav-link" href="#set-up"><span class="header-section-number">3.2</span> Set up</a></li>
-<li><a class="nav-link" href="#three-ways-to-run-codes"><span class="header-section-number">3.3</span> Three Ways to Run Codes</a></li>
-<li>
-<a class="nav-link" href="#r-script---second-way-to-run-codes"><span class="header-section-number">3.4</span> R Script - Second Way to Run Codes</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#examples-r-scripts-in-moodle"><span class="header-section-number">3.4.1</span> Examples: R Scripts in Moodle</a></li></ul>
-</li>
-<li>
-<a class="nav-link" href="#packages"><span class="header-section-number">3.5</span> Packages</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#installation-and-attachement"><span class="header-section-number">3.5.1</span> Installation and attachement</a></li></ul>
-</li>
-<li>
-<a class="nav-link" href="#r-notebook---third-way-to-run-codes"><span class="header-section-number">3.6</span> R Notebook - Third Way to Run Codes</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#edit-yaml"><span class="header-section-number">3.6.1</span> Edit YAML</a></li>
-<li><a class="nav-link" href="#create-a-code-chunk-to-attach-packages"><span class="header-section-number">3.6.2</span> Create a Code Chunk to Attach Packages</a></li>
-</ul>
-</li>
-<li>
-<a class="nav-link" href="#first-example"><span class="header-section-number">3.7</span> First Example</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#importing-data"><span class="header-section-number">3.7.1</span> Importing data</a></li>
-<li><a class="nav-link" href="#look-at-the-data"><span class="header-section-number">3.7.2</span> Look at the data</a></li>
-<li><a class="nav-link" href="#visualizing-data"><span class="header-section-number">3.7.3</span> Visualizing Data</a></li>
-<li><a class="nav-link" href="#data-modeling"><span class="header-section-number">3.7.4</span> Data Modeling</a></li>
-</ul>
-</li>
-<li>
-<a class="nav-link" href="#comments"><span class="header-section-number">3.8</span> Comments</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#helpful-resources"><span class="header-section-number">3.8.1</span> Helpful Resources</a></li>
-<li><a class="nav-link" href="#practicum-1"><span class="header-section-number">3.8.2</span> Practicum</a></li>
-</ul>
-</li>
-<li><a class="nav-link" href="#first-assignment---see-moodle"><span class="header-section-number">3.9</span> First Assignment - See Moodle</a></li>
-<li>
-<a class="nav-link" href="#swirl-an-interactive-learning-environment-for-r-and-statistics-1"><span class="header-section-number">3.10</span> Swirl: An interactive learning environment for R and statistics</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#swirl-courses"><span class="header-section-number">3.10.1</span> Swirl Courses</a></li>
-<li><a class="nav-link" href="#install-and-start-swirl-courses"><span class="header-section-number">3.10.2</span> Install and Start Swirl Courses</a></li>
-<li><a class="nav-link" href="#r-programming-the-basics-of-programming-in-r"><span class="header-section-number">3.10.3</span> R Programming: The basics of programming in R</a></li>
-<li><a class="nav-link" href="#recommended-sections-in-order"><span class="header-section-number">3.10.4</span> Recommended Sections in Order</a></li>
-<li><a class="nav-link" href="#controling-a-swirl-session"><span class="header-section-number">3.10.5</span> Controling a swirl Session</a></li>
-<li><a class="nav-link" href="#final-remarks"><span class="header-section-number">3.10.6</span> Final Remarks</a></li>
-</ul>
-</li>
-<li>
-<a class="nav-link" href="#more-on-r-script-examples"><span class="header-section-number">3.11</span> More on R Script: Examples</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#r-scripts-in-moodle"><span class="header-section-number">3.11.1</span> R Scripts in Moodle</a></li>
-<li><a class="nav-link" href="#basics.r"><span class="header-section-number">3.11.2</span> basics.R</a></li>
-<li><a class="nav-link" href="#coronavirus.r"><span class="header-section-number">3.11.3</span> coronavirus.R</a></li>
-</ul>
-</li>
-<li>
-<a class="nav-link" href="#gapminder-package"><span class="header-section-number">3.12</span> gapminder Package</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#hans-rosling-1948-2017"><span class="header-section-number">3.12.1</span> Hans Rosling (1948 – 2017)</a></li>
-<li><a class="nav-link" href="#factfulness-is-from-the-book"><span class="header-section-number">3.12.2</span> Factfulness is … From the book</a></li>
-<li><a class="nav-link" href="#questions"><span class="header-section-number">3.12.3</span> Questions</a></li>
-</ul>
-</li>
-<li><a class="nav-link" href="#review">Review</a></li>
-</ul>
+      <div id="book-on-this-page"></div>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/03-tidyverse.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/03-tidyverse.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+          
         </ul>
 </div>
     </nav>

@@ -368,3 +368,15 @@ publishing
 pages
 metadata-for-sharing
 template
+cover-image-path-to-the-social-sharing-image-like-imagescover.jpg
+what-is-data-science
+my-comments-after-review-1
+about
+histograms
+hans-rosling-1948-2017-1
+factfulness-is-from-the-book-1
+gapminder-1
+create-a-new-project
+practicum-2
+first-assignment
+responses---except-the-self-introduction
