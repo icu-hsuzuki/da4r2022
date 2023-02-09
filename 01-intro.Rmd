@@ -1,28 +1,84 @@
-# (PART) PART I {-}
-# Introduction {#intro}
+# (PART) PART I. Introduction {-}
+# About the Course {#intro}
 
-### Course Contents  {-}
+## ‘QALL401 Data Analysis for Researchers’
 
-  1. 2022-12-07: Introduction: About the course　[lead by TK]
+> An introduction to data science (DS). It is an exploratory data analysis (EDA) that is an essential part of scientific research and an evidence-based decision making of a responsible global citizen. Students acquire the knowledge and learn the necessary principles for appropriate computer utilization in making research results public in order to communicate the outcomes. Since data science supports technologies of artificial intelligence, ethical issues are becoming more and more important.
+
+> We introduce R, a widely used free software environment for statistical computing and graphics, and Rmarkdown, an authoring format that enables easy creation of dynamic documents, presentations, and reports from R, supporting reproducible research and literate programming.
+
+> We will experience the process of data science and set a foundation to delovep data science skills and take time to think about the ethical issues of its outcomes.
+
+> Instructors: Taisei Kaizoji, Professor of Economics, and Hiroshi Suzuki, Part-time Instructor
+
+Description: This course will help students from many academic fields develop skills to obtain necessary information from open data, as well as make charting and graphing for visualization. Students also learn fundamentals of data analysis and write short articles including data reasoning. The laboratory work uses open software such as R, and guest lectures on data analysis for research are included.
+
+Key Words: open data, data visualization, data analysis, data reasoning, R
+
+Features: laboratory work - practicum, write short articles, guest lectures
+
+## Course Overview
+
+The objective of this course is to learn the fundamentals of data science. Using the free software, R and its IDE, RStudio, students will learn how to collect data, transform it into appropriate forms, and visualize it. Students will also learn how to analyze data and present their findings to others. 
+
+**Sylabus**: https://campus.icu.ac.jp/public/ehandbook/PreviewSyllabus.aspx?regno=32002&year=2022&term=3
+
+## Course Schedule
+
+  1. 2022-12-07: Introduction: About the course　[lead by TK]  
     - An introduction to open and public data, and data science
   2. 2022-12-14: Exploratory Data Analysis (EDA) 1 [lead by hs]  
-    - R Basics with RStudio and/or RStudio.cloud; Toy Data**
-  3. 2022-12-21: Exploratory Data Analysis (EDA) 2 [lead by hs]   
-    - R Markdown; Introduction to `tidyverse` I; Public Data, WDI
+    - R Basics with RStudio and/or RStudio.cloud  
+    - `tidyverse` using Toy Data  
+    - Assignment One
+    
+  3. 2022-12-21: Exploratory Data Analysis (EDA) 2 [lead by hs]  
+    - R Markdown for reproducibility and communication  
+    - `dplyr` for transforming data  
+    - Assignment Two
+    
   4. 2023-01-11: Exploratory Data Analysis (EDA) 3 [lead by hs]  
-    - Introduction to `tidyverse`II; WDI, WIR, etc
+    - WDI, a package for searching and downloading World Development Indicators  
+    - `ggplot2` for data visualization  
+    - Assignment Three
+    
   5. 2023-01-18: Exploratory Data Analysis (EDA) 4 [lead by hs]  
-    - Introduction to `tidyverse` III; WDI, WIR, etc
+    - `tidyr` for tidying data  
+    - Workflow of EDA  
+    - Assignment Four
+    
   6. 2023-01-25: Exploratory Data Analysis (EDA) 5 [lead by hs]  
-    - Introduction to `tidyverse` III; WDI, WIR, etc
+    - Data Modeling   
+    - Roundups, R Markdown revisited  
+    - Assignment Five
+    
   7. 2023-02-01: Introduction to PPDAC (Problem-Plan-Data-Analysis-Conclusion) Cycle: [lead by TK]
+    - PPDAC in EDA  
+    - `owidR`
+    
   8. 2023-02-08: Model building I [lead by TK]
-    -Collecting and visualizing data and Introduction to WDI  
-         (World Development Indicators by World Bank)
-  9. 2023-02-15: Model building II [lead by TK]
+    - World Bank data  
+    - Merging data
+    
+  9. 2023-02-15: Model building II [lead by TK]  
     -Analyzing data and communications
+    
   10. 2023-02-22: Project Presentation
   
+
+
+## Grading Policy：
+
+A. Course participation by giving feedback - 10%
+
+B. Short papers: Assignment 1-5 - 30%
+
+C. Presentation - 20%
+
+D. Final report - 40%
+
+
+
 ## Learning Resources
 
 ### Textbooks and References
@@ -34,20 +90,7 @@
   - Many more on the [archive page](https://bookdown.org/home/archive/).
 
 
-## Interactive Exercises
-
-* Posit Primers:https://posit.cloud/learn/primers:  
-  - The Basics, Work with Data, Visualize Data, Tidy Your Data, Report Reproducibly
-
-* {swirl} Learn R, in R: https://swirlstats.com
-  - Designed and developed by a team at Johns Hopkins University for `coursera` courses
-
-
-
-## Posit Primers created by `learnr`
-
-* [`learnr` Interactive Tutorials for R](https://rstudio.github.io/learnr/index.html)
-
+## Interactive Tutorials for R
 
 ### Posit Primers https://posit.cloud/learn/primers
 
@@ -55,12 +98,47 @@
   - [Visualization Basics](https://rstudio.cloud/learn/primers/1.1)
   - [Programming Basics](https://rstudio.cloud/learn/primers/1.2)
 2. Work with Data -- [r4ds: Wrangle, I](https://r4ds.had.co.nz/wrangle-intro.html#wrangle-intro)
-  - Working with Tibbles
-  - Isolating Data with dplyr
-  - Deriving Information with dplyr
+  - [Working with Tibbles](https://rstudio.cloud/learn/primers/2.1)
+  - [Isolating Data with dplyr](https://rstudio.cloud/learn/primers/2.2)
+  - [Deriving Information with dplyr](https://rstudio.cloud/learn/primers/2.3)
 3. Visualize Data -- [r4ds: Explore, II](https://r4ds.had.co.nz/explore-intro.html#explore-intro)
+  - [Exploratory Data Analysis](https://rstudio.cloud/learn/primers/3.1)
+  - [Bar Charts](https://rstudio.cloud/learn/primers/3.2)
+  - [Histograms](https://rstudio.cloud/learn/primers/3.3)
+  - [Boxplots and Counts](https://rstudio.cloud/learn/primers/3.4)
+  - [Scatterplots](https://rstudio.cloud/learn/primers/3.5)
+  - [Line plots and maps](https://rstudio.cloud/learn/primers/3.6)
+  - [Overplotting](https://rstudio.cloud/learn/primers/3.7)
+  - [Customize plots](https://rstudio.cloud/learn/primers/3.8)
 4. Tidy Your Data -- [r4ds: Wrangle, II](https://r4ds.had.co.nz/wrangle-intro.html#wrangle-intro)
+  - [Reshape Data - a bit old](https://rstudio.cloud/learn/primers/4.1)
+  - [Separate and Unite](https://rstudio.cloud/learn/primers/4.2) 
+  - [Join Data Sets](https://rstudio.cloud/learn/primers/4.3)
 5. Iterate -- [r4ds: Program](https://r4ds.had.co.nz/program-intro.html#program-intro)
+  - [Introduction to Iteration](https://rstudio.cloud/learn/primers/5.1)
+  - [Map](https://rstudio.cloud/learn/primers/5.2)
+  - [Map Shortcut](https://rstudio.cloud/learn/primers/5.3)
+  - [Multiple Vectors](https://rstudio.cloud/learn/primers/5.3)
+  - [List Columns](https://rstudio.cloud/learn/primers/5.4)
 6. Write Functions -- [r4ds: Program](https://r4ds.had.co.nz/program-intro.html#program-intro)
+  - [Function Basics](https://rstudio.cloud/learn/primers/6.1)
+  - [How to Write a Function](https://rstudio.cloud/learn/primers/6.2)
+  - [Argument Matching](https://rstudio.cloud/learn/primers/6.3)
+  - [Environments and Scoping](https://rstudio.cloud/learn/primers/6.4)
+  - [Control Flow](https://rstudio.cloud/learn/primers/6.5)
+  - [Advanced Control Flow](https://rstudio.cloud/learn/primers/6.6)
+  - [Loops in R](https://rstudio.cloud/learn/primers/6.7)
+7. Report Reproductively -- [r4ds: Communicate](https://r4ds.had.co.nz/communicate-intro.html)
+  - [Link to Videos and Explanations](https://rmarkdown.rstudio.com/lesson-1.html?_ga=2.215340127.979535829.1639794069-1104332695.1639233659)
+8. [Build Interactive Web Apps](https://shiny.rstudio.com/tutorial/?_ga=2.149795838.979535829.1639794069-1104332695.1639233659)
+
+### Swirl: An interactive learning environment for R and statistics
+
+It is a console-based interactive tutorial containing several courses. We did not use it this academic year.
+
+* {swirl} website: https://swirlstats.com
+  - JHU Data Science in coursera uses swirl for exercises.
+  
+## Introduction to Exploratory Data Analysis
 
 

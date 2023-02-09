@@ -365,3 +365,12 @@ publishing
 pages
 metadata-for-sharing
 template
+my-comments-after-review-1
+cover-image-path-to-the-social-sharing-image-like-imagescover.jpg
+qall401-data-analysis-for-researchers
+course-overview
+course-schedule
+grading-policy
+interactive-tutorials-for-r
+introduction-to-exploratory-data-analysis
+swirl-an-interactive-learning-environment-for-r-and-statistics-1
