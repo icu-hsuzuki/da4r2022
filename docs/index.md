@@ -1,7 +1,7 @@
 --- 
 title: "Data Analysis for Researchers AY2022"
 author: "Hiroshi Suzuki"
-date: "2023-02-09"
+date: "2023-02-10"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -34,9 +34,9 @@ We focused on the `tidyvese` packages, which includes `ggplot2`, `dplyr`, `tidyr
 ```r
 library(tidyverse)
 #> ── Attaching packages ─────────────────── tidyverse 1.3.2 ──
-#> ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 
+#> ✔ ggplot2 3.4.0      ✔ purrr   0.3.5 
 #> ✔ tibble  3.1.8      ✔ dplyr   1.0.10
-#> ✔ tidyr   1.2.1      ✔ stringr 1.5.0 
+#> ✔ tidyr   1.2.1      ✔ stringr 1.4.1 
 #> ✔ readr   2.1.3      ✔ forcats 0.5.2 
 #> ── Conflicts ────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
