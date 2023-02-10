@@ -6,15 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 4 R Markdown | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
-<meta name="description" content="What is R Markdown: https://vimeo.com/178485416 Code Chunks Text YAML Metadata  4.1 What is R Markdown and R Notebook R Markdown provides an authoring framework for data science. You can use a...">
+<meta name="description" content="What is R Markdown: https://vimeo.com/178485416 created by RStudio R Markdown documents consist of three components. Code Chunks Text YAML Metadata  4.1 What is R Markdown and R Notebook R...">
 <meta name="generator" content="bookdown 0.31 with bs4_book()">
 <meta property="og:title" content="Chapter 4 R Markdown | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/rmarkdown.html">
-<meta property="og:description" content="What is R Markdown: https://vimeo.com/178485416 Code Chunks Text YAML Metadata  4.1 What is R Markdown and R Notebook R Markdown provides an authoring framework for data science. You can use a...">
+<meta property="og:description" content="What is R Markdown: https://vimeo.com/178485416 created by RStudio R Markdown documents consist of three components. Code Chunks Text YAML Metadata  4.1 What is R Markdown and R Notebook R...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 4 R Markdown | Data Analysis for Researchers AY2022">
-<meta name="twitter:description" content="What is R Markdown: https://vimeo.com/178485416 Code Chunks Text YAML Metadata  4.1 What is R Markdown and R Notebook R Markdown provides an authoring framework for data science. You can use a...">
+<meta name="twitter:description" content="What is R Markdown: https://vimeo.com/178485416 created by RStudio R Markdown documents consist of three components. Code Chunks Text YAML Metadata  4.1 What is R Markdown and R Notebook R...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -73,7 +73,7 @@
 <li><a class="" href="tidyverse.html"><span class="header-section-number">3</span> tidyverse</a></li>
 <li><a class="active" href="rmarkdown.html"><span class="header-section-number">4</span> R Markdown</a></li>
 <li><a class="" href="dplyr.html"><span class="header-section-number">5</span> dplyr</a></li>
-<li><a class="" href="a2resp.html"><span class="header-section-number">6</span> Assignment Two</a></li>
+<li><a class="" href="a2resp.html"><span class="header-section-number">6</span> Assignment Two and Responses</a></li>
 <li><a class="" href="wdidata.html"><span class="header-section-number">7</span> WDI</a></li>
 <li><a class="" href="ggplot2.html"><span class="header-section-number">8</span> ggplot2</a></li>
 <li><a class="" href="a3resp.html"><span class="header-section-number">9</span> Assignment Three</a></li>
@@ -81,7 +81,7 @@
 <li><a class="" href="workflow.html"><span class="header-section-number">11</span> Workflow</a></li>
 <li><a class="" href="a4resp.html"><span class="header-section-number">12</span> Assignment Four</a></li>
 <li><a class="" href="model.html"><span class="header-section-number">13</span> Linear Model</a></li>
-<li><a class="" href="roudups.html"><span class="header-section-number">14</span> Roudups</a></li>
+<li><a class="" href="roundups.html"><span class="header-section-number">14</span> Roudups</a></li>
 <li><a class="" href="a5resp.html"><span class="header-section-number">15</span> Assignment Five</a></li>
 <li class="book-part">PART II</li>
 <li><a class="" href="eda.html"><span class="header-section-number">16</span> Exploratory Data analysis</a></li>
@@ -113,7 +113,8 @@
 <h1>
 <span class="header-section-number">4</span> R Markdown<a class="anchor" aria-label="anchor" href="#rmarkdown"><i class="fas fa-link"></i></a>
 </h1>
-<p>What is R Markdown: <a href="https://vimeo.com/178485416" class="uri">https://vimeo.com/178485416</a></p>
+<p>What is R Markdown: <a href="https://vimeo.com/178485416" class="uri">https://vimeo.com/178485416</a> created by RStudio</p>
+<p>R Markdown documents consist of three components.</p>
 <ul>
 <li>Code Chunks</li>
 <li>Text</li>
@@ -149,7 +150,7 @@
 <h3>
 <span class="header-section-number">4.2.1</span> Literate Programming by D. Knuth<a class="anchor" aria-label="anchor" href="#literate-programming-by-d.-knuth"><i class="fas fa-link"></i></a>
 </h3>
-<p>Literate programming is an approach to programming introduced by Donald Knuth in which a program is given as an explanation of the program logic in a natural language, such as English, interspersed with snippets of macros and traditional source code, from which a compilable source code can be generated</p>
+<p>Literate programming is an approach to programming introduced by Donald Knuth in which a program is given as an explanation of the program logic in a natural language, such as English, interspersed with snippets of macros and traditional source code, from which a compilable source code can be generated.</p>
 </div>
 <div id="d.-knuth" class="section level3" number="4.2.2">
 <h3>
@@ -216,7 +217,8 @@
 <ul>
 <li>If you are not sure, please check on <code>Terminal</code> in the left below pane:
 <ul>
-<li>which latex, which mktexlsr</li>
+<li>which latex, which mktexlsr - Mac or Linux</li>
+<li>where mktexlsr - Windows</li>
 </ul>
 </li>
 </ul>
@@ -264,10 +266,25 @@ output:
 </h4>
 <ul>
 <li>When you execute or run a code within the notebook, the results appear beneath the code.</li>
-<li>Try executing this chunk by clicking the Run button, a triangle pointing right, within the chunk or by placing your cursor inside it and pressing Ctrl+Shift+Enter (Win) or Cmd+Shift+Enter (Mac).</li>
+<li>Try executing this chunk by clicking the Run button, a triangle pointing right, within the chunk or by placing your cursor inside it and pressing Ctrl+Shift+Enter (Win) or Cmd+Shift+Enter (Mac).
+<ul>
+<li>Ctrl + Shift + Enter (Windows) or Cmd + Shift + Enter (Mac): Runs the current code chunk and advances to the next one.</li>
+<li>Ctrl + Alt + C (Windows) or Cmd + Option + C (Mac): Runs all the code chunks in the document.</li>
+</ul>
+</li>
 <li>Add a new chunk by clicking the Insert Chunk button on the toolbar or by pressing Ctrl+Option+I (Win) or Cmd+Option+I (Mac).</li>
 <li>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the Preview button or press Ctrl+Shift+K (Win) or Cmd+Shift+K (Mac) to preview the HTML file).</li>
 <li>The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike Knit, <em>Preview does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed</em>.</li>
+<li>We will use the pipe command <code>%&gt;%</code> very often later in this class.
+<ul>
+<li>The shortcut for the pipe operator (%&gt;%) in Rmarkdown on Windows and Mac OS is:
+<ul>
+<li>On Windows: Ctrl + Shift + M</li>
+<li>On Mac OS: Cmd + Shift + M</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -356,6 +373,7 @@ output:
 <blockquote>
 <p>R Studio introduced Visual Editor towards the end of 2021. It seems to be stable but it is not perfect to go back and forth from the original editor using tags. I always use the original editor and I am confident on all the functions of it but I do not have much experience on Visual Editor. [My Note in QALL401 2021]</p>
 </blockquote>
+<p>Please refer to the document in the following link. You can switch between the <code>Source</code> editor and the <code>Visual</code> editor using the button on the top left pane’s left top corner. The document below is a bit old, and the switch button is shown at the top right corner of the top left pane.</p>
 <ul>
 <li><a href="https://rstudio.github.io/visual-markdown-editing/" class="uri">https://rstudio.github.io/visual-markdown-editing/</a></li>
 </ul>

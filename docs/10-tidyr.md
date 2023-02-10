@@ -91,12 +91,10 @@ df_f1_rev %>%
 
 ### RStudio Primers: See References in Moodle at the bottom
 
-**Tidy Your Data**
-
-  - Reshape Data
-  - Separate and Unite Columns
-  - Join Data Sets
-  
+4. Tidy Your Data -- [r4ds: Wrangle, II](https://r4ds.had.co.nz/wrangle-intro.html#wrangle-intro)
+  - [Reshape Data - a bit old](https://rstudio.cloud/learn/primers/4.1)
+  - [Separate and Unite](https://rstudio.cloud/learn/primers/4.2) 
+  - [Join Data Sets](https://rstudio.cloud/learn/primers/4.3)
 
 
 ## Variables, values, and observations: Definitions

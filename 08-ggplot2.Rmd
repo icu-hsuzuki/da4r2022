@@ -181,17 +181,15 @@ df_f1_rev %>%
 
 ### RStudio Primers: See References in Moodle at the bottom
 
-**Visualize Data**
-
-  - Exploratory Data Analysis
-  - Bar Charts
-  - Histograms
-  - Boxplots and Counts
-  - Scatterplots
-  - Line Plots
-  - Overplotting and Big Data
-  - Customize Your Plots
-
+3. Visualize Data -- [r4ds: Explore, II](https://r4ds.had.co.nz/explore-intro.html#explore-intro)
+  - [Exploratory Data Analysis](https://rstudio.cloud/learn/primers/3.1)
+  - [Bar Charts](https://rstudio.cloud/learn/primers/3.2)
+  - [Histograms](https://rstudio.cloud/learn/primers/3.3)
+  - [Boxplots and Counts](https://rstudio.cloud/learn/primers/3.4)
+  - [Scatterplots](https://rstudio.cloud/learn/primers/3.5)
+  - [Line plots and maps](https://rstudio.cloud/learn/primers/3.6)
+  - [Overplotting](https://rstudio.cloud/learn/primers/3.7)
+  - [Customize plots](https://rstudio.cloud/learn/primers/3.8)
 
 
 ## The Week Three Assignment (in Moodle)

@@ -6,21 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 22 Communicating | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
-<meta name="description" content="&lt;p&gt;This is a book based on the lecture given in AY2022 at International Christian University compiled using the bookdown package and RStudio.
-The HTML output format for this example is bookdown::bs4_book,
-set in the _output.yml file.&lt;/p&gt;">
+<meta name="description" content="In this chapter, after reviewing the basics of R Markdown in chapters 4 and 14, we explain tips you should know when you write R Markdown. documents.  22.1 What is R Markdown and R Notebook R...">
 <meta name="generator" content="bookdown 0.31 with bs4_book()">
 <meta property="og:title" content="Chapter 22 Communicating | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/communicating.html">
-<meta property="og:description" content="&lt;p&gt;This is a book based on the lecture given in AY2022 at International Christian University compiled using the bookdown package and RStudio.
-The HTML output format for this example is bookdown::bs4_book,
-set in the _output.yml file.&lt;/p&gt;">
+<meta property="og:description" content="In this chapter, after reviewing the basics of R Markdown in chapters 4 and 14, we explain tips you should know when you write R Markdown. documents.  22.1 What is R Markdown and R Notebook R...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 22 Communicating | Data Analysis for Researchers AY2022">
-<meta name="twitter:description" content="&lt;p&gt;This is a book based on the lecture given in AY2022 at International Christian University compiled using the bookdown package and RStudio.
-The HTML output format for this example is bookdown::bs4_book,
-set in the _output.yml file.&lt;/p&gt;">
+<meta name="twitter:description" content="In this chapter, after reviewing the basics of R Markdown in chapters 4 and 14, we explain tips you should know when you write R Markdown. documents.  22.1 What is R Markdown and R Notebook R...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -79,7 +73,7 @@ set in the _output.yml file.&lt;/p&gt;">
 <li><a class="" href="tidyverse.html"><span class="header-section-number">3</span> tidyverse</a></li>
 <li><a class="" href="rmarkdown.html"><span class="header-section-number">4</span> R Markdown</a></li>
 <li><a class="" href="dplyr.html"><span class="header-section-number">5</span> dplyr</a></li>
-<li><a class="" href="a2resp.html"><span class="header-section-number">6</span> Assignment Two</a></li>
+<li><a class="" href="a2resp.html"><span class="header-section-number">6</span> Assignment Two and Responses</a></li>
 <li><a class="" href="wdidata.html"><span class="header-section-number">7</span> WDI</a></li>
 <li><a class="" href="ggplot2.html"><span class="header-section-number">8</span> ggplot2</a></li>
 <li><a class="" href="a3resp.html"><span class="header-section-number">9</span> Assignment Three</a></li>
@@ -87,7 +81,7 @@ set in the _output.yml file.&lt;/p&gt;">
 <li><a class="" href="workflow.html"><span class="header-section-number">11</span> Workflow</a></li>
 <li><a class="" href="a4resp.html"><span class="header-section-number">12</span> Assignment Four</a></li>
 <li><a class="" href="model.html"><span class="header-section-number">13</span> Linear Model</a></li>
-<li><a class="" href="roudups.html"><span class="header-section-number">14</span> Roudups</a></li>
+<li><a class="" href="roundups.html"><span class="header-section-number">14</span> Roudups</a></li>
 <li><a class="" href="a5resp.html"><span class="header-section-number">15</span> Assignment Five</a></li>
 <li class="book-part">PART II</li>
 <li><a class="" href="eda.html"><span class="header-section-number">16</span> Exploratory Data analysis</a></li>
@@ -119,7 +113,418 @@ set in the _output.yml file.&lt;/p&gt;">
 <h1>
 <span class="header-section-number">22</span> Communicating<a class="anchor" aria-label="anchor" href="#communicating"><i class="fas fa-link"></i></a>
 </h1>
-
+<blockquote>
+<p>In this chapter, after reviewing the basics of R Markdown in chapters <a href="rmarkdown.html#rmarkdown">4</a> and <a href="roundups.html#roundups">14</a>, we explain tips you should know when you write R Markdown. documents.</p>
+</blockquote>
+<div id="what-is-r-markdown-and-r-notebook-1" class="section level2" number="22.1">
+<h2>
+<span class="header-section-number">22.1</span> What is R Markdown and R Notebook<a class="anchor" aria-label="anchor" href="#what-is-r-markdown-and-r-notebook-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>R Markdown provides an authoring framework for data science. You can use a single R Markdown file to both</p>
+<ul>
+<li>save and execute code</li>
+<li>generate high quality reports that can be shared with an audience</li>
+</ul>
+<p>R Notebooks are an implementation of Literate Programming that allows for direct interaction with R while producing a reproducible document with publication-quality output.</p>
+<p>An <strong>R Notebook</strong> is an R Markdown document <em>with chunks that can be executed independently and interactively, with output visible immediately beneath the input</em>.</p>
+<p>(Reference: <a href="https://bookdown.org/yihui/rmarkdown/notebook.html">R Markdown: The Definitive Guide, 3.2 Notebook</a>)</p>
+<div id="two-goodies-1" class="section level3" number="22.1.1">
+<h3>
+<span class="header-section-number">22.1.1</span> Two Goodies<a class="anchor" aria-label="anchor" href="#two-goodies-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p><strong>Important</strong>: Implementation of Reproducible Research and Literate Programming</p></li>
+<li><p><strong>Useful</strong> to Render into Various Formats: R Notebook (HTML), R Markdown (HTML), PDF, MS Word, MS Powerpoint, Ioslides Presentation (HTML), Slidy Presentation (HTML), Beamer Presentation (PDF), etc.</p></li>
+</ul>
+</div>
+</div>
+<div id="reproducible-research-and-literate-programming-1" class="section level2" number="22.2">
+<h2>
+<span class="header-section-number">22.2</span> Reproducible Research and Literate Programming<a class="anchor" aria-label="anchor" href="#reproducible-research-and-literate-programming-1"><i class="fas fa-link"></i></a>
+</h2>
+<div id="literate-programming-by-d.-knuth-1" class="section level3" number="22.2.1">
+<h3>
+<span class="header-section-number">22.2.1</span> Literate Programming by D. Knuth<a class="anchor" aria-label="anchor" href="#literate-programming-by-d.-knuth-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Literate programming is an approach to programming introduced by Donald Knuth in which a program is given as an explanation of the program logic in a natural language, such as English, interspersed with snippets of macros and traditional source code, from which a compilable source code can be generated.</p>
+</div>
+<div id="d.-knuth-1" class="section level3" number="22.2.2">
+<h3>
+<span class="header-section-number">22.2.2</span> <a href="https://www.brainyquote.com/quotes/donald_knuth_181634">D. Knuth</a><a class="anchor" aria-label="anchor" href="#d.-knuth-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.</p>
+</div>
+<div id="reproducible-research---quote-from-a-coursera-course-1" class="section level3" number="22.2.3">
+<h3>
+<span class="header-section-number">22.2.3</span> Reproducible Research - Quote from a <a href="https://www.coursera.org/learn/reproducible-research">Coursera Course</a><a class="anchor" aria-label="anchor" href="#reproducible-research---quote-from-a-coursera-course-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Reproducible research is the idea that data analyses, and more generally, scientific claims, are published with their data and software code so that others may verify the findings and build upon them. The need for reproducibility is increasing dramatically as data analyses become more complex, involving larger datasets and more sophisticated computations. Reproducibility allows for people to focus on the actual content of a data analysis, rather than on superficial details reported in a written summary. In addition, reproducibility makes an analysis more useful to others because the data and code that actually conducted the analysis are available.</p>
+</div>
+<div id="r-markdown-workflow-r-for-data-science-1" class="section level3" number="22.2.4">
+<h3>
+<span class="header-section-number">22.2.4</span> R Markdown workflow, <a href="https://r4ds.had.co.nz/r-markdown-workflow.html#r-markdown-workflow">R for Data Science</a><a class="anchor" aria-label="anchor" href="#r-markdown-workflow-r-for-data-science-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>R Markdown is also important because it so tightly integrates prose and code. This makes it a great analysis notebook because it lets you develop code and record your thoughts. It:</p>
+<ul>
+<li><p>Records what you did and why you did it. Regardless of how great your memory is, if you don’t record what you do, there will come a time when you have forgotten important details. Write them down so you don’t forget!</p></li>
+<li><p>Supports rigorous thinking. You are more likely to come up with a strong analysis if you record your thoughts as you go, and continue to reflect on them. This also saves you time when you eventually write up your analysis to share with others.</p></li>
+<li><p>Helps others understand your work. It is rare to do data analysis by yourself, and you’ll often be working as part of a team. A lab notebook helps you share why you did it with your colleagues or lab mates.</p></li>
+</ul>
+</div>
+<div id="records-of-eda-and-communication-1" class="section level3" number="22.2.5">
+<h3>
+<span class="header-section-number">22.2.5</span> Records of EDA and Communication<a class="anchor" aria-label="anchor" href="#records-of-eda-and-communication-1"><i class="fas fa-link"></i></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>Memo on a scratch paper: R Scripts</li>
+<li>Record on a notebook: R Notebook (an R Markdown format)</li>
+<li>Short paper or a digital communication: R Notebook</li>
+<li>Paper or a report: R Markdown (html, pdf, MS Word, etc.)</li>
+<li>Presentation (html, pdf, MS Powerpoint, etc.)</li>
+<li>Publication of a Book</li>
+</ol>
+<ul>
+<li>
+<a href="https://bookdown.org">BOOKDOWN: Write HTML, PDF, ePub, and Kindle books with R Markdown</a>. Free online document is provided in <a href="https://bookdown.org/yihui/rmarkdown/rmarkdown.pdf">pdf as well</a>
+</li>
+<li><a href="https://bookdown.org/home/archive/">Arxive Page</a></li>
+</ul>
+</div>
+</div>
+<div id="structure-of-the-r-markdown" class="section level2" number="22.3">
+<h2>
+<span class="header-section-number">22.3</span> Structure of the R Markdown<a class="anchor" aria-label="anchor" href="#structure-of-the-r-markdown"><i class="fas fa-link"></i></a>
+</h2>
+<p>What is R Markdown: <a href="https://vimeo.com/178485416" class="uri">https://vimeo.com/178485416</a> created by RStudio</p>
+<p>R Markdown documents consist of three components.</p>
+<ul>
+<li>Code Chunks</li>
+<li>Text</li>
+<li>YAML Metadata</li>
+</ul>
+</div>
+<div id="lets-get-started-2" class="section level2" number="22.4">
+<h2>
+<span class="header-section-number">22.4</span> Let’s Get Started<a class="anchor" aria-label="anchor" href="#lets-get-started-2"><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li>Start R Studio - <em>Update R Studio if old</em>
+</li>
+<li>Create a Project</li>
+<li>Tool &gt; Install Packages <code>rmarkdown</code>
+<ul>
+<li>Or on Console: <code>install.packages("rmarkdown")</code>
+</li>
+</ul>
+</li>
+<li>Tool &gt; Install Packages <code>tinytex</code> (for pdf generation)
+<ul>
+<li>Alternatively, <code>install.packages('tinytex')</code>
+</li>
+<li>If TeX is not installed: <code><a href="https://rdrr.io/pkg/tinytex/man/install_tinytex.html">tinytex::install_tinytex()</a></code> # install TinyTeX
+<ul>
+<li>If you are not sure, please check on <code>Terminal</code> in the left below pane:
+<ul>
+<li>which latex, which mktexlsr - Mac or Linux</li>
+<li>where mktexlsr - Windows</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Let’s try!
+<ol style="list-style-type: lower-alpha">
+<li>File &gt; New File &gt; R Notebook</li>
+<li>Save with a file name, say, test-notebook</li>
+<li>Preview by [Preview] button</li>
+<li>Run Code Chunk <code>plot(cars)</code> and then Preview again.</li>
+<li>Knit PDF, Word (and HTML)</li>
+</ol>
+</li>
+</ol>
+</div>
+<div id="templates-1" class="section level2" number="22.5">
+<h2>
+<span class="header-section-number">22.5</span> Templates<a class="anchor" aria-label="anchor" href="#templates-1"><i class="fas fa-link"></i></a>
+</h2>
+<div id="rnotebook_template-1" class="section level3" number="22.5.1">
+<h3>
+<span class="header-section-number">22.5.1</span> RNotebook_Template<a class="anchor" aria-label="anchor" href="#rnotebook_template-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Template to submit your assignment of this course: <a href="https://icu-hsuzuki.github.io/da4r2022_note/RNotebook_Template.nb.html"><code>RNotebook_Template.nb.html</code></a></p>
+<pre><code>title: "Title of R Notebook"
+author: "ID and Your Name"
+date: "2023-02-10" 
+output:
+  html_notebook: null</code></pre>
+<div id="yaml-1" class="section level4" number="22.5.1.1">
+<h4>
+<span class="header-section-number">22.5.1.1</span> YAML<a class="anchor" aria-label="anchor" href="#yaml-1"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li>Change the title</li>
+<li>Write ID and your name</li>
+<li>Date is auto-generated and inserted. If you wish, you can replace “2023-02-10” by your favorite date style.</li>
+</ul>
+</div>
+<div id="code-chunk-1" class="section level4" number="22.5.1.2">
+<h4>
+<span class="header-section-number">22.5.1.2</span> Code Chunk<a class="anchor" aria-label="anchor" href="#code-chunk-1"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li>When you execute or run a code within the notebook, the results appear beneath the code.</li>
+<li>Try executing this chunk by clicking the Run button, a triangle pointing right, within the chunk or by placing your cursor inside it and pressing Ctrl+Shift+Enter (Win) or Cmd+Shift+Enter (Mac).
+<ul>
+<li>Ctrl + Shift + Enter (Windows) or Cmd + Shift + Enter (Mac): Runs the current code chunk and advances to the next one.</li>
+<li>Ctrl + Alt + C (Windows) or Cmd + Option + C (Mac): Runs all the code chunks in the document.</li>
+</ul>
+</li>
+<li>Add a new chunk by clicking the Insert Chunk button on the toolbar or by pressing Ctrl+Option+I (Win) or Cmd+Option+I (Mac).</li>
+<li>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the Preview button or press Ctrl+Shift+K (Win) or Cmd+Shift+K (Mac) to preview the HTML file).</li>
+<li>The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike Knit, <em>Preview does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed</em>.</li>
+<li>We will use the pipe command <code>%&gt;%</code> very often later in this class.
+<ul>
+<li>The shortcut for the pipe operator (%&gt;%) in Rmarkdown on Windows and Mac OS is:
+<ul>
+<li>On Windows: Ctrl + Shift + M</li>
+<li>On Mac OS: Cmd + Shift + M</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="testing-r-markdown-formats-1" class="section level3" number="22.5.2">
+<h3>
+<span class="header-section-number">22.5.2</span> Testing R Markdown Formats<a class="anchor" aria-label="anchor" href="#testing-r-markdown-formats-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Various Output Formats: <a href="https://icu-hsuzuki.github.io/da4r2022_note/test-rmarkdown.nb.html"><code>test-rmarkdown.nb.html</code></a></p>
+<pre><code>title: "Testing R Markdown Formats"
+author: "DS-SL"
+date: "2023-02-10"
+output:
+  html_notebook:
+    number_sections: yes
+  pdf_document: 
+    number_sections: yes
+  html_document:
+    df_print: paged
+    number_sections: yes
+  word_document: 
+    number_sections: yes
+  powerpoint_presentation: default
+  ioslides_presentation:
+    widescreen: yes
+    smaller: yes
+  slidy_presentation: default
+  beamer_presentation: default</code></pre>
+</div>
+<div id="comments-on-presentation-formats-and-options-1" class="section level3" number="22.5.3">
+<h3>
+<span class="header-section-number">22.5.3</span> Comments on Presentation Formats and Options<a class="anchor" aria-label="anchor" href="#comments-on-presentation-formats-and-options-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>For slides, a new slide starts at ##, the second-level heading.</li>
+<li>
+<code>---</code> is page break for presentation formats.</li>
+<li>For Word and Powerpoint, you can add your template. See the documents in References
+<ul>
+<li>Use R Markdown to create a Word document [similar for PowerPoint]</li>
+<li>Save the rendered Word file as: <code>ref-doc-style.docx</code>
+</li>
+<li>Edit the styles of the file <code>ref-doc-style.docx</code>
+</li>
+<li>Add <code>ref-doc-style.docx</code> as reference_doc in YAML with indention as below</li>
+</ul>
+</li>
+</ul>
+<pre><code>  word_document: 
+    number_sections: yes
+    reference_doc: ref-doc-style.docx
+  powerpoint_presentation: 
+    reference_doc: ref-ppt-style.pptx</code></pre>
+<ul>
+<li>You can use <code>Output Options</code> at the bottom of the gear icon next to Preview/knit button.</li>
+</ul>
+</div>
+</div>
+<div id="markdown-language-or-use-wysiwyg-editor-1" class="section level2" number="22.6">
+<h2>
+<span class="header-section-number">22.6</span> Markdown Language – or use WYSIWYG editor<a class="anchor" aria-label="anchor" href="#markdown-language-or-use-wysiwyg-editor-1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Headers: #, ##, ###, ####</li>
+<li>Lists: 1. 2. , *</li>
+<li>Links: <a href="http://example.com">linked phrase</a>
+</li>
+<li>Images: <code>![alt text](figures/filename.jpg)</code>
+</li>
+<li>Block quotes” &gt; (block)</li>
+<li>  equations: e.g. <code>$\frac{a}{b}$</code> for <span class="math inline">\(\frac{a}{b}\)</span>
+</li>
+<li>Horizontal rules: Three or more asterisks or dashes (*** or - - - )</li>
+<li>Tables</li>
+<li>Footnotes</li>
+<li>Bibliographies and Citations</li>
+<li>Slide breaks</li>
+<li>
+<em>Italicized text</em> by <code>_italic_</code>, <strong>Bold text</strong> by <code>**bold**</code>
+</li>
+<li>Superscripts, Subscripts, Strikethrough text</li>
+</ul>
+<div id="visual-r-markdown-1" class="section level3" number="22.6.1">
+<h3>
+<span class="header-section-number">22.6.1</span> Visual R Markdown<a class="anchor" aria-label="anchor" href="#visual-r-markdown-1"><i class="fas fa-link"></i></a>
+</h3>
+<blockquote>
+<p>R Studio introduced Visual Editor towards the end of 2021. It seems to be stable but it is not perfect to go back and forth from the original editor using tags. I always use the original editor and I am confident on all the functions of it but I do not have much experience on Visual Editor. [My Note in QALL401 2021]</p>
+</blockquote>
+<p>Please refer to the document in the following link. You can switch between the <code>Source</code> editor and the <code>Visual</code> editor using the button on the top left pane’s left top corner. The document below is a bit old, and the switch button is shown at the top right corner of the top left pane.</p>
+<ul>
+<li><a href="https://rstudio.github.io/visual-markdown-editing/" class="uri">https://rstudio.github.io/visual-markdown-editing/</a></li>
+</ul>
+</div>
+</div>
+<div id="r-markdown-revisited-1" class="section level2" number="22.7">
+<h2>
+<span class="header-section-number">22.7</span> R Markdown Revisited<a class="anchor" aria-label="anchor" href="#r-markdown-revisited-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Presentation: Submit an R Notebook (with codes used in the presentation), and PowerPoint file or other files used for your presentation, if any. If you use R Notebook for your presentation, you do not need to submit extra files.</p>
+<p>Final Paper: Submit an R Notebook (with codes as a work file), and a PDF (rendered directly from an R Notebook, or created from Word) - Maximum pages of PDF is eight.</p>
+<p>Format of Presentation - R Notebook is fine and slide presentation in various format is also fine</p>
+<hr>
+<div id="literate-programming-and-reproducible-research-1" class="section level3" number="22.7.1">
+<h3>
+<span class="header-section-number">22.7.1</span> Literate Programming and Reproducible Research<a class="anchor" aria-label="anchor" href="#literate-programming-and-reproducible-research-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Importing Data:</p>
+<ol style="list-style-type: decimal">
+<li>Read a csv file: <code>read_csv("./data/file_name.csv")</code>
+</li>
+<li>Download and import using a url of a csv file: <code>read_csv(url)</code>
+</li>
+<li>Read an Excel file: <code>readxl::read_excel("./data/excel_file_name.xlsx")</code>
+</li>
+<li>Read from the clipboard: <code>read_delim(clipboard())</code>
+</li>
+</ol>
+<ul>
+<li>zip file:
+<ul>
+<li><p>copy the url</p></li>
+<li><p>wir1to10 &lt;- “<a href="https://wir2022.wid.world/www-site/uploads/2022/03/WIR2022TablesFigures-Chapter.zip" class="uri">https://wir2022.wid.world/www-site/uploads/2022/03/WIR2022TablesFigures-Chapter.zip</a>”</p></li>
+<li><p>download.file(wir1to10, destfile = “./data/wir1to10.zip”)</p></li>
+<li><p>unzip(“./data/wir1to10.zip”, exdir = “./data”)</p></li>
+<li><p>list.files(“./data/WIR2022TablesFigures-Chapter”)</p></li>
+<li><p>excel_sheets(“./data/WIR2022TablesFigures-Chapter/WIR2022TablesFigures-Chapter1.xlsx”)</p></li>
+<li><p>df &lt;- read_delim(clipboard()); df</p></li>
+<li><p>Not reproducible unless clearly explained.</p></li>
+</ul>
+</li>
+</ul>
+<hr>
+</div>
+<div id="code-chunk-options-1" class="section level3" number="22.7.2">
+<h3>
+<span class="header-section-number">22.7.2</span> Code Chunk Options<a class="anchor" aria-label="anchor" href="#code-chunk-options-1"><i class="fas fa-link"></i></a>
+</h3>
+<p><a href="https://yihui.org/knitr/options/" class="uri">https://yihui.org/knitr/options/</a></p>
+<ul>
+<li><p>Chunk Name</p></li>
+<li>
+<p>Output: use document default</p>
+<ul>
+<li>Show code and output: echo=TRUE, eval=TRUE - Default</li>
+<li>Show output only: echo=FALSE</li>
+<li>Show nothing (run code): include=FALSE</li>
+<li>Show nothing (don’t run code): include=FALSE, eval=FALSE</li>
+</ul>
+</li>
+<li><p>Show message: message=TRUE, FALSE</p></li>
+<li><p>Show warning: warning=TRUE, FALSE</p></li>
+<li><p>Use Paged Tables: paged.print=TRUE, FALSE</p></li>
+<li><p>Use custom figure size: width and height in inch.</p></li>
+<li><p>You can use Hide Code and Show Code option on the rendered Notebook file.</p></li>
+</ul>
+<hr>
+</div>
+<div id="presentation-and-paper-1" class="section level3" number="22.7.3">
+<h3>
+<span class="header-section-number">22.7.3</span> Presentation and Paper<a class="anchor" aria-label="anchor" href="#presentation-and-paper-1"><i class="fas fa-link"></i></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li><p>Data Source</p></li>
+<li><p>Variables</p></li>
+<li><p>Problems</p></li>
+<li><p>Visualization</p></li>
+<li><p>Model</p></li>
+<li>
+<p>Conclusions and Further Research</p>
+<p>WDI, WIR, etc</p>
+</li>
+</ol>
+<hr>
+</div>
+<div id="word-1" class="section level3" number="22.7.4">
+<h3>
+<span class="header-section-number">22.7.4</span> Word<a class="anchor" aria-label="anchor" href="#word-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Custom Word templates: <a href="https://bookdown.org/yihui/rmarkdown-cookbook/word-template.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/word-template.html</a></p>
+<p>You can apply the styles defined in a Word template document to new Word documents generated from R Markdown. Such a template document is also called a “style reference document.” The key is that you have to create this template document from Pandoc first, and change the style definitions in it later. Then pass the path of this template to the reference_docx option of word_document</p>
+<pre><code>---
+ word_document:
+    reference_docx: "template.docx"
+---</code></pre>
+<hr>
+</div>
+<div id="powerpoint-1" class="section level3" number="22.7.5">
+<h3>
+<span class="header-section-number">22.7.5</span> PowerPoint<a class="anchor" aria-label="anchor" href="#powerpoint-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>PowerPoint presentation: <a href="https://bookdown.org/yihui/rmarkdown/powerpoint-presentation.html" class="uri">https://bookdown.org/yihui/rmarkdown/powerpoint-presentation.html</a></p>
+<p>Custom templates: <a href="https://bookdown.org/yihui/rmarkdown/powerpoint-presentation.html#ppt-templates" class="uri">https://bookdown.org/yihui/rmarkdown/powerpoint-presentation.html#ppt-templates</a></p>
+<pre><code>---
+  powerpoint_presentation:
+    reference_doc: my-styles.pptx
+---</code></pre>
+<p><a href="https://support.microsoft.com/en-us/office/create-and-save-a-powerpoint-template-ee4429ad-2a74-4100-82f7-50f8169c8aca" class="uri">https://support.microsoft.com/en-us/office/create-and-save-a-powerpoint-template-ee4429ad-2a74-4100-82f7-50f8169c8aca</a></p>
+<p>YouTube: How To Create A PowerPoint Template</p>
+</div>
+</div>
+<div id="references-1" class="section level2" number="22.8">
+<h2>
+<span class="header-section-number">22.8</span> References<a class="anchor" aria-label="anchor" href="#references-1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Posit Primers: <a href="https://rmarkdown.rstudio.com/lesson-1.html?_ga=2.60708591.317621277.1671142614-2004472742.1671142614">Report Reproducibly</a>
+</li>
+<li>Markdown Quick Reference: Top Menu Bar &gt; Help &gt; Markdown Quick Reference</li>
+<li>Cheat Sheet (Top Menu Bar: Help &gt; Cheat Sheets): RMarkdown Cheat Sheet, RMarkdown Reference Guide</li>
+<li>Books:
+<ul>
+<li>In Textbook: <a href="https://r4ds.had.co.nz/communicate-intro.html#communicate-intro">R for Data Science: Communicate</a>
+</li>
+<li>
+<a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a> by Yihui Xie, J. J. Allaire, Garrett Grolemund</li>
+<li>
+<a href="https://bookdown.org/yihui/rmarkdown-cookbook/">R Markdown Cookbook</a> by Yihui Xie, Christophe Dervieux, Emily Riederer</li>
+</ul>
+</li>
+<li>Markdown: R Markdown is based on the Markdown language of Pandoc
+<ul>
+<li>
+<a href="https://pandoc.org/MANUAL.html#pandocs-markdown">Pandoc’s Markdown</a>: Detailed Information</li>
+<li>
+<a href="https://www.markdowntutorial.com">Markdown Tutorials</a>: Interactive Practicum</li>
+<li>
+<a href="https://daringfireball.net/projects/markdown/">DARING FIREBALL: Markdown</a> (detailed explanation and editor as Dingus)</li>
+</ul>
+</li>
+<li>Post error messages to a web search engine.</li>
+</ul>
+</div>
 </div>
 
 
@@ -129,7 +534,43 @@ set in the _output.yml file.&lt;/p&gt;">
 <div class="next"><a href="worldbank.html"><span class="header-section-number">23</span> World Bank</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#communicating"><span class="header-section-number">22</span> Communicating</a></li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#communicating"><span class="header-section-number">22</span> Communicating</a></li>
+<li>
+<a class="nav-link" href="#what-is-r-markdown-and-r-notebook-1"><span class="header-section-number">22.1</span> What is R Markdown and R Notebook</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#two-goodies-1"><span class="header-section-number">22.1.1</span> Two Goodies</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#reproducible-research-and-literate-programming-1"><span class="header-section-number">22.2</span> Reproducible Research and Literate Programming</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#literate-programming-by-d.-knuth-1"><span class="header-section-number">22.2.1</span> Literate Programming by D. Knuth</a></li>
+<li><a class="nav-link" href="#d.-knuth-1"><span class="header-section-number">22.2.2</span> D. Knuth</a></li>
+<li><a class="nav-link" href="#reproducible-research---quote-from-a-coursera-course-1"><span class="header-section-number">22.2.3</span> Reproducible Research - Quote from a Coursera Course</a></li>
+<li><a class="nav-link" href="#r-markdown-workflow-r-for-data-science-1"><span class="header-section-number">22.2.4</span> R Markdown workflow, R for Data Science</a></li>
+<li><a class="nav-link" href="#records-of-eda-and-communication-1"><span class="header-section-number">22.2.5</span> Records of EDA and Communication</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#structure-of-the-r-markdown"><span class="header-section-number">22.3</span> Structure of the R Markdown</a></li>
+<li><a class="nav-link" href="#lets-get-started-2"><span class="header-section-number">22.4</span> Let’s Get Started</a></li>
+<li>
+<a class="nav-link" href="#templates-1"><span class="header-section-number">22.5</span> Templates</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#rnotebook_template-1"><span class="header-section-number">22.5.1</span> RNotebook_Template</a></li>
+<li><a class="nav-link" href="#testing-r-markdown-formats-1"><span class="header-section-number">22.5.2</span> Testing R Markdown Formats</a></li>
+<li><a class="nav-link" href="#comments-on-presentation-formats-and-options-1"><span class="header-section-number">22.5.3</span> Comments on Presentation Formats and Options</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#markdown-language-or-use-wysiwyg-editor-1"><span class="header-section-number">22.6</span> Markdown Language – or use WYSIWYG editor</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#visual-r-markdown-1"><span class="header-section-number">22.6.1</span> Visual R Markdown</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#r-markdown-revisited-1"><span class="header-section-number">22.7</span> R Markdown Revisited</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#literate-programming-and-reproducible-research-1"><span class="header-section-number">22.7.1</span> Literate Programming and Reproducible Research</a></li>
+<li><a class="nav-link" href="#code-chunk-options-1"><span class="header-section-number">22.7.2</span> Code Chunk Options</a></li>
+<li><a class="nav-link" href="#presentation-and-paper-1"><span class="header-section-number">22.7.3</span> Presentation and Paper</a></li>
+<li><a class="nav-link" href="#word-1"><span class="header-section-number">22.7.4</span> Word</a></li>
+<li><a class="nav-link" href="#powerpoint-1"><span class="header-section-number">22.7.5</span> PowerPoint</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#references-1"><span class="header-section-number">22.8</span> References</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">

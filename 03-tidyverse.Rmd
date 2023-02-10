@@ -77,7 +77,7 @@ Choose R Notebook from the pull down File menu in the top bar.
 
 ### Edit YAML
 
-**Default* is as follows**
+**Default is as follows**
 
 ```
 
@@ -356,12 +356,11 @@ ggplot(data = df_iris, aes(x = Sepal.Length, y = Sepal.Width)) +
 
 ### Practicum
 
-* Posit Primers: The Basics: https://posit.cloud/learn/primers/1
-  - Complete Visualization Basics and Programming Basics
+### Posit Primers https://posit.cloud/learn/primers
 
-
-
-
+1. The Basics -- [r4ds: Explore, I](https://r4ds.had.co.nz/explore-intro.html#explore-intro)
+  - [Visualization Basics](https://rstudio.cloud/learn/primers/1.1)
+  - [Programming Basics](https://rstudio.cloud/learn/primers/1.2)
 
 
 ### Questions

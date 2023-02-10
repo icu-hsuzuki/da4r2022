@@ -1,6 +1,8 @@
 # R Markdown {#rmarkdown}
 
-What is R Markdown: https://vimeo.com/178485416
+What is R Markdown: https://vimeo.com/178485416 created by RStudio
+
+R Markdown documents consist of three components.
 
 * Code Chunks
 * Text
@@ -35,7 +37,7 @@ An **R Notebook** is an R Markdown document _with chunks that can be executed in
 
 ### Literate Programming by D. Knuth
 
-Literate programming is an approach to programming introduced by Donald Knuth in which a program is given as an explanation of the program logic in a natural language, such as English, interspersed with snippets of macros and traditional source code, from which a compilable source code can be generated
+Literate programming is an approach to programming introduced by Donald Knuth in which a program is given as an explanation of the program logic in a natural language, such as English, interspersed with snippets of macros and traditional source code, from which a compilable source code can be generated.
 
 ### [D. Knuth](https://www.brainyquote.com/quotes/donald_knuth_181634)
 Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.
@@ -83,7 +85,8 @@ R Markdown is also important because it so tightly integrates prose and code. Th
     * Alternatively, `install.packages('tinytex')`
     * If TeX is not installed: `tinytex::install_tinytex()`  \# install TinyTeX
       - If you are not sure, please check on `Terminal` in the left below pane: 
-        + which latex, which mktexlsr
+        + which latex, which mktexlsr - Mac or Linux
+        + where mktexlsr - Windows
 5. Let's try!  
     a. File > New File > R Notebook
     b. Save with a file name, say, test-notebook
@@ -120,11 +123,15 @@ output:
 
 * When you execute or run a code within the notebook, the results appear beneath the code.
 * Try executing this chunk by clicking the Run button, a triangle pointing right, within the chunk or by placing your cursor inside it and pressing Ctrl+Shift+Enter (Win) or Cmd+Shift+Enter (Mac).
+  - Ctrl + Shift + Enter (Windows) or Cmd + Shift + Enter (Mac): Runs the current code chunk and advances to the next one.
+  - Ctrl + Alt + C (Windows) or Cmd + Option + C (Mac): Runs all the code chunks in the document.
 * Add a new chunk by clicking the Insert Chunk button on the toolbar or by pressing Ctrl+Option+I (Win) or Cmd+Option+I (Mac).
 * When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the Preview button or press Ctrl+Shift+K (Win) or Cmd+Shift+K (Mac) to preview the HTML file).
 * The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike Knit, _Preview does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed_.
-
-
+* We will use the pipe command `%>%` very often later in this class.
+  - The shortcut for the pipe operator (%>%) in Rmarkdown on Windows and Mac OS is:
+    + On Windows: Ctrl + Shift + M
+    + On Mac OS: Cmd + Shift + M
 
 ### Testing R Markdown Formats
 
@@ -151,8 +158,6 @@ output:
   slidy_presentation: default
   beamer_presentation: default
 ```
-
-
 
 ### Comments on Presentation Formats and Options
 
@@ -197,7 +202,9 @@ output:
 ### Visual R Markdown
 
 >R Studio introduced Visual Editor towards the end of 2021. It seems to be stable but it is not perfect to go back and forth from the original editor using tags. I always use the original editor and I am confident on all the functions of it but I do not have much experience on Visual Editor. [My Note in QALL401 2021]
-  
+
+Please refer to the document in the following link. You can switch between the `Source` editor and the `Visual` editor using the button on the top left pane's left top corner. The document below is a bit old, and the switch button is shown at the top right corner of the top left pane.
+
   * https://rstudio.github.io/visual-markdown-editing/
 
 

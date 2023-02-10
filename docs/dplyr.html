@@ -6,15 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 5 dplyr | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
-<meta name="description" content="library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.5.0 #&gt; ✔...">
+<meta name="description" content="The dplyr is a package to transform data. It can combine data as well. We will treat the second feature late in Chapter ??. The package dplyr is a part of the tidyverse packages, and you do not...">
 <meta name="generator" content="bookdown 0.31 with bs4_book()">
 <meta property="og:title" content="Chapter 5 dplyr | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/dplyr.html">
-<meta property="og:description" content="library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.5.0 #&gt; ✔...">
+<meta property="og:description" content="The dplyr is a package to transform data. It can combine data as well. We will treat the second feature late in Chapter ??. The package dplyr is a part of the tidyverse packages, and you do not...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 5 dplyr | Data Analysis for Researchers AY2022">
-<meta name="twitter:description" content="library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr 1.5.0 #&gt; ✔...">
+<meta name="twitter:description" content="The dplyr is a package to transform data. It can combine data as well. We will treat the second feature late in Chapter ??. The package dplyr is a part of the tidyverse packages, and you do not...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -73,7 +73,7 @@
 <li><a class="" href="tidyverse.html"><span class="header-section-number">3</span> tidyverse</a></li>
 <li><a class="" href="rmarkdown.html"><span class="header-section-number">4</span> R Markdown</a></li>
 <li><a class="active" href="dplyr.html"><span class="header-section-number">5</span> dplyr</a></li>
-<li><a class="" href="a2resp.html"><span class="header-section-number">6</span> Assignment Two</a></li>
+<li><a class="" href="a2resp.html"><span class="header-section-number">6</span> Assignment Two and Responses</a></li>
 <li><a class="" href="wdidata.html"><span class="header-section-number">7</span> WDI</a></li>
 <li><a class="" href="ggplot2.html"><span class="header-section-number">8</span> ggplot2</a></li>
 <li><a class="" href="a3resp.html"><span class="header-section-number">9</span> Assignment Three</a></li>
@@ -81,7 +81,7 @@
 <li><a class="" href="workflow.html"><span class="header-section-number">11</span> Workflow</a></li>
 <li><a class="" href="a4resp.html"><span class="header-section-number">12</span> Assignment Four</a></li>
 <li><a class="" href="model.html"><span class="header-section-number">13</span> Linear Model</a></li>
-<li><a class="" href="roudups.html"><span class="header-section-number">14</span> Roudups</a></li>
+<li><a class="" href="roundups.html"><span class="header-section-number">14</span> Roudups</a></li>
 <li><a class="" href="a5resp.html"><span class="header-section-number">15</span> Assignment Five</a></li>
 <li class="book-part">PART II</li>
 <li><a class="" href="eda.html"><span class="header-section-number">16</span> Exploratory Data analysis</a></li>
@@ -113,6 +113,9 @@
 <h1>
 <span class="header-section-number">5</span> <code>dplyr</code><a class="anchor" aria-label="anchor" href="#dplyr"><i class="fas fa-link"></i></a>
 </h1>
+<blockquote>
+<p>The <code>dplyr</code> is a package to transform data. It can combine data as well. We will treat the second feature late in Chapter <a href="#tidyr"><strong>??</strong></a>. The package <code>dplyr</code> is a part of the <code>tidyverse</code> packages, and you do not need to install it separately.</p>
+</blockquote>
 <div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
@@ -325,309 +328,14 @@
 <span class="header-section-number">5.8.1</span> Data <code>iris</code><a class="anchor" aria-label="anchor" href="#data-iris"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">iris</span></span>
-<span><span class="co">#&gt;     Sepal.Length Sepal.Width Petal.Length Petal.Width</span></span>
-<span><span class="co">#&gt; 1            5.1         3.5          1.4         0.2</span></span>
-<span><span class="co">#&gt; 2            4.9         3.0          1.4         0.2</span></span>
-<span><span class="co">#&gt; 3            4.7         3.2          1.3         0.2</span></span>
-<span><span class="co">#&gt; 4            4.6         3.1          1.5         0.2</span></span>
-<span><span class="co">#&gt; 5            5.0         3.6          1.4         0.2</span></span>
-<span><span class="co">#&gt; 6            5.4         3.9          1.7         0.4</span></span>
-<span><span class="co">#&gt; 7            4.6         3.4          1.4         0.3</span></span>
-<span><span class="co">#&gt; 8            5.0         3.4          1.5         0.2</span></span>
-<span><span class="co">#&gt; 9            4.4         2.9          1.4         0.2</span></span>
-<span><span class="co">#&gt; 10           4.9         3.1          1.5         0.1</span></span>
-<span><span class="co">#&gt; 11           5.4         3.7          1.5         0.2</span></span>
-<span><span class="co">#&gt; 12           4.8         3.4          1.6         0.2</span></span>
-<span><span class="co">#&gt; 13           4.8         3.0          1.4         0.1</span></span>
-<span><span class="co">#&gt; 14           4.3         3.0          1.1         0.1</span></span>
-<span><span class="co">#&gt; 15           5.8         4.0          1.2         0.2</span></span>
-<span><span class="co">#&gt; 16           5.7         4.4          1.5         0.4</span></span>
-<span><span class="co">#&gt; 17           5.4         3.9          1.3         0.4</span></span>
-<span><span class="co">#&gt; 18           5.1         3.5          1.4         0.3</span></span>
-<span><span class="co">#&gt; 19           5.7         3.8          1.7         0.3</span></span>
-<span><span class="co">#&gt; 20           5.1         3.8          1.5         0.3</span></span>
-<span><span class="co">#&gt; 21           5.4         3.4          1.7         0.2</span></span>
-<span><span class="co">#&gt; 22           5.1         3.7          1.5         0.4</span></span>
-<span><span class="co">#&gt; 23           4.6         3.6          1.0         0.2</span></span>
-<span><span class="co">#&gt; 24           5.1         3.3          1.7         0.5</span></span>
-<span><span class="co">#&gt; 25           4.8         3.4          1.9         0.2</span></span>
-<span><span class="co">#&gt; 26           5.0         3.0          1.6         0.2</span></span>
-<span><span class="co">#&gt; 27           5.0         3.4          1.6         0.4</span></span>
-<span><span class="co">#&gt; 28           5.2         3.5          1.5         0.2</span></span>
-<span><span class="co">#&gt; 29           5.2         3.4          1.4         0.2</span></span>
-<span><span class="co">#&gt; 30           4.7         3.2          1.6         0.2</span></span>
-<span><span class="co">#&gt; 31           4.8         3.1          1.6         0.2</span></span>
-<span><span class="co">#&gt; 32           5.4         3.4          1.5         0.4</span></span>
-<span><span class="co">#&gt; 33           5.2         4.1          1.5         0.1</span></span>
-<span><span class="co">#&gt; 34           5.5         4.2          1.4         0.2</span></span>
-<span><span class="co">#&gt; 35           4.9         3.1          1.5         0.2</span></span>
-<span><span class="co">#&gt; 36           5.0         3.2          1.2         0.2</span></span>
-<span><span class="co">#&gt; 37           5.5         3.5          1.3         0.2</span></span>
-<span><span class="co">#&gt; 38           4.9         3.6          1.4         0.1</span></span>
-<span><span class="co">#&gt; 39           4.4         3.0          1.3         0.2</span></span>
-<span><span class="co">#&gt; 40           5.1         3.4          1.5         0.2</span></span>
-<span><span class="co">#&gt; 41           5.0         3.5          1.3         0.3</span></span>
-<span><span class="co">#&gt; 42           4.5         2.3          1.3         0.3</span></span>
-<span><span class="co">#&gt; 43           4.4         3.2          1.3         0.2</span></span>
-<span><span class="co">#&gt; 44           5.0         3.5          1.6         0.6</span></span>
-<span><span class="co">#&gt; 45           5.1         3.8          1.9         0.4</span></span>
-<span><span class="co">#&gt; 46           4.8         3.0          1.4         0.3</span></span>
-<span><span class="co">#&gt; 47           5.1         3.8          1.6         0.2</span></span>
-<span><span class="co">#&gt; 48           4.6         3.2          1.4         0.2</span></span>
-<span><span class="co">#&gt; 49           5.3         3.7          1.5         0.2</span></span>
-<span><span class="co">#&gt; 50           5.0         3.3          1.4         0.2</span></span>
-<span><span class="co">#&gt; 51           7.0         3.2          4.7         1.4</span></span>
-<span><span class="co">#&gt; 52           6.4         3.2          4.5         1.5</span></span>
-<span><span class="co">#&gt; 53           6.9         3.1          4.9         1.5</span></span>
-<span><span class="co">#&gt; 54           5.5         2.3          4.0         1.3</span></span>
-<span><span class="co">#&gt; 55           6.5         2.8          4.6         1.5</span></span>
-<span><span class="co">#&gt; 56           5.7         2.8          4.5         1.3</span></span>
-<span><span class="co">#&gt; 57           6.3         3.3          4.7         1.6</span></span>
-<span><span class="co">#&gt; 58           4.9         2.4          3.3         1.0</span></span>
-<span><span class="co">#&gt; 59           6.6         2.9          4.6         1.3</span></span>
-<span><span class="co">#&gt; 60           5.2         2.7          3.9         1.4</span></span>
-<span><span class="co">#&gt; 61           5.0         2.0          3.5         1.0</span></span>
-<span><span class="co">#&gt; 62           5.9         3.0          4.2         1.5</span></span>
-<span><span class="co">#&gt; 63           6.0         2.2          4.0         1.0</span></span>
-<span><span class="co">#&gt; 64           6.1         2.9          4.7         1.4</span></span>
-<span><span class="co">#&gt; 65           5.6         2.9          3.6         1.3</span></span>
-<span><span class="co">#&gt; 66           6.7         3.1          4.4         1.4</span></span>
-<span><span class="co">#&gt; 67           5.6         3.0          4.5         1.5</span></span>
-<span><span class="co">#&gt; 68           5.8         2.7          4.1         1.0</span></span>
-<span><span class="co">#&gt; 69           6.2         2.2          4.5         1.5</span></span>
-<span><span class="co">#&gt; 70           5.6         2.5          3.9         1.1</span></span>
-<span><span class="co">#&gt; 71           5.9         3.2          4.8         1.8</span></span>
-<span><span class="co">#&gt; 72           6.1         2.8          4.0         1.3</span></span>
-<span><span class="co">#&gt; 73           6.3         2.5          4.9         1.5</span></span>
-<span><span class="co">#&gt; 74           6.1         2.8          4.7         1.2</span></span>
-<span><span class="co">#&gt; 75           6.4         2.9          4.3         1.3</span></span>
-<span><span class="co">#&gt; 76           6.6         3.0          4.4         1.4</span></span>
-<span><span class="co">#&gt; 77           6.8         2.8          4.8         1.4</span></span>
-<span><span class="co">#&gt; 78           6.7         3.0          5.0         1.7</span></span>
-<span><span class="co">#&gt; 79           6.0         2.9          4.5         1.5</span></span>
-<span><span class="co">#&gt; 80           5.7         2.6          3.5         1.0</span></span>
-<span><span class="co">#&gt; 81           5.5         2.4          3.8         1.1</span></span>
-<span><span class="co">#&gt; 82           5.5         2.4          3.7         1.0</span></span>
-<span><span class="co">#&gt; 83           5.8         2.7          3.9         1.2</span></span>
-<span><span class="co">#&gt; 84           6.0         2.7          5.1         1.6</span></span>
-<span><span class="co">#&gt; 85           5.4         3.0          4.5         1.5</span></span>
-<span><span class="co">#&gt; 86           6.0         3.4          4.5         1.6</span></span>
-<span><span class="co">#&gt; 87           6.7         3.1          4.7         1.5</span></span>
-<span><span class="co">#&gt; 88           6.3         2.3          4.4         1.3</span></span>
-<span><span class="co">#&gt; 89           5.6         3.0          4.1         1.3</span></span>
-<span><span class="co">#&gt; 90           5.5         2.5          4.0         1.3</span></span>
-<span><span class="co">#&gt; 91           5.5         2.6          4.4         1.2</span></span>
-<span><span class="co">#&gt; 92           6.1         3.0          4.6         1.4</span></span>
-<span><span class="co">#&gt; 93           5.8         2.6          4.0         1.2</span></span>
-<span><span class="co">#&gt; 94           5.0         2.3          3.3         1.0</span></span>
-<span><span class="co">#&gt; 95           5.6         2.7          4.2         1.3</span></span>
-<span><span class="co">#&gt; 96           5.7         3.0          4.2         1.2</span></span>
-<span><span class="co">#&gt; 97           5.7         2.9          4.2         1.3</span></span>
-<span><span class="co">#&gt; 98           6.2         2.9          4.3         1.3</span></span>
-<span><span class="co">#&gt; 99           5.1         2.5          3.0         1.1</span></span>
-<span><span class="co">#&gt; 100          5.7         2.8          4.1         1.3</span></span>
-<span><span class="co">#&gt; 101          6.3         3.3          6.0         2.5</span></span>
-<span><span class="co">#&gt; 102          5.8         2.7          5.1         1.9</span></span>
-<span><span class="co">#&gt; 103          7.1         3.0          5.9         2.1</span></span>
-<span><span class="co">#&gt; 104          6.3         2.9          5.6         1.8</span></span>
-<span><span class="co">#&gt; 105          6.5         3.0          5.8         2.2</span></span>
-<span><span class="co">#&gt; 106          7.6         3.0          6.6         2.1</span></span>
-<span><span class="co">#&gt; 107          4.9         2.5          4.5         1.7</span></span>
-<span><span class="co">#&gt; 108          7.3         2.9          6.3         1.8</span></span>
-<span><span class="co">#&gt; 109          6.7         2.5          5.8         1.8</span></span>
-<span><span class="co">#&gt; 110          7.2         3.6          6.1         2.5</span></span>
-<span><span class="co">#&gt; 111          6.5         3.2          5.1         2.0</span></span>
-<span><span class="co">#&gt; 112          6.4         2.7          5.3         1.9</span></span>
-<span><span class="co">#&gt; 113          6.8         3.0          5.5         2.1</span></span>
-<span><span class="co">#&gt; 114          5.7         2.5          5.0         2.0</span></span>
-<span><span class="co">#&gt; 115          5.8         2.8          5.1         2.4</span></span>
-<span><span class="co">#&gt; 116          6.4         3.2          5.3         2.3</span></span>
-<span><span class="co">#&gt; 117          6.5         3.0          5.5         1.8</span></span>
-<span><span class="co">#&gt; 118          7.7         3.8          6.7         2.2</span></span>
-<span><span class="co">#&gt; 119          7.7         2.6          6.9         2.3</span></span>
-<span><span class="co">#&gt; 120          6.0         2.2          5.0         1.5</span></span>
-<span><span class="co">#&gt; 121          6.9         3.2          5.7         2.3</span></span>
-<span><span class="co">#&gt; 122          5.6         2.8          4.9         2.0</span></span>
-<span><span class="co">#&gt; 123          7.7         2.8          6.7         2.0</span></span>
-<span><span class="co">#&gt; 124          6.3         2.7          4.9         1.8</span></span>
-<span><span class="co">#&gt; 125          6.7         3.3          5.7         2.1</span></span>
-<span><span class="co">#&gt; 126          7.2         3.2          6.0         1.8</span></span>
-<span><span class="co">#&gt; 127          6.2         2.8          4.8         1.8</span></span>
-<span><span class="co">#&gt; 128          6.1         3.0          4.9         1.8</span></span>
-<span><span class="co">#&gt; 129          6.4         2.8          5.6         2.1</span></span>
-<span><span class="co">#&gt; 130          7.2         3.0          5.8         1.6</span></span>
-<span><span class="co">#&gt; 131          7.4         2.8          6.1         1.9</span></span>
-<span><span class="co">#&gt; 132          7.9         3.8          6.4         2.0</span></span>
-<span><span class="co">#&gt; 133          6.4         2.8          5.6         2.2</span></span>
-<span><span class="co">#&gt; 134          6.3         2.8          5.1         1.5</span></span>
-<span><span class="co">#&gt; 135          6.1         2.6          5.6         1.4</span></span>
-<span><span class="co">#&gt; 136          7.7         3.0          6.1         2.3</span></span>
-<span><span class="co">#&gt; 137          6.3         3.4          5.6         2.4</span></span>
-<span><span class="co">#&gt; 138          6.4         3.1          5.5         1.8</span></span>
-<span><span class="co">#&gt; 139          6.0         3.0          4.8         1.8</span></span>
-<span><span class="co">#&gt; 140          6.9         3.1          5.4         2.1</span></span>
-<span><span class="co">#&gt; 141          6.7         3.1          5.6         2.4</span></span>
-<span><span class="co">#&gt; 142          6.9         3.1          5.1         2.3</span></span>
-<span><span class="co">#&gt; 143          5.8         2.7          5.1         1.9</span></span>
-<span><span class="co">#&gt; 144          6.8         3.2          5.9         2.3</span></span>
-<span><span class="co">#&gt; 145          6.7         3.3          5.7         2.5</span></span>
-<span><span class="co">#&gt; 146          6.7         3.0          5.2         2.3</span></span>
-<span><span class="co">#&gt; 147          6.3         2.5          5.0         1.9</span></span>
-<span><span class="co">#&gt; 148          6.5         3.0          5.2         2.0</span></span>
-<span><span class="co">#&gt; 149          6.2         3.4          5.4         2.3</span></span>
-<span><span class="co">#&gt; 150          5.9         3.0          5.1         1.8</span></span>
-<span><span class="co">#&gt;        Species</span></span>
-<span><span class="co">#&gt; 1       setosa</span></span>
-<span><span class="co">#&gt; 2       setosa</span></span>
-<span><span class="co">#&gt; 3       setosa</span></span>
-<span><span class="co">#&gt; 4       setosa</span></span>
-<span><span class="co">#&gt; 5       setosa</span></span>
-<span><span class="co">#&gt; 6       setosa</span></span>
-<span><span class="co">#&gt; 7       setosa</span></span>
-<span><span class="co">#&gt; 8       setosa</span></span>
-<span><span class="co">#&gt; 9       setosa</span></span>
-<span><span class="co">#&gt; 10      setosa</span></span>
-<span><span class="co">#&gt; 11      setosa</span></span>
-<span><span class="co">#&gt; 12      setosa</span></span>
-<span><span class="co">#&gt; 13      setosa</span></span>
-<span><span class="co">#&gt; 14      setosa</span></span>
-<span><span class="co">#&gt; 15      setosa</span></span>
-<span><span class="co">#&gt; 16      setosa</span></span>
-<span><span class="co">#&gt; 17      setosa</span></span>
-<span><span class="co">#&gt; 18      setosa</span></span>
-<span><span class="co">#&gt; 19      setosa</span></span>
-<span><span class="co">#&gt; 20      setosa</span></span>
-<span><span class="co">#&gt; 21      setosa</span></span>
-<span><span class="co">#&gt; 22      setosa</span></span>
-<span><span class="co">#&gt; 23      setosa</span></span>
-<span><span class="co">#&gt; 24      setosa</span></span>
-<span><span class="co">#&gt; 25      setosa</span></span>
-<span><span class="co">#&gt; 26      setosa</span></span>
-<span><span class="co">#&gt; 27      setosa</span></span>
-<span><span class="co">#&gt; 28      setosa</span></span>
-<span><span class="co">#&gt; 29      setosa</span></span>
-<span><span class="co">#&gt; 30      setosa</span></span>
-<span><span class="co">#&gt; 31      setosa</span></span>
-<span><span class="co">#&gt; 32      setosa</span></span>
-<span><span class="co">#&gt; 33      setosa</span></span>
-<span><span class="co">#&gt; 34      setosa</span></span>
-<span><span class="co">#&gt; 35      setosa</span></span>
-<span><span class="co">#&gt; 36      setosa</span></span>
-<span><span class="co">#&gt; 37      setosa</span></span>
-<span><span class="co">#&gt; 38      setosa</span></span>
-<span><span class="co">#&gt; 39      setosa</span></span>
-<span><span class="co">#&gt; 40      setosa</span></span>
-<span><span class="co">#&gt; 41      setosa</span></span>
-<span><span class="co">#&gt; 42      setosa</span></span>
-<span><span class="co">#&gt; 43      setosa</span></span>
-<span><span class="co">#&gt; 44      setosa</span></span>
-<span><span class="co">#&gt; 45      setosa</span></span>
-<span><span class="co">#&gt; 46      setosa</span></span>
-<span><span class="co">#&gt; 47      setosa</span></span>
-<span><span class="co">#&gt; 48      setosa</span></span>
-<span><span class="co">#&gt; 49      setosa</span></span>
-<span><span class="co">#&gt; 50      setosa</span></span>
-<span><span class="co">#&gt; 51  versicolor</span></span>
-<span><span class="co">#&gt; 52  versicolor</span></span>
-<span><span class="co">#&gt; 53  versicolor</span></span>
-<span><span class="co">#&gt; 54  versicolor</span></span>
-<span><span class="co">#&gt; 55  versicolor</span></span>
-<span><span class="co">#&gt; 56  versicolor</span></span>
-<span><span class="co">#&gt; 57  versicolor</span></span>
-<span><span class="co">#&gt; 58  versicolor</span></span>
-<span><span class="co">#&gt; 59  versicolor</span></span>
-<span><span class="co">#&gt; 60  versicolor</span></span>
-<span><span class="co">#&gt; 61  versicolor</span></span>
-<span><span class="co">#&gt; 62  versicolor</span></span>
-<span><span class="co">#&gt; 63  versicolor</span></span>
-<span><span class="co">#&gt; 64  versicolor</span></span>
-<span><span class="co">#&gt; 65  versicolor</span></span>
-<span><span class="co">#&gt; 66  versicolor</span></span>
-<span><span class="co">#&gt; 67  versicolor</span></span>
-<span><span class="co">#&gt; 68  versicolor</span></span>
-<span><span class="co">#&gt; 69  versicolor</span></span>
-<span><span class="co">#&gt; 70  versicolor</span></span>
-<span><span class="co">#&gt; 71  versicolor</span></span>
-<span><span class="co">#&gt; 72  versicolor</span></span>
-<span><span class="co">#&gt; 73  versicolor</span></span>
-<span><span class="co">#&gt; 74  versicolor</span></span>
-<span><span class="co">#&gt; 75  versicolor</span></span>
-<span><span class="co">#&gt; 76  versicolor</span></span>
-<span><span class="co">#&gt; 77  versicolor</span></span>
-<span><span class="co">#&gt; 78  versicolor</span></span>
-<span><span class="co">#&gt; 79  versicolor</span></span>
-<span><span class="co">#&gt; 80  versicolor</span></span>
-<span><span class="co">#&gt; 81  versicolor</span></span>
-<span><span class="co">#&gt; 82  versicolor</span></span>
-<span><span class="co">#&gt; 83  versicolor</span></span>
-<span><span class="co">#&gt; 84  versicolor</span></span>
-<span><span class="co">#&gt; 85  versicolor</span></span>
-<span><span class="co">#&gt; 86  versicolor</span></span>
-<span><span class="co">#&gt; 87  versicolor</span></span>
-<span><span class="co">#&gt; 88  versicolor</span></span>
-<span><span class="co">#&gt; 89  versicolor</span></span>
-<span><span class="co">#&gt; 90  versicolor</span></span>
-<span><span class="co">#&gt; 91  versicolor</span></span>
-<span><span class="co">#&gt; 92  versicolor</span></span>
-<span><span class="co">#&gt; 93  versicolor</span></span>
-<span><span class="co">#&gt; 94  versicolor</span></span>
-<span><span class="co">#&gt; 95  versicolor</span></span>
-<span><span class="co">#&gt; 96  versicolor</span></span>
-<span><span class="co">#&gt; 97  versicolor</span></span>
-<span><span class="co">#&gt; 98  versicolor</span></span>
-<span><span class="co">#&gt; 99  versicolor</span></span>
-<span><span class="co">#&gt; 100 versicolor</span></span>
-<span><span class="co">#&gt; 101  virginica</span></span>
-<span><span class="co">#&gt; 102  virginica</span></span>
-<span><span class="co">#&gt; 103  virginica</span></span>
-<span><span class="co">#&gt; 104  virginica</span></span>
-<span><span class="co">#&gt; 105  virginica</span></span>
-<span><span class="co">#&gt; 106  virginica</span></span>
-<span><span class="co">#&gt; 107  virginica</span></span>
-<span><span class="co">#&gt; 108  virginica</span></span>
-<span><span class="co">#&gt; 109  virginica</span></span>
-<span><span class="co">#&gt; 110  virginica</span></span>
-<span><span class="co">#&gt; 111  virginica</span></span>
-<span><span class="co">#&gt; 112  virginica</span></span>
-<span><span class="co">#&gt; 113  virginica</span></span>
-<span><span class="co">#&gt; 114  virginica</span></span>
-<span><span class="co">#&gt; 115  virginica</span></span>
-<span><span class="co">#&gt; 116  virginica</span></span>
-<span><span class="co">#&gt; 117  virginica</span></span>
-<span><span class="co">#&gt; 118  virginica</span></span>
-<span><span class="co">#&gt; 119  virginica</span></span>
-<span><span class="co">#&gt; 120  virginica</span></span>
-<span><span class="co">#&gt; 121  virginica</span></span>
-<span><span class="co">#&gt; 122  virginica</span></span>
-<span><span class="co">#&gt; 123  virginica</span></span>
-<span><span class="co">#&gt; 124  virginica</span></span>
-<span><span class="co">#&gt; 125  virginica</span></span>
-<span><span class="co">#&gt; 126  virginica</span></span>
-<span><span class="co">#&gt; 127  virginica</span></span>
-<span><span class="co">#&gt; 128  virginica</span></span>
-<span><span class="co">#&gt; 129  virginica</span></span>
-<span><span class="co">#&gt; 130  virginica</span></span>
-<span><span class="co">#&gt; 131  virginica</span></span>
-<span><span class="co">#&gt; 132  virginica</span></span>
-<span><span class="co">#&gt; 133  virginica</span></span>
-<span><span class="co">#&gt; 134  virginica</span></span>
-<span><span class="co">#&gt; 135  virginica</span></span>
-<span><span class="co">#&gt; 136  virginica</span></span>
-<span><span class="co">#&gt; 137  virginica</span></span>
-<span><span class="co">#&gt; 138  virginica</span></span>
-<span><span class="co">#&gt; 139  virginica</span></span>
-<span><span class="co">#&gt; 140  virginica</span></span>
-<span><span class="co">#&gt; 141  virginica</span></span>
-<span><span class="co">#&gt; 142  virginica</span></span>
-<span><span class="co">#&gt; 143  virginica</span></span>
-<span><span class="co">#&gt; 144  virginica</span></span>
-<span><span class="co">#&gt; 145  virginica</span></span>
-<span><span class="co">#&gt; 146  virginica</span></span>
-<span><span class="co">#&gt; 147  virginica</span></span>
-<span><span class="co">#&gt; 148  virginica</span></span>
-<span><span class="co">#&gt; 149  virginica</span></span>
-<span><span class="co">#&gt; 150  virginica</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span></span>
+<span><span class="co">#&gt; 1          5.1         3.5          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 2          4.9         3.0          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 3          4.7         3.2          1.3         0.2  setosa</span></span>
+<span><span class="co">#&gt; 4          4.6         3.1          1.5         0.2  setosa</span></span>
+<span><span class="co">#&gt; 5          5.0         3.6          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 6          5.4         3.9          1.7         0.4  setosa</span></span></code></pre></div>
 <div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   Sepal.Length    Sepal.Width     Petal.Length  </span></span>
@@ -650,1207 +358,157 @@
 <span class="header-section-number">5.8.2</span> <code>select</code> 1 - columns 1, 2, 5<a class="anchor" aria-label="anchor" href="#select-1---columns-1-2-5"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">iris</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">5</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt;     Sepal.Length Sepal.Width    Species</span></span>
-<span><span class="co">#&gt; 1            5.1         3.5     setosa</span></span>
-<span><span class="co">#&gt; 2            4.9         3.0     setosa</span></span>
-<span><span class="co">#&gt; 3            4.7         3.2     setosa</span></span>
-<span><span class="co">#&gt; 4            4.6         3.1     setosa</span></span>
-<span><span class="co">#&gt; 5            5.0         3.6     setosa</span></span>
-<span><span class="co">#&gt; 6            5.4         3.9     setosa</span></span>
-<span><span class="co">#&gt; 7            4.6         3.4     setosa</span></span>
-<span><span class="co">#&gt; 8            5.0         3.4     setosa</span></span>
-<span><span class="co">#&gt; 9            4.4         2.9     setosa</span></span>
-<span><span class="co">#&gt; 10           4.9         3.1     setosa</span></span>
-<span><span class="co">#&gt; 11           5.4         3.7     setosa</span></span>
-<span><span class="co">#&gt; 12           4.8         3.4     setosa</span></span>
-<span><span class="co">#&gt; 13           4.8         3.0     setosa</span></span>
-<span><span class="co">#&gt; 14           4.3         3.0     setosa</span></span>
-<span><span class="co">#&gt; 15           5.8         4.0     setosa</span></span>
-<span><span class="co">#&gt; 16           5.7         4.4     setosa</span></span>
-<span><span class="co">#&gt; 17           5.4         3.9     setosa</span></span>
-<span><span class="co">#&gt; 18           5.1         3.5     setosa</span></span>
-<span><span class="co">#&gt; 19           5.7         3.8     setosa</span></span>
-<span><span class="co">#&gt; 20           5.1         3.8     setosa</span></span>
-<span><span class="co">#&gt; 21           5.4         3.4     setosa</span></span>
-<span><span class="co">#&gt; 22           5.1         3.7     setosa</span></span>
-<span><span class="co">#&gt; 23           4.6         3.6     setosa</span></span>
-<span><span class="co">#&gt; 24           5.1         3.3     setosa</span></span>
-<span><span class="co">#&gt; 25           4.8         3.4     setosa</span></span>
-<span><span class="co">#&gt; 26           5.0         3.0     setosa</span></span>
-<span><span class="co">#&gt; 27           5.0         3.4     setosa</span></span>
-<span><span class="co">#&gt; 28           5.2         3.5     setosa</span></span>
-<span><span class="co">#&gt; 29           5.2         3.4     setosa</span></span>
-<span><span class="co">#&gt; 30           4.7         3.2     setosa</span></span>
-<span><span class="co">#&gt; 31           4.8         3.1     setosa</span></span>
-<span><span class="co">#&gt; 32           5.4         3.4     setosa</span></span>
-<span><span class="co">#&gt; 33           5.2         4.1     setosa</span></span>
-<span><span class="co">#&gt; 34           5.5         4.2     setosa</span></span>
-<span><span class="co">#&gt; 35           4.9         3.1     setosa</span></span>
-<span><span class="co">#&gt; 36           5.0         3.2     setosa</span></span>
-<span><span class="co">#&gt; 37           5.5         3.5     setosa</span></span>
-<span><span class="co">#&gt; 38           4.9         3.6     setosa</span></span>
-<span><span class="co">#&gt; 39           4.4         3.0     setosa</span></span>
-<span><span class="co">#&gt; 40           5.1         3.4     setosa</span></span>
-<span><span class="co">#&gt; 41           5.0         3.5     setosa</span></span>
-<span><span class="co">#&gt; 42           4.5         2.3     setosa</span></span>
-<span><span class="co">#&gt; 43           4.4         3.2     setosa</span></span>
-<span><span class="co">#&gt; 44           5.0         3.5     setosa</span></span>
-<span><span class="co">#&gt; 45           5.1         3.8     setosa</span></span>
-<span><span class="co">#&gt; 46           4.8         3.0     setosa</span></span>
-<span><span class="co">#&gt; 47           5.1         3.8     setosa</span></span>
-<span><span class="co">#&gt; 48           4.6         3.2     setosa</span></span>
-<span><span class="co">#&gt; 49           5.3         3.7     setosa</span></span>
-<span><span class="co">#&gt; 50           5.0         3.3     setosa</span></span>
-<span><span class="co">#&gt; 51           7.0         3.2 versicolor</span></span>
-<span><span class="co">#&gt; 52           6.4         3.2 versicolor</span></span>
-<span><span class="co">#&gt; 53           6.9         3.1 versicolor</span></span>
-<span><span class="co">#&gt; 54           5.5         2.3 versicolor</span></span>
-<span><span class="co">#&gt; 55           6.5         2.8 versicolor</span></span>
-<span><span class="co">#&gt; 56           5.7         2.8 versicolor</span></span>
-<span><span class="co">#&gt; 57           6.3         3.3 versicolor</span></span>
-<span><span class="co">#&gt; 58           4.9         2.4 versicolor</span></span>
-<span><span class="co">#&gt; 59           6.6         2.9 versicolor</span></span>
-<span><span class="co">#&gt; 60           5.2         2.7 versicolor</span></span>
-<span><span class="co">#&gt; 61           5.0         2.0 versicolor</span></span>
-<span><span class="co">#&gt; 62           5.9         3.0 versicolor</span></span>
-<span><span class="co">#&gt; 63           6.0         2.2 versicolor</span></span>
-<span><span class="co">#&gt; 64           6.1         2.9 versicolor</span></span>
-<span><span class="co">#&gt; 65           5.6         2.9 versicolor</span></span>
-<span><span class="co">#&gt; 66           6.7         3.1 versicolor</span></span>
-<span><span class="co">#&gt; 67           5.6         3.0 versicolor</span></span>
-<span><span class="co">#&gt; 68           5.8         2.7 versicolor</span></span>
-<span><span class="co">#&gt; 69           6.2         2.2 versicolor</span></span>
-<span><span class="co">#&gt; 70           5.6         2.5 versicolor</span></span>
-<span><span class="co">#&gt; 71           5.9         3.2 versicolor</span></span>
-<span><span class="co">#&gt; 72           6.1         2.8 versicolor</span></span>
-<span><span class="co">#&gt; 73           6.3         2.5 versicolor</span></span>
-<span><span class="co">#&gt; 74           6.1         2.8 versicolor</span></span>
-<span><span class="co">#&gt; 75           6.4         2.9 versicolor</span></span>
-<span><span class="co">#&gt; 76           6.6         3.0 versicolor</span></span>
-<span><span class="co">#&gt; 77           6.8         2.8 versicolor</span></span>
-<span><span class="co">#&gt; 78           6.7         3.0 versicolor</span></span>
-<span><span class="co">#&gt; 79           6.0         2.9 versicolor</span></span>
-<span><span class="co">#&gt; 80           5.7         2.6 versicolor</span></span>
-<span><span class="co">#&gt; 81           5.5         2.4 versicolor</span></span>
-<span><span class="co">#&gt; 82           5.5         2.4 versicolor</span></span>
-<span><span class="co">#&gt; 83           5.8         2.7 versicolor</span></span>
-<span><span class="co">#&gt; 84           6.0         2.7 versicolor</span></span>
-<span><span class="co">#&gt; 85           5.4         3.0 versicolor</span></span>
-<span><span class="co">#&gt; 86           6.0         3.4 versicolor</span></span>
-<span><span class="co">#&gt; 87           6.7         3.1 versicolor</span></span>
-<span><span class="co">#&gt; 88           6.3         2.3 versicolor</span></span>
-<span><span class="co">#&gt; 89           5.6         3.0 versicolor</span></span>
-<span><span class="co">#&gt; 90           5.5         2.5 versicolor</span></span>
-<span><span class="co">#&gt; 91           5.5         2.6 versicolor</span></span>
-<span><span class="co">#&gt; 92           6.1         3.0 versicolor</span></span>
-<span><span class="co">#&gt; 93           5.8         2.6 versicolor</span></span>
-<span><span class="co">#&gt; 94           5.0         2.3 versicolor</span></span>
-<span><span class="co">#&gt; 95           5.6         2.7 versicolor</span></span>
-<span><span class="co">#&gt; 96           5.7         3.0 versicolor</span></span>
-<span><span class="co">#&gt; 97           5.7         2.9 versicolor</span></span>
-<span><span class="co">#&gt; 98           6.2         2.9 versicolor</span></span>
-<span><span class="co">#&gt; 99           5.1         2.5 versicolor</span></span>
-<span><span class="co">#&gt; 100          5.7         2.8 versicolor</span></span>
-<span><span class="co">#&gt; 101          6.3         3.3  virginica</span></span>
-<span><span class="co">#&gt; 102          5.8         2.7  virginica</span></span>
-<span><span class="co">#&gt; 103          7.1         3.0  virginica</span></span>
-<span><span class="co">#&gt; 104          6.3         2.9  virginica</span></span>
-<span><span class="co">#&gt; 105          6.5         3.0  virginica</span></span>
-<span><span class="co">#&gt; 106          7.6         3.0  virginica</span></span>
-<span><span class="co">#&gt; 107          4.9         2.5  virginica</span></span>
-<span><span class="co">#&gt; 108          7.3         2.9  virginica</span></span>
-<span><span class="co">#&gt; 109          6.7         2.5  virginica</span></span>
-<span><span class="co">#&gt; 110          7.2         3.6  virginica</span></span>
-<span><span class="co">#&gt; 111          6.5         3.2  virginica</span></span>
-<span><span class="co">#&gt; 112          6.4         2.7  virginica</span></span>
-<span><span class="co">#&gt; 113          6.8         3.0  virginica</span></span>
-<span><span class="co">#&gt; 114          5.7         2.5  virginica</span></span>
-<span><span class="co">#&gt; 115          5.8         2.8  virginica</span></span>
-<span><span class="co">#&gt; 116          6.4         3.2  virginica</span></span>
-<span><span class="co">#&gt; 117          6.5         3.0  virginica</span></span>
-<span><span class="co">#&gt; 118          7.7         3.8  virginica</span></span>
-<span><span class="co">#&gt; 119          7.7         2.6  virginica</span></span>
-<span><span class="co">#&gt; 120          6.0         2.2  virginica</span></span>
-<span><span class="co">#&gt; 121          6.9         3.2  virginica</span></span>
-<span><span class="co">#&gt; 122          5.6         2.8  virginica</span></span>
-<span><span class="co">#&gt; 123          7.7         2.8  virginica</span></span>
-<span><span class="co">#&gt; 124          6.3         2.7  virginica</span></span>
-<span><span class="co">#&gt; 125          6.7         3.3  virginica</span></span>
-<span><span class="co">#&gt; 126          7.2         3.2  virginica</span></span>
-<span><span class="co">#&gt; 127          6.2         2.8  virginica</span></span>
-<span><span class="co">#&gt; 128          6.1         3.0  virginica</span></span>
-<span><span class="co">#&gt; 129          6.4         2.8  virginica</span></span>
-<span><span class="co">#&gt; 130          7.2         3.0  virginica</span></span>
-<span><span class="co">#&gt; 131          7.4         2.8  virginica</span></span>
-<span><span class="co">#&gt; 132          7.9         3.8  virginica</span></span>
-<span><span class="co">#&gt; 133          6.4         2.8  virginica</span></span>
-<span><span class="co">#&gt; 134          6.3         2.8  virginica</span></span>
-<span><span class="co">#&gt; 135          6.1         2.6  virginica</span></span>
-<span><span class="co">#&gt; 136          7.7         3.0  virginica</span></span>
-<span><span class="co">#&gt; 137          6.3         3.4  virginica</span></span>
-<span><span class="co">#&gt; 138          6.4         3.1  virginica</span></span>
-<span><span class="co">#&gt; 139          6.0         3.0  virginica</span></span>
-<span><span class="co">#&gt; 140          6.9         3.1  virginica</span></span>
-<span><span class="co">#&gt; 141          6.7         3.1  virginica</span></span>
-<span><span class="co">#&gt; 142          6.9         3.1  virginica</span></span>
-<span><span class="co">#&gt; 143          5.8         2.7  virginica</span></span>
-<span><span class="co">#&gt; 144          6.8         3.2  virginica</span></span>
-<span><span class="co">#&gt; 145          6.7         3.3  virginica</span></span>
-<span><span class="co">#&gt; 146          6.7         3.0  virginica</span></span>
-<span><span class="co">#&gt; 147          6.3         2.5  virginica</span></span>
-<span><span class="co">#&gt; 148          6.5         3.0  virginica</span></span>
-<span><span class="co">#&gt; 149          6.2         3.4  virginica</span></span>
-<span><span class="co">#&gt; 150          5.9         3.0  virginica</span></span></code></pre></div>
-</div>
-<div id="select-2---except-species" class="section level3" number="5.8.3">
-<h3>
-<span class="header-section-number">5.8.3</span> <code>select</code> 2 - except Species<a class="anchor" aria-label="anchor" href="#select-2---except-species"><i class="fas fa-link"></i></a>
-</h3>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">iris</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">5</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   Sepal.Length Sepal.Width Species</span></span>
+<span><span class="co">#&gt; 1          5.1         3.5  setosa</span></span>
+<span><span class="co">#&gt; 2          4.9         3.0  setosa</span></span>
+<span><span class="co">#&gt; 3          4.7         3.2  setosa</span></span>
+<span><span class="co">#&gt; 4          4.6         3.1  setosa</span></span>
+<span><span class="co">#&gt; 5          5.0         3.6  setosa</span></span>
+<span><span class="co">#&gt; 6          5.4         3.9  setosa</span></span></code></pre></div>
+<p>You can select the first, the second and the fifth columns. If you want to use it, then assign a new name.</p>
 <div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">iris</span>, <span class="op">-</span><span class="va">Species</span><span class="op">)</span></span>
-<span><span class="co">#&gt;     Sepal.Length Sepal.Width Petal.Length Petal.Width</span></span>
-<span><span class="co">#&gt; 1            5.1         3.5          1.4         0.2</span></span>
-<span><span class="co">#&gt; 2            4.9         3.0          1.4         0.2</span></span>
-<span><span class="co">#&gt; 3            4.7         3.2          1.3         0.2</span></span>
-<span><span class="co">#&gt; 4            4.6         3.1          1.5         0.2</span></span>
-<span><span class="co">#&gt; 5            5.0         3.6          1.4         0.2</span></span>
-<span><span class="co">#&gt; 6            5.4         3.9          1.7         0.4</span></span>
-<span><span class="co">#&gt; 7            4.6         3.4          1.4         0.3</span></span>
-<span><span class="co">#&gt; 8            5.0         3.4          1.5         0.2</span></span>
-<span><span class="co">#&gt; 9            4.4         2.9          1.4         0.2</span></span>
-<span><span class="co">#&gt; 10           4.9         3.1          1.5         0.1</span></span>
-<span><span class="co">#&gt; 11           5.4         3.7          1.5         0.2</span></span>
-<span><span class="co">#&gt; 12           4.8         3.4          1.6         0.2</span></span>
-<span><span class="co">#&gt; 13           4.8         3.0          1.4         0.1</span></span>
-<span><span class="co">#&gt; 14           4.3         3.0          1.1         0.1</span></span>
-<span><span class="co">#&gt; 15           5.8         4.0          1.2         0.2</span></span>
-<span><span class="co">#&gt; 16           5.7         4.4          1.5         0.4</span></span>
-<span><span class="co">#&gt; 17           5.4         3.9          1.3         0.4</span></span>
-<span><span class="co">#&gt; 18           5.1         3.5          1.4         0.3</span></span>
-<span><span class="co">#&gt; 19           5.7         3.8          1.7         0.3</span></span>
-<span><span class="co">#&gt; 20           5.1         3.8          1.5         0.3</span></span>
-<span><span class="co">#&gt; 21           5.4         3.4          1.7         0.2</span></span>
-<span><span class="co">#&gt; 22           5.1         3.7          1.5         0.4</span></span>
-<span><span class="co">#&gt; 23           4.6         3.6          1.0         0.2</span></span>
-<span><span class="co">#&gt; 24           5.1         3.3          1.7         0.5</span></span>
-<span><span class="co">#&gt; 25           4.8         3.4          1.9         0.2</span></span>
-<span><span class="co">#&gt; 26           5.0         3.0          1.6         0.2</span></span>
-<span><span class="co">#&gt; 27           5.0         3.4          1.6         0.4</span></span>
-<span><span class="co">#&gt; 28           5.2         3.5          1.5         0.2</span></span>
-<span><span class="co">#&gt; 29           5.2         3.4          1.4         0.2</span></span>
-<span><span class="co">#&gt; 30           4.7         3.2          1.6         0.2</span></span>
-<span><span class="co">#&gt; 31           4.8         3.1          1.6         0.2</span></span>
-<span><span class="co">#&gt; 32           5.4         3.4          1.5         0.4</span></span>
-<span><span class="co">#&gt; 33           5.2         4.1          1.5         0.1</span></span>
-<span><span class="co">#&gt; 34           5.5         4.2          1.4         0.2</span></span>
-<span><span class="co">#&gt; 35           4.9         3.1          1.5         0.2</span></span>
-<span><span class="co">#&gt; 36           5.0         3.2          1.2         0.2</span></span>
-<span><span class="co">#&gt; 37           5.5         3.5          1.3         0.2</span></span>
-<span><span class="co">#&gt; 38           4.9         3.6          1.4         0.1</span></span>
-<span><span class="co">#&gt; 39           4.4         3.0          1.3         0.2</span></span>
-<span><span class="co">#&gt; 40           5.1         3.4          1.5         0.2</span></span>
-<span><span class="co">#&gt; 41           5.0         3.5          1.3         0.3</span></span>
-<span><span class="co">#&gt; 42           4.5         2.3          1.3         0.3</span></span>
-<span><span class="co">#&gt; 43           4.4         3.2          1.3         0.2</span></span>
-<span><span class="co">#&gt; 44           5.0         3.5          1.6         0.6</span></span>
-<span><span class="co">#&gt; 45           5.1         3.8          1.9         0.4</span></span>
-<span><span class="co">#&gt; 46           4.8         3.0          1.4         0.3</span></span>
-<span><span class="co">#&gt; 47           5.1         3.8          1.6         0.2</span></span>
-<span><span class="co">#&gt; 48           4.6         3.2          1.4         0.2</span></span>
-<span><span class="co">#&gt; 49           5.3         3.7          1.5         0.2</span></span>
-<span><span class="co">#&gt; 50           5.0         3.3          1.4         0.2</span></span>
-<span><span class="co">#&gt; 51           7.0         3.2          4.7         1.4</span></span>
-<span><span class="co">#&gt; 52           6.4         3.2          4.5         1.5</span></span>
-<span><span class="co">#&gt; 53           6.9         3.1          4.9         1.5</span></span>
-<span><span class="co">#&gt; 54           5.5         2.3          4.0         1.3</span></span>
-<span><span class="co">#&gt; 55           6.5         2.8          4.6         1.5</span></span>
-<span><span class="co">#&gt; 56           5.7         2.8          4.5         1.3</span></span>
-<span><span class="co">#&gt; 57           6.3         3.3          4.7         1.6</span></span>
-<span><span class="co">#&gt; 58           4.9         2.4          3.3         1.0</span></span>
-<span><span class="co">#&gt; 59           6.6         2.9          4.6         1.3</span></span>
-<span><span class="co">#&gt; 60           5.2         2.7          3.9         1.4</span></span>
-<span><span class="co">#&gt; 61           5.0         2.0          3.5         1.0</span></span>
-<span><span class="co">#&gt; 62           5.9         3.0          4.2         1.5</span></span>
-<span><span class="co">#&gt; 63           6.0         2.2          4.0         1.0</span></span>
-<span><span class="co">#&gt; 64           6.1         2.9          4.7         1.4</span></span>
-<span><span class="co">#&gt; 65           5.6         2.9          3.6         1.3</span></span>
-<span><span class="co">#&gt; 66           6.7         3.1          4.4         1.4</span></span>
-<span><span class="co">#&gt; 67           5.6         3.0          4.5         1.5</span></span>
-<span><span class="co">#&gt; 68           5.8         2.7          4.1         1.0</span></span>
-<span><span class="co">#&gt; 69           6.2         2.2          4.5         1.5</span></span>
-<span><span class="co">#&gt; 70           5.6         2.5          3.9         1.1</span></span>
-<span><span class="co">#&gt; 71           5.9         3.2          4.8         1.8</span></span>
-<span><span class="co">#&gt; 72           6.1         2.8          4.0         1.3</span></span>
-<span><span class="co">#&gt; 73           6.3         2.5          4.9         1.5</span></span>
-<span><span class="co">#&gt; 74           6.1         2.8          4.7         1.2</span></span>
-<span><span class="co">#&gt; 75           6.4         2.9          4.3         1.3</span></span>
-<span><span class="co">#&gt; 76           6.6         3.0          4.4         1.4</span></span>
-<span><span class="co">#&gt; 77           6.8         2.8          4.8         1.4</span></span>
-<span><span class="co">#&gt; 78           6.7         3.0          5.0         1.7</span></span>
-<span><span class="co">#&gt; 79           6.0         2.9          4.5         1.5</span></span>
-<span><span class="co">#&gt; 80           5.7         2.6          3.5         1.0</span></span>
-<span><span class="co">#&gt; 81           5.5         2.4          3.8         1.1</span></span>
-<span><span class="co">#&gt; 82           5.5         2.4          3.7         1.0</span></span>
-<span><span class="co">#&gt; 83           5.8         2.7          3.9         1.2</span></span>
-<span><span class="co">#&gt; 84           6.0         2.7          5.1         1.6</span></span>
-<span><span class="co">#&gt; 85           5.4         3.0          4.5         1.5</span></span>
-<span><span class="co">#&gt; 86           6.0         3.4          4.5         1.6</span></span>
-<span><span class="co">#&gt; 87           6.7         3.1          4.7         1.5</span></span>
-<span><span class="co">#&gt; 88           6.3         2.3          4.4         1.3</span></span>
-<span><span class="co">#&gt; 89           5.6         3.0          4.1         1.3</span></span>
-<span><span class="co">#&gt; 90           5.5         2.5          4.0         1.3</span></span>
-<span><span class="co">#&gt; 91           5.5         2.6          4.4         1.2</span></span>
-<span><span class="co">#&gt; 92           6.1         3.0          4.6         1.4</span></span>
-<span><span class="co">#&gt; 93           5.8         2.6          4.0         1.2</span></span>
-<span><span class="co">#&gt; 94           5.0         2.3          3.3         1.0</span></span>
-<span><span class="co">#&gt; 95           5.6         2.7          4.2         1.3</span></span>
-<span><span class="co">#&gt; 96           5.7         3.0          4.2         1.2</span></span>
-<span><span class="co">#&gt; 97           5.7         2.9          4.2         1.3</span></span>
-<span><span class="co">#&gt; 98           6.2         2.9          4.3         1.3</span></span>
-<span><span class="co">#&gt; 99           5.1         2.5          3.0         1.1</span></span>
-<span><span class="co">#&gt; 100          5.7         2.8          4.1         1.3</span></span>
-<span><span class="co">#&gt; 101          6.3         3.3          6.0         2.5</span></span>
-<span><span class="co">#&gt; 102          5.8         2.7          5.1         1.9</span></span>
-<span><span class="co">#&gt; 103          7.1         3.0          5.9         2.1</span></span>
-<span><span class="co">#&gt; 104          6.3         2.9          5.6         1.8</span></span>
-<span><span class="co">#&gt; 105          6.5         3.0          5.8         2.2</span></span>
-<span><span class="co">#&gt; 106          7.6         3.0          6.6         2.1</span></span>
-<span><span class="co">#&gt; 107          4.9         2.5          4.5         1.7</span></span>
-<span><span class="co">#&gt; 108          7.3         2.9          6.3         1.8</span></span>
-<span><span class="co">#&gt; 109          6.7         2.5          5.8         1.8</span></span>
-<span><span class="co">#&gt; 110          7.2         3.6          6.1         2.5</span></span>
-<span><span class="co">#&gt; 111          6.5         3.2          5.1         2.0</span></span>
-<span><span class="co">#&gt; 112          6.4         2.7          5.3         1.9</span></span>
-<span><span class="co">#&gt; 113          6.8         3.0          5.5         2.1</span></span>
-<span><span class="co">#&gt; 114          5.7         2.5          5.0         2.0</span></span>
-<span><span class="co">#&gt; 115          5.8         2.8          5.1         2.4</span></span>
-<span><span class="co">#&gt; 116          6.4         3.2          5.3         2.3</span></span>
-<span><span class="co">#&gt; 117          6.5         3.0          5.5         1.8</span></span>
-<span><span class="co">#&gt; 118          7.7         3.8          6.7         2.2</span></span>
-<span><span class="co">#&gt; 119          7.7         2.6          6.9         2.3</span></span>
-<span><span class="co">#&gt; 120          6.0         2.2          5.0         1.5</span></span>
-<span><span class="co">#&gt; 121          6.9         3.2          5.7         2.3</span></span>
-<span><span class="co">#&gt; 122          5.6         2.8          4.9         2.0</span></span>
-<span><span class="co">#&gt; 123          7.7         2.8          6.7         2.0</span></span>
-<span><span class="co">#&gt; 124          6.3         2.7          4.9         1.8</span></span>
-<span><span class="co">#&gt; 125          6.7         3.3          5.7         2.1</span></span>
-<span><span class="co">#&gt; 126          7.2         3.2          6.0         1.8</span></span>
-<span><span class="co">#&gt; 127          6.2         2.8          4.8         1.8</span></span>
-<span><span class="co">#&gt; 128          6.1         3.0          4.9         1.8</span></span>
-<span><span class="co">#&gt; 129          6.4         2.8          5.6         2.1</span></span>
-<span><span class="co">#&gt; 130          7.2         3.0          5.8         1.6</span></span>
-<span><span class="co">#&gt; 131          7.4         2.8          6.1         1.9</span></span>
-<span><span class="co">#&gt; 132          7.9         3.8          6.4         2.0</span></span>
-<span><span class="co">#&gt; 133          6.4         2.8          5.6         2.2</span></span>
-<span><span class="co">#&gt; 134          6.3         2.8          5.1         1.5</span></span>
-<span><span class="co">#&gt; 135          6.1         2.6          5.6         1.4</span></span>
-<span><span class="co">#&gt; 136          7.7         3.0          6.1         2.3</span></span>
-<span><span class="co">#&gt; 137          6.3         3.4          5.6         2.4</span></span>
-<span><span class="co">#&gt; 138          6.4         3.1          5.5         1.8</span></span>
-<span><span class="co">#&gt; 139          6.0         3.0          4.8         1.8</span></span>
-<span><span class="co">#&gt; 140          6.9         3.1          5.4         2.1</span></span>
-<span><span class="co">#&gt; 141          6.7         3.1          5.6         2.4</span></span>
-<span><span class="co">#&gt; 142          6.9         3.1          5.1         2.3</span></span>
-<span><span class="co">#&gt; 143          5.8         2.7          5.1         1.9</span></span>
-<span><span class="co">#&gt; 144          6.8         3.2          5.9         2.3</span></span>
-<span><span class="co">#&gt; 145          6.7         3.3          5.7         2.5</span></span>
-<span><span class="co">#&gt; 146          6.7         3.0          5.2         2.3</span></span>
-<span><span class="co">#&gt; 147          6.3         2.5          5.0         1.9</span></span>
-<span><span class="co">#&gt; 148          6.5         3.0          5.2         2.0</span></span>
-<span><span class="co">#&gt; 149          6.2         3.4          5.4         2.3</span></span>
-<span><span class="co">#&gt; 150          5.9         3.0          5.1         1.8</span></span></code></pre></div>
-</div>
-<div id="select-3---change-column-names" class="section level3" number="5.8.4">
-<h3>
-<span class="header-section-number">5.8.4</span> <code>select</code> 3 - change column names<a class="anchor" aria-label="anchor" href="#select-3---change-column-names"><i class="fas fa-link"></i></a>
-</h3>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span></span>
+<span><span class="co">#&gt; 1          5.1         3.5          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 2          4.9         3.0          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 3          4.7         3.2          1.3         0.2  setosa</span></span>
+<span><span class="co">#&gt; 4          4.6         3.1          1.5         0.2  setosa</span></span>
+<span><span class="co">#&gt; 5          5.0         3.6          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 6          5.4         3.9          1.7         0.4  setosa</span></span></code></pre></div>
 <div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">iris</span>, sl <span class="op">=</span> <span class="va">Sepal.Length</span>, sw <span class="op">=</span> <span class="va">Sepal.Width</span>, sp <span class="op">=</span> <span class="va">Species</span><span class="op">)</span></span>
-<span><span class="co">#&gt;      sl  sw         sp</span></span>
-<span><span class="co">#&gt; 1   5.1 3.5     setosa</span></span>
-<span><span class="co">#&gt; 2   4.9 3.0     setosa</span></span>
-<span><span class="co">#&gt; 3   4.7 3.2     setosa</span></span>
-<span><span class="co">#&gt; 4   4.6 3.1     setosa</span></span>
-<span><span class="co">#&gt; 5   5.0 3.6     setosa</span></span>
-<span><span class="co">#&gt; 6   5.4 3.9     setosa</span></span>
-<span><span class="co">#&gt; 7   4.6 3.4     setosa</span></span>
-<span><span class="co">#&gt; 8   5.0 3.4     setosa</span></span>
-<span><span class="co">#&gt; 9   4.4 2.9     setosa</span></span>
-<span><span class="co">#&gt; 10  4.9 3.1     setosa</span></span>
-<span><span class="co">#&gt; 11  5.4 3.7     setosa</span></span>
-<span><span class="co">#&gt; 12  4.8 3.4     setosa</span></span>
-<span><span class="co">#&gt; 13  4.8 3.0     setosa</span></span>
-<span><span class="co">#&gt; 14  4.3 3.0     setosa</span></span>
-<span><span class="co">#&gt; 15  5.8 4.0     setosa</span></span>
-<span><span class="co">#&gt; 16  5.7 4.4     setosa</span></span>
-<span><span class="co">#&gt; 17  5.4 3.9     setosa</span></span>
-<span><span class="co">#&gt; 18  5.1 3.5     setosa</span></span>
-<span><span class="co">#&gt; 19  5.7 3.8     setosa</span></span>
-<span><span class="co">#&gt; 20  5.1 3.8     setosa</span></span>
-<span><span class="co">#&gt; 21  5.4 3.4     setosa</span></span>
-<span><span class="co">#&gt; 22  5.1 3.7     setosa</span></span>
-<span><span class="co">#&gt; 23  4.6 3.6     setosa</span></span>
-<span><span class="co">#&gt; 24  5.1 3.3     setosa</span></span>
-<span><span class="co">#&gt; 25  4.8 3.4     setosa</span></span>
-<span><span class="co">#&gt; 26  5.0 3.0     setosa</span></span>
-<span><span class="co">#&gt; 27  5.0 3.4     setosa</span></span>
-<span><span class="co">#&gt; 28  5.2 3.5     setosa</span></span>
-<span><span class="co">#&gt; 29  5.2 3.4     setosa</span></span>
-<span><span class="co">#&gt; 30  4.7 3.2     setosa</span></span>
-<span><span class="co">#&gt; 31  4.8 3.1     setosa</span></span>
-<span><span class="co">#&gt; 32  5.4 3.4     setosa</span></span>
-<span><span class="co">#&gt; 33  5.2 4.1     setosa</span></span>
-<span><span class="co">#&gt; 34  5.5 4.2     setosa</span></span>
-<span><span class="co">#&gt; 35  4.9 3.1     setosa</span></span>
-<span><span class="co">#&gt; 36  5.0 3.2     setosa</span></span>
-<span><span class="co">#&gt; 37  5.5 3.5     setosa</span></span>
-<span><span class="co">#&gt; 38  4.9 3.6     setosa</span></span>
-<span><span class="co">#&gt; 39  4.4 3.0     setosa</span></span>
-<span><span class="co">#&gt; 40  5.1 3.4     setosa</span></span>
-<span><span class="co">#&gt; 41  5.0 3.5     setosa</span></span>
-<span><span class="co">#&gt; 42  4.5 2.3     setosa</span></span>
-<span><span class="co">#&gt; 43  4.4 3.2     setosa</span></span>
-<span><span class="co">#&gt; 44  5.0 3.5     setosa</span></span>
-<span><span class="co">#&gt; 45  5.1 3.8     setosa</span></span>
-<span><span class="co">#&gt; 46  4.8 3.0     setosa</span></span>
-<span><span class="co">#&gt; 47  5.1 3.8     setosa</span></span>
-<span><span class="co">#&gt; 48  4.6 3.2     setosa</span></span>
-<span><span class="co">#&gt; 49  5.3 3.7     setosa</span></span>
-<span><span class="co">#&gt; 50  5.0 3.3     setosa</span></span>
-<span><span class="co">#&gt; 51  7.0 3.2 versicolor</span></span>
-<span><span class="co">#&gt; 52  6.4 3.2 versicolor</span></span>
-<span><span class="co">#&gt; 53  6.9 3.1 versicolor</span></span>
-<span><span class="co">#&gt; 54  5.5 2.3 versicolor</span></span>
-<span><span class="co">#&gt; 55  6.5 2.8 versicolor</span></span>
-<span><span class="co">#&gt; 56  5.7 2.8 versicolor</span></span>
-<span><span class="co">#&gt; 57  6.3 3.3 versicolor</span></span>
-<span><span class="co">#&gt; 58  4.9 2.4 versicolor</span></span>
-<span><span class="co">#&gt; 59  6.6 2.9 versicolor</span></span>
-<span><span class="co">#&gt; 60  5.2 2.7 versicolor</span></span>
-<span><span class="co">#&gt; 61  5.0 2.0 versicolor</span></span>
-<span><span class="co">#&gt; 62  5.9 3.0 versicolor</span></span>
-<span><span class="co">#&gt; 63  6.0 2.2 versicolor</span></span>
-<span><span class="co">#&gt; 64  6.1 2.9 versicolor</span></span>
-<span><span class="co">#&gt; 65  5.6 2.9 versicolor</span></span>
-<span><span class="co">#&gt; 66  6.7 3.1 versicolor</span></span>
-<span><span class="co">#&gt; 67  5.6 3.0 versicolor</span></span>
-<span><span class="co">#&gt; 68  5.8 2.7 versicolor</span></span>
-<span><span class="co">#&gt; 69  6.2 2.2 versicolor</span></span>
-<span><span class="co">#&gt; 70  5.6 2.5 versicolor</span></span>
-<span><span class="co">#&gt; 71  5.9 3.2 versicolor</span></span>
-<span><span class="co">#&gt; 72  6.1 2.8 versicolor</span></span>
-<span><span class="co">#&gt; 73  6.3 2.5 versicolor</span></span>
-<span><span class="co">#&gt; 74  6.1 2.8 versicolor</span></span>
-<span><span class="co">#&gt; 75  6.4 2.9 versicolor</span></span>
-<span><span class="co">#&gt; 76  6.6 3.0 versicolor</span></span>
-<span><span class="co">#&gt; 77  6.8 2.8 versicolor</span></span>
-<span><span class="co">#&gt; 78  6.7 3.0 versicolor</span></span>
-<span><span class="co">#&gt; 79  6.0 2.9 versicolor</span></span>
-<span><span class="co">#&gt; 80  5.7 2.6 versicolor</span></span>
-<span><span class="co">#&gt; 81  5.5 2.4 versicolor</span></span>
-<span><span class="co">#&gt; 82  5.5 2.4 versicolor</span></span>
-<span><span class="co">#&gt; 83  5.8 2.7 versicolor</span></span>
-<span><span class="co">#&gt; 84  6.0 2.7 versicolor</span></span>
-<span><span class="co">#&gt; 85  5.4 3.0 versicolor</span></span>
-<span><span class="co">#&gt; 86  6.0 3.4 versicolor</span></span>
-<span><span class="co">#&gt; 87  6.7 3.1 versicolor</span></span>
-<span><span class="co">#&gt; 88  6.3 2.3 versicolor</span></span>
-<span><span class="co">#&gt; 89  5.6 3.0 versicolor</span></span>
-<span><span class="co">#&gt; 90  5.5 2.5 versicolor</span></span>
-<span><span class="co">#&gt; 91  5.5 2.6 versicolor</span></span>
-<span><span class="co">#&gt; 92  6.1 3.0 versicolor</span></span>
-<span><span class="co">#&gt; 93  5.8 2.6 versicolor</span></span>
-<span><span class="co">#&gt; 94  5.0 2.3 versicolor</span></span>
-<span><span class="co">#&gt; 95  5.6 2.7 versicolor</span></span>
-<span><span class="co">#&gt; 96  5.7 3.0 versicolor</span></span>
-<span><span class="co">#&gt; 97  5.7 2.9 versicolor</span></span>
-<span><span class="co">#&gt; 98  6.2 2.9 versicolor</span></span>
-<span><span class="co">#&gt; 99  5.1 2.5 versicolor</span></span>
-<span><span class="co">#&gt; 100 5.7 2.8 versicolor</span></span>
-<span><span class="co">#&gt; 101 6.3 3.3  virginica</span></span>
-<span><span class="co">#&gt; 102 5.8 2.7  virginica</span></span>
-<span><span class="co">#&gt; 103 7.1 3.0  virginica</span></span>
-<span><span class="co">#&gt; 104 6.3 2.9  virginica</span></span>
-<span><span class="co">#&gt; 105 6.5 3.0  virginica</span></span>
-<span><span class="co">#&gt; 106 7.6 3.0  virginica</span></span>
-<span><span class="co">#&gt; 107 4.9 2.5  virginica</span></span>
-<span><span class="co">#&gt; 108 7.3 2.9  virginica</span></span>
-<span><span class="co">#&gt; 109 6.7 2.5  virginica</span></span>
-<span><span class="co">#&gt; 110 7.2 3.6  virginica</span></span>
-<span><span class="co">#&gt; 111 6.5 3.2  virginica</span></span>
-<span><span class="co">#&gt; 112 6.4 2.7  virginica</span></span>
-<span><span class="co">#&gt; 113 6.8 3.0  virginica</span></span>
-<span><span class="co">#&gt; 114 5.7 2.5  virginica</span></span>
-<span><span class="co">#&gt; 115 5.8 2.8  virginica</span></span>
-<span><span class="co">#&gt; 116 6.4 3.2  virginica</span></span>
-<span><span class="co">#&gt; 117 6.5 3.0  virginica</span></span>
-<span><span class="co">#&gt; 118 7.7 3.8  virginica</span></span>
-<span><span class="co">#&gt; 119 7.7 2.6  virginica</span></span>
-<span><span class="co">#&gt; 120 6.0 2.2  virginica</span></span>
-<span><span class="co">#&gt; 121 6.9 3.2  virginica</span></span>
-<span><span class="co">#&gt; 122 5.6 2.8  virginica</span></span>
-<span><span class="co">#&gt; 123 7.7 2.8  virginica</span></span>
-<span><span class="co">#&gt; 124 6.3 2.7  virginica</span></span>
-<span><span class="co">#&gt; 125 6.7 3.3  virginica</span></span>
-<span><span class="co">#&gt; 126 7.2 3.2  virginica</span></span>
-<span><span class="co">#&gt; 127 6.2 2.8  virginica</span></span>
-<span><span class="co">#&gt; 128 6.1 3.0  virginica</span></span>
-<span><span class="co">#&gt; 129 6.4 2.8  virginica</span></span>
-<span><span class="co">#&gt; 130 7.2 3.0  virginica</span></span>
-<span><span class="co">#&gt; 131 7.4 2.8  virginica</span></span>
-<span><span class="co">#&gt; 132 7.9 3.8  virginica</span></span>
-<span><span class="co">#&gt; 133 6.4 2.8  virginica</span></span>
-<span><span class="co">#&gt; 134 6.3 2.8  virginica</span></span>
-<span><span class="co">#&gt; 135 6.1 2.6  virginica</span></span>
-<span><span class="co">#&gt; 136 7.7 3.0  virginica</span></span>
-<span><span class="co">#&gt; 137 6.3 3.4  virginica</span></span>
-<span><span class="co">#&gt; 138 6.4 3.1  virginica</span></span>
-<span><span class="co">#&gt; 139 6.0 3.0  virginica</span></span>
-<span><span class="co">#&gt; 140 6.9 3.1  virginica</span></span>
-<span><span class="co">#&gt; 141 6.7 3.1  virginica</span></span>
-<span><span class="co">#&gt; 142 6.9 3.1  virginica</span></span>
-<span><span class="co">#&gt; 143 5.8 2.7  virginica</span></span>
-<span><span class="co">#&gt; 144 6.8 3.2  virginica</span></span>
-<span><span class="co">#&gt; 145 6.7 3.3  virginica</span></span>
-<span><span class="co">#&gt; 146 6.7 3.0  virginica</span></span>
-<span><span class="co">#&gt; 147 6.3 2.5  virginica</span></span>
-<span><span class="co">#&gt; 148 6.5 3.0  virginica</span></span>
-<span><span class="co">#&gt; 149 6.2 3.4  virginica</span></span>
-<span><span class="co">#&gt; 150 5.9 3.0  virginica</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">df_iris125</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">iris</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">5</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">df_iris125</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   Sepal.Length Sepal.Width Species</span></span>
+<span><span class="co">#&gt; 1          5.1         3.5  setosa</span></span>
+<span><span class="co">#&gt; 2          4.9         3.0  setosa</span></span>
+<span><span class="co">#&gt; 3          4.7         3.2  setosa</span></span>
+<span><span class="co">#&gt; 4          4.6         3.1  setosa</span></span>
+<span><span class="co">#&gt; 5          5.0         3.6  setosa</span></span>
+<span><span class="co">#&gt; 6          5.4         3.9  setosa</span></span></code></pre></div>
 </div>
-<div id="filter---by-names" class="section level3" number="5.8.5">
+<div id="select-1-using-pipe" class="section level3" number="5.8.3">
 <h3>
-<span class="header-section-number">5.8.5</span> <code>filter</code> - by names<a class="anchor" aria-label="anchor" href="#filter---by-names"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8.3</span> <code>select</code> 1 using pipe<a class="anchor" aria-label="anchor" href="#select-1-using-pipe"><i class="fas fa-link"></i></a>
 </h3>
+<p>In the previous example, we used <code>head(select(iris, c(1,2,5)))</code>, <code>head</code> comes first because we apply <code>head</code> to the result of <code>select(iris, c(1,2,5))</code>. In order to apply functions in a sequencial order, we can use pipe command. You can get the same result by the following.</p>
 <div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">iris</span>, <span class="va">Species</span> <span class="op">==</span> <span class="st">"virginica"</span><span class="op">)</span></span>
-<span><span class="co">#&gt;    Sepal.Length Sepal.Width Petal.Length Petal.Width</span></span>
-<span><span class="co">#&gt; 1           6.3         3.3          6.0         2.5</span></span>
-<span><span class="co">#&gt; 2           5.8         2.7          5.1         1.9</span></span>
-<span><span class="co">#&gt; 3           7.1         3.0          5.9         2.1</span></span>
-<span><span class="co">#&gt; 4           6.3         2.9          5.6         1.8</span></span>
-<span><span class="co">#&gt; 5           6.5         3.0          5.8         2.2</span></span>
-<span><span class="co">#&gt; 6           7.6         3.0          6.6         2.1</span></span>
-<span><span class="co">#&gt; 7           4.9         2.5          4.5         1.7</span></span>
-<span><span class="co">#&gt; 8           7.3         2.9          6.3         1.8</span></span>
-<span><span class="co">#&gt; 9           6.7         2.5          5.8         1.8</span></span>
-<span><span class="co">#&gt; 10          7.2         3.6          6.1         2.5</span></span>
-<span><span class="co">#&gt; 11          6.5         3.2          5.1         2.0</span></span>
-<span><span class="co">#&gt; 12          6.4         2.7          5.3         1.9</span></span>
-<span><span class="co">#&gt; 13          6.8         3.0          5.5         2.1</span></span>
-<span><span class="co">#&gt; 14          5.7         2.5          5.0         2.0</span></span>
-<span><span class="co">#&gt; 15          5.8         2.8          5.1         2.4</span></span>
-<span><span class="co">#&gt; 16          6.4         3.2          5.3         2.3</span></span>
-<span><span class="co">#&gt; 17          6.5         3.0          5.5         1.8</span></span>
-<span><span class="co">#&gt; 18          7.7         3.8          6.7         2.2</span></span>
-<span><span class="co">#&gt; 19          7.7         2.6          6.9         2.3</span></span>
-<span><span class="co">#&gt; 20          6.0         2.2          5.0         1.5</span></span>
-<span><span class="co">#&gt; 21          6.9         3.2          5.7         2.3</span></span>
-<span><span class="co">#&gt; 22          5.6         2.8          4.9         2.0</span></span>
-<span><span class="co">#&gt; 23          7.7         2.8          6.7         2.0</span></span>
-<span><span class="co">#&gt; 24          6.3         2.7          4.9         1.8</span></span>
-<span><span class="co">#&gt; 25          6.7         3.3          5.7         2.1</span></span>
-<span><span class="co">#&gt; 26          7.2         3.2          6.0         1.8</span></span>
-<span><span class="co">#&gt; 27          6.2         2.8          4.8         1.8</span></span>
-<span><span class="co">#&gt; 28          6.1         3.0          4.9         1.8</span></span>
-<span><span class="co">#&gt; 29          6.4         2.8          5.6         2.1</span></span>
-<span><span class="co">#&gt; 30          7.2         3.0          5.8         1.6</span></span>
-<span><span class="co">#&gt; 31          7.4         2.8          6.1         1.9</span></span>
-<span><span class="co">#&gt; 32          7.9         3.8          6.4         2.0</span></span>
-<span><span class="co">#&gt; 33          6.4         2.8          5.6         2.2</span></span>
-<span><span class="co">#&gt; 34          6.3         2.8          5.1         1.5</span></span>
-<span><span class="co">#&gt; 35          6.1         2.6          5.6         1.4</span></span>
-<span><span class="co">#&gt; 36          7.7         3.0          6.1         2.3</span></span>
-<span><span class="co">#&gt; 37          6.3         3.4          5.6         2.4</span></span>
-<span><span class="co">#&gt; 38          6.4         3.1          5.5         1.8</span></span>
-<span><span class="co">#&gt; 39          6.0         3.0          4.8         1.8</span></span>
-<span><span class="co">#&gt; 40          6.9         3.1          5.4         2.1</span></span>
-<span><span class="co">#&gt; 41          6.7         3.1          5.6         2.4</span></span>
-<span><span class="co">#&gt; 42          6.9         3.1          5.1         2.3</span></span>
-<span><span class="co">#&gt; 43          5.8         2.7          5.1         1.9</span></span>
-<span><span class="co">#&gt; 44          6.8         3.2          5.9         2.3</span></span>
-<span><span class="co">#&gt; 45          6.7         3.3          5.7         2.5</span></span>
-<span><span class="co">#&gt; 46          6.7         3.0          5.2         2.3</span></span>
-<span><span class="co">#&gt; 47          6.3         2.5          5.0         1.9</span></span>
-<span><span class="co">#&gt; 48          6.5         3.0          5.2         2.0</span></span>
-<span><span class="co">#&gt; 49          6.2         3.4          5.4         2.3</span></span>
-<span><span class="co">#&gt; 50          5.9         3.0          5.1         1.8</span></span>
-<span><span class="co">#&gt;      Species</span></span>
-<span><span class="co">#&gt; 1  virginica</span></span>
-<span><span class="co">#&gt; 2  virginica</span></span>
-<span><span class="co">#&gt; 3  virginica</span></span>
-<span><span class="co">#&gt; 4  virginica</span></span>
-<span><span class="co">#&gt; 5  virginica</span></span>
-<span><span class="co">#&gt; 6  virginica</span></span>
-<span><span class="co">#&gt; 7  virginica</span></span>
-<span><span class="co">#&gt; 8  virginica</span></span>
-<span><span class="co">#&gt; 9  virginica</span></span>
-<span><span class="co">#&gt; 10 virginica</span></span>
-<span><span class="co">#&gt; 11 virginica</span></span>
-<span><span class="co">#&gt; 12 virginica</span></span>
-<span><span class="co">#&gt; 13 virginica</span></span>
-<span><span class="co">#&gt; 14 virginica</span></span>
-<span><span class="co">#&gt; 15 virginica</span></span>
-<span><span class="co">#&gt; 16 virginica</span></span>
-<span><span class="co">#&gt; 17 virginica</span></span>
-<span><span class="co">#&gt; 18 virginica</span></span>
-<span><span class="co">#&gt; 19 virginica</span></span>
-<span><span class="co">#&gt; 20 virginica</span></span>
-<span><span class="co">#&gt; 21 virginica</span></span>
-<span><span class="co">#&gt; 22 virginica</span></span>
-<span><span class="co">#&gt; 23 virginica</span></span>
-<span><span class="co">#&gt; 24 virginica</span></span>
-<span><span class="co">#&gt; 25 virginica</span></span>
-<span><span class="co">#&gt; 26 virginica</span></span>
-<span><span class="co">#&gt; 27 virginica</span></span>
-<span><span class="co">#&gt; 28 virginica</span></span>
-<span><span class="co">#&gt; 29 virginica</span></span>
-<span><span class="co">#&gt; 30 virginica</span></span>
-<span><span class="co">#&gt; 31 virginica</span></span>
-<span><span class="co">#&gt; 32 virginica</span></span>
-<span><span class="co">#&gt; 33 virginica</span></span>
-<span><span class="co">#&gt; 34 virginica</span></span>
-<span><span class="co">#&gt; 35 virginica</span></span>
-<span><span class="co">#&gt; 36 virginica</span></span>
-<span><span class="co">#&gt; 37 virginica</span></span>
-<span><span class="co">#&gt; 38 virginica</span></span>
-<span><span class="co">#&gt; 39 virginica</span></span>
-<span><span class="co">#&gt; 40 virginica</span></span>
-<span><span class="co">#&gt; 41 virginica</span></span>
-<span><span class="co">#&gt; 42 virginica</span></span>
-<span><span class="co">#&gt; 43 virginica</span></span>
-<span><span class="co">#&gt; 44 virginica</span></span>
-<span><span class="co">#&gt; 45 virginica</span></span>
-<span><span class="co">#&gt; 46 virginica</span></span>
-<span><span class="co">#&gt; 47 virginica</span></span>
-<span><span class="co">#&gt; 48 virginica</span></span>
-<span><span class="co">#&gt; 49 virginica</span></span>
-<span><span class="co">#&gt; 50 virginica</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">iris</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">5</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   Sepal.Length Sepal.Width Species</span></span>
+<span><span class="co">#&gt; 1          5.1         3.5  setosa</span></span>
+<span><span class="co">#&gt; 2          4.9         3.0  setosa</span></span>
+<span><span class="co">#&gt; 3          4.7         3.2  setosa</span></span>
+<span><span class="co">#&gt; 4          4.6         3.1  setosa</span></span>
+<span><span class="co">#&gt; 5          5.0         3.6  setosa</span></span>
+<span><span class="co">#&gt; 6          5.4         3.9  setosa</span></span></code></pre></div>
+<p>All <code>tidyverse</code> functions are designed so that the first argument, i.e., the entry, is the data. So using pipe, <code>iris</code> is assumed to be the first entry of the <code>select</code> function, and <code>select(iris, c(1,2,5))</code> is the first entry of the head function.</p>
+<p>In the following, we use pipes.</p>
 </div>
-<div id="arrange---ascending-and-descending-order" class="section level3" number="5.8.6">
+<div id="select-2---except-species" class="section level3" number="5.8.4">
 <h3>
-<span class="header-section-number">5.8.6</span> <code>arrange</code> - ascending and descending order<a class="anchor" aria-label="anchor" href="#arrange---ascending-and-descending-order"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8.4</span> <code>select</code> 2 - except Species<a class="anchor" aria-label="anchor" href="#select-2---except-species"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">iris</span>, <span class="va">Sepal.Length</span>, <span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">Sepal.Width</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt;     Sepal.Length Sepal.Width Petal.Length Petal.Width</span></span>
-<span><span class="co">#&gt; 1            4.3         3.0          1.1         0.1</span></span>
-<span><span class="co">#&gt; 2            4.4         3.2          1.3         0.2</span></span>
-<span><span class="co">#&gt; 3            4.4         3.0          1.3         0.2</span></span>
-<span><span class="co">#&gt; 4            4.4         2.9          1.4         0.2</span></span>
-<span><span class="co">#&gt; 5            4.5         2.3          1.3         0.3</span></span>
-<span><span class="co">#&gt; 6            4.6         3.6          1.0         0.2</span></span>
-<span><span class="co">#&gt; 7            4.6         3.4          1.4         0.3</span></span>
-<span><span class="co">#&gt; 8            4.6         3.2          1.4         0.2</span></span>
-<span><span class="co">#&gt; 9            4.6         3.1          1.5         0.2</span></span>
-<span><span class="co">#&gt; 10           4.7         3.2          1.3         0.2</span></span>
-<span><span class="co">#&gt; 11           4.7         3.2          1.6         0.2</span></span>
-<span><span class="co">#&gt; 12           4.8         3.4          1.6         0.2</span></span>
-<span><span class="co">#&gt; 13           4.8         3.4          1.9         0.2</span></span>
-<span><span class="co">#&gt; 14           4.8         3.1          1.6         0.2</span></span>
-<span><span class="co">#&gt; 15           4.8         3.0          1.4         0.1</span></span>
-<span><span class="co">#&gt; 16           4.8         3.0          1.4         0.3</span></span>
-<span><span class="co">#&gt; 17           4.9         3.6          1.4         0.1</span></span>
-<span><span class="co">#&gt; 18           4.9         3.1          1.5         0.1</span></span>
-<span><span class="co">#&gt; 19           4.9         3.1          1.5         0.2</span></span>
-<span><span class="co">#&gt; 20           4.9         3.0          1.4         0.2</span></span>
-<span><span class="co">#&gt; 21           4.9         2.5          4.5         1.7</span></span>
-<span><span class="co">#&gt; 22           4.9         2.4          3.3         1.0</span></span>
-<span><span class="co">#&gt; 23           5.0         3.6          1.4         0.2</span></span>
-<span><span class="co">#&gt; 24           5.0         3.5          1.3         0.3</span></span>
-<span><span class="co">#&gt; 25           5.0         3.5          1.6         0.6</span></span>
-<span><span class="co">#&gt; 26           5.0         3.4          1.5         0.2</span></span>
-<span><span class="co">#&gt; 27           5.0         3.4          1.6         0.4</span></span>
-<span><span class="co">#&gt; 28           5.0         3.3          1.4         0.2</span></span>
-<span><span class="co">#&gt; 29           5.0         3.2          1.2         0.2</span></span>
-<span><span class="co">#&gt; 30           5.0         3.0          1.6         0.2</span></span>
-<span><span class="co">#&gt; 31           5.0         2.3          3.3         1.0</span></span>
-<span><span class="co">#&gt; 32           5.0         2.0          3.5         1.0</span></span>
-<span><span class="co">#&gt; 33           5.1         3.8          1.5         0.3</span></span>
-<span><span class="co">#&gt; 34           5.1         3.8          1.9         0.4</span></span>
-<span><span class="co">#&gt; 35           5.1         3.8          1.6         0.2</span></span>
-<span><span class="co">#&gt; 36           5.1         3.7          1.5         0.4</span></span>
-<span><span class="co">#&gt; 37           5.1         3.5          1.4         0.2</span></span>
-<span><span class="co">#&gt; 38           5.1         3.5          1.4         0.3</span></span>
-<span><span class="co">#&gt; 39           5.1         3.4          1.5         0.2</span></span>
-<span><span class="co">#&gt; 40           5.1         3.3          1.7         0.5</span></span>
-<span><span class="co">#&gt; 41           5.1         2.5          3.0         1.1</span></span>
-<span><span class="co">#&gt; 42           5.2         4.1          1.5         0.1</span></span>
-<span><span class="co">#&gt; 43           5.2         3.5          1.5         0.2</span></span>
-<span><span class="co">#&gt; 44           5.2         3.4          1.4         0.2</span></span>
-<span><span class="co">#&gt; 45           5.2         2.7          3.9         1.4</span></span>
-<span><span class="co">#&gt; 46           5.3         3.7          1.5         0.2</span></span>
-<span><span class="co">#&gt; 47           5.4         3.9          1.7         0.4</span></span>
-<span><span class="co">#&gt; 48           5.4         3.9          1.3         0.4</span></span>
-<span><span class="co">#&gt; 49           5.4         3.7          1.5         0.2</span></span>
-<span><span class="co">#&gt; 50           5.4         3.4          1.7         0.2</span></span>
-<span><span class="co">#&gt; 51           5.4         3.4          1.5         0.4</span></span>
-<span><span class="co">#&gt; 52           5.4         3.0          4.5         1.5</span></span>
-<span><span class="co">#&gt; 53           5.5         4.2          1.4         0.2</span></span>
-<span><span class="co">#&gt; 54           5.5         3.5          1.3         0.2</span></span>
-<span><span class="co">#&gt; 55           5.5         2.6          4.4         1.2</span></span>
-<span><span class="co">#&gt; 56           5.5         2.5          4.0         1.3</span></span>
-<span><span class="co">#&gt; 57           5.5         2.4          3.8         1.1</span></span>
-<span><span class="co">#&gt; 58           5.5         2.4          3.7         1.0</span></span>
-<span><span class="co">#&gt; 59           5.5         2.3          4.0         1.3</span></span>
-<span><span class="co">#&gt; 60           5.6         3.0          4.5         1.5</span></span>
-<span><span class="co">#&gt; 61           5.6         3.0          4.1         1.3</span></span>
-<span><span class="co">#&gt; 62           5.6         2.9          3.6         1.3</span></span>
-<span><span class="co">#&gt; 63           5.6         2.8          4.9         2.0</span></span>
-<span><span class="co">#&gt; 64           5.6         2.7          4.2         1.3</span></span>
-<span><span class="co">#&gt; 65           5.6         2.5          3.9         1.1</span></span>
-<span><span class="co">#&gt; 66           5.7         4.4          1.5         0.4</span></span>
-<span><span class="co">#&gt; 67           5.7         3.8          1.7         0.3</span></span>
-<span><span class="co">#&gt; 68           5.7         3.0          4.2         1.2</span></span>
-<span><span class="co">#&gt; 69           5.7         2.9          4.2         1.3</span></span>
-<span><span class="co">#&gt; 70           5.7         2.8          4.5         1.3</span></span>
-<span><span class="co">#&gt; 71           5.7         2.8          4.1         1.3</span></span>
-<span><span class="co">#&gt; 72           5.7         2.6          3.5         1.0</span></span>
-<span><span class="co">#&gt; 73           5.7         2.5          5.0         2.0</span></span>
-<span><span class="co">#&gt; 74           5.8         4.0          1.2         0.2</span></span>
-<span><span class="co">#&gt; 75           5.8         2.8          5.1         2.4</span></span>
-<span><span class="co">#&gt; 76           5.8         2.7          4.1         1.0</span></span>
-<span><span class="co">#&gt; 77           5.8         2.7          3.9         1.2</span></span>
-<span><span class="co">#&gt; 78           5.8         2.7          5.1         1.9</span></span>
-<span><span class="co">#&gt; 79           5.8         2.7          5.1         1.9</span></span>
-<span><span class="co">#&gt; 80           5.8         2.6          4.0         1.2</span></span>
-<span><span class="co">#&gt; 81           5.9         3.2          4.8         1.8</span></span>
-<span><span class="co">#&gt; 82           5.9         3.0          4.2         1.5</span></span>
-<span><span class="co">#&gt; 83           5.9         3.0          5.1         1.8</span></span>
-<span><span class="co">#&gt; 84           6.0         3.4          4.5         1.6</span></span>
-<span><span class="co">#&gt; 85           6.0         3.0          4.8         1.8</span></span>
-<span><span class="co">#&gt; 86           6.0         2.9          4.5         1.5</span></span>
-<span><span class="co">#&gt; 87           6.0         2.7          5.1         1.6</span></span>
-<span><span class="co">#&gt; 88           6.0         2.2          4.0         1.0</span></span>
-<span><span class="co">#&gt; 89           6.0         2.2          5.0         1.5</span></span>
-<span><span class="co">#&gt; 90           6.1         3.0          4.6         1.4</span></span>
-<span><span class="co">#&gt; 91           6.1         3.0          4.9         1.8</span></span>
-<span><span class="co">#&gt; 92           6.1         2.9          4.7         1.4</span></span>
-<span><span class="co">#&gt; 93           6.1         2.8          4.0         1.3</span></span>
-<span><span class="co">#&gt; 94           6.1         2.8          4.7         1.2</span></span>
-<span><span class="co">#&gt; 95           6.1         2.6          5.6         1.4</span></span>
-<span><span class="co">#&gt; 96           6.2         3.4          5.4         2.3</span></span>
-<span><span class="co">#&gt; 97           6.2         2.9          4.3         1.3</span></span>
-<span><span class="co">#&gt; 98           6.2         2.8          4.8         1.8</span></span>
-<span><span class="co">#&gt; 99           6.2         2.2          4.5         1.5</span></span>
-<span><span class="co">#&gt; 100          6.3         3.4          5.6         2.4</span></span>
-<span><span class="co">#&gt; 101          6.3         3.3          4.7         1.6</span></span>
-<span><span class="co">#&gt; 102          6.3         3.3          6.0         2.5</span></span>
-<span><span class="co">#&gt; 103          6.3         2.9          5.6         1.8</span></span>
-<span><span class="co">#&gt; 104          6.3         2.8          5.1         1.5</span></span>
-<span><span class="co">#&gt; 105          6.3         2.7          4.9         1.8</span></span>
-<span><span class="co">#&gt; 106          6.3         2.5          4.9         1.5</span></span>
-<span><span class="co">#&gt; 107          6.3         2.5          5.0         1.9</span></span>
-<span><span class="co">#&gt; 108          6.3         2.3          4.4         1.3</span></span>
-<span><span class="co">#&gt; 109          6.4         3.2          4.5         1.5</span></span>
-<span><span class="co">#&gt; 110          6.4         3.2          5.3         2.3</span></span>
-<span><span class="co">#&gt; 111          6.4         3.1          5.5         1.8</span></span>
-<span><span class="co">#&gt; 112          6.4         2.9          4.3         1.3</span></span>
-<span><span class="co">#&gt; 113          6.4         2.8          5.6         2.1</span></span>
-<span><span class="co">#&gt; 114          6.4         2.8          5.6         2.2</span></span>
-<span><span class="co">#&gt; 115          6.4         2.7          5.3         1.9</span></span>
-<span><span class="co">#&gt; 116          6.5         3.2          5.1         2.0</span></span>
-<span><span class="co">#&gt; 117          6.5         3.0          5.8         2.2</span></span>
-<span><span class="co">#&gt; 118          6.5         3.0          5.5         1.8</span></span>
-<span><span class="co">#&gt; 119          6.5         3.0          5.2         2.0</span></span>
-<span><span class="co">#&gt; 120          6.5         2.8          4.6         1.5</span></span>
-<span><span class="co">#&gt; 121          6.6         3.0          4.4         1.4</span></span>
-<span><span class="co">#&gt; 122          6.6         2.9          4.6         1.3</span></span>
-<span><span class="co">#&gt; 123          6.7         3.3          5.7         2.1</span></span>
-<span><span class="co">#&gt; 124          6.7         3.3          5.7         2.5</span></span>
-<span><span class="co">#&gt; 125          6.7         3.1          4.4         1.4</span></span>
-<span><span class="co">#&gt; 126          6.7         3.1          4.7         1.5</span></span>
-<span><span class="co">#&gt; 127          6.7         3.1          5.6         2.4</span></span>
-<span><span class="co">#&gt; 128          6.7         3.0          5.0         1.7</span></span>
-<span><span class="co">#&gt; 129          6.7         3.0          5.2         2.3</span></span>
-<span><span class="co">#&gt; 130          6.7         2.5          5.8         1.8</span></span>
-<span><span class="co">#&gt; 131          6.8         3.2          5.9         2.3</span></span>
-<span><span class="co">#&gt; 132          6.8         3.0          5.5         2.1</span></span>
-<span><span class="co">#&gt; 133          6.8         2.8          4.8         1.4</span></span>
-<span><span class="co">#&gt; 134          6.9         3.2          5.7         2.3</span></span>
-<span><span class="co">#&gt; 135          6.9         3.1          4.9         1.5</span></span>
-<span><span class="co">#&gt; 136          6.9         3.1          5.4         2.1</span></span>
-<span><span class="co">#&gt; 137          6.9         3.1          5.1         2.3</span></span>
-<span><span class="co">#&gt; 138          7.0         3.2          4.7         1.4</span></span>
-<span><span class="co">#&gt; 139          7.1         3.0          5.9         2.1</span></span>
-<span><span class="co">#&gt; 140          7.2         3.6          6.1         2.5</span></span>
-<span><span class="co">#&gt; 141          7.2         3.2          6.0         1.8</span></span>
-<span><span class="co">#&gt; 142          7.2         3.0          5.8         1.6</span></span>
-<span><span class="co">#&gt; 143          7.3         2.9          6.3         1.8</span></span>
-<span><span class="co">#&gt; 144          7.4         2.8          6.1         1.9</span></span>
-<span><span class="co">#&gt; 145          7.6         3.0          6.6         2.1</span></span>
-<span><span class="co">#&gt; 146          7.7         3.8          6.7         2.2</span></span>
-<span><span class="co">#&gt; 147          7.7         3.0          6.1         2.3</span></span>
-<span><span class="co">#&gt; 148          7.7         2.8          6.7         2.0</span></span>
-<span><span class="co">#&gt; 149          7.7         2.6          6.9         2.3</span></span>
-<span><span class="co">#&gt; 150          7.9         3.8          6.4         2.0</span></span>
-<span><span class="co">#&gt;        Species</span></span>
-<span><span class="co">#&gt; 1       setosa</span></span>
-<span><span class="co">#&gt; 2       setosa</span></span>
-<span><span class="co">#&gt; 3       setosa</span></span>
-<span><span class="co">#&gt; 4       setosa</span></span>
-<span><span class="co">#&gt; 5       setosa</span></span>
-<span><span class="co">#&gt; 6       setosa</span></span>
-<span><span class="co">#&gt; 7       setosa</span></span>
-<span><span class="co">#&gt; 8       setosa</span></span>
-<span><span class="co">#&gt; 9       setosa</span></span>
-<span><span class="co">#&gt; 10      setosa</span></span>
-<span><span class="co">#&gt; 11      setosa</span></span>
-<span><span class="co">#&gt; 12      setosa</span></span>
-<span><span class="co">#&gt; 13      setosa</span></span>
-<span><span class="co">#&gt; 14      setosa</span></span>
-<span><span class="co">#&gt; 15      setosa</span></span>
-<span><span class="co">#&gt; 16      setosa</span></span>
-<span><span class="co">#&gt; 17      setosa</span></span>
-<span><span class="co">#&gt; 18      setosa</span></span>
-<span><span class="co">#&gt; 19      setosa</span></span>
-<span><span class="co">#&gt; 20      setosa</span></span>
-<span><span class="co">#&gt; 21   virginica</span></span>
-<span><span class="co">#&gt; 22  versicolor</span></span>
-<span><span class="co">#&gt; 23      setosa</span></span>
-<span><span class="co">#&gt; 24      setosa</span></span>
-<span><span class="co">#&gt; 25      setosa</span></span>
-<span><span class="co">#&gt; 26      setosa</span></span>
-<span><span class="co">#&gt; 27      setosa</span></span>
-<span><span class="co">#&gt; 28      setosa</span></span>
-<span><span class="co">#&gt; 29      setosa</span></span>
-<span><span class="co">#&gt; 30      setosa</span></span>
-<span><span class="co">#&gt; 31  versicolor</span></span>
-<span><span class="co">#&gt; 32  versicolor</span></span>
-<span><span class="co">#&gt; 33      setosa</span></span>
-<span><span class="co">#&gt; 34      setosa</span></span>
-<span><span class="co">#&gt; 35      setosa</span></span>
-<span><span class="co">#&gt; 36      setosa</span></span>
-<span><span class="co">#&gt; 37      setosa</span></span>
-<span><span class="co">#&gt; 38      setosa</span></span>
-<span><span class="co">#&gt; 39      setosa</span></span>
-<span><span class="co">#&gt; 40      setosa</span></span>
-<span><span class="co">#&gt; 41  versicolor</span></span>
-<span><span class="co">#&gt; 42      setosa</span></span>
-<span><span class="co">#&gt; 43      setosa</span></span>
-<span><span class="co">#&gt; 44      setosa</span></span>
-<span><span class="co">#&gt; 45  versicolor</span></span>
-<span><span class="co">#&gt; 46      setosa</span></span>
-<span><span class="co">#&gt; 47      setosa</span></span>
-<span><span class="co">#&gt; 48      setosa</span></span>
-<span><span class="co">#&gt; 49      setosa</span></span>
-<span><span class="co">#&gt; 50      setosa</span></span>
-<span><span class="co">#&gt; 51      setosa</span></span>
-<span><span class="co">#&gt; 52  versicolor</span></span>
-<span><span class="co">#&gt; 53      setosa</span></span>
-<span><span class="co">#&gt; 54      setosa</span></span>
-<span><span class="co">#&gt; 55  versicolor</span></span>
-<span><span class="co">#&gt; 56  versicolor</span></span>
-<span><span class="co">#&gt; 57  versicolor</span></span>
-<span><span class="co">#&gt; 58  versicolor</span></span>
-<span><span class="co">#&gt; 59  versicolor</span></span>
-<span><span class="co">#&gt; 60  versicolor</span></span>
-<span><span class="co">#&gt; 61  versicolor</span></span>
-<span><span class="co">#&gt; 62  versicolor</span></span>
-<span><span class="co">#&gt; 63   virginica</span></span>
-<span><span class="co">#&gt; 64  versicolor</span></span>
-<span><span class="co">#&gt; 65  versicolor</span></span>
-<span><span class="co">#&gt; 66      setosa</span></span>
-<span><span class="co">#&gt; 67      setosa</span></span>
-<span><span class="co">#&gt; 68  versicolor</span></span>
-<span><span class="co">#&gt; 69  versicolor</span></span>
-<span><span class="co">#&gt; 70  versicolor</span></span>
-<span><span class="co">#&gt; 71  versicolor</span></span>
-<span><span class="co">#&gt; 72  versicolor</span></span>
-<span><span class="co">#&gt; 73   virginica</span></span>
-<span><span class="co">#&gt; 74      setosa</span></span>
-<span><span class="co">#&gt; 75   virginica</span></span>
-<span><span class="co">#&gt; 76  versicolor</span></span>
-<span><span class="co">#&gt; 77  versicolor</span></span>
-<span><span class="co">#&gt; 78   virginica</span></span>
-<span><span class="co">#&gt; 79   virginica</span></span>
-<span><span class="co">#&gt; 80  versicolor</span></span>
-<span><span class="co">#&gt; 81  versicolor</span></span>
-<span><span class="co">#&gt; 82  versicolor</span></span>
-<span><span class="co">#&gt; 83   virginica</span></span>
-<span><span class="co">#&gt; 84  versicolor</span></span>
-<span><span class="co">#&gt; 85   virginica</span></span>
-<span><span class="co">#&gt; 86  versicolor</span></span>
-<span><span class="co">#&gt; 87  versicolor</span></span>
-<span><span class="co">#&gt; 88  versicolor</span></span>
-<span><span class="co">#&gt; 89   virginica</span></span>
-<span><span class="co">#&gt; 90  versicolor</span></span>
-<span><span class="co">#&gt; 91   virginica</span></span>
-<span><span class="co">#&gt; 92  versicolor</span></span>
-<span><span class="co">#&gt; 93  versicolor</span></span>
-<span><span class="co">#&gt; 94  versicolor</span></span>
-<span><span class="co">#&gt; 95   virginica</span></span>
-<span><span class="co">#&gt; 96   virginica</span></span>
-<span><span class="co">#&gt; 97  versicolor</span></span>
-<span><span class="co">#&gt; 98   virginica</span></span>
-<span><span class="co">#&gt; 99  versicolor</span></span>
-<span><span class="co">#&gt; 100  virginica</span></span>
-<span><span class="co">#&gt; 101 versicolor</span></span>
-<span><span class="co">#&gt; 102  virginica</span></span>
-<span><span class="co">#&gt; 103  virginica</span></span>
-<span><span class="co">#&gt; 104  virginica</span></span>
-<span><span class="co">#&gt; 105  virginica</span></span>
-<span><span class="co">#&gt; 106 versicolor</span></span>
-<span><span class="co">#&gt; 107  virginica</span></span>
-<span><span class="co">#&gt; 108 versicolor</span></span>
-<span><span class="co">#&gt; 109 versicolor</span></span>
-<span><span class="co">#&gt; 110  virginica</span></span>
-<span><span class="co">#&gt; 111  virginica</span></span>
-<span><span class="co">#&gt; 112 versicolor</span></span>
-<span><span class="co">#&gt; 113  virginica</span></span>
-<span><span class="co">#&gt; 114  virginica</span></span>
-<span><span class="co">#&gt; 115  virginica</span></span>
-<span><span class="co">#&gt; 116  virginica</span></span>
-<span><span class="co">#&gt; 117  virginica</span></span>
-<span><span class="co">#&gt; 118  virginica</span></span>
-<span><span class="co">#&gt; 119  virginica</span></span>
-<span><span class="co">#&gt; 120 versicolor</span></span>
-<span><span class="co">#&gt; 121 versicolor</span></span>
-<span><span class="co">#&gt; 122 versicolor</span></span>
-<span><span class="co">#&gt; 123  virginica</span></span>
-<span><span class="co">#&gt; 124  virginica</span></span>
-<span><span class="co">#&gt; 125 versicolor</span></span>
-<span><span class="co">#&gt; 126 versicolor</span></span>
-<span><span class="co">#&gt; 127  virginica</span></span>
-<span><span class="co">#&gt; 128 versicolor</span></span>
-<span><span class="co">#&gt; 129  virginica</span></span>
-<span><span class="co">#&gt; 130  virginica</span></span>
-<span><span class="co">#&gt; 131  virginica</span></span>
-<span><span class="co">#&gt; 132  virginica</span></span>
-<span><span class="co">#&gt; 133 versicolor</span></span>
-<span><span class="co">#&gt; 134  virginica</span></span>
-<span><span class="co">#&gt; 135 versicolor</span></span>
-<span><span class="co">#&gt; 136  virginica</span></span>
-<span><span class="co">#&gt; 137  virginica</span></span>
-<span><span class="co">#&gt; 138 versicolor</span></span>
-<span><span class="co">#&gt; 139  virginica</span></span>
-<span><span class="co">#&gt; 140  virginica</span></span>
-<span><span class="co">#&gt; 141  virginica</span></span>
-<span><span class="co">#&gt; 142  virginica</span></span>
-<span><span class="co">#&gt; 143  virginica</span></span>
-<span><span class="co">#&gt; 144  virginica</span></span>
-<span><span class="co">#&gt; 145  virginica</span></span>
-<span><span class="co">#&gt; 146  virginica</span></span>
-<span><span class="co">#&gt; 147  virginica</span></span>
-<span><span class="co">#&gt; 148  virginica</span></span>
-<span><span class="co">#&gt; 149  virginica</span></span>
-<span><span class="co">#&gt; 150  virginica</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">iris</span>, <span class="op">-</span><span class="va">Species</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width</span></span>
+<span><span class="co">#&gt; 1          5.1         3.5          1.4         0.2</span></span>
+<span><span class="co">#&gt; 2          4.9         3.0          1.4         0.2</span></span>
+<span><span class="co">#&gt; 3          4.7         3.2          1.3         0.2</span></span>
+<span><span class="co">#&gt; 4          4.6         3.1          1.5         0.2</span></span>
+<span><span class="co">#&gt; 5          5.0         3.6          1.4         0.2</span></span>
+<span><span class="co">#&gt; 6          5.4         3.9          1.7         0.4</span></span></code></pre></div>
 </div>
-<div id="mutate---rank" class="section level3" number="5.8.7">
+<div id="select-3---select-and-change-column-names-at-the-same-time" class="section level3" number="5.8.5">
 <h3>
-<span class="header-section-number">5.8.7</span> <code>mutate</code> - rank<a class="anchor" aria-label="anchor" href="#mutate---rank"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8.5</span> <code>select</code> 3 - select and change column names at the same time<a class="anchor" aria-label="anchor" href="#select-3---select-and-change-column-names-at-the-same-time"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">iris</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>sl_rank <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/ranking.html">min_rank</a></span><span class="op">(</span><span class="va">Sepal.Length</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">sl_rank</span><span class="op">)</span></span>
-<span><span class="co">#&gt;     Sepal.Length Sepal.Width Petal.Length Petal.Width</span></span>
-<span><span class="co">#&gt; 1            4.3         3.0          1.1         0.1</span></span>
-<span><span class="co">#&gt; 2            4.4         2.9          1.4         0.2</span></span>
-<span><span class="co">#&gt; 3            4.4         3.0          1.3         0.2</span></span>
-<span><span class="co">#&gt; 4            4.4         3.2          1.3         0.2</span></span>
-<span><span class="co">#&gt; 5            4.5         2.3          1.3         0.3</span></span>
-<span><span class="co">#&gt; 6            4.6         3.1          1.5         0.2</span></span>
-<span><span class="co">#&gt; 7            4.6         3.4          1.4         0.3</span></span>
-<span><span class="co">#&gt; 8            4.6         3.6          1.0         0.2</span></span>
-<span><span class="co">#&gt; 9            4.6         3.2          1.4         0.2</span></span>
-<span><span class="co">#&gt; 10           4.7         3.2          1.3         0.2</span></span>
-<span><span class="co">#&gt; 11           4.7         3.2          1.6         0.2</span></span>
-<span><span class="co">#&gt; 12           4.8         3.4          1.6         0.2</span></span>
-<span><span class="co">#&gt; 13           4.8         3.0          1.4         0.1</span></span>
-<span><span class="co">#&gt; 14           4.8         3.4          1.9         0.2</span></span>
-<span><span class="co">#&gt; 15           4.8         3.1          1.6         0.2</span></span>
-<span><span class="co">#&gt; 16           4.8         3.0          1.4         0.3</span></span>
-<span><span class="co">#&gt; 17           4.9         3.0          1.4         0.2</span></span>
-<span><span class="co">#&gt; 18           4.9         3.1          1.5         0.1</span></span>
-<span><span class="co">#&gt; 19           4.9         3.1          1.5         0.2</span></span>
-<span><span class="co">#&gt; 20           4.9         3.6          1.4         0.1</span></span>
-<span><span class="co">#&gt; 21           4.9         2.4          3.3         1.0</span></span>
-<span><span class="co">#&gt; 22           4.9         2.5          4.5         1.7</span></span>
-<span><span class="co">#&gt; 23           5.0         3.6          1.4         0.2</span></span>
-<span><span class="co">#&gt; 24           5.0         3.4          1.5         0.2</span></span>
-<span><span class="co">#&gt; 25           5.0         3.0          1.6         0.2</span></span>
-<span><span class="co">#&gt; 26           5.0         3.4          1.6         0.4</span></span>
-<span><span class="co">#&gt; 27           5.0         3.2          1.2         0.2</span></span>
-<span><span class="co">#&gt; 28           5.0         3.5          1.3         0.3</span></span>
-<span><span class="co">#&gt; 29           5.0         3.5          1.6         0.6</span></span>
-<span><span class="co">#&gt; 30           5.0         3.3          1.4         0.2</span></span>
-<span><span class="co">#&gt; 31           5.0         2.0          3.5         1.0</span></span>
-<span><span class="co">#&gt; 32           5.0         2.3          3.3         1.0</span></span>
-<span><span class="co">#&gt; 33           5.1         3.5          1.4         0.2</span></span>
-<span><span class="co">#&gt; 34           5.1         3.5          1.4         0.3</span></span>
-<span><span class="co">#&gt; 35           5.1         3.8          1.5         0.3</span></span>
-<span><span class="co">#&gt; 36           5.1         3.7          1.5         0.4</span></span>
-<span><span class="co">#&gt; 37           5.1         3.3          1.7         0.5</span></span>
-<span><span class="co">#&gt; 38           5.1         3.4          1.5         0.2</span></span>
-<span><span class="co">#&gt; 39           5.1         3.8          1.9         0.4</span></span>
-<span><span class="co">#&gt; 40           5.1         3.8          1.6         0.2</span></span>
-<span><span class="co">#&gt; 41           5.1         2.5          3.0         1.1</span></span>
-<span><span class="co">#&gt; 42           5.2         3.5          1.5         0.2</span></span>
-<span><span class="co">#&gt; 43           5.2         3.4          1.4         0.2</span></span>
-<span><span class="co">#&gt; 44           5.2         4.1          1.5         0.1</span></span>
-<span><span class="co">#&gt; 45           5.2         2.7          3.9         1.4</span></span>
-<span><span class="co">#&gt; 46           5.3         3.7          1.5         0.2</span></span>
-<span><span class="co">#&gt; 47           5.4         3.9          1.7         0.4</span></span>
-<span><span class="co">#&gt; 48           5.4         3.7          1.5         0.2</span></span>
-<span><span class="co">#&gt; 49           5.4         3.9          1.3         0.4</span></span>
-<span><span class="co">#&gt; 50           5.4         3.4          1.7         0.2</span></span>
-<span><span class="co">#&gt; 51           5.4         3.4          1.5         0.4</span></span>
-<span><span class="co">#&gt; 52           5.4         3.0          4.5         1.5</span></span>
-<span><span class="co">#&gt; 53           5.5         4.2          1.4         0.2</span></span>
-<span><span class="co">#&gt; 54           5.5         3.5          1.3         0.2</span></span>
-<span><span class="co">#&gt; 55           5.5         2.3          4.0         1.3</span></span>
-<span><span class="co">#&gt; 56           5.5         2.4          3.8         1.1</span></span>
-<span><span class="co">#&gt; 57           5.5         2.4          3.7         1.0</span></span>
-<span><span class="co">#&gt; 58           5.5         2.5          4.0         1.3</span></span>
-<span><span class="co">#&gt; 59           5.5         2.6          4.4         1.2</span></span>
-<span><span class="co">#&gt; 60           5.6         2.9          3.6         1.3</span></span>
-<span><span class="co">#&gt; 61           5.6         3.0          4.5         1.5</span></span>
-<span><span class="co">#&gt; 62           5.6         2.5          3.9         1.1</span></span>
-<span><span class="co">#&gt; 63           5.6         3.0          4.1         1.3</span></span>
-<span><span class="co">#&gt; 64           5.6         2.7          4.2         1.3</span></span>
-<span><span class="co">#&gt; 65           5.6         2.8          4.9         2.0</span></span>
-<span><span class="co">#&gt; 66           5.7         4.4          1.5         0.4</span></span>
-<span><span class="co">#&gt; 67           5.7         3.8          1.7         0.3</span></span>
-<span><span class="co">#&gt; 68           5.7         2.8          4.5         1.3</span></span>
-<span><span class="co">#&gt; 69           5.7         2.6          3.5         1.0</span></span>
-<span><span class="co">#&gt; 70           5.7         3.0          4.2         1.2</span></span>
-<span><span class="co">#&gt; 71           5.7         2.9          4.2         1.3</span></span>
-<span><span class="co">#&gt; 72           5.7         2.8          4.1         1.3</span></span>
-<span><span class="co">#&gt; 73           5.7         2.5          5.0         2.0</span></span>
-<span><span class="co">#&gt; 74           5.8         4.0          1.2         0.2</span></span>
-<span><span class="co">#&gt; 75           5.8         2.7          4.1         1.0</span></span>
-<span><span class="co">#&gt; 76           5.8         2.7          3.9         1.2</span></span>
-<span><span class="co">#&gt; 77           5.8         2.6          4.0         1.2</span></span>
-<span><span class="co">#&gt; 78           5.8         2.7          5.1         1.9</span></span>
-<span><span class="co">#&gt; 79           5.8         2.8          5.1         2.4</span></span>
-<span><span class="co">#&gt; 80           5.8         2.7          5.1         1.9</span></span>
-<span><span class="co">#&gt; 81           5.9         3.0          4.2         1.5</span></span>
-<span><span class="co">#&gt; 82           5.9         3.2          4.8         1.8</span></span>
-<span><span class="co">#&gt; 83           5.9         3.0          5.1         1.8</span></span>
-<span><span class="co">#&gt; 84           6.0         2.2          4.0         1.0</span></span>
-<span><span class="co">#&gt; 85           6.0         2.9          4.5         1.5</span></span>
-<span><span class="co">#&gt; 86           6.0         2.7          5.1         1.6</span></span>
-<span><span class="co">#&gt; 87           6.0         3.4          4.5         1.6</span></span>
-<span><span class="co">#&gt; 88           6.0         2.2          5.0         1.5</span></span>
-<span><span class="co">#&gt; 89           6.0         3.0          4.8         1.8</span></span>
-<span><span class="co">#&gt; 90           6.1         2.9          4.7         1.4</span></span>
-<span><span class="co">#&gt; 91           6.1         2.8          4.0         1.3</span></span>
-<span><span class="co">#&gt; 92           6.1         2.8          4.7         1.2</span></span>
-<span><span class="co">#&gt; 93           6.1         3.0          4.6         1.4</span></span>
-<span><span class="co">#&gt; 94           6.1         3.0          4.9         1.8</span></span>
-<span><span class="co">#&gt; 95           6.1         2.6          5.6         1.4</span></span>
-<span><span class="co">#&gt; 96           6.2         2.2          4.5         1.5</span></span>
-<span><span class="co">#&gt; 97           6.2         2.9          4.3         1.3</span></span>
-<span><span class="co">#&gt; 98           6.2         2.8          4.8         1.8</span></span>
-<span><span class="co">#&gt; 99           6.2         3.4          5.4         2.3</span></span>
-<span><span class="co">#&gt; 100          6.3         3.3          4.7         1.6</span></span>
-<span><span class="co">#&gt; 101          6.3         2.5          4.9         1.5</span></span>
-<span><span class="co">#&gt; 102          6.3         2.3          4.4         1.3</span></span>
-<span><span class="co">#&gt; 103          6.3         3.3          6.0         2.5</span></span>
-<span><span class="co">#&gt; 104          6.3         2.9          5.6         1.8</span></span>
-<span><span class="co">#&gt; 105          6.3         2.7          4.9         1.8</span></span>
-<span><span class="co">#&gt; 106          6.3         2.8          5.1         1.5</span></span>
-<span><span class="co">#&gt; 107          6.3         3.4          5.6         2.4</span></span>
-<span><span class="co">#&gt; 108          6.3         2.5          5.0         1.9</span></span>
-<span><span class="co">#&gt; 109          6.4         3.2          4.5         1.5</span></span>
-<span><span class="co">#&gt; 110          6.4         2.9          4.3         1.3</span></span>
-<span><span class="co">#&gt; 111          6.4         2.7          5.3         1.9</span></span>
-<span><span class="co">#&gt; 112          6.4         3.2          5.3         2.3</span></span>
-<span><span class="co">#&gt; 113          6.4         2.8          5.6         2.1</span></span>
-<span><span class="co">#&gt; 114          6.4         2.8          5.6         2.2</span></span>
-<span><span class="co">#&gt; 115          6.4         3.1          5.5         1.8</span></span>
-<span><span class="co">#&gt; 116          6.5         2.8          4.6         1.5</span></span>
-<span><span class="co">#&gt; 117          6.5         3.0          5.8         2.2</span></span>
-<span><span class="co">#&gt; 118          6.5         3.2          5.1         2.0</span></span>
-<span><span class="co">#&gt; 119          6.5         3.0          5.5         1.8</span></span>
-<span><span class="co">#&gt; 120          6.5         3.0          5.2         2.0</span></span>
-<span><span class="co">#&gt; 121          6.6         2.9          4.6         1.3</span></span>
-<span><span class="co">#&gt; 122          6.6         3.0          4.4         1.4</span></span>
-<span><span class="co">#&gt; 123          6.7         3.1          4.4         1.4</span></span>
-<span><span class="co">#&gt; 124          6.7         3.0          5.0         1.7</span></span>
-<span><span class="co">#&gt; 125          6.7         3.1          4.7         1.5</span></span>
-<span><span class="co">#&gt; 126          6.7         2.5          5.8         1.8</span></span>
-<span><span class="co">#&gt; 127          6.7         3.3          5.7         2.1</span></span>
-<span><span class="co">#&gt; 128          6.7         3.1          5.6         2.4</span></span>
-<span><span class="co">#&gt; 129          6.7         3.3          5.7         2.5</span></span>
-<span><span class="co">#&gt; 130          6.7         3.0          5.2         2.3</span></span>
-<span><span class="co">#&gt; 131          6.8         2.8          4.8         1.4</span></span>
-<span><span class="co">#&gt; 132          6.8         3.0          5.5         2.1</span></span>
-<span><span class="co">#&gt; 133          6.8         3.2          5.9         2.3</span></span>
-<span><span class="co">#&gt; 134          6.9         3.1          4.9         1.5</span></span>
-<span><span class="co">#&gt; 135          6.9         3.2          5.7         2.3</span></span>
-<span><span class="co">#&gt; 136          6.9         3.1          5.4         2.1</span></span>
-<span><span class="co">#&gt; 137          6.9         3.1          5.1         2.3</span></span>
-<span><span class="co">#&gt; 138          7.0         3.2          4.7         1.4</span></span>
-<span><span class="co">#&gt; 139          7.1         3.0          5.9         2.1</span></span>
-<span><span class="co">#&gt; 140          7.2         3.6          6.1         2.5</span></span>
-<span><span class="co">#&gt; 141          7.2         3.2          6.0         1.8</span></span>
-<span><span class="co">#&gt; 142          7.2         3.0          5.8         1.6</span></span>
-<span><span class="co">#&gt; 143          7.3         2.9          6.3         1.8</span></span>
-<span><span class="co">#&gt; 144          7.4         2.8          6.1         1.9</span></span>
-<span><span class="co">#&gt; 145          7.6         3.0          6.6         2.1</span></span>
-<span><span class="co">#&gt; 146          7.7         3.8          6.7         2.2</span></span>
-<span><span class="co">#&gt; 147          7.7         2.6          6.9         2.3</span></span>
-<span><span class="co">#&gt; 148          7.7         2.8          6.7         2.0</span></span>
-<span><span class="co">#&gt; 149          7.7         3.0          6.1         2.3</span></span>
-<span><span class="co">#&gt; 150          7.9         3.8          6.4         2.0</span></span>
-<span><span class="co">#&gt;        Species sl_rank</span></span>
-<span><span class="co">#&gt; 1       setosa       1</span></span>
-<span><span class="co">#&gt; 2       setosa       2</span></span>
-<span><span class="co">#&gt; 3       setosa       2</span></span>
-<span><span class="co">#&gt; 4       setosa       2</span></span>
-<span><span class="co">#&gt; 5       setosa       5</span></span>
-<span><span class="co">#&gt; 6       setosa       6</span></span>
-<span><span class="co">#&gt; 7       setosa       6</span></span>
-<span><span class="co">#&gt; 8       setosa       6</span></span>
-<span><span class="co">#&gt; 9       setosa       6</span></span>
-<span><span class="co">#&gt; 10      setosa      10</span></span>
-<span><span class="co">#&gt; 11      setosa      10</span></span>
-<span><span class="co">#&gt; 12      setosa      12</span></span>
-<span><span class="co">#&gt; 13      setosa      12</span></span>
-<span><span class="co">#&gt; 14      setosa      12</span></span>
-<span><span class="co">#&gt; 15      setosa      12</span></span>
-<span><span class="co">#&gt; 16      setosa      12</span></span>
-<span><span class="co">#&gt; 17      setosa      17</span></span>
-<span><span class="co">#&gt; 18      setosa      17</span></span>
-<span><span class="co">#&gt; 19      setosa      17</span></span>
-<span><span class="co">#&gt; 20      setosa      17</span></span>
-<span><span class="co">#&gt; 21  versicolor      17</span></span>
-<span><span class="co">#&gt; 22   virginica      17</span></span>
-<span><span class="co">#&gt; 23      setosa      23</span></span>
-<span><span class="co">#&gt; 24      setosa      23</span></span>
-<span><span class="co">#&gt; 25      setosa      23</span></span>
-<span><span class="co">#&gt; 26      setosa      23</span></span>
-<span><span class="co">#&gt; 27      setosa      23</span></span>
-<span><span class="co">#&gt; 28      setosa      23</span></span>
-<span><span class="co">#&gt; 29      setosa      23</span></span>
-<span><span class="co">#&gt; 30      setosa      23</span></span>
-<span><span class="co">#&gt; 31  versicolor      23</span></span>
-<span><span class="co">#&gt; 32  versicolor      23</span></span>
-<span><span class="co">#&gt; 33      setosa      33</span></span>
-<span><span class="co">#&gt; 34      setosa      33</span></span>
-<span><span class="co">#&gt; 35      setosa      33</span></span>
-<span><span class="co">#&gt; 36      setosa      33</span></span>
-<span><span class="co">#&gt; 37      setosa      33</span></span>
-<span><span class="co">#&gt; 38      setosa      33</span></span>
-<span><span class="co">#&gt; 39      setosa      33</span></span>
-<span><span class="co">#&gt; 40      setosa      33</span></span>
-<span><span class="co">#&gt; 41  versicolor      33</span></span>
-<span><span class="co">#&gt; 42      setosa      42</span></span>
-<span><span class="co">#&gt; 43      setosa      42</span></span>
-<span><span class="co">#&gt; 44      setosa      42</span></span>
-<span><span class="co">#&gt; 45  versicolor      42</span></span>
-<span><span class="co">#&gt; 46      setosa      46</span></span>
-<span><span class="co">#&gt; 47      setosa      47</span></span>
-<span><span class="co">#&gt; 48      setosa      47</span></span>
-<span><span class="co">#&gt; 49      setosa      47</span></span>
-<span><span class="co">#&gt; 50      setosa      47</span></span>
-<span><span class="co">#&gt; 51      setosa      47</span></span>
-<span><span class="co">#&gt; 52  versicolor      47</span></span>
-<span><span class="co">#&gt; 53      setosa      53</span></span>
-<span><span class="co">#&gt; 54      setosa      53</span></span>
-<span><span class="co">#&gt; 55  versicolor      53</span></span>
-<span><span class="co">#&gt; 56  versicolor      53</span></span>
-<span><span class="co">#&gt; 57  versicolor      53</span></span>
-<span><span class="co">#&gt; 58  versicolor      53</span></span>
-<span><span class="co">#&gt; 59  versicolor      53</span></span>
-<span><span class="co">#&gt; 60  versicolor      60</span></span>
-<span><span class="co">#&gt; 61  versicolor      60</span></span>
-<span><span class="co">#&gt; 62  versicolor      60</span></span>
-<span><span class="co">#&gt; 63  versicolor      60</span></span>
-<span><span class="co">#&gt; 64  versicolor      60</span></span>
-<span><span class="co">#&gt; 65   virginica      60</span></span>
-<span><span class="co">#&gt; 66      setosa      66</span></span>
-<span><span class="co">#&gt; 67      setosa      66</span></span>
-<span><span class="co">#&gt; 68  versicolor      66</span></span>
-<span><span class="co">#&gt; 69  versicolor      66</span></span>
-<span><span class="co">#&gt; 70  versicolor      66</span></span>
-<span><span class="co">#&gt; 71  versicolor      66</span></span>
-<span><span class="co">#&gt; 72  versicolor      66</span></span>
-<span><span class="co">#&gt; 73   virginica      66</span></span>
-<span><span class="co">#&gt; 74      setosa      74</span></span>
-<span><span class="co">#&gt; 75  versicolor      74</span></span>
-<span><span class="co">#&gt; 76  versicolor      74</span></span>
-<span><span class="co">#&gt; 77  versicolor      74</span></span>
-<span><span class="co">#&gt; 78   virginica      74</span></span>
-<span><span class="co">#&gt; 79   virginica      74</span></span>
-<span><span class="co">#&gt; 80   virginica      74</span></span>
-<span><span class="co">#&gt; 81  versicolor      81</span></span>
-<span><span class="co">#&gt; 82  versicolor      81</span></span>
-<span><span class="co">#&gt; 83   virginica      81</span></span>
-<span><span class="co">#&gt; 84  versicolor      84</span></span>
-<span><span class="co">#&gt; 85  versicolor      84</span></span>
-<span><span class="co">#&gt; 86  versicolor      84</span></span>
-<span><span class="co">#&gt; 87  versicolor      84</span></span>
-<span><span class="co">#&gt; 88   virginica      84</span></span>
-<span><span class="co">#&gt; 89   virginica      84</span></span>
-<span><span class="co">#&gt; 90  versicolor      90</span></span>
-<span><span class="co">#&gt; 91  versicolor      90</span></span>
-<span><span class="co">#&gt; 92  versicolor      90</span></span>
-<span><span class="co">#&gt; 93  versicolor      90</span></span>
-<span><span class="co">#&gt; 94   virginica      90</span></span>
-<span><span class="co">#&gt; 95   virginica      90</span></span>
-<span><span class="co">#&gt; 96  versicolor      96</span></span>
-<span><span class="co">#&gt; 97  versicolor      96</span></span>
-<span><span class="co">#&gt; 98   virginica      96</span></span>
-<span><span class="co">#&gt; 99   virginica      96</span></span>
-<span><span class="co">#&gt; 100 versicolor     100</span></span>
-<span><span class="co">#&gt; 101 versicolor     100</span></span>
-<span><span class="co">#&gt; 102 versicolor     100</span></span>
-<span><span class="co">#&gt; 103  virginica     100</span></span>
-<span><span class="co">#&gt; 104  virginica     100</span></span>
-<span><span class="co">#&gt; 105  virginica     100</span></span>
-<span><span class="co">#&gt; 106  virginica     100</span></span>
-<span><span class="co">#&gt; 107  virginica     100</span></span>
-<span><span class="co">#&gt; 108  virginica     100</span></span>
-<span><span class="co">#&gt; 109 versicolor     109</span></span>
-<span><span class="co">#&gt; 110 versicolor     109</span></span>
-<span><span class="co">#&gt; 111  virginica     109</span></span>
-<span><span class="co">#&gt; 112  virginica     109</span></span>
-<span><span class="co">#&gt; 113  virginica     109</span></span>
-<span><span class="co">#&gt; 114  virginica     109</span></span>
-<span><span class="co">#&gt; 115  virginica     109</span></span>
-<span><span class="co">#&gt; 116 versicolor     116</span></span>
-<span><span class="co">#&gt; 117  virginica     116</span></span>
-<span><span class="co">#&gt; 118  virginica     116</span></span>
-<span><span class="co">#&gt; 119  virginica     116</span></span>
-<span><span class="co">#&gt; 120  virginica     116</span></span>
-<span><span class="co">#&gt; 121 versicolor     121</span></span>
-<span><span class="co">#&gt; 122 versicolor     121</span></span>
-<span><span class="co">#&gt; 123 versicolor     123</span></span>
-<span><span class="co">#&gt; 124 versicolor     123</span></span>
-<span><span class="co">#&gt; 125 versicolor     123</span></span>
-<span><span class="co">#&gt; 126  virginica     123</span></span>
-<span><span class="co">#&gt; 127  virginica     123</span></span>
-<span><span class="co">#&gt; 128  virginica     123</span></span>
-<span><span class="co">#&gt; 129  virginica     123</span></span>
-<span><span class="co">#&gt; 130  virginica     123</span></span>
-<span><span class="co">#&gt; 131 versicolor     131</span></span>
-<span><span class="co">#&gt; 132  virginica     131</span></span>
-<span><span class="co">#&gt; 133  virginica     131</span></span>
-<span><span class="co">#&gt; 134 versicolor     134</span></span>
-<span><span class="co">#&gt; 135  virginica     134</span></span>
-<span><span class="co">#&gt; 136  virginica     134</span></span>
-<span><span class="co">#&gt; 137  virginica     134</span></span>
-<span><span class="co">#&gt; 138 versicolor     138</span></span>
-<span><span class="co">#&gt; 139  virginica     139</span></span>
-<span><span class="co">#&gt; 140  virginica     140</span></span>
-<span><span class="co">#&gt; 141  virginica     140</span></span>
-<span><span class="co">#&gt; 142  virginica     140</span></span>
-<span><span class="co">#&gt; 143  virginica     143</span></span>
-<span><span class="co">#&gt; 144  virginica     144</span></span>
-<span><span class="co">#&gt; 145  virginica     145</span></span>
-<span><span class="co">#&gt; 146  virginica     146</span></span>
-<span><span class="co">#&gt; 147  virginica     146</span></span>
-<span><span class="co">#&gt; 148  virginica     146</span></span>
-<span><span class="co">#&gt; 149  virginica     146</span></span>
-<span><span class="co">#&gt; 150  virginica     150</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">iris</span>, sl <span class="op">=</span> <span class="va">Sepal.Length</span>, sw <span class="op">=</span> <span class="va">Sepal.Width</span>, sp <span class="op">=</span> <span class="va">Species</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;    sl  sw     sp</span></span>
+<span><span class="co">#&gt; 1 5.1 3.5 setosa</span></span>
+<span><span class="co">#&gt; 2 4.9 3.0 setosa</span></span>
+<span><span class="co">#&gt; 3 4.7 3.2 setosa</span></span>
+<span><span class="co">#&gt; 4 4.6 3.1 setosa</span></span>
+<span><span class="co">#&gt; 5 5.0 3.6 setosa</span></span>
+<span><span class="co">#&gt; 6 5.4 3.9 setosa</span></span></code></pre></div>
 </div>
-<div id="group_by-and-summarize" class="section level3" number="5.8.8">
+<div id="select-4---change-the-order-of-columns" class="section level3" number="5.8.6">
 <h3>
-<span class="header-section-number">5.8.8</span> <code>group_by</code> and <code>summarize</code><a class="anchor" aria-label="anchor" href="#group_by-and-summarize"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8.6</span> <code>select</code> 4 - change the order of columns<a class="anchor" aria-label="anchor" href="#select-4---change-the-order-of-columns"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">iris</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   Species Petal.Length Petal.Width Sepal.Length Sepal.Width</span></span>
+<span><span class="co">#&gt; 1  setosa          1.4         0.2          5.1         3.5</span></span>
+<span><span class="co">#&gt; 2  setosa          1.4         0.2          4.9         3.0</span></span>
+<span><span class="co">#&gt; 3  setosa          1.3         0.2          4.7         3.2</span></span>
+<span><span class="co">#&gt; 4  setosa          1.5         0.2          4.6         3.1</span></span>
+<span><span class="co">#&gt; 5  setosa          1.4         0.2          5.0         3.6</span></span>
+<span><span class="co">#&gt; 6  setosa          1.7         0.4          5.4         3.9</span></span></code></pre></div>
+</div>
+<div id="filter---by-names" class="section level3" number="5.8.7">
+<h3>
+<span class="header-section-number">5.8.7</span> <code>filter</code> - by names<a class="anchor" aria-label="anchor" href="#filter---by-names"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">iris</span>, <span class="va">Species</span> <span class="op">==</span> <span class="st">"virginica"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width</span></span>
+<span><span class="co">#&gt; 1          6.3         3.3          6.0         2.5</span></span>
+<span><span class="co">#&gt; 2          5.8         2.7          5.1         1.9</span></span>
+<span><span class="co">#&gt; 3          7.1         3.0          5.9         2.1</span></span>
+<span><span class="co">#&gt; 4          6.3         2.9          5.6         1.8</span></span>
+<span><span class="co">#&gt; 5          6.5         3.0          5.8         2.2</span></span>
+<span><span class="co">#&gt; 6          7.6         3.0          6.6         2.1</span></span>
+<span><span class="co">#&gt;     Species</span></span>
+<span><span class="co">#&gt; 1 virginica</span></span>
+<span><span class="co">#&gt; 2 virginica</span></span>
+<span><span class="co">#&gt; 3 virginica</span></span>
+<span><span class="co">#&gt; 4 virginica</span></span>
+<span><span class="co">#&gt; 5 virginica</span></span>
+<span><span class="co">#&gt; 6 virginica</span></span></code></pre></div>
+</div>
+<div id="arrange---ascending-and-descending-order" class="section level3" number="5.8.8">
+<h3>
+<span class="header-section-number">5.8.8</span> <code>arrange</code> - ascending and descending order<a class="anchor" aria-label="anchor" href="#arrange---ascending-and-descending-order"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">iris</span>, <span class="va">Sepal.Length</span>, <span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">Sepal.Width</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span></span>
+<span><span class="co">#&gt; 1          4.3         3.0          1.1         0.1  setosa</span></span>
+<span><span class="co">#&gt; 2          4.4         3.2          1.3         0.2  setosa</span></span>
+<span><span class="co">#&gt; 3          4.4         3.0          1.3         0.2  setosa</span></span>
+<span><span class="co">#&gt; 4          4.4         2.9          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 5          4.5         2.3          1.3         0.3  setosa</span></span>
+<span><span class="co">#&gt; 6          4.6         3.6          1.0         0.2  setosa</span></span></code></pre></div>
+</div>
+<div id="mutate---rank" class="section level3" number="5.8.9">
+<h3>
+<span class="header-section-number">5.8.9</span> <code>mutate</code> - rank<a class="anchor" aria-label="anchor" href="#mutate---rank"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">iris</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>sl_rank <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/ranking.html">min_rank</a></span><span class="op">(</span><span class="va">Sepal.Length</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">sl_rank</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span></span>
+<span><span class="co">#&gt; 1          4.3         3.0          1.1         0.1  setosa</span></span>
+<span><span class="co">#&gt; 2          4.4         2.9          1.4         0.2  setosa</span></span>
+<span><span class="co">#&gt; 3          4.4         3.0          1.3         0.2  setosa</span></span>
+<span><span class="co">#&gt; 4          4.4         3.2          1.3         0.2  setosa</span></span>
+<span><span class="co">#&gt; 5          4.5         2.3          1.3         0.3  setosa</span></span>
+<span><span class="co">#&gt; 6          4.6         3.1          1.5         0.2  setosa</span></span>
+<span><span class="co">#&gt;   sl_rank</span></span>
+<span><span class="co">#&gt; 1       1</span></span>
+<span><span class="co">#&gt; 2       2</span></span>
+<span><span class="co">#&gt; 3       2</span></span>
+<span><span class="co">#&gt; 4       2</span></span>
+<span><span class="co">#&gt; 5       5</span></span>
+<span><span class="co">#&gt; 6       6</span></span></code></pre></div>
+<p>Insert a line break after the pipe command, not before.</p>
+</div>
+<div id="group_by-and-summarize" class="section level3" number="5.8.10">
+<h3>
+<span class="header-section-number">5.8.10</span> <code>group_by</code> and <code>summarize</code><a class="anchor" aria-label="anchor" href="#group_by-and-summarize"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">iris</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Species</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>sl <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Sepal.Length</span><span class="op">)</span>, sw <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Sepal.Width</span><span class="op">)</span>, </span>
@@ -1881,34 +539,15 @@
 <h3>
 <span class="header-section-number">5.9.1</span> RStudio Primers: See References in Moodle at the bottom<a class="anchor" aria-label="anchor" href="#rstudio-primers-see-references-in-moodle-at-the-bottom"><i class="fas fa-link"></i></a>
 </h3>
-<ol style="list-style-type: decimal">
-<li>The Basics – <a href="https://r4ds.had.co.nz/explore-intro.html#explore-intro">r4ds: Explore, I</a>
-</li>
-</ol>
-<ul>
-<li><a href="https://rstudio.cloud/learn/primers/1.1">Visualization Basics</a></li>
-<li><a href="https://rstudio.cloud/learn/primers/1.2">Programming Basics</a></li>
-</ul>
 <ol start="2" style="list-style-type: decimal">
-<li>
-<strong>Work with Data</strong> – <a href="https://r4ds.had.co.nz/wrangle-intro.html#wrangle-intro">r4ds: Wrangle, I</a>
+<li>Work with Data – <a href="https://r4ds.had.co.nz/wrangle-intro.html#wrangle-intro">r4ds: Wrangle, I</a>
 </li>
 </ol>
 <ul>
-<li><strong>Working with Tibbles</strong></li>
-<li><strong>Isolating Data with dplyr</strong></li>
-<li><strong>Deriving Information with dplyr</strong></li>
+<li><a href="https://rstudio.cloud/learn/primers/2.1">Working with Tibbles</a></li>
+<li><a href="https://rstudio.cloud/learn/primers/2.2">Isolating Data with dplyr</a></li>
+<li><a href="https://rstudio.cloud/learn/primers/2.3">Deriving Information with dplyr</a></li>
 </ul>
-<ol start="3" style="list-style-type: decimal">
-<li>Visualize Data – <a href="https://r4ds.had.co.nz/explore-intro.html#explore-intro">r4ds: Explore, II</a>
-</li>
-<li>Tidy Your Data – <a href="https://r4ds.had.co.nz/wrangle-intro.html#wrangle-intro">r4ds: Wrangle, II</a>
-</li>
-<li>Iterate – <a href="https://r4ds.had.co.nz/program-intro.html#program-intro">r4ds: Program</a>
-</li>
-<li>Write Functions – <a href="https://r4ds.had.co.nz/program-intro.html#program-intro">r4ds: Program</a>
-</li>
-</ol>
 </div>
 </div>
 <div id="learn-dplyr-by-examples-ii---gapminder" class="section level2" number="5.10">
@@ -1975,7 +614,7 @@
 </ul>
 </li>
 </ul>
-<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/WDI/">WDI</a></span><span class="op">)</span></span></code></pre></div>
@@ -1984,7 +623,8 @@
 <h4>
 <span class="header-section-number">5.10.1.2</span> R Package <code>gapminder</code> data<a class="anchor" aria-label="anchor" href="#r-package-gapminder-data"><i class="fas fa-link"></i></a>
 </h4>
-<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
+<p>We will use a <code>tidyverse</code> function <code>slice</code> replacing <code>head</code>. Check <code>slice</code> in the search window under the Help tab on the bottom right pane.</p>
+<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">gapminder</span></span>
 <span><span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 10 × 6</span></span>
@@ -2000,7 +640,7 @@
 <span><span class="co">#&gt;  8 Afghanistan Asia       1987    40.8 13867957      852.</span></span>
 <span><span class="co">#&gt;  9 Afghanistan Asia       1992    41.7 16317921      649.</span></span>
 <span><span class="co">#&gt; 10 Afghanistan Asia       1997    41.8 22227415      635.</span></span></code></pre></div>
-<div class="sourceCode" id="cb65"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb69"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Rows: 1,704</span></span>
 <span><span class="co">#&gt; Columns: 6</span></span>
@@ -2010,7 +650,7 @@
 <span><span class="co">#&gt; $ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, …</span></span>
 <span><span class="co">#&gt; $ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 13…</span></span>
 <span><span class="co">#&gt; $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, …</span></span></code></pre></div>
-<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span>
 <span><span class="co">#&gt;         country        continent        year     </span></span>
 <span><span class="co">#&gt;  Afghanistan:  12   Africa  :624   Min.   :1952  </span></span>
@@ -2037,50 +677,69 @@
 <h5>
 <span class="header-section-number">5.10.1.3.1</span> First Try - with failures<a class="anchor" aria-label="anchor" href="#first-try---with-failures"><i class="fas fa-link"></i></a>
 </h5>
-<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
+<p>You will encounter similar failures. We list three of them.</p>
+<div class="sourceCode" id="cb71"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-14-1.png" width="672"></div>
-<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
+<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-18-1.png" width="672"></div>
+<p>There are lots of data in each year: 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, 1997, …. Can you tell how many years are in the data? The following command shows different years in the data.</p>
+<div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">year</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] 1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 2002</span></span>
+<span><span class="co">#&gt; [12] 2007</span></span></code></pre></div>
+<p>You can guess it from the data summary above. Can you imagine how many countries are in the data? 142? Anyhow, too many points are on each year.</p>
+<div class="sourceCode" id="cb73"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-15-1.png" width="672"></div>
-<div class="sourceCode" id="cb69"><pre class="downlit sourceCode r">
+<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-20-1.png" width="672"></div>
+<p>Now, you can guess the reason why you had this output. This is often called a saw-tooth.</p>
+<div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Warning: Continuous x aesthetic</span></span>
 <span><span class="co">#&gt; ℹ did you forget `aes(group = ...)`?</span></span></code></pre></div>
-<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-16-1.png" width="672"></div>
-<div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
+<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-21-1.png" width="672"></div>
+<p>Can you see what the problem is? The <code>year</code> is a numerical variable in integer.</p>
+<div class="sourceCode" id="cb75"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/typeof.html">typeof</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">df</span>, <span class="va">year</span><span class="op">)</span><span class="op">)</span> <span class="co"># same as typeof(df$year)</span></span>
 <span><span class="co">#&gt; [1] "integer"</span></span></code></pre></div>
-<div class="sourceCode" id="cb71"><pre class="downlit sourceCode r">
+<p>The following looks better.</p>
+<div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">lifeExp</span>, group <span class="op">=</span> <span class="va">year</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-18-1.png" width="672"></div>
+<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-23-1.png" width="672"></div>
 </div>
 <div id="box-plot" class="section level5" number="5.10.1.3.2">
 <h5>
 <span class="header-section-number">5.10.1.3.2</span> Box Plot<a class="anchor" aria-label="anchor" href="#box-plot"><i class="fas fa-link"></i></a>
 </h5>
-<div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb77"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/as_factor.html">as_factor</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-19-1.png" width="672"></div>
+<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-24-1.png" width="672"></div>
+<p>We will study data visualization in Chapter <a href="ggplot2.html#ggplot2">8</a>.</p>
 </div>
 </div>
 <div id="applications-of-dplyr" class="section level4" number="5.10.1.4">
 <h4>
 <span class="header-section-number">5.10.1.4</span> Applications of <code>dplyr</code><a class="anchor" aria-label="anchor" href="#applications-of-dplyr"><i class="fas fa-link"></i></a>
 </h4>
+<p>Let us apply <code>dplyr</code> to manipulate data to visualize the data.</p>
 <div id="filter" class="section level5" number="5.10.1.4.1">
 <h5>
 <span class="header-section-number">5.10.1.4.1</span> <code>filter</code><a class="anchor" aria-label="anchor" href="#filter"><i class="fas fa-link"></i></a>
 </h5>
-<div class="sourceCode" id="cb73"><pre class="downlit sourceCode r">
+<p>By <code>filter</code> you can obtain the the data of one country.</p>
+<p><code>filter(country == "Afghanistan")</code></p>
+<p>Note that we need two equal symbols, and quotation marks must surround the country name.</p>
+<div class="sourceCode" id="cb78"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op">==</span> <span class="st">"Afghanistan"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-20-1.png" width="672"></div>
-<div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
+<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-25-1.png" width="672"></div>
+<p>Looks good. From the data you observe, the life expectancy at birth in 1952 was below 30, and it was still below 44 in 2007.</p>
+<p>Let us compare Afghanistan with Japan. When you choose more than one country, we use the following format: <code>country %in% c("Afghanistan", "Japan")</code>.</p>
+<div class="sourceCode" id="cb79"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Afghanistan"</span>, <span class="st">"Japan"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">lifeExp</span>, color <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-21-1.png" width="672"></div>
-<div class="sourceCode" id="cb75"><pre class="downlit sourceCode r">
+<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-26-1.png" width="672"></div>
+<p>What do you observe from this chart?</p>
+<p>The code <code>unique(df$country)</code> does the same as the one below. First, choose distinct elements in the column <code>country</code> by <code>distinct(country)</code> and get the column as a vector by <code>pull</code>.</p>
+<div class="sourceCode" id="cb80"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">country</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   [1] Afghanistan              Albania                 </span></span>
 <span><span class="co">#&gt;   [3] Algeria                  Angola                  </span></span>
@@ -2154,11 +813,13 @@
 <span><span class="co">#&gt; [139] West Bank and Gaza       Yemen, Rep.             </span></span>
 <span><span class="co">#&gt; [141] Zambia                   Zimbabwe                </span></span>
 <span><span class="co">#&gt; 142 Levels: Afghanistan Albania Algeria Angola ... Zimbabwe</span></span></code></pre></div>
-<div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
+<p>As we have guessed, there are 142 countries in this data.</p>
+<p>Let us choose BRICs countries in the data.</p>
+<div class="sourceCode" id="cb81"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Brazil"</span>, <span class="st">"Russia"</span>, <span class="st">"India"</span>, <span class="st">"China"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">lifeExp</span>, color <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-23-1.png" width="672"></div>
-<p>Russian data is missing.</p>
+<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-28-1.png" width="672"></div>
+<p>Russia data is missing. Can you find it in the list of countries? It can be a problem of <code>gapminder</code> data. Can you think of the reason why Russia is not in?</p>
 </div>
 </div>
 </div>
@@ -2171,7 +832,8 @@
 <li>Choose ASEAN countries and do the similar investigations.</li>
 </ol>
 <ul>
-<li>Brunei, Cambodia, Indonesia, Laos, Malaysia, Myanmar, Philippines, Singapore.</li>
+<li><p>Brunei, Cambodia, Indonesia, Laos, Malaysia, Myanmar, Philippines, Singapore.</p></li>
+<li><p>How many of these countries are on the list?</p></li>
 </ul>
 <ol start="3" style="list-style-type: decimal">
 <li>Choose several countries by yourself and do the similar investigations.</li>
@@ -2181,11 +843,12 @@
 <h3>
 <span class="header-section-number">5.10.3</span> <code>group_by</code> and <code>summarize</code><a class="anchor" aria-label="anchor" href="#group_by-and-summarize-1"><i class="fas fa-link"></i></a>
 </h3>
-<p>Let us use the variable <code>continent</code> and summarize the data.</p>
-<div class="sourceCode" id="cb77"><pre class="downlit sourceCode r">
+<p>Let us use the variable <code>continent</code> and summarize the data. Can you tell how many continents are listed in the data? Yes, there are five. Can you tell how many countries are in each continent on the data?</p>
+<div class="sourceCode" id="cb82"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_lifeExp</span> <span class="op">&lt;-</span> <span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">continent</span>, <span class="va">year</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>mean_lifeExp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">lifeExp</span><span class="op">)</span>, median_lifeExp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">lifeExp</span><span class="op">)</span>, max_lifeExp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">lifeExp</span><span class="op">)</span>, min_lifeExp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">lifeExp</span><span class="op">)</span>, .groups <span class="op">=</span> <span class="st">"keep"</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb78"><pre class="downlit sourceCode r">
+<p>Don’t get scared. We will learn little by little.</p>
+<div class="sourceCode" id="cb83"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_lifeExp</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 60 × 6</span></span>
 <span><span class="co">#&gt; # Groups:   continent, year [60]</span></span>
@@ -2203,24 +866,26 @@
 <span><span class="co">#&gt; 10 Africa     1997         53.6         52.8    74.8    36.1</span></span>
 <span><span class="co">#&gt; # … with 50 more rows, and abbreviated variable names</span></span>
 <span><span class="co">#&gt; #   ¹​median_lifeExp, ²​max_lifeExp, ³​min_lifeExp</span></span></code></pre></div>
-<div class="sourceCode" id="cb79"><pre class="downlit sourceCode r">
+<p>You can use <code>fill</code> and <code>color</code> for the box plot. Try and check the difference.</p>
+<div class="sourceCode" id="cb84"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1952</span>, <span class="fl">1987</span>, <span class="fl">2007</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="fu"><a href="https://forcats.tidyverse.org/reference/as_factor.html">as_factor</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">lifeExp</span>, fill <span class="op">=</span> <span class="va">continent</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-26-1.png" width="672"></div>
-<div class="sourceCode" id="cb80"><pre class="downlit sourceCode r">
+<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-31-1.png" width="672"></div>
+<p>The following are examples of line graphs. Please see the differences.</p>
+<div class="sourceCode" id="cb85"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_lifeExp</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">mean_lifeExp</span>, color <span class="op">=</span> <span class="va">continent</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-27-1.png" width="672"></div>
-<div class="sourceCode" id="cb81"><pre class="downlit sourceCode r">
+<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-32-1.png" width="672"></div>
+<div class="sourceCode" id="cb86"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_lifeExp</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">mean_lifeExp</span>, color <span class="op">=</span> <span class="va">continent</span>, linetype <span class="op">=</span> <span class="va">continent</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-28-1.png" width="672"></div>
-<div class="sourceCode" id="cb82"><pre class="downlit sourceCode r">
+<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-33-1.png" width="672"></div>
+<div class="sourceCode" id="cb87"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_lifeExp</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">mean_lifeExp</span>, color <span class="op">=</span> <span class="va">continent</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">median_lifeExp</span>, linetype <span class="op">=</span> <span class="va">continent</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-29-1.png" width="672"></div>
+<div class="inline-figure"><img src="05-dplyr_files/figure-html/unnamed-chunk-34-1.png" width="672"></div>
 </div>
 </div>
 <div id="the-week-two-assignment-in-moodle" class="section level2" number="5.11">
@@ -2267,7 +932,7 @@
 <h3>
 <span class="header-section-number">5.11.1</span> Original Data? WDI?<a class="anchor" aria-label="anchor" href="#original-data-wdi"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb83"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb88"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 10 × 6</span></span>
 <span><span class="co">#&gt;    country     continent  year lifeExp      pop gdpPercap</span></span>
@@ -2291,7 +956,7 @@
 <li>NY.GDP.PCAP.KD: GDP per capita (constant 2015 US$)</li>
 <li>SP.POP.TOTL: Population, total</li>
 </ul>
-<div class="sourceCode" id="cb84"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb89"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_wdi</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span></span>
 <span>  country <span class="op">=</span> <span class="st">"all"</span>, </span>
 <span>  indicator <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>lifeExp <span class="op">=</span> <span class="st">"SP.DYN.LE00.IN"</span>, pop <span class="op">=</span> <span class="st">"SP.POP.TOTL"</span>, gdpPercap <span class="op">=</span> <span class="st">"NY.GDP.PCAP.KD"</span><span class="op">)</span></span>
@@ -2304,7 +969,7 @@
 #&gt; 
 #&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
 #&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<div class="sourceCode" id="cb86"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb91"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_wdi</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 10 × 7</span></span>
 <span><span class="co">#&gt;    country     iso2c iso3c  year lifeExp      pop gdpPercap</span></span>
@@ -2319,7 +984,7 @@
 <span><span class="co">#&gt;  8 Afghanistan AF    AFG    1967    35.9 10010030        NA</span></span>
 <span><span class="co">#&gt;  9 Afghanistan AF    AFG    1968    36.4 10247780        NA</span></span>
 <span><span class="co">#&gt; 10 Afghanistan AF    AFG    1969    36.9 10494489        NA</span></span></code></pre></div>
-<div class="sourceCode" id="cb87"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb92"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_wdi_extra</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span></span>
 <span>  country <span class="op">=</span> <span class="st">"all"</span>, </span>
 <span>  indicator <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>lifeExp <span class="op">=</span> <span class="st">"SP.DYN.LE00.IN"</span>, pop <span class="op">=</span> <span class="st">"SP.POP.TOTL"</span>, gdpPercap <span class="op">=</span> <span class="st">"NY.GDP.PCAP.KD"</span><span class="op">)</span>, </span>
@@ -2335,7 +1000,7 @@
 #&gt; 
 #&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
 #&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<div class="sourceCode" id="cb89"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb94"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_wdi_extra</span></span>
 <span><span class="co">#&gt; # A tibble: 16,492 × 15</span></span>
 <span><span class="co">#&gt;    country     iso2c iso3c  year status lastupdated lifeExp</span></span>
@@ -2354,6 +1019,7 @@
 <span><span class="co">#&gt; #   gdpPercap &lt;dbl&gt;, region &lt;chr&gt;, capital &lt;chr&gt;,</span></span>
 <span><span class="co">#&gt; #   longitude &lt;dbl&gt;, latitude &lt;dbl&gt;, income &lt;chr&gt;,</span></span>
 <span><span class="co">#&gt; #   lending &lt;chr&gt;</span></span></code></pre></div>
+<p>Can you see the differences? List them out. We will study the World Development Indicators in Chapter <a href="dplyr.html#wdi">5.11.1.1</a>.</p>
 
 </div>
 </div>
@@ -2361,7 +1027,7 @@
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="rmarkdown.html"><span class="header-section-number">4</span> R Markdown</a></div>
-<div class="next"><a href="a2resp.html"><span class="header-section-number">6</span> Assignment Two</a></div>
+<div class="next"><a href="a2resp.html"><span class="header-section-number">6</span> Assignment Two and Responses</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
@@ -2377,12 +1043,14 @@
 <a class="nav-link" href="#learn-dplyr-by-examples"><span class="header-section-number">5.8</span> Learn dplyr by Examples</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#data-iris"><span class="header-section-number">5.8.1</span> Data iris</a></li>
 <li><a class="nav-link" href="#select-1---columns-1-2-5"><span class="header-section-number">5.8.2</span> select 1 - columns 1, 2, 5</a></li>
-<li><a class="nav-link" href="#select-2---except-species"><span class="header-section-number">5.8.3</span> select 2 - except Species</a></li>
-<li><a class="nav-link" href="#select-3---change-column-names"><span class="header-section-number">5.8.4</span> select 3 - change column names</a></li>
-<li><a class="nav-link" href="#filter---by-names"><span class="header-section-number">5.8.5</span> filter - by names</a></li>
-<li><a class="nav-link" href="#arrange---ascending-and-descending-order"><span class="header-section-number">5.8.6</span> arrange - ascending and descending order</a></li>
-<li><a class="nav-link" href="#mutate---rank"><span class="header-section-number">5.8.7</span> mutate - rank</a></li>
-<li><a class="nav-link" href="#group_by-and-summarize"><span class="header-section-number">5.8.8</span> group_by and summarize</a></li>
+<li><a class="nav-link" href="#select-1-using-pipe"><span class="header-section-number">5.8.3</span> select 1 using pipe</a></li>
+<li><a class="nav-link" href="#select-2---except-species"><span class="header-section-number">5.8.4</span> select 2 - except Species</a></li>
+<li><a class="nav-link" href="#select-3---select-and-change-column-names-at-the-same-time"><span class="header-section-number">5.8.5</span> select 3 - select and change column names at the same time</a></li>
+<li><a class="nav-link" href="#select-4---change-the-order-of-columns"><span class="header-section-number">5.8.6</span> select 4 - change the order of columns</a></li>
+<li><a class="nav-link" href="#filter---by-names"><span class="header-section-number">5.8.7</span> filter - by names</a></li>
+<li><a class="nav-link" href="#arrange---ascending-and-descending-order"><span class="header-section-number">5.8.8</span> arrange - ascending and descending order</a></li>
+<li><a class="nav-link" href="#mutate---rank"><span class="header-section-number">5.8.9</span> mutate - rank</a></li>
+<li><a class="nav-link" href="#group_by-and-summarize"><span class="header-section-number">5.8.10</span> group_by and summarize</a></li>
 </ul>
 </li>
 <li>

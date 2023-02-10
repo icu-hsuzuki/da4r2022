@@ -1,5 +1,7 @@
 #  `dplyr` {#dplyr}
 
+> The `dplyr` is a package to transform data. It can combine data as well. We will treat the second feature late in Chapter \@ref(tidyr). The package `dplyr` is a part of the `tidyverse` packages, and you do not need to install it separately.
+
 
 ```r
 library(tidyverse)
@@ -28,7 +30,6 @@ dplyr is a grammar of data manipulation, providing a consistent set of verbs tha
 You can learn more about them in vignette("dplyr"). As well as these single-table verbs, dplyr also provides a variety of two-table verbs, which you can learn about in vignette("two-table").
 
 If you are new to dplyr, the best place to start is [the data transformation chapter in R for data science](http://r4ds.had.co.nz/transform.html).
-
 
 
 ## [`select`](https://dplyr.tidyverse.org/reference/select.html): Subset columns using their names and types
@@ -116,309 +117,14 @@ So far our summarise() examples have relied on sum(), max(), and mean(). But you
 
 
 ```r
-iris
-#>     Sepal.Length Sepal.Width Petal.Length Petal.Width
-#> 1            5.1         3.5          1.4         0.2
-#> 2            4.9         3.0          1.4         0.2
-#> 3            4.7         3.2          1.3         0.2
-#> 4            4.6         3.1          1.5         0.2
-#> 5            5.0         3.6          1.4         0.2
-#> 6            5.4         3.9          1.7         0.4
-#> 7            4.6         3.4          1.4         0.3
-#> 8            5.0         3.4          1.5         0.2
-#> 9            4.4         2.9          1.4         0.2
-#> 10           4.9         3.1          1.5         0.1
-#> 11           5.4         3.7          1.5         0.2
-#> 12           4.8         3.4          1.6         0.2
-#> 13           4.8         3.0          1.4         0.1
-#> 14           4.3         3.0          1.1         0.1
-#> 15           5.8         4.0          1.2         0.2
-#> 16           5.7         4.4          1.5         0.4
-#> 17           5.4         3.9          1.3         0.4
-#> 18           5.1         3.5          1.4         0.3
-#> 19           5.7         3.8          1.7         0.3
-#> 20           5.1         3.8          1.5         0.3
-#> 21           5.4         3.4          1.7         0.2
-#> 22           5.1         3.7          1.5         0.4
-#> 23           4.6         3.6          1.0         0.2
-#> 24           5.1         3.3          1.7         0.5
-#> 25           4.8         3.4          1.9         0.2
-#> 26           5.0         3.0          1.6         0.2
-#> 27           5.0         3.4          1.6         0.4
-#> 28           5.2         3.5          1.5         0.2
-#> 29           5.2         3.4          1.4         0.2
-#> 30           4.7         3.2          1.6         0.2
-#> 31           4.8         3.1          1.6         0.2
-#> 32           5.4         3.4          1.5         0.4
-#> 33           5.2         4.1          1.5         0.1
-#> 34           5.5         4.2          1.4         0.2
-#> 35           4.9         3.1          1.5         0.2
-#> 36           5.0         3.2          1.2         0.2
-#> 37           5.5         3.5          1.3         0.2
-#> 38           4.9         3.6          1.4         0.1
-#> 39           4.4         3.0          1.3         0.2
-#> 40           5.1         3.4          1.5         0.2
-#> 41           5.0         3.5          1.3         0.3
-#> 42           4.5         2.3          1.3         0.3
-#> 43           4.4         3.2          1.3         0.2
-#> 44           5.0         3.5          1.6         0.6
-#> 45           5.1         3.8          1.9         0.4
-#> 46           4.8         3.0          1.4         0.3
-#> 47           5.1         3.8          1.6         0.2
-#> 48           4.6         3.2          1.4         0.2
-#> 49           5.3         3.7          1.5         0.2
-#> 50           5.0         3.3          1.4         0.2
-#> 51           7.0         3.2          4.7         1.4
-#> 52           6.4         3.2          4.5         1.5
-#> 53           6.9         3.1          4.9         1.5
-#> 54           5.5         2.3          4.0         1.3
-#> 55           6.5         2.8          4.6         1.5
-#> 56           5.7         2.8          4.5         1.3
-#> 57           6.3         3.3          4.7         1.6
-#> 58           4.9         2.4          3.3         1.0
-#> 59           6.6         2.9          4.6         1.3
-#> 60           5.2         2.7          3.9         1.4
-#> 61           5.0         2.0          3.5         1.0
-#> 62           5.9         3.0          4.2         1.5
-#> 63           6.0         2.2          4.0         1.0
-#> 64           6.1         2.9          4.7         1.4
-#> 65           5.6         2.9          3.6         1.3
-#> 66           6.7         3.1          4.4         1.4
-#> 67           5.6         3.0          4.5         1.5
-#> 68           5.8         2.7          4.1         1.0
-#> 69           6.2         2.2          4.5         1.5
-#> 70           5.6         2.5          3.9         1.1
-#> 71           5.9         3.2          4.8         1.8
-#> 72           6.1         2.8          4.0         1.3
-#> 73           6.3         2.5          4.9         1.5
-#> 74           6.1         2.8          4.7         1.2
-#> 75           6.4         2.9          4.3         1.3
-#> 76           6.6         3.0          4.4         1.4
-#> 77           6.8         2.8          4.8         1.4
-#> 78           6.7         3.0          5.0         1.7
-#> 79           6.0         2.9          4.5         1.5
-#> 80           5.7         2.6          3.5         1.0
-#> 81           5.5         2.4          3.8         1.1
-#> 82           5.5         2.4          3.7         1.0
-#> 83           5.8         2.7          3.9         1.2
-#> 84           6.0         2.7          5.1         1.6
-#> 85           5.4         3.0          4.5         1.5
-#> 86           6.0         3.4          4.5         1.6
-#> 87           6.7         3.1          4.7         1.5
-#> 88           6.3         2.3          4.4         1.3
-#> 89           5.6         3.0          4.1         1.3
-#> 90           5.5         2.5          4.0         1.3
-#> 91           5.5         2.6          4.4         1.2
-#> 92           6.1         3.0          4.6         1.4
-#> 93           5.8         2.6          4.0         1.2
-#> 94           5.0         2.3          3.3         1.0
-#> 95           5.6         2.7          4.2         1.3
-#> 96           5.7         3.0          4.2         1.2
-#> 97           5.7         2.9          4.2         1.3
-#> 98           6.2         2.9          4.3         1.3
-#> 99           5.1         2.5          3.0         1.1
-#> 100          5.7         2.8          4.1         1.3
-#> 101          6.3         3.3          6.0         2.5
-#> 102          5.8         2.7          5.1         1.9
-#> 103          7.1         3.0          5.9         2.1
-#> 104          6.3         2.9          5.6         1.8
-#> 105          6.5         3.0          5.8         2.2
-#> 106          7.6         3.0          6.6         2.1
-#> 107          4.9         2.5          4.5         1.7
-#> 108          7.3         2.9          6.3         1.8
-#> 109          6.7         2.5          5.8         1.8
-#> 110          7.2         3.6          6.1         2.5
-#> 111          6.5         3.2          5.1         2.0
-#> 112          6.4         2.7          5.3         1.9
-#> 113          6.8         3.0          5.5         2.1
-#> 114          5.7         2.5          5.0         2.0
-#> 115          5.8         2.8          5.1         2.4
-#> 116          6.4         3.2          5.3         2.3
-#> 117          6.5         3.0          5.5         1.8
-#> 118          7.7         3.8          6.7         2.2
-#> 119          7.7         2.6          6.9         2.3
-#> 120          6.0         2.2          5.0         1.5
-#> 121          6.9         3.2          5.7         2.3
-#> 122          5.6         2.8          4.9         2.0
-#> 123          7.7         2.8          6.7         2.0
-#> 124          6.3         2.7          4.9         1.8
-#> 125          6.7         3.3          5.7         2.1
-#> 126          7.2         3.2          6.0         1.8
-#> 127          6.2         2.8          4.8         1.8
-#> 128          6.1         3.0          4.9         1.8
-#> 129          6.4         2.8          5.6         2.1
-#> 130          7.2         3.0          5.8         1.6
-#> 131          7.4         2.8          6.1         1.9
-#> 132          7.9         3.8          6.4         2.0
-#> 133          6.4         2.8          5.6         2.2
-#> 134          6.3         2.8          5.1         1.5
-#> 135          6.1         2.6          5.6         1.4
-#> 136          7.7         3.0          6.1         2.3
-#> 137          6.3         3.4          5.6         2.4
-#> 138          6.4         3.1          5.5         1.8
-#> 139          6.0         3.0          4.8         1.8
-#> 140          6.9         3.1          5.4         2.1
-#> 141          6.7         3.1          5.6         2.4
-#> 142          6.9         3.1          5.1         2.3
-#> 143          5.8         2.7          5.1         1.9
-#> 144          6.8         3.2          5.9         2.3
-#> 145          6.7         3.3          5.7         2.5
-#> 146          6.7         3.0          5.2         2.3
-#> 147          6.3         2.5          5.0         1.9
-#> 148          6.5         3.0          5.2         2.0
-#> 149          6.2         3.4          5.4         2.3
-#> 150          5.9         3.0          5.1         1.8
-#>        Species
-#> 1       setosa
-#> 2       setosa
-#> 3       setosa
-#> 4       setosa
-#> 5       setosa
-#> 6       setosa
-#> 7       setosa
-#> 8       setosa
-#> 9       setosa
-#> 10      setosa
-#> 11      setosa
-#> 12      setosa
-#> 13      setosa
-#> 14      setosa
-#> 15      setosa
-#> 16      setosa
-#> 17      setosa
-#> 18      setosa
-#> 19      setosa
-#> 20      setosa
-#> 21      setosa
-#> 22      setosa
-#> 23      setosa
-#> 24      setosa
-#> 25      setosa
-#> 26      setosa
-#> 27      setosa
-#> 28      setosa
-#> 29      setosa
-#> 30      setosa
-#> 31      setosa
-#> 32      setosa
-#> 33      setosa
-#> 34      setosa
-#> 35      setosa
-#> 36      setosa
-#> 37      setosa
-#> 38      setosa
-#> 39      setosa
-#> 40      setosa
-#> 41      setosa
-#> 42      setosa
-#> 43      setosa
-#> 44      setosa
-#> 45      setosa
-#> 46      setosa
-#> 47      setosa
-#> 48      setosa
-#> 49      setosa
-#> 50      setosa
-#> 51  versicolor
-#> 52  versicolor
-#> 53  versicolor
-#> 54  versicolor
-#> 55  versicolor
-#> 56  versicolor
-#> 57  versicolor
-#> 58  versicolor
-#> 59  versicolor
-#> 60  versicolor
-#> 61  versicolor
-#> 62  versicolor
-#> 63  versicolor
-#> 64  versicolor
-#> 65  versicolor
-#> 66  versicolor
-#> 67  versicolor
-#> 68  versicolor
-#> 69  versicolor
-#> 70  versicolor
-#> 71  versicolor
-#> 72  versicolor
-#> 73  versicolor
-#> 74  versicolor
-#> 75  versicolor
-#> 76  versicolor
-#> 77  versicolor
-#> 78  versicolor
-#> 79  versicolor
-#> 80  versicolor
-#> 81  versicolor
-#> 82  versicolor
-#> 83  versicolor
-#> 84  versicolor
-#> 85  versicolor
-#> 86  versicolor
-#> 87  versicolor
-#> 88  versicolor
-#> 89  versicolor
-#> 90  versicolor
-#> 91  versicolor
-#> 92  versicolor
-#> 93  versicolor
-#> 94  versicolor
-#> 95  versicolor
-#> 96  versicolor
-#> 97  versicolor
-#> 98  versicolor
-#> 99  versicolor
-#> 100 versicolor
-#> 101  virginica
-#> 102  virginica
-#> 103  virginica
-#> 104  virginica
-#> 105  virginica
-#> 106  virginica
-#> 107  virginica
-#> 108  virginica
-#> 109  virginica
-#> 110  virginica
-#> 111  virginica
-#> 112  virginica
-#> 113  virginica
-#> 114  virginica
-#> 115  virginica
-#> 116  virginica
-#> 117  virginica
-#> 118  virginica
-#> 119  virginica
-#> 120  virginica
-#> 121  virginica
-#> 122  virginica
-#> 123  virginica
-#> 124  virginica
-#> 125  virginica
-#> 126  virginica
-#> 127  virginica
-#> 128  virginica
-#> 129  virginica
-#> 130  virginica
-#> 131  virginica
-#> 132  virginica
-#> 133  virginica
-#> 134  virginica
-#> 135  virginica
-#> 136  virginica
-#> 137  virginica
-#> 138  virginica
-#> 139  virginica
-#> 140  virginica
-#> 141  virginica
-#> 142  virginica
-#> 143  virginica
-#> 144  virginica
-#> 145  virginica
-#> 146  virginica
-#> 147  virginica
-#> 148  virginica
-#> 149  virginica
-#> 150  virginica
+head(iris)
+#>   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+#> 1          5.1         3.5          1.4         0.2  setosa
+#> 2          4.9         3.0          1.4         0.2  setosa
+#> 3          4.7         3.2          1.3         0.2  setosa
+#> 4          4.6         3.1          1.5         0.2  setosa
+#> 5          5.0         3.6          1.4         0.2  setosa
+#> 6          5.4         3.9          1.7         0.4  setosa
 ```
 
 
@@ -449,589 +155,128 @@ summary(iris)
 
 
 ```r
-select(iris, c(1,2,5))
-#>     Sepal.Length Sepal.Width    Species
-#> 1            5.1         3.5     setosa
-#> 2            4.9         3.0     setosa
-#> 3            4.7         3.2     setosa
-#> 4            4.6         3.1     setosa
-#> 5            5.0         3.6     setosa
-#> 6            5.4         3.9     setosa
-#> 7            4.6         3.4     setosa
-#> 8            5.0         3.4     setosa
-#> 9            4.4         2.9     setosa
-#> 10           4.9         3.1     setosa
-#> 11           5.4         3.7     setosa
-#> 12           4.8         3.4     setosa
-#> 13           4.8         3.0     setosa
-#> 14           4.3         3.0     setosa
-#> 15           5.8         4.0     setosa
-#> 16           5.7         4.4     setosa
-#> 17           5.4         3.9     setosa
-#> 18           5.1         3.5     setosa
-#> 19           5.7         3.8     setosa
-#> 20           5.1         3.8     setosa
-#> 21           5.4         3.4     setosa
-#> 22           5.1         3.7     setosa
-#> 23           4.6         3.6     setosa
-#> 24           5.1         3.3     setosa
-#> 25           4.8         3.4     setosa
-#> 26           5.0         3.0     setosa
-#> 27           5.0         3.4     setosa
-#> 28           5.2         3.5     setosa
-#> 29           5.2         3.4     setosa
-#> 30           4.7         3.2     setosa
-#> 31           4.8         3.1     setosa
-#> 32           5.4         3.4     setosa
-#> 33           5.2         4.1     setosa
-#> 34           5.5         4.2     setosa
-#> 35           4.9         3.1     setosa
-#> 36           5.0         3.2     setosa
-#> 37           5.5         3.5     setosa
-#> 38           4.9         3.6     setosa
-#> 39           4.4         3.0     setosa
-#> 40           5.1         3.4     setosa
-#> 41           5.0         3.5     setosa
-#> 42           4.5         2.3     setosa
-#> 43           4.4         3.2     setosa
-#> 44           5.0         3.5     setosa
-#> 45           5.1         3.8     setosa
-#> 46           4.8         3.0     setosa
-#> 47           5.1         3.8     setosa
-#> 48           4.6         3.2     setosa
-#> 49           5.3         3.7     setosa
-#> 50           5.0         3.3     setosa
-#> 51           7.0         3.2 versicolor
-#> 52           6.4         3.2 versicolor
-#> 53           6.9         3.1 versicolor
-#> 54           5.5         2.3 versicolor
-#> 55           6.5         2.8 versicolor
-#> 56           5.7         2.8 versicolor
-#> 57           6.3         3.3 versicolor
-#> 58           4.9         2.4 versicolor
-#> 59           6.6         2.9 versicolor
-#> 60           5.2         2.7 versicolor
-#> 61           5.0         2.0 versicolor
-#> 62           5.9         3.0 versicolor
-#> 63           6.0         2.2 versicolor
-#> 64           6.1         2.9 versicolor
-#> 65           5.6         2.9 versicolor
-#> 66           6.7         3.1 versicolor
-#> 67           5.6         3.0 versicolor
-#> 68           5.8         2.7 versicolor
-#> 69           6.2         2.2 versicolor
-#> 70           5.6         2.5 versicolor
-#> 71           5.9         3.2 versicolor
-#> 72           6.1         2.8 versicolor
-#> 73           6.3         2.5 versicolor
-#> 74           6.1         2.8 versicolor
-#> 75           6.4         2.9 versicolor
-#> 76           6.6         3.0 versicolor
-#> 77           6.8         2.8 versicolor
-#> 78           6.7         3.0 versicolor
-#> 79           6.0         2.9 versicolor
-#> 80           5.7         2.6 versicolor
-#> 81           5.5         2.4 versicolor
-#> 82           5.5         2.4 versicolor
-#> 83           5.8         2.7 versicolor
-#> 84           6.0         2.7 versicolor
-#> 85           5.4         3.0 versicolor
-#> 86           6.0         3.4 versicolor
-#> 87           6.7         3.1 versicolor
-#> 88           6.3         2.3 versicolor
-#> 89           5.6         3.0 versicolor
-#> 90           5.5         2.5 versicolor
-#> 91           5.5         2.6 versicolor
-#> 92           6.1         3.0 versicolor
-#> 93           5.8         2.6 versicolor
-#> 94           5.0         2.3 versicolor
-#> 95           5.6         2.7 versicolor
-#> 96           5.7         3.0 versicolor
-#> 97           5.7         2.9 versicolor
-#> 98           6.2         2.9 versicolor
-#> 99           5.1         2.5 versicolor
-#> 100          5.7         2.8 versicolor
-#> 101          6.3         3.3  virginica
-#> 102          5.8         2.7  virginica
-#> 103          7.1         3.0  virginica
-#> 104          6.3         2.9  virginica
-#> 105          6.5         3.0  virginica
-#> 106          7.6         3.0  virginica
-#> 107          4.9         2.5  virginica
-#> 108          7.3         2.9  virginica
-#> 109          6.7         2.5  virginica
-#> 110          7.2         3.6  virginica
-#> 111          6.5         3.2  virginica
-#> 112          6.4         2.7  virginica
-#> 113          6.8         3.0  virginica
-#> 114          5.7         2.5  virginica
-#> 115          5.8         2.8  virginica
-#> 116          6.4         3.2  virginica
-#> 117          6.5         3.0  virginica
-#> 118          7.7         3.8  virginica
-#> 119          7.7         2.6  virginica
-#> 120          6.0         2.2  virginica
-#> 121          6.9         3.2  virginica
-#> 122          5.6         2.8  virginica
-#> 123          7.7         2.8  virginica
-#> 124          6.3         2.7  virginica
-#> 125          6.7         3.3  virginica
-#> 126          7.2         3.2  virginica
-#> 127          6.2         2.8  virginica
-#> 128          6.1         3.0  virginica
-#> 129          6.4         2.8  virginica
-#> 130          7.2         3.0  virginica
-#> 131          7.4         2.8  virginica
-#> 132          7.9         3.8  virginica
-#> 133          6.4         2.8  virginica
-#> 134          6.3         2.8  virginica
-#> 135          6.1         2.6  virginica
-#> 136          7.7         3.0  virginica
-#> 137          6.3         3.4  virginica
-#> 138          6.4         3.1  virginica
-#> 139          6.0         3.0  virginica
-#> 140          6.9         3.1  virginica
-#> 141          6.7         3.1  virginica
-#> 142          6.9         3.1  virginica
-#> 143          5.8         2.7  virginica
-#> 144          6.8         3.2  virginica
-#> 145          6.7         3.3  virginica
-#> 146          6.7         3.0  virginica
-#> 147          6.3         2.5  virginica
-#> 148          6.5         3.0  virginica
-#> 149          6.2         3.4  virginica
-#> 150          5.9         3.0  virginica
+head(select(iris, c(1,2,5)))
+#>   Sepal.Length Sepal.Width Species
+#> 1          5.1         3.5  setosa
+#> 2          4.9         3.0  setosa
+#> 3          4.7         3.2  setosa
+#> 4          4.6         3.1  setosa
+#> 5          5.0         3.6  setosa
+#> 6          5.4         3.9  setosa
+```
+
+You can select the first, the second and the fifth columns. If you want to use it, then assign a new name.
+
+
+```r
+head(iris)
+#>   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+#> 1          5.1         3.5          1.4         0.2  setosa
+#> 2          4.9         3.0          1.4         0.2  setosa
+#> 3          4.7         3.2          1.3         0.2  setosa
+#> 4          4.6         3.1          1.5         0.2  setosa
+#> 5          5.0         3.6          1.4         0.2  setosa
+#> 6          5.4         3.9          1.7         0.4  setosa
 ```
 
 
+
+```r
+df_iris125 <- select(iris, c(1,2,5))
+head(df_iris125)
+#>   Sepal.Length Sepal.Width Species
+#> 1          5.1         3.5  setosa
+#> 2          4.9         3.0  setosa
+#> 3          4.7         3.2  setosa
+#> 4          4.6         3.1  setosa
+#> 5          5.0         3.6  setosa
+#> 6          5.4         3.9  setosa
+```
+
+### `select` 1 using pipe
+
+In the previous example, we used `head(select(iris, c(1,2,5)))`, `head` comes first because we apply `head` to the result of `select(iris, c(1,2,5))`. In order to apply functions in a sequencial order, we can use pipe command. You can get the same result by the following.
+
+
+```r
+iris %>% select(c(1,2,5)) %>% head()
+#>   Sepal.Length Sepal.Width Species
+#> 1          5.1         3.5  setosa
+#> 2          4.9         3.0  setosa
+#> 3          4.7         3.2  setosa
+#> 4          4.6         3.1  setosa
+#> 5          5.0         3.6  setosa
+#> 6          5.4         3.9  setosa
+```
+
+All `tidyverse` functions are designed so that the first argument, i.e., the entry, is the data. So using pipe, `iris` is assumed to be the first entry of the `select` function, and `select(iris, c(1,2,5))` is the first entry of the head function.
+
+In the following, we use pipes.  
 
 ### `select` 2 - except Species
 
 
 ```r
-select(iris, -Species)
-#>     Sepal.Length Sepal.Width Petal.Length Petal.Width
-#> 1            5.1         3.5          1.4         0.2
-#> 2            4.9         3.0          1.4         0.2
-#> 3            4.7         3.2          1.3         0.2
-#> 4            4.6         3.1          1.5         0.2
-#> 5            5.0         3.6          1.4         0.2
-#> 6            5.4         3.9          1.7         0.4
-#> 7            4.6         3.4          1.4         0.3
-#> 8            5.0         3.4          1.5         0.2
-#> 9            4.4         2.9          1.4         0.2
-#> 10           4.9         3.1          1.5         0.1
-#> 11           5.4         3.7          1.5         0.2
-#> 12           4.8         3.4          1.6         0.2
-#> 13           4.8         3.0          1.4         0.1
-#> 14           4.3         3.0          1.1         0.1
-#> 15           5.8         4.0          1.2         0.2
-#> 16           5.7         4.4          1.5         0.4
-#> 17           5.4         3.9          1.3         0.4
-#> 18           5.1         3.5          1.4         0.3
-#> 19           5.7         3.8          1.7         0.3
-#> 20           5.1         3.8          1.5         0.3
-#> 21           5.4         3.4          1.7         0.2
-#> 22           5.1         3.7          1.5         0.4
-#> 23           4.6         3.6          1.0         0.2
-#> 24           5.1         3.3          1.7         0.5
-#> 25           4.8         3.4          1.9         0.2
-#> 26           5.0         3.0          1.6         0.2
-#> 27           5.0         3.4          1.6         0.4
-#> 28           5.2         3.5          1.5         0.2
-#> 29           5.2         3.4          1.4         0.2
-#> 30           4.7         3.2          1.6         0.2
-#> 31           4.8         3.1          1.6         0.2
-#> 32           5.4         3.4          1.5         0.4
-#> 33           5.2         4.1          1.5         0.1
-#> 34           5.5         4.2          1.4         0.2
-#> 35           4.9         3.1          1.5         0.2
-#> 36           5.0         3.2          1.2         0.2
-#> 37           5.5         3.5          1.3         0.2
-#> 38           4.9         3.6          1.4         0.1
-#> 39           4.4         3.0          1.3         0.2
-#> 40           5.1         3.4          1.5         0.2
-#> 41           5.0         3.5          1.3         0.3
-#> 42           4.5         2.3          1.3         0.3
-#> 43           4.4         3.2          1.3         0.2
-#> 44           5.0         3.5          1.6         0.6
-#> 45           5.1         3.8          1.9         0.4
-#> 46           4.8         3.0          1.4         0.3
-#> 47           5.1         3.8          1.6         0.2
-#> 48           4.6         3.2          1.4         0.2
-#> 49           5.3         3.7          1.5         0.2
-#> 50           5.0         3.3          1.4         0.2
-#> 51           7.0         3.2          4.7         1.4
-#> 52           6.4         3.2          4.5         1.5
-#> 53           6.9         3.1          4.9         1.5
-#> 54           5.5         2.3          4.0         1.3
-#> 55           6.5         2.8          4.6         1.5
-#> 56           5.7         2.8          4.5         1.3
-#> 57           6.3         3.3          4.7         1.6
-#> 58           4.9         2.4          3.3         1.0
-#> 59           6.6         2.9          4.6         1.3
-#> 60           5.2         2.7          3.9         1.4
-#> 61           5.0         2.0          3.5         1.0
-#> 62           5.9         3.0          4.2         1.5
-#> 63           6.0         2.2          4.0         1.0
-#> 64           6.1         2.9          4.7         1.4
-#> 65           5.6         2.9          3.6         1.3
-#> 66           6.7         3.1          4.4         1.4
-#> 67           5.6         3.0          4.5         1.5
-#> 68           5.8         2.7          4.1         1.0
-#> 69           6.2         2.2          4.5         1.5
-#> 70           5.6         2.5          3.9         1.1
-#> 71           5.9         3.2          4.8         1.8
-#> 72           6.1         2.8          4.0         1.3
-#> 73           6.3         2.5          4.9         1.5
-#> 74           6.1         2.8          4.7         1.2
-#> 75           6.4         2.9          4.3         1.3
-#> 76           6.6         3.0          4.4         1.4
-#> 77           6.8         2.8          4.8         1.4
-#> 78           6.7         3.0          5.0         1.7
-#> 79           6.0         2.9          4.5         1.5
-#> 80           5.7         2.6          3.5         1.0
-#> 81           5.5         2.4          3.8         1.1
-#> 82           5.5         2.4          3.7         1.0
-#> 83           5.8         2.7          3.9         1.2
-#> 84           6.0         2.7          5.1         1.6
-#> 85           5.4         3.0          4.5         1.5
-#> 86           6.0         3.4          4.5         1.6
-#> 87           6.7         3.1          4.7         1.5
-#> 88           6.3         2.3          4.4         1.3
-#> 89           5.6         3.0          4.1         1.3
-#> 90           5.5         2.5          4.0         1.3
-#> 91           5.5         2.6          4.4         1.2
-#> 92           6.1         3.0          4.6         1.4
-#> 93           5.8         2.6          4.0         1.2
-#> 94           5.0         2.3          3.3         1.0
-#> 95           5.6         2.7          4.2         1.3
-#> 96           5.7         3.0          4.2         1.2
-#> 97           5.7         2.9          4.2         1.3
-#> 98           6.2         2.9          4.3         1.3
-#> 99           5.1         2.5          3.0         1.1
-#> 100          5.7         2.8          4.1         1.3
-#> 101          6.3         3.3          6.0         2.5
-#> 102          5.8         2.7          5.1         1.9
-#> 103          7.1         3.0          5.9         2.1
-#> 104          6.3         2.9          5.6         1.8
-#> 105          6.5         3.0          5.8         2.2
-#> 106          7.6         3.0          6.6         2.1
-#> 107          4.9         2.5          4.5         1.7
-#> 108          7.3         2.9          6.3         1.8
-#> 109          6.7         2.5          5.8         1.8
-#> 110          7.2         3.6          6.1         2.5
-#> 111          6.5         3.2          5.1         2.0
-#> 112          6.4         2.7          5.3         1.9
-#> 113          6.8         3.0          5.5         2.1
-#> 114          5.7         2.5          5.0         2.0
-#> 115          5.8         2.8          5.1         2.4
-#> 116          6.4         3.2          5.3         2.3
-#> 117          6.5         3.0          5.5         1.8
-#> 118          7.7         3.8          6.7         2.2
-#> 119          7.7         2.6          6.9         2.3
-#> 120          6.0         2.2          5.0         1.5
-#> 121          6.9         3.2          5.7         2.3
-#> 122          5.6         2.8          4.9         2.0
-#> 123          7.7         2.8          6.7         2.0
-#> 124          6.3         2.7          4.9         1.8
-#> 125          6.7         3.3          5.7         2.1
-#> 126          7.2         3.2          6.0         1.8
-#> 127          6.2         2.8          4.8         1.8
-#> 128          6.1         3.0          4.9         1.8
-#> 129          6.4         2.8          5.6         2.1
-#> 130          7.2         3.0          5.8         1.6
-#> 131          7.4         2.8          6.1         1.9
-#> 132          7.9         3.8          6.4         2.0
-#> 133          6.4         2.8          5.6         2.2
-#> 134          6.3         2.8          5.1         1.5
-#> 135          6.1         2.6          5.6         1.4
-#> 136          7.7         3.0          6.1         2.3
-#> 137          6.3         3.4          5.6         2.4
-#> 138          6.4         3.1          5.5         1.8
-#> 139          6.0         3.0          4.8         1.8
-#> 140          6.9         3.1          5.4         2.1
-#> 141          6.7         3.1          5.6         2.4
-#> 142          6.9         3.1          5.1         2.3
-#> 143          5.8         2.7          5.1         1.9
-#> 144          6.8         3.2          5.9         2.3
-#> 145          6.7         3.3          5.7         2.5
-#> 146          6.7         3.0          5.2         2.3
-#> 147          6.3         2.5          5.0         1.9
-#> 148          6.5         3.0          5.2         2.0
-#> 149          6.2         3.4          5.4         2.3
-#> 150          5.9         3.0          5.1         1.8
+select(iris, -Species) %>% head()
+#>   Sepal.Length Sepal.Width Petal.Length Petal.Width
+#> 1          5.1         3.5          1.4         0.2
+#> 2          4.9         3.0          1.4         0.2
+#> 3          4.7         3.2          1.3         0.2
+#> 4          4.6         3.1          1.5         0.2
+#> 5          5.0         3.6          1.4         0.2
+#> 6          5.4         3.9          1.7         0.4
 ```
 
 
 
-### `select` 3 - change column names
+### `select` 3 - select and change column names at the same time
 
 
 ```r
-select(iris, sl = Sepal.Length, sw = Sepal.Width, sp = Species)
-#>      sl  sw         sp
-#> 1   5.1 3.5     setosa
-#> 2   4.9 3.0     setosa
-#> 3   4.7 3.2     setosa
-#> 4   4.6 3.1     setosa
-#> 5   5.0 3.6     setosa
-#> 6   5.4 3.9     setosa
-#> 7   4.6 3.4     setosa
-#> 8   5.0 3.4     setosa
-#> 9   4.4 2.9     setosa
-#> 10  4.9 3.1     setosa
-#> 11  5.4 3.7     setosa
-#> 12  4.8 3.4     setosa
-#> 13  4.8 3.0     setosa
-#> 14  4.3 3.0     setosa
-#> 15  5.8 4.0     setosa
-#> 16  5.7 4.4     setosa
-#> 17  5.4 3.9     setosa
-#> 18  5.1 3.5     setosa
-#> 19  5.7 3.8     setosa
-#> 20  5.1 3.8     setosa
-#> 21  5.4 3.4     setosa
-#> 22  5.1 3.7     setosa
-#> 23  4.6 3.6     setosa
-#> 24  5.1 3.3     setosa
-#> 25  4.8 3.4     setosa
-#> 26  5.0 3.0     setosa
-#> 27  5.0 3.4     setosa
-#> 28  5.2 3.5     setosa
-#> 29  5.2 3.4     setosa
-#> 30  4.7 3.2     setosa
-#> 31  4.8 3.1     setosa
-#> 32  5.4 3.4     setosa
-#> 33  5.2 4.1     setosa
-#> 34  5.5 4.2     setosa
-#> 35  4.9 3.1     setosa
-#> 36  5.0 3.2     setosa
-#> 37  5.5 3.5     setosa
-#> 38  4.9 3.6     setosa
-#> 39  4.4 3.0     setosa
-#> 40  5.1 3.4     setosa
-#> 41  5.0 3.5     setosa
-#> 42  4.5 2.3     setosa
-#> 43  4.4 3.2     setosa
-#> 44  5.0 3.5     setosa
-#> 45  5.1 3.8     setosa
-#> 46  4.8 3.0     setosa
-#> 47  5.1 3.8     setosa
-#> 48  4.6 3.2     setosa
-#> 49  5.3 3.7     setosa
-#> 50  5.0 3.3     setosa
-#> 51  7.0 3.2 versicolor
-#> 52  6.4 3.2 versicolor
-#> 53  6.9 3.1 versicolor
-#> 54  5.5 2.3 versicolor
-#> 55  6.5 2.8 versicolor
-#> 56  5.7 2.8 versicolor
-#> 57  6.3 3.3 versicolor
-#> 58  4.9 2.4 versicolor
-#> 59  6.6 2.9 versicolor
-#> 60  5.2 2.7 versicolor
-#> 61  5.0 2.0 versicolor
-#> 62  5.9 3.0 versicolor
-#> 63  6.0 2.2 versicolor
-#> 64  6.1 2.9 versicolor
-#> 65  5.6 2.9 versicolor
-#> 66  6.7 3.1 versicolor
-#> 67  5.6 3.0 versicolor
-#> 68  5.8 2.7 versicolor
-#> 69  6.2 2.2 versicolor
-#> 70  5.6 2.5 versicolor
-#> 71  5.9 3.2 versicolor
-#> 72  6.1 2.8 versicolor
-#> 73  6.3 2.5 versicolor
-#> 74  6.1 2.8 versicolor
-#> 75  6.4 2.9 versicolor
-#> 76  6.6 3.0 versicolor
-#> 77  6.8 2.8 versicolor
-#> 78  6.7 3.0 versicolor
-#> 79  6.0 2.9 versicolor
-#> 80  5.7 2.6 versicolor
-#> 81  5.5 2.4 versicolor
-#> 82  5.5 2.4 versicolor
-#> 83  5.8 2.7 versicolor
-#> 84  6.0 2.7 versicolor
-#> 85  5.4 3.0 versicolor
-#> 86  6.0 3.4 versicolor
-#> 87  6.7 3.1 versicolor
-#> 88  6.3 2.3 versicolor
-#> 89  5.6 3.0 versicolor
-#> 90  5.5 2.5 versicolor
-#> 91  5.5 2.6 versicolor
-#> 92  6.1 3.0 versicolor
-#> 93  5.8 2.6 versicolor
-#> 94  5.0 2.3 versicolor
-#> 95  5.6 2.7 versicolor
-#> 96  5.7 3.0 versicolor
-#> 97  5.7 2.9 versicolor
-#> 98  6.2 2.9 versicolor
-#> 99  5.1 2.5 versicolor
-#> 100 5.7 2.8 versicolor
-#> 101 6.3 3.3  virginica
-#> 102 5.8 2.7  virginica
-#> 103 7.1 3.0  virginica
-#> 104 6.3 2.9  virginica
-#> 105 6.5 3.0  virginica
-#> 106 7.6 3.0  virginica
-#> 107 4.9 2.5  virginica
-#> 108 7.3 2.9  virginica
-#> 109 6.7 2.5  virginica
-#> 110 7.2 3.6  virginica
-#> 111 6.5 3.2  virginica
-#> 112 6.4 2.7  virginica
-#> 113 6.8 3.0  virginica
-#> 114 5.7 2.5  virginica
-#> 115 5.8 2.8  virginica
-#> 116 6.4 3.2  virginica
-#> 117 6.5 3.0  virginica
-#> 118 7.7 3.8  virginica
-#> 119 7.7 2.6  virginica
-#> 120 6.0 2.2  virginica
-#> 121 6.9 3.2  virginica
-#> 122 5.6 2.8  virginica
-#> 123 7.7 2.8  virginica
-#> 124 6.3 2.7  virginica
-#> 125 6.7 3.3  virginica
-#> 126 7.2 3.2  virginica
-#> 127 6.2 2.8  virginica
-#> 128 6.1 3.0  virginica
-#> 129 6.4 2.8  virginica
-#> 130 7.2 3.0  virginica
-#> 131 7.4 2.8  virginica
-#> 132 7.9 3.8  virginica
-#> 133 6.4 2.8  virginica
-#> 134 6.3 2.8  virginica
-#> 135 6.1 2.6  virginica
-#> 136 7.7 3.0  virginica
-#> 137 6.3 3.4  virginica
-#> 138 6.4 3.1  virginica
-#> 139 6.0 3.0  virginica
-#> 140 6.9 3.1  virginica
-#> 141 6.7 3.1  virginica
-#> 142 6.9 3.1  virginica
-#> 143 5.8 2.7  virginica
-#> 144 6.8 3.2  virginica
-#> 145 6.7 3.3  virginica
-#> 146 6.7 3.0  virginica
-#> 147 6.3 2.5  virginica
-#> 148 6.5 3.0  virginica
-#> 149 6.2 3.4  virginica
-#> 150 5.9 3.0  virginica
+select(iris, sl = Sepal.Length, sw = Sepal.Width, sp = Species) %>% head()
+#>    sl  sw     sp
+#> 1 5.1 3.5 setosa
+#> 2 4.9 3.0 setosa
+#> 3 4.7 3.2 setosa
+#> 4 4.6 3.1 setosa
+#> 5 5.0 3.6 setosa
+#> 6 5.4 3.9 setosa
 ```
 
+### `select` 4 - change the order of columns
+
+
+```r
+select(iris, c(5,3,4,1,2)) %>% head()
+#>   Species Petal.Length Petal.Width Sepal.Length Sepal.Width
+#> 1  setosa          1.4         0.2          5.1         3.5
+#> 2  setosa          1.4         0.2          4.9         3.0
+#> 3  setosa          1.3         0.2          4.7         3.2
+#> 4  setosa          1.5         0.2          4.6         3.1
+#> 5  setosa          1.4         0.2          5.0         3.6
+#> 6  setosa          1.7         0.4          5.4         3.9
+```
 
 
 ### `filter` - by names
 
 
 ```r
-filter(iris, Species == "virginica")
-#>    Sepal.Length Sepal.Width Petal.Length Petal.Width
-#> 1           6.3         3.3          6.0         2.5
-#> 2           5.8         2.7          5.1         1.9
-#> 3           7.1         3.0          5.9         2.1
-#> 4           6.3         2.9          5.6         1.8
-#> 5           6.5         3.0          5.8         2.2
-#> 6           7.6         3.0          6.6         2.1
-#> 7           4.9         2.5          4.5         1.7
-#> 8           7.3         2.9          6.3         1.8
-#> 9           6.7         2.5          5.8         1.8
-#> 10          7.2         3.6          6.1         2.5
-#> 11          6.5         3.2          5.1         2.0
-#> 12          6.4         2.7          5.3         1.9
-#> 13          6.8         3.0          5.5         2.1
-#> 14          5.7         2.5          5.0         2.0
-#> 15          5.8         2.8          5.1         2.4
-#> 16          6.4         3.2          5.3         2.3
-#> 17          6.5         3.0          5.5         1.8
-#> 18          7.7         3.8          6.7         2.2
-#> 19          7.7         2.6          6.9         2.3
-#> 20          6.0         2.2          5.0         1.5
-#> 21          6.9         3.2          5.7         2.3
-#> 22          5.6         2.8          4.9         2.0
-#> 23          7.7         2.8          6.7         2.0
-#> 24          6.3         2.7          4.9         1.8
-#> 25          6.7         3.3          5.7         2.1
-#> 26          7.2         3.2          6.0         1.8
-#> 27          6.2         2.8          4.8         1.8
-#> 28          6.1         3.0          4.9         1.8
-#> 29          6.4         2.8          5.6         2.1
-#> 30          7.2         3.0          5.8         1.6
-#> 31          7.4         2.8          6.1         1.9
-#> 32          7.9         3.8          6.4         2.0
-#> 33          6.4         2.8          5.6         2.2
-#> 34          6.3         2.8          5.1         1.5
-#> 35          6.1         2.6          5.6         1.4
-#> 36          7.7         3.0          6.1         2.3
-#> 37          6.3         3.4          5.6         2.4
-#> 38          6.4         3.1          5.5         1.8
-#> 39          6.0         3.0          4.8         1.8
-#> 40          6.9         3.1          5.4         2.1
-#> 41          6.7         3.1          5.6         2.4
-#> 42          6.9         3.1          5.1         2.3
-#> 43          5.8         2.7          5.1         1.9
-#> 44          6.8         3.2          5.9         2.3
-#> 45          6.7         3.3          5.7         2.5
-#> 46          6.7         3.0          5.2         2.3
-#> 47          6.3         2.5          5.0         1.9
-#> 48          6.5         3.0          5.2         2.0
-#> 49          6.2         3.4          5.4         2.3
-#> 50          5.9         3.0          5.1         1.8
-#>      Species
-#> 1  virginica
-#> 2  virginica
-#> 3  virginica
-#> 4  virginica
-#> 5  virginica
-#> 6  virginica
-#> 7  virginica
-#> 8  virginica
-#> 9  virginica
-#> 10 virginica
-#> 11 virginica
-#> 12 virginica
-#> 13 virginica
-#> 14 virginica
-#> 15 virginica
-#> 16 virginica
-#> 17 virginica
-#> 18 virginica
-#> 19 virginica
-#> 20 virginica
-#> 21 virginica
-#> 22 virginica
-#> 23 virginica
-#> 24 virginica
-#> 25 virginica
-#> 26 virginica
-#> 27 virginica
-#> 28 virginica
-#> 29 virginica
-#> 30 virginica
-#> 31 virginica
-#> 32 virginica
-#> 33 virginica
-#> 34 virginica
-#> 35 virginica
-#> 36 virginica
-#> 37 virginica
-#> 38 virginica
-#> 39 virginica
-#> 40 virginica
-#> 41 virginica
-#> 42 virginica
-#> 43 virginica
-#> 44 virginica
-#> 45 virginica
-#> 46 virginica
-#> 47 virginica
-#> 48 virginica
-#> 49 virginica
-#> 50 virginica
+filter(iris, Species == "virginica") %>% head()
+#>   Sepal.Length Sepal.Width Petal.Length Petal.Width
+#> 1          6.3         3.3          6.0         2.5
+#> 2          5.8         2.7          5.1         1.9
+#> 3          7.1         3.0          5.9         2.1
+#> 4          6.3         2.9          5.6         1.8
+#> 5          6.5         3.0          5.8         2.2
+#> 6          7.6         3.0          6.6         2.1
+#>     Species
+#> 1 virginica
+#> 2 virginica
+#> 3 virginica
+#> 4 virginica
+#> 5 virginica
+#> 6 virginica
 ```
 
 
@@ -1041,309 +286,14 @@ filter(iris, Species == "virginica")
 
 
 ```r
-arrange(iris, Sepal.Length, desc(Sepal.Width))
-#>     Sepal.Length Sepal.Width Petal.Length Petal.Width
-#> 1            4.3         3.0          1.1         0.1
-#> 2            4.4         3.2          1.3         0.2
-#> 3            4.4         3.0          1.3         0.2
-#> 4            4.4         2.9          1.4         0.2
-#> 5            4.5         2.3          1.3         0.3
-#> 6            4.6         3.6          1.0         0.2
-#> 7            4.6         3.4          1.4         0.3
-#> 8            4.6         3.2          1.4         0.2
-#> 9            4.6         3.1          1.5         0.2
-#> 10           4.7         3.2          1.3         0.2
-#> 11           4.7         3.2          1.6         0.2
-#> 12           4.8         3.4          1.6         0.2
-#> 13           4.8         3.4          1.9         0.2
-#> 14           4.8         3.1          1.6         0.2
-#> 15           4.8         3.0          1.4         0.1
-#> 16           4.8         3.0          1.4         0.3
-#> 17           4.9         3.6          1.4         0.1
-#> 18           4.9         3.1          1.5         0.1
-#> 19           4.9         3.1          1.5         0.2
-#> 20           4.9         3.0          1.4         0.2
-#> 21           4.9         2.5          4.5         1.7
-#> 22           4.9         2.4          3.3         1.0
-#> 23           5.0         3.6          1.4         0.2
-#> 24           5.0         3.5          1.3         0.3
-#> 25           5.0         3.5          1.6         0.6
-#> 26           5.0         3.4          1.5         0.2
-#> 27           5.0         3.4          1.6         0.4
-#> 28           5.0         3.3          1.4         0.2
-#> 29           5.0         3.2          1.2         0.2
-#> 30           5.0         3.0          1.6         0.2
-#> 31           5.0         2.3          3.3         1.0
-#> 32           5.0         2.0          3.5         1.0
-#> 33           5.1         3.8          1.5         0.3
-#> 34           5.1         3.8          1.9         0.4
-#> 35           5.1         3.8          1.6         0.2
-#> 36           5.1         3.7          1.5         0.4
-#> 37           5.1         3.5          1.4         0.2
-#> 38           5.1         3.5          1.4         0.3
-#> 39           5.1         3.4          1.5         0.2
-#> 40           5.1         3.3          1.7         0.5
-#> 41           5.1         2.5          3.0         1.1
-#> 42           5.2         4.1          1.5         0.1
-#> 43           5.2         3.5          1.5         0.2
-#> 44           5.2         3.4          1.4         0.2
-#> 45           5.2         2.7          3.9         1.4
-#> 46           5.3         3.7          1.5         0.2
-#> 47           5.4         3.9          1.7         0.4
-#> 48           5.4         3.9          1.3         0.4
-#> 49           5.4         3.7          1.5         0.2
-#> 50           5.4         3.4          1.7         0.2
-#> 51           5.4         3.4          1.5         0.4
-#> 52           5.4         3.0          4.5         1.5
-#> 53           5.5         4.2          1.4         0.2
-#> 54           5.5         3.5          1.3         0.2
-#> 55           5.5         2.6          4.4         1.2
-#> 56           5.5         2.5          4.0         1.3
-#> 57           5.5         2.4          3.8         1.1
-#> 58           5.5         2.4          3.7         1.0
-#> 59           5.5         2.3          4.0         1.3
-#> 60           5.6         3.0          4.5         1.5
-#> 61           5.6         3.0          4.1         1.3
-#> 62           5.6         2.9          3.6         1.3
-#> 63           5.6         2.8          4.9         2.0
-#> 64           5.6         2.7          4.2         1.3
-#> 65           5.6         2.5          3.9         1.1
-#> 66           5.7         4.4          1.5         0.4
-#> 67           5.7         3.8          1.7         0.3
-#> 68           5.7         3.0          4.2         1.2
-#> 69           5.7         2.9          4.2         1.3
-#> 70           5.7         2.8          4.5         1.3
-#> 71           5.7         2.8          4.1         1.3
-#> 72           5.7         2.6          3.5         1.0
-#> 73           5.7         2.5          5.0         2.0
-#> 74           5.8         4.0          1.2         0.2
-#> 75           5.8         2.8          5.1         2.4
-#> 76           5.8         2.7          4.1         1.0
-#> 77           5.8         2.7          3.9         1.2
-#> 78           5.8         2.7          5.1         1.9
-#> 79           5.8         2.7          5.1         1.9
-#> 80           5.8         2.6          4.0         1.2
-#> 81           5.9         3.2          4.8         1.8
-#> 82           5.9         3.0          4.2         1.5
-#> 83           5.9         3.0          5.1         1.8
-#> 84           6.0         3.4          4.5         1.6
-#> 85           6.0         3.0          4.8         1.8
-#> 86           6.0         2.9          4.5         1.5
-#> 87           6.0         2.7          5.1         1.6
-#> 88           6.0         2.2          4.0         1.0
-#> 89           6.0         2.2          5.0         1.5
-#> 90           6.1         3.0          4.6         1.4
-#> 91           6.1         3.0          4.9         1.8
-#> 92           6.1         2.9          4.7         1.4
-#> 93           6.1         2.8          4.0         1.3
-#> 94           6.1         2.8          4.7         1.2
-#> 95           6.1         2.6          5.6         1.4
-#> 96           6.2         3.4          5.4         2.3
-#> 97           6.2         2.9          4.3         1.3
-#> 98           6.2         2.8          4.8         1.8
-#> 99           6.2         2.2          4.5         1.5
-#> 100          6.3         3.4          5.6         2.4
-#> 101          6.3         3.3          4.7         1.6
-#> 102          6.3         3.3          6.0         2.5
-#> 103          6.3         2.9          5.6         1.8
-#> 104          6.3         2.8          5.1         1.5
-#> 105          6.3         2.7          4.9         1.8
-#> 106          6.3         2.5          4.9         1.5
-#> 107          6.3         2.5          5.0         1.9
-#> 108          6.3         2.3          4.4         1.3
-#> 109          6.4         3.2          4.5         1.5
-#> 110          6.4         3.2          5.3         2.3
-#> 111          6.4         3.1          5.5         1.8
-#> 112          6.4         2.9          4.3         1.3
-#> 113          6.4         2.8          5.6         2.1
-#> 114          6.4         2.8          5.6         2.2
-#> 115          6.4         2.7          5.3         1.9
-#> 116          6.5         3.2          5.1         2.0
-#> 117          6.5         3.0          5.8         2.2
-#> 118          6.5         3.0          5.5         1.8
-#> 119          6.5         3.0          5.2         2.0
-#> 120          6.5         2.8          4.6         1.5
-#> 121          6.6         3.0          4.4         1.4
-#> 122          6.6         2.9          4.6         1.3
-#> 123          6.7         3.3          5.7         2.1
-#> 124          6.7         3.3          5.7         2.5
-#> 125          6.7         3.1          4.4         1.4
-#> 126          6.7         3.1          4.7         1.5
-#> 127          6.7         3.1          5.6         2.4
-#> 128          6.7         3.0          5.0         1.7
-#> 129          6.7         3.0          5.2         2.3
-#> 130          6.7         2.5          5.8         1.8
-#> 131          6.8         3.2          5.9         2.3
-#> 132          6.8         3.0          5.5         2.1
-#> 133          6.8         2.8          4.8         1.4
-#> 134          6.9         3.2          5.7         2.3
-#> 135          6.9         3.1          4.9         1.5
-#> 136          6.9         3.1          5.4         2.1
-#> 137          6.9         3.1          5.1         2.3
-#> 138          7.0         3.2          4.7         1.4
-#> 139          7.1         3.0          5.9         2.1
-#> 140          7.2         3.6          6.1         2.5
-#> 141          7.2         3.2          6.0         1.8
-#> 142          7.2         3.0          5.8         1.6
-#> 143          7.3         2.9          6.3         1.8
-#> 144          7.4         2.8          6.1         1.9
-#> 145          7.6         3.0          6.6         2.1
-#> 146          7.7         3.8          6.7         2.2
-#> 147          7.7         3.0          6.1         2.3
-#> 148          7.7         2.8          6.7         2.0
-#> 149          7.7         2.6          6.9         2.3
-#> 150          7.9         3.8          6.4         2.0
-#>        Species
-#> 1       setosa
-#> 2       setosa
-#> 3       setosa
-#> 4       setosa
-#> 5       setosa
-#> 6       setosa
-#> 7       setosa
-#> 8       setosa
-#> 9       setosa
-#> 10      setosa
-#> 11      setosa
-#> 12      setosa
-#> 13      setosa
-#> 14      setosa
-#> 15      setosa
-#> 16      setosa
-#> 17      setosa
-#> 18      setosa
-#> 19      setosa
-#> 20      setosa
-#> 21   virginica
-#> 22  versicolor
-#> 23      setosa
-#> 24      setosa
-#> 25      setosa
-#> 26      setosa
-#> 27      setosa
-#> 28      setosa
-#> 29      setosa
-#> 30      setosa
-#> 31  versicolor
-#> 32  versicolor
-#> 33      setosa
-#> 34      setosa
-#> 35      setosa
-#> 36      setosa
-#> 37      setosa
-#> 38      setosa
-#> 39      setosa
-#> 40      setosa
-#> 41  versicolor
-#> 42      setosa
-#> 43      setosa
-#> 44      setosa
-#> 45  versicolor
-#> 46      setosa
-#> 47      setosa
-#> 48      setosa
-#> 49      setosa
-#> 50      setosa
-#> 51      setosa
-#> 52  versicolor
-#> 53      setosa
-#> 54      setosa
-#> 55  versicolor
-#> 56  versicolor
-#> 57  versicolor
-#> 58  versicolor
-#> 59  versicolor
-#> 60  versicolor
-#> 61  versicolor
-#> 62  versicolor
-#> 63   virginica
-#> 64  versicolor
-#> 65  versicolor
-#> 66      setosa
-#> 67      setosa
-#> 68  versicolor
-#> 69  versicolor
-#> 70  versicolor
-#> 71  versicolor
-#> 72  versicolor
-#> 73   virginica
-#> 74      setosa
-#> 75   virginica
-#> 76  versicolor
-#> 77  versicolor
-#> 78   virginica
-#> 79   virginica
-#> 80  versicolor
-#> 81  versicolor
-#> 82  versicolor
-#> 83   virginica
-#> 84  versicolor
-#> 85   virginica
-#> 86  versicolor
-#> 87  versicolor
-#> 88  versicolor
-#> 89   virginica
-#> 90  versicolor
-#> 91   virginica
-#> 92  versicolor
-#> 93  versicolor
-#> 94  versicolor
-#> 95   virginica
-#> 96   virginica
-#> 97  versicolor
-#> 98   virginica
-#> 99  versicolor
-#> 100  virginica
-#> 101 versicolor
-#> 102  virginica
-#> 103  virginica
-#> 104  virginica
-#> 105  virginica
-#> 106 versicolor
-#> 107  virginica
-#> 108 versicolor
-#> 109 versicolor
-#> 110  virginica
-#> 111  virginica
-#> 112 versicolor
-#> 113  virginica
-#> 114  virginica
-#> 115  virginica
-#> 116  virginica
-#> 117  virginica
-#> 118  virginica
-#> 119  virginica
-#> 120 versicolor
-#> 121 versicolor
-#> 122 versicolor
-#> 123  virginica
-#> 124  virginica
-#> 125 versicolor
-#> 126 versicolor
-#> 127  virginica
-#> 128 versicolor
-#> 129  virginica
-#> 130  virginica
-#> 131  virginica
-#> 132  virginica
-#> 133 versicolor
-#> 134  virginica
-#> 135 versicolor
-#> 136  virginica
-#> 137  virginica
-#> 138 versicolor
-#> 139  virginica
-#> 140  virginica
-#> 141  virginica
-#> 142  virginica
-#> 143  virginica
-#> 144  virginica
-#> 145  virginica
-#> 146  virginica
-#> 147  virginica
-#> 148  virginica
-#> 149  virginica
-#> 150  virginica
+arrange(iris, Sepal.Length, desc(Sepal.Width)) %>% head()
+#>   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+#> 1          4.3         3.0          1.1         0.1  setosa
+#> 2          4.4         3.2          1.3         0.2  setosa
+#> 3          4.4         3.0          1.3         0.2  setosa
+#> 4          4.4         2.9          1.4         0.2  setosa
+#> 5          4.5         2.3          1.3         0.3  setosa
+#> 6          4.6         3.6          1.0         0.2  setosa
 ```
 
 
@@ -1352,312 +302,25 @@ arrange(iris, Sepal.Length, desc(Sepal.Width))
 
 
 ```r
-iris %>% mutate(sl_rank = min_rank(Sepal.Length)) %>% arrange(sl_rank)
-#>     Sepal.Length Sepal.Width Petal.Length Petal.Width
-#> 1            4.3         3.0          1.1         0.1
-#> 2            4.4         2.9          1.4         0.2
-#> 3            4.4         3.0          1.3         0.2
-#> 4            4.4         3.2          1.3         0.2
-#> 5            4.5         2.3          1.3         0.3
-#> 6            4.6         3.1          1.5         0.2
-#> 7            4.6         3.4          1.4         0.3
-#> 8            4.6         3.6          1.0         0.2
-#> 9            4.6         3.2          1.4         0.2
-#> 10           4.7         3.2          1.3         0.2
-#> 11           4.7         3.2          1.6         0.2
-#> 12           4.8         3.4          1.6         0.2
-#> 13           4.8         3.0          1.4         0.1
-#> 14           4.8         3.4          1.9         0.2
-#> 15           4.8         3.1          1.6         0.2
-#> 16           4.8         3.0          1.4         0.3
-#> 17           4.9         3.0          1.4         0.2
-#> 18           4.9         3.1          1.5         0.1
-#> 19           4.9         3.1          1.5         0.2
-#> 20           4.9         3.6          1.4         0.1
-#> 21           4.9         2.4          3.3         1.0
-#> 22           4.9         2.5          4.5         1.7
-#> 23           5.0         3.6          1.4         0.2
-#> 24           5.0         3.4          1.5         0.2
-#> 25           5.0         3.0          1.6         0.2
-#> 26           5.0         3.4          1.6         0.4
-#> 27           5.0         3.2          1.2         0.2
-#> 28           5.0         3.5          1.3         0.3
-#> 29           5.0         3.5          1.6         0.6
-#> 30           5.0         3.3          1.4         0.2
-#> 31           5.0         2.0          3.5         1.0
-#> 32           5.0         2.3          3.3         1.0
-#> 33           5.1         3.5          1.4         0.2
-#> 34           5.1         3.5          1.4         0.3
-#> 35           5.1         3.8          1.5         0.3
-#> 36           5.1         3.7          1.5         0.4
-#> 37           5.1         3.3          1.7         0.5
-#> 38           5.1         3.4          1.5         0.2
-#> 39           5.1         3.8          1.9         0.4
-#> 40           5.1         3.8          1.6         0.2
-#> 41           5.1         2.5          3.0         1.1
-#> 42           5.2         3.5          1.5         0.2
-#> 43           5.2         3.4          1.4         0.2
-#> 44           5.2         4.1          1.5         0.1
-#> 45           5.2         2.7          3.9         1.4
-#> 46           5.3         3.7          1.5         0.2
-#> 47           5.4         3.9          1.7         0.4
-#> 48           5.4         3.7          1.5         0.2
-#> 49           5.4         3.9          1.3         0.4
-#> 50           5.4         3.4          1.7         0.2
-#> 51           5.4         3.4          1.5         0.4
-#> 52           5.4         3.0          4.5         1.5
-#> 53           5.5         4.2          1.4         0.2
-#> 54           5.5         3.5          1.3         0.2
-#> 55           5.5         2.3          4.0         1.3
-#> 56           5.5         2.4          3.8         1.1
-#> 57           5.5         2.4          3.7         1.0
-#> 58           5.5         2.5          4.0         1.3
-#> 59           5.5         2.6          4.4         1.2
-#> 60           5.6         2.9          3.6         1.3
-#> 61           5.6         3.0          4.5         1.5
-#> 62           5.6         2.5          3.9         1.1
-#> 63           5.6         3.0          4.1         1.3
-#> 64           5.6         2.7          4.2         1.3
-#> 65           5.6         2.8          4.9         2.0
-#> 66           5.7         4.4          1.5         0.4
-#> 67           5.7         3.8          1.7         0.3
-#> 68           5.7         2.8          4.5         1.3
-#> 69           5.7         2.6          3.5         1.0
-#> 70           5.7         3.0          4.2         1.2
-#> 71           5.7         2.9          4.2         1.3
-#> 72           5.7         2.8          4.1         1.3
-#> 73           5.7         2.5          5.0         2.0
-#> 74           5.8         4.0          1.2         0.2
-#> 75           5.8         2.7          4.1         1.0
-#> 76           5.8         2.7          3.9         1.2
-#> 77           5.8         2.6          4.0         1.2
-#> 78           5.8         2.7          5.1         1.9
-#> 79           5.8         2.8          5.1         2.4
-#> 80           5.8         2.7          5.1         1.9
-#> 81           5.9         3.0          4.2         1.5
-#> 82           5.9         3.2          4.8         1.8
-#> 83           5.9         3.0          5.1         1.8
-#> 84           6.0         2.2          4.0         1.0
-#> 85           6.0         2.9          4.5         1.5
-#> 86           6.0         2.7          5.1         1.6
-#> 87           6.0         3.4          4.5         1.6
-#> 88           6.0         2.2          5.0         1.5
-#> 89           6.0         3.0          4.8         1.8
-#> 90           6.1         2.9          4.7         1.4
-#> 91           6.1         2.8          4.0         1.3
-#> 92           6.1         2.8          4.7         1.2
-#> 93           6.1         3.0          4.6         1.4
-#> 94           6.1         3.0          4.9         1.8
-#> 95           6.1         2.6          5.6         1.4
-#> 96           6.2         2.2          4.5         1.5
-#> 97           6.2         2.9          4.3         1.3
-#> 98           6.2         2.8          4.8         1.8
-#> 99           6.2         3.4          5.4         2.3
-#> 100          6.3         3.3          4.7         1.6
-#> 101          6.3         2.5          4.9         1.5
-#> 102          6.3         2.3          4.4         1.3
-#> 103          6.3         3.3          6.0         2.5
-#> 104          6.3         2.9          5.6         1.8
-#> 105          6.3         2.7          4.9         1.8
-#> 106          6.3         2.8          5.1         1.5
-#> 107          6.3         3.4          5.6         2.4
-#> 108          6.3         2.5          5.0         1.9
-#> 109          6.4         3.2          4.5         1.5
-#> 110          6.4         2.9          4.3         1.3
-#> 111          6.4         2.7          5.3         1.9
-#> 112          6.4         3.2          5.3         2.3
-#> 113          6.4         2.8          5.6         2.1
-#> 114          6.4         2.8          5.6         2.2
-#> 115          6.4         3.1          5.5         1.8
-#> 116          6.5         2.8          4.6         1.5
-#> 117          6.5         3.0          5.8         2.2
-#> 118          6.5         3.2          5.1         2.0
-#> 119          6.5         3.0          5.5         1.8
-#> 120          6.5         3.0          5.2         2.0
-#> 121          6.6         2.9          4.6         1.3
-#> 122          6.6         3.0          4.4         1.4
-#> 123          6.7         3.1          4.4         1.4
-#> 124          6.7         3.0          5.0         1.7
-#> 125          6.7         3.1          4.7         1.5
-#> 126          6.7         2.5          5.8         1.8
-#> 127          6.7         3.3          5.7         2.1
-#> 128          6.7         3.1          5.6         2.4
-#> 129          6.7         3.3          5.7         2.5
-#> 130          6.7         3.0          5.2         2.3
-#> 131          6.8         2.8          4.8         1.4
-#> 132          6.8         3.0          5.5         2.1
-#> 133          6.8         3.2          5.9         2.3
-#> 134          6.9         3.1          4.9         1.5
-#> 135          6.9         3.2          5.7         2.3
-#> 136          6.9         3.1          5.4         2.1
-#> 137          6.9         3.1          5.1         2.3
-#> 138          7.0         3.2          4.7         1.4
-#> 139          7.1         3.0          5.9         2.1
-#> 140          7.2         3.6          6.1         2.5
-#> 141          7.2         3.2          6.0         1.8
-#> 142          7.2         3.0          5.8         1.6
-#> 143          7.3         2.9          6.3         1.8
-#> 144          7.4         2.8          6.1         1.9
-#> 145          7.6         3.0          6.6         2.1
-#> 146          7.7         3.8          6.7         2.2
-#> 147          7.7         2.6          6.9         2.3
-#> 148          7.7         2.8          6.7         2.0
-#> 149          7.7         3.0          6.1         2.3
-#> 150          7.9         3.8          6.4         2.0
-#>        Species sl_rank
-#> 1       setosa       1
-#> 2       setosa       2
-#> 3       setosa       2
-#> 4       setosa       2
-#> 5       setosa       5
-#> 6       setosa       6
-#> 7       setosa       6
-#> 8       setosa       6
-#> 9       setosa       6
-#> 10      setosa      10
-#> 11      setosa      10
-#> 12      setosa      12
-#> 13      setosa      12
-#> 14      setosa      12
-#> 15      setosa      12
-#> 16      setosa      12
-#> 17      setosa      17
-#> 18      setosa      17
-#> 19      setosa      17
-#> 20      setosa      17
-#> 21  versicolor      17
-#> 22   virginica      17
-#> 23      setosa      23
-#> 24      setosa      23
-#> 25      setosa      23
-#> 26      setosa      23
-#> 27      setosa      23
-#> 28      setosa      23
-#> 29      setosa      23
-#> 30      setosa      23
-#> 31  versicolor      23
-#> 32  versicolor      23
-#> 33      setosa      33
-#> 34      setosa      33
-#> 35      setosa      33
-#> 36      setosa      33
-#> 37      setosa      33
-#> 38      setosa      33
-#> 39      setosa      33
-#> 40      setosa      33
-#> 41  versicolor      33
-#> 42      setosa      42
-#> 43      setosa      42
-#> 44      setosa      42
-#> 45  versicolor      42
-#> 46      setosa      46
-#> 47      setosa      47
-#> 48      setosa      47
-#> 49      setosa      47
-#> 50      setosa      47
-#> 51      setosa      47
-#> 52  versicolor      47
-#> 53      setosa      53
-#> 54      setosa      53
-#> 55  versicolor      53
-#> 56  versicolor      53
-#> 57  versicolor      53
-#> 58  versicolor      53
-#> 59  versicolor      53
-#> 60  versicolor      60
-#> 61  versicolor      60
-#> 62  versicolor      60
-#> 63  versicolor      60
-#> 64  versicolor      60
-#> 65   virginica      60
-#> 66      setosa      66
-#> 67      setosa      66
-#> 68  versicolor      66
-#> 69  versicolor      66
-#> 70  versicolor      66
-#> 71  versicolor      66
-#> 72  versicolor      66
-#> 73   virginica      66
-#> 74      setosa      74
-#> 75  versicolor      74
-#> 76  versicolor      74
-#> 77  versicolor      74
-#> 78   virginica      74
-#> 79   virginica      74
-#> 80   virginica      74
-#> 81  versicolor      81
-#> 82  versicolor      81
-#> 83   virginica      81
-#> 84  versicolor      84
-#> 85  versicolor      84
-#> 86  versicolor      84
-#> 87  versicolor      84
-#> 88   virginica      84
-#> 89   virginica      84
-#> 90  versicolor      90
-#> 91  versicolor      90
-#> 92  versicolor      90
-#> 93  versicolor      90
-#> 94   virginica      90
-#> 95   virginica      90
-#> 96  versicolor      96
-#> 97  versicolor      96
-#> 98   virginica      96
-#> 99   virginica      96
-#> 100 versicolor     100
-#> 101 versicolor     100
-#> 102 versicolor     100
-#> 103  virginica     100
-#> 104  virginica     100
-#> 105  virginica     100
-#> 106  virginica     100
-#> 107  virginica     100
-#> 108  virginica     100
-#> 109 versicolor     109
-#> 110 versicolor     109
-#> 111  virginica     109
-#> 112  virginica     109
-#> 113  virginica     109
-#> 114  virginica     109
-#> 115  virginica     109
-#> 116 versicolor     116
-#> 117  virginica     116
-#> 118  virginica     116
-#> 119  virginica     116
-#> 120  virginica     116
-#> 121 versicolor     121
-#> 122 versicolor     121
-#> 123 versicolor     123
-#> 124 versicolor     123
-#> 125 versicolor     123
-#> 126  virginica     123
-#> 127  virginica     123
-#> 128  virginica     123
-#> 129  virginica     123
-#> 130  virginica     123
-#> 131 versicolor     131
-#> 132  virginica     131
-#> 133  virginica     131
-#> 134 versicolor     134
-#> 135  virginica     134
-#> 136  virginica     134
-#> 137  virginica     134
-#> 138 versicolor     138
-#> 139  virginica     139
-#> 140  virginica     140
-#> 141  virginica     140
-#> 142  virginica     140
-#> 143  virginica     143
-#> 144  virginica     144
-#> 145  virginica     145
-#> 146  virginica     146
-#> 147  virginica     146
-#> 148  virginica     146
-#> 149  virginica     146
-#> 150  virginica     150
+iris %>% mutate(sl_rank = min_rank(Sepal.Length)) %>% 
+  arrange(sl_rank) %>% head()
+#>   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+#> 1          4.3         3.0          1.1         0.1  setosa
+#> 2          4.4         2.9          1.4         0.2  setosa
+#> 3          4.4         3.0          1.3         0.2  setosa
+#> 4          4.4         3.2          1.3         0.2  setosa
+#> 5          4.5         2.3          1.3         0.3  setosa
+#> 6          4.6         3.1          1.5         0.2  setosa
+#>   sl_rank
+#> 1       1
+#> 2       2
+#> 3       2
+#> 4       2
+#> 5       5
+#> 6       6
 ```
 
-
+Insert a line break after the pipe command, not before. 
 
 ### `group_by` and `summarize`
 
@@ -1692,18 +355,10 @@ For more examples see
 
 ### RStudio Primers: See References in Moodle at the bottom
 
-1. The Basics -- [r4ds: Explore, I](https://r4ds.had.co.nz/explore-intro.html#explore-intro)
-  - [Visualization Basics](https://rstudio.cloud/learn/primers/1.1)
-  - [Programming Basics](https://rstudio.cloud/learn/primers/1.2)
-2. **Work with Data** -- [r4ds: Wrangle, I](https://r4ds.had.co.nz/wrangle-intro.html#wrangle-intro)
-  - **Working with Tibbles**
-  - **Isolating Data with dplyr**
-  - **Deriving Information with dplyr**
-3. Visualize Data -- [r4ds: Explore, II](https://r4ds.had.co.nz/explore-intro.html#explore-intro)
-4. Tidy Your Data -- [r4ds: Wrangle, II](https://r4ds.had.co.nz/wrangle-intro.html#wrangle-intro)
-5. Iterate -- [r4ds: Program](https://r4ds.had.co.nz/program-intro.html#program-intro)
-6. Write Functions -- [r4ds: Program](https://r4ds.had.co.nz/program-intro.html#program-intro)
-
+2. Work with Data -- [r4ds: Wrangle, I](https://r4ds.had.co.nz/wrangle-intro.html#wrangle-intro)
+  - [Working with Tibbles](https://rstudio.cloud/learn/primers/2.1)
+  - [Isolating Data with dplyr](https://rstudio.cloud/learn/primers/2.2)
+  - [Deriving Information with dplyr](https://rstudio.cloud/learn/primers/2.3)
 
 
 
@@ -1773,6 +428,8 @@ library(WDI)
 
 #### R Package `gapminder` data
 
+We will use a `tidyverse` function `slice` replacing `head`. Check `slice` in the search window under the Help tab on the bottom right pane.
+
 
 ```r
 df <- gapminder
@@ -1836,23 +493,35 @@ summary(df)
 
 ##### First Try - with failures
 
+You will encounter similar failures. We list three of them.
+
 
 ```r
 ggplot(df, aes(x = year, y = lifeExp)) + geom_point()
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-14-1.png" width="672" />
+<img src="05-dplyr_files/figure-html/unnamed-chunk-18-1.png" width="672" />
 
 
+There are lots of data in each year: 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, 1997, …. Can you tell how many years are in the data? The following command shows different years in the data.
+
+
+```r
+unique(df$year)
+#>  [1] 1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 2002
+#> [12] 2007
+```
+
+You can guess it from the data summary above. Can you imagine how many countries are in the data? 142? Anyhow, too many points are on each year.
 
 
 ```r
 ggplot(df, aes(x = year, y = lifeExp)) + geom_line()
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-15-1.png" width="672" />
+<img src="05-dplyr_files/figure-html/unnamed-chunk-20-1.png" width="672" />
 
-
+Now, you can guess the reason why you had this output. This is often called a saw-tooth.
 
 
 ```r
@@ -1861,9 +530,9 @@ ggplot(df, aes(x = year, y = lifeExp)) + geom_boxplot()
 #> ℹ did you forget `aes(group = ...)`?
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-16-1.png" width="672" />
+<img src="05-dplyr_files/figure-html/unnamed-chunk-21-1.png" width="672" />
 
-
+Can you see what the problem is? The `year` is a numerical variable in integer.
 
 
 ```r
@@ -1871,14 +540,14 @@ typeof(pull(df, year)) # same as typeof(df$year)
 #> [1] "integer"
 ```
 
-
+The following looks better.
 
 
 ```r
 ggplot(df, aes(y = lifeExp, group = year)) + geom_boxplot()
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-18-1.png" width="672" />
+<img src="05-dplyr_files/figure-html/unnamed-chunk-23-1.png" width="672" />
 
 
 
@@ -1889,13 +558,21 @@ ggplot(df, aes(y = lifeExp, group = year)) + geom_boxplot()
 ggplot(df, aes(x = as_factor(year), y = lifeExp)) + geom_boxplot()
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-19-1.png" width="672" />
+<img src="05-dplyr_files/figure-html/unnamed-chunk-24-1.png" width="672" />
 
-
+We will study data visualization in Chapter \@ref(ggplot2). 
 
 #### Applications of `dplyr`
 
+Let us apply `dplyr` to manipulate data to visualize the data.
+
 ##### `filter`
+
+By `filter` you can obtain the the data of one country.
+
+`filter(country == "Afghanistan")`
+
+Note that we need two equal symbols, and quotation marks must surround the country name.
 
 
 ```r
@@ -1903,9 +580,11 @@ df %>% filter(country == "Afghanistan") %>%
   ggplot(aes(x = year, y = lifeExp)) + geom_line()
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-20-1.png" width="672" />
+<img src="05-dplyr_files/figure-html/unnamed-chunk-25-1.png" width="672" />
 
+Looks good. From the data you observe, the life expectancy at birth in 1952 was below 30, and it was still below 44 in 2007.
 
+Let us compare Afghanistan with Japan. When you choose more than one country, we use the following format: `country %in% c("Afghanistan", "Japan")`. 
 
 
 ```r
@@ -1913,9 +592,11 @@ df %>% filter(country %in% c("Afghanistan", "Japan")) %>%
   ggplot(aes(x = year, y = lifeExp, color = country)) + geom_line()
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-21-1.png" width="672" />
+<img src="05-dplyr_files/figure-html/unnamed-chunk-26-1.png" width="672" />
 
+What do you observe from this chart? 
 
+The code `unique(df$country)` does the same as the one below. First, choose distinct elements in the column `country` by `distinct(country)` and get the column as a vector by `pull`.
 
 
 ```r
@@ -1994,6 +675,9 @@ df %>% distinct(country) %>% pull()
 #> 142 Levels: Afghanistan Albania Algeria Angola ... Zimbabwe
 ```
 
+As we have guessed, there are 142 countries in this data.
+
+Let us choose BRICs countries in the data.
 
 
 
@@ -2002,9 +686,9 @@ df %>% filter(country %in% c("Brazil", "Russia", "India", "China")) %>%
   ggplot(aes(x = year, y = lifeExp, color = country)) + geom_line()
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-23-1.png" width="672" />
+<img src="05-dplyr_files/figure-html/unnamed-chunk-28-1.png" width="672" />
 
-Russian data is missing.
+Russia data is missing. Can you find it in the list of countries? It can be a problem of `gapminder` data. Can you think of the reason why Russia is not in?
 
 
 
@@ -2015,13 +699,15 @@ Russian data is missing.
 
 -   Brunei, Cambodia, Indonesia, Laos, Malaysia, Myanmar, Philippines, Singapore.
 
+- How many of these countries are on the list?
+
 3.  Choose several countries by yourself and do the similar investigations.
 
 
 
 ### `group_by` and `summarize`
 
-Let us use the variable `continent` and summarize the data.
+Let us use the variable `continent` and summarize the data. Can you tell how many continents are listed in the data? Yes, there are five. Can you tell how many countries are in each continent on the data?
 
 
 ```r
@@ -2029,6 +715,7 @@ df_lifeExp <- df %>% group_by(continent, year) %>%
   summarize(mean_lifeExp = mean(lifeExp), median_lifeExp = median(lifeExp), max_lifeExp = max(lifeExp), min_lifeExp = min(lifeExp), .groups = "keep")
 ```
 
+Don't get scared. We will learn little by little. 
 
 
 
@@ -2052,7 +739,7 @@ df_lifeExp %>% slice(1:10)
 #> #   ¹​median_lifeExp, ²​max_lifeExp, ³​min_lifeExp
 ```
 
-
+You can use `fill` and `color` for the box plot. Try and check the difference.
 
 
 ```r
@@ -2061,9 +748,9 @@ df %>% filter(year %in% c(1952, 1987, 2007)) %>%
   geom_boxplot()
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-26-1.png" width="672" />
+<img src="05-dplyr_files/figure-html/unnamed-chunk-31-1.png" width="672" />
 
-
+The following are examples of line graphs. Please see the differences.
 
 
 ```r
@@ -2071,7 +758,7 @@ df_lifeExp %>% ggplot(aes(x = year, y = mean_lifeExp, color = continent)) +
   geom_line()
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-27-1.png" width="672" />
+<img src="05-dplyr_files/figure-html/unnamed-chunk-32-1.png" width="672" />
 
 
 
@@ -2081,7 +768,7 @@ df_lifeExp %>% ggplot(aes(x = year, y = mean_lifeExp, color = continent, linetyp
   geom_line()
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-28-1.png" width="672" />
+<img src="05-dplyr_files/figure-html/unnamed-chunk-33-1.png" width="672" />
 
 
 
@@ -2092,7 +779,7 @@ df_lifeExp %>% ggplot() +
   geom_line(aes(x = year, y = median_lifeExp, linetype = continent))
 ```
 
-<img src="05-dplyr_files/figure-html/unnamed-chunk-29-1.png" width="672" />
+<img src="05-dplyr_files/figure-html/unnamed-chunk-34-1.png" width="672" />
 
 
 ## The Week Two Assignment (in Moodle)
@@ -2243,3 +930,4 @@ df_wdi_extra
 #> #   lending <chr>
 ```
 
+Can you see the differences? List them out. We will study the World Development Indicators in Chapter \@ref(wdi). 

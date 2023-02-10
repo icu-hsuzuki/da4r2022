@@ -6,21 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 18 Transforming | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
-<meta name="description" content="&lt;p&gt;This is a book based on the lecture given in AY2022 at International Christian University compiled using the bookdown package and RStudio.
-The HTML output format for this example is bookdown::bs4_book,
-set in the _output.yml file.&lt;/p&gt;">
+<meta name="description" content="The dplyr is a package to transform data. It can combine data as well. We will treat the second feature late in Chapter ??. The package dplyr is a part of the tidyverse packages, and you do not...">
 <meta name="generator" content="bookdown 0.31 with bs4_book()">
 <meta property="og:title" content="Chapter 18 Transforming | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/transforming.html">
-<meta property="og:description" content="&lt;p&gt;This is a book based on the lecture given in AY2022 at International Christian University compiled using the bookdown package and RStudio.
-The HTML output format for this example is bookdown::bs4_book,
-set in the _output.yml file.&lt;/p&gt;">
+<meta property="og:description" content="The dplyr is a package to transform data. It can combine data as well. We will treat the second feature late in Chapter ??. The package dplyr is a part of the tidyverse packages, and you do not...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 18 Transforming | Data Analysis for Researchers AY2022">
-<meta name="twitter:description" content="&lt;p&gt;This is a book based on the lecture given in AY2022 at International Christian University compiled using the bookdown package and RStudio.
-The HTML output format for this example is bookdown::bs4_book,
-set in the _output.yml file.&lt;/p&gt;">
+<meta name="twitter:description" content="The dplyr is a package to transform data. It can combine data as well. We will treat the second feature late in Chapter ??. The package dplyr is a part of the tidyverse packages, and you do not...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -79,7 +73,7 @@ set in the _output.yml file.&lt;/p&gt;">
 <li><a class="" href="tidyverse.html"><span class="header-section-number">3</span> tidyverse</a></li>
 <li><a class="" href="rmarkdown.html"><span class="header-section-number">4</span> R Markdown</a></li>
 <li><a class="" href="dplyr.html"><span class="header-section-number">5</span> dplyr</a></li>
-<li><a class="" href="a2resp.html"><span class="header-section-number">6</span> Assignment Two</a></li>
+<li><a class="" href="a2resp.html"><span class="header-section-number">6</span> Assignment Two and Responses</a></li>
 <li><a class="" href="wdidata.html"><span class="header-section-number">7</span> WDI</a></li>
 <li><a class="" href="ggplot2.html"><span class="header-section-number">8</span> ggplot2</a></li>
 <li><a class="" href="a3resp.html"><span class="header-section-number">9</span> Assignment Three</a></li>
@@ -87,7 +81,7 @@ set in the _output.yml file.&lt;/p&gt;">
 <li><a class="" href="workflow.html"><span class="header-section-number">11</span> Workflow</a></li>
 <li><a class="" href="a4resp.html"><span class="header-section-number">12</span> Assignment Four</a></li>
 <li><a class="" href="model.html"><span class="header-section-number">13</span> Linear Model</a></li>
-<li><a class="" href="roudups.html"><span class="header-section-number">14</span> Roudups</a></li>
+<li><a class="" href="roundups.html"><span class="header-section-number">14</span> Roudups</a></li>
 <li><a class="" href="a5resp.html"><span class="header-section-number">15</span> Assignment Five</a></li>
 <li class="book-part">PART II</li>
 <li><a class="" href="eda.html"><span class="header-section-number">16</span> Exploratory Data analysis</a></li>
@@ -119,14 +113,228 @@ set in the _output.yml file.&lt;/p&gt;">
 <h1>
 <span class="header-section-number">18</span> Transforming<a class="anchor" aria-label="anchor" href="#transforming"><i class="fas fa-link"></i></a>
 </h1>
-
+<blockquote>
+<p>The <code>dplyr</code> is a package to transform data. It can combine data as well. We will treat the second feature late in Chapter <a href="#tidyr"><strong>??</strong></a>. The package <code>dplyr</code> is a part of the <code>tidyverse</code> packages, and you do not need to install it separately.</p>
+</blockquote>
+<div class="sourceCode" id="cb522"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
+<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 </span></span>
+<span><span class="co">#&gt; ✔ tibble  3.1.8      ✔ dplyr   1.0.10</span></span>
+<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.5.0 </span></span>
+<span><span class="co">#&gt; ✔ readr   2.1.3      ✔ forcats 0.5.2 </span></span>
+<span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
+<span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
+<span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span></code></pre></div>
+<div id="dplyr-overview-1" class="section level2" number="18.1">
+<h2>
+<span class="header-section-number">18.1</span> <code>dplyr</code> <a href="https://dplyr.tidyverse.org">Overview</a><a class="anchor" aria-label="anchor" href="#dplyr-overview-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>dplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges:</p>
+<ul>
+<li>
+<code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> picks variables based on their names.</li>
+<li>
+<code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> picks cases based on their values.</li>
+<li>
+<code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> adds new variables that are functions of existing variables</li>
+<li>
+<code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> reduces multiple values down to a single summary.</li>
+<li>
+<code><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange()</a></code> changes the ordering of the rows.</li>
+<li>
+<code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> takes an existing tbl and converts it into a grouped tbl.</li>
+</ul>
+<p>You can learn more about them in vignette(“dplyr”). As well as these single-table verbs, dplyr also provides a variety of two-table verbs, which you can learn about in vignette(“two-table”).</p>
+<p>If you are new to dplyr, the best place to start is <a href="http://r4ds.had.co.nz/transform.html">the data transformation chapter in R for data science</a>.</p>
+</div>
+<div id="select-subset-columns-using-their-names-and-types-1" class="section level2" number="18.2">
+<h2>
+<span class="header-section-number">18.2</span> <a href="https://dplyr.tidyverse.org/reference/select.html"><code>select</code></a>: Subset columns using their names and types<a class="anchor" aria-label="anchor" href="#select-subset-columns-using-their-names-and-types-1"><i class="fas fa-link"></i></a>
+</h2>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="16%">
+<col width="38%">
+<col width="44%">
+</colgroup>
+<thead><tr class="header">
+<th>Helper Function</th>
+<th>Use</th>
+<th>Example</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>-</td>
+<td>Columns except</td>
+<td>select(babynames, -prop)</td>
+</tr>
+<tr class="even">
+<td>:</td>
+<td>Columns between (inclusive)</td>
+<td>select(babynames, year:n)</td>
+</tr>
+<tr class="odd">
+<td>contains()</td>
+<td>Columns that contains a string</td>
+<td>select(babynames, contains(“n”))</td>
+</tr>
+<tr class="even">
+<td>ends_with()</td>
+<td>Columns that ends with a string</td>
+<td>select(babynames, ends_with(“n”))</td>
+</tr>
+<tr class="odd">
+<td>matches()</td>
+<td>Columns that matches a regex</td>
+<td>select(babynames, matches(“n”))</td>
+</tr>
+<tr class="even">
+<td>num_range()</td>
+<td>Columns with a numerical suffix in the range</td>
+<td>Not applicable with babynames</td>
+</tr>
+<tr class="odd">
+<td>one_of()</td>
+<td>Columns whose name appear in the given set</td>
+<td>select(babynames, one_of(c(“sex”, “gender”)))</td>
+</tr>
+<tr class="even">
+<td>starts_with()</td>
+<td>Columns that starts with a string</td>
+<td>select(babynames, starts_with(“n”))</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="filter-subset-rows-using-column-values-1" class="section level2" number="18.3">
+<h2>
+<span class="header-section-number">18.3</span> <a href="https://dplyr.tidyverse.org/reference/filter.html"><code>filter</code></a>: Subset rows using column values<a class="anchor" aria-label="anchor" href="#filter-subset-rows-using-column-values-1"><i class="fas fa-link"></i></a>
+</h2>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th>Logical operator</th>
+<th>tests</th>
+<th>Example</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>&gt;</td>
+<td>Is x greater than y?</td>
+<td>x &gt; y</td>
+</tr>
+<tr class="even">
+<td>&gt;=</td>
+<td>Is x greater than or equal to y?</td>
+<td>x &gt;= y</td>
+</tr>
+<tr class="odd">
+<td>&lt;</td>
+<td>Is x less than y?</td>
+<td>x &lt; y</td>
+</tr>
+<tr class="even">
+<td>&lt;=</td>
+<td>Is x less than or equal to y?</td>
+<td>x &lt;= y</td>
+</tr>
+<tr class="odd">
+<td>==</td>
+<td>Is x equal to y?</td>
+<td>x == y</td>
+</tr>
+<tr class="even">
+<td>!=</td>
+<td>Is x not equal to y?</td>
+<td>x != y</td>
+</tr>
+<tr class="odd">
+<td>is.na()</td>
+<td>Is x an NA?</td>
+<td>is.na(x)</td>
+</tr>
+<tr class="even">
+<td>!is.na()</td>
+<td>Is x not an NA?</td>
+<td>!is.na(x)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="arrange-and-pipe-1" class="section level2" number="18.4">
+<h2>
+<span class="header-section-number">18.4</span> <a href="https://dplyr.tidyverse.org/reference/arrange.html"><code>arrange</code></a> and <code>Pipe %&gt;%</code><a class="anchor" aria-label="anchor" href="#arrange-and-pipe-1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>
+<code><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange()</a></code> orders the rows of a data frame by the values of selected columns.</li>
+</ul>
+<p>Unlike other <code>dplyr</code> verbs, <code><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange()</a></code> largely ignores grouping; you need to explicitly mention grouping variables (`or use .by_group = TRUE) in order to group by them, and functions of variables are evaluated once per data frame, not once per group.</p>
+<ul>
+<li>
+<a href="https://r4ds.had.co.nz/pipes.html"><code>pipes</code></a> in R for Data Science.</li>
+</ul>
+</div>
+<div id="mutate-1" class="section level2" number="18.5">
+<h2>
+<span class="header-section-number">18.5</span> <a href="https://dplyr.tidyverse.org/reference/mutate.html"><code>mutate</code></a><a class="anchor" aria-label="anchor" href="#mutate-1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Create, modify, and delete columns</p></li>
+<li>
+<p>Useful mutate functions</p>
+<ul>
+<li><p>+, -, log(), etc., for their usual mathematical meanings</p></li>
+<li><p>lead(), lag()</p></li>
+<li><p>dense_rank(), min_rank(), percent_rank(), row_number(), cume_dist(), ntile()</p></li>
+<li><p>cumsum(), cummean(), cummin(), cummax(), cumany(), cumall()</p></li>
+<li><p>na_if(), coalesce()### <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="group_by-1" class="section level2" number="18.6">
+<h2>
+<span class="header-section-number">18.6</span> <a href="https://dplyr.tidyverse.org/reference/group_by.html"><code>group_by</code></a><a class="anchor" aria-label="anchor" href="#group_by-1"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="summarise-or-summarize-1" class="section level2" number="18.7">
+<h2>
+<span class="header-section-number">18.7</span> <a href="https://dplyr.tidyverse.org/reference/summarise.html"><code>summarise</code> or <code>summarize</code></a><a class="anchor" aria-label="anchor" href="#summarise-or-summarize-1"><i class="fas fa-link"></i></a>
+</h2>
+<div id="summary-functions-1" class="section level4" number="18.7.0.1">
+<h4>
+<span class="header-section-number">18.7.0.1</span> Summary functions<a class="anchor" aria-label="anchor" href="#summary-functions-1"><i class="fas fa-link"></i></a>
+</h4>
+<p>So far our summarise() examples have relied on sum(), max(), and mean(). But you can use any function in summarise() so long as it meets one criteria: the function must take a vector of values as input and return a single value as output. Functions that do this are known as summary functions and they are common in the field of descriptive statistics. Some of the most useful summary functions include:</p>
+<ol style="list-style-type: decimal">
+<li>Measures of location - mean(x), median(x), quantile(x, 0.25), min(x), and max(x)</li>
+<li>Measures of spread - sd(x), var(x), IQR(x), and mad(x)</li>
+<li>Measures of position - first(x), nth(x, 2), and last(x)</li>
+<li>Counts - n_distinct(x) and n(), which takes no arguments, and returns the size of the current group or data frame.</li>
+<li>Counts and proportions of logical values - sum(!is.na(x)), which counts the number of TRUEs returned by a logical test; mean(y == 0), which returns the proportion of TRUEs returned by a logical test.</li>
+</ol>
+<ul>
+<li>if_else(), recode(), case_when()</li>
+</ul>
+</div>
+</div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="importing.html"><span class="header-section-number">17</span> Importing</a></div>
 <div class="next"><a href="tidying.html"><span class="header-section-number">19</span> Tidying</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#transforming"><span class="header-section-number">18</span> Transforming</a></li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#transforming"><span class="header-section-number">18</span> Transforming</a></li>
+<li><a class="nav-link" href="#dplyr-overview-1"><span class="header-section-number">18.1</span> dplyr Overview</a></li>
+<li><a class="nav-link" href="#select-subset-columns-using-their-names-and-types-1"><span class="header-section-number">18.2</span> select: Subset columns using their names and types</a></li>
+<li><a class="nav-link" href="#filter-subset-rows-using-column-values-1"><span class="header-section-number">18.3</span> filter: Subset rows using column values</a></li>
+<li><a class="nav-link" href="#arrange-and-pipe-1"><span class="header-section-number">18.4</span> arrange and Pipe %&gt;%</a></li>
+<li><a class="nav-link" href="#mutate-1"><span class="header-section-number">18.5</span> mutate</a></li>
+<li><a class="nav-link" href="#group_by-1"><span class="header-section-number">18.6</span> group_by</a></li>
+<li><a class="nav-link" href="#summarise-or-summarize-1"><span class="header-section-number">18.7</span> summarise or summarize</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">

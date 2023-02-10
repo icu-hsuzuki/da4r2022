@@ -1,1 +1,19 @@
 # Modeling {#modeling}
+
+## Posit Primers - Remaining Tutorials
+
+5. Iterate -- [r4ds: Program](https://r4ds.had.co.nz/program-intro.html#program-intro)
+  - [Introduction to Iteration](https://rstudio.cloud/learn/primers/5.1)
+  - [Map](https://rstudio.cloud/learn/primers/5.2)
+  - [Map Shortcut](https://rstudio.cloud/learn/primers/5.3)
+  - [Multiple Vectors](https://rstudio.cloud/learn/primers/5.3)
+  - [List Columns](https://rstudio.cloud/learn/primers/5.4)
+6. Write Functions -- [r4ds: Program](https://r4ds.had.co.nz/program-intro.html#program-intro)
+  - [Function Basics](https://rstudio.cloud/learn/primers/6.1)
+  - [How to Write a Function](https://rstudio.cloud/learn/primers/6.2)
+  - [Argument Matching](https://rstudio.cloud/learn/primers/6.3)
+  - [Environments and Scoping](https://rstudio.cloud/learn/primers/6.4)
+  - [Control Flow](https://rstudio.cloud/learn/primers/6.5)
+  - [Advanced Control Flow](https://rstudio.cloud/learn/primers/6.6)
+  - [Loops in R](https://rstudio.cloud/learn/primers/6.7)
+8. [Build Interactive Web Apps](https://shiny.rstudio.com/tutorial/?_ga=2.149795838.979535829.1639794069-1104332695.1639233659)

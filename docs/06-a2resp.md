@@ -1,5 +1,7 @@
 
-# Assignment Two {#a2resp}
+# Assignment Two and Responses {#a2resp}
+
+## Assignment Two
 
 1. You are supposed to submit an R Notebook File with a file name a2_YourID.nb.html.
   - Some submitted an HTML file, such as a2_YourID.html. You need to create an R Notebook. Use the template in Moodle. It creates a file with *.nb.html at the end automatically.
@@ -56,7 +58,7 @@ df
 
 ### Varibles
 
-We should know first about the variables. At least you must know if each of the variables is a categorical variable or a numerical variable.
+We should know first about the variables. At least you must know if each variable is a categorical or a numerical variable.
 
 For example, in the `gapminder` data, `country`, `continent` are categorical variables, and `year`, `lifeExp`, `pop`, `gdpPercap` are numerical variables. It is possible to treat `year` as a categorical variable. 
 
@@ -64,7 +66,7 @@ For example, in the `gapminder` data, `country`, `continent` are categorical var
 
 #### The first step
 
-You can obtain basic information of the data by the following or typing CO2 in the search box under Help tab. You can see the same at: https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html
+You can obtain basic information about the data by the following or by typing CO2 in the search box under the Help tab. You can see the same at: https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html
 
 
 ```r
@@ -170,6 +172,7 @@ Then you can choose appropriate ones later in your research.
 
 ##### Histogram
 
+Can you tell why you get the chart below?
 
 
 ```r

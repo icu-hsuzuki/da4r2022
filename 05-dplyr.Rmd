@@ -1,5 +1,7 @@
 #  `dplyr` {#dplyr}
 
+> The `dplyr` is a package to transform data. It can combine data as well. We will treat the second feature late in Chapter \@ref(tidyr). The package `dplyr` is a part of the `tidyverse` packages, and you do not need to install it separately.
+
 ```{r}
 library(tidyverse)
 ```
@@ -19,7 +21,6 @@ dplyr is a grammar of data manipulation, providing a consistent set of verbs tha
 You can learn more about them in vignette("dplyr"). As well as these single-table verbs, dplyr also provides a variety of two-table verbs, which you can learn about in vignette("two-table").
 
 If you are new to dplyr, the best place to start is [the data transformation chapter in R for data science](http://r4ds.had.co.nz/transform.html).
-
 
 
 ## [`select`](https://dplyr.tidyverse.org/reference/select.html): Subset columns using their names and types
@@ -106,7 +107,7 @@ So far our summarise() examples have relied on sum(), max(), and mean(). But you
 ### Data `iris`
 
 ```{r}
-iris
+head(iris)
 ```
 
 
@@ -121,31 +122,58 @@ summary(iris)
 ### `select` 1 - columns 1, 2, 5
 
 ```{r}
-select(iris, c(1,2,5))
+head(select(iris, c(1,2,5)))
+```
+
+You can select the first, the second and the fifth columns. If you want to use it, then assign a new name.
+
+```{r}
+head(iris)
 ```
 
 
+```{r}
+df_iris125 <- select(iris, c(1,2,5))
+head(df_iris125)
+```
+
+### `select` 1 using pipe
+
+In the previous example, we used `head(select(iris, c(1,2,5)))`, `head` comes first because we apply `head` to the result of `select(iris, c(1,2,5))`. In order to apply functions in a sequencial order, we can use pipe command. You can get the same result by the following.
+
+```{r}
+iris %>% select(c(1,2,5)) %>% head()
+```
+
+All `tidyverse` functions are designed so that the first argument, i.e., the entry, is the data. So using pipe, `iris` is assumed to be the first entry of the `select` function, and `select(iris, c(1,2,5))` is the first entry of the head function.
+
+In the following, we use pipes.  
 
 ### `select` 2 - except Species
 
 ```{r}
-select(iris, -Species)
+select(iris, -Species) %>% head()
 ```
 
 
 
-### `select` 3 - change column names
+### `select` 3 - select and change column names at the same time
 
 ```{r}
-select(iris, sl = Sepal.Length, sw = Sepal.Width, sp = Species)
+select(iris, sl = Sepal.Length, sw = Sepal.Width, sp = Species) %>% head()
 ```
 
+### `select` 4 - change the order of columns
+
+```{r}
+select(iris, c(5,3,4,1,2)) %>% head()
+```
 
 
 ### `filter` - by names
 
 ```{r}
-filter(iris, Species == "virginica")
+filter(iris, Species == "virginica") %>% head()
 ```
 
 
@@ -154,7 +182,7 @@ filter(iris, Species == "virginica")
 ### `arrange`  - ascending and descending order
 
 ```{r}
-arrange(iris, Sepal.Length, desc(Sepal.Width))
+arrange(iris, Sepal.Length, desc(Sepal.Width)) %>% head()
 ```
 
 
@@ -162,10 +190,11 @@ arrange(iris, Sepal.Length, desc(Sepal.Width))
 ### `mutate` - rank
 
 ```{r}
-iris %>% mutate(sl_rank = min_rank(Sepal.Length)) %>% arrange(sl_rank)
+iris %>% mutate(sl_rank = min_rank(Sepal.Length)) %>% 
+  arrange(sl_rank) %>% head()
 ```
 
-
+Insert a line break after the pipe command, not before. 
 
 ### `group_by` and `summarize`
 
@@ -193,18 +222,10 @@ For more examples see
 
 ### RStudio Primers: See References in Moodle at the bottom
 
-1. The Basics -- [r4ds: Explore, I](https://r4ds.had.co.nz/explore-intro.html#explore-intro)
-  - [Visualization Basics](https://rstudio.cloud/learn/primers/1.1)
-  - [Programming Basics](https://rstudio.cloud/learn/primers/1.2)
-2. **Work with Data** -- [r4ds: Wrangle, I](https://r4ds.had.co.nz/wrangle-intro.html#wrangle-intro)
-  - **Working with Tibbles**
-  - **Isolating Data with dplyr**
-  - **Deriving Information with dplyr**
-3. Visualize Data -- [r4ds: Explore, II](https://r4ds.had.co.nz/explore-intro.html#explore-intro)
-4. Tidy Your Data -- [r4ds: Wrangle, II](https://r4ds.had.co.nz/wrangle-intro.html#wrangle-intro)
-5. Iterate -- [r4ds: Program](https://r4ds.had.co.nz/program-intro.html#program-intro)
-6. Write Functions -- [r4ds: Program](https://r4ds.had.co.nz/program-intro.html#program-intro)
-
+2. Work with Data -- [r4ds: Wrangle, I](https://r4ds.had.co.nz/wrangle-intro.html#wrangle-intro)
+  - [Working with Tibbles](https://rstudio.cloud/learn/primers/2.1)
+  - [Isolating Data with dplyr](https://rstudio.cloud/learn/primers/2.2)
+  - [Deriving Information with dplyr](https://rstudio.cloud/learn/primers/2.3)
 
 
 
@@ -273,6 +294,8 @@ library(WDI)
 
 #### R Package `gapminder` data
 
+We will use a `tidyverse` function `slice` replacing `head`. Check `slice` in the search window under the Help tab on the bottom right pane.
+
 ```{r cache=TRUE}
 df <- gapminder
 df %>% slice(1:10)
@@ -296,29 +319,38 @@ summary(df)
 
 ##### First Try - with failures
 
+You will encounter similar failures. We list three of them.
+
 ```{r}
 ggplot(df, aes(x = year, y = lifeExp)) + geom_point()
 ```
 
 
+There are lots of data in each year: 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, 1997, …. Can you tell how many years are in the data? The following command shows different years in the data.
+
+```{r}
+unique(df$year)
+```
+
+You can guess it from the data summary above. Can you imagine how many countries are in the data? 142? Anyhow, too many points are on each year.
 
 ```{r}
 ggplot(df, aes(x = year, y = lifeExp)) + geom_line()
 ```
 
-
+Now, you can guess the reason why you had this output. This is often called a saw-tooth.
 
 ```{r}
 ggplot(df, aes(x = year, y = lifeExp)) + geom_boxplot()
 ```
 
-
+Can you see what the problem is? The `year` is a numerical variable in integer.
 
 ```{r}
 typeof(pull(df, year)) # same as typeof(df$year)
 ```
 
-
+The following looks better.
 
 ```{r}
 ggplot(df, aes(y = lifeExp, group = year)) + geom_boxplot()
@@ -332,30 +364,45 @@ ggplot(df, aes(y = lifeExp, group = year)) + geom_boxplot()
 ggplot(df, aes(x = as_factor(year), y = lifeExp)) + geom_boxplot()
 ```
 
-
+We will study data visualization in Chapter \@ref(ggplot2). 
 
 #### Applications of `dplyr`
 
+Let us apply `dplyr` to manipulate data to visualize the data.
+
 ##### `filter`
+
+By `filter` you can obtain the the data of one country.
+
+`filter(country == "Afghanistan")`
+
+Note that we need two equal symbols, and quotation marks must surround the country name.
 
 ```{r}
 df %>% filter(country == "Afghanistan") %>%
   ggplot(aes(x = year, y = lifeExp)) + geom_line()
 ```
 
+Looks good. From the data you observe, the life expectancy at birth in 1952 was below 30, and it was still below 44 in 2007.
 
+Let us compare Afghanistan with Japan. When you choose more than one country, we use the following format: `country %in% c("Afghanistan", "Japan")`. 
 
 ```{r}
 df %>% filter(country %in% c("Afghanistan", "Japan")) %>%
   ggplot(aes(x = year, y = lifeExp, color = country)) + geom_line()
 ```
 
+What do you observe from this chart? 
 
+The code `unique(df$country)` does the same as the one below. First, choose distinct elements in the column `country` by `distinct(country)` and get the column as a vector by `pull`.
 
 ```{r}
 df %>% distinct(country) %>% pull()
 ```
 
+As we have guessed, there are 142 countries in this data.
+
+Let us choose BRICs countries in the data.
 
 
 ```{r}
@@ -363,7 +410,7 @@ df %>% filter(country %in% c("Brazil", "Russia", "India", "China")) %>%
   ggplot(aes(x = year, y = lifeExp, color = country)) + geom_line()
 ```
 
-Russian data is missing.
+Russia data is missing. Can you find it in the list of countries? It can be a problem of `gapminder` data. Can you think of the reason why Russia is not in?
 
 
 
@@ -374,26 +421,29 @@ Russian data is missing.
 
 -   Brunei, Cambodia, Indonesia, Laos, Malaysia, Myanmar, Philippines, Singapore.
 
+- How many of these countries are on the list?
+
 3.  Choose several countries by yourself and do the similar investigations.
 
 
 
 ### `group_by` and `summarize`
 
-Let us use the variable `continent` and summarize the data.
+Let us use the variable `continent` and summarize the data. Can you tell how many continents are listed in the data? Yes, there are five. Can you tell how many countries are in each continent on the data?
 
 ```{r}
 df_lifeExp <- df %>% group_by(continent, year) %>% 
   summarize(mean_lifeExp = mean(lifeExp), median_lifeExp = median(lifeExp), max_lifeExp = max(lifeExp), min_lifeExp = min(lifeExp), .groups = "keep")
 ```
 
+Don't get scared. We will learn little by little. 
 
 
 ```{r}
 df_lifeExp %>% slice(1:10)
 ```
 
-
+You can use `fill` and `color` for the box plot. Try and check the difference.
 
 ```{r}
 df %>% filter(year %in% c(1952, 1987, 2007)) %>%
@@ -401,7 +451,7 @@ df %>% filter(year %in% c(1952, 1987, 2007)) %>%
   geom_boxplot()
 ```
 
-
+The following are examples of line graphs. Please see the differences.
 
 ```{r}
 df_lifeExp %>% ggplot(aes(x = year, y = mean_lifeExp, color = continent)) +
@@ -519,3 +569,4 @@ df_wdi_extra <- read_csv("./data/wdi_extra.csv")
 df_wdi_extra
 ```
 
+Can you see the differences? List them out. We will study the World Development Indicators in Chapter \@ref(wdi). 

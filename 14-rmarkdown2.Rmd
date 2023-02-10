@@ -1,4 +1,4 @@
-# Roudups
+# Roudups {#roundups}
 
 ---
 
@@ -103,6 +103,12 @@ Custom templates: https://bookdown.org/yihui/rmarkdown/powerpoint-presentation.h
 https://support.microsoft.com/en-us/office/create-and-save-a-powerpoint-template-ee4429ad-2a74-4100-82f7-50f8169c8aca
 
 YouTube: How To Create A PowerPoint Template
+
+
+### Posit Primers
+
+7. Report Reproductively -- [r4ds: Communicate](https://r4ds.had.co.nz/communicate-intro.html)
+  - [Link to Videos and Explanations](https://rmarkdown.rstudio.com/lesson-1.html?_ga=2.215340127.979535829.1639794069-1104332695.1639233659)
 
 ---
 

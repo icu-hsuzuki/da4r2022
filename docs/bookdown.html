@@ -73,7 +73,7 @@
 <li><a class="" href="tidyverse.html"><span class="header-section-number">3</span> tidyverse</a></li>
 <li><a class="" href="rmarkdown.html"><span class="header-section-number">4</span> R Markdown</a></li>
 <li><a class="" href="dplyr.html"><span class="header-section-number">5</span> dplyr</a></li>
-<li><a class="" href="a2resp.html"><span class="header-section-number">6</span> Assignment Two</a></li>
+<li><a class="" href="a2resp.html"><span class="header-section-number">6</span> Assignment Two and Responses</a></li>
 <li><a class="" href="wdidata.html"><span class="header-section-number">7</span> WDI</a></li>
 <li><a class="" href="ggplot2.html"><span class="header-section-number">8</span> ggplot2</a></li>
 <li><a class="" href="a3resp.html"><span class="header-section-number">9</span> Assignment Three</a></li>
@@ -81,7 +81,7 @@
 <li><a class="" href="workflow.html"><span class="header-section-number">11</span> Workflow</a></li>
 <li><a class="" href="a4resp.html"><span class="header-section-number">12</span> Assignment Four</a></li>
 <li><a class="" href="model.html"><span class="header-section-number">13</span> Linear Model</a></li>
-<li><a class="" href="roudups.html"><span class="header-section-number">14</span> Roudups</a></li>
+<li><a class="" href="roundups.html"><span class="header-section-number">14</span> Roudups</a></li>
 <li><a class="" href="a5resp.html"><span class="header-section-number">15</span> Assignment Five</a></li>
 <li class="book-part">PART II</li>
 <li><a class="" href="eda.html"><span class="header-section-number">16</span> Exploratory Data analysis</a></li>
@@ -136,7 +136,7 @@
 <li><p>Click on <strong>Build Book</strong>, then select your output format, or select “All formats” if you’d like to use multiple formats from the same book source files.</p></li>
 </ol>
 <p>Or build the book from the R console:</p>
-<div class="sourceCode" id="cb517"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb528"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">bookdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/bookdown/reference/render_book.html">render_book</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>To render this example to PDF as a <code><a href="https://pkgs.rstudio.com/bookdown/reference/pdf_book.html">bookdown::pdf_book</a></code>, you’ll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.org/tinytex/" class="uri">https://yihui.org/tinytex/</a>.</p>
 </div>
@@ -145,7 +145,7 @@
 <span class="header-section-number">30.1.3</span> Preview book<a class="anchor" aria-label="anchor" href="#preview-book"><i class="fas fa-link"></i></a>
 </h3>
 <p>As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in “Preview book”, or from the R console:</p>
-<div class="sourceCode" id="cb518"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb529"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">bookdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/bookdown/reference/serve_book.html">serve_book</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
@@ -196,7 +196,7 @@
 </h3>
 <p>Figures and tables <em>with captions</em> can also be cross-referenced from elsewhere in your book using <code>\@ref(fig:chunk-label)</code> and <code>\@ref(tab:chunk-label)</code>, respectively.</p>
 <p>See Figure <a href="bookdown.html#fig:nice-fig">30.1</a>.</p>
-<div class="sourceCode" id="cb519"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb530"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">4</span>, <span class="fl">4</span>, <span class="fl">.1</span>, <span class="fl">.1</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">pressure</span>, type <span class="op">=</span> <span class="st">'b'</span>, pch <span class="op">=</span> <span class="fl">19</span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
@@ -206,7 +206,7 @@ Figure 30.1: Here is a nice figure!
 </p>
 </div>
 <p>Don’t miss Table <a href="bookdown.html#tab:nice-tab">30.1</a>.</p>
-<div class="sourceCode" id="cb520"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb531"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">pressure</span>, <span class="fl">10</span><span class="op">)</span>, caption <span class="op">=</span> <span class="st">'Here is a nice table!'</span>,</span>
 <span>  booktabs <span class="op">=</span> <span class="cn">TRUE</span></span>
@@ -327,7 +327,7 @@ and <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</
 <p>The <code>bs4_book</code> theme also includes special callout blocks, like this <code>.rmdnote</code>.</p>
 <div class="rmdnote">
 <p>You can use <strong>markdown</strong> inside a block.</p>
-<div class="sourceCode" id="cb521"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb532"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">beaver1</span>, n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   day time  temp activ</span></span>
 <span><span class="co">#&gt; 1 346  840 36.33     0</span></span>
@@ -366,12 +366,12 @@ and <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</
 <p>Specify your book’s source repository on GitHub as the <code>repo</code> in the <code>_output.yml</code> file, which allows users to view each chapter’s source file or suggest an edit. Read more about the features of this output format here:</p>
 <p><a href="https://pkgs.rstudio.com/bookdown/reference/bs4_book.html" class="uri">https://pkgs.rstudio.com/bookdown/reference/bs4_book.html</a></p>
 <p>Or use:</p>
-<div class="sourceCode" id="cb522"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb533"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">?</span><span class="fu">bookdown</span><span class="fu">::</span><span class="va"><a href="https://pkgs.rstudio.com/bookdown/reference/bs4_book.html">bs4_book</a></span></span></code></pre></div>
 </div>
 </div>
-<div id="references-1" class="section level2 unnumbered">
-<h2>References<a class="anchor" aria-label="anchor" href="#references-1"><i class="fas fa-link"></i></a>
+<div id="references-2" class="section level2 unnumbered">
+<h2>References<a class="anchor" aria-label="anchor" href="#references-2"><i class="fas fa-link"></i></a>
 </h2>
 
 </div>
@@ -421,7 +421,7 @@ and <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</
 <li><a class="nav-link" href="#metadata-for-sharing"><span class="header-section-number">C.7.3</span> Metadata for sharing</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#references-1">References</a></li>
+<li><a class="nav-link" href="#references-2">References</a></li>
 </ul>
 
       <div class="book-extra">
