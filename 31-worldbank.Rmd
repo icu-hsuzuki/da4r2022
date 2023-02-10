@@ -1,2 +1,163 @@
-# (PART) PART III {-}
+# (PART) PART III OPEN PUBLIC DATA {-}
 # World Bank {#worldbank}
+
+## Open and Public Data, World Bank
+
+### [Open Government Data Toolkit](http://opendatatoolkit.worldbank.org): [Open Data Defined](http://opendatatoolkit.worldbank.org/en/essentials.html)
+
+The term **Open Data** has a very precise meaning. Data or content is open if anyone is free to use, re-use or redistribute it, subject at most to measures that preserve provenance and openness.
+
+1. The data must be _legally open_, which means they must be placed in the public domain or under liberal terms of use with minimal restrictions.
+2. The data must be _technically open_, which means they must be published in electronic formats that are machine readable and non-proprietary, so that anyone can access and use the data using common, freely available software tools. Data must also be publicly available and accessible on a public server, without password or firewall restrictions. To make Open Data easier to find, most organizations create and manage Open Data catalogs.
+
+
+
+## World Bank: WDI - World Development Indicaters
+
+* World Bank: https://www.worldbank.org
+* [Who we are](https://www.worldbank.org/en/who-we-are):
+  - To end extreme poverty: By reducing the share of the global population that lives in extreme poverty to 3 percent by 2030.
+  - To promote shared prosperity: By increasing the incomes of the poorest 40 percent of people in every country. 
+* World Bank Open Data: https://data.worldbank.org
+  - Data Bank, World Development Indicators, etc.
+* [World Development Indicators (WDI)](https://datatopics.worldbank.org/world-development-indicators/) : the World Bank’s premier compilation of cross-country comparable data on development; 1400 time series indicators
+  - Themes: Poverty and Inequality, People, Environment, Economy, States and Markets, Global Links
+  - Open Data & DataBank: Explore data, Query database
+  - Bulk Download: Excel, CSV
+  - API Documentation
+  
+
+
+## R Package [WDI](https://CRAN.R-project.org/package=WDI)
+
+* [WDI](https://CRAN.R-project.org/package=WDI): World Development Indicators and Other World Bank Data
+* Search and download data from over 40 databases hosted by the World Bank, including the World Development Indicators ('WDI'), International Debt Statistics, Doing Business, Human Capital Index, and Sub-national Poverty indicators.
+* Version: 2.7.4
+* Materials:	[README](https://cran.r-project.org/web/packages/WDI/readme/README.html)   - _usage_
+  - [NEWS](https://cran.r-project.org/web/packages/WDI/news/news.html) - _version history_
+* Published: 2021-04-06
+* README: https://cran.r-project.org/web/packages/WDI/readme/README.html
+* Reference manual:	[WDI.pdf](https://cran.r-project.org/web/packages/WDI/WDI.pdf)
+
+
+
+## Function WDI
+
+* **Usage**
+
+```
+WDI(country = "all",
+    indicator = "NY.GDP.PCAP.KD",
+    start = 1960,
+    end = 2020,
+    extra = FALSE,
+    cache = NULL)
+```
+
+* **Arguments** See Help!
+  - country: Vector of countries (ISO-2 character codes, e.g. "BR", "US", "CA", or "all") 
+  - indicator: If you supply a named vector, the indicators will be automatically renamed: `c('women_private_sector' = 'BI.PWK.PRVS.FE.ZS')`
+
+
+
+## Function WDIsearch
+
+```{r}
+library(tidyverse)
+library(WDI)
+```
+
+```{r cache=TRUE}
+WDIsearch(string = "NY.GDP.PCAP.KD", 
+          field = "indicator", cache = NULL)
+```
+
+
+
+```{r cache=TRUE}
+WDIsearch(string = "population", 
+          field = "name", short=FALSE, cache = NULL)
+```
+
+
+
+```
+WDIsearch(string = "NY.GDP.PCAP.KD", 
+  field = "indicator", short = FALSE, cache = NULL)
+```
+```
+WDIsearch(string = "gdp", 
+  field = "name", short = TRUE, cache = NULL) 
+```
+
+
+
+## Bulk Downloads at WDI site
+
+WDIbulk downloads the zip file of Bulk Downloads in [WDI site](https://datatopics.worldbank.org/world-development-indicators/) , it is a list containing 6 data frames: Data, Country, Series, Country-Series, Series-Time, FootNote.
+
+
+
+## WDIcache
+
+Download an updated list of available WDI indicators from the World Bank website. Returns a list for use in the WDIsearch function.
+
+```{r widcache, eval=FALSE}
+wdi_cache <- WDIcache()
+```
+
+Downloading all series information from the World Bank website can take time. The WDI package ships with a local data object with information on all the series available on 2012-06-18. You can update this database by retrieving a new list using `WDIcache`, and then feeding the resulting object to `WDIsearch` via the cache argument.
+
+```{r echo=FALSE, message=FALSE, eval=FALSE}
+write_rds(wdi_cache, "./data/wdi_cache.RData", refhook = NULL)
+```
+
+```{r echo=FALSE, message=FALSE}
+wdi_cache <- read_rds("./data/wdi_cache.RData", refhook = NULL)
+```
+
+
+
+
+
+```{r}
+glimpse(wdi_cache)
+```
+
+
+
+
+## WDI_data
+
+List of 2 data frames
+
+The first character matrix includes a full list of WDI series. This list is updated semi-regularly. Users can refresh the list manually using the 'WDIcache()' function and search in the updated list using the 'cache' argument.
+
+
+
+
+```{r}
+WDI_data$country  %>% filter(country == "Japan")
+```
+
+
+
+```{r}
+WDIsearch(string = "gdp", 
+  field = "name", short = FALSE, cache = wdi_cache) 
+```
+
+
+
+## World Development Indicators - Summary
+
+Find indicators:
+
+1. `WDIsearch(string = "gdp", field = "name", short = FALSE, cache = NULL)`
+  - `WDIsearch(string = "gdp", field = "name", short = FALSE, cache = wdi_cache)`
+  - `WDIsearch(string = "NY.GDP.PCAP.KD", field = "indicator", short = FALSE, cache = NULL)`
+2. [WDI](https://datatopics.worldbank.org/world-development-indicators/): Data Themes
+3. Browse by Indicators: https://data.worldbank.org/indicator
+   - Featured Indicators or All Indicators
+   - Obtain the indicator from the detail or the URL
+

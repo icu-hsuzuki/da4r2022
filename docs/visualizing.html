@@ -6,21 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 20 Visualizing | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
-<meta name="description" content="&lt;p&gt;This is a book based on the lecture given in AY2022 at International Christian University compiled using the bookdown package and RStudio.
-The HTML output format for this example is bookdown::bs4_book,
-set in the _output.yml file.&lt;/p&gt;">
+<meta name="description" content="20.1 Data Visualization   20.2 ggplot2 Basics  visualization  20.2.1 Two useful questions There is no rule about which questions you should ask to guide your research. However, two types of...">
 <meta name="generator" content="bookdown 0.31 with bs4_book()">
 <meta property="og:title" content="Chapter 20 Visualizing | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/visualizing.html">
-<meta property="og:description" content="&lt;p&gt;This is a book based on the lecture given in AY2022 at International Christian University compiled using the bookdown package and RStudio.
-The HTML output format for this example is bookdown::bs4_book,
-set in the _output.yml file.&lt;/p&gt;">
+<meta property="og:description" content="20.1 Data Visualization   20.2 ggplot2 Basics  visualization  20.2.1 Two useful questions There is no rule about which questions you should ask to guide your research. However, two types of...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 20 Visualizing | Data Analysis for Researchers AY2022">
-<meta name="twitter:description" content="&lt;p&gt;This is a book based on the lecture given in AY2022 at International Christian University compiled using the bookdown package and RStudio.
-The HTML output format for this example is bookdown::bs4_book,
-set in the _output.yml file.&lt;/p&gt;">
+<meta name="twitter:description" content="20.1 Data Visualization   20.2 ggplot2 Basics  visualization  20.2.1 Two useful questions There is no rule about which questions you should ask to guide your research. However, two types of...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -89,7 +83,7 @@ set in the _output.yml file.&lt;/p&gt;">
 <li><a class="" href="model.html"><span class="header-section-number">13</span> Linear Model</a></li>
 <li><a class="" href="roundups.html"><span class="header-section-number">14</span> Roudups</a></li>
 <li><a class="" href="a5resp.html"><span class="header-section-number">15</span> Assignment Five</a></li>
-<li class="book-part">PART II</li>
+<li class="book-part">PART II EDA BASICS</li>
 <li><a class="" href="eda.html"><span class="header-section-number">16</span> Exploratory Data analysis</a></li>
 <li><a class="" href="importing.html"><span class="header-section-number">17</span> Importing</a></li>
 <li><a class="" href="transforming.html"><span class="header-section-number">18</span> Transforming</a></li>
@@ -97,7 +91,7 @@ set in the _output.yml file.&lt;/p&gt;">
 <li><a class="active" href="visualizing.html"><span class="header-section-number">20</span> Visualizing</a></li>
 <li><a class="" href="modeling.html"><span class="header-section-number">21</span> Modeling</a></li>
 <li><a class="" href="communicating.html"><span class="header-section-number">22</span> Communicating</a></li>
-<li class="book-part">PART III</li>
+<li class="book-part">PART III OPEN PUBLIC DATA</li>
 <li><a class="" href="worldbank.html"><span class="header-section-number">23</span> World Bank</a></li>
 <li><a class="" href="owid.html"><span class="header-section-number">24</span> Our World in Data</a></li>
 <li><a class="" href="oecd.html"><span class="header-section-number">25</span> OECD</a></li>
@@ -119,14 +113,44 @@ set in the _output.yml file.&lt;/p&gt;">
 <h1>
 <span class="header-section-number">20</span> Visualizing<a class="anchor" aria-label="anchor" href="#visualizing"><i class="fas fa-link"></i></a>
 </h1>
+<div id="data-visualization-1" class="section level2" number="20.1">
+<h2>
+<span class="header-section-number">20.1</span> Data Visualization<a class="anchor" aria-label="anchor" href="#data-visualization-1"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="ggplot2-basics-1" class="section level2" number="20.2">
+<h2>
+<span class="header-section-number">20.2</span> <code>ggplot2</code> Basics<a class="anchor" aria-label="anchor" href="#ggplot2-basics-1"><i class="fas fa-link"></i></a>
+</h2>
+<div class="figure">
+<img src="data/visualization.png" style="width:75.0%" alt=""><p class="caption">visualization</p>
+</div>
+<div id="two-useful-questions-1" class="section level3" number="20.2.1">
+<h3>
+<span class="header-section-number">20.2.1</span> Two useful questions<a class="anchor" aria-label="anchor" href="#two-useful-questions-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>There is no rule about which questions you should ask to guide your research. However, two types of questions will always be useful for making discoveries within your data. You can loosely word these questions as:</p>
+<ol style="list-style-type: decimal">
+<li>What type of variation occurs within my variables?</li>
+<li>What type of covariation occurs between my variables?</li>
+</ol>
+<p>The rest of this tutorial will look at these two questions. To make the discussion easier, let’s define some terms…</p>
 
+</div>
+</div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="tidying.html"><span class="header-section-number">19</span> Tidying</a></div>
 <div class="next"><a href="modeling.html"><span class="header-section-number">21</span> Modeling</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#visualizing"><span class="header-section-number">20</span> Visualizing</a></li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#visualizing"><span class="header-section-number">20</span> Visualizing</a></li>
+<li><a class="nav-link" href="#data-visualization-1"><span class="header-section-number">20.1</span> Data Visualization</a></li>
+<li>
+<a class="nav-link" href="#ggplot2-basics-1"><span class="header-section-number">20.2</span> ggplot2 Basics</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#two-useful-questions-1"><span class="header-section-number">20.2.1</span> Two useful questions</a></li></ul>
+</li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">

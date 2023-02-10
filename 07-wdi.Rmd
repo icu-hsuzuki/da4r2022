@@ -8,14 +8,11 @@ library(gapminder)
 library(maps)
 library(WDI)
 library(readxl)
-library(ggrepel)
 ```
 
 * We have used `tidyverse` and `gapminder` already.
 * If you have not installed `WDI`, install it.
-* We will not use `ggrepel` but if you want to use it, install it.
 * `maps` and `readxl` are bundled in `tidyverse` but need to be attached by `library`.
-
 
 
 ### Gapminder Package Data
@@ -67,11 +64,10 @@ $\log_{10}{100}$ = `r log10(100)`, $\log_{10}{1000}$ = `r log10(1000)`, $\log_{1
 
 
 ```{r gapminder-combined, eval=FALSE}
-library(ggrepel)
 df2007 <- df %>% filter(country %in% asean, year == 2007)
 df %>% filter(country %in% asean) %>%
   ggplot(aes(x = gdpPercap, y = lifeExp, col = country))+ 
-  geom_line() + geom_label_repel(data = df2007, aes(label = country)) + geom_point()  +
+  geom_line() + geom_label(data = df2007, aes(label = country), position = position_jitter()) + geom_point()  +
   coord_trans(x = "log10", y = "identity") +
   theme(axis.text.x = element_text(angle = 90, vjust = 1, hjust=1), legend.position = "none") +
   labs(title = "Life Expectancy vs GDP Per Capita of ASEAN Countries",
@@ -82,13 +78,12 @@ df %>% filter(country %in% asean) %>%
 
 
 ```{r echo=FALSE}
-library(ggrepel)
 df2007 <- df %>% filter(country %in% asean, year == 2007)
 df %>% filter(country %in% asean) %>%
   ggplot(aes(x = gdpPercap, y = lifeExp, col = country))+ 
-  geom_line() + geom_label_repel(data = df2007, aes(label = country)) + geom_point()  +
+  geom_line() + geom_label(data = df2007, aes(label = country), position = position_jitter(width = 1, height = 1)) + geom_point()  +
   coord_trans(x = "log10", y = "identity") +
-  theme(axis.text.x = element_text(angle = 90, vjust = 1, hjust=1), legend.position = "none") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1), legend.position = "none") +
   labs(title = "Life Expectancy vs GDP Per Capita of ASEAN Countries",
        subtitle = "Data: gapminder package", x = "GDP per Capita", y = "Life Expectancy")
 ```
@@ -106,7 +101,7 @@ df %>%
   labs(title = "Gapminder Package Data", subtitle="World Map of GDP per Capita Data")
 ```
 
-
+The `gapminder` is a handy package to look at a worldview using three indicators, i.e., life expectancy, population, and GDP per capita. However, some countries are missing, and the data source is unclear. 
 
 ### World Bank: World Development Indicators (WDI)
 
@@ -268,13 +263,6 @@ WDIsearch(string = "gdp",
 ```
 
 
-
-## Bulk Downloads at WDI site
-
-WDIbulk downloads the zip file of Bulk Downloads in [WDI site](https://datatopics.worldbank.org/world-development-indicators/) , it is a list containing 6 data frames: Data, Country, Series, Country-Series, Series-Time, FootNote.
-
-
-
 ## WDIcache
 
 Download an updated list of available WDI indicators from the World Bank website. Returns a list for use in the WDIsearch function.
@@ -286,11 +274,11 @@ wdi_cache <- WDIcache()
 Downloading all series information from the World Bank website can take time. The WDI package ships with a local data object with information on all the series available on 2012-06-18. You can update this database by retrieving a new list using `WDIcache`, and then feeding the resulting object to `WDIsearch` via the cache argument.
 
 ```{r echo=FALSE, message=FALSE, eval=FALSE}
-write_rds(wdi_cache, "data/wdi_cache.RData", refhook = NULL)
+write_rds(wdi_cache, "./data/wdi_cache.RData", refhook = NULL)
 ```
 
 ```{r echo=FALSE, message=FALSE}
-wdi_cache <- read_rds("data/wdi_cache.RData", refhook = NULL)
+wdi_cache <- read_rds("./data/wdi_cache.RData", refhook = NULL)
 ```
 
 
@@ -300,24 +288,6 @@ wdi_cache <- read_rds("data/wdi_cache.RData", refhook = NULL)
 ```{r}
 glimpse(wdi_cache)
 ```
-
-
-
-
-## WDI_data
-
-List of 2 data frames
-
-The first character matrix includes a full list of WDI series. This list is updated semi-regularly. Users can refresh the list manually using the 'WDIcache()' function and search in the updated list using the 'cache' argument.
-
-
-
-
-```{r}
-WDI_data$country  %>% filter(country == "Japan")
-```
-
-
 
 ```{r}
 WDIsearch(string = "gdp", 

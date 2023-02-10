@@ -184,3 +184,30 @@ To control the urgency instinct, take small steps.
 * Beware of fortune-tellers. Any prediction about the future is uncertain. Be wary of predictions that fail to acknowledge that. Insist on a full range of scenarios, never just the best or worst case. Ask how often such predictions have been right before.
 * Be wary of drastic action. Ask what the side effects will be. Ask how the idea has been tested. Step-by-step practical improvements, and evaluation of their impact, are less dramatic but usually more effective.
 
+## Exploratory Data Analysis
+
+### What is EDA (Posit Primers: [Visualise Data](https://posit.cloud/learn/primers/3.1))
+
+1. EDA is an iterative cycle that helps you understand what your data says. When you do EDA, you:
+
+2. Generate questions about your data
+
+3. Search for answers by visualising, transforming, and/or modeling your data
+
+Use what you learn to refine your questions and/or generate new questions
+
+EDA is an important part of any data analysis. You can use EDA to make discoveries about the world; or you can use EDA to ensure the quality of your data, asking questions about whether the data meets your standards or not.
+
+
+
+## Open and Public Data, World Bank
+
+### [Open Government Data Toolkit](http://opendatatoolkit.worldbank.org): [Open Data Defined](http://opendatatoolkit.worldbank.org/en/essentials.html)
+
+The term **Open Data** has a very precise meaning. Data or content is open if anyone is free to use, re-use or redistribute it, subject at most to measures that preserve provenance and openness.
+
+1. The data must be _legally open_, which means they must be placed in the public domain or under liberal terms of use with minimal restrictions.
+2. The data must be _technically open_, which means they must be published in electronic formats that are machine readable and non-proprietary, so that anyone can access and use the data using common, freely available software tools. Data must also be publicly available and accessible on a public server, without password or firewall restrictions. To make Open Data easier to find, most organizations create and manage Open Data catalogs.
+
+
+
