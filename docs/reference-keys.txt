@@ -293,7 +293,7 @@ treat-year-as-a-group
 un-data
 education
 population
-wir
+wir-package
 model
 what-is-modeling-in-eda
 linear-model-petal.length-petal.width
@@ -334,7 +334,7 @@ reference
 long-table
 your-work-1
 world-development-indicators---wdi-1
-worldbank
+worldbank-data
 oecd-data
 wir-data
 toy-data
@@ -394,6 +394,7 @@ presentation-and-paper-1
 word-1
 powerpoint-1
 references-1
+worldbank
 open-and-public-data-world-bank-2
 open-government-data-toolkit-open-data-defined-2
 world-bank-wdi---world-development-indicaters-1
@@ -407,6 +408,7 @@ world-development-indicators---summary-1
 owid
 oecd
 undata
+wir
 histdata
 covid19
 bookdown

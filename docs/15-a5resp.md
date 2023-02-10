@@ -1668,7 +1668,7 @@ Here is a list of data your classmates used for Assignment Five.
 - IP.JRN.ARTC.SC: Scientific and technical journal articles
 - BM.GSR.ROYL.CD: Intellectual Property Payments (BOP, Current US$)
 
-### Worldbank
+### Worldbank Data
 
 - Climate Change Knowledge Portal: https://climateknowledgeportal.worldbank.org
   + country summary
@@ -1678,7 +1678,7 @@ Here is a list of data your classmates used for Assignment Five.
 * Public spending on education: https://data.oecd.org/eduresource/public-spending-on-education.htm
 * Private spending on education: https://data.oecd.org/eduresource/private-spending-on-education.htm
 
-### WIR DAta
+### WIR Data
 
 * Executive Summary: https://wir2022.wid.world/executive-summary/
 
@@ -2047,6 +2047,7 @@ mod %>% glance()
 #> #   df.residual <int>, nobs <int>, and abbreviated variable
 #> #   names ¹​adj.r.squared, ²​statistic
 ```
+
 #### `augment`
 
 * The first column is the vector corresponding to y.

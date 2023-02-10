@@ -1244,7 +1244,7 @@ un_pop_wide_region <- un_pop_wide %>% filter(!Region %in% pop_area)
 Now we can visualize data.
 
 
-## WIR
+## WIR Package
 
 In the following, we explain how to download data by an R package `wir`. First, you need to install the package. However, it is not an official R package yet; you need to use the package `devtools` to install it.
 
