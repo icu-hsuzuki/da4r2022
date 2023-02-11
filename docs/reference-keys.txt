@@ -12,6 +12,7 @@ textbooks-and-references
 interactive-tutorials-for-r
 posit-primers-httpsposit.cloudlearnprimers
 swirl-an-interactive-learning-environment-for-r-and-statistics
+a-massage-to-students
 introduction-to-exploratory-data-analysis
 what-is-data-science
 gapminder
@@ -212,7 +213,7 @@ general-comments-1
 varibles-1
 visualization
 world-development-indicators-wdi
-setup-1
+setup
 indicators-used-in-assignment-three
 wdisearch
 importing-data-using-wdi

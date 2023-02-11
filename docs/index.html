@@ -73,7 +73,7 @@ set in the _output.yml file.&lt;/p&gt;">
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
 <li><a class="active" href="index.html">About</a></li>
-<li class="book-part">PART I. Introduction</li>
+<li class="book-part">PART I. INTRODUCTION</li>
 <li><a class="" href="intro.html"><span class="header-section-number">1</span> About the Course</a></li>
 <li><a class="" href="randrstudio.html"><span class="header-section-number">2</span> R and R Studio</a></li>
 <li><a class="" href="tidyverse.html"><span class="header-section-number">3</span> tidyverse</a></li>
@@ -118,13 +118,14 @@ set in the _output.yml file.&lt;/p&gt;">
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><!--bookdown:title:end--><!--bookdown:title:start--><div id="about" class="section level1 unnumbered">
 <h1>About<a class="anchor" aria-label="anchor" href="#about"><i class="fas fa-link"></i></a>
 </h1>
-<p>This is an extended lecture note of a course jointly taught with Professor Taisei Kaizoji in the Winter term AY2022. PART I, The Introduction, basically consists of the course contents presented in class and my responses to assignments two to five.
+<p>This is an extended lecture note of a course jointly taught with Professor Taisei Kaizoji in the Winter term AY2022. It is a ten-week course with two periods a week; one period is 70 minutes. This note mainly covers the contents of week two to week six, which I taught. Professor Kaizoji introduced and provided examples, somewhat related to his specialty Macroeconomics. By his request, I included work to recreate charts in the executive summary of the World Inequality Report 2022.</p>
+<p>PART I, The Introduction, basically consists of the course contents presented in class and my responses to assignments two to five.
 The first assignment is in Chapter 1, Introduction.</p>
 <p>PART II is the basics of exploratory data analysis, abbreviated as EDA, summarized in several components.</p>
 <p>PART III explains the data source we mainly used in class: World Development Indicators of the World Bank, Our World in Data, OECD, and UN Data. As an introduction, we often used the package <code>WDI</code> to search and download the World Development Indicator data.</p>
 <p>In APPENDICES, we included miscellaneous topics closely related to the contents of this lecture note.</p>
-<div id="setup" class="section level2 unnumbered">
-<h2>Setup<a class="anchor" aria-label="anchor" href="#setup"><i class="fas fa-link"></i></a>
+<div id="the-package-tidyverse" class="section level2 unnumbered">
+<h2>The package <code>tidyverse</code><a class="anchor" aria-label="anchor" href="#the-package-tidyverse"><i class="fas fa-link"></i></a>
 </h2>
 <p>We focused on the <code>tidyvese</code> packages, which includes <code>ggplot2</code>, <code>dplyr</code>, <code>tidyr</code>, <code>readr</code> and <code>tibble</code>, and did not use other packages unless it is crucial. As you can see below, other packages are automatically attached when we load <code>tidyverse</code> by <code><a href="https://tidyverse.tidyverse.org">library(tidyverse)</a></code> However, some packages installed with <code>tidyverse</code> need to be loaded when they are necessary. The package <code>readxl</code> for Excel is one of them.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
@@ -138,9 +139,8 @@ The first assignment is in Chapter 1, Introduction.</p>
 <span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
 <span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span></code></pre></div>
 </div>
-<div id="bookdown" class="section level2 unnumbered">
-<h2>
-<code>bookdown</code><a class="anchor" aria-label="anchor" href="#bookdown"><i class="fas fa-link"></i></a>
+<div id="the-package-bookdown" class="section level2 unnumbered">
+<h2>The package <code>bookdown</code><a class="anchor" aria-label="anchor" href="#the-package-bookdown"><i class="fas fa-link"></i></a>
 </h2>
 <p>We used the <a href="https://cran.r-project.org/web/packages/bookdown/index.html"><code>bookdown</code> package</a> to create this page with <a href="https://pkgs.rstudio.com/bookdown/reference/bs4_book.html"><code>bs4_book</code> style</a> of bootstrap4. See the [Bookdown book}(<a href="https://bookdown.org/yihui/bookdown/" class="uri">https://bookdown.org/yihui/bookdown/</a>) for the detail.</p>
 
@@ -156,8 +156,8 @@ The first assignment is in Chapter 1, Introduction.</p>
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#about">About</a></li>
-<li><a class="nav-link" href="#setup">Setup</a></li>
-<li><a class="nav-link" href="#bookdown">bookdown</a></li>
+<li><a class="nav-link" href="#the-package-tidyverse">The package tidyverse</a></li>
+<li><a class="nav-link" href="#the-package-bookdown">The package bookdown</a></li>
 </ul>
 
       <div class="book-extra">

@@ -1,4 +1,4 @@
-# (PART) PART I. Introduction {-}
+# (PART) PART I. INTRODUCTION {-}
 # About the Course {#intro}
 
 ## ‘QALL401 Data Analysis for Researchers’
@@ -17,13 +17,13 @@ Key Words: open data, data visualization, data analysis, data reasoning, R
 
 Features: laboratory work - practicum, write short articles, guest lectures
 
-## Course Overview
+### Course Overview
 
 The objective of this course is to learn the fundamentals of data science. Using the free software, R and its IDE, RStudio, students will learn how to collect data, transform it into appropriate forms, and visualize it. Students will also learn how to analyze data and present their findings to others. 
 
 **Sylabus**: https://campus.icu.ac.jp/public/ehandbook/PreviewSyllabus.aspx?regno=32002&year=2022&term=3
 
-## Course Schedule
+### Course Schedule
 
   1. 2022-12-07: Introduction: About the course　[lead by TK]  
     - An introduction to open and public data, and data science
@@ -67,7 +67,7 @@ The objective of this course is to learn the fundamentals of data science. Using
   
 
 
-## Grading Policy：
+### Grading Policy：
 
 A. Course participation by giving feedback - 10%
 
@@ -79,9 +79,9 @@ D. Final report - 40%
 
 
 
-## Learning Resources
+### Learning Resources
 
-### Textbooks and References
+#### Textbooks and References
 
 * "R for Data Science" by Hadley Wickham and Garrett Grolemund: 
   - Free Online Book: https://r4ds.had.co.nz
@@ -90,9 +90,9 @@ D. Final report - 40%
   - Many more on the [archive page](https://bookdown.org/home/archive/).
 
 
-## Interactive Tutorials for R
+### Interactive Tutorials for R
 
-### Posit Primers https://posit.cloud/learn/primers
+#### Posit Primers https://posit.cloud/learn/primers
 
 1. The Basics -- [r4ds: Explore, I](https://r4ds.had.co.nz/explore-intro.html#explore-intro)
   - [Visualization Basics](https://rstudio.cloud/learn/primers/1.1)
@@ -132,12 +132,37 @@ D. Final report - 40%
   - [Link to Videos and Explanations](https://rmarkdown.rstudio.com/lesson-1.html?_ga=2.215340127.979535829.1639794069-1104332695.1639233659)
 8. [Build Interactive Web Apps](https://shiny.rstudio.com/tutorial/?_ga=2.149795838.979535829.1639794069-1104332695.1639233659)
 
-### Swirl: An interactive learning environment for R and statistics
+#### Swirl: An interactive learning environment for R and statistics
 
-It is a console-based interactive tutorial containing several courses. We did not use it this academic year.
+It is a console-based interactive tutorial containing several courses. We did not use it in class this academic year.
 
 * {swirl} website: https://swirlstats.com
   - JHU Data Science in coursera uses swirl for exercises.
+  
+### A massage to students
+
+This course consists of the following components.
+
+1. Lecture Note
+  - We provide slides, notes and lecture note in the past
+2. Lecture
+  - We provide Zoom as an option, and its recording 
+3. Textbook
+  - R for Data Science - you can read online
+4. Practicum in class
+  - We provide the log in R Notebooks or R Scripts
+5. Interactive Tutorial
+  - Posit Primers - you can practice online
+6. Assignments - format: R Notebook
+  - We provide feedback to each and responses in R Notebook
+7. Student Presentation - format: R Notebook, Slides, ...
+  - Last class
+8. Final Paper - format: R Notebook (including codes) and PDF (8 pages)
+  - Due: Two weeks after the last class
+  
+Each component is closely linked. We do not check your engagement in Posit Primers, but the lectures from week two to week six are designed following Posit Primers. For assignments, you can submit R Notebook containing code chunks with errors. Hopefully, instructors will give feedback and suggestions. We also set up a personal tutorial meeting on Zoom upon request.
+
+Our goal is that you develop skills to explore and analyze data, mainly using open public data by yourself. We truly hope you enjoy the course.
   
 ## Introduction to Exploratory Data Analysis
 
