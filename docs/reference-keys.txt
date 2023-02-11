@@ -157,7 +157,6 @@ the-week-two-assignment-in-moodle
 original-data-wdi
 wdi
 a2resp
-assignment-two
 set-up-2
 general-comments
 varibles

@@ -1,7 +1,7 @@
 
 # Assignment Three {#a3resp}
 
-### Assignment Three {-}
+### Assignment Three: The Week Four Assignment {.unnumbered}
 
 **WDI and `ggplot2`**
 
