@@ -4,23 +4,45 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 28 World Inequality Report | Data Analysis for Researchers AY2022</title>
+<title>Chapter 27 World Inequality Report | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
-<meta name="description" content="28.1 Set up library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr...">
-<meta name="generator" content="bookdown 0.31 with bs4_book()">
-<meta property="og:title" content="Chapter 28 World Inequality Report | Data Analysis for Researchers AY2022">
+<meta name="description" content="27.1 Set up library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  0.3.5 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr...">
+<meta name="generator" content="bookdown 0.30 with bs4_book()">
+<meta property="og:title" content="Chapter 27 World Inequality Report | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/wir.html">
-<meta property="og:description" content="28.1 Set up library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr...">
+<meta property="og:description" content="27.1 Set up library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  0.3.5 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 28 World Inequality Report | Data Analysis for Researchers AY2022">
-<meta name="twitter:description" content="28.1 Set up library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr...">
+<meta name="twitter:title" content="Chapter 27 World Inequality Report | Data Analysis for Researchers AY2022">
+<meta name="twitter:description" content="27.1 Set up library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  0.3.5 #&gt; ✔ tibble 3.1.8   ✔ dplyr  1.0.10 #&gt; ✔ tidyr  1.2.1   ✔ stringr...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
   </style>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -43,36 +65,73 @@
 </form>
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled"><li><a class="" href="index.html"><span class="header-section-number">Chapter 28</span> World Inequality Report</a></li></ul>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">About</a></li>
+<li class="book-part">PART I. INTRODUCTION</li>
+<li><a class="" href="intro.html"><span class="header-section-number">1</span> About the Course</a></li>
+<li><a class="" href="randrstudio.html"><span class="header-section-number">2</span> R and R Studio</a></li>
+<li><a class="" href="tidyverse.html"><span class="header-section-number">3</span> tidyverse</a></li>
+<li><a class="" href="rmarkdown.html"><span class="header-section-number">4</span> R Markdown</a></li>
+<li><a class="" href="dplyr.html"><span class="header-section-number">5</span> dplyr</a></li>
+<li><a class="" href="a2resp.html"><span class="header-section-number">6</span> Assignment Two and Responses</a></li>
+<li><a class="" href="wdidata.html"><span class="header-section-number">7</span> WDI</a></li>
+<li><a class="" href="ggplot2.html"><span class="header-section-number">8</span> ggplot2</a></li>
+<li><a class="" href="a3resp.html"><span class="header-section-number">9</span> Assignment Three</a></li>
+<li><a class="" href="tidy.html"><span class="header-section-number">10</span> tidyr</a></li>
+<li><a class="" href="workflow.html"><span class="header-section-number">11</span> Workflow</a></li>
+<li><a class="" href="a4resp.html"><span class="header-section-number">12</span> Assignment Four</a></li>
+<li><a class="" href="model.html"><span class="header-section-number">13</span> Linear Model</a></li>
+<li><a class="" href="roundups.html"><span class="header-section-number">14</span> Roudups</a></li>
+<li><a class="" href="a5resp.html"><span class="header-section-number">15</span> Assignment Five</a></li>
+<li class="book-part">PART II EDA BASICS</li>
+<li><a class="" href="eda.html"><span class="header-section-number">16</span> Exploratory Data analysis</a></li>
+<li><a class="" href="importing.html"><span class="header-section-number">17</span> Importing</a></li>
+<li><a class="" href="transforming.html"><span class="header-section-number">18</span> Transforming</a></li>
+<li><a class="" href="tidying.html"><span class="header-section-number">19</span> Tidying</a></li>
+<li><a class="" href="visualizing.html"><span class="header-section-number">20</span> Visualizing</a></li>
+<li><a class="" href="modeling.html"><span class="header-section-number">21</span> Modeling</a></li>
+<li><a class="" href="communicating.html"><span class="header-section-number">22</span> Communicating</a></li>
+<li class="book-part">PART III OPEN PUBLIC DATA</li>
+<li><a class="" href="worldbank.html"><span class="header-section-number">23</span> World Bank</a></li>
+<li><a class="" href="owid.html"><span class="header-section-number">24</span> Our World in Data</a></li>
+<li><a class="" href="oecd.html"><span class="header-section-number">25</span> OECD</a></li>
+<li><a class="" href="undata.html"><span class="header-section-number">26</span> UN Data</a></li>
+<li><a class="active" href="wir.html"><span class="header-section-number">27</span> World Inequality Report</a></li>
+<li class="book-part">(APPENDIX)</li>
+<li><a class="" href="histdata.html"><span class="header-section-number">A</span> HistData</a></li>
+<li><a class="" href="covid19.html"><span class="header-section-number">B</span> Covid 19</a></li>
+<li><a class="" href="bookdown.html"><span class="header-section-number">C</span> Bookdown</a></li>
+<li><a class="" href="template.html"><span class="header-section-number">D</span> Template</a></li>
+</ul>
 
         <div class="book-extra">
           <p><a id="book-repo" href="https://icu-hsuzuki.github.io/da4r2022/">View book source <i class="fab fa-gitlab"></i></a></p>
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="wir" class="section level1" number="28">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="wir" class="section level1" number="27">
 <h1>
-<span class="header-section-number">28</span> World Inequality Report<a class="anchor" aria-label="anchor" href="#wir"><i class="fas fa-link"></i></a>
+<span class="header-section-number">27</span> World Inequality Report<a class="anchor" aria-label="anchor" href="#wir"><i class="fas fa-link"></i></a>
 </h1>
-<div id="set-up-7" class="section level2" number="28.1">
+<div id="set-up-7" class="section level2" number="27.1">
 <h2>
-<span class="header-section-number">28.1</span> Set up<a class="anchor" aria-label="anchor" href="#set-up-7"><i class="fas fa-link"></i></a>
+<span class="header-section-number">27.1</span> Set up<a class="anchor" aria-label="anchor" href="#set-up-7"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb563"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
-<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 </span></span>
+<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   0.3.5 </span></span>
 <span><span class="co">#&gt; ✔ tibble  3.1.8      ✔ dplyr   1.0.10</span></span>
-<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.5.0 </span></span>
+<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.4.1 </span></span>
 <span><span class="co">#&gt; ✔ readr   2.1.3      ✔ forcats 0.5.2 </span></span>
 <span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
 <span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span> <span class="co"># for excel files</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/WDI/">WDI</a></span><span class="op">)</span></span></code></pre></div>
-<div id="world-inequility-report---wir2022-2" class="section level3" number="28.1.1">
+<div id="world-inequility-report---wir2022-2" class="section level3" number="27.1.1">
 <h3>
-<span class="header-section-number">28.1.1</span> World Inequility Report - WIR2022<a class="anchor" aria-label="anchor" href="#world-inequility-report---wir2022-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">27.1.1</span> World Inequility Report - WIR2022<a class="anchor" aria-label="anchor" href="#world-inequility-report---wir2022-2"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>World Inequality Report: <a href="https://wir2022.wid.world/" class="uri">https://wir2022.wid.world/</a>
@@ -85,14 +144,14 @@
 </li>
 </ul>
 <p>Please add <code>mode="wb"</code> (web binary). This should work better.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb564"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">url_summary</span> <span class="op">&lt;-</span> <span class="st">"https://wir2022.wid.world/www-site/uploads/2022/03/WIR2022TablesFigures-Summary.xlsx"</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span><span class="op">(</span>url <span class="op">=</span> <span class="va">url_summary</span>, </span>
 <span>              destfile <span class="op">=</span> <span class="st">"./data/WIR2022s.xlsx"</span>, </span>
 <span>              mode <span class="op">=</span> <span class="st">"wb"</span><span class="op">)</span> </span></code></pre></div>
 <p>If you get an error, download the file directory from the methodology site into your computer, then open it with Excel and save it in the data folder of your R Studio project. Then R studio can recognize it easily as an Excel data.</p>
 <p>Generally, a text file such as a CSV file is easy to import, but a binary file is difficult to handle. It is because unless R can recognize its file type, for example, Excel or so, R cannot import the data.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb565"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://readxl.tidyverse.org/reference/excel_sheets.html">excel_sheets</a></span><span class="op">(</span><span class="st">"./data/WIR2022s.xlsx"</span><span class="op">)</span></span>
 <span><span class="co">#&gt;  [1] "Index"     "F1"        "F2"        "F3"       </span></span>
 <span><span class="co">#&gt;  [5] "F4"        "F5."       "F6"        "F7"       </span></span>
@@ -104,12 +163,12 @@
 <span><span class="co">#&gt; [29] "data-F12"  "data-F13." "data-F14." "data-F15"</span></span></code></pre></div>
 </div>
 </div>
-<div id="wir-package-1" class="section level2" number="28.2">
+<div id="wir-package-1" class="section level2" number="27.2">
 <h2>
-<span class="header-section-number">28.2</span> WIR Package<a class="anchor" aria-label="anchor" href="#wir-package-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">27.2</span> WIR Package<a class="anchor" aria-label="anchor" href="#wir-package-1"><i class="fas fa-link"></i></a>
 </h2>
 <p>In the following, we explain how to download data by an R package <code>wir</code>. First, you need to install the package. However, it is not an official R package yet; you need to use the package <code>devtools</code> to install it.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb566"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></span>
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"WIDworld/wid-r-tool"</span><span class="op">)</span></span></code></pre></div>
 <p>I have not studied fully, but you can download the data by a package called <code>wir</code>. See <a href="https://ds-sl.github.io/data-analysis/wir2022.nb.html">here</a>. After installing the package, check the <a href="https://wid.world/codes-dictionary">codebook</a> of the indicators. The following is not the ratio given in F8, but an example.</p>
@@ -118,10 +177,10 @@
 <li>wealg: net public wealth to net national income ratio</li>
 <li>wealp: net private wealth to net national income ratio</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb567"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">wid</span><span class="op">)</span></span>
-<span><span class="va">wwealg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/wid/man/download_wid.html">download_wid</a></span><span class="op">(</span>indicators <span class="op">=</span> <span class="st">"wwealg"</span>, areas <span class="op">=</span> <span class="st">"all"</span>, years <span class="op">=</span> <span class="st">"all"</span><span class="op">)</span></span>
-<span><span class="va">wwealp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/wid/man/download_wid.html">download_wid</a></span><span class="op">(</span>indicators <span class="op">=</span> <span class="st">"wwealp"</span>, areas <span class="op">=</span> <span class="st">"all"</span>, years <span class="op">=</span> <span class="st">"all"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">wwealg</span> <span class="op">&lt;-</span> <span class="fu">download_wid</span><span class="op">(</span>indicators <span class="op">=</span> <span class="st">"wwealg"</span>, areas <span class="op">=</span> <span class="st">"all"</span>, years <span class="op">=</span> <span class="st">"all"</span><span class="op">)</span></span>
+<span><span class="va">wwealp</span> <span class="op">&lt;-</span> <span class="fu">download_wid</span><span class="op">(</span>indicators <span class="op">=</span> <span class="st">"wwealp"</span>, areas <span class="op">=</span> <span class="st">"all"</span>, years <span class="op">=</span> <span class="st">"all"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; Rows: 8783 Columns: 5
 #&gt; ── Column specification ────────────────────────────────────
 #&gt; Delimiter: ","
@@ -138,7 +197,7 @@
 #&gt; 
 #&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
 #&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb569"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">public</span> <span class="op">&lt;-</span> <span class="va">wwealg</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">country</span>, <span class="va">year</span>, public <span class="op">=</span> <span class="va">value</span><span class="op">)</span></span>
 <span><span class="va">public</span></span>
 <span><span class="co">#&gt; # A tibble: 8,783 × 3</span></span>
@@ -155,7 +214,7 @@
 <span><span class="co">#&gt;  9 AD       2003 0.263 </span></span>
 <span><span class="co">#&gt; 10 AD       2004 0.294 </span></span>
 <span><span class="co">#&gt; # … with 8,773 more rows</span></span></code></pre></div>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb570"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">private</span> <span class="op">&lt;-</span> <span class="va">wwealp</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">country</span>, <span class="va">year</span>, private <span class="op">=</span> <span class="va">value</span><span class="op">)</span></span>
 <span><span class="va">private</span></span>
 <span><span class="co">#&gt; # A tibble: 8,989 × 3</span></span>
@@ -172,7 +231,7 @@
 <span><span class="co">#&gt;  9 AD       2003   0.834</span></span>
 <span><span class="co">#&gt; 10 AD       2004   0.894</span></span>
 <span><span class="co">#&gt; # … with 8,979 more rows</span></span></code></pre></div>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb571"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">public_vs_private</span> <span class="op">&lt;-</span> <span class="va">public</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">private</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Joining, by = c("country", "year")</span></span>
 <span><span class="va">public_vs_private</span></span>
@@ -191,9 +250,9 @@
 <span><span class="co">#&gt; 10 AD       2004 0.294    0.894</span></span>
 <span><span class="co">#&gt; # … with 8,773 more rows</span></span></code></pre></div>
 <p>We use <code>wdi_cache</code> created by <code>wdi_cache = WDI::wdi_cache()</code>.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb572"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">wdi_cache</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_rds.html">read_rds</a></span><span class="op">(</span><span class="st">"./data/wdi_cache.RData"</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb573"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_pub_priv</span> <span class="op">&lt;-</span> <span class="va">public_vs_private</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>,<span class="fl">4</span><span class="op">)</span>, names_to <span class="op">=</span> <span class="st">"category"</span>, values_to <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"country"</span><span class="op">=</span><span class="st">"iso2c"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span>country <span class="op">=</span> <span class="va">country.y</span>, iso2c <span class="op">=</span> <span class="va">country</span>, <span class="va">year</span>, <span class="va">category</span>, <span class="va">value</span>, <span class="va">region</span>, <span class="va">income</span>, <span class="va">lending</span><span class="op">)</span></span>
 <span><span class="va">df_pub_priv</span></span>
@@ -211,7 +270,7 @@
 <span><span class="co">#&gt;  9 Andorra AD     1999 public   0.159  Europ… High … Not cl…</span></span>
 <span><span class="co">#&gt; 10 Andorra AD     1999 private  0.628  Europ… High … Not cl…</span></span>
 <span><span class="co">#&gt; # … with 17,556 more rows</span></span></code></pre></div>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb574"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">df_pub_priv</span><span class="op">$</span><span class="va">country</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   [1] "Andorra"                                     </span></span>
 <span><span class="co">#&gt;   [2] "United Arab Emirates"                        </span></span>
@@ -431,7 +490,7 @@
 <span><span class="co">#&gt; [216] "South Africa"                                </span></span>
 <span><span class="co">#&gt; [217] "Zambia"                                      </span></span>
 <span><span class="co">#&gt; [218] "Zimbabwe"</span></span></code></pre></div>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb575"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_pub_priv</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Japan"</span>, <span class="st">"Norway"</span>, <span class="st">"Sweden"</span>, <span class="st">"Denmark"</span>, <span class="st">"Finland"</span><span class="op">)</span>, <span class="va">year</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fl">1970</span><span class="op">:</span><span class="fl">2020</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">value</span>, color <span class="op">=</span> <span class="va">country</span>, linetype <span class="op">=</span> <span class="va">category</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -446,15 +505,22 @@
 </div>
 </div>
   <div class="chapter-nav">
-<div class="empty"></div>
-<div class="empty"></div>
+<div class="prev"><a href="undata.html"><span class="header-section-number">26</span> UN Data</a></div>
+<div class="next"><a href="histdata.html"><span class="header-section-number">A</span> HistData</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <div id="book-on-this-page"></div>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#wir"><span class="header-section-number">27</span> World Inequality Report</a></li>
+<li>
+<a class="nav-link" href="#set-up-7"><span class="header-section-number">27.1</span> Set up</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#world-inequility-report---wir2022-2"><span class="header-section-number">27.1.1</span> World Inequility Report - WIR2022</a></li></ul>
+</li>
+<li><a class="nav-link" href="#wir-package-1"><span class="header-section-number">27.2</span> WIR Package</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-          
+<li><a id="book-source" href="https://icu-hsuzuki.github.io/da4r2022//blob/master/35-wir.Rmd">View source <i class="fab fa-gitlab"></i></a></li>
+          <li><a id="book-edit" href="https://icu-hsuzuki.github.io/da4r2022//edit/master/35-wir.Rmd">Edit this page <i class="fab fa-gitlab"></i></a></li>
         </ul>
 </div>
     </nav>
