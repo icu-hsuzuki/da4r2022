@@ -306,6 +306,54 @@ https://support.microsoft.com/en-us/office/create-and-save-a-powerpoint-template
 
 YouTube: How To Create A PowerPoint Template
 
+### Create a PDF or Word file.
+
+A Notebook file is created by pressing the Preview button, and the outputs appear as is. However, making a file with another format, R runs all code chunks from the top. So if the object is not defined above the code used, the knit program stops with an error message. I recommend the following steps.
+
+0. Create a PDF right after you create a new (R Notebook) file (using Template). By this step, you can check your 'Knit to PDF' process by `tinytex` is working well. Please let me know if you fail to create a PDF and cannot solve the problem. I will look at the setting of your PC in class. 
+
+1. Run all codes before you preview Notebook. You can use 'Run All', and 'Run All Code Chunks Below' under the 'Run' button if there is an incomplete code chunk. 
+
+2. Before you create a PDF or word, you need to correct all errors. But if you could not, add `eval = FALSE` as an option. 
+
+
+
+````markdown
+```{r eval=FALSE}
+# code chunk with errors
+```
+````
+
+
+You can add a similar option from the gear mark at the top right in the code chunk. Select show nothing (don't run code); it adds `{r eval = FALSE, include = FALSE}`, and the code chunk itself is skipped.
+
+3. Rerun all. If you can reach the end of the file without having an error, 'Knit to PDF' or 'Knit to Word'.
+
+Creating a Word file is similar, and should be more accessible.
+
+If you fail to create a PDF using `Knit to PDF` or `Knit to Word,` the alternative is to open the notebook wile with nb.html at the end in your web browser, such as Google Chrome, Edge, or Safari, and use the functionality of printing to PDF of your browser. 
+
+#### Other Code Chunk Options
+
+Please review EDA5, and try options under the gear mark at the top right of each code chunk. I will add two useful options, I use often
+
+1. `cash = TRUE` option. Downloading data and accessing to the internet takes time, and may cause trouble for the hosting site. With this option, you can avoid it, and shorten the compilation time to render. I always add this option to `WDI()`. As for `WDIsearch()`, if you use `cache = wdi_cache`, you do not need to add this option. It is another benefit to use `cache = wdi_cache`.
+
+````markdown
+```{r cash = TRUE}
+# download from the internet
+```
+````
+
+
+
+2. `echo = FALSE` option. When you create a PDF with a limit of pages, you do not want to include some code chunks. Then use this option. The output is included, but the code chunk is not. You can select this option by choosing 'Show output only` option.
+
+#### Reference
+
+* https://yihui.org/knitr/options/
+* Cheat Sheet. We distributed in class. You can download the same from Help: Cheatsheet at the top menu of R Stduio.
+
 
 ## References
 

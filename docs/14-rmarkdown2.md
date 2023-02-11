@@ -1,14 +1,13 @@
 # Roudups {#roundups}
 
----
 
 
 ```r
 library(tidyverse)
 #> ── Attaching packages ─────────────────── tidyverse 1.3.2 ──
-#> ✔ ggplot2 3.4.0      ✔ purrr   0.3.5 
+#> ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 
 #> ✔ tibble  3.1.8      ✔ dplyr   1.0.10
-#> ✔ tidyr   1.2.1      ✔ stringr 1.4.1 
+#> ✔ tidyr   1.2.1      ✔ stringr 1.5.0 
 #> ✔ readr   2.1.3      ✔ forcats 0.5.2 
 #> ── Conflicts ────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
@@ -24,7 +23,7 @@ Final Paper: Submit an R Notebook (with codes as a work file), and a PDF (render
 
 Format of Presentation - R Notebook is fine and slide presentation in various format is also fine
 
----
+
 
 ### Literate Programming and Reproducible Research
 
@@ -46,7 +45,7 @@ Importing Data:
   - df <- read_delim(clipboard()); df
   - Not reproducible unless clearly explained.
 
----
+
 
 ### Code Chunk Options
 
@@ -66,7 +65,7 @@ https://yihui.org/knitr/options/
 
 * You can use Hide Code and Show Code option on the rendered Notebook file.
 
----
+
 
 ### Presentation and Paper
 
@@ -79,7 +78,7 @@ https://yihui.org/knitr/options/
  
    WDI, WIR, etc
 
----
+\
 
 ### Word
 
@@ -94,7 +93,7 @@ You can apply the styles defined in a Word template document to new Word documen
 ---
 ```
 
----
+
 
 ### PowerPoint
 
@@ -119,7 +118,7 @@ YouTube: How To Create A PowerPoint Template
 7. Report Reproductively -- [r4ds: Communicate](https://r4ds.had.co.nz/communicate-intro.html)
   - [Link to Videos and Explanations](https://rmarkdown.rstudio.com/lesson-1.html?_ga=2.215340127.979535829.1639794069-1104332695.1639233659)
 
----
+
 
 ## The Week Six Assignment - Assignment Five (in Moodle)
 
@@ -138,7 +137,7 @@ YouTube: How To Create A PowerPoint Template
     - Explain why you chose the data
     - List questions you want to study
 
----
+
 
 2. Explore the data using visualization using `ggplot2`
 
@@ -153,7 +152,7 @@ YouTube: How To Create A PowerPoint Template
 
 ## Roundup
 
----
+
 
 ### History of Regression Analysis: slope = 0.4465
 
@@ -162,7 +161,7 @@ YouTube: How To Create A PowerPoint Template
 <img src="14-rmarkdown2_files/figure-html/unnamed-chunk-2-1.png" width="672" />
 
 
----
+
 
 ### Anna Karenina Principle
 

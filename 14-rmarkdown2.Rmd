@@ -1,6 +1,5 @@
 # Roudups {#roundups}
 
----
 
 ```{r}
 library(tidyverse)
@@ -15,7 +14,7 @@ Final Paper: Submit an R Notebook (with codes as a work file), and a PDF (render
 
 Format of Presentation - R Notebook is fine and slide presentation in various format is also fine
 
----
+
 
 ### Literate Programming and Reproducible Research
 
@@ -37,7 +36,7 @@ Importing Data:
   - df <- read_delim(clipboard()); df
   - Not reproducible unless clearly explained.
 
----
+
 
 ### Code Chunk Options
 
@@ -57,7 +56,7 @@ https://yihui.org/knitr/options/
 
 * You can use Hide Code and Show Code option on the rendered Notebook file.
 
----
+
 
 ### Presentation and Paper
 
@@ -70,7 +69,7 @@ https://yihui.org/knitr/options/
  
    WDI, WIR, etc
 
----
+\
 
 ### Word
 
@@ -85,7 +84,7 @@ You can apply the styles defined in a Word template document to new Word documen
 ---
 ```
 
----
+
 
 ### PowerPoint
 
@@ -110,7 +109,7 @@ YouTube: How To Create A PowerPoint Template
 7. Report Reproductively -- [r4ds: Communicate](https://r4ds.had.co.nz/communicate-intro.html)
   - [Link to Videos and Explanations](https://rmarkdown.rstudio.com/lesson-1.html?_ga=2.215340127.979535829.1639794069-1104332695.1639233659)
 
----
+
 
 ## The Week Six Assignment - Assignment Five (in Moodle)
 
@@ -129,7 +128,7 @@ YouTube: How To Create A PowerPoint Template
     - Explain why you chose the data
     - List questions you want to study
 
----
+
 
 2. Explore the data using visualization using `ggplot2`
 
@@ -144,7 +143,7 @@ YouTube: How To Create A PowerPoint Template
 
 ## Roundup
 
----
+
 
 ### History of Regression Analysis: slope = 0.4465
 
@@ -160,7 +159,7 @@ gf %>% filter(gender == "male") %>%
 gf %>% filter(gender == "male") %>% lm(childHeight ~ father, .)
 ```
 
----
+
 
 ### Anna Karenina Principle
 
