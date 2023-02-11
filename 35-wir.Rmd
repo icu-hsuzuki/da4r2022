@@ -1,1 +1,116 @@
 # World Inequality Report {#wir}
+
+## Set up
+
+```{r}
+library(tidyverse)
+library(readxl) # for excel files
+library(WDI)
+```
+
+### World Inequility Report - WIR2022
+
+* World Inequality Report: https://wir2022.wid.world/
+* Executive Summary: https://wir2022.wid.world/executive-summary/
+* Methodology: https://wir2022.wid.world/methodology/
+* URL of Executive Summary Data: https://wir2022.wid.world/www-site/uploads/2022/03/WIR2022TablesFigures-Summary.xlsx
+
+Please add `mode="wb"` (web binary). This should work better. 
+
+```{r summary-data, cache=TRUE, eval = FALSE}
+url_summary <- "https://wir2022.wid.world/www-site/uploads/2022/03/WIR2022TablesFigures-Summary.xlsx"
+download.file(url = url_summary, 
+              destfile = "./data/WIR2022s.xlsx", 
+              mode = "wb") 
+```
+
+If you get an error, download the file directory from the methodology site into your computer, then open it with Excel and save it in the data folder of your R Studio project. Then R studio can recognize it easily as an Excel data.
+
+Generally, a text file such as a CSV file is easy to import, but a binary file is difficult to handle. It is because unless R can recognize its file type, for example, Excel or so, R cannot import the data.
+
+```{r}
+excel_sheets("./data/WIR2022s.xlsx")
+```
+
+
+## WIR Package
+
+In the following, we explain how to download data by an R package `wir`. First, you need to install the package. However, it is not an official R package yet; you need to use the package `devtools` to install it.
+
+```{r eval=FALSE}
+install.packages("devtools")
+devtools::install_github("WIDworld/wid-r-tool")
+```
+
+
+I have not studied fully, but you can download the data by a package called `wir`. See [here](https://ds-sl.github.io/data-analysis/wir2022.nb.html). After installing the package, check the [codebook](https://wid.world/codes-dictionary) of the indicators. The following is not the ratio given in F8, but an example. 
+
+* w	wealth-to-income ratio or labor/capital share	fraction of national income
+* wealg: net public wealth to net national income ratio
+* wealp: net private wealth to net national income ratio
+
+```{r eval=FALSE}
+library(wid)
+wwealg <- download_wid(indicators = "wwealg", areas = "all", years = "all")
+wwealp <- download_wid(indicators = "wwealp", areas = "all", years = "all")
+```
+
+```{r eval=FALSE, echo=FALSE}
+library(wid)
+wwealg <- download_wid(indicators = "wwealg", areas = "all", years = "all")
+wwealp <- download_wid(indicators = "wwealp", areas = "all", years = "all")
+write_csv(wwealg, "./data/wwealg.csv")
+write_csv(wwealp, "./data/wwealp.csv")
+```
+```{r eval=TRUE, echo=FALSE}
+wwealg <-read_csv("./data/wwealg.csv")
+wwealp <-read_csv("./data/wwealp.csv")
+```
+
+```{r}
+public <- wwealg %>% select(country, year, public = value)
+public
+```
+
+```{r}
+private <- wwealp %>% select(country, year, private = value)
+private
+```
+
+```{r}
+public_vs_private <- public %>% left_join(private)
+public_vs_private
+```
+
+We use `wdi_cache` created by `wdi_cache = WDI::wdi_cache()`.
+
+```{r}
+wdi_cache <- read_rds("./data/wdi_cache.RData")
+```
+
+
+```{r}
+df_pub_priv <- public_vs_private %>% pivot_longer(cols = c(3,4), names_to = "category", values_to = "value") %>% left_join(wdi_cache$country, by = c("country"="iso2c")) %>%
+  select(country = country.y, iso2c = country, year, category, value, region, income, lending)
+df_pub_priv
+```
+
+```{r}
+unique(df_pub_priv$country)
+```
+
+
+```{r}
+df_pub_priv %>% 
+  filter(country %in% c("Japan", "Norway", "Sweden", "Denmark", "Finland"), year %in% 1970:2020) %>%
+  ggplot(aes(year, value, color = country, linetype = category)) + geom_line()
+```
+
+We choose two indicators: 'wealg' and 'wealp'. WIR2022 indicators consists of 6 characters; 1 letter code plus 5 letter code. You can find the list in the codebook.
+
+If you want to study WIR2022, please study the [report](https://wir2022.wid.world/), the [codebook](https://wid.world/codes-dictionary), and wir [vignette](https://ds-sl.github.io/data-analysis/wir_download.pdf) together with the [R Notebook](https://ds-sl.github.io/data-analysis/wir2022.nb.html). 
+
+As I mentioned earlier, the data tables used in the report are available from the following page. 
+
+* Methodology: https://wir2022.wid.world/methodology/
+

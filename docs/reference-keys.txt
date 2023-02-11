@@ -446,3 +446,15 @@ publishing
 pages
 metadata-for-sharing
 template
+cover-image-path-to-the-social-sharing-image-like-imagescover.jpg
+about
+my-comments-after-review-1
+set-up-6
+q.-the-line-graph-looked-strange-at-first-and-i-couldnt-really-see-the-results-clearly.-however-i-could-solve-that-problem-by-using-smoothstat-and-then-the-results-looked-way-better-and-i-was-able-to-interpret-them-easily.-1
+q.-how-is-it-possible-to-organize-better-the-name-of-the-value-in-the-x-axis-so-that-they-are-better-readable-1
+q.-position-of-the-labels-1
+visualization-by-charts-1
+treat-year-as-a-group-1
+set-up-7
+world-inequility-report---wir2022-2
+wir-package-1
