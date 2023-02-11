@@ -1,1 +1,87 @@
 # Covid 19 {#covid19}
+
+> An example of an R Notebook, rendered at `r format(as.POSIXct(Sys.time()), tz="Asia/Tokyo",usetz=TRUE)`  
+
+
+## Introduction
+
+The following site of Johns Hopkins University is famous:
+
+* https://coronavirus.jhu.edu/map.html
+
+In this article, we study a coronavirus data collected by Johns Hopkins University called "JHU Covid-19 global time series data". Since the original data requires reshaping, we use the data provided by RamiKrispin in the following site.
+
+* https://github.com/RamiKrispin/coronavirus/tree/master/csv
+
+See also the R package `coronavirus` at
+
+* https://CRAN.R-project.org/package=coronavirus
+* For installation: 
+
+```{r eval=FALSE}
+install.packages("coronavirus")
+```
+
+```{r}
+library(tidyverse)
+library(coronavirus)
+library(owidR)
+```
+
+We can directly download and read the data from:
+
+* https://github.com/RamiKrispin/coronavirus/raw/master/csv/coronavirus.csv
+
+It is updated daily.
+
+In this note, we use the original JHU data and transform it using `dplyr` in the form similar to the  Krispin's.
+
+Our world in data also provides vairous data related to covid-19.
+
+##### `owid_covid`
+
+owid_covid: Get the Our World in Data covid-19 dataset
+
+```
+owid_covid()
+```
+
+See the detail at the [GitHub site](https://github.com/owid/covid-19-data/tree/master/public/data#data-on-covid-19-coronavirus-by-our-world-in-data).
+
+* Example
+
+```{r cash=TRUE}
+covid <- owid_covid()
+```
+
+```{r}
+glimpse(covid)
+```
+
+
+```{r}
+tdpm <- covid %>% drop_na(total_deaths_per_million) %>%
+  group_by(location) %>% 
+  summarize(total_deaths_per_million = max(total_deaths_per_million)) %>%
+  arrange(desc(total_deaths_per_million))
+DT::datatable(tdpm)
+```
+
+```{r}
+covid %>% drop_na(total_deaths_per_million) %>%
+  group_by(location) %>% 
+  summarize(total_deaths_per_million = max(total_deaths_per_million), .groups = "drop") %>%
+  arrange(desc(total_deaths_per_million)) %>%
+  ggplot(aes(x = total_deaths_per_million)) + geom_histogram(bins = 30)
+```
+
+```{r}
+covid %>% filter(location == "Japan") %>% arrange(desc(date))
+```
+
+```{r}
+covid %>% filter(location == "Japan") %>% drop_na(new_deaths_smoothed) %>%
+  ggplot(aes(date, new_deaths_smoothed)) + geom_col() + 
+    labs(title=paste("Covid-19 Death/Day in Japan as of ", Sys.Date()))
+```
+

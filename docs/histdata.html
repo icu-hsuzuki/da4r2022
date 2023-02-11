@@ -4,27 +4,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 28 HistData | Data Analysis for Researchers AY2022</title>
+<title>A HistData | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
-<meta name="description" content="&lt;p&gt;This is a book based on the lecture given in AY2022 at International Christian University compiled using the bookdown package and RStudio.
-The HTML output format for this example is bookdown::bs4_book,
-set in the _output.yml file.&lt;/p&gt;">
-<meta name="generator" content="bookdown 0.30 with bs4_book()">
-<meta property="og:title" content="Chapter 28 HistData | Data Analysis for Researchers AY2022">
+<meta name="description" content="We use HistData Package. See https://CRAN.R-project.org/package=HistData. library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt;...">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
+<meta property="og:title" content="A HistData | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/histdata.html">
-<meta property="og:description" content="&lt;p&gt;This is a book based on the lecture given in AY2022 at International Christian University compiled using the bookdown package and RStudio.
-The HTML output format for this example is bookdown::bs4_book,
-set in the _output.yml file.&lt;/p&gt;">
+<meta property="og:description" content="We use HistData Package. See https://CRAN.R-project.org/package=HistData. library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt;...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 28 HistData | Data Analysis for Researchers AY2022">
-<meta name="twitter:description" content="&lt;p&gt;This is a book based on the lecture given in AY2022 at International Christian University compiled using the bookdown package and RStudio.
-The HTML output format for this example is bookdown::bs4_book,
-set in the _output.yml file.&lt;/p&gt;">
+<meta name="twitter:title" content="A HistData | Data Analysis for Researchers AY2022">
+<meta name="twitter:description" content="We use HistData Package. See https://CRAN.R-project.org/package=HistData. library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.0   ✔ purrr  1.0.0 #&gt;...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.26/datatables.js"></script><link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -103,7 +101,7 @@ set in the _output.yml file.&lt;/p&gt;">
 <li><a class="" href="oecd.html"><span class="header-section-number">25</span> OECD</a></li>
 <li><a class="" href="undata.html"><span class="header-section-number">26</span> UN Data</a></li>
 <li><a class="" href="wir.html"><span class="header-section-number">27</span> World Inequality Report</a></li>
-<li class="book-part">(APPENDIX)</li>
+<li class="book-part">APPENDIX</li>
 <li><a class="active" href="histdata.html"><span class="header-section-number">A</span> HistData</a></li>
 <li><a class="" href="covid19.html"><span class="header-section-number">B</span> Covid 19</a></li>
 <li><a class="" href="bookdown.html"><span class="header-section-number">C</span> Bookdown</a></li>
@@ -117,16 +115,521 @@ set in the _output.yml file.&lt;/p&gt;">
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="histdata" class="section level1" number="28">
 <h1>
-<span class="header-section-number">28</span> HistData<a class="anchor" aria-label="anchor" href="#histdata"><i class="fas fa-link"></i></a>
+<span class="header-section-number">A</span> HistData<a class="anchor" aria-label="anchor" href="#histdata"><i class="fas fa-link"></i></a>
 </h1>
+<p>We use <code>HistData</code> Package. See <a href="https://CRAN.R-project.org/package=HistData" class="uri">https://CRAN.R-project.org/package=HistData</a>.</p>
+<div class="sourceCode" id="cb667"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
+<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 </span></span>
+<span><span class="co">#&gt; ✔ tibble  3.1.8      ✔ dplyr   1.0.10</span></span>
+<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.5.0 </span></span>
+<span><span class="co">#&gt; ✔ readr   2.1.3      ✔ forcats 0.5.2 </span></span>
+<span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
+<span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
+<span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">HistData</span><span class="op">)</span></span></code></pre></div>
+<div id="histdata-data-sets-from-the-history-of-statistics-and-data-visualization" class="section level2" number="28.1">
+<h2>
+<span class="header-section-number">A.1</span> HistData: Data Sets from the History of Statistics and Data Visualization<a class="anchor" aria-label="anchor" href="#histdata-data-sets-from-the-history-of-statistics-and-data-visualization"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>
+<strong>URL</strong>: <a href="https://cran.r-project.org/web/packages/HistData/index.html" class="uri">https://cran.r-project.org/web/packages/HistData/index.html</a>
+</li>
+<li>
+<strong>Description</strong>: The ‘HistData’ package provides a collection of small data sets that are interesting and important in the history of statistics and data visualization. The goal of the package is to make these available, both for instructional use and for historical research. Some of these present interesting challenges for graphics or analysis in R.</li>
+<li>
+<strong>Reference Manual</strong>: <a href="https://cran.r-project.org/web/packages/HistData/HistData.pdf">HistData.pdf</a>
+</li>
+<li>
+<strong>Vignettes</strong>: <a href="https://cran.r-project.org/web/packages/HistData/vignettes/Snow_deaths-duplicates.html">Duplicate and Missing Cases in Snow.deaths</a>
+</li>
+<li>
+<strong>Reverse Depend</strong>: <a href="https://cran.r-project.org/web/packages/UsingR/index.html">UsingR</a>
+</li>
+</ul>
+</div>
+<div id="nightingales-data" class="section level2" number="28.2">
+<h2>
+<span class="header-section-number">A.2</span> Nightingale’s Data<a class="anchor" aria-label="anchor" href="#nightingales-data"><i class="fas fa-link"></i></a>
+</h2>
+<blockquote>
+<p>Nightingale’s data is contained in <a href="https://www.rdocumentation.org/packages/HistData/versions/0.8-6">HistData</a> Package of R.
+See <a href="https://www.rdocumentation.org/packages/HistData/versions/0.8-6/topics/Nightingale" class="uri">https://www.rdocumentation.org/packages/HistData/versions/0.8-6/topics/Nightingale</a></p>
+</blockquote>
+<div id="basic-references" class="section level3" number="28.2.1">
+<h3>
+<span class="header-section-number">A.2.1</span> Basic References<a class="anchor" aria-label="anchor" href="#basic-references"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Florence Nightingale Museum in London: <a href="https://www.florence-nightingale.co.uk" class="uri">https://www.florence-nightingale.co.uk</a>
+<ul>
+<li>Florence Nightingale biography: <a href="https://www.florence-nightingale.co.uk/florence-nightingale-biography/" class="uri">https://www.florence-nightingale.co.uk/florence-nightingale-biography/</a><br>
+</li>
+</ul>
+</li>
+<li>BBC: Florence Nightingale: Saving lives with statistics: <a href="https://www.bbc.co.uk/teach/florence-nightingale-saving-lives-with-statistics/zjksmfr" class="uri">https://www.bbc.co.uk/teach/florence-nightingale-saving-lives-with-statistics/zjksmfr</a>
+</li>
+<li>Insights in Social History by Hugh Small: <a href="http://www.florence-nightingale-avenging-angel.co.uk" class="uri">http://www.florence-nightingale-avenging-angel.co.uk</a>
+<ul>
+<li>Florence Nightingale’s most famous infographic (1858): <a href="http://www.florence-nightingale-avenging-angel.co.uk/?page_id=2382" class="uri">http://www.florence-nightingale-avenging-angel.co.uk/?page_id=2382</a>
+</li>
+<li><a href="http://www.historyandpolicy.org/policy-papers/papers/florence-nightingales-public-health-act-covid-19-and-the-empowerment-of-local-government">Florence Nightingale’s Public Health Act, Covid-19 and the empowerment of local government, by Hugh Small, 12 October 2020</a></li>
+<li><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/lifeexpectancies#datasets">Life Expectancy: Office for National Statistics, UK</a></li>
+</ul>
+</li>
+<li>Wikipedia: <a href="https://en.wikipedia.org/wiki/Florence_Nightingale" class="uri">https://en.wikipedia.org/wiki/Florence_Nightingale</a>
+</li>
+<li>Life expectancy (from birth) in the United Kingdom from 1765 to 2020: <a href="https://www.statista.com/statistics/1040159/life-expectancy-united-kingdom-all-time/" class="uri">https://www.statista.com/statistics/1040159/life-expectancy-united-kingdom-all-time/</a>
+</li>
+</ul>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>Cure: Medical Treatment</li>
+<li>Care: Nursing</li>
+<li>Prevention: Public Health</li>
+</ol>
+</blockquote>
+</div>
+<div id="nightingale-datasets" class="section level3" number="28.2.2">
+<h3>
+<span class="header-section-number">A.2.2</span> Nightingale Datasets<a class="anchor" aria-label="anchor" href="#nightingale-datasets"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>
+<strong>Details</strong>:
+For a given cause of death, D, annual rates per 1000 are calculated as 12 * 1000 * D / Army, rounded to 1 decimal.</li>
+</ul>
+<p>The two panels of Nightingale’s Coxcomb correspond to dates before and after March 1855</p>
+<ul>
+<li>Format:
+A data frame with 24 observations on the following 10 variables.</li>
+<li>Date:
+a Date, composed as as.Date(paste(Year, Month, 1, sep=‘-’), “%Y-%b-%d”)</li>
+<li>Month:
+Month of the Crimean War, an ordered factor</li>
+<li>Year:
+Year of the Crimean War</li>
+<li>Army:
+Estimated average monthly strength of the British army</li>
+<li>Disease:
+Number of deaths from preventable or mitagable zymotic diseases</li>
+<li>Wounds:
+Number of deaths directly from battle wounds</li>
+<li>Other:
+Number of deaths from other causes</li>
+<li>Disease.rate:
+Annual rate of deaths from preventable or mitagable zymotic diseases, per 1000</li>
+<li>Wounds.rate:
+Annual rate of deaths directly from battle wounds, per 1000</li>
+<li>Other.rate:
+Annual rate of deaths from other causes, per 1000</li>
+</ul>
+</div>
+<div id="references-6" class="section level3" number="28.2.3">
+<h3>
+<span class="header-section-number">A.2.3</span> References<a class="anchor" aria-label="anchor" href="#references-6"><i class="fas fa-link"></i></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>Nightingale, F. (1858) Notes on Matters Affecting the Health, Efficiency, and Hospital Administration of the British Army Harrison and Sons, 1858</li>
+<li>Nightingale, F. (1859) A Contribution to the Sanitary History of the British Army during the Late War with Russia London: John W. Parker and Son.</li>
+<li>Small, H. (1998) Florence Nightingale’s statistical diagrams <a href="http://www.florence-nightingale-avenging-angel.co.uk/GraphicsPaper/Graphics.htm" class="uri">http://www.florence-nightingale-avenging-angel.co.uk/GraphicsPaper/Graphics.htm</a>
+</li>
+<li>Pearson, M. and Short, I. (2008) Nightingale’s Rose (flash animation). <a href="http://understandinguncertainty.org/files/animations/Nightingale11/Nightingale1.html" class="uri">http://understandinguncertainty.org/files/animations/Nightingale11/Nightingale1.html</a>
+</li>
+</ol>
+</div>
+<div id="reading-nightingale-data-and-glimpse-the-structure" class="section level3" number="28.2.4">
+<h3>
+<span class="header-section-number">A.2.4</span> Reading Nightingale Data and Glimpse the Structure<a class="anchor" aria-label="anchor" href="#reading-nightingale-data-and-glimpse-the-structure"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb668"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">HistData</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">Nightingale</span><span class="op">)</span></span>
+<span><span class="va">Nightingale</span></span>
+<span><span class="co">#&gt;          Date Month Year  Army Disease Wounds Other</span></span>
+<span><span class="co">#&gt; 1  1854-04-01   Apr 1854  8571       1      0     5</span></span>
+<span><span class="co">#&gt; 2  1854-05-01   May 1854 23333      12      0     9</span></span>
+<span><span class="co">#&gt; 3  1854-06-01   Jun 1854 28333      11      0     6</span></span>
+<span><span class="co">#&gt; 4  1854-07-01   Jul 1854 28722     359      0    23</span></span>
+<span><span class="co">#&gt; 5  1854-08-01   Aug 1854 30246     828      1    30</span></span>
+<span><span class="co">#&gt; 6  1854-09-01   Sep 1854 30290     788     81    70</span></span>
+<span><span class="co">#&gt; 7  1854-10-01   Oct 1854 30643     503    132   128</span></span>
+<span><span class="co">#&gt; 8  1854-11-01   Nov 1854 29736     844    287   106</span></span>
+<span><span class="co">#&gt; 9  1854-12-01   Dec 1854 32779    1725    114   131</span></span>
+<span><span class="co">#&gt; 10 1855-01-01   Jan 1855 32393    2761     83   324</span></span>
+<span><span class="co">#&gt; 11 1855-02-01   Feb 1855 30919    2120     42   361</span></span>
+<span><span class="co">#&gt; 12 1855-03-01   Mar 1855 30107    1205     32   172</span></span>
+<span><span class="co">#&gt; 13 1855-04-01   Apr 1855 32252     477     48    57</span></span>
+<span><span class="co">#&gt; 14 1855-05-01   May 1855 35473     508     49    37</span></span>
+<span><span class="co">#&gt; 15 1855-06-01   Jun 1855 38863     802    209    31</span></span>
+<span><span class="co">#&gt; 16 1855-07-01   Jul 1855 42647     382    134    33</span></span>
+<span><span class="co">#&gt; 17 1855-08-01   Aug 1855 44614     483    164    25</span></span>
+<span><span class="co">#&gt; 18 1855-09-01   Sep 1855 47751     189    276    20</span></span>
+<span><span class="co">#&gt; 19 1855-10-01   Oct 1855 46852     128     53    18</span></span>
+<span><span class="co">#&gt; 20 1855-11-01   Nov 1855 37853     178     33    32</span></span>
+<span><span class="co">#&gt; 21 1855-12-01   Dec 1855 43217      91     18    28</span></span>
+<span><span class="co">#&gt; 22 1856-01-01   Jan 1856 44212      42      2    48</span></span>
+<span><span class="co">#&gt; 23 1856-02-01   Feb 1856 43485      24      0    19</span></span>
+<span><span class="co">#&gt; 24 1856-03-01   Mar 1856 46140      15      0    35</span></span>
+<span><span class="co">#&gt;    Disease.rate Wounds.rate Other.rate</span></span>
+<span><span class="co">#&gt; 1           1.4         0.0        7.0</span></span>
+<span><span class="co">#&gt; 2           6.2         0.0        4.6</span></span>
+<span><span class="co">#&gt; 3           4.7         0.0        2.5</span></span>
+<span><span class="co">#&gt; 4         150.0         0.0        9.6</span></span>
+<span><span class="co">#&gt; 5         328.5         0.4       11.9</span></span>
+<span><span class="co">#&gt; 6         312.2        32.1       27.7</span></span>
+<span><span class="co">#&gt; 7         197.0        51.7       50.1</span></span>
+<span><span class="co">#&gt; 8         340.6       115.8       42.8</span></span>
+<span><span class="co">#&gt; 9         631.5        41.7       48.0</span></span>
+<span><span class="co">#&gt; 10       1022.8        30.7      120.0</span></span>
+<span><span class="co">#&gt; 11        822.8        16.3      140.1</span></span>
+<span><span class="co">#&gt; 12        480.3        12.8       68.6</span></span>
+<span><span class="co">#&gt; 13        177.5        17.9       21.2</span></span>
+<span><span class="co">#&gt; 14        171.8        16.6       12.5</span></span>
+<span><span class="co">#&gt; 15        247.6        64.5        9.6</span></span>
+<span><span class="co">#&gt; 16        107.5        37.7        9.3</span></span>
+<span><span class="co">#&gt; 17        129.9        44.1        6.7</span></span>
+<span><span class="co">#&gt; 18         47.5        69.4        5.0</span></span>
+<span><span class="co">#&gt; 19         32.8        13.6        4.6</span></span>
+<span><span class="co">#&gt; 20         56.4        10.5       10.1</span></span>
+<span><span class="co">#&gt; 21         25.3         5.0        7.8</span></span>
+<span><span class="co">#&gt; 22         11.4         0.5       13.0</span></span>
+<span><span class="co">#&gt; 23          6.6         0.0        5.2</span></span>
+<span><span class="co">#&gt; 24          3.9         0.0        9.1</span></span>
+<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">Nightingale</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Rows: 24</span></span>
+<span><span class="co">#&gt; Columns: 10</span></span>
+<span><span class="co">#&gt; $ Date         &lt;date&gt; 1854-04-01, 1854-05-01, 1854-06-01, …</span></span>
+<span><span class="co">#&gt; $ Month        &lt;ord&gt; Apr, May, Jun, Jul, Aug, Sep, Oct, No…</span></span>
+<span><span class="co">#&gt; $ Year         &lt;int&gt; 1854, 1854, 1854, 1854, 1854, 1854, 1…</span></span>
+<span><span class="co">#&gt; $ Army         &lt;int&gt; 8571, 23333, 28333, 28722, 30246, 302…</span></span>
+<span><span class="co">#&gt; $ Disease      &lt;int&gt; 1, 12, 11, 359, 828, 788, 503, 844, 1…</span></span>
+<span><span class="co">#&gt; $ Wounds       &lt;int&gt; 0, 0, 0, 0, 1, 81, 132, 287, 114, 83,…</span></span>
+<span><span class="co">#&gt; $ Other        &lt;int&gt; 5, 9, 6, 23, 30, 70, 128, 106, 131, 3…</span></span>
+<span><span class="co">#&gt; $ Disease.rate &lt;dbl&gt; 1.4, 6.2, 4.7, 150.0, 328.5, 312.2, 1…</span></span>
+<span><span class="co">#&gt; $ Wounds.rate  &lt;dbl&gt; 0.0, 0.0, 0.0, 0.0, 0.4, 32.1, 51.7, …</span></span>
+<span><span class="co">#&gt; $ Other.rate   &lt;dbl&gt; 7.0, 4.6, 2.5, 9.6, 11.9, 27.7, 50.1,…</span></span></code></pre></div>
+</div>
+<div id="comparison-of-death-causes" class="section level3" number="28.2.5">
+<h3>
+<span class="header-section-number">A.2.5</span> Comparison of Death Causes<a class="anchor" aria-label="anchor" href="#comparison-of-death-causes"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb669"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_cause</span> <span class="op">&lt;-</span> <span class="va">Nightingale</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Disease</span>, <span class="va">Wounds</span>, <span class="va">Other</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html">everything</a></span><span class="op">(</span><span class="op">)</span>, names_to <span class="op">=</span> <span class="st">"Cause"</span>, values_to <span class="op">=</span> <span class="st">"Death"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">df_cause</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Cause</span>, y <span class="op">=</span> <span class="va">Death</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="41-histdata_files/figure-html/unnamed-chunk-3-1.png" width="672"></div>
+<div class="sourceCode" id="cb670"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_cause</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="va">Death</span>, fill <span class="op">=</span> <span class="va">Cause</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">1</span>, stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_polar.html">coord_polar</a></span><span class="op">(</span><span class="st">"y"</span>, start<span class="op">=</span><span class="fl">0</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="41-histdata_files/figure-html/unnamed-chunk-4-1.png" width="672"></div>
+<div class="sourceCode" id="cb671"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">total</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">df_cause</span><span class="op">$</span><span class="va">Death</span><span class="op">)</span></span>
+<span><span class="va">df_cause</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Cause</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>Rate <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">Death</span><span class="op">)</span><span class="op">/</span><span class="va">total</span><span class="op">*</span><span class="fl">100</span>, digits <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 3 × 2</span></span>
+<span><span class="co">#&gt;   Cause    Rate</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;   &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 Disease  80.5</span></span>
+<span><span class="co">#&gt; 2 Other     9.7</span></span>
+<span><span class="co">#&gt; 3 Wounds    9.8</span></span></code></pre></div>
+<div class="sourceCode" id="cb672"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_rate</span> <span class="op">&lt;-</span> <span class="va">Nightingale</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Date</span>, <span class="va">Army</span>, <span class="va">Disease</span>, <span class="va">Wounds</span>, <span class="va">Other</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>Death_Rate <span class="op">=</span> <span class="op">(</span><span class="va">Disease</span> <span class="op">+</span> <span class="va">Wounds</span> <span class="op">+</span> <span class="va">Other</span><span class="op">)</span><span class="op">/</span><span class="va">Army</span>,</span>
+<span>         Disease_Rate <span class="op">=</span> <span class="va">Disease</span><span class="op">/</span><span class="va">Army</span><span class="op">)</span> </span>
+<span></span>
+<span><span class="va">df_rate</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Date</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">Death_Rate</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">Disease_Rate</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"1855-04-01"</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="41-histdata_files/figure-html/unnamed-chunk-6-1.png" width="672"></div>
+</div>
+<div id="data-wrangling---tidying-data" class="section level3" number="28.2.6">
+<h3>
+<span class="header-section-number">A.2.6</span> Data Wrangling - Tidying Data<a class="anchor" aria-label="anchor" href="#data-wrangling---tidying-data"><i class="fas fa-link"></i></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>First, focus on the rates by cause</li>
+<li>Month, Year columns are redundant and use Date</li>
+<li>When rates are considered, Army, Disease, Wounds and Other columns are unnecessary.</li>
+<li>We use a long table to apply <code>ggplot2</code> to visualise data.</li>
+</ol>
+<pre><code>dat %&gt;% pivot_longer(cols = "columns kept as a vector", names_to = "variable", values_to = "date")</code></pre>
+<div class="sourceCode" id="cb674"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_fn</span> <span class="op">&lt;-</span> <span class="va">Nightingale</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Date</span>, <span class="st">"Disease_Rate"</span> <span class="op">=</span> <span class="va">Disease.rate</span>, <span class="st">"Wounds_Rate"</span> <span class="op">=</span> <span class="va">Wounds.rate</span>, <span class="st">"Other_Rate"</span> <span class="op">=</span> <span class="va">Other.rate</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="va">Disease_Rate</span><span class="op">:</span><span class="va">Other_Rate</span>, names_to <span class="op">=</span> <span class="st">"Cause"</span>, values_to <span class="op">=</span> <span class="st">"Deaths"</span><span class="op">)</span></span>
+<span><span class="va">df_fn</span></span>
+<span><span class="co">#&gt; # A tibble: 72 × 3</span></span>
+<span><span class="co">#&gt;    Date       Cause        Deaths</span></span>
+<span><span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;         &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 1854-04-01 Disease_Rate    1.4</span></span>
+<span><span class="co">#&gt;  2 1854-04-01 Wounds_Rate     0  </span></span>
+<span><span class="co">#&gt;  3 1854-04-01 Other_Rate      7  </span></span>
+<span><span class="co">#&gt;  4 1854-05-01 Disease_Rate    6.2</span></span>
+<span><span class="co">#&gt;  5 1854-05-01 Wounds_Rate     0  </span></span>
+<span><span class="co">#&gt;  6 1854-05-01 Other_Rate      4.6</span></span>
+<span><span class="co">#&gt;  7 1854-06-01 Disease_Rate    4.7</span></span>
+<span><span class="co">#&gt;  8 1854-06-01 Wounds_Rate     0  </span></span>
+<span><span class="co">#&gt;  9 1854-06-01 Other_Rate      2.5</span></span>
+<span><span class="co">#&gt; 10 1854-07-01 Disease_Rate  150  </span></span>
+<span><span class="co">#&gt; # … with 62 more rows</span></span></code></pre></div>
+<div class="sourceCode" id="cb675"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df_fn</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Date</span>, y <span class="op">=</span> <span class="va">Deaths</span>, fill <span class="op">=</span> <span class="va">Cause</span><span class="op">)</span>, stat<span class="op">=</span><span class="st">"identity"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="41-histdata_files/figure-html/unnamed-chunk-8-1.png" width="672"></div>
+<p>The default of the position is “stack”. The other options are “dodge” and “identity”. The option “identity” is not helpful for bars, because it overlaps them. See that overlapping by setting a small value for alpha, transparency.</p>
+<div class="sourceCode" id="cb676"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df_fn</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Date</span>, y <span class="op">=</span> <span class="va">Deaths</span>, fill <span class="op">=</span> <span class="va">Cause</span><span class="op">)</span>, stat <span class="op">=</span> <span class="st">"identity"</span>, position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="41-histdata_files/figure-html/unnamed-chunk-9-1.png" width="672"></div>
+<div class="sourceCode" id="cb677"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_fn</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Date</span> <span class="op">&gt;=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"1855-08-01"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Date</span>, y <span class="op">=</span> <span class="va">Deaths</span>, fill <span class="op">=</span> <span class="va">Cause</span><span class="op">)</span>, stat <span class="op">=</span> <span class="st">"identity"</span>, position <span class="op">=</span> <span class="st">"identity"</span>, alpha <span class="op">=</span> <span class="fl">0.4</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="41-histdata_files/figure-html/unnamed-chunk-10-1.png" width="672"></div>
+<div class="sourceCode" id="cb678"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_fn</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Date</span> <span class="op">&gt;=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"1855-08-01"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Date</span>, y <span class="op">=</span> <span class="va">Deaths</span>, fill <span class="op">=</span> <span class="va">Cause</span><span class="op">)</span>, stat <span class="op">=</span> <span class="st">"identity"</span>, position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="41-histdata_files/figure-html/unnamed-chunk-11-1.png" width="672"></div>
+<p>Let us split the data into two and see the change before and after the Sanitary Commission arrived in the middle of the war, i.e., March 6, 1885.</p>
+<div class="sourceCode" id="cb679"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_fn_ba</span> <span class="op">&lt;-</span> <span class="va">df_fn</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>Regime <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/if_else.html">if_else</a></span><span class="op">(</span><span class="va">Date</span> <span class="op">&lt;</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"1855-04-01"</span><span class="op">)</span>, <span class="st">"Before"</span>, <span class="st">"After"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">df_fn_ba</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Date</span> <span class="op">&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"1855-01-01"</span><span class="op">)</span> <span class="op">&amp;</span> <span class="va">Date</span> <span class="op">&lt;</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"1855-06-01"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 12 × 4</span></span>
+<span><span class="co">#&gt;    Date       Cause        Deaths Regime</span></span>
+<span><span class="co">#&gt;    &lt;date&gt;     &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt; </span></span>
+<span><span class="co">#&gt;  1 1855-02-01 Disease_Rate  823.  Before</span></span>
+<span><span class="co">#&gt;  2 1855-02-01 Wounds_Rate    16.3 Before</span></span>
+<span><span class="co">#&gt;  3 1855-02-01 Other_Rate    140.  Before</span></span>
+<span><span class="co">#&gt;  4 1855-03-01 Disease_Rate  480.  Before</span></span>
+<span><span class="co">#&gt;  5 1855-03-01 Wounds_Rate    12.8 Before</span></span>
+<span><span class="co">#&gt;  6 1855-03-01 Other_Rate     68.6 Before</span></span>
+<span><span class="co">#&gt;  7 1855-04-01 Disease_Rate  178.  After </span></span>
+<span><span class="co">#&gt;  8 1855-04-01 Wounds_Rate    17.9 After </span></span>
+<span><span class="co">#&gt;  9 1855-04-01 Other_Rate     21.2 After </span></span>
+<span><span class="co">#&gt; 10 1855-05-01 Disease_Rate  172.  After </span></span>
+<span><span class="co">#&gt; 11 1855-05-01 Wounds_Rate    16.6 After </span></span>
+<span><span class="co">#&gt; 12 1855-05-01 Other_Rate     12.5 After</span></span></code></pre></div>
+<div class="sourceCode" id="cb680"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_fn_ba</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Regime</span> <span class="op">==</span> <span class="st">"Before"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">Date</span><span class="op">)</span>, y<span class="op">=</span><span class="va">Deaths</span>, fill <span class="op">=</span> <span class="va">Cause</span><span class="op">)</span>, </span>
+<span>           width <span class="op">=</span> <span class="fl">1</span>, position<span class="op">=</span><span class="st">"identity"</span>, stat<span class="op">=</span><span class="st">"identity"</span>, alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_sqrt</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_polar.html">coord_polar</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fl">3</span><span class="op">*</span><span class="va">pi</span><span class="op">/</span><span class="fl">2</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Causes of Mortality in the Army in the East"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="41-histdata_files/figure-html/unnamed-chunk-13-1.png" width="672"></div>
+<div class="sourceCode" id="cb681"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">df_fn_ba</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Regime</span> <span class="op">==</span> <span class="st">"After"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">Date</span><span class="op">)</span>, y<span class="op">=</span><span class="va">Deaths</span>, fill <span class="op">=</span> <span class="va">Cause</span><span class="op">)</span>, </span>
+<span>           width <span class="op">=</span> <span class="fl">1</span>, position<span class="op">=</span><span class="st">"identity"</span>, stat<span class="op">=</span><span class="st">"identity"</span>, alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_sqrt</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_polar.html">coord_polar</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fl">3</span><span class="op">*</span><span class="va">pi</span><span class="op">/</span><span class="fl">2</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Causes of Mortality in the Army in the East"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="41-histdata_files/figure-html/unnamed-chunk-13-2.png" width="672"></div>
+<p>Please refer to the following code, if you want to use <code>facet_gid</code>. The argument scales = “free” of facet_grid does not support coord_polar. However, if you add the first two lines, it seems to work. See <a href="https://github.com/tidyverse/ggplot2/issues/2815" class="uri">https://github.com/tidyverse/ggplot2/issues/2815</a>.</p>
+<div class="sourceCode" id="cb682"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">cp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_polar.html">coord_polar</a></span><span class="op">(</span>theta <span class="op">=</span> <span class="st">"x"</span>, start <span class="op">=</span> <span class="fl">3</span><span class="op">*</span><span class="va">pi</span><span class="op">/</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="va">cp</span><span class="op">$</span><span class="va">is_free</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="cn">TRUE</span></span>
+<span></span>
+<span><span class="va">df_fn_ba</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="co">#filter(Regime == "Before") %&gt;%</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">Date</span><span class="op">)</span>, y<span class="op">=</span><span class="va">Deaths</span>, fill <span class="op">=</span> <span class="va">Cause</span><span class="op">)</span>, </span>
+<span>           width <span class="op">=</span> <span class="fl">1</span>, position<span class="op">=</span><span class="st">"identity"</span>, stat<span class="op">=</span><span class="st">"identity"</span>, alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_sqrt</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="co"># death scale is proportional to the area</span></span>
+<span>  <span class="va">cp</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span><span class="op">(</span><span class="va">.</span> <span class="op">~</span> <span class="va">Regime</span>, labeller <span class="op">=</span> <span class="va">label_both</span>, scales <span class="op">=</span> <span class="st">"free"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Causes of Mortality in the Army in the East"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>aspect.ratio <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="41-histdata_files/figure-html/unnamed-chunk-14-1.png" width="672"></div>
+<div class="sourceCode" id="cb683"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_fn_before</span> <span class="op">&lt;-</span> <span class="va">df_fn</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Date</span> <span class="op">&lt;</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"1855-04-01"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">df_fn_before</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 36</span></span>
+<span><span class="va">df_fn_after</span> <span class="op">&lt;-</span> <span class="va">df_fn</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Date</span> <span class="op">&gt;=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"1855-04-01"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">df_fn_after</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 36</span></span></code></pre></div>
+<div class="sourceCode" id="cb684"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df_fn_before</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Date</span>, y <span class="op">=</span> <span class="va">Deaths</span>, fill <span class="op">=</span> <span class="va">Cause</span><span class="op">)</span>, stat <span class="op">=</span> <span class="st">"identity"</span>, position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="41-histdata_files/figure-html/unnamed-chunk-16-1.png" width="672"></div>
+<div class="sourceCode" id="cb685"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df_fn_after</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Date</span>, y <span class="op">=</span> <span class="va">Deaths</span>, fill <span class="op">=</span> <span class="va">Cause</span><span class="op">)</span>, stat <span class="op">=</span> <span class="st">"identity"</span>, position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="41-histdata_files/figure-html/unnamed-chunk-17-1.png" width="672"></div>
+</div>
+</div>
+<div id="galtons-example" class="section level2" number="28.3">
+<h2>
+<span class="header-section-number">A.3</span> Galton’s Example<a class="anchor" aria-label="anchor" href="#galtons-example"><i class="fas fa-link"></i></a>
+</h2>
+<p><strong>Galton’s data on the heights of parents and their children, by child</strong></p>
+<ul>
+<li>
+<strong>Description:</strong>
+This data set lists the individual observations for 934 children in 205 families on which Galton (1886) based his cross-tabulation.</li>
+</ul>
+<p>In addition to the question of the relation between heights of parents and their offspring, for which this data is mainly famous, Galton had another purpose which the data in this form allows to address: Does marriage selection indicate a relationship between the heights of husbands and wives, a topic he called assortative mating? Keen <a href="2010">p. 297-298</a> provides a brief discussion of this topic.</p>
+<ul>
+<li>See Help: GaltonFamilies</li>
+</ul>
+<div class="sourceCode" id="cb686"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">gf</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="va">GaltonFamilies</span><span class="op">)</span></span>
+<span><span class="va">gf</span></span>
+<span><span class="co">#&gt; # A tibble: 934 × 8</span></span>
+<span><span class="co">#&gt;    family father mother midparentHe…¹ child…² child…³ gender</span></span>
+<span><span class="co">#&gt;    &lt;fct&gt;   &lt;dbl&gt;  &lt;dbl&gt;         &lt;dbl&gt;   &lt;int&gt;   &lt;int&gt; &lt;fct&gt; </span></span>
+<span><span class="co">#&gt;  1 001      78.5   67            75.4       4       1 male  </span></span>
+<span><span class="co">#&gt;  2 001      78.5   67            75.4       4       2 female</span></span>
+<span><span class="co">#&gt;  3 001      78.5   67            75.4       4       3 female</span></span>
+<span><span class="co">#&gt;  4 001      78.5   67            75.4       4       4 female</span></span>
+<span><span class="co">#&gt;  5 002      75.5   66.5          73.7       4       1 male  </span></span>
+<span><span class="co">#&gt;  6 002      75.5   66.5          73.7       4       2 male  </span></span>
+<span><span class="co">#&gt;  7 002      75.5   66.5          73.7       4       3 female</span></span>
+<span><span class="co">#&gt;  8 002      75.5   66.5          73.7       4       4 female</span></span>
+<span><span class="co">#&gt;  9 003      75     64            72.1       2       1 male  </span></span>
+<span><span class="co">#&gt; 10 003      75     64            72.1       2       2 female</span></span>
+<span><span class="co">#&gt; # … with 924 more rows, 1 more variable: childHeight &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   and abbreviated variable names ¹​midparentHeight,</span></span>
+<span><span class="co">#&gt; #   ²​children, ³​childNum</span></span></code></pre></div>
+<div class="sourceCode" id="cb687"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">gf</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">gender</span> <span class="op">==</span> <span class="st">"male"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">father</span>, <span class="va">childHeight</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"GaltonFamilies"</span>, x <span class="op">=</span> <span class="st">"father's height"</span>, y <span class="op">=</span> <span class="st">"son's height"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="41-histdata_files/figure-html/unnamed-chunk-19-1.png" width="672"></div>
+<div class="sourceCode" id="cb688"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">gf</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">gender</span> <span class="op">==</span> <span class="st">"female"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">mother</span>, <span class="va">childHeight</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"GaltonFamilies"</span>, x <span class="op">=</span> <span class="st">"mother's height"</span>, y <span class="op">=</span> <span class="st">"daughter's height"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="41-histdata_files/figure-html/unnamed-chunk-20-1.png" width="672"></div>
+<blockquote>
+<p>“The heights of descendants of tall ancestors tend to regress down towards a normal average (a phenomenon also known as regression toward the mean).”</p>
+</blockquote>
+<div class="sourceCode" id="cb689"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">gf</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">gender</span> <span class="op">==</span> <span class="st">"male"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">father</span>, <span class="va">childHeight</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"GaltonFamilies"</span>, x <span class="op">=</span> <span class="st">"father's height"</span>, y <span class="op">=</span> <span class="st">"son's height"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; `geom_smooth()` using formula = 'y ~ x'</span></span></code></pre></div>
+<div class="inline-figure"><img src="41-histdata_files/figure-html/unnamed-chunk-21-1.png" width="672"></div>
+<div class="sourceCode" id="cb690"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">gf</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">gender</span> <span class="op">==</span> <span class="st">"female"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">mother</span>, <span class="va">childHeight</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"GaltonFamilies"</span>, x <span class="op">=</span> <span class="st">"mother's height"</span>, y <span class="op">=</span> <span class="st">"daughter's height"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; `geom_smooth()` using formula = 'y ~ x'</span></span></code></pre></div>
+<div class="inline-figure"><img src="41-histdata_files/figure-html/unnamed-chunk-22-1.png" width="672"></div>
+<div class="sourceCode" id="cb691"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">gf</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">gender</span> <span class="op">==</span> <span class="st">"male"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">childHeight</span> <span class="op">~</span> <span class="va">father</span>, data <span class="op">=</span> <span class="va">.</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Call:</span></span>
+<span><span class="co">#&gt; lm(formula = childHeight ~ father, data = .)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Residuals:</span></span>
+<span><span class="co">#&gt;     Min      1Q  Median      3Q     Max </span></span>
+<span><span class="co">#&gt; -9.3959 -1.5122  0.0413  1.6217  9.3808 </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Coefficients:</span></span>
+<span><span class="co">#&gt;             Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
+<span><span class="co">#&gt; (Intercept) 38.36258    3.30837  11.596   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; father       0.44652    0.04783   9.337   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; ---</span></span>
+<span><span class="co">#&gt; Signif. codes:  </span></span>
+<span><span class="co">#&gt; 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Residual standard error: 2.416 on 479 degrees of freedom</span></span>
+<span><span class="co">#&gt; Multiple R-squared:  0.154,  Adjusted R-squared:  0.1522 </span></span>
+<span><span class="co">#&gt; F-statistic: 87.17 on 1 and 479 DF,  p-value: &lt; 2.2e-16</span></span></code></pre></div>
+<div class="sourceCode" id="cb692"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">gf</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">gender</span> <span class="op">==</span> <span class="st">"female"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">childHeight</span> <span class="op">~</span> <span class="va">mother</span>, data <span class="op">=</span> <span class="va">.</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Call:</span></span>
+<span><span class="co">#&gt; lm(formula = childHeight ~ mother, data = .)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Residuals:</span></span>
+<span><span class="co">#&gt;     Min      1Q  Median      3Q     Max </span></span>
+<span><span class="co">#&gt; -6.8749 -1.5340  0.0799  1.4434  6.7616 </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Coefficients:</span></span>
+<span><span class="co">#&gt;             Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
+<span><span class="co">#&gt; (Intercept) 43.68897    3.00171  14.555  &lt; 2e-16 ***</span></span>
+<span><span class="co">#&gt; mother       0.31824    0.04676   6.805 3.22e-11 ***</span></span>
+<span><span class="co">#&gt; ---</span></span>
+<span><span class="co">#&gt; Signif. codes:  </span></span>
+<span><span class="co">#&gt; 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Residual standard error: 2.246 on 451 degrees of freedom</span></span>
+<span><span class="co">#&gt; Multiple R-squared:  0.09313,    Adjusted R-squared:  0.09111 </span></span>
+<span><span class="co">#&gt; F-statistic: 46.31 on 1 and 451 DF,  p-value: 3.222e-11</span></span></code></pre></div>
+<ul>
+<li><strong>midparentHeight:</strong></li>
+</ul>
+<p>mid-parent height, calculated as (father + 1.08*mother)/2</p>
+<div class="sourceCode" id="cb693"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">gf</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">gender</span> <span class="op">==</span> <span class="st">"male"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">childHeight</span> <span class="op">~</span> <span class="va">midparentHeight</span>, data <span class="op">=</span> <span class="va">.</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Call:</span></span>
+<span><span class="co">#&gt; lm(formula = childHeight ~ midparentHeight, data = .)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Residuals:</span></span>
+<span><span class="co">#&gt;     Min      1Q  Median      3Q     Max </span></span>
+<span><span class="co">#&gt; -9.5431 -1.5160  0.1844  1.5082  9.0860 </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Coefficients:</span></span>
+<span><span class="co">#&gt;                 Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
+<span><span class="co">#&gt; (Intercept)     19.91346    4.08943   4.869 1.52e-06 ***</span></span>
+<span><span class="co">#&gt; midparentHeight  0.71327    0.05912  12.064  &lt; 2e-16 ***</span></span>
+<span><span class="co">#&gt; ---</span></span>
+<span><span class="co">#&gt; Signif. codes:  </span></span>
+<span><span class="co">#&gt; 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Residual standard error: 2.3 on 479 degrees of freedom</span></span>
+<span><span class="co">#&gt; Multiple R-squared:  0.2331, Adjusted R-squared:  0.2314 </span></span>
+<span><span class="co">#&gt; F-statistic: 145.6 on 1 and 479 DF,  p-value: &lt; 2.2e-16</span></span></code></pre></div>
 
+</div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="wir.html"><span class="header-section-number">27</span> World Inequality Report</a></div>
 <div class="next"><a href="covid19.html"><span class="header-section-number">B</span> Covid 19</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#histdata"><span class="header-section-number">A</span> HistData</a></li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#histdata"><span class="header-section-number">A</span> HistData</a></li>
+<li><a class="nav-link" href="#histdata-data-sets-from-the-history-of-statistics-and-data-visualization"><span class="header-section-number">A.1</span> HistData: Data Sets from the History of Statistics and Data Visualization</a></li>
+<li>
+<a class="nav-link" href="#nightingales-data"><span class="header-section-number">A.2</span> Nightingale’s Data</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#basic-references"><span class="header-section-number">A.2.1</span> Basic References</a></li>
+<li><a class="nav-link" href="#nightingale-datasets"><span class="header-section-number">A.2.2</span> Nightingale Datasets</a></li>
+<li><a class="nav-link" href="#references-6"><span class="header-section-number">A.2.3</span> References</a></li>
+<li><a class="nav-link" href="#reading-nightingale-data-and-glimpse-the-structure"><span class="header-section-number">A.2.4</span> Reading Nightingale Data and Glimpse the Structure</a></li>
+<li><a class="nav-link" href="#comparison-of-death-causes"><span class="header-section-number">A.2.5</span> Comparison of Death Causes</a></li>
+<li><a class="nav-link" href="#data-wrangling---tidying-data"><span class="header-section-number">A.2.6</span> Data Wrangling - Tidying Data</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#galtons-example"><span class="header-section-number">A.3</span> Galton’s Example</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">

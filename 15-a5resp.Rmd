@@ -101,7 +101,7 @@ wdi_cache$series %>% filter(indicator %in% c("SG.GEN.PARL.ZS","SI.POV.GINI"))
 df1 <- WDI(country = G7, 
            indicator=c(parl = "SG.GEN.PARL.ZS", gini = "SI.POV.GINI"),
            extra=TRUE, cache=wdi_cache)
-df1  # for R Notebook use this line, for PDF delete by adding #
+df1 %>% slice(1:10)  # for R Notebook use this line, for PDF delete by adding #
 ```
 
 

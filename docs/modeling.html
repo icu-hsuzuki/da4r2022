@@ -7,7 +7,7 @@
 <title>Chapter 21 Modeling | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
 <meta name="description" content="21.1 Posit Primers - Remaining Tutorials Iterate – r4ds: Program Introduction to Iteration Map Map Shortcut Multiple Vectors List Columns Write Functions – r4ds: Program Function Basics How to...">
-<meta name="generator" content="bookdown 0.30 with bs4_book()">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
 <meta property="og:title" content="Chapter 21 Modeling | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/modeling.html">
@@ -17,8 +17,12 @@
 <meta name="twitter:description" content="21.1 Posit Primers - Remaining Tutorials Iterate – r4ds: Program Introduction to Iteration Map Map Shortcut Multiple Vectors List Columns Write Functions – r4ds: Program Function Basics How to...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.26/datatables.js"></script><link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -97,7 +101,7 @@
 <li><a class="" href="oecd.html"><span class="header-section-number">25</span> OECD</a></li>
 <li><a class="" href="undata.html"><span class="header-section-number">26</span> UN Data</a></li>
 <li><a class="" href="wir.html"><span class="header-section-number">27</span> World Inequality Report</a></li>
-<li class="book-part">(APPENDIX)</li>
+<li class="book-part">APPENDIX</li>
 <li><a class="" href="histdata.html"><span class="header-section-number">A</span> HistData</a></li>
 <li><a class="" href="covid19.html"><span class="header-section-number">B</span> Covid 19</a></li>
 <li><a class="" href="bookdown.html"><span class="header-section-number">C</span> Bookdown</a></li>

@@ -1,1 +1,212 @@
 # UN Data {#undata}
+
+UNdata: https://data.un.org
+
+Data of World Development Indicators are in a uniform format and downloadable using an R package WDI. So it is easy to handle. However, other data require data transformation to make it tidy. We give a couple of examples. Most of the UN data, they are in CSV, and you can get a link quickly, or download it by clicking. Though the data structure is not uniform, it is relatively easy to handle.
+
+## Setup
+
+```{r}
+library(tidyverse)
+```
+```{r}
+wdi_cache <- read_rds("./data/wdi_cache.RData")
+```
+
+## Importing UN Data
+
+Since most of the UN data are available in CSV format, if you obtain the link, i.e., `url`, to the file, you can use `read_csv(url)` to load the data. Alternatively, you can download the file to your download folder. Then move the file to the data directory of your project. You can load it by `read_csv("./data/file_name")`.
+
+## Examples
+
+### Education
+
+By the following, you can see that the first row is not the column name. R gives column names such as ...1, ...2, etc., when the column name is void.
+
+You can copy the link (url) by right click or ctrl+click.
+
+```{r}
+url_un_edu <- "https://data.un.org/_Docs/SYB/CSV/SYB65_309_202209_Education.csv"
+```
+
+```{r eval=FALSE}
+un_edu <- read_csv(url_un_edu)
+un_edu %>% slice(1:10)
+```
+```{r echo=FALSE, eval=FALSE}
+un_edu <- read_csv(url_un_edu)
+write_csv(un_edu, "./data/un_edu0.csv")
+```
+
+```{r echo=FALSE, eval=FALSE}
+un_edu <- read_csv("./data/un_edu0.csv")
+un_edu %>% slice(1:10)
+```
+
+Let is skip the first row by adding `skip = 1`.
+
+```{r eval=FALSE}
+un_edu <- read_csv(url_un_edu, skip = 1)
+un_edu %>% slice(1:10)
+```
+```{r echo=FALSE, eval=FALSE}
+un_edu <- read_csv(url_un_edu, skip = 1)
+write_csv(un_edu, "./data/un_edu.csv")
+```
+
+```{r eval=TRUE, echo=FALSE}
+un_edu <- read_csv("./data/un_edu.csv")
+un_edu %>% slice(1:10)
+```
+
+It is a very large data, and we need to check the values.
+
+```{r}
+summary(un_edu)
+```
+We can see that the Year is from 2000 to 2021. The first variable, Region/Country/Area and the fifth variable, Value are `dbl`, i.e., double; hence, these are numerical variables, and you can see them from the summary as well. But it is not easy to see other variables. Let us try them one by one.
+
+```{r}
+un_edu %>% distinct(...2)
+```
+
+```{r}
+un_edu %>% distinct(Series)
+```
+```{r}
+un_edu %>% distinct(Footnotes)
+```
+
+```{r}
+un_edu %>% distinct(Source)
+```
+
+* We may need to handle Footnotes carefully later, but for the first exploration, we need, ...2 for Region, Year, Series, Values.
+
+```{r}
+df_un_edu <- un_edu %>%
+  select(Region = ...2, Year, Series, Value)
+df_un_edu
+```
+
+Is there a way to separate regions from countries?
+
+```{r}
+df_un_edu %>% left_join(wdi_cache$country, by = c("Region"="country")) %>%
+  filter(!is.na(iso2c)) %>% distinct(Region)
+```
+
+```{r}
+df_un_edu %>% left_join(wdi_cache$country, by = c("Region"="country")) %>%
+  filter(is.na(iso2c)) %>% distinct(Region)
+```
+
+```{r}
+df_un_edu %>% left_join(wdi_cache$country, by = c("Region"="country")) %>%
+  filter(is.na(iso2c)) %>% distinct(Region) %>% pull()
+```
+
+There are some countries iso2c is not properly assigned. From the list above, Probably, the first 12 are areas and the value contains the aggregated value. 
+
+```{r}
+area <- df_un_edu %>% distinct(Region) %>% slice(1:12) %>% pull()
+area
+```
+```{r}
+un_edu_area <- df_un_edu %>% filter(Region %in% area)
+un_edu_region <- df_un_edu %>% filter(!Region %in% area)
+```
+
+Now we can start studying the data.
+
+```{r}
+un_edu_area %>% 
+  filter(Series %in% c("Gross enrollment ratio - Upper secondary level (male)", "Gross enrollment ratio - Upper secondary level (female)")) %>%
+  ggplot(aes(Year, Value, color = Region, linetype = Series)) + geom_line()
+```
+
+```{r}
+un_edu_area %>% 
+  filter(Series %in% c("Gross enrollment ratio - Upper secondary level (male)", "Gross enrollment ratio - Upper secondary level (female)")) %>% 
+  pivot_wider(names_from = Series, values_from = Value) %>%
+  mutate (Ratio = `Gross enrollment ratio - Upper secondary level (female)`/`Gross enrollment ratio - Upper secondary level (male)`) %>%
+  ggplot(aes(Year, Ratio, color = Region, linetype = Region)) + geom_line() +
+  labs(title = "Upper Secondary Level Education", subtitle = "Ratio = female/male")
+```
+
+### Population
+
+Data structure is similar to the previous one. So use `skip=1`, and check the variable s briefly.
+
+
+```{r eval=FALSE}
+url_un_pop = "https://data.un.org/_Docs/SYB/CSV/SYB65_246_202209_Population%20Growth,%20Fertility%20and%20Mortality%20Indicators.csv"
+df_un_pop <- read.csv(url_un_pop, skip = 1)
+df_un_pop
+```
+
+```{r eval=FALSE, echo=FALSE}
+url_un_pop = "https://data.un.org/_Docs/SYB/CSV/SYB65_246_202209_Population%20Growth,%20Fertility%20and%20Mortality%20Indicators.csv"
+df_un_pop <- read.csv(url_un_pop, skip = 1)
+write_csv(df_un_pop, "./data/un_pop.csv")
+```
+
+```{r eval=TRUE, echo=FALSE}
+df_un_pop <- read_csv("./data/un_pop.csv")
+df_un_pop %>% slice(1:10)
+```
+
+```{r}
+df_un_pop %>% distinct(Source)
+```
+
+```{r}
+df_un_pop %>% distinct(Footnotes)
+```
+
+```{r}
+df_un_pop %>% distinct(X)
+```
+
+```{r}
+df_un_pop %>% distinct(Series)
+```
+
+1. Footnotes need to be studied.
+2. There are four different sources.
+3. X is for the region, the first 30 are areas, and the rest are countries or regions.
+4. There are seven series. It may be easier if we assign shorter names for each value.
+
+```{r}
+pop_area <- df_un_pop %>% distinct(X) %>% slice(1:30) %>% pull()
+pop_area
+```
+
+```{r}
+un_pop <- df_un_pop %>% select(Region = X, Year, Series, Value)
+un_pop
+```
+
+Let us change the names of series.
+
+```{r}
+un_pop_wide <- un_pop %>% pivot_wider(names_from = Series, values_from = Value)
+colnames(un_pop_wide) <- c("Region", "Year", "IncRate", "Fert", "InfDeath", "MatDeath", "LifeExp", "LifeExpM", "LifeExpF")
+un_pop_wide
+```
+
+```{r}
+un_pop_long <- un_pop_wide %>% pivot_longer(cols = -c(1,2), names_to = "Series", values_to = "Value")
+un_pop_long                                           
+```
+
+
+```{r}
+un_pop_long_area <- un_pop_long %>% filter(Region %in% pop_area)
+un_pop_long_region <- un_pop_long %>% filter(!Region %in% pop_area)
+un_pop_wide_area <- un_pop_wide %>% filter(Region %in% pop_area)
+un_pop_wide_region <- un_pop_wide %>% filter(!Region %in% pop_area)
+```
+
+
+Now we can visualize data.

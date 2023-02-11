@@ -7,7 +7,7 @@
 <title>Chapter 20 Visualizing | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
 <meta name="description" content="20.1 Data Visualization   20.2 ggplot2 Basics  visualization  20.2.1 Two useful questions There is no rule about which questions you should ask to guide your research. However, two types of...">
-<meta name="generator" content="bookdown 0.30 with bs4_book()">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
 <meta property="og:title" content="Chapter 20 Visualizing | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/visualizing.html">
@@ -17,8 +17,12 @@
 <meta name="twitter:description" content="20.1 Data Visualization   20.2 ggplot2 Basics  visualization  20.2.1 Two useful questions There is no rule about which questions you should ask to guide your research. However, two types of...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.26/datatables.js"></script><link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -97,7 +101,7 @@
 <li><a class="" href="oecd.html"><span class="header-section-number">25</span> OECD</a></li>
 <li><a class="" href="undata.html"><span class="header-section-number">26</span> UN Data</a></li>
 <li><a class="" href="wir.html"><span class="header-section-number">27</span> World Inequality Report</a></li>
-<li class="book-part">(APPENDIX)</li>
+<li class="book-part">APPENDIX</li>
 <li><a class="" href="histdata.html"><span class="header-section-number">A</span> HistData</a></li>
 <li><a class="" href="covid19.html"><span class="header-section-number">B</span> Covid 19</a></li>
 <li><a class="" href="bookdown.html"><span class="header-section-number">C</span> Bookdown</a></li>
@@ -141,12 +145,12 @@
 <h2>
 <span class="header-section-number">20.3</span> Set up<a class="anchor" aria-label="anchor" href="#set-up-6"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb522"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb526"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
-<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   0.3.5 </span></span>
+<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 </span></span>
 <span><span class="co">#&gt; ✔ tibble  3.1.8      ✔ dplyr   1.0.10</span></span>
-<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.4.1 </span></span>
+<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.5.0 </span></span>
 <span><span class="co">#&gt; ✔ readr   2.1.3      ✔ forcats 0.5.2 </span></span>
 <span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
@@ -162,7 +166,7 @@
 <li><p>WDI indicator: BX.KLT.DINV.CD.WD: Foreign Direct Investment (FDI) inflows</p></li>
 <li><p>Step 1. Import the data.</p></li>
 </ul>
-<div class="sourceCode" id="cb523"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb527"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_fdi</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span>country <span class="op">=</span> <span class="st">"all"</span>, indicator <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>fdi <span class="op">=</span> <span class="st">"BX.KLT.DINV.CD.WD"</span><span class="op">)</span>, start <span class="op">=</span><span class="fl">1970</span> , extra <span class="op">=</span> <span class="cn">TRUE</span>, cache <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span>
 <span><span class="va">df_fdi</span></span></code></pre></div>
 <pre><code>#&gt; Rows: 13832 Columns: 13
@@ -181,7 +185,7 @@
 <p>The following code in <code>Base R</code> does the same as the following using <code>tidyverse</code>:
 <code>df_fdi %&gt;% distinct(income) %&gt;% pull()</code>.
 If the list is long, it may be better to check using <code>tibble</code> by `<code>df_fdi %&gt;% distinct(income)</code>. You can also use <code>DT::datatable(df_fdi)</code> and search items of interest, though it takes up a lot of memory.</p>
-<div class="sourceCode" id="cb525"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb529"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">df_fdi</span><span class="op">$</span><span class="va">income</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "Low income"          "Aggregates"         </span></span>
 <span><span class="co">#&gt; [3] "Upper middle income" "Lower middle income"</span></span>
@@ -190,7 +194,7 @@ If the list is long, it may be better to check using <code>tibble</code> by `<co
 <ul>
 <li>Step 3. Try a line graph.</li>
 </ul>
-<div class="sourceCode" id="cb526"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb530"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_fdi</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">year</span>, y<span class="op">=</span><span class="va">fdi</span>, color<span class="op">=</span><span class="va">income</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Warning: Removed 7 rows containing missing values</span></span>
 <span><span class="co">#&gt; (`geom_line()`).</span></span></code></pre></div>
@@ -199,7 +203,7 @@ If the list is long, it may be better to check using <code>tibble</code> by `<co
 <ul>
 <li>Step 4. Let us try <code>group_by</code> and <code>summarize</code>.</li>
 </ul>
-<div class="sourceCode" id="cb527"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb531"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_fdi</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">fdi</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">income</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">income</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Aggregates"</span>,<span class="st">"Not classified"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">income</span>, <span class="va">year</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>fdi_mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">fdi</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
@@ -209,7 +213,7 @@ If the list is long, it may be better to check using <code>tibble</code> by `<co
 <span><span class="co">#&gt; override using the `.groups` argument.</span></span></code></pre></div>
 <div class="inline-figure"><img src="25-visualizing_files/figure-html/unnamed-chunk-7-1.png" width="672"></div>
 <p>If you do not want the message ‘<code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> has grouped output by ’income’. You can override using the <code>.groups</code> argument.’ try the following by adding <code>.group = drop</code>.</p>
-<div class="sourceCode" id="cb528"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb532"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_fdi</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">fdi</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">income</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">income</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Aggregates"</span>,<span class="st">"Not classified"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">income</span>, <span class="va">year</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>fdi_mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">fdi</span><span class="op">)</span>, .groups <span class="op">=</span> <span class="st">"drop"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
@@ -220,7 +224,7 @@ If the list is long, it may be better to check using <code>tibble</code> by `<co
 <li>Step 5. Let us try <code>geom_smooth</code> with <code>loess</code> and <code>span</code>.</li>
 </ul>
 <p>Do you see similarities and differences? We need to choose the one from the other by our objective, and explain</p>
-<div class="sourceCode" id="cb529"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb533"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_fdi</span>  <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">fdi</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">income</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">income</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Aggregates"</span>,<span class="st">"Not classified"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">year</span>,y<span class="op">=</span><span class="va">fdi</span>,color<span class="op">=</span><span class="va">income</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
@@ -230,13 +234,13 @@ If the list is long, it may be better to check using <code>tibble</code> by `<co
 <li>Step 6. Change of the scale.</li>
 </ul>
 <p>It may be a good choice to use <code><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_log10()</a></code>. However, since log10 is not finite if the value is not positive, you need to choose those with the indicator positive. Let us see how many zero values are in each income level.</p>
-<div class="sourceCode" id="cb530"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb534"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_fdi</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">income</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="st">"Aggregates"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">fdi</span> <span class="op">&lt;=</span> <span class="fl">0</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">income</span>, fill <span class="op">=</span> <span class="va">income</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Number of countries with FDI is not positive"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="25-visualizing_files/figure-html/unnamed-chunk-10-1.png" width="672"></div>
-<div class="sourceCode" id="cb531"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb535"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_fdi</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">income</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">fdi</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">income</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Aggregates"</span>,<span class="st">"Not classified"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">year</span>,y<span class="op">=</span><span class="va">fdi</span>,color<span class="op">=</span><span class="va">income</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
@@ -244,7 +248,7 @@ If the list is long, it may be better to check using <code>tibble</code> by `<co
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_log10</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title<span class="op">=</span><span class="st">"The Value FID &lt; 0 or Zero Excluded"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="25-visualizing_files/figure-html/unnamed-chunk-11-1.png" width="672"></div>
 <p><strong>Note.</strong> If this is the target chart, it may be better to check the number of NA values, 0 values, negative values, and nonzero values in each income group. I add <code>mutate(value = factor(value, levels = c("Positive", "Zero", "Negative", "NA"), labels = c("Positive", "Zero", "Negative", "NA")))</code> in order to set the order of the labels. Please try the same without the line.</p>
-<div class="sourceCode" id="cb532"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb536"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_fdi</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">country</span>, <span class="va">year</span>, <span class="va">fdi</span>, <span class="va">income</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">income</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Aggregates"</span>, <span class="cn">NA</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>value <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span></span>
@@ -266,7 +270,7 @@ If the list is long, it may be better to check using <code>tibble</code> by `<co
 <li>In the example above, the labels are overlapping. One way is to give an angle to the text with <code>vjust</code> and <code>hjust</code> values to place the labels in appropriate places: <code>theme(axis.text.x = element_text(angle = 30, vjust = 1, hjust=1))</code>
 </li>
 </ul>
-<div class="sourceCode" id="cb533"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb537"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_fdi</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">country</span>, <span class="va">year</span>, <span class="va">fdi</span>, <span class="va">income</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">income</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Aggregates"</span>, <span class="cn">NA</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>value <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span></span>
@@ -284,7 +288,7 @@ If the list is long, it may be better to check using <code>tibble</code> by `<co
 <li>You can use another package <code>stringr</code> included in <code>tidyverse</code> but not loaded. <code>scale_x_discrete(labels = function(x) stringr::str_wrap(x, width = 15))</code>
 Change the width value to fit to your chart. If you add library(stringr), then <code>scale_x_discrete(labels = function(x) str_wrap(x, width = 15))</code> is enough.</li>
 </ul>
-<div class="sourceCode" id="cb534"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb538"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_fdi</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">country</span>, <span class="va">year</span>, <span class="va">fdi</span>, <span class="va">income</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">income</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Aggregates"</span>, <span class="cn">NA</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>value <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span></span>
@@ -301,7 +305,7 @@ Change the width value to fit to your chart. If you add library(stringr), then <
 <ul>
 <li>If you have a long name for the title, use <code>\n</code> for the line feed.</li>
 </ul>
-<div class="sourceCode" id="cb535"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb539"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_fdi</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">country</span>, <span class="va">year</span>, <span class="va">fdi</span>, <span class="va">income</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">income</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Aggregates"</span>, <span class="cn">NA</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>value <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span></span>
@@ -331,12 +335,12 @@ Change the width value to fit to your chart. If you add library(stringr), then <
 </ul>
 </li>
 </ul>
-<div class="sourceCode" id="cb536"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb540"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">color_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#00AE9D"</span>,<span class="st">"#F58220"</span>,<span class="st">"#6C676E"</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>Import the data and tidy up</li>
 </ul>
-<div class="sourceCode" id="cb537"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb541"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"./data/WIR2022s.xlsx"</span>, sheet <span class="op">=</span> <span class="st">"data-F1"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; New names:</span></span>
 <span><span class="co">#&gt; • `` -&gt; `...1`</span></span>
@@ -356,7 +360,7 @@ Change the width value to fit to your chart. If you add library(stringr), then <
 <ul>
 <li>Step 3. Visualize the data using <code><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col()</a></code>, change the default fill color using the list of the color in Step 1, and change the scale of the y axis into percents.</li>
 </ul>
-<div class="sourceCode" id="cb538"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb542"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f1_rev</span><span class="op">[</span><span class="va">df_f1_rev</span><span class="op">$</span><span class="va">group</span> <span class="op">!=</span> <span class="st">"Top 1%"</span>,<span class="op">]</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">...1</span>, y <span class="op">=</span> <span class="va">value</span>, fill <span class="op">=</span> <span class="va">group</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span>, width <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span> <span class="op">+</span> </span>
@@ -367,7 +371,7 @@ Change the width value to fit to your chart. If you add library(stringr), then <
 <ul>
 <li>Step 4. Add the values in the text. Do not forget that the values should be in percentages.</li>
 </ul>
-<div class="sourceCode" id="cb539"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb543"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f1_rev</span><span class="op">[</span><span class="va">df_f1_rev</span><span class="op">$</span><span class="va">group</span> <span class="op">!=</span> <span class="st">"Top 1%"</span>,<span class="op">]</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">...1</span>, y <span class="op">=</span> <span class="va">value</span>, fill <span class="op">=</span> <span class="va">group</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span>, width <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span> <span class="op">+</span> </span>
@@ -379,7 +383,7 @@ Change the width value to fit to your chart. If you add library(stringr), then <
 <span>            position <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/position_dodge.html">position_dodge</a></span><span class="op">(</span><span class="fl">0.8</span><span class="op">)</span><span class="op">)</span>  </span></code></pre></div>
 <p><img src="25-visualizing_files/figure-html/unnamed-chunk-19-1.png" width="672">
 * Step 5. If you want to change the locations of texts use <code>vjust = -0.2</code>.</p>
-<div class="sourceCode" id="cb540"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb544"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f1_rev</span><span class="op">[</span><span class="va">df_f1_rev</span><span class="op">$</span><span class="va">group</span> <span class="op">!=</span> <span class="st">"Top 1%"</span>,<span class="op">]</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">...1</span>, y <span class="op">=</span> <span class="va">value</span>, fill <span class="op">=</span> <span class="va">group</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span>, width <span class="op">=</span> <span class="fl">0.8</span><span class="op">)</span> <span class="op">+</span> </span>
@@ -400,7 +404,7 @@ Change the width value to fit to your chart. If you add library(stringr), then <
 <h4>
 <span class="header-section-number">20.3.4.1</span> Treat <code>year</code> as a group?<a class="anchor" aria-label="anchor" href="#treat-year-as-a-group-1"><i class="fas fa-link"></i></a>
 </h4>
-<div class="sourceCode" id="cb541"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb545"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_wdi</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span></span>
 <span>  country <span class="op">=</span> <span class="st">"all"</span>, </span>
 <span>  indicator <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>lifeExp <span class="op">=</span> <span class="st">"SP.DYN.LE00.IN"</span><span class="op">)</span>, start <span class="op">=</span> <span class="fl">1990</span>, extra <span class="op">=</span> <span class="cn">TRUE</span>, cache <span class="op">=</span>  <span class="va">wdi_cache</span><span class="op">)</span></span>
@@ -416,7 +420,7 @@ Change the width value to fit to your chart. If you add library(stringr), then <
 <ul>
 <li>Something is wrong in the next chart. Can you tell what the problem is?</li>
 </ul>
-<div class="sourceCode" id="cb543"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb547"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_wdi</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"1988"</span>, <span class="st">"1998"</span>, <span class="st">"2008"</span>, <span class="st">"2018"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Afghanistan"</span>, <span class="st">"Israel"</span>, <span class="st">"Azerbaijan"</span>, <span class="st">"Austria"</span>, <span class="st">"Australia"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -424,7 +428,7 @@ Change the width value to fit to your chart. If you add library(stringr), then <
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y<span class="op">=</span><span class="va">lifeExp</span>, fill<span class="op">=</span><span class="va">country</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="25-visualizing_files/figure-html/unnamed-chunk-23-1.png" width="672"></div>
 <p>I erased the second line: <code>filter(year %in% c("1988", "1998", "2008", "2018"))</code> but the result is very similar.</p>
-<div class="sourceCode" id="cb544"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb548"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_wdi</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Afghanistan"</span>, <span class="st">"Israel"</span>, <span class="st">"Azerbaijan"</span>, <span class="st">"Austria"</span>, <span class="st">"Australia"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">year</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -433,7 +437,7 @@ Change the width value to fit to your chart. If you add library(stringr), then <
 <span><span class="co">#&gt; (`stat_boxplot()`).</span></span></code></pre></div>
 <div class="inline-figure"><img src="25-visualizing_files/figure-html/unnamed-chunk-24-1.png" width="672"></div>
 <p>If you look at the table, you can see that year is a integer vector, not a character vector. Then what happens if we remove quotation marks. The next chart is not a box plot anymore. It is because, for each year there is only one value for each country.</p>
-<div class="sourceCode" id="cb545"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb549"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_wdi</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1988</span>, <span class="fl">1998</span>, <span class="fl">2008</span>, <span class="fl">2018</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Afghanistan"</span>, <span class="st">"Israel"</span>, <span class="st">"Azerbaijan"</span>, <span class="st">"Austria"</span>, <span class="st">"Australia"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -442,7 +446,7 @@ Change the width value to fit to your chart. If you add library(stringr), then <
 <div class="inline-figure"><img src="25-visualizing_files/figure-html/unnamed-chunk-25-1.png" width="672"></div>
 <p>If we want to take <code>year</code> as a group after selecting some years, then we should try the next using <code>factor(year)</code>. You can change the label of x axis by
 <code>labs(x = "year")</code> easily. We should also notice that there are no values for 1988. We should check basic information as such first.</p>
-<div class="sourceCode" id="cb546"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb550"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_wdi</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1988</span>, <span class="fl">1998</span>, <span class="fl">2008</span>, <span class="fl">2018</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Afghanistan"</span>, <span class="st">"Israel"</span>, <span class="st">"Azerbaijan"</span>, <span class="st">"Austria"</span>, <span class="st">"Australia"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -450,7 +454,7 @@ Change the width value to fit to your chart. If you add library(stringr), then <
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span>, col <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="25-visualizing_files/figure-html/unnamed-chunk-26-1.png" width="672">
 It is possible if you change year to a character vector by <code>mutate(year = as.character(year))</code>.</p>
-<div class="sourceCode" id="cb547"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb551"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_wdi</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"1998"</span>, <span class="st">"2008"</span>, <span class="st">"2018"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Afghanistan"</span>, <span class="st">"Israel"</span>, <span class="st">"Azerbaijan"</span>, <span class="st">"Austria"</span>, <span class="st">"Australia"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -458,9 +462,15 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span>, col <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"year"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="25-visualizing_files/figure-html/unnamed-chunk-27-1.png" width="672"></div>
+</div>
+</div>
+</div>
+<div id="maps" class="section level2" number="20.4">
+<h2>
+<span class="header-section-number">20.4</span> Maps<a class="anchor" aria-label="anchor" href="#maps"><i class="fas fa-link"></i></a>
+</h2>
+<p><a href="https://www.naturalearthdata.com" class="uri">https://www.naturalearthdata.com</a></p>
 
-</div>
-</div>
 </div>
 </div>
   <div class="chapter-nav">
@@ -482,6 +492,7 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 <li><a class="nav-link" href="#visualization-by-charts-1"><span class="header-section-number">20.3.4</span> Visualization by Charts</a></li>
 </ul>
 </li>
+<li><a class="nav-link" href="#maps"><span class="header-section-number">20.4</span> Maps</a></li>
 </ul>
 
       <div class="book-extra">

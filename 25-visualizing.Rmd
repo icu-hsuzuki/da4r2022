@@ -314,4 +314,6 @@ df_wdi %>% mutate(year = as.character(year)) %>%
   labs(x = "year")
 ```
 
+## Maps
 
+https://www.naturalearthdata.com

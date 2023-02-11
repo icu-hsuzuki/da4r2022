@@ -1,2 +1,297 @@
-# (APPENDIX) {-}
+# (APPENDIX) APPENDIX {-}
 # HistData {#histdata}
+
+We use `HistData` Package. See https://CRAN.R-project.org/package=HistData.
+
+```{r}
+library(tidyverse)
+library(HistData)
+```
+
+## HistData: Data Sets from the History of Statistics and Data Visualization
+
+* **URL**: https://cran.r-project.org/web/packages/HistData/index.html
+* **Description**: The 'HistData' package provides a collection of small data sets that are interesting and important in the history of statistics and data visualization. The goal of the package is to make these available, both for instructional use and for historical research. Some of these present interesting challenges for graphics or analysis in R.
+* **Reference Manual**: [HistData.pdf](https://cran.r-project.org/web/packages/HistData/HistData.pdf)
+* **Vignettes**: [Duplicate and Missing Cases in Snow.deaths](https://cran.r-project.org/web/packages/HistData/vignettes/Snow_deaths-duplicates.html)
+* **Reverse Depend**: [UsingR](https://cran.r-project.org/web/packages/UsingR/index.html)
+
+## Nightingale's Data 
+
+> Nightingale's data is contained in [HistData](https://www.rdocumentation.org/packages/HistData/versions/0.8-6) Package of R. 
+> See https://www.rdocumentation.org/packages/HistData/versions/0.8-6/topics/Nightingale
+
+### Basic References
+
+* Florence Nightingale Museum in London: https://www.florence-nightingale.co.uk
+  - Florence Nightingale biography: https://www.florence-nightingale.co.uk/florence-nightingale-biography/    
+* BBC: Florence Nightingale: Saving lives with statistics: https://www.bbc.co.uk/teach/florence-nightingale-saving-lives-with-statistics/zjksmfr
+* Insights in Social History by Hugh Small: http://www.florence-nightingale-avenging-angel.co.uk
+  - Florence Nightingale’s most famous infographic (1858): http://www.florence-nightingale-avenging-angel.co.uk/?page_id=2382
+  - [Florence Nightingale’s Public Health Act, Covid-19 and the empowerment of local government, by Hugh Small, 12 October 2020](http://www.historyandpolicy.org/policy-papers/papers/florence-nightingales-public-health-act-covid-19-and-the-empowerment-of-local-government)
+  - [Life Expectancy: Office for National Statistics, UK](https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/lifeexpectancies#datasets)
+* Wikipedia: https://en.wikipedia.org/wiki/Florence_Nightingale
+* Life expectancy (from birth) in the United Kingdom from 1765 to 2020: https://www.statista.com/statistics/1040159/life-expectancy-united-kingdom-all-time/
+
+> 1. Cure: Medical Treatment
+> 2. Care: Nursing
+> 3. Prevention: Public Health
+
+
+
+### Nightingale Datasets
+
+* **Details**: 
+For a given cause of death, D, annual rates per 1000 are calculated as 12 * 1000 * D / Army, rounded to 1 decimal.
+
+The two panels of Nightingale's Coxcomb correspond to dates before and after March 1855
+
+* Format: 
+A data frame with 24 observations on the following 10 variables.
+* Date: 
+a Date, composed as as.Date(paste(Year, Month, 1, sep='-'), "%Y-%b-%d")
+* Month: 
+Month of the Crimean War, an ordered factor
+* Year: 
+Year of the Crimean War
+* Army: 
+Estimated average monthly strength of the British army
+* Disease: 
+Number of deaths from preventable or mitagable zymotic diseases
+* Wounds: 
+Number of deaths directly from battle wounds
+* Other: 
+Number of deaths from other causes
+* Disease.rate: 
+Annual rate of deaths from preventable or mitagable zymotic diseases, per 1000
+* Wounds.rate: 
+Annual rate of deaths directly from battle wounds, per 1000
+* Other.rate: 
+Annual rate of deaths from other causes, per 1000
+
+### References
+
+1. Nightingale, F. (1858) Notes on Matters Affecting the Health, Efficiency, and Hospital Administration of the British Army Harrison and Sons, 1858
+2. Nightingale, F. (1859) A Contribution to the Sanitary History of the British Army during the Late War with Russia London: John W. Parker and Son.
+3. Small, H. (1998) Florence Nightingale's statistical diagrams http://www.florence-nightingale-avenging-angel.co.uk/GraphicsPaper/Graphics.htm
+4. Pearson, M. and Short, I. (2008) Nightingale's Rose (flash animation). http://understandinguncertainty.org/files/animations/Nightingale11/Nightingale1.html
+
+
+### Reading Nightingale Data and Glimpse the Structure
+
+```{r}
+library(HistData)
+library(tidyverse)
+data(Nightingale)
+Nightingale
+glimpse(Nightingale)
+```
+
+### Comparison of Death Causes
+
+```{r}
+df_cause <- Nightingale %>%
+  select(Disease, Wounds, Other) %>%
+  pivot_longer(cols = everything(), names_to = "Cause", values_to = "Death")
+
+df_cause %>% ggplot(aes(x = Cause, y = Death)) + 
+  geom_bar(stat = "identity")
+```
+
+
+```{r}
+df_cause %>% ggplot(aes(x = "", y = Death, fill = Cause)) + 
+  geom_bar(width = 1, stat = "identity") + 
+  coord_polar("y", start=0)
+```
+```{r}
+total = sum(df_cause$Death)
+df_cause %>% 
+  group_by(Cause) %>%
+  summarize(Rate = round(sum(Death)/total*100, digits = 1))
+```
+
+```{r}
+df_rate <- Nightingale %>%
+  select(Date, Army, Disease, Wounds, Other) %>%
+  mutate(Death_Rate = (Disease + Wounds + Other)/Army,
+         Disease_Rate = Disease/Army) 
+
+df_rate %>% ggplot(aes(x = Date)) +
+  geom_line(aes(y = Death_Rate)) + 
+  geom_line(aes(y = Disease_Rate), color = "blue") + 
+  geom_vline(xintercept = as.Date("1855-04-01"), color = "red")
+```
+
+### Data Wrangling - Tidying Data
+
+1. First, focus on the rates by cause
+2. Month, Year columns are redundant and use Date
+3. When rates are considered, Army, Disease, Wounds and Other columns are unnecessary.
+4. We use a long table to apply `ggplot2` to visualise data.
+
+```
+dat %>% pivot_longer(cols = "columns kept as a vector", names_to = "variable", values_to = "date")
+```
+
+```{r}
+df_fn <- Nightingale %>%
+  select(Date, "Disease_Rate" = Disease.rate, "Wounds_Rate" = Wounds.rate, "Other_Rate" = Other.rate) %>%
+  pivot_longer(cols = Disease_Rate:Other_Rate, names_to = "Cause", values_to = "Deaths")
+df_fn
+```
+
+```{r}
+ggplot(df_fn) +
+  geom_bar(aes(x = Date, y = Deaths, fill = Cause), stat="identity")
+```
+
+The default of the position is "stack". The other options are "dodge" and "identity". The option "identity" is not helpful for bars, because it overlaps them. See that overlapping by setting a small value for alpha, transparency.
+
+```{r}
+ggplot(df_fn) +
+  geom_bar(aes(x = Date, y = Deaths, fill = Cause), stat = "identity", position = "dodge")
+```
+```{r}
+df_fn %>% filter(Date >= as.Date("1855-08-01")) %>%
+  ggplot() +
+  geom_bar(aes(x = Date, y = Deaths, fill = Cause), stat = "identity", position = "identity", alpha = 0.4)
+```
+```{r}
+df_fn %>% filter(Date >= as.Date("1855-08-01")) %>%
+  ggplot() +
+  geom_bar(aes(x = Date, y = Deaths, fill = Cause), stat = "identity", position = "dodge")
+```
+
+Let us split the data into two and see the change before and after the Sanitary Commission arrived in the middle of the war, i.e., March 6, 1885.
+
+```{r}
+df_fn_ba <- df_fn %>% 
+  mutate(Regime = if_else(Date < as.Date("1855-04-01"), "Before", "After"))
+df_fn_ba %>% filter(Date > as.Date("1855-01-01") & Date < as.Date("1855-06-01"))
+```
+
+```{r}
+df_fn_ba %>% filter(Regime == "Before") %>%
+  ggplot() +
+  geom_bar(aes(x = as.factor(Date), y=Deaths, fill = Cause), 
+           width = 1, position="identity", stat="identity", alpha = 0.5) + 
+  scale_y_sqrt() +
+  coord_polar(start = 3*pi/2) +
+  labs(title = "Causes of Mortality in the Army in the East")
+
+df_fn_ba %>% filter(Regime == "After") %>%
+  ggplot() +
+  geom_bar(aes(x = as.factor(Date), y=Deaths, fill = Cause), 
+           width = 1, position="identity", stat="identity", alpha = 0.5) + 
+  scale_y_sqrt() +
+  coord_polar(start = 3*pi/2) +
+  labs(title = "Causes of Mortality in the Army in the East")
+```
+
+Please refer to the following code, if you want to use `facet_gid`. The argument scales = "free" of facet_grid does not support coord_polar. However, if you add the first two lines, it seems to work. See https://github.com/tidyverse/ggplot2/issues/2815.
+
+```{r}
+cp <- coord_polar(theta = "x", start = 3*pi/2)
+cp$is_free <- function() TRUE
+
+df_fn_ba %>% #filter(Regime == "Before") %>%
+  ggplot() +
+  geom_bar(aes(x = as.factor(Date), y=Deaths, fill = Cause), 
+           width = 1, position="identity", stat="identity", alpha = 0.5) + 
+  scale_y_sqrt() + # death scale is proportional to the area
+  cp + 
+  facet_grid(. ~ Regime, labeller = label_both, scales = "free") + 
+  labs(title = "Causes of Mortality in the Army in the East") +
+  theme(aspect.ratio = 1)
+```
+
+```{r}
+df_fn_before <- df_fn %>% filter(Date < as.Date("1855-04-01"))
+nrow(df_fn_before)
+df_fn_after <- df_fn %>% filter(Date >= as.Date("1855-04-01"))
+nrow(df_fn_after)
+```
+
+```{r}
+ggplot(df_fn_before) +
+  geom_bar(aes(x = Date, y = Deaths, fill = Cause), stat = "identity", position = "dodge")
+```
+```{r}
+ggplot(df_fn_after) +
+  geom_bar(aes(x = Date, y = Deaths, fill = Cause), stat = "identity", position = "dodge")
+```
+
+
+
+## Galton's Example
+
+
+
+**Galton's data on the heights of parents and their children, by child**
+
+* **Description:**
+This data set lists the individual observations for 934 children in 205 families on which Galton (1886) based his cross-tabulation.
+
+In addition to the question of the relation between heights of parents and their offspring, for which this data is mainly famous, Galton had another purpose which the data in this form allows to address: Does marriage selection indicate a relationship between the heights of husbands and wives, a topic he called assortative mating? Keen [p. 297-298](2010) provides a brief discussion of this topic.
+
+* See Help: GaltonFamilies
+
+
+```{r}
+gf <- as_tibble(GaltonFamilies)
+gf
+```
+
+
+
+```{r}
+gf %>% filter(gender == "male") %>%
+  ggplot() +
+  geom_point(aes(father, childHeight)) +
+  labs(title = "GaltonFamilies", x = "father's height", y = "son's height")
+```
+
+```{r}
+gf %>% filter(gender == "female") %>%
+  ggplot() +
+  geom_point(aes(mother, childHeight)) +
+  labs(title = "GaltonFamilies", x = "mother's height", y = "daughter's height")
+```
+  
+>"The heights of descendants of tall ancestors tend to regress down towards a normal average (a phenomenon also known as regression toward the mean)." 
+
+```{r}
+gf %>% filter(gender == "male") %>%
+  ggplot(aes(father, childHeight)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "GaltonFamilies", x = "father's height", y = "son's height")
+```
+
+```{r}
+gf %>% filter(gender == "female") %>%
+  ggplot(aes(mother, childHeight)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "GaltonFamilies", x = "mother's height", y = "daughter's height")
+```
+
+```{r}
+gf %>% filter(gender == "male") %>% 
+  lm(childHeight ~ father, data = .) %>% summary()
+```
+```{r}
+gf %>% filter(gender == "female") %>%
+  lm(childHeight ~ mother, data = .) %>% summary()
+```
+
+* **midparentHeight:**
+
+mid-parent height, calculated as (father + 1.08*mother)/2
+
+```{r}
+gf %>% filter(gender == "male") %>% 
+  lm(childHeight ~ midparentHeight, data = .) %>% summary()
+```
+

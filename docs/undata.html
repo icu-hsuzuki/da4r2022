@@ -6,25 +6,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 26 UN Data | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
-<meta name="description" content="&lt;p&gt;This is a book based on the lecture given in AY2022 at International Christian University compiled using the bookdown package and RStudio.
-The HTML output format for this example is bookdown::bs4_book,
-set in the _output.yml file.&lt;/p&gt;">
-<meta name="generator" content="bookdown 0.30 with bs4_book()">
+<meta name="description" content="UNdata: https://data.un.org Data of World Development Indicators are in a uniform format and downloadable using an R package WDI. So it is easy to handle. However, other data require data...">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
 <meta property="og:title" content="Chapter 26 UN Data | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/undata.html">
-<meta property="og:description" content="&lt;p&gt;This is a book based on the lecture given in AY2022 at International Christian University compiled using the bookdown package and RStudio.
-The HTML output format for this example is bookdown::bs4_book,
-set in the _output.yml file.&lt;/p&gt;">
+<meta property="og:description" content="UNdata: https://data.un.org Data of World Development Indicators are in a uniform format and downloadable using an R package WDI. So it is easy to handle. However, other data require data...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 26 UN Data | Data Analysis for Researchers AY2022">
-<meta name="twitter:description" content="&lt;p&gt;This is a book based on the lecture given in AY2022 at International Christian University compiled using the bookdown package and RStudio.
-The HTML output format for this example is bookdown::bs4_book,
-set in the _output.yml file.&lt;/p&gt;">
+<meta name="twitter:description" content="UNdata: https://data.un.org Data of World Development Indicators are in a uniform format and downloadable using an R package WDI. So it is easy to handle. However, other data require data...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.26/datatables.js"></script><link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -103,7 +101,7 @@ set in the _output.yml file.&lt;/p&gt;">
 <li><a class="" href="oecd.html"><span class="header-section-number">25</span> OECD</a></li>
 <li><a class="active" href="undata.html"><span class="header-section-number">26</span> UN Data</a></li>
 <li><a class="" href="wir.html"><span class="header-section-number">27</span> World Inequality Report</a></li>
-<li class="book-part">(APPENDIX)</li>
+<li class="book-part">APPENDIX</li>
 <li><a class="" href="histdata.html"><span class="header-section-number">A</span> HistData</a></li>
 <li><a class="" href="covid19.html"><span class="header-section-number">B</span> Covid 19</a></li>
 <li><a class="" href="bookdown.html"><span class="header-section-number">C</span> Bookdown</a></li>
@@ -119,14 +117,488 @@ set in the _output.yml file.&lt;/p&gt;">
 <h1>
 <span class="header-section-number">26</span> UN Data<a class="anchor" aria-label="anchor" href="#undata"><i class="fas fa-link"></i></a>
 </h1>
+<p>UNdata: <a href="https://data.un.org" class="uri">https://data.un.org</a></p>
+<p>Data of World Development Indicators are in a uniform format and downloadable using an R package WDI. So it is easy to handle. However, other data require data transformation to make it tidy. We give a couple of examples. Most of the UN data, they are in CSV, and you can get a link quickly, or download it by clicking. Though the data structure is not uniform, it is relatively easy to handle.</p>
+<div id="setup-5" class="section level2" number="26.1">
+<h2>
+<span class="header-section-number">26.1</span> Setup<a class="anchor" aria-label="anchor" href="#setup-5"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb624"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
+<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 </span></span>
+<span><span class="co">#&gt; ✔ tibble  3.1.8      ✔ dplyr   1.0.10</span></span>
+<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.5.0 </span></span>
+<span><span class="co">#&gt; ✔ readr   2.1.3      ✔ forcats 0.5.2 </span></span>
+<span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
+<span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
+<span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span></code></pre></div>
+<div class="sourceCode" id="cb625"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_rds.html">read_rds</a></span><span class="op">(</span><span class="st">"./data/wdi_cache.RData"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div id="importing-un-data" class="section level2" number="26.2">
+<h2>
+<span class="header-section-number">26.2</span> Importing UN Data<a class="anchor" aria-label="anchor" href="#importing-un-data"><i class="fas fa-link"></i></a>
+</h2>
+<p>Since most of the UN data are available in CSV format, if you obtain the link, i.e., <code>url</code>, to the file, you can use <code>read_csv(url)</code> to load the data. Alternatively, you can download the file to your download folder. Then move the file to the data directory of your project. You can load it by <code>read_csv("./data/file_name")</code>.</p>
+</div>
+<div id="examples-1" class="section level2" number="26.3">
+<h2>
+<span class="header-section-number">26.3</span> Examples<a class="anchor" aria-label="anchor" href="#examples-1"><i class="fas fa-link"></i></a>
+</h2>
+<div id="education-1" class="section level3" number="26.3.1">
+<h3>
+<span class="header-section-number">26.3.1</span> Education<a class="anchor" aria-label="anchor" href="#education-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>By the following, you can see that the first row is not the column name. R gives column names such as …1, …2, etc., when the column name is void.</p>
+<p>You can copy the link (url) by right click or ctrl+click.</p>
+<div class="sourceCode" id="cb626"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">url_un_edu</span> <span class="op">&lt;-</span> <span class="st">"https://data.un.org/_Docs/SYB/CSV/SYB65_309_202209_Education.csv"</span></span></code></pre></div>
+<div class="sourceCode" id="cb627"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">un_edu</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="va">url_un_edu</span><span class="op">)</span></span>
+<span><span class="va">un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span></code></pre></div>
+<p>Let is skip the first row by adding <code>skip = 1</code>.</p>
+<div class="sourceCode" id="cb628"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">un_edu</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="va">url_un_edu</span>, skip <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="va">un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span></code></pre></div>
+<pre><code>#&gt; Rows: 7282 Columns: 7
+#&gt; ── Column specification ────────────────────────────────────
+#&gt; Delimiter: ","
+#&gt; chr (4): ...2, Series, Footnotes, Source
+#&gt; dbl (3): Region/Country/Area, Year, Value
+#&gt; 
+#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
+#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+#&gt; # A tibble: 10 × 7
+#&gt;    Region/Country…¹ ...2   Year Series  Value Footn…² Source
+#&gt;               &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt; 
+#&gt;  1                1 Tota…  2005 Stude… 6.79e5 &lt;NA&gt;    Unite…
+#&gt;  2                1 Tota…  2005 Gross… 1.04e2 &lt;NA&gt;    Unite…
+#&gt;  3                1 Tota…  2005 Gross… 9.97e1 &lt;NA&gt;    Unite…
+#&gt;  4                1 Tota…  2005 Stude… 5.09e5 &lt;NA&gt;    Unite…
+#&gt;  5                1 Tota…  2005 Gross… 6.58e1 &lt;NA&gt;    Unite…
+#&gt;  6                1 Tota…  2005 Gross… 6.23e1 &lt;NA&gt;    Unite…
+#&gt;  7                1 Tota…  2005 Stude… 2.00e5 &lt;NA&gt;    Unite…
+#&gt;  8                1 Tota…  2005 Gross… 5.12e1 &lt;NA&gt;    Unite…
+#&gt;  9                1 Tota…  2005 Gross… 4.83e1 &lt;NA&gt;    Unite…
+#&gt; 10                1 Tota…  2010 Stude… 6.97e5 &lt;NA&gt;    Unite…
+#&gt; # … with abbreviated variable names ¹​`Region/Country/Area`,
+#&gt; #   ²​Footnotes</code></pre>
+<p>It is a very large data, and we need to check the values.</p>
+<div class="sourceCode" id="cb630"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">un_edu</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  Region/Country/Area     ...2                Year     </span></span>
+<span><span class="co">#&gt;  Min.   :  1.0       Length:7282        Min.   :2000  </span></span>
+<span><span class="co">#&gt;  1st Qu.:178.0       Class :character   1st Qu.:2005  </span></span>
+<span><span class="co">#&gt;  Median :417.0       Mode  :character   Median :2010  </span></span>
+<span><span class="co">#&gt;  Mean   :408.8                          Mean   :2012  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:626.0                          3rd Qu.:2015  </span></span>
+<span><span class="co">#&gt;  Max.   :894.0                          Max.   :2021  </span></span>
+<span><span class="co">#&gt;     Series              Value           Footnotes        </span></span>
+<span><span class="co">#&gt;  Length:7282        Min.   :     0.0   Length:7282       </span></span>
+<span><span class="co">#&gt;  Class :character   1st Qu.:    71.6   Class :character  </span></span>
+<span><span class="co">#&gt;  Mode  :character   Median :   100.2   Mode  :character  </span></span>
+<span><span class="co">#&gt;                     Mean   :  2534.7                     </span></span>
+<span><span class="co">#&gt;                     3rd Qu.:   133.6                     </span></span>
+<span><span class="co">#&gt;                     Max.   :750125.0                     </span></span>
+<span><span class="co">#&gt;     Source         </span></span>
+<span><span class="co">#&gt;  Length:7282       </span></span>
+<span><span class="co">#&gt;  Class :character  </span></span>
+<span><span class="co">#&gt;  Mode  :character  </span></span>
+<span><span class="co">#&gt;                    </span></span>
+<span><span class="co">#&gt;                    </span></span>
+<span><span class="co">#&gt; </span></span></code></pre></div>
+<p>We can see that the Year is from 2000 to 2021. The first variable, Region/Country/Area and the fifth variable, Value are <code>dbl</code>, i.e., double; hence, these are numerical variables, and you can see them from the summary as well. But it is not easy to see other variables. Let us try them one by one.</p>
+<div class="sourceCode" id="cb631"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">...2</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 224 × 1</span></span>
+<span><span class="co">#&gt;    ...2                         </span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;                        </span></span>
+<span><span class="co">#&gt;  1 Total, all countries or areas</span></span>
+<span><span class="co">#&gt;  2 Northern Africa              </span></span>
+<span><span class="co">#&gt;  3 Sub-Saharan Africa           </span></span>
+<span><span class="co">#&gt;  4 Northern America             </span></span>
+<span><span class="co">#&gt;  5 Latin America &amp; the Caribbean</span></span>
+<span><span class="co">#&gt;  6 Central Asia                 </span></span>
+<span><span class="co">#&gt;  7 Eastern Asia                 </span></span>
+<span><span class="co">#&gt;  8 South-eastern Asia           </span></span>
+<span><span class="co">#&gt;  9 Southern Asia                </span></span>
+<span><span class="co">#&gt; 10 Western Asia                 </span></span>
+<span><span class="co">#&gt; # … with 214 more rows</span></span></code></pre></div>
+<div class="sourceCode" id="cb632"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Series</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 9 × 1</span></span>
+<span><span class="co">#&gt;   Series                                                    </span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;                                                     </span></span>
+<span><span class="co">#&gt; 1 Students enrolled in primary education (thousands)        </span></span>
+<span><span class="co">#&gt; 2 Gross enrollment ratio - Primary (male)                   </span></span>
+<span><span class="co">#&gt; 3 Gross enrollment ratio - Primary (female)                 </span></span>
+<span><span class="co">#&gt; 4 Students enrolled in secondary education (thousands)      </span></span>
+<span><span class="co">#&gt; 5 Gross enrollment ratio - Secondary (male)                 </span></span>
+<span><span class="co">#&gt; 6 Gross enrollment ratio - Secondary (female)               </span></span>
+<span><span class="co">#&gt; 7 Students enrolled in upper secondary education (thousands)</span></span>
+<span><span class="co">#&gt; 8 Gross enrollment ratio - Upper secondary level (male)     </span></span>
+<span><span class="co">#&gt; 9 Gross enrollment ratio - Upper secondary level (female)</span></span></code></pre></div>
+<div class="sourceCode" id="cb633"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Footnotes</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 2 × 1</span></span>
+<span><span class="co">#&gt;   Footnotes</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;    </span></span>
+<span><span class="co">#&gt; 1 &lt;NA&gt;     </span></span>
+<span><span class="co">#&gt; 2 Estimate.</span></span></code></pre></div>
+<div class="sourceCode" id="cb634"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Source</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 1 × 1</span></span>
+<span><span class="co">#&gt;   Source                                                    </span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;                                                     </span></span>
+<span><span class="co">#&gt; 1 United Nations Educational, Scientific and Cultural Organ…</span></span></code></pre></div>
+<ul>
+<li>We may need to handle Footnotes carefully later, but for the first exploration, we need, …2 for Region, Year, Series, Values.</li>
+</ul>
+<div class="sourceCode" id="cb635"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_un_edu</span> <span class="op">&lt;-</span> <span class="va">un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span>Region <span class="op">=</span> <span class="va">...2</span>, <span class="va">Year</span>, <span class="va">Series</span>, <span class="va">Value</span><span class="op">)</span></span>
+<span><span class="va">df_un_edu</span></span>
+<span><span class="co">#&gt; # A tibble: 7,282 × 4</span></span>
+<span><span class="co">#&gt;    Region                         Year Series          Value</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;                         &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 Total, all countries or areas  2005 Students enro… 6.79e5</span></span>
+<span><span class="co">#&gt;  2 Total, all countries or areas  2005 Gross enrollm… 1.04e2</span></span>
+<span><span class="co">#&gt;  3 Total, all countries or areas  2005 Gross enrollm… 9.97e1</span></span>
+<span><span class="co">#&gt;  4 Total, all countries or areas  2005 Students enro… 5.09e5</span></span>
+<span><span class="co">#&gt;  5 Total, all countries or areas  2005 Gross enrollm… 6.58e1</span></span>
+<span><span class="co">#&gt;  6 Total, all countries or areas  2005 Gross enrollm… 6.23e1</span></span>
+<span><span class="co">#&gt;  7 Total, all countries or areas  2005 Students enro… 2.00e5</span></span>
+<span><span class="co">#&gt;  8 Total, all countries or areas  2005 Gross enrollm… 5.12e1</span></span>
+<span><span class="co">#&gt;  9 Total, all countries or areas  2005 Gross enrollm… 4.83e1</span></span>
+<span><span class="co">#&gt; 10 Total, all countries or areas  2010 Students enro… 6.97e5</span></span>
+<span><span class="co">#&gt; # … with 7,272 more rows</span></span></code></pre></div>
+<p>Is there a way to separate regions from countries?</p>
+<div class="sourceCode" id="cb636"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Region"</span><span class="op">=</span><span class="st">"country"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">iso2c</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Region</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 176 × 1</span></span>
+<span><span class="co">#&gt;    Region             </span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;              </span></span>
+<span><span class="co">#&gt;  1 Afghanistan        </span></span>
+<span><span class="co">#&gt;  2 Albania            </span></span>
+<span><span class="co">#&gt;  3 Algeria            </span></span>
+<span><span class="co">#&gt;  4 Andorra            </span></span>
+<span><span class="co">#&gt;  5 Angola             </span></span>
+<span><span class="co">#&gt;  6 Antigua and Barbuda</span></span>
+<span><span class="co">#&gt;  7 Argentina          </span></span>
+<span><span class="co">#&gt;  8 Armenia            </span></span>
+<span><span class="co">#&gt;  9 Aruba              </span></span>
+<span><span class="co">#&gt; 10 Australia          </span></span>
+<span><span class="co">#&gt; # … with 166 more rows</span></span></code></pre></div>
+<div class="sourceCode" id="cb637"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Region"</span><span class="op">=</span><span class="st">"country"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">iso2c</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Region</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 48 × 1</span></span>
+<span><span class="co">#&gt;    Region                       </span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;                        </span></span>
+<span><span class="co">#&gt;  1 Total, all countries or areas</span></span>
+<span><span class="co">#&gt;  2 Northern Africa              </span></span>
+<span><span class="co">#&gt;  3 Sub-Saharan Africa           </span></span>
+<span><span class="co">#&gt;  4 Northern America             </span></span>
+<span><span class="co">#&gt;  5 Latin America &amp; the Caribbean</span></span>
+<span><span class="co">#&gt;  6 Central Asia                 </span></span>
+<span><span class="co">#&gt;  7 Eastern Asia                 </span></span>
+<span><span class="co">#&gt;  8 South-eastern Asia           </span></span>
+<span><span class="co">#&gt;  9 Southern Asia                </span></span>
+<span><span class="co">#&gt; 10 Western Asia                 </span></span>
+<span><span class="co">#&gt; # … with 38 more rows</span></span></code></pre></div>
+<div class="sourceCode" id="cb638"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Region"</span><span class="op">=</span><span class="st">"country"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">iso2c</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Region</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "Total, all countries or areas"</span></span>
+<span><span class="co">#&gt;  [2] "Northern Africa"              </span></span>
+<span><span class="co">#&gt;  [3] "Sub-Saharan Africa"           </span></span>
+<span><span class="co">#&gt;  [4] "Northern America"             </span></span>
+<span><span class="co">#&gt;  [5] "Latin America &amp; the Caribbean"</span></span>
+<span><span class="co">#&gt;  [6] "Central Asia"                 </span></span>
+<span><span class="co">#&gt;  [7] "Eastern Asia"                 </span></span>
+<span><span class="co">#&gt;  [8] "South-eastern Asia"           </span></span>
+<span><span class="co">#&gt;  [9] "Southern Asia"                </span></span>
+<span><span class="co">#&gt; [10] "Western Asia"                 </span></span>
+<span><span class="co">#&gt; [11] "Europe"                       </span></span>
+<span><span class="co">#&gt; [12] "Oceania"                      </span></span>
+<span><span class="co">#&gt; [13] "Anguilla"                     </span></span>
+<span><span class="co">#&gt; [14] "Bahamas"                      </span></span>
+<span><span class="co">#&gt; [15] "Bolivia (Plurin. State of)"   </span></span>
+<span><span class="co">#&gt; [16] "China, Hong Kong SAR"         </span></span>
+<span><span class="co">#&gt; [17] "China, Macao SAR"             </span></span>
+<span><span class="co">#&gt; [18] "Congo"                        </span></span>
+<span><span class="co">#&gt; [19] "Cook Islands"                 </span></span>
+<span><span class="co">#&gt; [20] "Côte d’Ivoire"                </span></span>
+<span><span class="co">#&gt; [21] "Curaçao"                      </span></span>
+<span><span class="co">#&gt; [22] "Dem. People's Rep. Korea"     </span></span>
+<span><span class="co">#&gt; [23] "Dem. Rep. of the Congo"       </span></span>
+<span><span class="co">#&gt; [24] "Egypt"                        </span></span>
+<span><span class="co">#&gt; [25] "Gambia"                       </span></span>
+<span><span class="co">#&gt; [26] "Holy See"                     </span></span>
+<span><span class="co">#&gt; [27] "Iran (Islamic Republic of)"   </span></span>
+<span><span class="co">#&gt; [28] "Kyrgyzstan"                   </span></span>
+<span><span class="co">#&gt; [29] "Lao People's Dem. Rep."       </span></span>
+<span><span class="co">#&gt; [30] "Micronesia (Fed. States of)"  </span></span>
+<span><span class="co">#&gt; [31] "Montserrat"                   </span></span>
+<span><span class="co">#&gt; [32] "Netherlands Antilles [former]"</span></span>
+<span><span class="co">#&gt; [33] "Niue"                         </span></span>
+<span><span class="co">#&gt; [34] "Republic of Korea"            </span></span>
+<span><span class="co">#&gt; [35] "Republic of Moldova"          </span></span>
+<span><span class="co">#&gt; [36] "Saint Kitts and Nevis"        </span></span>
+<span><span class="co">#&gt; [37] "Saint Lucia"                  </span></span>
+<span><span class="co">#&gt; [38] "Saint Vincent &amp; Grenadines"   </span></span>
+<span><span class="co">#&gt; [39] "Slovakia"                     </span></span>
+<span><span class="co">#&gt; [40] "State of Palestine"           </span></span>
+<span><span class="co">#&gt; [41] "Sudan [former]"               </span></span>
+<span><span class="co">#&gt; [42] "Tokelau"                      </span></span>
+<span><span class="co">#&gt; [43] "Türkiye"                      </span></span>
+<span><span class="co">#&gt; [44] "United Rep. of Tanzania"      </span></span>
+<span><span class="co">#&gt; [45] "United States of America"     </span></span>
+<span><span class="co">#&gt; [46] "Venezuela (Boliv. Rep. of)"   </span></span>
+<span><span class="co">#&gt; [47] "Viet Nam"                     </span></span>
+<span><span class="co">#&gt; [48] "Yemen"</span></span></code></pre></div>
+<p>There are some countries iso2c is not properly assigned. From the list above, Probably, the first 12 are areas and the value contains the aggregated value.</p>
+<div class="sourceCode" id="cb639"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">area</span> <span class="op">&lt;-</span> <span class="va">df_un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Region</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">12</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">area</span></span>
+<span><span class="co">#&gt;  [1] "Total, all countries or areas"</span></span>
+<span><span class="co">#&gt;  [2] "Northern Africa"              </span></span>
+<span><span class="co">#&gt;  [3] "Sub-Saharan Africa"           </span></span>
+<span><span class="co">#&gt;  [4] "Northern America"             </span></span>
+<span><span class="co">#&gt;  [5] "Latin America &amp; the Caribbean"</span></span>
+<span><span class="co">#&gt;  [6] "Central Asia"                 </span></span>
+<span><span class="co">#&gt;  [7] "Eastern Asia"                 </span></span>
+<span><span class="co">#&gt;  [8] "South-eastern Asia"           </span></span>
+<span><span class="co">#&gt;  [9] "Southern Asia"                </span></span>
+<span><span class="co">#&gt; [10] "Western Asia"                 </span></span>
+<span><span class="co">#&gt; [11] "Europe"                       </span></span>
+<span><span class="co">#&gt; [12] "Oceania"</span></span></code></pre></div>
+<div class="sourceCode" id="cb640"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">un_edu_area</span> <span class="op">&lt;-</span> <span class="va">df_un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">area</span><span class="op">)</span></span>
+<span><span class="va">un_edu_region</span> <span class="op">&lt;-</span> <span class="va">df_un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">Region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">area</span><span class="op">)</span></span></code></pre></div>
+<p>Now we can start studying the data.</p>
+<div class="sourceCode" id="cb641"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">un_edu_area</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Series</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Gross enrollment ratio - Upper secondary level (male)"</span>, <span class="st">"Gross enrollment ratio - Upper secondary level (female)"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Year</span>, <span class="va">Value</span>, color <span class="op">=</span> <span class="va">Region</span>, linetype <span class="op">=</span> <span class="va">Series</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="34-undata_files/figure-html/unnamed-chunk-21-1.png" width="672"></div>
+<div class="sourceCode" id="cb642"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">un_edu_area</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Series</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Gross enrollment ratio - Upper secondary level (male)"</span>, <span class="st">"Gross enrollment ratio - Upper secondary level (female)"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span><span class="op">(</span>names_from <span class="op">=</span> <span class="va">Series</span>, values_from <span class="op">=</span> <span class="va">Value</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span> <span class="op">(</span>Ratio <span class="op">=</span> <span class="va">`Gross enrollment ratio - Upper secondary level (female)`</span><span class="op">/</span><span class="va">`Gross enrollment ratio - Upper secondary level (male)`</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Year</span>, <span class="va">Ratio</span>, color <span class="op">=</span> <span class="va">Region</span>, linetype <span class="op">=</span> <span class="va">Region</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Upper Secondary Level Education"</span>, subtitle <span class="op">=</span> <span class="st">"Ratio = female/male"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="34-undata_files/figure-html/unnamed-chunk-22-1.png" width="672"></div>
+</div>
+<div id="population-1" class="section level3" number="26.3.2">
+<h3>
+<span class="header-section-number">26.3.2</span> Population<a class="anchor" aria-label="anchor" href="#population-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Data structure is similar to the previous one. So use <code>skip=1</code>, and check the variable s briefly.</p>
+<div class="sourceCode" id="cb643"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">url_un_pop</span> <span class="op">=</span> <span class="st">"https://data.un.org/_Docs/SYB/CSV/SYB65_246_202209_Population%20Growth,%20Fertility%20and%20Mortality%20Indicators.csv"</span></span>
+<span><span class="va">df_un_pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="va">url_un_pop</span>, skip <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="va">df_un_pop</span></span></code></pre></div>
+<pre><code>#&gt; Rows: 6654 Columns: 7
+#&gt; ── Column specification ────────────────────────────────────
+#&gt; Delimiter: ","
+#&gt; chr (4): X, Series, Footnotes, Source
+#&gt; dbl (2): Region.Country.Area, Year
+#&gt; num (1): Value
+#&gt; 
+#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
+#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+#&gt; # A tibble: 10 × 7
+#&gt;    Region.Country.…¹ X      Year Series Value Footn…² Source
+#&gt;                &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt; 
+#&gt;  1                 1 Tota…  2010 Popul…   1.3 &lt;NA&gt;    "Unit…
+#&gt;  2                 1 Tota…  2010 Total…   2.6 &lt;NA&gt;    "Unit…
+#&gt;  3                 1 Tota…  2010 Infan…  37.1 &lt;NA&gt;    "Unit…
+#&gt;  4                 1 Tota…  2010 Mater… 253   &lt;NA&gt;    "Worl…
+#&gt;  5                 1 Tota…  2010 Life …  70.1 &lt;NA&gt;    "Unit…
+#&gt;  6                 1 Tota…  2010 Life …  67.6 &lt;NA&gt;    "Unit…
+#&gt;  7                 1 Tota…  2010 Life …  72.7 &lt;NA&gt;    "Unit…
+#&gt;  8                 1 Tota…  2015 Popul…   1.2 &lt;NA&gt;    "Unit…
+#&gt;  9                 1 Tota…  2015 Total…   2.5 &lt;NA&gt;    "Unit…
+#&gt; 10                 1 Tota…  2015 Infan…  31.5 &lt;NA&gt;    "Unit…
+#&gt; # … with abbreviated variable names ¹​Region.Country.Area,
+#&gt; #   ²​Footnotes</code></pre>
+<div class="sourceCode" id="cb645"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_un_pop</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Source</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 4 × 1</span></span>
+<span><span class="co">#&gt;   Source                                                    </span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;                                                     </span></span>
+<span><span class="co">#&gt; 1 "United Nations Population Division, New York, World Popu…</span></span>
+<span><span class="co">#&gt; 2 "United Nations Population Division, New York, World Popu…</span></span>
+<span><span class="co">#&gt; 3 "United Nations Statistics Division, New York, \"Demograp…</span></span>
+<span><span class="co">#&gt; 4 "World Health Organization (WHO), the United Nations Chil…</span></span></code></pre></div>
+<div class="sourceCode" id="cb646"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_un_pop</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Footnotes</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 82 × 1</span></span>
+<span><span class="co">#&gt;    Footnotes                                                </span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;                                                    </span></span>
+<span><span class="co">#&gt;  1 &lt;NA&gt;                                                     </span></span>
+<span><span class="co">#&gt;  2 Projected estimate (medium fertility variant).           </span></span>
+<span><span class="co">#&gt;  3 Including Saint Helena.                                  </span></span>
+<span><span class="co">#&gt;  4 Projected estimate (medium fertility variant).;Including…</span></span>
+<span><span class="co">#&gt;  5 Including Bermuda, Greenland, and Saint Pierre and Mique…</span></span>
+<span><span class="co">#&gt;  6 Projected estimate (medium fertility variant).;Including…</span></span>
+<span><span class="co">#&gt;  7 Including Anguilla, Bonaire, Sint Eustatius and Saba, Br…</span></span>
+<span><span class="co">#&gt;  8 Projected estimate (medium fertility variant).;Including…</span></span>
+<span><span class="co">#&gt;  9 Including Falkland Islands (Malvinas).                   </span></span>
+<span><span class="co">#&gt; 10 Projected estimate (medium fertility variant).;Including…</span></span>
+<span><span class="co">#&gt; # … with 72 more rows</span></span></code></pre></div>
+<div class="sourceCode" id="cb647"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_un_pop</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 264 × 1</span></span>
+<span><span class="co">#&gt;    X                            </span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;                        </span></span>
+<span><span class="co">#&gt;  1 Total, all countries or areas</span></span>
+<span><span class="co">#&gt;  2 Africa                       </span></span>
+<span><span class="co">#&gt;  3 Northern Africa              </span></span>
+<span><span class="co">#&gt;  4 Sub-Saharan Africa           </span></span>
+<span><span class="co">#&gt;  5 Eastern Africa               </span></span>
+<span><span class="co">#&gt;  6 Middle Africa                </span></span>
+<span><span class="co">#&gt;  7 Southern Africa              </span></span>
+<span><span class="co">#&gt;  8 Western Africa               </span></span>
+<span><span class="co">#&gt;  9 Northern America             </span></span>
+<span><span class="co">#&gt; 10 Latin America &amp; the Caribbean</span></span>
+<span><span class="co">#&gt; # … with 254 more rows</span></span></code></pre></div>
+<div class="sourceCode" id="cb648"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_un_pop</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Series</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 7 × 1</span></span>
+<span><span class="co">#&gt;   Series                                                  </span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;                                                   </span></span>
+<span><span class="co">#&gt; 1 Population annual rate of increase (percent)            </span></span>
+<span><span class="co">#&gt; 2 Total fertility rate (children per women)               </span></span>
+<span><span class="co">#&gt; 3 Infant mortality for both sexes (per 1,000 live births) </span></span>
+<span><span class="co">#&gt; 4 Maternal mortality ratio (deaths per 100,000 population)</span></span>
+<span><span class="co">#&gt; 5 Life expectancy at birth for both sexes (years)         </span></span>
+<span><span class="co">#&gt; 6 Life expectancy at birth for males (years)              </span></span>
+<span><span class="co">#&gt; 7 Life expectancy at birth for females (years)</span></span></code></pre></div>
+<ol style="list-style-type: decimal">
+<li>Footnotes need to be studied.</li>
+<li>There are four different sources.</li>
+<li>X is for the region, the first 30 are areas, and the rest are countries or regions.</li>
+<li>There are seven series. It may be easier if we assign shorter names for each value.</li>
+</ol>
+<div class="sourceCode" id="cb649"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">pop_area</span> <span class="op">&lt;-</span> <span class="va">df_un_pop</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">30</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">pop_area</span></span>
+<span><span class="co">#&gt;  [1] "Total, all countries or areas"</span></span>
+<span><span class="co">#&gt;  [2] "Africa"                       </span></span>
+<span><span class="co">#&gt;  [3] "Northern Africa"              </span></span>
+<span><span class="co">#&gt;  [4] "Sub-Saharan Africa"           </span></span>
+<span><span class="co">#&gt;  [5] "Eastern Africa"               </span></span>
+<span><span class="co">#&gt;  [6] "Middle Africa"                </span></span>
+<span><span class="co">#&gt;  [7] "Southern Africa"              </span></span>
+<span><span class="co">#&gt;  [8] "Western Africa"               </span></span>
+<span><span class="co">#&gt;  [9] "Northern America"             </span></span>
+<span><span class="co">#&gt; [10] "Latin America &amp; the Caribbean"</span></span>
+<span><span class="co">#&gt; [11] "Caribbean"                    </span></span>
+<span><span class="co">#&gt; [12] "Central America"              </span></span>
+<span><span class="co">#&gt; [13] "South America"                </span></span>
+<span><span class="co">#&gt; [14] "Asia"                         </span></span>
+<span><span class="co">#&gt; [15] "Central Asia"                 </span></span>
+<span><span class="co">#&gt; [16] "Eastern Asia"                 </span></span>
+<span><span class="co">#&gt; [17] "South-central Asia"           </span></span>
+<span><span class="co">#&gt; [18] "South-eastern Asia"           </span></span>
+<span><span class="co">#&gt; [19] "Southern Asia"                </span></span>
+<span><span class="co">#&gt; [20] "Western Asia"                 </span></span>
+<span><span class="co">#&gt; [21] "Europe"                       </span></span>
+<span><span class="co">#&gt; [22] "Eastern Europe"               </span></span>
+<span><span class="co">#&gt; [23] "Northern Europe"              </span></span>
+<span><span class="co">#&gt; [24] "Southern Europe"              </span></span>
+<span><span class="co">#&gt; [25] "Western Europe"               </span></span>
+<span><span class="co">#&gt; [26] "Oceania"                      </span></span>
+<span><span class="co">#&gt; [27] "Australia and New Zealand"    </span></span>
+<span><span class="co">#&gt; [28] "Melanesia"                    </span></span>
+<span><span class="co">#&gt; [29] "Micronesia"                   </span></span>
+<span><span class="co">#&gt; [30] "Polynesia"</span></span></code></pre></div>
+<div class="sourceCode" id="cb650"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">un_pop</span> <span class="op">&lt;-</span> <span class="va">df_un_pop</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span>Region <span class="op">=</span> <span class="va">X</span>, <span class="va">Year</span>, <span class="va">Series</span>, <span class="va">Value</span><span class="op">)</span></span>
+<span><span class="va">un_pop</span></span>
+<span><span class="co">#&gt; # A tibble: 6,654 × 4</span></span>
+<span><span class="co">#&gt;    Region                         Year Series          Value</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;                         &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 Total, all countries or areas  2010 Population ann…   1.3</span></span>
+<span><span class="co">#&gt;  2 Total, all countries or areas  2010 Total fertilit…   2.6</span></span>
+<span><span class="co">#&gt;  3 Total, all countries or areas  2010 Infant mortali…  37.1</span></span>
+<span><span class="co">#&gt;  4 Total, all countries or areas  2010 Maternal morta… 253  </span></span>
+<span><span class="co">#&gt;  5 Total, all countries or areas  2010 Life expectanc…  70.1</span></span>
+<span><span class="co">#&gt;  6 Total, all countries or areas  2010 Life expectanc…  67.6</span></span>
+<span><span class="co">#&gt;  7 Total, all countries or areas  2010 Life expectanc…  72.7</span></span>
+<span><span class="co">#&gt;  8 Total, all countries or areas  2015 Population ann…   1.2</span></span>
+<span><span class="co">#&gt;  9 Total, all countries or areas  2015 Total fertilit…   2.5</span></span>
+<span><span class="co">#&gt; 10 Total, all countries or areas  2015 Infant mortali…  31.5</span></span>
+<span><span class="co">#&gt; # … with 6,644 more rows</span></span></code></pre></div>
+<p>Let us change the names of series.</p>
+<div class="sourceCode" id="cb651"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">un_pop_wide</span> <span class="op">&lt;-</span> <span class="va">un_pop</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span><span class="op">(</span>names_from <span class="op">=</span> <span class="va">Series</span>, values_from <span class="op">=</span> <span class="va">Value</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">un_pop_wide</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Region"</span>, <span class="st">"Year"</span>, <span class="st">"IncRate"</span>, <span class="st">"Fert"</span>, <span class="st">"InfDeath"</span>, <span class="st">"MatDeath"</span>, <span class="st">"LifeExp"</span>, <span class="st">"LifeExpM"</span>, <span class="st">"LifeExpF"</span><span class="op">)</span></span>
+<span><span class="va">un_pop_wide</span></span>
+<span><span class="co">#&gt; # A tibble: 1,005 × 9</span></span>
+<span><span class="co">#&gt;    Region         Year IncRate  Fert InfDe…¹ MatDe…² LifeExp</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;         &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 Total, all c…  2010     1.3   2.6    37.1     253    70.1</span></span>
+<span><span class="co">#&gt;  2 Total, all c…  2015     1.2   2.5    31.5     225    71.8</span></span>
+<span><span class="co">#&gt;  3 Total, all c…  2017     1.1   2.5    29.6     218    72.3</span></span>
+<span><span class="co">#&gt;  4 Total, all c…  2022     0.8   2.3    27.5      NA    71.7</span></span>
+<span><span class="co">#&gt;  5 Africa         2010     2.6   4.9    60.9      NA    58.6</span></span>
+<span><span class="co">#&gt;  6 Africa         2015     2.6   4.6    52.5      NA    61.1</span></span>
+<span><span class="co">#&gt;  7 Africa         2022     2.3   4.2    44.2      NA    62.2</span></span>
+<span><span class="co">#&gt;  8 Northern Afr…  2010     1.9   3.2    29.5     148    69.6</span></span>
+<span><span class="co">#&gt;  9 Northern Afr…  2015     2.1   3.4    25.3     120    70.9</span></span>
+<span><span class="co">#&gt; 10 Northern Afr…  2017     2     3.2    24.2     115    71.5</span></span>
+<span><span class="co">#&gt; # … with 995 more rows, 2 more variables: LifeExpM &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   LifeExpF &lt;dbl&gt;, and abbreviated variable names</span></span>
+<span><span class="co">#&gt; #   ¹​InfDeath, ²​MatDeath</span></span></code></pre></div>
+<div class="sourceCode" id="cb652"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">un_pop_long</span> <span class="op">&lt;-</span> <span class="va">un_pop_wide</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span>, names_to <span class="op">=</span> <span class="st">"Series"</span>, values_to <span class="op">=</span> <span class="st">"Value"</span><span class="op">)</span></span>
+<span><span class="va">un_pop_long</span>                                           </span>
+<span><span class="co">#&gt; # A tibble: 7,035 × 4</span></span>
+<span><span class="co">#&gt;    Region                         Year Series   Value</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;                         &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 Total, all countries or areas  2010 IncRate    1.3</span></span>
+<span><span class="co">#&gt;  2 Total, all countries or areas  2010 Fert       2.6</span></span>
+<span><span class="co">#&gt;  3 Total, all countries or areas  2010 InfDeath  37.1</span></span>
+<span><span class="co">#&gt;  4 Total, all countries or areas  2010 MatDeath 253  </span></span>
+<span><span class="co">#&gt;  5 Total, all countries or areas  2010 LifeExp   70.1</span></span>
+<span><span class="co">#&gt;  6 Total, all countries or areas  2010 LifeExpM  67.6</span></span>
+<span><span class="co">#&gt;  7 Total, all countries or areas  2010 LifeExpF  72.7</span></span>
+<span><span class="co">#&gt;  8 Total, all countries or areas  2015 IncRate    1.2</span></span>
+<span><span class="co">#&gt;  9 Total, all countries or areas  2015 Fert       2.5</span></span>
+<span><span class="co">#&gt; 10 Total, all countries or areas  2015 InfDeath  31.5</span></span>
+<span><span class="co">#&gt; # … with 7,025 more rows</span></span></code></pre></div>
+<div class="sourceCode" id="cb653"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">un_pop_long_area</span> <span class="op">&lt;-</span> <span class="va">un_pop_long</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">pop_area</span><span class="op">)</span></span>
+<span><span class="va">un_pop_long_region</span> <span class="op">&lt;-</span> <span class="va">un_pop_long</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">Region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">pop_area</span><span class="op">)</span></span>
+<span><span class="va">un_pop_wide_area</span> <span class="op">&lt;-</span> <span class="va">un_pop_wide</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">pop_area</span><span class="op">)</span></span>
+<span><span class="va">un_pop_wide_region</span> <span class="op">&lt;-</span> <span class="va">un_pop_wide</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">Region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">pop_area</span><span class="op">)</span></span></code></pre></div>
+<p>Now we can visualize data.</p>
 
+</div>
+</div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="oecd.html"><span class="header-section-number">25</span> OECD</a></div>
 <div class="next"><a href="wir.html"><span class="header-section-number">27</span> World Inequality Report</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#undata"><span class="header-section-number">26</span> UN Data</a></li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#undata"><span class="header-section-number">26</span> UN Data</a></li>
+<li><a class="nav-link" href="#setup-5"><span class="header-section-number">26.1</span> Setup</a></li>
+<li><a class="nav-link" href="#importing-un-data"><span class="header-section-number">26.2</span> Importing UN Data</a></li>
+<li>
+<a class="nav-link" href="#examples-1"><span class="header-section-number">26.3</span> Examples</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#education-1"><span class="header-section-number">26.3.1</span> Education</a></li>
+<li><a class="nav-link" href="#population-1"><span class="header-section-number">26.3.2</span> Population</a></li>
+</ul>
+</li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
