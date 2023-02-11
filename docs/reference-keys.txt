@@ -352,6 +352,17 @@ augment
 references-of-broom
 eda
 what-is-eda-posit-primers-visualise-data-2
+eda-workflow-using-r-studio
+eda-step-0-1
+eda-by-r-studio-step-1-2
+eda-by-r-studio-step-2-2
+eda-by-r-studio-step-3---importing-data-1
+references-1
+eda-by-r-studio-step-4---data-trasnformation-1
+references-2
+eda-by-r-studio-step-5---visualize-data-1
+references-3
+eda-by-r-studio-step-6---conclusions-and-questions-for-further-study-1
 importing
 transforming
 dplyr-overview-1
@@ -394,7 +405,7 @@ code-chunk-options-1
 presentation-and-paper-1
 word-1
 powerpoint-1
-references-1
+references-4
 worldbank
 open-and-public-data-world-bank-2
 open-government-data-toolkit-open-data-defined-2

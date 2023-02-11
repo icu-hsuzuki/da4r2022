@@ -1,5 +1,7 @@
 # `tidyr` {#tidy}
 
+> We study the concept of tidy data and learn how to use the package `tidyr`, especially the functions `pivot_longer`, and it's converse `pivot_wider`. We also learn how to combine two data frames a little using functions of `dplyr`.
+
 ## Reviews and Previews
 
 ### Example: World Inequility Report - WIR2022
@@ -42,6 +44,9 @@ excel_sheets("./data/WIR2022s.xlsx")
 #> [29] "data-F12"  "data-F13." "data-F14." "data-F15"
 ```
 
+Recall that we added `mode = "wb"` because Excel files are binary files, not text files such as CSV files.
+
+When we use Excel files, we see `...1`, `...2`, `...3`, etc., as column names. These are columns with no column names in the original Excel file, and `R` assigned column names automatically. 
 
 
 ### F1: Global income and wealth inequality, 2021
@@ -57,7 +62,7 @@ df_f1
 #> 2 Wealth       0.0199        0.224     0.756    0.378
 ```
 
-
+The table above is nothing terrible; however, if we have it in the following format, we can construct a chart applying the color aesthetic mapping to the group.
 
 
 ```
@@ -83,7 +88,7 @@ df_f1_rev %>%
 
 <img src="10-tidyr_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
-
+We apply the `pivot_longer` function of the `tidyr` package, to transform the first table into the second. 
 
 ## References of `tidyr`
 
@@ -96,6 +101,7 @@ df_f1_rev %>%
   - [Separate and Unite](https://rstudio.cloud/learn/primers/4.2) 
   - [Join Data Sets](https://rstudio.cloud/learn/primers/4.3)
 
+The first component, 'Reshape Data' deals with `pivot_longer` and `pivot_wider`. However, it uses an older version of these functions calls `gather` and `spread`.
 
 ## Variables, values, and observations: Definitions
 
@@ -124,6 +130,8 @@ Data can come in a variety of formats, but one format is easier to use in R than
 
 
 ## `tidyr` Basics
+
+Let us look at the figure in [R4DS](https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png).
 
 <img src="./data/tidy-1.png" width="100%" />
 
@@ -166,7 +174,9 @@ df_f1
 #> 8 Wealth Top 1%     0.378
 ```
 
+In the example above, `-1`, i.e., `cols = -1` stands for all colums except the first.
 
+Now, we can use the `fill` aesthetic in addition to `position = "dodge"`. The default position is "stack".
 
 
 ```r
@@ -177,7 +187,7 @@ df_f1_rev %>%
 
 <img src="10-tidyr_files/figure-html/unnamed-chunk-8-1.png" width="672" />
 
-
+Let us add the value as a label, change the y-axis to percent, and add the title. The interpretation and source are from the original
 
 
 ```r
@@ -198,7 +208,8 @@ df_f1_rev %>% filter(group != "Top 1%") %>%
 **Interpretation**: The global bottom 50% captures 8.5% of total income measured at Purchasing Power Parity (PPP). The global bottom 50% owns 2% of wealth (at Purchasing Power Parity). The global top 10% owns 76% of total Household wealth and captures 52% of total income in 2021. Note that top wealth holders are not necessarily top income holders. Incomes are measured after the operation of pension and unemployment systems and before taxes and transfers.  
 **Sources and series**: wir2022.wid.world/methodology.
 
-
+  
+The next F2 is similar to F1.
 
 ## F2: The poorest half lags behind: Bottom 50%, middle 40% and top 10% income shares across the world in 2021
 
@@ -303,7 +314,7 @@ F4 and F13 are similar. Please use `pivot_longer` to tidy the data and create ch
 * F12: Female share in global labor incomes, 1990-2020
 * F14: Global carbon inequality, 2019. Group contribution to world emissions (%)
 
-
+The next is an example of the world map.
 
 ## F3: Top 10/Bottom 50 income gaps across the world, 2021
 
@@ -337,6 +348,8 @@ df_f3
 
 
 * To 10 / Bottom 50 ratio has 5 classes: 5-12, 12-13, 13-16, 16-19, 19-140
+
+* Let us look at the range and distribution of the values in `T10B50`.
 
 
 ```r
@@ -377,7 +390,7 @@ df_f3 %>% arrange(desc(T10B50))
 #> # … with 167 more rows
 ```
 
-
+Using the information above, we set breakpoints and use R Base's `cut` command to divide into five classes, and add it as a new column using `mutate`
 
 
 ```r
@@ -415,7 +428,7 @@ df_f3 %>% mutate(`Top 10 Bottom 50 Ratio` = cut(T10B50,breaks = c(5, 12, 13, 16,
 
 <img src="10-tidyr_files/figure-html/unnamed-chunk-21-1.png" width="672" />
 
-
+We observe that we have missing data from several countries. One common problem is the description of the country names varies in different data; in this case, the country names of `map_data()` and those of `wir2022`. There are several ways to edit country names. Here is one of them.
 
 
 ```r
@@ -452,7 +465,7 @@ df_f3 %>% mutate(`Top 10 Bottom 50 Ratio` =
 <img src="10-tidyr_files/figure-html/unnamed-chunk-23-1.png" width="672" />
 
 
-
+Now it is much better. 
 
 
 
@@ -493,7 +506,7 @@ df_f3 %>% mutate(`Top 10 Bottom 50 Ratio` =
 
 <img src="10-tidyr_files/figure-html/unnamed-chunk-26-1.png" width="672" />
 
-
+Finally, change colors and change labels.
 
 
 ```r
@@ -515,7 +528,7 @@ df_f3 %>%
 
 <img src="10-tidyr_files/figure-html/unnamed-chunk-28-1.png" width="672" />
 
-
+We could not treat the data of three. We can check by using `anti_join`.
 
 
 ```r
@@ -553,7 +566,7 @@ Check `dplyr` cheat sheet, and Posit Primers Tidy Data.
 * F15: Per capita emissions acriss the world, 2019 - add row names + dodge
 
 
-
+We will discuss `geom_smooth` and `stat_smooth` in Chapter \@ref(model) applied to F5, F9, F7, F10.
 
 ## F5: Global income inequality: T10/B50 ratio, 1820-2020
 
@@ -803,7 +816,7 @@ df_f11 <- read_excel("./data/WIR2022s.xlsx", sheet = "data-F11"); df_f11
 #> 12  2020 0.0149   0.354  0.0576  0.219
 ```
 
-
+We want to separate 'US', 'EU' and 'bot50', 'top10', and 'top1'. To apply `names_sep = "_"`, we first changed the name of columns. 
 
 
 ```r
@@ -928,6 +941,7 @@ df_f11 %>%
 <img src="10-tidyr_files/figure-html/unnamed-chunk-43-1.png" width="672" />
 
 
+The following is similar to the previous example. 
 
 ## F8: The rise of private versus the decline of public wealth in rich countries, 1970-2020 - rename + pivot + pivot + fit curve
 
@@ -1174,4 +1188,7 @@ df_f15 %>% mutate(region = rep(regionWID[!is.na(regionWID)], each = 3)) %>%
 
 <img src="10-tidyr_files/figure-html/unnamed-chunk-54-1.png" width="672" />
 
+Review one by one, referring to the following.
 
+
+**References**: https://ds-sl.github.io/data-analysis/wir2022.nb.html

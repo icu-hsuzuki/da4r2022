@@ -1,7 +1,7 @@
 # (PART) PART II EDA BASICS {-}
 # Exploratory Data analysis {#eda}
 
-### What is EDA (Posit Primers: [Visualise Data](https://posit.cloud/learn/primers/3.1))
+## What is EDA (Posit Primers: [Visualise Data](https://posit.cloud/learn/primers/3.1))
 
 1. EDA is an iterative cycle that helps you understand what your data says. When you do EDA, you:
 
@@ -12,3 +12,188 @@
 Use what you learn to refine your questions and/or generate new questions
 
 EDA is an important part of any data analysis. You can use EDA to make discoveries about the world; or you can use EDA to ensure the quality of your data, asking questions about whether the data meets your standards or not.
+
+## EDA Workflow using R Studio
+
+### EDA Step 0
+
+1. Choose and clarify a topic to study.
+2. List questions to study
+3. Find data:
+  - link to data with a url: universal resource locator in a webpage
+  - download data in csv, Excel, etc.
+
+Repeat the process during your EDA.
+
+
+![image](data/data-science.png)
+
+### EDA by R Studio: Step 1
+
+In RStudio,
+
+1.1. Project
+
+  * Create a new project: File > New Project; or  
+  * Open a project: File > Open Project, Open Project in New Session, Open Recent Project  
+    - It is easier to find an existing project from: File > Recent Project 
+  * _Check there is a file `project_name.Rproj` in your project folder (directory)_
+
+ 
+1.2. data folder (directory) `data`
+
+  * Create a data folder: Press New Folder at the right bottom pane; or 
+  * Confirm the data folder previously created: Press Files at the right bottom pane
+  * _If you follow 1, the data folder exists in your project folder_
+
+ 
+1.3. Move (or copy) data for the project to the data folder
+
+  * If you downloaded the data, it is in your Download folder. Move it to `data`.
+  * _Check in your RStudio that your data is in `data`: Press Files at the right bottom pane and click `data`, the data folder._
+  
+
+
+
+### EDA by R Studio: Step 2
+
+2.1. Project Notebook: Memo
+
+  - Create an R Notebook: File > New File > R Notebook
+  
+    + You can use R Notebook template in Moodle by moving the template (template.Rmd or template.nb.Rmd) file in your project folder or copy and paste the text file into your new R Notebook.
+    + If you use template.nb.Rmd (R Notebook File), choose Open in Editor.
+    
+  - Add descriptive title. 
+  
+2.2. Setup Code Chunk 
+
+  - Create a code chunk and add packages to use in the project and RUN the code.
+  
+      + library(tidyverse)
+      + library(WDI)
+      + or any other packages
+
+
+2.3. Choose `Source` or `Visual` editor mode, and start editing Project Notebook
+
+  - Set up Headings such as: About, Data, Analysis and Visualizations, Conclusions
+  - Under About or Data, paste url of the sites and/or the data
+
+      + eg. [World Development Indicator](https://datatopics.worldbank.org/world-development-indicators/)
+      + eg. [Public expenditure on education](https://data.un.org/_Docs/SYB/CSV/SYB65_245_202209_Public%20expenditure%20on%20education.csv)
+
+
+2.4. Edit a new file by saving as for a report
+
+  - File > Save As...
+
+
+
+### EDA by R Studio: Step 3 - Importing Data
+
+Assign a name you can recall easily when you import data. You may need to reload the data with options.
+
+3.1. Use a package:
+
+  * WDI, wir, eurostat, etc/
+  * `wdi_shortname <- WDI(indicator = "indicator's name", ... )
+  * Store the data and use it: `write_csv(wdi_shortname, "./data/wdi_shortname.csv")`
+  * `wdi_shortname <- read_csv("./data/wdi_shortname.csv")`
+  
+3.2. Use `readr` to read from `data`, your data folder
+
+  * `df1_shortname <- read_csv("./data/file_name.csv")`
+
+
+
+3.3. Use `readr` to read using the url of the data
+
+  * `df2_shortname <- read_csv("url_of_the_data")`
+  * Store the data and use it: `write_csv(df2_shortname, "./data/df2_shortname.csv")`
+  * `df2_shortname <- read_csv("./data/df2_shortname.csv")`
+  
+3.5. Use `readxl` to read Excel data. Add `library(readxl)` in the setup and run.
+
+  * `df4 <- read_excel("./data/file_name.xlsx", sheet = 1)`
+  
+#### References
+
+* Cheat Sheet - `readr`
+* [readr](https://readr.tidyverse.org)
+* [readxl](https://readxl.tidyverse.org)
+
+
+
+
+### EDA by R Studio: Step 4 - Data Trasnformation
+
+4.1. Look at the data: suppose `df` is the data frame
+
+  * It is a good option to change into a tibble: `dt <- as_tibble(df)`
+  * `head(df)`, `str(df)`, `summary(df)`, `dt`, `glimpse(dt)`
+
+4.2. Look at each variable
+
+  * categorical? numerical? 
+  * factor? - [forcats](https://forcats.tidyverse.org)
+  
+4.3. Variation of each data: suppose `x1` is a column name.
+
+  * `df %>% ggplot() + geom_histogram(aes(x1), bins = 30)`
+  * `df %>% drop_na(x1)`: see the rows with a value in `x1`. If the value is NA, the row is not shown.
+  
+    - `df_wo_na <- df %>% drop_na(x1)` if you want to use only the rows without NA in `x1`
+    
+
+
+4.4. Use `dpylr` and `tidyr` to change column names, tidy data, and/or summarize data
+
+  * `rename`, `select`, `filter`, `arrange`, `mutate`, `pivot_longer()`, `pivot_wider()`, `group_by` and `summarize`
+
+
+#### References
+
+* Cheat Sheet - `dplyr` and `tidyr`
+* [dplyr](https://dplyr.tidyverse.org)
+* [tidyr](https://tidyr.tidyverse.org)
+
+
+
+### EDA by R Studio: Step 5 - Visualize Data
+
+5.1. In combination with Stap 4 - data transformation, try various data visualization.
+
+  * What type of variation occurs within my variables?
+  * What type of covariation occurs between my variables?
+
+
+5.2. Keep a record of what you can observe by the visualization
+
+5.3. Edit the list of questions by adding or polishing
+
+5.4. Select several informative chart and add options
+
+5.5. Look at examples from the textbooks or teaching site to have better visualization
+
+
+#### References
+
+* Cheat Sheet - `ggplot2` 
+* [ggplot2](https://ggplot2.tidyverse.org)
+* [ggplot2 book](https://ggplot2-book.org)
+
+
+
+### EDA by R Studio: Step 6 - Conclusions and Questions for Further Study
+
+1. EDA is an iterative cycle that helps you understand what your data says. When you do EDA, you:
+
+2. Generate questions about your data
+
+3. Search for answers by visualising, transforming, and/or modeling your data
+
+Use what you learn to refine your questions and/or generate new questions
+
+EDA is an important part of any data analysis. You can use EDA to make discoveries about the world; or you can use EDA to ensure the quality of your data, asking questions about whether the data meets your standards or not.
+

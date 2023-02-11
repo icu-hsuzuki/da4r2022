@@ -6,15 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 10 tidyr | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
-<meta name="description" content="10.1 Reviews and Previews  10.1.1 Example: World Inequility Report - WIR2022 World Inequality Report: https://wir2022.wid.world/ Executive Summary: https://wir2022.wid.world/executive-summary/...">
+<meta name="description" content="We study the concept of tidy data and learn how to use the package tidyr, especially the functions pivot_longer, and it’s converse pivot_wider. We also learn how to combine two data frames a...">
 <meta name="generator" content="bookdown 0.31 with bs4_book()">
 <meta property="og:title" content="Chapter 10 tidyr | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/tidy.html">
-<meta property="og:description" content="10.1 Reviews and Previews  10.1.1 Example: World Inequility Report - WIR2022 World Inequality Report: https://wir2022.wid.world/ Executive Summary: https://wir2022.wid.world/executive-summary/...">
+<meta property="og:description" content="We study the concept of tidy data and learn how to use the package tidyr, especially the functions pivot_longer, and it’s converse pivot_wider. We also learn how to combine two data frames a...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 10 tidyr | Data Analysis for Researchers AY2022">
-<meta name="twitter:description" content="10.1 Reviews and Previews  10.1.1 Example: World Inequility Report - WIR2022 World Inequality Report: https://wir2022.wid.world/ Executive Summary: https://wir2022.wid.world/executive-summary/...">
+<meta name="twitter:description" content="We study the concept of tidy data and learn how to use the package tidyr, especially the functions pivot_longer, and it’s converse pivot_wider. We also learn how to combine two data frames a...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -113,6 +113,9 @@
 <h1>
 <span class="header-section-number">10</span> <code>tidyr</code><a class="anchor" aria-label="anchor" href="#tidy"><i class="fas fa-link"></i></a>
 </h1>
+<blockquote>
+<p>We study the concept of tidy data and learn how to use the package <code>tidyr</code>, especially the functions <code>pivot_longer</code>, and it’s converse <code>pivot_wider</code>. We also learn how to combine two data frames a little using functions of <code>dplyr</code>.</p>
+</blockquote>
 <div id="reviews-and-previews-1" class="section level2" number="10.1">
 <h2>
 <span class="header-section-number">10.1</span> Reviews and Previews<a class="anchor" aria-label="anchor" href="#reviews-and-previews-1"><i class="fas fa-link"></i></a>
@@ -155,6 +158,8 @@
 <span><span class="co">#&gt; [21] "data-F4"   "data-F5"   "data-F6"   "data-F7"  </span></span>
 <span><span class="co">#&gt; [25] "data-F8"   "data-F9"   "data-F10"  "data-F11" </span></span>
 <span><span class="co">#&gt; [29] "data-F12"  "data-F13." "data-F14." "data-F15"</span></span></code></pre></div>
+<p>Recall that we added <code>mode = "wb"</code> because Excel files are binary files, not text files such as CSV files.</p>
+<p>When we use Excel files, we see <code>...1</code>, <code>...2</code>, <code>...3</code>, etc., as column names. These are columns with no column names in the original Excel file, and <code>R</code> assigned column names automatically.</p>
 </div>
 <div id="f1-global-income-and-wealth-inequality-2021-1" class="section level3" number="10.1.2">
 <h3>
@@ -168,6 +173,7 @@
 <span><span class="co">#&gt;   &lt;chr&gt;         &lt;dbl&gt;        &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt; 1 Income       0.084         0.394     0.522    0.192</span></span>
 <span><span class="co">#&gt; 2 Wealth       0.0199        0.224     0.756    0.378</span></span></code></pre></div>
+<p>The table above is nothing terrible; however, if we have it in the following format, we can construct a chart applying the color aesthetic mapping to the group.</p>
 <pre><code>#&gt; # A tibble: 6 × 3
 #&gt;   cat    group       value
 #&gt;   &lt;chr&gt;  &lt;chr&gt;       &lt;dbl&gt;
@@ -182,6 +188,7 @@
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cat</span>, y <span class="op">=</span> <span class="va">value</span>, fill <span class="op">=</span> <span class="va">group</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-4-1.png" width="672"></div>
+<p>We apply the <code>pivot_longer</code> function of the <code>tidyr</code> package, to transform the first table into the second.</p>
 </div>
 </div>
 <div id="references-of-tidyr" class="section level2" number="10.2">
@@ -205,6 +212,7 @@
 <li><a href="https://rstudio.cloud/learn/primers/4.2">Separate and Unite</a></li>
 <li><a href="https://rstudio.cloud/learn/primers/4.3">Join Data Sets</a></li>
 </ul>
+<p>The first component, ‘Reshape Data’ deals with <code>pivot_longer</code> and <code>pivot_wider</code>. However, it uses an older version of these functions calls <code>gather</code> and <code>spread</code>.</p>
 </div>
 </div>
 <div id="variables-values-and-observations-definitions" class="section level2" number="10.3">
@@ -244,6 +252,7 @@
 <h2>
 <span class="header-section-number">10.5</span> <code>tidyr</code> Basics<a class="anchor" aria-label="anchor" href="#tidyr-basics"><i class="fas fa-link"></i></a>
 </h2>
+<p>Let us look at the figure in <a href="https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png">R4DS</a>.</p>
 <div class="inline-figure"><img src="data/tidy-1.png" width="100%"></div>
 <ol style="list-style-type: decimal">
 <li>Each variable is in its own column</li>
@@ -277,11 +286,14 @@
 <span><span class="co">#&gt; 6 Wealth Middle 40% 0.224 </span></span>
 <span><span class="co">#&gt; 7 Wealth Top 10%    0.756 </span></span>
 <span><span class="co">#&gt; 8 Wealth Top 1%     0.378</span></span></code></pre></div>
+<p>In the example above, <code>-1</code>, i.e., <code>cols = -1</code> stands for all colums except the first.</p>
+<p>Now, we can use the <code>fill</code> aesthetic in addition to <code>position = "dodge"</code>. The default position is “stack”.</p>
 <div class="sourceCode" id="cb291"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f1_rev</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">...1</span>, y <span class="op">=</span> <span class="va">value</span>, fill <span class="op">=</span> <span class="va">group</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span>position <span class="op">=</span> <span class="st">"dodge"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-8-1.png" width="672"></div>
+<p>Let us add the value as a label, change the y-axis to percent, and add the title. The interpretation and source are from the original</p>
 <div class="sourceCode" id="cb292"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f1_rev</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">group</span> <span class="op">!=</span> <span class="st">"Top 1%"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
@@ -293,6 +305,7 @@
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Figure 1. Global income and wealth inequality, 2021"</span>,</span>
 <span>       x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">"Share of total income or wealth"</span>, fill <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></code></pre></div>
 <p><img src="10-tidyr_files/figure-html/unnamed-chunk-10-1.png" width="672"><strong>Interpretation</strong>: The global bottom 50% captures 8.5% of total income measured at Purchasing Power Parity (PPP). The global bottom 50% owns 2% of wealth (at Purchasing Power Parity). The global top 10% owns 76% of total Household wealth and captures 52% of total income in 2021. Note that top wealth holders are not necessarily top income holders. Incomes are measured after the operation of pension and unemployment systems and before taxes and transfers.<br><strong>Sources and series</strong>: wir2022.wid.world/methodology.</p>
+<p>The next F2 is similar to F1.</p>
 </div>
 <div id="f2-the-poorest-half-lags-behind-bottom-50-middle-40-and-top-10-income-shares-across-the-world-in-2021" class="section level2" number="10.7">
 <h2>
@@ -379,6 +392,7 @@ In Console: vignette(“pivot”)</p>
 <li>F12: Female share in global labor incomes, 1990-2020</li>
 <li>F14: Global carbon inequality, 2019. Group contribution to world emissions (%)</li>
 </ul>
+<p>The next is an example of the world map.</p>
 </div>
 </div>
 <div id="f3-top-10bottom-50-income-gaps-across-the-world-2021" class="section level2" number="10.10">
@@ -409,7 +423,8 @@ In Console: vignette(“pivot”)</p>
 </h2>
 <div class="inline-figure"><img src="data/F3.png" width="100%"></div>
 <ul>
-<li>To 10 / Bottom 50 ratio has 5 classes: 5-12, 12-13, 13-16, 16-19, 19-140</li>
+<li><p>To 10 / Bottom 50 ratio has 5 classes: 5-12, 12-13, 13-16, 16-19, 19-140</p></li>
+<li><p>Let us look at the range and distribution of the values in <code>T10B50</code>.</p></li>
 </ul>
 <div class="sourceCode" id="cb300"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f3</span><span class="op">$</span><span class="va">T10B50</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -436,6 +451,7 @@ In Console: vignette(“pivot”)</p>
 <span><span class="co">#&gt;  9  2021 Angola                     32.1</span></span>
 <span><span class="co">#&gt; 10  2021 Yemen                      32.0</span></span>
 <span><span class="co">#&gt; # … with 167 more rows</span></span></code></pre></div>
+<p>Using the information above, we set breakpoints and use R Base’s <code>cut</code> command to divide into five classes, and add it as a new column using <code>mutate</code></p>
 <div class="sourceCode" id="cb303"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>`Top 10 Bottom 50 Ratio` <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/cut.html">cut</a></span><span class="op">(</span><span class="va">T10B50</span>,breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">12</span>, <span class="fl">13</span>, <span class="fl">16</span>, <span class="fl">19</span>,<span class="fl">140</span><span class="op">)</span>, </span>
@@ -463,6 +479,7 @@ In Console: vignette(“pivot”)</p>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_map.html">geom_map</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">`Top 10 Bottom 50 Ratio`</span><span class="op">)</span>, map <span class="op">=</span> <span class="va">world_map</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/expand_limits.html">expand_limits</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">world_map</span><span class="op">$</span><span class="va">long</span>, y <span class="op">=</span> <span class="va">world_map</span><span class="op">$</span><span class="va">lat</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-21-1.png" width="672"></div>
+<p>We observe that we have missing data from several countries. One common problem is the description of the country names varies in different data; in this case, the country names of <code><a href="https://ggplot2.tidyverse.org/reference/map_data.html">map_data()</a></code> and those of <code>wir2022</code>. There are several ways to edit country names. Here is one of them.</p>
 <div class="sourceCode" id="cb305"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">world_map_wir</span> <span class="op">&lt;-</span> <span class="va">world_map</span></span>
 <span><span class="va">world_map_wir</span><span class="op">$</span><span class="va">region</span><span class="op">[</span></span>
@@ -488,6 +505,7 @@ In Console: vignette(“pivot”)</p>
 <span>    map <span class="op">=</span> <span class="va">world_map_wir</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/expand_limits.html">expand_limits</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">world_map_wir</span><span class="op">$</span><span class="va">long</span>, y <span class="op">=</span> <span class="va">world_map_wir</span><span class="op">$</span><span class="va">lat</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-23-1.png" width="672"></div>
+<p>Now it is much better.</p>
 <div class="sourceCode" id="cb307"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>`Top 10 Bottom 50 Ratio` <span class="op">=</span> </span>
 <span>    <span class="fu"><a href="https://rdrr.io/r/base/cut.html">cut</a></span><span class="op">(</span><span class="va">T10B50</span>,breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">12</span>, <span class="fl">13</span>, <span class="fl">16</span>, <span class="fl">19</span>,<span class="fl">140</span><span class="op">)</span>, include.lowest <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -509,6 +527,7 @@ In Console: vignette(“pivot”)</p>
 <span>    map <span class="op">=</span> <span class="va">world_map_wir</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/expand_limits.html">expand_limits</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">world_map_wir</span><span class="op">$</span><span class="va">long</span>, y <span class="op">=</span> <span class="va">world_map_wir</span><span class="op">$</span><span class="va">lat</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-26-1.png" width="672"></div>
+<p>Finally, change colors and change labels.</p>
 <div class="sourceCode" id="cb310"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>`Top 10 Bottom 50 Ratio` <span class="op">=</span> </span>
@@ -523,6 +542,7 @@ In Console: vignette(“pivot”)</p>
 <span>        axis.text.y<span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span>, axis.ticks.y<span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">scale_fill_brewer</a></span><span class="op">(</span>palette<span class="op">=</span><span class="st">'YlOrRd'</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-28-1.png" width="672"></div>
+<p>We could not treat the data of three. We can check by using <code>anti_join</code>.</p>
 <div class="sourceCode" id="cb311"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter-joins.html">anti_join</a></span><span class="op">(</span><span class="va">world_map_wir</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Country"</span> <span class="op">=</span> <span class="st">"region"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 3 × 3</span></span>
@@ -554,6 +574,7 @@ In Console: vignette(“pivot”)</p>
 <li><p>F8: The rise of private versus the decline of public wealth in rich countries, 1970-2020 - rename + pivot + pivot + fit curve</p></li>
 <li><p>F15: Per capita emissions acriss the world, 2019 - add row names + dodge</p></li>
 </ul>
+<p>We will discuss <code>geom_smooth</code> and <code>stat_smooth</code> in Chapter <a href="model.html#model">13</a> applied to F5, F9, F7, F10.</p>
 </div>
 <div id="f5-global-income-inequality-t10b50-ratio-1820-2020" class="section level2" number="10.13">
 <h2>
@@ -753,6 +774,7 @@ In Console: vignette(“pivot”)</p>
 <span><span class="co">#&gt; 10  2000 0.0162   0.323  0.0543  0.214</span></span>
 <span><span class="co">#&gt; 11  2010 0.0111   0.357  0.0500  0.219</span></span>
 <span><span class="co">#&gt; 12  2020 0.0149   0.354  0.0576  0.219</span></span></code></pre></div>
+<p>We want to separate ‘US’, ‘EU’ and ‘bot50’, ‘top10’, and ‘top1’. To apply <code>names_sep = "_"</code>, we first changed the name of columns.</p>
 <div class="sourceCode" id="cb324"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f11</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span><span class="op">!</span><span class="va">year</span>, US_bot50 <span class="op">=</span> <span class="va">USbot50</span>, US_top1 <span class="op">=</span> <span class="va">UStop1</span>, </span>
@@ -855,6 +877,7 @@ In Console: vignette(“pivot”)</p>
 #&gt; 10  1930 US    top1  0.409  
 #&gt; # … with 38 more rows</code></pre>
 <div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-43-1.png" width="672"></div>
+<p>The following is similar to the previous example.</p>
 </div>
 </div>
 <div id="f8-the-rise-of-private-versus-the-decline-of-public-wealth-in-rich-countries-1970-2020---rename-pivot-pivot-fit-curve" class="section level2" number="10.19">
@@ -1048,6 +1071,8 @@ In Console: vignette(“pivot”)</p>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Figure 15 Per capita emissions across the world, 2019"</span>, </span>
 <span>       x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">"tonnes of CO2e per person per year"</span>, fill <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-54-1.png" width="672"></div>
+<p>Review one by one, referring to the following.</p>
+<p><strong>References</strong>: <a href="https://ds-sl.github.io/data-analysis/wir2022.nb.html" class="uri">https://ds-sl.github.io/data-analysis/wir2022.nb.html</a></p>
 
 </div>
 </div>

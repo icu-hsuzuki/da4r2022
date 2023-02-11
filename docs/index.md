@@ -22,7 +22,7 @@ This is an extended lecture note of a course jointly taught with Professor Taise
 PART I, The Introduction, basically consists of the course contents presented in class and my responses to assignments two to five. 
 The first assignment is in Chapter 1, Introduction.
 
-PART II is the basics of exploratory data analysis, abbreviated as EDA, summarized in several components. 
+PART II is the basics of exploratory data analysis, abbreviated as EDA, summarized in several components. There are overlaps with the contents scattered around in PART I.
 
 PART III explains the data source we mainly used in class: World Development Indicators of the World Bank, Our World in Data, OECD, and UN Data. As an introduction, we often used the package `WDI` to search and download the World Development Indicator data.
 

@@ -1,5 +1,6 @@
 # Workflow {#workflow}
 
+> It is an excellent time to review and sort out the data analysis workflow using R Studio. 
 
 ```{r}
 library(tidyverse)

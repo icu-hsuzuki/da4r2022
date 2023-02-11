@@ -6,15 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 16 Exploratory Data analysis | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
-<meta name="description" content="16.0.1 What is EDA (Posit Primers: Visualise Data) EDA is an iterative cycle that helps you understand what your data says. When you do EDA, you: Generate questions about your data Search for...">
+<meta name="description" content="16.1 What is EDA (Posit Primers: Visualise Data) EDA is an iterative cycle that helps you understand what your data says. When you do EDA, you: Generate questions about your data Search for...">
 <meta name="generator" content="bookdown 0.31 with bs4_book()">
 <meta property="og:title" content="Chapter 16 Exploratory Data analysis | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/eda.html">
-<meta property="og:description" content="16.0.1 What is EDA (Posit Primers: Visualise Data) EDA is an iterative cycle that helps you understand what your data says. When you do EDA, you: Generate questions about your data Search for...">
+<meta property="og:description" content="16.1 What is EDA (Posit Primers: Visualise Data) EDA is an iterative cycle that helps you understand what your data says. When you do EDA, you: Generate questions about your data Search for...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 16 Exploratory Data analysis | Data Analysis for Researchers AY2022">
-<meta name="twitter:description" content="16.0.1 What is EDA (Posit Primers: Visualise Data) EDA is an iterative cycle that helps you understand what your data says. When you do EDA, you: Generate questions about your data Search for...">
+<meta name="twitter:description" content="16.1 What is EDA (Posit Primers: Visualise Data) EDA is an iterative cycle that helps you understand what your data says. When you do EDA, you: Generate questions about your data Search for...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -113,9 +113,228 @@
 <h1>
 <span class="header-section-number">16</span> Exploratory Data analysis<a class="anchor" aria-label="anchor" href="#eda"><i class="fas fa-link"></i></a>
 </h1>
-<div id="what-is-eda-posit-primers-visualise-data-2" class="section level3" number="16.0.1">
+<div id="what-is-eda-posit-primers-visualise-data-2" class="section level2" number="16.1">
+<h2>
+<span class="header-section-number">16.1</span> What is EDA (Posit Primers: <a href="https://posit.cloud/learn/primers/3.1">Visualise Data</a>)<a class="anchor" aria-label="anchor" href="#what-is-eda-posit-primers-visualise-data-2"><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li><p>EDA is an iterative cycle that helps you understand what your data says. When you do EDA, you:</p></li>
+<li><p>Generate questions about your data</p></li>
+<li><p>Search for answers by visualising, transforming, and/or modeling your data</p></li>
+</ol>
+<p>Use what you learn to refine your questions and/or generate new questions</p>
+<p>EDA is an important part of any data analysis. You can use EDA to make discoveries about the world; or you can use EDA to ensure the quality of your data, asking questions about whether the data meets your standards or not.</p>
+</div>
+<div id="eda-workflow-using-r-studio" class="section level2" number="16.2">
+<h2>
+<span class="header-section-number">16.2</span> EDA Workflow using R Studio<a class="anchor" aria-label="anchor" href="#eda-workflow-using-r-studio"><i class="fas fa-link"></i></a>
+</h2>
+<div id="eda-step-0-1" class="section level3" number="16.2.1">
 <h3>
-<span class="header-section-number">16.0.1</span> What is EDA (Posit Primers: <a href="https://posit.cloud/learn/primers/3.1">Visualise Data</a>)<a class="anchor" aria-label="anchor" href="#what-is-eda-posit-primers-visualise-data-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">16.2.1</span> EDA Step 0<a class="anchor" aria-label="anchor" href="#eda-step-0-1"><i class="fas fa-link"></i></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>Choose and clarify a topic to study.</li>
+<li>List questions to study</li>
+<li>Find data:</li>
+</ol>
+<ul>
+<li>link to data with a url: universal resource locator in a webpage</li>
+<li>download data in csv, Excel, etc.</li>
+</ul>
+<p>Repeat the process during your EDA.</p>
+<div class="figure">
+<img src="data/data-science.png" alt=""><p class="caption">image</p>
+</div>
+</div>
+<div id="eda-by-r-studio-step-1-2" class="section level3" number="16.2.2">
+<h3>
+<span class="header-section-number">16.2.2</span> EDA by R Studio: Step 1<a class="anchor" aria-label="anchor" href="#eda-by-r-studio-step-1-2"><i class="fas fa-link"></i></a>
+</h3>
+<p>In RStudio,</p>
+<p>1.1. Project</p>
+<ul>
+<li>Create a new project: File &gt; New Project; or<br>
+</li>
+<li>Open a project: File &gt; Open Project, Open Project in New Session, Open Recent Project
+<ul>
+<li>It is easier to find an existing project from: File &gt; Recent Project</li>
+</ul>
+</li>
+<li><em>Check there is a file <code>project_name.Rproj</code> in your project folder (directory)</em></li>
+</ul>
+<p>1.2. data folder (directory) <code>data</code></p>
+<ul>
+<li>Create a data folder: Press New Folder at the right bottom pane; or</li>
+<li>Confirm the data folder previously created: Press Files at the right bottom pane</li>
+<li><em>If you follow 1, the data folder exists in your project folder</em></li>
+</ul>
+<p>1.3. Move (or copy) data for the project to the data folder</p>
+<ul>
+<li>If you downloaded the data, it is in your Download folder. Move it to <code>data</code>.</li>
+<li><em>Check in your RStudio that your data is in <code>data</code>: Press Files at the right bottom pane and click <code>data</code>, the data folder.</em></li>
+</ul>
+</div>
+<div id="eda-by-r-studio-step-2-2" class="section level3" number="16.2.3">
+<h3>
+<span class="header-section-number">16.2.3</span> EDA by R Studio: Step 2<a class="anchor" aria-label="anchor" href="#eda-by-r-studio-step-2-2"><i class="fas fa-link"></i></a>
+</h3>
+<p>2.1. Project Notebook: Memo</p>
+<ul>
+<li>
+<p>Create an R Notebook: File &gt; New File &gt; R Notebook</p>
+<ul>
+<li>You can use R Notebook template in Moodle by moving the template (template.Rmd or template.nb.Rmd) file in your project folder or copy and paste the text file into your new R Notebook.</li>
+<li>If you use template.nb.Rmd (R Notebook File), choose Open in Editor.</li>
+</ul>
+</li>
+<li><p>Add descriptive title.</p></li>
+</ul>
+<p>2.2. Setup Code Chunk</p>
+<ul>
+<li>
+<p>Create a code chunk and add packages to use in the project and RUN the code.</p>
+<ul>
+<li>library(tidyverse)</li>
+<li>library(WDI)</li>
+<li>or any other packages</li>
+</ul>
+</li>
+</ul>
+<p>2.3. Choose <code>Source</code> or <code>Visual</code> editor mode, and start editing Project Notebook</p>
+<ul>
+<li><p>Set up Headings such as: About, Data, Analysis and Visualizations, Conclusions</p></li>
+<li>
+<p>Under About or Data, paste url of the sites and/or the data</p>
+<ul>
+<li>eg. <a href="https://datatopics.worldbank.org/world-development-indicators/">World Development Indicator</a>
+</li>
+<li>eg. <a href="https://data.un.org/_Docs/SYB/CSV/SYB65_245_202209_Public%20expenditure%20on%20education.csv">Public expenditure on education</a>
+</li>
+</ul>
+</li>
+</ul>
+<p>2.4. Edit a new file by saving as for a report</p>
+<ul>
+<li>File &gt; Save As…</li>
+</ul>
+</div>
+<div id="eda-by-r-studio-step-3---importing-data-1" class="section level3" number="16.2.4">
+<h3>
+<span class="header-section-number">16.2.4</span> EDA by R Studio: Step 3 - Importing Data<a class="anchor" aria-label="anchor" href="#eda-by-r-studio-step-3---importing-data-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Assign a name you can recall easily when you import data. You may need to reload the data with options.</p>
+<p>3.1. Use a package:</p>
+<ul>
+<li>WDI, wir, eurostat, etc/</li>
+<li>`wdi_shortname &lt;- WDI(indicator = “indicator’s name”, … )</li>
+<li>Store the data and use it: <code>write_csv(wdi_shortname, "./data/wdi_shortname.csv")</code>
+</li>
+<li><code>wdi_shortname &lt;- read_csv("./data/wdi_shortname.csv")</code></li>
+</ul>
+<p>3.2. Use <code>readr</code> to read from <code>data</code>, your data folder</p>
+<ul>
+<li><code>df1_shortname &lt;- read_csv("./data/file_name.csv")</code></li>
+</ul>
+<p>3.3. Use <code>readr</code> to read using the url of the data</p>
+<ul>
+<li><code>df2_shortname &lt;- read_csv("url_of_the_data")</code></li>
+<li>Store the data and use it: <code>write_csv(df2_shortname, "./data/df2_shortname.csv")</code>
+</li>
+<li><code>df2_shortname &lt;- read_csv("./data/df2_shortname.csv")</code></li>
+</ul>
+<p>3.5. Use <code>readxl</code> to read Excel data. Add <code><a href="https://readxl.tidyverse.org">library(readxl)</a></code> in the setup and run.</p>
+<ul>
+<li><code>df4 &lt;- read_excel("./data/file_name.xlsx", sheet = 1)</code></li>
+</ul>
+<div id="references-1" class="section level4" number="16.2.4.1">
+<h4>
+<span class="header-section-number">16.2.4.1</span> References<a class="anchor" aria-label="anchor" href="#references-1"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li>Cheat Sheet - <code>readr</code>
+</li>
+<li><a href="https://readr.tidyverse.org">readr</a></li>
+<li><a href="https://readxl.tidyverse.org">readxl</a></li>
+</ul>
+</div>
+</div>
+<div id="eda-by-r-studio-step-4---data-trasnformation-1" class="section level3" number="16.2.5">
+<h3>
+<span class="header-section-number">16.2.5</span> EDA by R Studio: Step 4 - Data Trasnformation<a class="anchor" aria-label="anchor" href="#eda-by-r-studio-step-4---data-trasnformation-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>4.1. Look at the data: suppose <code>df</code> is the data frame</p>
+<ul>
+<li>It is a good option to change into a tibble: <code>dt &lt;- as_tibble(df)</code>
+</li>
+<li>
+<code>head(df)</code>, <code>str(df)</code>, <code>summary(df)</code>, <code>dt</code>, <code>glimpse(dt)</code>
+</li>
+</ul>
+<p>4.2. Look at each variable</p>
+<ul>
+<li>categorical? numerical?</li>
+<li>factor? - <a href="https://forcats.tidyverse.org">forcats</a>
+</li>
+</ul>
+<p>4.3. Variation of each data: suppose <code>x1</code> is a column name.</p>
+<ul>
+<li><p><code>df %&gt;% ggplot() + geom_histogram(aes(x1), bins = 30)</code></p></li>
+<li>
+<p><code>df %&gt;% drop_na(x1)</code>: see the rows with a value in <code>x1</code>. If the value is NA, the row is not shown.</p>
+<ul>
+<li>
+<code>df_wo_na &lt;- df %&gt;% drop_na(x1)</code> if you want to use only the rows without NA in <code>x1</code>
+</li>
+</ul>
+</li>
+</ul>
+<p>4.4. Use <code>dpylr</code> and <code>tidyr</code> to change column names, tidy data, and/or summarize data</p>
+<ul>
+<li>
+<code>rename</code>, <code>select</code>, <code>filter</code>, <code>arrange</code>, <code>mutate</code>, <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code>, <code><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider()</a></code>, <code>group_by</code> and <code>summarize</code>
+</li>
+</ul>
+<div id="references-2" class="section level4" number="16.2.5.1">
+<h4>
+<span class="header-section-number">16.2.5.1</span> References<a class="anchor" aria-label="anchor" href="#references-2"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li>Cheat Sheet - <code>dplyr</code> and <code>tidyr</code>
+</li>
+<li><a href="https://dplyr.tidyverse.org">dplyr</a></li>
+<li><a href="https://tidyr.tidyverse.org">tidyr</a></li>
+</ul>
+</div>
+</div>
+<div id="eda-by-r-studio-step-5---visualize-data-1" class="section level3" number="16.2.6">
+<h3>
+<span class="header-section-number">16.2.6</span> EDA by R Studio: Step 5 - Visualize Data<a class="anchor" aria-label="anchor" href="#eda-by-r-studio-step-5---visualize-data-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>5.1. In combination with Stap 4 - data transformation, try various data visualization.</p>
+<ul>
+<li>What type of variation occurs within my variables?</li>
+<li>What type of covariation occurs between my variables?</li>
+</ul>
+<p>5.2. Keep a record of what you can observe by the visualization</p>
+<p>5.3. Edit the list of questions by adding or polishing</p>
+<p>5.4. Select several informative chart and add options</p>
+<p>5.5. Look at examples from the textbooks or teaching site to have better visualization</p>
+<div id="references-3" class="section level4" number="16.2.6.1">
+<h4>
+<span class="header-section-number">16.2.6.1</span> References<a class="anchor" aria-label="anchor" href="#references-3"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li>Cheat Sheet - <code>ggplot2</code>
+</li>
+<li><a href="https://ggplot2.tidyverse.org">ggplot2</a></li>
+<li><a href="https://ggplot2-book.org">ggplot2 book</a></li>
+</ul>
+</div>
+</div>
+<div id="eda-by-r-studio-step-6---conclusions-and-questions-for-further-study-1" class="section level3" number="16.2.7">
+<h3>
+<span class="header-section-number">16.2.7</span> EDA by R Studio: Step 6 - Conclusions and Questions for Further Study<a class="anchor" aria-label="anchor" href="#eda-by-r-studio-step-6---conclusions-and-questions-for-further-study-1"><i class="fas fa-link"></i></a>
 </h3>
 <ol style="list-style-type: decimal">
 <li><p>EDA is an iterative cycle that helps you understand what your data says. When you do EDA, you:</p></li>
@@ -127,14 +346,27 @@
 
 </div>
 </div>
+</div>
   <div class="chapter-nav">
 <div class="prev"><a href="a5resp.html"><span class="header-section-number">15</span> Assignment Five</a></div>
 <div class="next"><a href="importing.html"><span class="header-section-number">17</span> Importing</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li>
-<a class="nav-link" href="#eda"><span class="header-section-number">16</span> Exploratory Data analysis</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#what-is-eda-posit-primers-visualise-data-2"><span class="header-section-number">16.0.1</span> What is EDA (Posit Primers: Visualise Data)</a></li></ul>
-</li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#eda"><span class="header-section-number">16</span> Exploratory Data analysis</a></li>
+<li><a class="nav-link" href="#what-is-eda-posit-primers-visualise-data-2"><span class="header-section-number">16.1</span> What is EDA (Posit Primers: Visualise Data)</a></li>
+<li>
+<a class="nav-link" href="#eda-workflow-using-r-studio"><span class="header-section-number">16.2</span> EDA Workflow using R Studio</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#eda-step-0-1"><span class="header-section-number">16.2.1</span> EDA Step 0</a></li>
+<li><a class="nav-link" href="#eda-by-r-studio-step-1-2"><span class="header-section-number">16.2.2</span> EDA by R Studio: Step 1</a></li>
+<li><a class="nav-link" href="#eda-by-r-studio-step-2-2"><span class="header-section-number">16.2.3</span> EDA by R Studio: Step 2</a></li>
+<li><a class="nav-link" href="#eda-by-r-studio-step-3---importing-data-1"><span class="header-section-number">16.2.4</span> EDA by R Studio: Step 3 - Importing Data</a></li>
+<li><a class="nav-link" href="#eda-by-r-studio-step-4---data-trasnformation-1"><span class="header-section-number">16.2.5</span> EDA by R Studio: Step 4 - Data Trasnformation</a></li>
+<li><a class="nav-link" href="#eda-by-r-studio-step-5---visualize-data-1"><span class="header-section-number">16.2.6</span> EDA by R Studio: Step 5 - Visualize Data</a></li>
+<li><a class="nav-link" href="#eda-by-r-studio-step-6---conclusions-and-questions-for-further-study-1"><span class="header-section-number">16.2.7</span> EDA by R Studio: Step 6 - Conclusions and Questions for Further Study</a></li>
+</ul>
+</li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
