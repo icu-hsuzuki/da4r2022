@@ -36,9 +36,183 @@ It is updated daily.
 
 In this note, we use the original JHU data and transform it using `dplyr` in the form similar to the  Krispin's.
 
-Our world in data also provides vairous data related to covid-19.
 
-##### `owid_covid`
+Our world in data also provides vairous data related to covid-19. We will study a little by using `owid_covid`.
+
+
+## Krispin's Package
+
+```{r cache = TRUE}
+coronavirus_tv <- read_csv("https://github.com/RamiKrispin/coronavirus/raw/master/csv/coronavirus.csv")
+```
+
+```{r cache = TRUE}
+COUNTRY <- "Japan"
+
+df_tv <- select(coronavirus_tv, c(date, country, type, cases, population))
+
+df_tv0 <- filter(df_tv, country %in% COUNTRY)
+df_tv_confirmed <- filter(df_tv0, type == "confirmed")
+
+df_tv_confirmed_pp <- mutate(df_tv_confirmed, confirmed_pp = cases*100000/population)
+
+ggplot(df_tv_confirmed_pp) + geom_line(aes(x = date, y = confirmed_pp), col = "red") +
+  geom_smooth(aes(x = date, y = confirmed_pp), formula = y~x, method="loess", span = 0.1, se=FALSE) +
+  labs(x = "Date", y = "Number of Confirmed Cases per 100,000", 
+       title = paste("Number of Confirmed Cases per 100,000 ", COUNTRY))
+```
+
+```{r cache = TRUE}
+COUNTRIES <- c("US", "Germany", "India", "South Africa","Korea, South", "Japan")
+start_date <- as.Date("2021-07-01")
+end_date <- Sys.Date() 
+
+coronavirus_tv %>% select(c(date, country, type, cases, population)) %>% 
+  filter(country %in% COUNTRIES) %>% 
+  filter(date >=start_date & df_tv0$date <= end_date) %>% 
+  filter(type == "confirmed") %>% 
+  mutate(confirmed_pp = cases*100000/population) %>% 
+  ggplot() +
+  geom_smooth(aes(x = date, y = confirmed_pp, color = country), formula=y~x, method="loess", se=FALSE, span=0.1) +
+  labs(x = "Date", y = "Number of Confirmed Cases per 100,000", 
+       title = "Number of Confirmed Cases per 100,000")
+```
+
+
+```{r cache = TRUE}
+COUNTRIES <- c("US", "Germany", "India", "South Africa","Korea, South", "Japan")
+start_date <- as.Date("2021-07-01")
+end_date <- Sys.Date() 
+
+df_tv <- select(coronavirus_tv, c(date, country, type, cases, population))
+
+df_tv0 <- filter(df_tv, country %in% COUNTRIES)
+df_tv1 <- filter(df_tv0, date >=start_date & df_tv0$date <= end_date)
+df_tv1_confirmed <- filter(df_tv1, type == "confirmed")
+
+df_tv1_confirmed_pp <- mutate(df_tv1_confirmed, confirmed_pp = cases*100000/population)
+
+ggplot(df_tv1_confirmed_pp) +
+  geom_smooth(aes(x = date, y = confirmed_pp, color = country), formula=y~x, method="loess", se=FALSE, span=0.1) +
+  labs(x = "Date", y = "Number of Confirmed Cases per 100,000", 
+       title = "Number of Confirmed Cases per 100,000")
+```
+
+
+## Data of Johns Hopkins Universiy
+
+### Importing Raw Data
+
+We import the original Johns Hopkins Github data.
+
+* COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University: https://github.com/CSSEGISandData/COVID-19
+* We use [time series data](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series)
+
+```{r cache = TRUE}
+# IMPORT RAW DATA: Johns Hopkins Github data
+confirmedraw <- read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv")
+glimpse(confirmedraw)
+confirmedraw %>% slice(1:10)# %>% datatable() # Check latest date at the end of data as tibble
+```
+
+We need to tranform data. The other data are similar.
+
+```{r cache = TRUE}
+deathsraw <- read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv")
+deathsraw %>% slice(1)
+```
+
+```{r cache = TRUE}
+recoveredraw <- read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv")
+recoveredraw %>% slice(1)
+# Note differences in the number of rows/columns
+```
+
+### Tidying and Combining: To create country level and global combined data
+
+#### Convert each data set from wide to long
+
+```{r cache = TRUE}
+confirmed <- confirmedraw %>% 
+  dplyr::rename(province = "Province/State", country = "Country/Region", lat = "Lat", long = "Long") %>% 
+  pivot_longer(-c(province, country, lat, long), names_to = "date", values_to ="confirmed") %>% 
+  mutate(date = as.Date(date, "%m/%d/%y")) %>%
+  group_by(province, country) %>% arrange(date) %>%
+  mutate(confirmed = confirmed - lag(confirmed)) %>%
+  slice(-1) %>% ungroup() %>%
+  relocate(date, .before = province) %>%
+  group_by(country, province) %>% 
+  arrange(province, date) 
+```
+
+Check the data.
+
+```{r cache = TRUE}
+confirmed %>% filter(country == "Japan") %>%  ggplot() + geom_line(aes(x = date, y = confirmed))
+```
+
+```{r cache = TRUE}
+df_tv %>% filter(country == "Japan") %>% filter(type == "confirmed") %>%  ggplot() + geom_line(aes(x = date, y = cases))
+```
+
+_The `dplyr::rename` seems to have conflict with other `rename` function._
+
+```{r cache = TRUE}
+deaths <- deathsraw %>%  
+  dplyr::rename(province = "Province/State", country = "Country/Region", lat = Lat, long = Long) %>% 
+  pivot_longer(-c(province, country, lat, long), names_to = "date", values_to ="death") %>% 
+  mutate(date = as.Date(date, "%m/%d/%y")) %>%
+  group_by(province, country) %>% arrange(date) %>%
+  mutate(death = death - lag(death)) %>%
+  slice(-1) %>% ungroup() %>%
+  relocate(date, .before = province) %>%
+  arrange(province, date) 
+```
+
+```{r cache = TRUE}
+recovered <- recoveredraw %>%  
+  dplyr::rename(province = "Province/State", country = "Country/Region", lat = Lat, long = Long) %>% 
+  pivot_longer(-c(province, country, lat, long), names_to = "date", values_to ="recovered") %>% 
+  mutate(date = as.Date(date, "%m/%d/%y")) %>%
+  group_by(province, country) %>% arrange(date) %>%
+  mutate(recovered = recovered - lag(recovered)) %>%
+  slice(-1) %>% ungroup() %>%
+  relocate(date, .before = province) %>%
+  arrange(province, date)
+```
+
+
+#### Final data: combine all three
+
+```{r cache = TRUE}
+coronavirus_jhu <- full_join(confirmed, deaths) %>% full_join(recovered) %>%
+  pivot_longer(c(confirmed, death, recovered), names_to = "cases") %>%
+  arrange(cases, province, country, date)
+coronavirus_jhu %>% slice(1:10) # %>% datatable()
+```
+### Aggregated by Countries
+
+The list of countries classified in provinces.
+
+```{r cache = TRUE}
+coronavirus_jhu %>% filter(!is.na(province)) %>% distinct(country)
+```
+
+Check the data associated with provinces.
+
+
+If we are only interested in countries, the following is a possibility.
+
+```{r cache = TRUE}
+coronavirus_jhu_country <- coronavirus_jhu %>% 
+  group_by(date, country, cases) %>% 
+  summarize(value = sum(value)) %>% 
+  arrange(cases, country, date)
+coronavirus_jhu_country # %>% datatable()
+```
+
+
+## `owid_covid`
 
 owid_covid: Get the Our World in Data covid-19 dataset
 

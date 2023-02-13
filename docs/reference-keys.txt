@@ -482,6 +482,13 @@ data-wrangling---tidying-data
 galtons-example
 covid19
 introduction-1
+krispins-package
+data-of-johns-hopkins-universiy
+importing-raw-data
+tidying-and-combining-to-create-country-level-and-global-combined-data
+convert-each-data-set-from-wide-to-long
+final-data-combine-all-three
+aggregated-by-countries
 owid_covid-1
 bookdown
 about-1
