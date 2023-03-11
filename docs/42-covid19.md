@@ -1,6 +1,6 @@
 # Covid 19 {#covid19}
 
-> An example of an R Notebook, rendered at 2023-02-13 12:24:31 JST  
+> An example of an R Notebook, rendered at 2023-03-11 13:48:04 JST  
 
 
 ## Introduction
@@ -27,10 +27,10 @@ install.packages("coronavirus")
 ```r
 library(tidyverse)
 #> ── Attaching packages ─────────────────── tidyverse 1.3.2 ──
-#> ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 
-#> ✔ tibble  3.1.8      ✔ dplyr   1.0.10
-#> ✔ tidyr   1.2.1      ✔ stringr 1.5.0 
-#> ✔ readr   2.1.3      ✔ forcats 0.5.2 
+#> ✔ ggplot2 3.4.1     ✔ purrr   1.0.1
+#> ✔ tibble  3.1.8     ✔ dplyr   1.1.0
+#> ✔ tidyr   1.3.0     ✔ stringr 1.5.0
+#> ✔ readr   2.1.4     ✔ forcats 1.0.0
 #> ── Conflicts ────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
@@ -1516,23 +1516,23 @@ covid <- owid_covid()
 
 ```r
 glimpse(covid)
-#> Rows: 256,788
+#> Rows: 293,509
 #> Columns: 67
 #> $ iso_code                                   <chr> "AFG", …
 #> $ continent                                  <chr> "Asia",…
 #> $ location                                   <chr> "Afghan…
 #> $ date                                       <date> 2020-0…
-#> $ total_cases                                <dbl> 5, 5, 5…
-#> $ new_cases                                  <dbl> 5, 0, 0…
+#> $ total_cases                                <dbl> NA, NA,…
+#> $ new_cases                                  <dbl> 0, 0, 0…
 #> $ new_cases_smoothed                         <dbl> NA, NA,…
 #> $ total_deaths                               <dbl> NA, NA,…
-#> $ new_deaths                                 <dbl> NA, NA,…
+#> $ new_deaths                                 <dbl> 0, 0, 0…
 #> $ new_deaths_smoothed                        <dbl> NA, NA,…
-#> $ total_cases_per_million                    <dbl> 0.122, …
-#> $ new_cases_per_million                      <dbl> 0.122, …
+#> $ total_cases_per_million                    <dbl> NA, NA,…
+#> $ new_cases_per_million                      <dbl> 0, 0, 0…
 #> $ new_cases_smoothed_per_million             <dbl> NA, NA,…
 #> $ total_deaths_per_million                   <dbl> NA, NA,…
-#> $ new_deaths_per_million                     <dbl> NA, NA,…
+#> $ new_deaths_per_million                     <dbl> 0, 0, 0…
 #> $ new_deaths_smoothed_per_million            <dbl> NA, NA,…
 #> $ reproduction_rate                          <dbl> NA, NA,…
 #> $ icu_patients                               <dbl> NA, NA,…
@@ -1565,7 +1565,7 @@ glimpse(covid)
 #> $ new_vaccinations_smoothed_per_million      <dbl> NA, NA,…
 #> $ new_people_vaccinated_smoothed             <dbl> NA, NA,…
 #> $ new_people_vaccinated_smoothed_per_hundred <dbl> NA, NA,…
-#> $ stringency_index                           <dbl> 8.33, 8…
+#> $ stringency_index                           <dbl> NA, NA,…
 #> $ population_density                         <dbl> 54.422,…
 #> $ median_age                                 <dbl> 18.6, 1…
 #> $ aged_65_older                              <dbl> 2.581, …
@@ -1590,25 +1590,25 @@ glimpse(covid)
 
 
 ```r
-tdpm <- covid %>% drop_na(total_deaths_per_million) %>%
+tdpm <- covid %>% drop_na(`total_deaths_per_million`) %>%
   group_by(location) %>% 
-  summarize(total_deaths_per_million = max(total_deaths_per_million)) %>%
-  arrange(desc(total_deaths_per_million))
+  summarize(`total_deaths_per_million` = max(`total_deaths_per_million`)) %>%
+  arrange(desc(`total_deaths_per_million`))
 DT::datatable(tdpm)
 ```
 
 ```{=html}
 <div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-bd40cf23a080e9e20e00" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-bd40cf23a080e9e20e00">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","167","168","169","170","171","172","173","174","175","176","177","178","179","180","181","182","183","184","185","186","187","188","189","190","191","192","193","194","195","196","197","198","199","200","201","202","203","204","205","206","207","208","209","210","211","212","213","214","215","216","217","218","219","220","221","222","223","224","225","226"],["Peru","Bulgaria","Bosnia and Herzegovina","Hungary","North Macedonia","Georgia","Montenegro","Croatia","Czechia","Slovakia","Moldova","San Marino","Lithuania","Romania","Gibraltar","Latvia","Greece","Slovenia","United States","Chile","Brazil","United Kingdom","Italy","Armenia","South America","Ukraine","Poland","Paraguay","Belgium","Argentina","Trinidad and Tobago","Colombia","Europe","European Union","Russia","Aruba","North America","Mexico","Serbia","Portugal","Spain","Bermuda","Austria","France","Tunisia","High income","Saint Lucia","Suriname","Liechtenstein","Sweden","Uruguay","Estonia","French Polynesia","Andorra","British Virgin Islands","Barbados","Bahamas","Germany","Ecuador","Lebanon","Panama","Grenada","Luxembourg","Monaco","Bolivia","Montserrat","Kosovo","Hong Kong","Costa Rica","South Africa","Ireland","Belize","Iran","Switzerland","Seychelles","Guyana","Namibia","Finland","Curacao","Antigua and Barbuda","Malta","Bonaire Sint Eustatius and Saba","Cyprus","Denmark","Isle of Man","Canada","Netherlands","Israel","Albania","Jordan","Jamaica","Turkey","Eswatini","Saint Vincent and the Grenadines","Guatemala","Botswana","Malaysia","Palestine","New Caledonia","Honduras","Bahrain","Upper middle income","Dominica","Oman","Kazakhstan","Azerbaijan","Saint Kitts and Nevis","Fiji","Norway","Libya","World","Turks and Caicos Islands","Mauritius","Sri Lanka","Cuba","Anguilla","Belarus","Australia","Taiwan","Cape Verde","El Salvador","South Korea","Iceland","Mongolia","Wallis and Futuna","Kuwait","Maldives","Indonesia","Philippines","Iraq","Japan","Oceania","Cayman Islands","Faeroe Islands","Micronesia (country)","Brunei","Palau","New Zealand","Thailand","Kyrgyzstan","Vietnam","Morocco","Marshall Islands","Nepal","Lower middle income","Dominican Republic","India","Greenland","Myanmar","Zimbabwe","Asia","Saint Pierre and Miquelon","Sao Tome and Principe","Lesotho","Singapore","Saudi Arabia","Qatar","United Arab Emirates","Egypt","Solomon Islands","Mauritania","Venezuela","Zambia","Comoros","Afghanistan","Cambodia","Africa","Macao","Bangladesh","Djibouti","Algeria","Syria","Malawi","Gambia","Kiribati","Samoa","Pakistan","Gabon","Tonga","Cook Islands","Senegal","Equatorial Guinea","Sudan","Rwanda","Kenya","Timor","Laos","Guinea-Bissau","Nauru","Somalia","Uganda","Haiti","Cameroon","Mozambique","Papua New Guinea","Congo","Low income","Yemen","Ethiopia","China","Liberia","Angola","Madagascar","Uzbekistan","Ghana","Vanuatu","Nicaragua","Guinea","Mali","Togo","Cote d'Ivoire","Eritrea","Bhutan","Central African Republic","Burkina Faso","Democratic Republic of Congo","Sierra Leone","Nigeria","Tanzania","South Sudan","Tajikistan","Benin","Niger","Chad","Burundi","North Korea"],[6439.138,5631.709,5028.869,4886.677,4604.973,4524.374,4463.531,4446.5,4035.262,3717.049,3653.231,3621.253,3474.836,3439.548,3396.885,3374.483,3348.974,3332.322,3294.131,3263.919,3240.219,3224.832,3176.813,3135.799,3085.812,2999.642,2980.118,2926.375,2884.027,2866.097,2828.791,2742.721,2721.485,2688.114,2678.123,2648.907,2627.018,2608.386,2580.642,2537.179,2501.67,2460.791,2436.458,2427.352,2372.266,2283.22,2273.839,2265.204,2261.466,2233.598,2224.497,2201.251,2118.893,2066.556,2042.64,2034.469,2031.762,2000.28,1997.944,1967.487,1950.514,1897.034,1871.523,1836.069,1828.681,1812.826,1797.864,1780.377,1772.108,1712.946,1712.486,1697.571,1634.987,1629.66,1605.451,1603.755,1592.506,1592.024,1574.49,1556.968,1548.867,1515.6,1443.069,1392.492,1372.229,1324.142,1314.107,1294.211,1265.165,1251.299,1233.65,1189.249,1184.175,1183.159,1128.788,1093.411,1088.773,1087.222,1082.912,1064.617,1048.744,1031.181,1017.07,1011.297,982.885,974.891,964.745,949.698,948.048,944.902,859.341,831.037,803.4,770.79,760.779,755.81,746.516,728.491,713.419,696.268,667.572,651.075,638.236,628.536,603.656,602.031,593.74,583.881,570.6,570.274,569.302,541.999,538.401,527.138,525.495,501.111,497.678,482.519,472.572,451.089,439.835,435.048,408.723,393.484,392.028,390.424,374.513,371.721,359.731,346.741,342.972,339.847,338.621,313.554,305.48,263.425,254.533,248.699,223.506,211.247,210.509,206.737,202.371,192.404,191.982,182.254,180.572,174.056,172,168.622,153.241,143.004,141.924,137.473,137.156,130.402,129.927,128.087,121.647,117.426,114.804,109.259,106.839,106.557,105.28,102.885,100.671,83.587,78.796,77.34,76.826,74.234,70.393,67.851,66.058,64.987,64.977,64.072,61.371,61.343,55.444,54.258,47.954,47.274,43.673,42.847,35.26,33.696,32.885,32.773,29.616,27.958,26.839,20.254,17.465,14.776,14.641,14.437,12.916,12.645,12.559,12.207,12.019,10.946,2.948,0.23]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>location<\/th>\n      <th>total_deaths_per_million<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-bd40cf23a080e9e20e00">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","167","168","169","170","171","172","173","174","175","176","177","178","179","180","181","182","183","184","185","186","187","188","189","190","191","192","193","194","195","196","197","198","199","200","201","202","203","204","205","206","207","208","209","210","211","212","213","214","215","216","217","218","219","220","221","222","223","224","225","226","227","228","229","230","231","232","233","234","235","236","237"],["Peru","Bulgaria","Bosnia and Herzegovina","Hungary","North Macedonia","Georgia","Montenegro","Croatia","Slovenia","Czechia","Slovakia","Moldova","San Marino","Greece","Lithuania","Romania","Gibraltar","Latvia","United States","Chile","Brazil","Italy","Armenia","South America","United Kingdom","Poland","Martinique","Paraguay","Belgium","Argentina","Trinidad and Tobago","Ukraine","Colombia","Russia","Europe","European Union","Aruba","North America","Mexico","Serbia","Portugal","Guadeloupe","Spain","France","Bermuda","Austria","Guam","Tunisia","Saint Lucia","Suriname","High income","Sweden","Uruguay","Estonia","Liechtenstein","French Polynesia","British Virgin Islands","Barbados","Sint Maarten (Dutch part)","Bahamas","Germany","Ecuador","Andorra","Lebanon","Panama","Grenada","Luxembourg","Monaco","Bolivia","Montserrat","Kosovo","Puerto Rico","Costa Rica","Ireland","South Africa","Belize","Iran","Finland","Seychelles","Guyana","Switzerland","Namibia","Curacao","Antigua and Barbuda","Malta","Bonaire Sint Eustatius and Saba","Cyprus","Jersey","Saint Martin (French part)","Denmark","Isle of Man","French Guiana","Canada","Netherlands","United States Virgin Islands","Israel","Albania","Jordan","Jamaica","Turkey","Eswatini","Saint Vincent and the Grenadines","Guatemala","Malaysia","Palestine","New Caledonia","Honduras","Botswana","Upper middle income","Bahrain","Guernsey","Dominica","Oman","Kazakhstan","Azerbaijan","Saint Kitts and Nevis","Norway","Fiji","Reunion","Libya","World","Turks and Caicos Islands","Northern Mariana Islands","Mauritius","Sri Lanka","American Samoa","Cuba","Anguilla","Belarus","Australia","Iceland","Cape Verde","El Salvador","South Korea","Mongolia","Wallis and Futuna","Kuwait","Maldives","Japan","Indonesia","Mayotte","Philippines","Iraq","Oceania","Cayman Islands","Micronesia (country)","Faeroe Islands","Palau","New Zealand","Thailand","Saint Barthelemy","Kyrgyzstan","Vietnam","Morocco","Marshall Islands","Nepal","Dominican Republic","Lower middle income","India","Greenland","Myanmar","Zimbabwe","Asia","Saint Pierre and Miquelon","Sao Tome and Principe","Brunei","Lesotho","Singapore","Saudi Arabia","Qatar","United Arab Emirates","Egypt","Solomon Islands","Mauritania","Venezuela","Zambia","Comoros","Afghanistan","Cambodia","Africa","Bangladesh","Djibouti","Algeria","Syria","Gambia","Kiribati","Malawi","Samoa","Pakistan","Gabon","Cook Islands","Senegal","Tonga","Equatorial Guinea","Sudan","Rwanda","Kenya","Timor","Laos","China","Guinea-Bissau","Nauru","Somalia","Uganda","Haiti","Cameroon","Mozambique","Papua New Guinea","Congo","Low income","Yemen","Ethiopia","Liberia","Angola","Madagascar","Uzbekistan","Ghana","Vanuatu","Nicaragua","Guinea","Mali","Togo","Cote d'Ivoire","Eritrea","Bhutan","Central African Republic","Burkina Faso","Democratic Republic of Congo","Sierra Leone","Nigeria","Tanzania","South Sudan","Tajikistan","Benin","Niger","Chad","Burundi"],[6446.275,5635.396,5034.745,4881.059,4615.004,4532.386,4473.099,4462.876,4316.357,4048.412,3726.618,3667.286,3621.253,3493.799,3489.017,3445.499,3396.885,3387.451,3285.177,3277.283,3247.711,3189.872,3138.676,3092.739,3076.556,2984.91,2971.332,2931.536,2897.668,2866.866,2839.241,2803.353,2749.526,2739.057,2716.561,2699.279,2648.907,2637.602,2612.465,2599.706,2557.333,2552.039,2512.246,2497.376,2491.94,2452.342,2444.945,2373.804,2273.839,2271.676,2260.557,2249.523,2225.374,2217.088,2210.647,2118.893,2042.64,2041.57,2036.568,2031.762,2022.11,2000.666,1991.408,1974.591,1952.782,1897.034,1883.876,1836.069,1829.58,1812.826,1796.18,1786.367,1784.461,1730.204,1712.946,1697.571,1636.376,1612.78,1605.451,1604.992,1595.909,1593.285,1574.49,1556.968,1552.617,1515.6,1484.363,1453.121,1445.813,1408.302,1372.229,1356.019,1337.873,1309.04,1306.808,1302.466,1265.868,1251.299,1241.785,1188.394,1184.175,1183.159,1130.806,1089.215,1087.222,1082.912,1065.001,1062.616,1048.951,1043.31,1042.177,1017.07,1011.297,983.143,977.884,964.745,959.273,949.698,945.525,944.902,860.982,831.037,827.046,803.4,770.881,767.581,760.779,755.81,746.516,742.892,705.277,696.268,667.572,657.116,628.536,603.656,602.031,593.74,587.366,584.15,573.421,572.521,570.274,562.27,538.401,534.254,527.138,497.678,491.39,473.074,454.794,451.089,439.835,435.048,408.723,393.484,390.424,389.909,374.531,371.721,359.731,347.292,344.105,339.847,338.621,334.074,306.181,305.48,264.139,255.275,248.805,223.551,211.247,210.509,206.843,202.671,192.404,191.569,182.254,181.357,172.006,168.622,153.241,142.959,137.473,137.156,131.632,130.402,129.94,128.087,117.426,113.822,112.289,109.259,107.031,106.557,105.28,102.885,100.671,84.317,83.587,78.796,77.34,76.826,74.234,70.393,68.002,66.058,64.987,64.887,64.072,61.371,55.444,54.315,48.022,47.274,43.673,42.847,35.26,33.696,32.885,32.773,29.616,27.958,26.839,20.254,17.465,14.786,14.641,14.437,12.916,12.645,12.559,12.207,12.019,10.946,1.164]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>location<\/th>\n      <th>total_deaths_per_million<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 ```
 
 
 ```r
-covid %>% drop_na(total_deaths_per_million) %>%
+covid %>% drop_na(`total_deaths_per_million`) %>%
   group_by(location) %>% 
-  summarize(total_deaths_per_million = max(total_deaths_per_million), .groups = "drop") %>%
-  arrange(desc(total_deaths_per_million)) %>%
-  ggplot(aes(x = total_deaths_per_million)) + geom_histogram(bins = 30)
+  summarize(`total_deaths_per_million` = max(`total_deaths_per_million`), .groups = "drop") %>%
+  arrange(desc(`total_deaths_per_million`)) %>%
+  ggplot(aes(x = `total_deaths_per_million`)) + geom_histogram(bins = 30)
 ```
 
 <img src="42-covid19_files/figure-html/unnamed-chunk-21-1.png" width="672" />
@@ -1616,20 +1616,20 @@ covid %>% drop_na(total_deaths_per_million) %>%
 
 ```r
 covid %>% filter(location == "Japan") %>% arrange(desc(date))
-#> # A tibble: 1,117 × 67
+#> # A tibble: 1,161 × 67
 #>    iso_code continent location date       total_ca…¹ new_c…²
 #>    <chr>    <chr>     <chr>    <date>          <dbl>   <dbl>
-#>  1 JPN      Asia      Japan    2023-02-11   32957753   27371
-#>  2 JPN      Asia      Japan    2023-02-10   32930382   28615
-#>  3 JPN      Asia      Japan    2023-02-09   32901767   32969
-#>  4 JPN      Asia      Japan    2023-02-08   32868798   41584
-#>  5 JPN      Asia      Japan    2023-02-07   32827214   44755
-#>  6 JPN      Asia      Japan    2023-02-06   32782459   15612
-#>  7 JPN      Asia      Japan    2023-02-05   32766847   32459
-#>  8 JPN      Asia      Japan    2023-02-04   32734388   38581
-#>  9 JPN      Asia      Japan    2023-02-03   32695807   39924
-#> 10 JPN      Asia      Japan    2023-02-02   32655883   45299
-#> # … with 1,107 more rows, 61 more variables:
+#>  1 JPN      Asia      Japan    2023-03-08         NA      NA
+#>  2 JPN      Asia      Japan    2023-03-07   33264491    4263
+#>  3 JPN      Asia      Japan    2023-03-06   33260228    8731
+#>  4 JPN      Asia      Japan    2023-03-05   33251497   10431
+#>  5 JPN      Asia      Japan    2023-03-04   33241066   10522
+#>  6 JPN      Asia      Japan    2023-03-03   33230544   11506
+#>  7 JPN      Asia      Japan    2023-03-02   33219038   13950
+#>  8 JPN      Asia      Japan    2023-03-01   33205088   14524
+#>  9 JPN      Asia      Japan    2023-02-28   33190564    5598
+#> 10 JPN      Asia      Japan    2023-02-27   33184966   12399
+#> # … with 1,151 more rows, 61 more variables:
 #> #   new_cases_smoothed <dbl>, total_deaths <dbl>,
 #> #   new_deaths <dbl>, new_deaths_smoothed <dbl>,
 #> #   total_cases_per_million <dbl>,

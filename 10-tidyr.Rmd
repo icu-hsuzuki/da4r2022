@@ -468,7 +468,7 @@ df_f10 <- read_excel("./data/WIR2022s.xlsx", sheet = "data-F10"); df_f10
 ```{r}
 df_f10 %>% 
   select(year, "Global Billionaire Wealth" = bn_hhweal, "Top 0.01%" = top0.1_hhweal) %>%
-  pivot_longer(!year, names_to = "group",".value", values_to = "value")
+  pivot_longer(!year, names_to = "group", values_to = "value")
 ```
 
 
@@ -476,7 +476,7 @@ df_f10 %>%
 ```{r}
 df_f10 %>% 
   select(year, "Global Billionaire Wealth" = bn_hhweal, "Top 0.01%" = top0.1_hhweal) %>%
-  pivot_longer(!year, names_to = "group",".value", values_to = "value") %>%
+  pivot_longer(!year, names_to = "group", values_to = "value") %>%
   ggplot() +
   stat_smooth(aes(x = year, y = value, color = group), formula = y~x, method = "loess", span = 0.25, se = FALSE)
 ```

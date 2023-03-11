@@ -67,7 +67,11 @@ The objective of this course is to learn the fundamentals of data science. Using
   
 
 
-### Grading Policy：
+### Objective and Grading Policy：
+
+The objective of this course is to learn the fundamentals of data science. Using the free software, R and its IDE, RStudio, students will learn how to collect data, transform it into appropriate forms, and visualize it. Students will also learn how to analyze data and present their findings to others. 
+
+Grading policy：
 
 A. Course participation by giving feedback - 10%
 
@@ -76,6 +80,8 @@ B. Short papers: Assignment 1-5 - 30%
 C. Presentation - 20%
 
 D. Final report - 40%
+
+
 
 
 

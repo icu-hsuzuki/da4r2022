@@ -4,22 +4,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 20 Visualizing | Data Analysis for Researchers AY2022</title>
+<title>Chapter 21 Visualizing | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
-<meta name="description" content="20.1 Data Visualization   20.2 ggplot2 Basics  visualization  20.2.1 Two useful questions There is no rule about which questions you should ask to guide your research. However, two types of...">
-<meta name="generator" content="bookdown 0.31 with bs4_book()">
-<meta property="og:title" content="Chapter 20 Visualizing | Data Analysis for Researchers AY2022">
+<meta name="description" content="21.1 Data Visualization   21.2 ggplot2 Basics  visualization  21.2.1 Two useful questions There is no rule about which questions you should ask to guide your research. However, two types of...">
+<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta property="og:title" content="Chapter 21 Visualizing | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/visualizing.html">
-<meta property="og:description" content="20.1 Data Visualization   20.2 ggplot2 Basics  visualization  20.2.1 Two useful questions There is no rule about which questions you should ask to guide your research. However, two types of...">
+<meta property="og:description" content="21.1 Data Visualization   21.2 ggplot2 Basics  visualization  21.2.1 Two useful questions There is no rule about which questions you should ask to guide your research. However, two types of...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 20 Visualizing | Data Analysis for Researchers AY2022">
-<meta name="twitter:description" content="20.1 Data Visualization   20.2 ggplot2 Basics  visualization  20.2.1 Two useful questions There is no rule about which questions you should ask to guide your research. However, two types of...">
+<meta name="twitter:title" content="Chapter 21 Visualizing | Data Analysis for Researchers AY2022">
+<meta name="twitter:description" content="21.1 Data Visualization   21.2 ggplot2 Basics  visualization  21.2.1 Two useful questions There is no rule about which questions you should ask to guide your research. However, two types of...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-<script src="libs/datatables-binding-0.26/datatables.js"></script><link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.27/datatables.js"></script><link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
 <link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet">
 <script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
@@ -87,20 +87,21 @@
 <li><a class="" href="model.html"><span class="header-section-number">13</span> Linear Model</a></li>
 <li><a class="" href="roundups.html"><span class="header-section-number">14</span> Roudups</a></li>
 <li><a class="" href="a5resp.html"><span class="header-section-number">15</span> Assignment Five</a></li>
+<li><a class="" href="final.html"><span class="header-section-number">16</span> Presentation and Paper</a></li>
 <li class="book-part">PART II EDA BASICS</li>
-<li><a class="" href="eda.html"><span class="header-section-number">16</span> Exploratory Data analysis</a></li>
-<li><a class="" href="importing.html"><span class="header-section-number">17</span> Importing</a></li>
-<li><a class="" href="transforming.html"><span class="header-section-number">18</span> Transforming</a></li>
-<li><a class="" href="tidying.html"><span class="header-section-number">19</span> Tidying</a></li>
-<li><a class="active" href="visualizing.html"><span class="header-section-number">20</span> Visualizing</a></li>
-<li><a class="" href="modeling.html"><span class="header-section-number">21</span> Modeling</a></li>
-<li><a class="" href="communicating.html"><span class="header-section-number">22</span> Communicating</a></li>
+<li><a class="" href="eda.html"><span class="header-section-number">17</span> Exploratory Data analysis</a></li>
+<li><a class="" href="importing.html"><span class="header-section-number">18</span> Importing</a></li>
+<li><a class="" href="transforming.html"><span class="header-section-number">19</span> Transforming</a></li>
+<li><a class="" href="tidying.html"><span class="header-section-number">20</span> Tidying</a></li>
+<li><a class="active" href="visualizing.html"><span class="header-section-number">21</span> Visualizing</a></li>
+<li><a class="" href="modeling.html"><span class="header-section-number">22</span> Modeling</a></li>
+<li><a class="" href="communicating.html"><span class="header-section-number">23</span> Communicating</a></li>
 <li class="book-part">PART III OPEN PUBLIC DATA</li>
-<li><a class="" href="worldbank.html"><span class="header-section-number">23</span> World Bank</a></li>
-<li><a class="" href="owid.html"><span class="header-section-number">24</span> Our World in Data</a></li>
-<li><a class="" href="oecd.html"><span class="header-section-number">25</span> OECD</a></li>
-<li><a class="" href="undata.html"><span class="header-section-number">26</span> UN Data</a></li>
-<li><a class="" href="wir.html"><span class="header-section-number">27</span> World Inequality Report</a></li>
+<li><a class="" href="worldbank.html"><span class="header-section-number">24</span> World Bank</a></li>
+<li><a class="" href="owid.html"><span class="header-section-number">25</span> Our World in Data</a></li>
+<li><a class="" href="oecd.html"><span class="header-section-number">26</span> OECD</a></li>
+<li><a class="" href="undata.html"><span class="header-section-number">27</span> UN Data</a></li>
+<li><a class="" href="wir.html"><span class="header-section-number">28</span> World Inequality Report</a></li>
 <li class="book-part">APPENDIX</li>
 <li><a class="" href="histdata.html"><span class="header-section-number">A</span> HistData</a></li>
 <li><a class="" href="covid19.html"><span class="header-section-number">B</span> Covid 19</a></li>
@@ -113,25 +114,25 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="visualizing" class="section level1" number="20">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="visualizing" class="section level1" number="21">
 <h1>
-<span class="header-section-number">20</span> Visualizing<a class="anchor" aria-label="anchor" href="#visualizing"><i class="fas fa-link"></i></a>
+<span class="header-section-number">21</span> Visualizing<a class="anchor" aria-label="anchor" href="#visualizing"><i class="fas fa-link"></i></a>
 </h1>
-<div id="data-visualization-1" class="section level2" number="20.1">
+<div id="data-visualization-1" class="section level2" number="21.1">
 <h2>
-<span class="header-section-number">20.1</span> Data Visualization<a class="anchor" aria-label="anchor" href="#data-visualization-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">21.1</span> Data Visualization<a class="anchor" aria-label="anchor" href="#data-visualization-1"><i class="fas fa-link"></i></a>
 </h2>
 </div>
-<div id="ggplot2-basics-1" class="section level2" number="20.2">
+<div id="ggplot2-basics-1" class="section level2" number="21.2">
 <h2>
-<span class="header-section-number">20.2</span> <code>ggplot2</code> Basics<a class="anchor" aria-label="anchor" href="#ggplot2-basics-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">21.2</span> <code>ggplot2</code> Basics<a class="anchor" aria-label="anchor" href="#ggplot2-basics-1"><i class="fas fa-link"></i></a>
 </h2>
 <div class="figure">
 <img src="data/visualization.png" style="width:75.0%" alt=""><p class="caption">visualization</p>
 </div>
-<div id="two-useful-questions-1" class="section level3" number="20.2.1">
+<div id="two-useful-questions-1" class="section level3" number="21.2.1">
 <h3>
-<span class="header-section-number">20.2.1</span> Two useful questions<a class="anchor" aria-label="anchor" href="#two-useful-questions-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">21.2.1</span> Two useful questions<a class="anchor" aria-label="anchor" href="#two-useful-questions-1"><i class="fas fa-link"></i></a>
 </h3>
 <p>There is no rule about which questions you should ask to guide your research. However, two types of questions will always be useful for making discoveries within your data. You can loosely word these questions as:</p>
 <ol style="list-style-type: decimal">
@@ -141,25 +142,25 @@
 <p>The rest of this tutorial will look at these two questions. To make the discussion easier, let’s define some terms…</p>
 </div>
 </div>
-<div id="set-up-6" class="section level2" number="20.3">
+<div id="set-up-6" class="section level2" number="21.3">
 <h2>
-<span class="header-section-number">20.3</span> Set up<a class="anchor" aria-label="anchor" href="#set-up-6"><i class="fas fa-link"></i></a>
+<span class="header-section-number">21.3</span> Set up<a class="anchor" aria-label="anchor" href="#set-up-6"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb526"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
-<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 </span></span>
-<span><span class="co">#&gt; ✔ tibble  3.1.8      ✔ dplyr   1.0.10</span></span>
-<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.5.0 </span></span>
-<span><span class="co">#&gt; ✔ readr   2.1.3      ✔ forcats 0.5.2 </span></span>
+<span><span class="co">#&gt; ✔ ggplot2 3.4.1     ✔ purrr   1.0.1</span></span>
+<span><span class="co">#&gt; ✔ tibble  3.1.8     ✔ dplyr   1.1.0</span></span>
+<span><span class="co">#&gt; ✔ tidyr   1.3.0     ✔ stringr 1.5.0</span></span>
+<span><span class="co">#&gt; ✔ readr   2.1.4     ✔ forcats 1.0.0</span></span>
 <span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
 <span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span> <span class="co"># for excel files</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/WDI/">WDI</a></span><span class="op">)</span></span></code></pre></div>
-<div id="q.-the-line-graph-looked-strange-at-first-and-i-couldnt-really-see-the-results-clearly.-however-i-could-solve-that-problem-by-using-smoothstat-and-then-the-results-looked-way-better-and-i-was-able-to-interpret-them-easily.-1" class="section level3" number="20.3.1">
+<div id="q.-the-line-graph-looked-strange-at-first-and-i-couldnt-really-see-the-results-clearly.-however-i-could-solve-that-problem-by-using-smoothstat-and-then-the-results-looked-way-better-and-i-was-able-to-interpret-them-easily.-1" class="section level3" number="21.3.1">
 <h3>
-<span class="header-section-number">20.3.1</span> Q. The line graph looked strange at first and I couldn’t really see the results clearly. However, I could solve that problem by using “smoothstat” and then the results looked way better and I was able to interpret them easily.<a class="anchor" aria-label="anchor" href="#q.-the-line-graph-looked-strange-at-first-and-i-couldnt-really-see-the-results-clearly.-however-i-could-solve-that-problem-by-using-smoothstat-and-then-the-results-looked-way-better-and-i-was-able-to-interpret-them-easily.-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">21.3.1</span> Q. The line graph looked strange at first and I couldn’t really see the results clearly. However, I could solve that problem by using “smoothstat” and then the results looked way better and I was able to interpret them easily.<a class="anchor" aria-label="anchor" href="#q.-the-line-graph-looked-strange-at-first-and-i-couldnt-really-see-the-results-clearly.-however-i-could-solve-that-problem-by-using-smoothstat-and-then-the-results-looked-way-better-and-i-was-able-to-interpret-them-easily.-1"><i class="fas fa-link"></i></a>
 </h3>
 <p>The strange looking line graph is called a sawtooth shape, and happens very often. So let me explain it</p>
 <ul>
@@ -262,9 +263,9 @@ If the list is long, it may be better to check using <code>tibble</code> by `<co
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="25-visualizing_files/figure-html/unnamed-chunk-12-1.png" width="672"></div>
 </div>
-<div id="q.-how-is-it-possible-to-organize-better-the-name-of-the-value-in-the-x-axis-so-that-they-are-better-readable-1" class="section level3" number="20.3.2">
+<div id="q.-how-is-it-possible-to-organize-better-the-name-of-the-value-in-the-x-axis-so-that-they-are-better-readable-1" class="section level3" number="21.3.2">
 <h3>
-<span class="header-section-number">20.3.2</span> Q. How is it possible to organize better the name of the value in the x axis so that they are better readable?<a class="anchor" aria-label="anchor" href="#q.-how-is-it-possible-to-organize-better-the-name-of-the-value-in-the-x-axis-so-that-they-are-better-readable-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">21.3.2</span> Q. How is it possible to organize better the name of the value in the x axis so that they are better readable?<a class="anchor" aria-label="anchor" href="#q.-how-is-it-possible-to-organize-better-the-name-of-the-value-in-the-x-axis-so-that-they-are-better-readable-1"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>In the example above, the labels are overlapping. One way is to give an angle to the text with <code>vjust</code> and <code>hjust</code> values to place the labels in appropriate places: <code>theme(axis.text.x = element_text(angle = 30, vjust = 1, hjust=1))</code>
@@ -320,9 +321,9 @@ Change the width value to fit to your chart. If you add library(stringr), then <
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"long long long long long long long \nlong long long title"</span>, x <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="25-visualizing_files/figure-html/unnamed-chunk-15-1.png" width="672"></div>
 </div>
-<div id="q.-position-of-the-labels-1" class="section level3" number="20.3.3">
+<div id="q.-position-of-the-labels-1" class="section level3" number="21.3.3">
 <h3>
-<span class="header-section-number">20.3.3</span> Q. Position of the labels<a class="anchor" aria-label="anchor" href="#q.-position-of-the-labels-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">21.3.3</span> Q. Position of the labels<a class="anchor" aria-label="anchor" href="#q.-position-of-the-labels-1"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>
@@ -395,14 +396,14 @@ Change the width value to fit to your chart. If you add library(stringr), then <
 <span>            position <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/position_dodge.html">position_dodge</a></span><span class="op">(</span><span class="fl">0.8</span><span class="op">)</span><span class="op">)</span>  </span></code></pre></div>
 <div class="inline-figure"><img src="25-visualizing_files/figure-html/unnamed-chunk-20-1.png" width="672"></div>
 </div>
-<div id="visualization-by-charts-1" class="section level3" number="20.3.4">
+<div id="visualization-by-charts-1" class="section level3" number="21.3.4">
 <h3>
-<span class="header-section-number">20.3.4</span> Visualization by Charts<a class="anchor" aria-label="anchor" href="#visualization-by-charts-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">21.3.4</span> Visualization by Charts<a class="anchor" aria-label="anchor" href="#visualization-by-charts-1"><i class="fas fa-link"></i></a>
 </h3>
 <p>Please try as various charts as possible. You can learn only by experience or from others.</p>
-<div id="treat-year-as-a-group-1" class="section level4" number="20.3.4.1">
+<div id="treat-year-as-a-group-1" class="section level4" number="21.3.4.1">
 <h4>
-<span class="header-section-number">20.3.4.1</span> Treat <code>year</code> as a group?<a class="anchor" aria-label="anchor" href="#treat-year-as-a-group-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">21.3.4.1</span> Treat <code>year</code> as a group?<a class="anchor" aria-label="anchor" href="#treat-year-as-a-group-1"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb545"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_wdi</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span></span>
@@ -465,34 +466,34 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 </div>
 </div>
 </div>
-<div id="maps" class="section level2" number="20.4">
+<div id="maps" class="section level2" number="21.4">
 <h2>
-<span class="header-section-number">20.4</span> Maps<a class="anchor" aria-label="anchor" href="#maps"><i class="fas fa-link"></i></a>
+<span class="header-section-number">21.4</span> Maps<a class="anchor" aria-label="anchor" href="#maps"><i class="fas fa-link"></i></a>
 </h2>
 <p><a href="https://www.naturalearthdata.com" class="uri">https://www.naturalearthdata.com</a></p>
 
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="tidying.html"><span class="header-section-number">19</span> Tidying</a></div>
-<div class="next"><a href="modeling.html"><span class="header-section-number">21</span> Modeling</a></div>
+<div class="prev"><a href="tidying.html"><span class="header-section-number">20</span> Tidying</a></div>
+<div class="next"><a href="modeling.html"><span class="header-section-number">22</span> Modeling</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#visualizing"><span class="header-section-number">20</span> Visualizing</a></li>
-<li><a class="nav-link" href="#data-visualization-1"><span class="header-section-number">20.1</span> Data Visualization</a></li>
+<li><a class="nav-link" href="#visualizing"><span class="header-section-number">21</span> Visualizing</a></li>
+<li><a class="nav-link" href="#data-visualization-1"><span class="header-section-number">21.1</span> Data Visualization</a></li>
 <li>
-<a class="nav-link" href="#ggplot2-basics-1"><span class="header-section-number">20.2</span> ggplot2 Basics</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#two-useful-questions-1"><span class="header-section-number">20.2.1</span> Two useful questions</a></li></ul>
+<a class="nav-link" href="#ggplot2-basics-1"><span class="header-section-number">21.2</span> ggplot2 Basics</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#two-useful-questions-1"><span class="header-section-number">21.2.1</span> Two useful questions</a></li></ul>
 </li>
 <li>
-<a class="nav-link" href="#set-up-6"><span class="header-section-number">20.3</span> Set up</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#q.-the-line-graph-looked-strange-at-first-and-i-couldnt-really-see-the-results-clearly.-however-i-could-solve-that-problem-by-using-smoothstat-and-then-the-results-looked-way-better-and-i-was-able-to-interpret-them-easily.-1"><span class="header-section-number">20.3.1</span> Q. The line graph looked strange at first and I couldn’t really see the results clearly. However, I could solve that problem by using “smoothstat” and then the results looked way better and I was able to interpret them easily.</a></li>
-<li><a class="nav-link" href="#q.-how-is-it-possible-to-organize-better-the-name-of-the-value-in-the-x-axis-so-that-they-are-better-readable-1"><span class="header-section-number">20.3.2</span> Q. How is it possible to organize better the name of the value in the x axis so that they are better readable?</a></li>
-<li><a class="nav-link" href="#q.-position-of-the-labels-1"><span class="header-section-number">20.3.3</span> Q. Position of the labels</a></li>
-<li><a class="nav-link" href="#visualization-by-charts-1"><span class="header-section-number">20.3.4</span> Visualization by Charts</a></li>
+<a class="nav-link" href="#set-up-6"><span class="header-section-number">21.3</span> Set up</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#q.-the-line-graph-looked-strange-at-first-and-i-couldnt-really-see-the-results-clearly.-however-i-could-solve-that-problem-by-using-smoothstat-and-then-the-results-looked-way-better-and-i-was-able-to-interpret-them-easily.-1"><span class="header-section-number">21.3.1</span> Q. The line graph looked strange at first and I couldn’t really see the results clearly. However, I could solve that problem by using “smoothstat” and then the results looked way better and I was able to interpret them easily.</a></li>
+<li><a class="nav-link" href="#q.-how-is-it-possible-to-organize-better-the-name-of-the-value-in-the-x-axis-so-that-they-are-better-readable-1"><span class="header-section-number">21.3.2</span> Q. How is it possible to organize better the name of the value in the x axis so that they are better readable?</a></li>
+<li><a class="nav-link" href="#q.-position-of-the-labels-1"><span class="header-section-number">21.3.3</span> Q. Position of the labels</a></li>
+<li><a class="nav-link" href="#visualization-by-charts-1"><span class="header-section-number">21.3.4</span> Visualization by Charts</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#maps"><span class="header-section-number">20.4</span> Maps</a></li>
+<li><a class="nav-link" href="#maps"><span class="header-section-number">21.4</span> Maps</a></li>
 </ul>
 
       <div class="book-extra">
@@ -510,7 +511,7 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-02-13.</p>
+    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-03-11.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

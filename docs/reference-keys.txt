@@ -6,7 +6,7 @@ intro
 qall401-data-analysis-for-researchers
 course-overview
 course-schedule
-grading-policy
+objective-and-grading-policy
 learning-resources
 textbooks-and-references
 interactive-tutorials-for-r
@@ -349,6 +349,13 @@ tidy-1
 glance
 augment
 references-of-broom
+final
+presentation
+presentation-procedure
+submission-notebook-file-and-the-presentation-file
+final-report
+submission-of-a-final-report
+topics-chosen-by-students
 eda
 what-is-eda-posit-primers-visualise-data-2
 eda-workflow-using-r-studio

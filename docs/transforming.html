@@ -4,22 +4,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 18 Transforming | Data Analysis for Researchers AY2022</title>
+<title>Chapter 19 Transforming | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
 <meta name="description" content="The dplyr is a package to transform data. It can combine data as well. We will treat the second feature late in Chapter ??. The package dplyr is a part of the tidyverse packages, and you do not...">
-<meta name="generator" content="bookdown 0.31 with bs4_book()">
-<meta property="og:title" content="Chapter 18 Transforming | Data Analysis for Researchers AY2022">
+<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta property="og:title" content="Chapter 19 Transforming | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/transforming.html">
 <meta property="og:description" content="The dplyr is a package to transform data. It can combine data as well. We will treat the second feature late in Chapter ??. The package dplyr is a part of the tidyverse packages, and you do not...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 18 Transforming | Data Analysis for Researchers AY2022">
+<meta name="twitter:title" content="Chapter 19 Transforming | Data Analysis for Researchers AY2022">
 <meta name="twitter:description" content="The dplyr is a package to transform data. It can combine data as well. We will treat the second feature late in Chapter ??. The package dplyr is a part of the tidyverse packages, and you do not...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-<script src="libs/datatables-binding-0.26/datatables.js"></script><link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.27/datatables.js"></script><link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
 <link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet">
 <script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
@@ -87,20 +87,21 @@
 <li><a class="" href="model.html"><span class="header-section-number">13</span> Linear Model</a></li>
 <li><a class="" href="roundups.html"><span class="header-section-number">14</span> Roudups</a></li>
 <li><a class="" href="a5resp.html"><span class="header-section-number">15</span> Assignment Five</a></li>
+<li><a class="" href="final.html"><span class="header-section-number">16</span> Presentation and Paper</a></li>
 <li class="book-part">PART II EDA BASICS</li>
-<li><a class="" href="eda.html"><span class="header-section-number">16</span> Exploratory Data analysis</a></li>
-<li><a class="" href="importing.html"><span class="header-section-number">17</span> Importing</a></li>
-<li><a class="active" href="transforming.html"><span class="header-section-number">18</span> Transforming</a></li>
-<li><a class="" href="tidying.html"><span class="header-section-number">19</span> Tidying</a></li>
-<li><a class="" href="visualizing.html"><span class="header-section-number">20</span> Visualizing</a></li>
-<li><a class="" href="modeling.html"><span class="header-section-number">21</span> Modeling</a></li>
-<li><a class="" href="communicating.html"><span class="header-section-number">22</span> Communicating</a></li>
+<li><a class="" href="eda.html"><span class="header-section-number">17</span> Exploratory Data analysis</a></li>
+<li><a class="" href="importing.html"><span class="header-section-number">18</span> Importing</a></li>
+<li><a class="active" href="transforming.html"><span class="header-section-number">19</span> Transforming</a></li>
+<li><a class="" href="tidying.html"><span class="header-section-number">20</span> Tidying</a></li>
+<li><a class="" href="visualizing.html"><span class="header-section-number">21</span> Visualizing</a></li>
+<li><a class="" href="modeling.html"><span class="header-section-number">22</span> Modeling</a></li>
+<li><a class="" href="communicating.html"><span class="header-section-number">23</span> Communicating</a></li>
 <li class="book-part">PART III OPEN PUBLIC DATA</li>
-<li><a class="" href="worldbank.html"><span class="header-section-number">23</span> World Bank</a></li>
-<li><a class="" href="owid.html"><span class="header-section-number">24</span> Our World in Data</a></li>
-<li><a class="" href="oecd.html"><span class="header-section-number">25</span> OECD</a></li>
-<li><a class="" href="undata.html"><span class="header-section-number">26</span> UN Data</a></li>
-<li><a class="" href="wir.html"><span class="header-section-number">27</span> World Inequality Report</a></li>
+<li><a class="" href="worldbank.html"><span class="header-section-number">24</span> World Bank</a></li>
+<li><a class="" href="owid.html"><span class="header-section-number">25</span> Our World in Data</a></li>
+<li><a class="" href="oecd.html"><span class="header-section-number">26</span> OECD</a></li>
+<li><a class="" href="undata.html"><span class="header-section-number">27</span> UN Data</a></li>
+<li><a class="" href="wir.html"><span class="header-section-number">28</span> World Inequality Report</a></li>
 <li class="book-part">APPENDIX</li>
 <li><a class="" href="histdata.html"><span class="header-section-number">A</span> HistData</a></li>
 <li><a class="" href="covid19.html"><span class="header-section-number">B</span> Covid 19</a></li>
@@ -113,9 +114,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="transforming" class="section level1" number="18">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="transforming" class="section level1" number="19">
 <h1>
-<span class="header-section-number">18</span> Transforming<a class="anchor" aria-label="anchor" href="#transforming"><i class="fas fa-link"></i></a>
+<span class="header-section-number">19</span> Transforming<a class="anchor" aria-label="anchor" href="#transforming"><i class="fas fa-link"></i></a>
 </h1>
 <blockquote>
 <p>The <code>dplyr</code> is a package to transform data. It can combine data as well. We will treat the second feature late in Chapter <a href="#tidyr"><strong>??</strong></a>. The package <code>dplyr</code> is a part of the <code>tidyverse</code> packages, and you do not need to install it separately.</p>
@@ -123,16 +124,16 @@
 <div class="sourceCode" id="cb522"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
-<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 </span></span>
-<span><span class="co">#&gt; ✔ tibble  3.1.8      ✔ dplyr   1.0.10</span></span>
-<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.5.0 </span></span>
-<span><span class="co">#&gt; ✔ readr   2.1.3      ✔ forcats 0.5.2 </span></span>
+<span><span class="co">#&gt; ✔ ggplot2 3.4.1     ✔ purrr   1.0.1</span></span>
+<span><span class="co">#&gt; ✔ tibble  3.1.8     ✔ dplyr   1.1.0</span></span>
+<span><span class="co">#&gt; ✔ tidyr   1.3.0     ✔ stringr 1.5.0</span></span>
+<span><span class="co">#&gt; ✔ readr   2.1.4     ✔ forcats 1.0.0</span></span>
 <span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
 <span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span></code></pre></div>
-<div id="dplyr-overview-1" class="section level2" number="18.1">
+<div id="dplyr-overview-1" class="section level2" number="19.1">
 <h2>
-<span class="header-section-number">18.1</span> <code>dplyr</code> <a href="https://dplyr.tidyverse.org">Overview</a><a class="anchor" aria-label="anchor" href="#dplyr-overview-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">19.1</span> <code>dplyr</code> <a href="https://dplyr.tidyverse.org">Overview</a><a class="anchor" aria-label="anchor" href="#dplyr-overview-1"><i class="fas fa-link"></i></a>
 </h2>
 <p>dplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges:</p>
 <ul>
@@ -152,9 +153,9 @@
 <p>You can learn more about them in vignette(“dplyr”). As well as these single-table verbs, dplyr also provides a variety of two-table verbs, which you can learn about in vignette(“two-table”).</p>
 <p>If you are new to dplyr, the best place to start is <a href="http://r4ds.had.co.nz/transform.html">the data transformation chapter in R for data science</a>.</p>
 </div>
-<div id="select-subset-columns-using-their-names-and-types-1" class="section level2" number="18.2">
+<div id="select-subset-columns-using-their-names-and-types-1" class="section level2" number="19.2">
 <h2>
-<span class="header-section-number">18.2</span> <a href="https://dplyr.tidyverse.org/reference/select.html"><code>select</code></a>: Subset columns using their names and types<a class="anchor" aria-label="anchor" href="#select-subset-columns-using-their-names-and-types-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">19.2</span> <a href="https://dplyr.tidyverse.org/reference/select.html"><code>select</code></a>: Subset columns using their names and types<a class="anchor" aria-label="anchor" href="#select-subset-columns-using-their-names-and-types-1"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -211,9 +212,9 @@
 </tbody>
 </table></div>
 </div>
-<div id="filter-subset-rows-using-column-values-1" class="section level2" number="18.3">
+<div id="filter-subset-rows-using-column-values-1" class="section level2" number="19.3">
 <h2>
-<span class="header-section-number">18.3</span> <a href="https://dplyr.tidyverse.org/reference/filter.html"><code>filter</code></a>: Subset rows using column values<a class="anchor" aria-label="anchor" href="#filter-subset-rows-using-column-values-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">19.3</span> <a href="https://dplyr.tidyverse.org/reference/filter.html"><code>filter</code></a>: Subset rows using column values<a class="anchor" aria-label="anchor" href="#filter-subset-rows-using-column-values-1"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -265,9 +266,9 @@
 </tbody>
 </table></div>
 </div>
-<div id="arrange-and-pipe-1" class="section level2" number="18.4">
+<div id="arrange-and-pipe-1" class="section level2" number="19.4">
 <h2>
-<span class="header-section-number">18.4</span> <a href="https://dplyr.tidyverse.org/reference/arrange.html"><code>arrange</code></a> and <code>Pipe %&gt;%</code><a class="anchor" aria-label="anchor" href="#arrange-and-pipe-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">19.4</span> <a href="https://dplyr.tidyverse.org/reference/arrange.html"><code>arrange</code></a> and <code>Pipe %&gt;%</code><a class="anchor" aria-label="anchor" href="#arrange-and-pipe-1"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>
@@ -279,9 +280,9 @@
 <a href="https://r4ds.had.co.nz/pipes.html"><code>pipes</code></a> in R for Data Science.</li>
 </ul>
 </div>
-<div id="mutate-1" class="section level2" number="18.5">
+<div id="mutate-1" class="section level2" number="19.5">
 <h2>
-<span class="header-section-number">18.5</span> <a href="https://dplyr.tidyverse.org/reference/mutate.html"><code>mutate</code></a><a class="anchor" aria-label="anchor" href="#mutate-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">19.5</span> <a href="https://dplyr.tidyverse.org/reference/mutate.html"><code>mutate</code></a><a class="anchor" aria-label="anchor" href="#mutate-1"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Create, modify, and delete columns</p></li>
@@ -297,18 +298,18 @@
 </li>
 </ul>
 </div>
-<div id="group_by-1" class="section level2" number="18.6">
+<div id="group_by-1" class="section level2" number="19.6">
 <h2>
-<span class="header-section-number">18.6</span> <a href="https://dplyr.tidyverse.org/reference/group_by.html"><code>group_by</code></a><a class="anchor" aria-label="anchor" href="#group_by-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">19.6</span> <a href="https://dplyr.tidyverse.org/reference/group_by.html"><code>group_by</code></a><a class="anchor" aria-label="anchor" href="#group_by-1"><i class="fas fa-link"></i></a>
 </h2>
 </div>
-<div id="summarise-or-summarize-1" class="section level2" number="18.7">
+<div id="summarise-or-summarize-1" class="section level2" number="19.7">
 <h2>
-<span class="header-section-number">18.7</span> <a href="https://dplyr.tidyverse.org/reference/summarise.html"><code>summarise</code> or <code>summarize</code></a><a class="anchor" aria-label="anchor" href="#summarise-or-summarize-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">19.7</span> <a href="https://dplyr.tidyverse.org/reference/summarise.html"><code>summarise</code> or <code>summarize</code></a><a class="anchor" aria-label="anchor" href="#summarise-or-summarize-1"><i class="fas fa-link"></i></a>
 </h2>
-<div id="summary-functions-1" class="section level4" number="18.7.0.1">
+<div id="summary-functions-1" class="section level4" number="19.7.0.1">
 <h4>
-<span class="header-section-number">18.7.0.1</span> Summary functions<a class="anchor" aria-label="anchor" href="#summary-functions-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">19.7.0.1</span> Summary functions<a class="anchor" aria-label="anchor" href="#summary-functions-1"><i class="fas fa-link"></i></a>
 </h4>
 <p>So far our summarise() examples have relied on sum(), max(), and mean(). But you can use any function in summarise() so long as it meets one criteria: the function must take a vector of values as input and return a single value as output. Functions that do this are known as summary functions and they are common in the field of descriptive statistics. Some of the most useful summary functions include:</p>
 <ol style="list-style-type: decimal">
@@ -325,19 +326,19 @@
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="importing.html"><span class="header-section-number">17</span> Importing</a></div>
-<div class="next"><a href="tidying.html"><span class="header-section-number">19</span> Tidying</a></div>
+<div class="prev"><a href="importing.html"><span class="header-section-number">18</span> Importing</a></div>
+<div class="next"><a href="tidying.html"><span class="header-section-number">20</span> Tidying</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#transforming"><span class="header-section-number">18</span> Transforming</a></li>
-<li><a class="nav-link" href="#dplyr-overview-1"><span class="header-section-number">18.1</span> dplyr Overview</a></li>
-<li><a class="nav-link" href="#select-subset-columns-using-their-names-and-types-1"><span class="header-section-number">18.2</span> select: Subset columns using their names and types</a></li>
-<li><a class="nav-link" href="#filter-subset-rows-using-column-values-1"><span class="header-section-number">18.3</span> filter: Subset rows using column values</a></li>
-<li><a class="nav-link" href="#arrange-and-pipe-1"><span class="header-section-number">18.4</span> arrange and Pipe %&gt;%</a></li>
-<li><a class="nav-link" href="#mutate-1"><span class="header-section-number">18.5</span> mutate</a></li>
-<li><a class="nav-link" href="#group_by-1"><span class="header-section-number">18.6</span> group_by</a></li>
-<li><a class="nav-link" href="#summarise-or-summarize-1"><span class="header-section-number">18.7</span> summarise or summarize</a></li>
+<li><a class="nav-link" href="#transforming"><span class="header-section-number">19</span> Transforming</a></li>
+<li><a class="nav-link" href="#dplyr-overview-1"><span class="header-section-number">19.1</span> dplyr Overview</a></li>
+<li><a class="nav-link" href="#select-subset-columns-using-their-names-and-types-1"><span class="header-section-number">19.2</span> select: Subset columns using their names and types</a></li>
+<li><a class="nav-link" href="#filter-subset-rows-using-column-values-1"><span class="header-section-number">19.3</span> filter: Subset rows using column values</a></li>
+<li><a class="nav-link" href="#arrange-and-pipe-1"><span class="header-section-number">19.4</span> arrange and Pipe %&gt;%</a></li>
+<li><a class="nav-link" href="#mutate-1"><span class="header-section-number">19.5</span> mutate</a></li>
+<li><a class="nav-link" href="#group_by-1"><span class="header-section-number">19.6</span> group_by</a></li>
+<li><a class="nav-link" href="#summarise-or-summarize-1"><span class="header-section-number">19.7</span> summarise or summarize</a></li>
 </ul>
 
       <div class="book-extra">
@@ -355,7 +356,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-02-13.</p>
+    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-03-11.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

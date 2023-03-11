@@ -4,22 +4,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 24 Our World in Data | Data Analysis for Researchers AY2022</title>
+<title>Chapter 25 Our World in Data | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
-<meta name="description" content="24.1 The package owidR  We study the R package owidR for importing data from Our World in Data.   24.2 References The package official site contains other links. When you quote the package, use...">
-<meta name="generator" content="bookdown 0.31 with bs4_book()">
-<meta property="og:title" content="Chapter 24 Our World in Data | Data Analysis for Researchers AY2022">
+<meta name="description" content="25.1 The package owidR  We study the R package owidR for importing data from Our World in Data.   25.2 References The package official site contains other links. When you quote the package, use...">
+<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta property="og:title" content="Chapter 25 Our World in Data | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/owid.html">
-<meta property="og:description" content="24.1 The package owidR  We study the R package owidR for importing data from Our World in Data.   24.2 References The package official site contains other links. When you quote the package, use...">
+<meta property="og:description" content="25.1 The package owidR  We study the R package owidR for importing data from Our World in Data.   25.2 References The package official site contains other links. When you quote the package, use...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 24 Our World in Data | Data Analysis for Researchers AY2022">
-<meta name="twitter:description" content="24.1 The package owidR  We study the R package owidR for importing data from Our World in Data.   24.2 References The package official site contains other links. When you quote the package, use...">
+<meta name="twitter:title" content="Chapter 25 Our World in Data | Data Analysis for Researchers AY2022">
+<meta name="twitter:description" content="25.1 The package owidR  We study the R package owidR for importing data from Our World in Data.   25.2 References The package official site contains other links. When you quote the package, use...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-<script src="libs/datatables-binding-0.26/datatables.js"></script><link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.27/datatables.js"></script><link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
 <link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet">
 <script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
@@ -87,20 +87,21 @@
 <li><a class="" href="model.html"><span class="header-section-number">13</span> Linear Model</a></li>
 <li><a class="" href="roundups.html"><span class="header-section-number">14</span> Roudups</a></li>
 <li><a class="" href="a5resp.html"><span class="header-section-number">15</span> Assignment Five</a></li>
+<li><a class="" href="final.html"><span class="header-section-number">16</span> Presentation and Paper</a></li>
 <li class="book-part">PART II EDA BASICS</li>
-<li><a class="" href="eda.html"><span class="header-section-number">16</span> Exploratory Data analysis</a></li>
-<li><a class="" href="importing.html"><span class="header-section-number">17</span> Importing</a></li>
-<li><a class="" href="transforming.html"><span class="header-section-number">18</span> Transforming</a></li>
-<li><a class="" href="tidying.html"><span class="header-section-number">19</span> Tidying</a></li>
-<li><a class="" href="visualizing.html"><span class="header-section-number">20</span> Visualizing</a></li>
-<li><a class="" href="modeling.html"><span class="header-section-number">21</span> Modeling</a></li>
-<li><a class="" href="communicating.html"><span class="header-section-number">22</span> Communicating</a></li>
+<li><a class="" href="eda.html"><span class="header-section-number">17</span> Exploratory Data analysis</a></li>
+<li><a class="" href="importing.html"><span class="header-section-number">18</span> Importing</a></li>
+<li><a class="" href="transforming.html"><span class="header-section-number">19</span> Transforming</a></li>
+<li><a class="" href="tidying.html"><span class="header-section-number">20</span> Tidying</a></li>
+<li><a class="" href="visualizing.html"><span class="header-section-number">21</span> Visualizing</a></li>
+<li><a class="" href="modeling.html"><span class="header-section-number">22</span> Modeling</a></li>
+<li><a class="" href="communicating.html"><span class="header-section-number">23</span> Communicating</a></li>
 <li class="book-part">PART III OPEN PUBLIC DATA</li>
-<li><a class="" href="worldbank.html"><span class="header-section-number">23</span> World Bank</a></li>
-<li><a class="active" href="owid.html"><span class="header-section-number">24</span> Our World in Data</a></li>
-<li><a class="" href="oecd.html"><span class="header-section-number">25</span> OECD</a></li>
-<li><a class="" href="undata.html"><span class="header-section-number">26</span> UN Data</a></li>
-<li><a class="" href="wir.html"><span class="header-section-number">27</span> World Inequality Report</a></li>
+<li><a class="" href="worldbank.html"><span class="header-section-number">24</span> World Bank</a></li>
+<li><a class="active" href="owid.html"><span class="header-section-number">25</span> Our World in Data</a></li>
+<li><a class="" href="oecd.html"><span class="header-section-number">26</span> OECD</a></li>
+<li><a class="" href="undata.html"><span class="header-section-number">27</span> UN Data</a></li>
+<li><a class="" href="wir.html"><span class="header-section-number">28</span> World Inequality Report</a></li>
 <li class="book-part">APPENDIX</li>
 <li><a class="" href="histdata.html"><span class="header-section-number">A</span> HistData</a></li>
 <li><a class="" href="covid19.html"><span class="header-section-number">B</span> Covid 19</a></li>
@@ -113,21 +114,21 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="owid" class="section level1" number="24">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="owid" class="section level1" number="25">
 <h1>
-<span class="header-section-number">24</span> Our World in Data<a class="anchor" aria-label="anchor" href="#owid"><i class="fas fa-link"></i></a>
+<span class="header-section-number">25</span> Our World in Data<a class="anchor" aria-label="anchor" href="#owid"><i class="fas fa-link"></i></a>
 </h1>
-<div id="the-package-owidr" class="section level2" number="24.1">
+<div id="the-package-owidr" class="section level2" number="25.1">
 <h2>
-<span class="header-section-number">24.1</span> The package <code>owidR</code><a class="anchor" aria-label="anchor" href="#the-package-owidr"><i class="fas fa-link"></i></a>
+<span class="header-section-number">25.1</span> The package <code>owidR</code><a class="anchor" aria-label="anchor" href="#the-package-owidr"><i class="fas fa-link"></i></a>
 </h2>
 <blockquote>
 <p>We study the R package <code>owidR</code> for importing data from Our World in Data.</p>
 </blockquote>
 </div>
-<div id="references-5" class="section level2" number="24.2">
+<div id="references-5" class="section level2" number="25.2">
 <h2>
-<span class="header-section-number">24.2</span> References<a class="anchor" aria-label="anchor" href="#references-5"><i class="fas fa-link"></i></a>
+<span class="header-section-number">25.2</span> References<a class="anchor" aria-label="anchor" href="#references-5"><i class="fas fa-link"></i></a>
 </h2>
 <p>The package official site contains other links. When you quote the package, use the link to the official site.</p>
 <ul>
@@ -150,37 +151,37 @@
 </ul>
 <p>In general, README gives a short introduction to the package, a Manual, the comprehensive descriptions of each function, and a Vignette, a practical introduction containing examples and applications.</p>
 </div>
-<div id="introduction" class="section level2" number="24.3">
+<div id="introduction" class="section level2" number="25.3">
 <h2>
-<span class="header-section-number">24.3</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction"><i class="fas fa-link"></i></a>
+<span class="header-section-number">25.3</span> Introduction<a class="anchor" aria-label="anchor" href="#introduction"><i class="fas fa-link"></i></a>
 </h2>
 <blockquote>
 <p>This package acts as an interface to <a href="https://ourworldindata.org">Our World in Data</a> datasets, allowing for an easy way to search through data used in over 3,000 charts and load them into the R environment.</p>
 </blockquote>
-<div id="setup-4" class="section level3" number="24.3.1">
+<div id="setup-4" class="section level3" number="25.3.1">
 <h3>
-<span class="header-section-number">24.3.1</span> Setup<a class="anchor" aria-label="anchor" href="#setup-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">25.3.1</span> Setup<a class="anchor" aria-label="anchor" href="#setup-4"><i class="fas fa-link"></i></a>
 </h3>
-<div id="installation" class="section level4" number="24.3.1.1">
+<div id="installation" class="section level4" number="25.3.1.1">
 <h4>
-<span class="header-section-number">24.3.1.1</span> Installation<a class="anchor" aria-label="anchor" href="#installation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">25.3.1.1</span> Installation<a class="anchor" aria-label="anchor" href="#installation"><i class="fas fa-link"></i></a>
 </h4>
 <p>Run the following for the first time</p>
 <div class="sourceCode" id="cb569"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"owidR"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="load-the-package" class="section level4" number="24.3.1.2">
+<div id="load-the-package" class="section level4" number="25.3.1.2">
 <h4>
-<span class="header-section-number">24.3.1.2</span> Load the package<a class="anchor" aria-label="anchor" href="#load-the-package"><i class="fas fa-link"></i></a>
+<span class="header-section-number">25.3.1.2</span> Load the package<a class="anchor" aria-label="anchor" href="#load-the-package"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb570"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/piersyork/owidR">owidR</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span> </span>
 <span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
-<span><span class="co">#&gt; ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 </span></span>
-<span><span class="co">#&gt; ✔ tibble  3.1.8      ✔ dplyr   1.0.10</span></span>
-<span><span class="co">#&gt; ✔ tidyr   1.2.1      ✔ stringr 1.5.0 </span></span>
-<span><span class="co">#&gt; ✔ readr   2.1.3      ✔ forcats 0.5.2 </span></span>
+<span><span class="co">#&gt; ✔ ggplot2 3.4.1     ✔ purrr   1.0.1</span></span>
+<span><span class="co">#&gt; ✔ tibble  3.1.8     ✔ dplyr   1.1.0</span></span>
+<span><span class="co">#&gt; ✔ tidyr   1.3.0     ✔ stringr 1.5.0</span></span>
+<span><span class="co">#&gt; ✔ readr   2.1.4     ✔ forcats 1.0.0</span></span>
 <span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
 <span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span></code></pre></div>
@@ -188,13 +189,13 @@
 <p>The creator of this package also suggests loading packages <code>plm</code> for panels of data, and <code>texreg</code> for displaying models, but let us start without them until we actually use them. For panel data, see, for example, the site](<a href="https://www.aptech.com/blog/introduction-to-the-fundamentals-of-panel-data/" class="uri">https://www.aptech.com/blog/introduction-to-the-fundamentals-of-panel-data/</a>).</p>
 </div>
 </div>
-<div id="core-functions" class="section level3" number="24.3.2">
+<div id="core-functions" class="section level3" number="25.3.2">
 <h3>
-<span class="header-section-number">24.3.2</span> Core functions<a class="anchor" aria-label="anchor" href="#core-functions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">25.3.2</span> Core functions<a class="anchor" aria-label="anchor" href="#core-functions"><i class="fas fa-link"></i></a>
 </h3>
-<div id="list-of-core-functions" class="section level4" number="24.3.2.1">
+<div id="list-of-core-functions" class="section level4" number="25.3.2.1">
 <h4>
-<span class="header-section-number">24.3.2.1</span> List of core functions<a class="anchor" aria-label="anchor" href="#list-of-core-functions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">25.3.2.1</span> List of core functions<a class="anchor" aria-label="anchor" href="#list-of-core-functions"><i class="fas fa-link"></i></a>
 </h4>
 <p>In this package, <code>chart</code> is close to data, and <code>chart id</code> is a data indicator.</p>
 <ul>
@@ -207,13 +208,13 @@
 <li>world_map_data: Function that returns a simple feature collection of class sf. Map data is from naturalearthdata.com. Designed to be used internally.</li>
 </ul>
 </div>
-<div id="usage" class="section level4" number="24.3.2.2">
+<div id="usage" class="section level4" number="25.3.2.2">
 <h4>
-<span class="header-section-number">24.3.2.2</span> Usage<a class="anchor" aria-label="anchor" href="#usage"><i class="fas fa-link"></i></a>
+<span class="header-section-number">25.3.2.2</span> Usage<a class="anchor" aria-label="anchor" href="#usage"><i class="fas fa-link"></i></a>
 </h4>
-<div id="owid_search" class="section level5" number="24.3.2.2.1">
+<div id="owid_search" class="section level5" number="25.3.2.2.1">
 <h5>
-<span class="header-section-number">24.3.2.2.1</span> <code>owid_search</code><a class="anchor" aria-label="anchor" href="#owid_search"><i class="fas fa-link"></i></a>
+<span class="header-section-number">25.3.2.2.1</span> <code>owid_search</code><a class="anchor" aria-label="anchor" href="#owid_search"><i class="fas fa-link"></i></a>
 </h5>
 <p>Search the data sources used in OWID charts</p>
 <pre><code>owid_search(term)</code></pre>
@@ -228,32 +229,32 @@
 <span><span class="co">#&gt; [2,] "Emissions of air pollutants"                           </span></span>
 <span><span class="co">#&gt; [3,] "Emissions of air pollutants"                           </span></span>
 <span><span class="co">#&gt; [4,] "Emissions of particulate matter"                       </span></span>
-<span><span class="co">#&gt; [5,] "Global SO₂ emissions"                                  </span></span>
-<span><span class="co">#&gt; [6,] "Global sulphur dioxide (SO₂) emissions by world region"</span></span>
+<span><span class="co">#&gt; [5,] "Global sulphur dioxide (SO₂) emissions by world region"</span></span>
+<span><span class="co">#&gt; [6,] "Sulphur dioxide (SO₂) emissions"                       </span></span>
 <span><span class="co">#&gt;      chart_id                                        </span></span>
 <span><span class="co">#&gt; [1,] "air-pollutant-emissions"                       </span></span>
 <span><span class="co">#&gt; [2,] "emissions-of-air-pollutants"                   </span></span>
 <span><span class="co">#&gt; [3,] "emissions-of-air-pollutants-oecd"              </span></span>
 <span><span class="co">#&gt; [4,] "emissions-of-particulate-matter"               </span></span>
-<span><span class="co">#&gt; [5,] "global-so-emissions"                           </span></span>
-<span><span class="co">#&gt; [6,] "so-emissions-by-world-region-in-million-tonnes"</span></span></code></pre></div>
+<span><span class="co">#&gt; [5,] "so-emissions-by-world-region-in-million-tonnes"</span></span>
+<span><span class="co">#&gt; [6,] "so2-emissions"</span></span></code></pre></div>
 <p>A matrix is returned. If the list is long, it is easier to see the pairs of the titles and chart_ids by adding <code><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble()</a></code>.</p>
 <div class="sourceCode" id="cb573"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_search.html">owid_search</a></span><span class="op">(</span><span class="st">"emissions"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 151 × 2</span></span>
+<span><span class="co">#&gt; # A tibble: 150 × 2</span></span>
 <span><span class="co">#&gt;    titles                                            chart…¹</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;                                             &lt;chr&gt;  </span></span>
 <span><span class="co">#&gt;  1 Air pollutant emissions                           air-po…</span></span>
 <span><span class="co">#&gt;  2 Emissions of air pollutants                       emissi…</span></span>
 <span><span class="co">#&gt;  3 Emissions of air pollutants                       emissi…</span></span>
 <span><span class="co">#&gt;  4 Emissions of particulate matter                   emissi…</span></span>
-<span><span class="co">#&gt;  5 Global SO₂ emissions                              global…</span></span>
-<span><span class="co">#&gt;  6 Global sulphur dioxide (SO₂) emissions by world … so-emi…</span></span>
-<span><span class="co">#&gt;  7 Sulphur dioxide (SO₂) emissions                   so2-em…</span></span>
-<span><span class="co">#&gt;  8 Sulphur dioxide (SO₂) emissions                   so-emi…</span></span>
-<span><span class="co">#&gt;  9 Sulphur dioxide (SO₂) emissions per capita        so-emi…</span></span>
-<span><span class="co">#&gt; 10 Sulphur oxide (SO₂) emissions                     sulphu…</span></span>
-<span><span class="co">#&gt; # … with 141 more rows, and abbreviated variable name</span></span>
+<span><span class="co">#&gt;  5 Global sulphur dioxide (SO₂) emissions by world … so-emi…</span></span>
+<span><span class="co">#&gt;  6 Sulphur dioxide (SO₂) emissions                   so2-em…</span></span>
+<span><span class="co">#&gt;  7 Sulphur dioxide (SO₂) emissions                   so-emi…</span></span>
+<span><span class="co">#&gt;  8 Sulphur dioxide (SO₂) emissions per capita        so-emi…</span></span>
+<span><span class="co">#&gt;  9 Sulphur oxide (SO₂) emissions                     sulphu…</span></span>
+<span><span class="co">#&gt; 10 Annual CO2 emissions from land-use change per ca… co2-la…</span></span>
+<span><span class="co">#&gt; # … with 140 more rows, and abbreviated variable name</span></span>
 <span><span class="co">#&gt; #   ¹​chart_id</span></span></code></pre></div>
 <p>If the list is not long, you do not need to add <code><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble()</a></code>. However, note that you need to keep in mind that the title and the chart_id consists of a pair, and you need to use the chart_id to download the data using <code>owid</code>.</p>
 <div class="sourceCode" id="cb574"><pre class="downlit sourceCode r">
@@ -277,9 +278,9 @@
 <span><span class="co">#&gt; [7,] "cases-of-killed-human-rights-defenders-journalists-trade-unionists"       </span></span>
 <span><span class="co">#&gt; [8,] "share-countries-accredited-independent-national-human-rights-institutions"</span></span></code></pre></div>
 </div>
-<div id="owid-1" class="section level5" number="24.3.2.2.2">
+<div id="owid-1" class="section level5" number="25.3.2.2.2">
 <h5>
-<span class="header-section-number">24.3.2.2.2</span> <code>owid</code><a class="anchor" aria-label="anchor" href="#owid-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">25.3.2.2.2</span> <code>owid</code><a class="anchor" aria-label="anchor" href="#owid-1"><i class="fas fa-link"></i></a>
 </h5>
 <p>Get a dataset used in an OWID chart</p>
 <pre><code>owid(chart_id = NULL, rename = NULL, tidy.date = TRUE, ...)</code></pre>
@@ -369,48 +370,50 @@
 <div class="sourceCode" id="cb582"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"electoral-democracy"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/top_n.html">top_n</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Selecting by electdem_vdem_low_owid</span></span>
-<span><span class="co">#&gt; # A tibble: 1 × 6</span></span>
-<span><span class="co">#&gt;   entity code   year `Electoral democracy` electde…¹ elect…²</span></span>
-<span><span class="co">#&gt;   &lt;chr&gt;  &lt;chr&gt; &lt;int&gt;                 &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1 Sweden SWE    2012                 0.926     0.958   0.905</span></span>
+<span><span class="co">#&gt; # A tibble: 3 × 6</span></span>
+<span><span class="co">#&gt;   entity  code   year `Electoral democracy` electd…¹ elect…²</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;int&gt;                 &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 Denmark DNK    2008                 0.922    0.959     0.9</span></span>
+<span><span class="co">#&gt; 2 Denmark DNK    2009                 0.922    0.959     0.9</span></span>
+<span><span class="co">#&gt; 3 Denmark DNK    2010                 0.922    0.959     0.9</span></span>
 <span><span class="co">#&gt; # … with abbreviated variable names</span></span>
 <span><span class="co">#&gt; #   ¹​electdem_vdem_high_owid, ²​electdem_vdem_low_owid</span></span></code></pre></div>
 <div class="sourceCode" id="cb583"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"electoral-democracy"</span>, rename <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"electoral_democracy"</span>, <span class="st">"vdem_high"</span>, <span class="st">"vdem_low"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 31,995 × 6</span></span>
+<span><span class="co">#&gt; # A tibble: 32,518 × 6</span></span>
 <span><span class="co">#&gt;    entity      code   year electoral_democ…¹ vdem_…² vdem_…³</span></span>
 <span><span class="co">#&gt;  * &lt;chr&gt;       &lt;chr&gt; &lt;int&gt;             &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 Afghanistan AFG    1789             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  2 Afghanistan AFG    1790             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  3 Afghanistan AFG    1791             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  4 Afghanistan AFG    1792             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  5 Afghanistan AFG    1793             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  6 Afghanistan AFG    1794             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  7 Afghanistan AFG    1795             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  8 Afghanistan AFG    1796             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  9 Afghanistan AFG    1797             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt; 10 Afghanistan AFG    1798             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt; # … with 31,985 more rows, and abbreviated variable names</span></span>
+<span><span class="co">#&gt;  1 Afghanistan AFG    1789             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  2 Afghanistan AFG    1790             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  3 Afghanistan AFG    1791             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  4 Afghanistan AFG    1792             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  5 Afghanistan AFG    1793             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  6 Afghanistan AFG    1794             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  7 Afghanistan AFG    1795             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  8 Afghanistan AFG    1796             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  9 Afghanistan AFG    1797             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt; 10 Afghanistan AFG    1798             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt; # … with 32,508 more rows, and abbreviated variable names</span></span>
 <span><span class="co">#&gt; #   ¹​electoral_democracy, ²​vdem_high, ³​vdem_low</span></span></code></pre></div>
 <ol start="4" style="list-style-type: decimal">
 <li>You can use <code><a href="https://dplyr.tidyverse.org/reference/rename.html">dplyr::rename</a></code>, and keep the record of renaming column names.</li>
 </ol>
 <div class="sourceCode" id="cb584"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">(</span><span class="va">democracy</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"electoral-democracy"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 31,995 × 6</span></span>
+<span><span class="co">#&gt; # A tibble: 32,518 × 6</span></span>
 <span><span class="co">#&gt;    entity      code   year Electoral democ…¹ elect…² elect…³</span></span>
 <span><span class="co">#&gt;  * &lt;chr&gt;       &lt;chr&gt; &lt;int&gt;             &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 Afghanistan AFG    1789             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  2 Afghanistan AFG    1790             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  3 Afghanistan AFG    1791             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  4 Afghanistan AFG    1792             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  5 Afghanistan AFG    1793             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  6 Afghanistan AFG    1794             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  7 Afghanistan AFG    1795             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  8 Afghanistan AFG    1796             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  9 Afghanistan AFG    1797             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt; 10 Afghanistan AFG    1798             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt; # … with 31,985 more rows, and abbreviated variable names</span></span>
+<span><span class="co">#&gt;  1 Afghanistan AFG    1789             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  2 Afghanistan AFG    1790             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  3 Afghanistan AFG    1791             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  4 Afghanistan AFG    1792             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  5 Afghanistan AFG    1793             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  6 Afghanistan AFG    1794             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  7 Afghanistan AFG    1795             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  8 Afghanistan AFG    1796             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  9 Afghanistan AFG    1797             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt; 10 Afghanistan AFG    1798             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt; # … with 32,508 more rows, and abbreviated variable names</span></span>
 <span><span class="co">#&gt; #   ¹​`Electoral democracy`, ²​electdem_vdem_high_owid,</span></span>
 <span><span class="co">#&gt; #   ³​electdem_vdem_low_owid</span></span></code></pre></div>
 <div class="sourceCode" id="cb585"><pre class="downlit sourceCode r">
@@ -419,26 +422,26 @@
 <span>         `vdem_high` <span class="op">=</span> <span class="va">`electdem_vdem_high_owid`</span>, </span>
 <span>         `electdem_vdem_low_owid` <span class="op">=</span> <span class="va">`electdem_vdem_low_owid`</span><span class="op">)</span></span>
 <span><span class="va">democracy</span></span>
-<span><span class="co">#&gt; # A tibble: 31,995 × 6</span></span>
+<span><span class="co">#&gt; # A tibble: 32,518 × 6</span></span>
 <span><span class="co">#&gt;    entity      code   year electoral_democ…¹ vdem_…² elect…³</span></span>
 <span><span class="co">#&gt;  * &lt;chr&gt;       &lt;chr&gt; &lt;int&gt;             &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 Afghanistan AFG    1789             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  2 Afghanistan AFG    1790             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  3 Afghanistan AFG    1791             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  4 Afghanistan AFG    1792             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  5 Afghanistan AFG    1793             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  6 Afghanistan AFG    1794             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  7 Afghanistan AFG    1795             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  8 Afghanistan AFG    1796             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  9 Afghanistan AFG    1797             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt; 10 Afghanistan AFG    1798             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt; # … with 31,985 more rows, and abbreviated variable names</span></span>
+<span><span class="co">#&gt;  1 Afghanistan AFG    1789             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  2 Afghanistan AFG    1790             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  3 Afghanistan AFG    1791             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  4 Afghanistan AFG    1792             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  5 Afghanistan AFG    1793             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  6 Afghanistan AFG    1794             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  7 Afghanistan AFG    1795             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  8 Afghanistan AFG    1796             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  9 Afghanistan AFG    1797             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt; 10 Afghanistan AFG    1798             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt; # … with 32,508 more rows, and abbreviated variable names</span></span>
 <span><span class="co">#&gt; #   ¹​electoral_democracy, ²​vdem_high,</span></span>
 <span><span class="co">#&gt; #   ³​electdem_vdem_low_owid</span></span></code></pre></div>
 </div>
-<div id="owid_source" class="section level5" number="24.3.2.2.3">
+<div id="owid_source" class="section level5" number="25.3.2.2.3">
 <h5>
-<span class="header-section-number">24.3.2.2.3</span> <code>owid_source</code><a class="anchor" aria-label="anchor" href="#owid_source"><i class="fas fa-link"></i></a>
+<span class="header-section-number">25.3.2.2.3</span> <code>owid_source</code><a class="anchor" aria-label="anchor" href="#owid_source"><i class="fas fa-link"></i></a>
 </h5>
 <p>A function to get source information from an OWID dataset and display it in the R console.</p>
 <pre><code>owid_source(data)</code></pre>
@@ -468,9 +471,9 @@
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; You can download the code and complete dataset, including supplementary variables, from GitHub: https://github.com/owid/notebooks/tree/main/BastianHerre/human_rights</span></span></code></pre></div>
 </div>
-<div id="view_chart" class="section level5" number="24.3.2.2.4">
+<div id="view_chart" class="section level5" number="25.3.2.2.4">
 <h5>
-<span class="header-section-number">24.3.2.2.4</span> <code>view_chart</code><a class="anchor" aria-label="anchor" href="#view_chart"><i class="fas fa-link"></i></a>
+<span class="header-section-number">25.3.2.2.4</span> <code>view_chart</code><a class="anchor" aria-label="anchor" href="#view_chart"><i class="fas fa-link"></i></a>
 </h5>
 <p>A function that opens the original OWID chart in your browser</p>
 <pre><code>view_chart(x)</code></pre>
@@ -493,15 +496,15 @@
 <iframe src="https://ourworldindata.org/grapher/share-of-individuals-using-the-internet" loading="lazy" style="width: 100%; height: 600px; border: 0px none;">
 </iframe>
 </div>
-<div id="pal_owid" class="section level5" number="24.3.2.2.5">
+<div id="pal_owid" class="section level5" number="25.3.2.2.5">
 <h5>
-<span class="header-section-number">24.3.2.2.5</span> <code>pal_owid</code><a class="anchor" aria-label="anchor" href="#pal_owid"><i class="fas fa-link"></i></a>
+<span class="header-section-number">25.3.2.2.5</span> <code>pal_owid</code><a class="anchor" aria-label="anchor" href="#pal_owid"><i class="fas fa-link"></i></a>
 </h5>
 <p>Colour palettes based on the colours used by Our World in Data</p>
 </div>
-<div id="owid_covid" class="section level5" number="24.3.2.2.6">
+<div id="owid_covid" class="section level5" number="25.3.2.2.6">
 <h5>
-<span class="header-section-number">24.3.2.2.6</span> <code>owid_covid</code><a class="anchor" aria-label="anchor" href="#owid_covid"><i class="fas fa-link"></i></a>
+<span class="header-section-number">25.3.2.2.6</span> <code>owid_covid</code><a class="anchor" aria-label="anchor" href="#owid_covid"><i class="fas fa-link"></i></a>
 </h5>
 <p>owid_covid: Get the Our World in Data covid-19 dataset</p>
 <pre><code><a href="https://rdrr.io/pkg/owidR/man/owid_covid.html">owid_covid()</a></code></pre>
@@ -513,20 +516,20 @@
 <code class="sourceCode R"><span><span class="va">covid</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_covid.html">owid_covid</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb595"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">covid</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">location</span> <span class="op">==</span> <span class="st">"Japan"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 1,117 × 67</span></span>
+<span><span class="co">#&gt; # A tibble: 1,161 × 67</span></span>
 <span><span class="co">#&gt;    iso_code continent location date       total_ca…¹ new_c…²</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;    &lt;date&gt;          &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 JPN      Asia      Japan    2020-01-22          2      NA</span></span>
-<span><span class="co">#&gt;  2 JPN      Asia      Japan    2020-01-23          2       0</span></span>
-<span><span class="co">#&gt;  3 JPN      Asia      Japan    2020-01-24          2       0</span></span>
-<span><span class="co">#&gt;  4 JPN      Asia      Japan    2020-01-25          2       0</span></span>
-<span><span class="co">#&gt;  5 JPN      Asia      Japan    2020-01-26          4       2</span></span>
-<span><span class="co">#&gt;  6 JPN      Asia      Japan    2020-01-27          4       0</span></span>
-<span><span class="co">#&gt;  7 JPN      Asia      Japan    2020-01-28          7       3</span></span>
-<span><span class="co">#&gt;  8 JPN      Asia      Japan    2020-01-29          7       0</span></span>
-<span><span class="co">#&gt;  9 JPN      Asia      Japan    2020-01-30         11       4</span></span>
-<span><span class="co">#&gt; 10 JPN      Asia      Japan    2020-01-31         15       4</span></span>
-<span><span class="co">#&gt; # … with 1,107 more rows, 61 more variables:</span></span>
+<span><span class="co">#&gt;  1 JPN      Asia      Japan    2020-01-03         NA       0</span></span>
+<span><span class="co">#&gt;  2 JPN      Asia      Japan    2020-01-04         NA       0</span></span>
+<span><span class="co">#&gt;  3 JPN      Asia      Japan    2020-01-05         NA       0</span></span>
+<span><span class="co">#&gt;  4 JPN      Asia      Japan    2020-01-06         NA       0</span></span>
+<span><span class="co">#&gt;  5 JPN      Asia      Japan    2020-01-07         NA       0</span></span>
+<span><span class="co">#&gt;  6 JPN      Asia      Japan    2020-01-08         NA       0</span></span>
+<span><span class="co">#&gt;  7 JPN      Asia      Japan    2020-01-09         NA       0</span></span>
+<span><span class="co">#&gt;  8 JPN      Asia      Japan    2020-01-10         NA       0</span></span>
+<span><span class="co">#&gt;  9 JPN      Asia      Japan    2020-01-11         NA       0</span></span>
+<span><span class="co">#&gt; 10 JPN      Asia      Japan    2020-01-12         NA       0</span></span>
+<span><span class="co">#&gt; # … with 1,151 more rows, 61 more variables:</span></span>
 <span><span class="co">#&gt; #   new_cases_smoothed &lt;dbl&gt;, total_deaths &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   new_deaths &lt;dbl&gt;, new_deaths_smoothed &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   total_cases_per_million &lt;dbl&gt;,</span></span>
@@ -537,14 +540,14 @@
 </div>
 </div>
 </div>
-<div id="examples" class="section level2" number="24.4">
+<div id="examples" class="section level2" number="25.4">
 <h2>
-<span class="header-section-number">24.4</span> Examples<a class="anchor" aria-label="anchor" href="#examples"><i class="fas fa-link"></i></a>
+<span class="header-section-number">25.4</span> Examples<a class="anchor" aria-label="anchor" href="#examples"><i class="fas fa-link"></i></a>
 </h2>
 <p>The following is based on the presentation and the first two R Notebook files created by Professor Kaizoji.</p>
-<div id="human-rights--modified-from-readme" class="section level3" number="24.4.1">
+<div id="human-rights--modified-from-readme" class="section level3" number="25.4.1">
 <h3>
-<span class="header-section-number">24.4.1</span> Human Rights- modified from README<a class="anchor" aria-label="anchor" href="#human-rights--modified-from-readme"><i class="fas fa-link"></i></a>
+<span class="header-section-number">25.4.1</span> Human Rights- modified from README<a class="anchor" aria-label="anchor" href="#human-rights--modified-from-readme"><i class="fas fa-link"></i></a>
 </h3>
 <p>Lets use the core functions to get data on how human rights have changed over time. First by searching for charts on human rights.</p>
 <div class="sourceCode" id="cb596"><pre class="downlit sourceCode r">
@@ -587,21 +590,22 @@
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="32-owid_files/figure-html/unnamed-chunk-25-1.png" width="672"></div>
 </div>
-<div id="internet---modified-from-vignette" class="section level3" number="24.4.2">
+<div id="internet---modified-from-vignette" class="section level3" number="25.4.2">
 <h3>
-<span class="header-section-number">24.4.2</span> Internet - modified from vignette<a class="anchor" aria-label="anchor" href="#internet---modified-from-vignette"><i class="fas fa-link"></i></a>
+<span class="header-section-number">25.4.2</span> Internet - modified from vignette<a class="anchor" aria-label="anchor" href="#internet---modified-from-vignette"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb599"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_search.html">owid_search</a></span><span class="op">(</span><span class="st">"internet"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 6 × 2</span></span>
+<span><span class="co">#&gt; # A tibble: 7 × 2</span></span>
 <span><span class="co">#&gt;   titles                                             chart…¹</span></span>
 <span><span class="co">#&gt;   &lt;chr&gt;                                              &lt;chr&gt;  </span></span>
 <span><span class="co">#&gt; 1 Share of schools with access to the Internet for … school…</span></span>
-<span><span class="co">#&gt; 2 Landline Internet subscriptions                    landli…</span></span>
-<span><span class="co">#&gt; 3 Landline Internet subscriptions per 100 people     broadb…</span></span>
-<span><span class="co">#&gt; 4 Number of people using the Internet                number…</span></span>
-<span><span class="co">#&gt; 5 Share of US adults who use the Internet, by age    share-…</span></span>
-<span><span class="co">#&gt; 6 Share of the population using the Internet         share-…</span></span>
+<span><span class="co">#&gt; 2 Daily time spent on the Internet by young people   daily-…</span></span>
+<span><span class="co">#&gt; 3 Landline Internet subscriptions                    landli…</span></span>
+<span><span class="co">#&gt; 4 Landline Internet subscriptions per 100 people     broadb…</span></span>
+<span><span class="co">#&gt; 5 Number of people using the Internet                number…</span></span>
+<span><span class="co">#&gt; 6 Share of US adults who use the Internet, by age    share-…</span></span>
+<span><span class="co">#&gt; 7 Share of the population using the Internet         share-…</span></span>
 <span><span class="co">#&gt; # … with abbreviated variable name ¹​chart_id</span></span></code></pre></div>
 <p>Get a dataset used in an OWID chart.</p>
 <div class="sourceCode" id="cb600"><pre class="downlit sourceCode r">
@@ -676,14 +680,12 @@
 <span><span class="co">#&gt; ℹ The deprecated feature was likely used in the owidR</span></span>
 <span><span class="co">#&gt;   package.</span></span>
 <span><span class="co">#&gt;   Please report the issue to the authors.</span></span>
-<span><span class="co">#&gt; Loading required namespace: showtext</span></span>
-<span><span class="co">#&gt; Warning in theme_owid(): importing fonts requires the</span></span>
-<span><span class="co">#&gt; showtext pacakge</span></span></code></pre></div>
+<span><span class="co">#&gt; Loading required namespace: showtext</span></span></code></pre></div>
 <div class="inline-figure"><img src="32-owid_files/figure-html/unnamed-chunk-34-1.png" width="672"></div>
 </div>
-<div id="democracy---modified-from-vignette" class="section level3" number="24.4.3">
+<div id="democracy---modified-from-vignette" class="section level3" number="25.4.3">
 <h3>
-<span class="header-section-number">24.4.3</span> Democracy - modified from vignette<a class="anchor" aria-label="anchor" href="#democracy---modified-from-vignette"><i class="fas fa-link"></i></a>
+<span class="header-section-number">25.4.3</span> Democracy - modified from vignette<a class="anchor" aria-label="anchor" href="#democracy---modified-from-vignette"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb608"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_search.html">owid_search</a></span><span class="op">(</span><span class="st">"democrac"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -704,35 +706,37 @@
 <div class="sourceCode" id="cb609"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"electoral-democracy"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/top_n.html">top_n</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Selecting by electdem_vdem_low_owid</span></span>
-<span><span class="co">#&gt; # A tibble: 1 × 6</span></span>
-<span><span class="co">#&gt;   entity code   year `Electoral democracy` electde…¹ elect…²</span></span>
-<span><span class="co">#&gt;   &lt;chr&gt;  &lt;chr&gt; &lt;int&gt;                 &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1 Sweden SWE    2012                 0.926     0.958   0.905</span></span>
+<span><span class="co">#&gt; # A tibble: 3 × 6</span></span>
+<span><span class="co">#&gt;   entity  code   year `Electoral democracy` electd…¹ elect…²</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;int&gt;                 &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 Denmark DNK    2008                 0.922    0.959     0.9</span></span>
+<span><span class="co">#&gt; 2 Denmark DNK    2009                 0.922    0.959     0.9</span></span>
+<span><span class="co">#&gt; 3 Denmark DNK    2010                 0.922    0.959     0.9</span></span>
 <span><span class="co">#&gt; # … with abbreviated variable names</span></span>
 <span><span class="co">#&gt; #   ¹​electdem_vdem_high_owid, ²​electdem_vdem_low_owid</span></span></code></pre></div>
 <div class="sourceCode" id="cb610"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">democracy</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"electoral-democracy"</span>, rename <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"electoral_democracy"</span>, <span class="st">"vdem_high"</span>, <span class="st">"vdem_low"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">democracy</span></span>
-<span><span class="co">#&gt; # A tibble: 31,995 × 6</span></span>
+<span><span class="co">#&gt; # A tibble: 32,518 × 6</span></span>
 <span><span class="co">#&gt;    entity      code   year electoral_democ…¹ vdem_…² vdem_…³</span></span>
 <span><span class="co">#&gt;  * &lt;chr&gt;       &lt;chr&gt; &lt;int&gt;             &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 Afghanistan AFG    1789             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  2 Afghanistan AFG    1790             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  3 Afghanistan AFG    1791             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  4 Afghanistan AFG    1792             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  5 Afghanistan AFG    1793             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  6 Afghanistan AFG    1794             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  7 Afghanistan AFG    1795             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  8 Afghanistan AFG    1796             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt;  9 Afghanistan AFG    1797             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt; 10 Afghanistan AFG    1798             0.018   0.026   0.012</span></span>
-<span><span class="co">#&gt; # … with 31,985 more rows, and abbreviated variable names</span></span>
+<span><span class="co">#&gt;  1 Afghanistan AFG    1789             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  2 Afghanistan AFG    1790             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  3 Afghanistan AFG    1791             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  4 Afghanistan AFG    1792             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  5 Afghanistan AFG    1793             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  6 Afghanistan AFG    1794             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  7 Afghanistan AFG    1795             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  8 Afghanistan AFG    1796             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt;  9 Afghanistan AFG    1797             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt; 10 Afghanistan AFG    1798             0.019   0.024    0.01</span></span>
+<span><span class="co">#&gt; # … with 32,508 more rows, and abbreviated variable names</span></span>
 <span><span class="co">#&gt; #   ¹​electoral_democracy, ²​vdem_high, ³​vdem_low</span></span></code></pre></div>
 <div class="sourceCode" id="cb611"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_source.html">owid_source</a></span><span class="op">(</span><span class="va">democracy</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Value:  </span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Dataset Name: OWID based on V-Dem (v12) and Lührmann et al. (2018)</span></span>
+<span><span class="co">#&gt; Dataset Name: OWID based on V-Dem (v13) and Lührmann et al. (2018)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Published By: Our World in Data, Bastian Herre</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -745,9 +749,10 @@
 <span><span class="co">#&gt; https://ourworldindata.org/vdem-electoral-democracy-data</span></span>
 <span><span class="co">#&gt; https://ourworldindata.org/vdem-human-rights-data</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; You can download the code and complete dataset, including supplementary variables, from GitHub: https://github.com/owid/notebooks/tree/main/BastianHerre/democracyValue:  </span></span>
+<span><span class="co">#&gt; You can download the code and complete dataset, including supplementary variables, from GitHub: https://github.com/owid/notebooks/tree/main/BastianHerre/democracy</span></span>
+<span><span class="co">#&gt; Value:  </span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Dataset Name: OWID based on V-Dem (v12) and Lührmann et al. (2018)</span></span>
+<span><span class="co">#&gt; Dataset Name: OWID based on V-Dem (v13) and Lührmann et al. (2018)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Published By: Our World in Data, Bastian Herre</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -760,9 +765,10 @@
 <span><span class="co">#&gt; https://ourworldindata.org/vdem-electoral-democracy-data</span></span>
 <span><span class="co">#&gt; https://ourworldindata.org/vdem-human-rights-data</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; You can download the code and complete dataset, including supplementary variables, from GitHub: https://github.com/owid/notebooks/tree/main/BastianHerre/democracyValue:  </span></span>
+<span><span class="co">#&gt; You can download the code and complete dataset, including supplementary variables, from GitHub: https://github.com/owid/notebooks/tree/main/BastianHerre/democracy</span></span>
+<span><span class="co">#&gt; Value:  </span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Dataset Name: OWID based on V-Dem (v12) and Lührmann et al. (2018)</span></span>
+<span><span class="co">#&gt; Dataset Name: OWID based on V-Dem (v13) and Lührmann et al. (2018)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Published By: Our World in Data, Bastian Herre</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -778,10 +784,7 @@
 <span><span class="co">#&gt; You can download the code and complete dataset, including supplementary variables, from GitHub: https://github.com/owid/notebooks/tree/main/BastianHerre/democracy</span></span></code></pre></div>
 <div class="sourceCode" id="cb612"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_map.html">owid_map</a></span><span class="op">(</span><span class="va">democracy</span>, year <span class="op">=</span> <span class="fl">2015</span>, palette <span class="op">=</span> <span class="st">"YlGn"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Electoral Democracy"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Loading required namespace: showtext</span></span>
-<span><span class="co">#&gt; Warning in theme_owid(): importing fonts requires the</span></span>
-<span><span class="co">#&gt; showtext pacakge</span></span></code></pre></div>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Electoral Democracy"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="32-owid_files/figure-html/unnamed-chunk-39-1.png" width="672"></div>
 <div class="sourceCode" id="cb613"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">democracy</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
@@ -817,11 +820,11 @@
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">gov_exp</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">age_dep</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">unemployment</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Joining, by = c("entity", "code", "year")</span></span>
-<span><span class="co">#&gt; Joining, by = c("entity", "code", "year")</span></span>
-<span><span class="co">#&gt; Joining, by = c("entity", "code", "year")</span></span>
-<span><span class="co">#&gt; Joining, by = c("entity", "code", "year")</span></span>
-<span><span class="co">#&gt; Joining, by = c("entity", "code", "year")</span></span></code></pre></div>
+<span><span class="co">#&gt; Joining with `by = join_by(entity, code, year)`</span></span>
+<span><span class="co">#&gt; Joining with `by = join_by(entity, code, year)`</span></span>
+<span><span class="co">#&gt; Joining with `by = join_by(entity, code, year)`</span></span>
+<span><span class="co">#&gt; Joining with `by = join_by(entity, code, year)`</span></span>
+<span><span class="co">#&gt; Joining with `by = join_by(entity, code, year)`</span></span></code></pre></div>
 <p>Drawing scatter plot</p>
 <div class="sourceCode" id="cb616"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
@@ -848,20 +851,20 @@
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Residuals:</span></span>
 <span><span class="co">#&gt;      Min       1Q   Median       3Q      Max </span></span>
-<span><span class="co">#&gt; -0.76097 -0.20192  0.02248  0.18764  0.48558 </span></span>
+<span><span class="co">#&gt; -0.75942 -0.20190  0.02182  0.18847  0.48518 </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Coefficients:</span></span>
 <span><span class="co">#&gt;               Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
-<span><span class="co">#&gt; (Intercept)  0.4283461  0.0042829  100.01   &lt;2e-16 ***</span></span>
-<span><span class="co">#&gt; internet_use 0.0035522  0.0001166   30.46   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; (Intercept)  0.4277459  0.0042857   99.81   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; internet_use 0.0035426  0.0001167   30.36   &lt;2e-16 ***</span></span>
 <span><span class="co">#&gt; ---</span></span>
 <span><span class="co">#&gt; Signif. codes:  </span></span>
 <span><span class="co">#&gt; 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Residual standard error: 0.2475 on 5311 degrees of freedom</span></span>
+<span><span class="co">#&gt; Residual standard error: 0.2477 on 5311 degrees of freedom</span></span>
 <span><span class="co">#&gt;   (1347 observations deleted due to missingness)</span></span>
-<span><span class="co">#&gt; Multiple R-squared:  0.1487, Adjusted R-squared:  0.1485 </span></span>
-<span><span class="co">#&gt; F-statistic: 927.7 on 1 and 5311 DF,  p-value: &lt; 2.2e-16</span></span></code></pre></div>
+<span><span class="co">#&gt; Multiple R-squared:  0.1478, Adjusted R-squared:  0.1477 </span></span>
+<span><span class="co">#&gt; F-statistic: 921.4 on 1 and 5311 DF,  p-value: &lt; 2.2e-16</span></span></code></pre></div>
 <div class="sourceCode" id="cb619"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">model2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">gdp</span> <span class="op">~</span> <span class="va">internet_use</span>, <span class="va">data</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model2</span><span class="op">)</span></span>
@@ -924,25 +927,25 @@ For the first time, install the pacage <code>texreg</code>.</p>
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="worldbank.html"><span class="header-section-number">23</span> World Bank</a></div>
-<div class="next"><a href="oecd.html"><span class="header-section-number">25</span> OECD</a></div>
+<div class="prev"><a href="worldbank.html"><span class="header-section-number">24</span> World Bank</a></div>
+<div class="next"><a href="oecd.html"><span class="header-section-number">26</span> OECD</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#owid"><span class="header-section-number">24</span> Our World in Data</a></li>
-<li><a class="nav-link" href="#the-package-owidr"><span class="header-section-number">24.1</span> The package owidR</a></li>
-<li><a class="nav-link" href="#references-5"><span class="header-section-number">24.2</span> References</a></li>
+<li><a class="nav-link" href="#owid"><span class="header-section-number">25</span> Our World in Data</a></li>
+<li><a class="nav-link" href="#the-package-owidr"><span class="header-section-number">25.1</span> The package owidR</a></li>
+<li><a class="nav-link" href="#references-5"><span class="header-section-number">25.2</span> References</a></li>
 <li>
-<a class="nav-link" href="#introduction"><span class="header-section-number">24.3</span> Introduction</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#setup-4"><span class="header-section-number">24.3.1</span> Setup</a></li>
-<li><a class="nav-link" href="#core-functions"><span class="header-section-number">24.3.2</span> Core functions</a></li>
+<a class="nav-link" href="#introduction"><span class="header-section-number">25.3</span> Introduction</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#setup-4"><span class="header-section-number">25.3.1</span> Setup</a></li>
+<li><a class="nav-link" href="#core-functions"><span class="header-section-number">25.3.2</span> Core functions</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#examples"><span class="header-section-number">24.4</span> Examples</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#human-rights--modified-from-readme"><span class="header-section-number">24.4.1</span> Human Rights- modified from README</a></li>
-<li><a class="nav-link" href="#internet---modified-from-vignette"><span class="header-section-number">24.4.2</span> Internet - modified from vignette</a></li>
-<li><a class="nav-link" href="#democracy---modified-from-vignette"><span class="header-section-number">24.4.3</span> Democracy - modified from vignette</a></li>
+<a class="nav-link" href="#examples"><span class="header-section-number">25.4</span> Examples</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#human-rights--modified-from-readme"><span class="header-section-number">25.4.1</span> Human Rights- modified from README</a></li>
+<li><a class="nav-link" href="#internet---modified-from-vignette"><span class="header-section-number">25.4.2</span> Internet - modified from vignette</a></li>
+<li><a class="nav-link" href="#democracy---modified-from-vignette"><span class="header-section-number">25.4.3</span> Democracy - modified from vignette</a></li>
 </ul>
 </li>
 </ul>
@@ -962,7 +965,7 @@ For the first time, install the pacage <code>texreg</code>.</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-02-13.</p>
+    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-03-11.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

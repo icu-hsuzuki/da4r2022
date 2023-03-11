@@ -234,19 +234,19 @@ glimpse(covid)
 
 
 ```{r}
-tdpm <- covid %>% drop_na(total_deaths_per_million) %>%
+tdpm <- covid %>% drop_na(`total_deaths_per_million`) %>%
   group_by(location) %>% 
-  summarize(total_deaths_per_million = max(total_deaths_per_million)) %>%
-  arrange(desc(total_deaths_per_million))
+  summarize(`total_deaths_per_million` = max(`total_deaths_per_million`)) %>%
+  arrange(desc(`total_deaths_per_million`))
 DT::datatable(tdpm)
 ```
 
 ```{r}
-covid %>% drop_na(total_deaths_per_million) %>%
+covid %>% drop_na(`total_deaths_per_million`) %>%
   group_by(location) %>% 
-  summarize(total_deaths_per_million = max(total_deaths_per_million), .groups = "drop") %>%
-  arrange(desc(total_deaths_per_million)) %>%
-  ggplot(aes(x = total_deaths_per_million)) + geom_histogram(bins = 30)
+  summarize(`total_deaths_per_million` = max(`total_deaths_per_million`), .groups = "drop") %>%
+  arrange(desc(`total_deaths_per_million`)) %>%
+  ggplot(aes(x = `total_deaths_per_million`)) + geom_histogram(bins = 30)
 ```
 
 ```{r}

@@ -41,10 +41,10 @@ Sys.setenv(LANG = "en")
 ```r
 library(tidyverse)
 #> ── Attaching packages ─────────────────── tidyverse 1.3.2 ──
-#> ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 
-#> ✔ tibble  3.1.8      ✔ dplyr   1.0.10
-#> ✔ tidyr   1.2.1      ✔ stringr 1.5.0 
-#> ✔ readr   2.1.3      ✔ forcats 0.5.2 
+#> ✔ ggplot2 3.4.1     ✔ purrr   1.0.1
+#> ✔ tibble  3.1.8     ✔ dplyr   1.1.0
+#> ✔ tidyr   1.3.0     ✔ stringr 1.5.0
+#> ✔ readr   2.1.4     ✔ forcats 1.0.0
 #> ── Conflicts ────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
@@ -140,16 +140,16 @@ df1 <- WDI(country = G7,
            extra=TRUE, cache=wdi_cache)
 df1 %>% slice(1:10)  # for R Notebook use this line, for PDF delete by adding #
 #>    country iso2c iso3c year status lastupdated parl gini
-#> 1   Canada    CA   CAN 1960         2022-12-22   NA   NA
-#> 2   Canada    CA   CAN 1961         2022-12-22   NA   NA
-#> 3   Canada    CA   CAN 1962         2022-12-22   NA   NA
-#> 4   Canada    CA   CAN 1963         2022-12-22   NA   NA
-#> 5   Canada    CA   CAN 1964         2022-12-22   NA   NA
-#> 6   Canada    CA   CAN 1965         2022-12-22   NA   NA
-#> 7   Canada    CA   CAN 1966         2022-12-22   NA   NA
-#> 8   Canada    CA   CAN 1967         2022-12-22   NA   NA
-#> 9   Canada    CA   CAN 1968         2022-12-22   NA   NA
-#> 10  Canada    CA   CAN 1969         2022-12-22   NA   NA
+#> 1   Canada    CA   CAN 1960         2023-03-01   NA   NA
+#> 2   Canada    CA   CAN 1961         2023-03-01   NA   NA
+#> 3   Canada    CA   CAN 1962         2023-03-01   NA   NA
+#> 4   Canada    CA   CAN 1963         2023-03-01   NA   NA
+#> 5   Canada    CA   CAN 1964         2023-03-01   NA   NA
+#> 6   Canada    CA   CAN 1965         2023-03-01   NA   NA
+#> 7   Canada    CA   CAN 1966         2023-03-01   NA   NA
+#> 8   Canada    CA   CAN 1967         2023-03-01   NA   NA
+#> 9   Canada    CA   CAN 1968         2023-03-01   NA   NA
+#> 10  Canada    CA   CAN 1969         2023-03-01   NA   NA
 #>           region capital longitude latitude      income
 #> 1  North America  Ottawa  -75.6919  45.4215 High income
 #> 2  North America  Ottawa  -75.6919  45.4215 High income
@@ -503,16 +503,16 @@ wdi_cache$series %>% filter(indicator == "AG.LND.FRST.K2")
 df2 <- WDI(country = "all", indicator = c(area = "AG.LND.FRST.K2"), extra = TRUE, cache = wdi_cache) 
 df2 %>% slice(1:10)
 #>        country iso2c iso3c year    area status lastupdated
-#> 1  Afghanistan    AF   AFG 2021      NA         2022-12-22
-#> 2  Afghanistan    AF   AFG 2020 12084.4         2022-12-22
-#> 3  Afghanistan    AF   AFG 2019 12084.4         2022-12-22
-#> 4  Afghanistan    AF   AFG 2018 12084.4         2022-12-22
-#> 5  Afghanistan    AF   AFG 2017 12084.4         2022-12-22
-#> 6  Afghanistan    AF   AFG 2016 12084.4         2022-12-22
-#> 7  Afghanistan    AF   AFG 2015 12084.4         2022-12-22
-#> 8  Afghanistan    AF   AFG 2014 12084.4         2022-12-22
-#> 9  Afghanistan    AF   AFG 2013 12084.4         2022-12-22
-#> 10 Afghanistan    AF   AFG 2012 12084.4         2022-12-22
+#> 1  Afghanistan    AF   AFG 2021      NA         2023-03-01
+#> 2  Afghanistan    AF   AFG 2020 12084.4         2023-03-01
+#> 3  Afghanistan    AF   AFG 2019 12084.4         2023-03-01
+#> 4  Afghanistan    AF   AFG 2018 12084.4         2023-03-01
+#> 5  Afghanistan    AF   AFG 2017 12084.4         2023-03-01
+#> 6  Afghanistan    AF   AFG 2016 12084.4         2023-03-01
+#> 7  Afghanistan    AF   AFG 2015 12084.4         2023-03-01
+#> 8  Afghanistan    AF   AFG 2014 12084.4         2023-03-01
+#> 9  Afghanistan    AF   AFG 2013 12084.4         2023-03-01
+#> 10 Afghanistan    AF   AFG 2012 12084.4         2023-03-01
 #>        region capital longitude latitude     income lending
 #> 1  South Asia   Kabul   69.1761  34.5228 Low income     IDA
 #> 2  South Asia   Kabul   69.1761  34.5228 Low income     IDA
