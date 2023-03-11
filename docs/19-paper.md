@@ -63,31 +63,32 @@ Deadline of submission: March 08.
 
 4. The correlation between the trade surplus and the economic development
 
-5.
+5. People’s views on Religion, Nature, and Science
 
-6.
+6. The rate of patent applications in scientific /technical publications from 1985 -2015
 
-7.
+7. The Correlation between Democracy and Life Satisfaction by Looking at the OWID Data
 
-8.
+8. Impact of entrepreneurship on economic growth; Case of Pakistan & India
 
-9.
+9. Environmental Impacts of Food and Agriculture
 
-10.
+10. Relationship between Government expenditure on education, Democracy and GDP per capita in Sri Lanka
 
-11.
+11. Relationship Between Climate Change and Agricultural Production in Pakistan
 
-12.
 
-13.
+12. The Effect of ICT Investment to the Economic Growth: Case Study in OECD
 
-14.
+13. Impact of Personal Remittances & Exchange rates on Gross Savings Rate in Pakistan
 
-15.
+14. Democracy & Trust in the Government
 
-16.
+15. World Population Growth
 
-17.
+16. The Development of Renewable Energy Internationally 
 
-18.
+17. Poverty Measurement and Culture in Israel
+
+18. Relationship between war violence and happiness in the world
 
