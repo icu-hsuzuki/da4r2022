@@ -124,7 +124,7 @@
 <h2>
 <span class="header-section-number">27.1</span> Setup<a class="anchor" aria-label="anchor" href="#setup-5"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb624"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb625"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
 <span><span class="co">#&gt; ✔ ggplot2 3.4.1     ✔ purrr   1.0.1</span></span>
@@ -134,7 +134,7 @@
 <span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
 <span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span></code></pre></div>
-<div class="sourceCode" id="cb625"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb626"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">wdi_cache</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_rds.html">read_rds</a></span><span class="op">(</span><span class="st">"./data/wdi_cache.RData"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div id="importing-un-data" class="section level2" number="27.2">
@@ -153,13 +153,13 @@
 </h3>
 <p>By the following, you can see that the first row is not the column name. R gives column names such as …1, …2, etc., when the column name is void.</p>
 <p>You can copy the link (url) by right click or ctrl+click.</p>
-<div class="sourceCode" id="cb626"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">url_un_edu</span> <span class="op">&lt;-</span> <span class="st">"https://data.un.org/_Docs/SYB/CSV/SYB65_309_202209_Education.csv"</span></span></code></pre></div>
 <div class="sourceCode" id="cb627"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">url_un_edu</span> <span class="op">&lt;-</span> <span class="st">"https://data.un.org/_Docs/SYB/CSV/SYB65_309_202209_Education.csv"</span></span></code></pre></div>
+<div class="sourceCode" id="cb628"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">un_edu</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="va">url_un_edu</span><span class="op">)</span></span>
 <span><span class="va">un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span></code></pre></div>
 <p>Let is skip the first row by adding <code>skip = 1</code>.</p>
-<div class="sourceCode" id="cb628"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb629"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">un_edu</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="va">url_un_edu</span>, skip <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
 <span><span class="va">un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; Rows: 7282 Columns: 7
@@ -186,7 +186,7 @@
 #&gt; # … with abbreviated variable names ¹​`Region/Country/Area`,
 #&gt; #   ²​Footnotes</code></pre>
 <p>It is a very large data, and we need to check the values.</p>
-<div class="sourceCode" id="cb630"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb631"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">un_edu</span><span class="op">)</span></span>
 <span><span class="co">#&gt;  Region/Country/Area     ...2                Year     </span></span>
 <span><span class="co">#&gt;  Min.   :  1.0       Length:7282        Min.   :2000  </span></span>
@@ -210,7 +210,7 @@
 <span><span class="co">#&gt;                    </span></span>
 <span><span class="co">#&gt; </span></span></code></pre></div>
 <p>We can see that the Year is from 2000 to 2021. The first variable, Region/Country/Area and the fifth variable, Value are <code>dbl</code>, i.e., double; hence, these are numerical variables, and you can see them from the summary as well. But it is not easy to see other variables. Let us try them one by one.</p>
-<div class="sourceCode" id="cb631"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb632"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">...2</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 224 × 1</span></span>
 <span><span class="co">#&gt;    ...2                         </span></span>
@@ -226,7 +226,7 @@
 <span><span class="co">#&gt;  9 Southern Asia                </span></span>
 <span><span class="co">#&gt; 10 Western Asia                 </span></span>
 <span><span class="co">#&gt; # … with 214 more rows</span></span></code></pre></div>
-<div class="sourceCode" id="cb632"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb633"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Series</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 9 × 1</span></span>
 <span><span class="co">#&gt;   Series                                                    </span></span>
@@ -240,14 +240,14 @@
 <span><span class="co">#&gt; 7 Students enrolled in upper secondary education (thousands)</span></span>
 <span><span class="co">#&gt; 8 Gross enrollment ratio - Upper secondary level (male)     </span></span>
 <span><span class="co">#&gt; 9 Gross enrollment ratio - Upper secondary level (female)</span></span></code></pre></div>
-<div class="sourceCode" id="cb633"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb634"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Footnotes</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 2 × 1</span></span>
 <span><span class="co">#&gt;   Footnotes</span></span>
 <span><span class="co">#&gt;   &lt;chr&gt;    </span></span>
 <span><span class="co">#&gt; 1 &lt;NA&gt;     </span></span>
 <span><span class="co">#&gt; 2 Estimate.</span></span></code></pre></div>
-<div class="sourceCode" id="cb634"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb635"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Source</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 1 × 1</span></span>
 <span><span class="co">#&gt;   Source                                                    </span></span>
@@ -256,7 +256,7 @@
 <ul>
 <li>We may need to handle Footnotes carefully later, but for the first exploration, we need, …2 for Region, Year, Series, Values.</li>
 </ul>
-<div class="sourceCode" id="cb635"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb636"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_un_edu</span> <span class="op">&lt;-</span> <span class="va">un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span>Region <span class="op">=</span> <span class="va">...2</span>, <span class="va">Year</span>, <span class="va">Series</span>, <span class="va">Value</span><span class="op">)</span></span>
 <span><span class="va">df_un_edu</span></span>
@@ -275,7 +275,7 @@
 <span><span class="co">#&gt; 10 Total, all countries or areas  2010 Students enro… 6.97e5</span></span>
 <span><span class="co">#&gt; # … with 7,272 more rows</span></span></code></pre></div>
 <p>Is there a way to separate regions from countries?</p>
-<div class="sourceCode" id="cb636"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb637"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Region"</span><span class="op">=</span><span class="st">"country"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">iso2c</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Region</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 176 × 1</span></span>
@@ -292,7 +292,7 @@
 <span><span class="co">#&gt;  9 Aruba              </span></span>
 <span><span class="co">#&gt; 10 Australia          </span></span>
 <span><span class="co">#&gt; # … with 166 more rows</span></span></code></pre></div>
-<div class="sourceCode" id="cb637"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb638"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Region"</span><span class="op">=</span><span class="st">"country"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">iso2c</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Region</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 48 × 1</span></span>
@@ -309,7 +309,7 @@
 <span><span class="co">#&gt;  9 Southern Asia                </span></span>
 <span><span class="co">#&gt; 10 Western Asia                 </span></span>
 <span><span class="co">#&gt; # … with 38 more rows</span></span></code></pre></div>
-<div class="sourceCode" id="cb638"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb639"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Region"</span><span class="op">=</span><span class="st">"country"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">iso2c</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Region</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt;  [1] "Total, all countries or areas"</span></span>
@@ -361,7 +361,7 @@
 <span><span class="co">#&gt; [47] "Viet Nam"                     </span></span>
 <span><span class="co">#&gt; [48] "Yemen"</span></span></code></pre></div>
 <p>There are some countries iso2c is not properly assigned. From the list above, Probably, the first 12 are areas and the value contains the aggregated value.</p>
-<div class="sourceCode" id="cb639"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb640"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">area</span> <span class="op">&lt;-</span> <span class="va">df_un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Region</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">12</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">area</span></span>
 <span><span class="co">#&gt;  [1] "Total, all countries or areas"</span></span>
@@ -376,16 +376,16 @@
 <span><span class="co">#&gt; [10] "Western Asia"                 </span></span>
 <span><span class="co">#&gt; [11] "Europe"                       </span></span>
 <span><span class="co">#&gt; [12] "Oceania"</span></span></code></pre></div>
-<div class="sourceCode" id="cb640"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb641"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">un_edu_area</span> <span class="op">&lt;-</span> <span class="va">df_un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">area</span><span class="op">)</span></span>
 <span><span class="va">un_edu_region</span> <span class="op">&lt;-</span> <span class="va">df_un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">Region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">area</span><span class="op">)</span></span></code></pre></div>
 <p>Now we can start studying the data.</p>
-<div class="sourceCode" id="cb641"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb642"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">un_edu_area</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Series</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Gross enrollment ratio - Upper secondary level (male)"</span>, <span class="st">"Gross enrollment ratio - Upper secondary level (female)"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Year</span>, <span class="va">Value</span>, color <span class="op">=</span> <span class="va">Region</span>, linetype <span class="op">=</span> <span class="va">Series</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="34-undata_files/figure-html/unnamed-chunk-21-1.png" width="672"></div>
-<div class="sourceCode" id="cb642"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb643"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">un_edu_area</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Series</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Gross enrollment ratio - Upper secondary level (male)"</span>, <span class="st">"Gross enrollment ratio - Upper secondary level (female)"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span><span class="op">(</span>names_from <span class="op">=</span> <span class="va">Series</span>, values_from <span class="op">=</span> <span class="va">Value</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -399,7 +399,7 @@
 <span class="header-section-number">27.3.2</span> Population<a class="anchor" aria-label="anchor" href="#population-1"><i class="fas fa-link"></i></a>
 </h3>
 <p>Data structure is similar to the previous one. So use <code>skip=1</code>, and check the variable s briefly.</p>
-<div class="sourceCode" id="cb643"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb644"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">url_un_pop</span> <span class="op">=</span> <span class="st">"https://data.un.org/_Docs/SYB/CSV/SYB65_246_202209_Population%20Growth,%20Fertility%20and%20Mortality%20Indicators.csv"</span></span>
 <span><span class="va">df_un_pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="va">url_un_pop</span>, skip <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
 <span><span class="va">df_un_pop</span></span></code></pre></div>
@@ -427,7 +427,7 @@
 #&gt; 10                 1 Tota…  2015 Infan…  31.5 &lt;NA&gt;    "Unit…
 #&gt; # … with abbreviated variable names ¹​Region.Country.Area,
 #&gt; #   ²​Footnotes</code></pre>
-<div class="sourceCode" id="cb645"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb646"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_un_pop</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Source</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 4 × 1</span></span>
 <span><span class="co">#&gt;   Source                                                    </span></span>
@@ -436,7 +436,7 @@
 <span><span class="co">#&gt; 2 "United Nations Population Division, New York, World Popu…</span></span>
 <span><span class="co">#&gt; 3 "United Nations Statistics Division, New York, \"Demograp…</span></span>
 <span><span class="co">#&gt; 4 "World Health Organization (WHO), the United Nations Chil…</span></span></code></pre></div>
-<div class="sourceCode" id="cb646"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb647"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_un_pop</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Footnotes</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 82 × 1</span></span>
 <span><span class="co">#&gt;    Footnotes                                                </span></span>
@@ -452,7 +452,7 @@
 <span><span class="co">#&gt;  9 Including Falkland Islands (Malvinas).                   </span></span>
 <span><span class="co">#&gt; 10 Projected estimate (medium fertility variant).;Including…</span></span>
 <span><span class="co">#&gt; # … with 72 more rows</span></span></code></pre></div>
-<div class="sourceCode" id="cb647"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb648"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_un_pop</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 264 × 1</span></span>
 <span><span class="co">#&gt;    X                            </span></span>
@@ -468,7 +468,7 @@
 <span><span class="co">#&gt;  9 Northern America             </span></span>
 <span><span class="co">#&gt; 10 Latin America &amp; the Caribbean</span></span>
 <span><span class="co">#&gt; # … with 254 more rows</span></span></code></pre></div>
-<div class="sourceCode" id="cb648"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb649"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_un_pop</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Series</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 7 × 1</span></span>
 <span><span class="co">#&gt;   Series                                                  </span></span>
@@ -486,7 +486,7 @@
 <li>X is for the region, the first 30 are areas, and the rest are countries or regions.</li>
 <li>There are seven series. It may be easier if we assign shorter names for each value.</li>
 </ol>
-<div class="sourceCode" id="cb649"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb650"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pop_area</span> <span class="op">&lt;-</span> <span class="va">df_un_pop</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">30</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">pop_area</span></span>
 <span><span class="co">#&gt;  [1] "Total, all countries or areas"</span></span>
@@ -519,7 +519,7 @@
 <span><span class="co">#&gt; [28] "Melanesia"                    </span></span>
 <span><span class="co">#&gt; [29] "Micronesia"                   </span></span>
 <span><span class="co">#&gt; [30] "Polynesia"</span></span></code></pre></div>
-<div class="sourceCode" id="cb650"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb651"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">un_pop</span> <span class="op">&lt;-</span> <span class="va">df_un_pop</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span>Region <span class="op">=</span> <span class="va">X</span>, <span class="va">Year</span>, <span class="va">Series</span>, <span class="va">Value</span><span class="op">)</span></span>
 <span><span class="va">un_pop</span></span>
 <span><span class="co">#&gt; # A tibble: 6,654 × 4</span></span>
@@ -537,7 +537,7 @@
 <span><span class="co">#&gt; 10 Total, all countries or areas  2015 Infant mortali…  31.5</span></span>
 <span><span class="co">#&gt; # … with 6,644 more rows</span></span></code></pre></div>
 <p>Let us change the names of series.</p>
-<div class="sourceCode" id="cb651"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb652"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">un_pop_wide</span> <span class="op">&lt;-</span> <span class="va">un_pop</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span><span class="op">(</span>names_from <span class="op">=</span> <span class="va">Series</span>, values_from <span class="op">=</span> <span class="va">Value</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">un_pop_wide</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Region"</span>, <span class="st">"Year"</span>, <span class="st">"IncRate"</span>, <span class="st">"Fert"</span>, <span class="st">"InfDeath"</span>, <span class="st">"MatDeath"</span>, <span class="st">"LifeExp"</span>, <span class="st">"LifeExpM"</span>, <span class="st">"LifeExpF"</span><span class="op">)</span></span>
 <span><span class="va">un_pop_wide</span></span>
@@ -557,7 +557,7 @@
 <span><span class="co">#&gt; # … with 995 more rows, 2 more variables: LifeExpM &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   LifeExpF &lt;dbl&gt;, and abbreviated variable names</span></span>
 <span><span class="co">#&gt; #   ¹​InfDeath, ²​MatDeath</span></span></code></pre></div>
-<div class="sourceCode" id="cb652"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb653"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">un_pop_long</span> <span class="op">&lt;-</span> <span class="va">un_pop_wide</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span>, names_to <span class="op">=</span> <span class="st">"Series"</span>, values_to <span class="op">=</span> <span class="st">"Value"</span><span class="op">)</span></span>
 <span><span class="va">un_pop_long</span>                                           </span>
 <span><span class="co">#&gt; # A tibble: 7,035 × 4</span></span>
@@ -574,7 +574,7 @@
 <span><span class="co">#&gt;  9 Total, all countries or areas  2015 Fert       2.5</span></span>
 <span><span class="co">#&gt; 10 Total, all countries or areas  2015 InfDeath  31.5</span></span>
 <span><span class="co">#&gt; # … with 7,025 more rows</span></span></code></pre></div>
-<div class="sourceCode" id="cb653"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb654"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">un_pop_long_area</span> <span class="op">&lt;-</span> <span class="va">un_pop_long</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">pop_area</span><span class="op">)</span></span>
 <span><span class="va">un_pop_long_region</span> <span class="op">&lt;-</span> <span class="va">un_pop_long</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">Region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">pop_area</span><span class="op">)</span></span>
 <span><span class="va">un_pop_wide_area</span> <span class="op">&lt;-</span> <span class="va">un_pop_wide</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">pop_area</span><span class="op">)</span></span>
@@ -616,7 +616,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-03-11.</p>
+    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-03-13.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

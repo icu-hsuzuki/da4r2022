@@ -167,14 +167,14 @@
 <span class="header-section-number">25.3.1.1</span> Installation<a class="anchor" aria-label="anchor" href="#installation"><i class="fas fa-link"></i></a>
 </h4>
 <p>Run the following for the first time</p>
-<div class="sourceCode" id="cb569"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb570"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"owidR"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div id="load-the-package" class="section level4" number="25.3.1.2">
 <h4>
 <span class="header-section-number">25.3.1.2</span> Load the package<a class="anchor" aria-label="anchor" href="#load-the-package"><i class="fas fa-link"></i></a>
 </h4>
-<div class="sourceCode" id="cb570"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb571"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/piersyork/owidR">owidR</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span> </span>
 <span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
@@ -222,7 +222,7 @@
 <li>Example</li>
 </ul>
 <p>Since the output is long, I cut it off to the first six rows using <code><a href="https://rdrr.io/r/utils/head.html">head()</a></code>.</p>
-<div class="sourceCode" id="cb572"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb573"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_search.html">owid_search</a></span><span class="op">(</span><span class="st">"emissions"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt;      titles                                                  </span></span>
 <span><span class="co">#&gt; [1,] "Air pollutant emissions"                               </span></span>
@@ -239,7 +239,7 @@
 <span><span class="co">#&gt; [5,] "so-emissions-by-world-region-in-million-tonnes"</span></span>
 <span><span class="co">#&gt; [6,] "so2-emissions"</span></span></code></pre></div>
 <p>A matrix is returned. If the list is long, it is easier to see the pairs of the titles and chart_ids by adding <code><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble()</a></code>.</p>
-<div class="sourceCode" id="cb573"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb574"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_search.html">owid_search</a></span><span class="op">(</span><span class="st">"emissions"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 150 × 2</span></span>
 <span><span class="co">#&gt;    titles                                            chart…¹</span></span>
@@ -257,7 +257,7 @@
 <span><span class="co">#&gt; # … with 140 more rows, and abbreviated variable name</span></span>
 <span><span class="co">#&gt; #   ¹​chart_id</span></span></code></pre></div>
 <p>If the list is not long, you do not need to add <code><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble()</a></code>. However, note that you need to keep in mind that the title and the chart_id consists of a pair, and you need to use the chart_id to download the data using <code>owid</code>.</p>
-<div class="sourceCode" id="cb574"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb575"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_search.html">owid_search</a></span><span class="op">(</span><span class="st">"human rights"</span><span class="op">)</span></span>
 <span><span class="co">#&gt;      titles                                                                             </span></span>
 <span><span class="co">#&gt; [1,] "Human rights vs. electoral democracy"                                             </span></span>
@@ -289,9 +289,9 @@
 <ul>
 <li>Example</li>
 </ul>
-<div class="sourceCode" id="cb576"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">emissions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"per-capita-ghg-emissions"</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb577"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">emissions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"per-capita-ghg-emissions"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb578"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">emissions</span></span>
 <span><span class="co">#&gt; # A tibble: 6,149 × 4</span></span>
 <span><span class="co">#&gt;    entity      code   year `Total including LUCF`</span></span>
@@ -307,9 +307,9 @@
 <span><span class="co">#&gt;  9 Afghanistan AFG    1998                  0.628</span></span>
 <span><span class="co">#&gt; 10 Afghanistan AFG    1999                  0.658</span></span>
 <span><span class="co">#&gt; # … with 6,139 more rows</span></span></code></pre></div>
-<div class="sourceCode" id="cb578"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">rights</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"human-rights-scores"</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb579"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">rights</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"human-rights-scores"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb580"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">rights</span></span>
 <span><span class="co">#&gt; # A tibble: 11,273 × 4</span></span>
 <span><span class="co">#&gt;    entity      code   year `Human rights protection`</span></span>
@@ -329,7 +329,7 @@
 <ol style="list-style-type: decimal">
 <li>You can use <code>rename</code> to change column names. For example,</li>
 </ol>
-<div class="sourceCode" id="cb580"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb581"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"per-capita-ghg-emissions"</span>, rename <span class="op">=</span> <span class="st">"ghgPcap"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 6,149 × 4</span></span>
 <span><span class="co">#&gt;    entity      code   year ghgPcap</span></span>
@@ -348,7 +348,7 @@
 <ol start="2" style="list-style-type: decimal">
 <li>Since until after importing the data, you never know the original column name, and how many columns are for indicators. It is natural to change column names using <code>dpyr::rename</code>. In the next example, I used <code>Total including LUCF</code>. However, ‘Total including LUCF’ and “Total including LUCF” work as well.</li>
 </ol>
-<div class="sourceCode" id="cb581"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb582"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">emissions</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>ghgPcap <span class="op">=</span> <span class="va">`Total including LUCF`</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 6,149 × 4</span></span>
 <span><span class="co">#&gt;    entity      code   year ghgPcap</span></span>
@@ -367,7 +367,7 @@
 <ol start="3" style="list-style-type: decimal">
 <li>If there are more than one variables to rename, use vector notation as follows. Here <code>top_n(1)</code> is same as <code>slice(1)</code>, and gives the first row only.</li>
 </ol>
-<div class="sourceCode" id="cb582"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb583"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"electoral-democracy"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/top_n.html">top_n</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Selecting by electdem_vdem_low_owid</span></span>
 <span><span class="co">#&gt; # A tibble: 3 × 6</span></span>
@@ -378,7 +378,7 @@
 <span><span class="co">#&gt; 3 Denmark DNK    2010                 0.922    0.959     0.9</span></span>
 <span><span class="co">#&gt; # … with abbreviated variable names</span></span>
 <span><span class="co">#&gt; #   ¹​electdem_vdem_high_owid, ²​electdem_vdem_low_owid</span></span></code></pre></div>
-<div class="sourceCode" id="cb583"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb584"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"electoral-democracy"</span>, rename <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"electoral_democracy"</span>, <span class="st">"vdem_high"</span>, <span class="st">"vdem_low"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 32,518 × 6</span></span>
 <span><span class="co">#&gt;    entity      code   year electoral_democ…¹ vdem_…² vdem_…³</span></span>
@@ -398,7 +398,7 @@
 <ol start="4" style="list-style-type: decimal">
 <li>You can use <code><a href="https://dplyr.tidyverse.org/reference/rename.html">dplyr::rename</a></code>, and keep the record of renaming column names.</li>
 </ol>
-<div class="sourceCode" id="cb584"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb585"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">(</span><span class="va">democracy</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"electoral-democracy"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 32,518 × 6</span></span>
 <span><span class="co">#&gt;    entity      code   year Electoral democ…¹ elect…² elect…³</span></span>
@@ -416,7 +416,7 @@
 <span><span class="co">#&gt; # … with 32,508 more rows, and abbreviated variable names</span></span>
 <span><span class="co">#&gt; #   ¹​`Electoral democracy`, ²​electdem_vdem_high_owid,</span></span>
 <span><span class="co">#&gt; #   ³​electdem_vdem_low_owid</span></span></code></pre></div>
-<div class="sourceCode" id="cb585"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb586"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">democracy</span> <span class="op">&lt;-</span> <span class="va">democracy</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>`electoral_democracy` <span class="op">=</span> <span class="va">`Electoral democracy`</span>,  </span>
 <span>         `vdem_high` <span class="op">=</span> <span class="va">`electdem_vdem_high_owid`</span>, </span>
@@ -448,7 +448,7 @@
 <ul>
 <li>Example</li>
 </ul>
-<div class="sourceCode" id="cb587"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb588"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_source.html">owid_source</a></span><span class="op">(</span><span class="va">emissions</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Dataset Name: Our World in Data based on Climate Analysis Indicators Tool (CAIT).</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -459,7 +459,7 @@
 <span><span class="co">#&gt; Emissions are measured in tonnes of carbon dioxide equivalents (CO₂e), based on 100-year global warming potential factors for non-CO₂ gases.</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Emissions are broken down by sector. Further information on sector definitions is available &lt;a href="https://ourworldindata.org/ghg-emissions-by-sector"&gt;here&lt;/a&gt;.</span></span></code></pre></div>
-<div class="sourceCode" id="cb588"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb589"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_source.html">owid_source</a></span><span class="op">(</span><span class="va">rights</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Dataset Name: Fariss et al. (2020)</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -482,16 +482,16 @@
 <li><p>Example</p></li>
 </ul>
 <p>The first one uses the chart, i.e., the tibble returned by <code><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid()</a></code>, and the second, <code>chart_id</code>. You can also embed in your R Markdown file by copying Embed <code>iframe</code> clink from <code>Share</code> botton at the bottom right corner.</p>
-<div class="sourceCode" id="cb590"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb591"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">firearm_suicide</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"suicide-rate-by-firearm"</span><span class="op">)</span></span>
 <span>    <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/view_chart.html">view_chart</a></span><span class="op">(</span><span class="va">firearm_suicide</span><span class="op">)</span></span></code></pre></div>
 <iframe src="https://ourworldindata.org/grapher/suicide-rate-by-firearm" loading="lazy" style="width: 100%; height: 600px; border: 0px none;">
 </iframe>
-<div class="sourceCode" id="cb591"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb592"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/view_chart.html">view_chart</a></span><span class="op">(</span><span class="st">"electoral-democracy"</span><span class="op">)</span></span></code></pre></div>
 <iframe src="https://ourworldindata.org/grapher/electoral-democracy?country=ARG~AUS~BWA~CHN" loading="lazy" style="width: 100%; height: 600px; border: 0px none;">
 </iframe>
-<div class="sourceCode" id="cb592"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb593"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/view_chart.html">view_chart</a></span><span class="op">(</span><span class="st">"share-of-individuals-using-the-internet"</span><span class="op">)</span></span></code></pre></div>
 <iframe src="https://ourworldindata.org/grapher/share-of-individuals-using-the-internet" loading="lazy" style="width: 100%; height: 600px; border: 0px none;">
 </iframe>
@@ -512,9 +512,9 @@
 <ul>
 <li>Example</li>
 </ul>
-<div class="sourceCode" id="cb594"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_covid.html">owid_covid</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb595"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_covid.html">owid_covid</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb596"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">covid</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">location</span> <span class="op">==</span> <span class="st">"Japan"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 1,161 × 67</span></span>
 <span><span class="co">#&gt;    iso_code continent location date       total_ca…¹ new_c…²</span></span>
@@ -550,7 +550,7 @@
 <span class="header-section-number">25.4.1</span> Human Rights- modified from README<a class="anchor" aria-label="anchor" href="#human-rights--modified-from-readme"><i class="fas fa-link"></i></a>
 </h3>
 <p>Lets use the core functions to get data on how human rights have changed over time. First by searching for charts on human rights.</p>
-<div class="sourceCode" id="cb596"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb597"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_search.html">owid_search</a></span><span class="op">(</span><span class="st">"human rights"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 8 × 2</span></span>
 <span><span class="co">#&gt;   titles                                             chart…¹</span></span>
@@ -565,7 +565,7 @@
 <span><span class="co">#&gt; 8 Share of countries with accredited independent na… share-…</span></span>
 <span><span class="co">#&gt; # … with abbreviated variable name ¹​chart_id</span></span></code></pre></div>
 <p>Let’s use the human rights protection dataset.</p>
-<div class="sourceCode" id="cb597"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb598"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">rights</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"human-rights-protection"</span><span class="op">)</span></span>
 <span><span class="va">rights</span></span>
 <span><span class="co">#&gt; # A tibble: 11,273 × 4</span></span>
@@ -583,7 +583,7 @@
 <span><span class="co">#&gt; 10 Afghanistan AFG    1955                     1.22 </span></span>
 <span><span class="co">#&gt; # … with 11,263 more rows</span></span></code></pre></div>
 <p>ggplot2 makes it easy to visualise our data.</p>
-<div class="sourceCode" id="cb598"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb599"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">rights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">entity</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"United Kingdom"</span>, <span class="st">"France"</span>, <span class="st">"United States"</span>, <span class="st">"Japan"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>  </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">`Human rights protection`</span>, colour <span class="op">=</span> <span class="va">entity</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -594,7 +594,7 @@
 <h3>
 <span class="header-section-number">25.4.2</span> Internet - modified from vignette<a class="anchor" aria-label="anchor" href="#internet---modified-from-vignette"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb599"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb600"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_search.html">owid_search</a></span><span class="op">(</span><span class="st">"internet"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 7 × 2</span></span>
 <span><span class="co">#&gt;   titles                                             chart…¹</span></span>
@@ -608,7 +608,7 @@
 <span><span class="co">#&gt; 7 Share of the population using the Internet         share-…</span></span>
 <span><span class="co">#&gt; # … with abbreviated variable name ¹​chart_id</span></span></code></pre></div>
 <p>Get a dataset used in an OWID chart.</p>
-<div class="sourceCode" id="cb600"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb601"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"share-of-individuals-using-the-internet"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/top_n.html">top_n</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Selecting by Individuals using the Internet (% of</span></span>
 <span><span class="co">#&gt; population)</span></span>
@@ -618,7 +618,7 @@
 <span><span class="co">#&gt; 1 United Arab Emirates ARE    2020                       100</span></span>
 <span><span class="co">#&gt; # … with abbreviated variable name</span></span>
 <span><span class="co">#&gt; #   ¹​`Individuals using the Internet (% of population)`</span></span></code></pre></div>
-<div class="sourceCode" id="cb601"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb602"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">internet</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"share-of-individuals-using-the-internet"</span>, rename <span class="op">=</span> <span class="st">"internet_use"</span><span class="op">)</span></span>
 <span><span class="va">internet</span></span>
 <span><span class="co">#&gt; # A tibble: 6,660 × 4</span></span>
@@ -636,7 +636,7 @@
 <span><span class="co">#&gt; 10 Afghanistan AFG    2004      0.106  </span></span>
 <span><span class="co">#&gt; # … with 6,650 more rows</span></span></code></pre></div>
 <p>Get source information on an OWID dataset</p>
-<div class="sourceCode" id="cb602"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb603"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_source.html">owid_source</a></span><span class="op">(</span><span class="va">internet</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Dataset Name: International Telecommunication Union (via World Bank)</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -644,23 +644,23 @@
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Link: https://datacatalog.worldbank.org/search/dataset/0037712/World-Development-Indicators</span></span></code></pre></div>
 <p>A function that opens the original OWID chart in your browser.</p>
-<div class="sourceCode" id="cb603"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb604"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/view_chart.html">view_chart</a></span><span class="op">(</span><span class="va">internet</span><span class="op">)</span></span></code></pre></div>
 <iframe src="https://ourworldindata.org/grapher/share-of-individuals-using-the-internet" loading="lazy" style="width: 100%; height: 600px; border: 0px none;">
 </iframe>
 <p>Plot an owid dataset. The first is the simplest, and the second uses oied theme.</p>
-<div class="sourceCode" id="cb604"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb605"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">internet</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">entity</span> <span class="op">==</span> <span class="st">"World"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">internet_use</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span> </span></code></pre></div>
 <div class="inline-figure"><img src="32-owid_files/figure-html/unnamed-chunk-31-1.png" width="672"></div>
-<div class="sourceCode" id="cb605"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb606"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">internet</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">entity</span> <span class="op">==</span> <span class="st">"World"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">internet_use</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Share of the World Population \nusing the Internet"</span>,</span>
 <span>       y <span class="op">=</span> <span class="st">"Individuals using the Internet \n(% of population)"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">100</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="32-owid_files/figure-html/unnamed-chunk-32-1.png" width="672"></div>
-<div class="sourceCode" id="cb606"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb607"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">internet</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">entity</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"United Kingdom"</span>, <span class="st">"Spain"</span>, <span class="st">"Russia"</span>, <span class="st">"Egypt"</span>, <span class="st">"Nigeria"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">internet_use</span>, color <span class="op">=</span>  <span class="va">entity</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
@@ -670,7 +670,7 @@
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">100</span><span class="op">)</span>, labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/label_number.html">label_number</a></span><span class="op">(</span>suffix <span class="op">=</span> <span class="st">"%"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="32-owid_files/figure-html/unnamed-chunk-33-1.png" width="672"></div>
 <p>Creating a choropleth map.</p>
-<div class="sourceCode" id="cb607"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb608"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_map.html">owid_map</a></span><span class="op">(</span><span class="va">internet</span>, year <span class="op">=</span> <span class="fl">2017</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Share of Population Using the Internet, 2017"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Warning: `owid_map()` was deprecated in owidR 1.4.0.</span></span>
@@ -687,7 +687,7 @@
 <h3>
 <span class="header-section-number">25.4.3</span> Democracy - modified from vignette<a class="anchor" aria-label="anchor" href="#democracy---modified-from-vignette"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb608"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb609"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_search.html">owid_search</a></span><span class="op">(</span><span class="st">"democrac"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 106 × 2</span></span>
 <span><span class="co">#&gt;    titles                                           chart_id</span></span>
@@ -703,7 +703,7 @@
 <span><span class="co">#&gt;  9 Citizen satisfaction with democracy              citizen…</span></span>
 <span><span class="co">#&gt; 10 Citizen support for democracy                    citizen…</span></span>
 <span><span class="co">#&gt; # … with 96 more rows</span></span></code></pre></div>
-<div class="sourceCode" id="cb609"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb610"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"electoral-democracy"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/top_n.html">top_n</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Selecting by electdem_vdem_low_owid</span></span>
 <span><span class="co">#&gt; # A tibble: 3 × 6</span></span>
@@ -714,7 +714,7 @@
 <span><span class="co">#&gt; 3 Denmark DNK    2010                 0.922    0.959     0.9</span></span>
 <span><span class="co">#&gt; # … with abbreviated variable names</span></span>
 <span><span class="co">#&gt; #   ¹​electdem_vdem_high_owid, ²​electdem_vdem_low_owid</span></span></code></pre></div>
-<div class="sourceCode" id="cb610"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb611"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">democracy</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"electoral-democracy"</span>, rename <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"electoral_democracy"</span>, <span class="st">"vdem_high"</span>, <span class="st">"vdem_low"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">democracy</span></span>
 <span><span class="co">#&gt; # A tibble: 32,518 × 6</span></span>
@@ -732,7 +732,7 @@
 <span><span class="co">#&gt; 10 Afghanistan AFG    1798             0.019   0.024    0.01</span></span>
 <span><span class="co">#&gt; # … with 32,508 more rows, and abbreviated variable names</span></span>
 <span><span class="co">#&gt; #   ¹​electoral_democracy, ²​vdem_high, ³​vdem_low</span></span></code></pre></div>
-<div class="sourceCode" id="cb611"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb612"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_source.html">owid_source</a></span><span class="op">(</span><span class="va">democracy</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Value:  </span></span>
 <span><span class="co">#&gt; </span></span>
@@ -782,18 +782,18 @@
 <span><span class="co">#&gt; https://ourworldindata.org/vdem-human-rights-data</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; You can download the code and complete dataset, including supplementary variables, from GitHub: https://github.com/owid/notebooks/tree/main/BastianHerre/democracy</span></span></code></pre></div>
-<div class="sourceCode" id="cb612"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb613"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_map.html">owid_map</a></span><span class="op">(</span><span class="va">democracy</span>, year <span class="op">=</span> <span class="fl">2015</span>, palette <span class="op">=</span> <span class="st">"YlGn"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Electoral Democracy"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="32-owid_files/figure-html/unnamed-chunk-39-1.png" width="672"></div>
-<div class="sourceCode" id="cb613"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb614"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">democracy</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">entity</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"United Kingdom"</span>, <span class="st">"Spain"</span>, <span class="st">"Russia"</span>, <span class="st">"Egypt"</span>, <span class="st">"Nigeria"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">electoral_democracy</span>, color <span class="op">=</span> <span class="va">entity</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Electoral Democracy"</span>, y <span class="op">=</span> <span class="st">""</span>, color <span class="op">=</span> <span class="st">"country"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, labels <span class="op">=</span> <span class="fu">scales</span><span class="fu">::</span><span class="fu"><a href="https://scales.r-lib.org/reference/label_number.html">label_number</a></span><span class="op">(</span>suffix <span class="op">=</span> <span class="st">"%"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="32-owid_files/figure-html/unnamed-chunk-40-1.png" width="672"></div>
-<div class="sourceCode" id="cb614"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb615"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">gdp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"gdp-per-capita-worldbank"</span>, rename <span class="op">=</span> <span class="st">"gdp"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">gov_exp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"total-gov-expenditure-gdp-wdi"</span>, rename <span class="op">=</span> <span class="st">"gov_exp"</span><span class="op">)</span></span>
@@ -813,7 +813,7 @@
 </ul>
 </li>
 </ul>
-<div class="sourceCode" id="cb615"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb616"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="va">internet</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">democracy</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">gdp</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
@@ -826,7 +826,7 @@
 <span><span class="co">#&gt; Joining with `by = join_by(entity, code, year)`</span></span>
 <span><span class="co">#&gt; Joining with `by = join_by(entity, code, year)`</span></span></code></pre></div>
 <p>Drawing scatter plot</p>
-<div class="sourceCode" id="cb616"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb617"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2015</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">internet_use</span>, <span class="va">electoral_democracy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -834,7 +834,7 @@
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, colour <span class="op">=</span> <span class="st">"#DC5E78"</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Relationship Between Internet Use \nand electoral_democracy"</span>, x <span class="op">=</span> <span class="st">"Internet Use"</span>, y <span class="op">=</span> <span class="st">"electoral_democracy"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="32-owid_files/figure-html/unnamed-chunk-43-1.png" width="672"></div>
-<div class="sourceCode" id="cb617"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb618"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2015</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">gdp</span>, <span class="va">internet_use</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -842,7 +842,7 @@
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"gam"</span>, colour <span class="op">=</span> <span class="st">"red"</span>, level <span class="op">=</span> <span class="fl">0.0</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Relationship Between Internet Use and GDP"</span>, x <span class="op">=</span> <span class="st">"GDP"</span>, y <span class="op">=</span> <span class="st">"Internet Use"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="32-owid_files/figure-html/unnamed-chunk-44-1.png" width="672"></div>
-<div class="sourceCode" id="cb618"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb619"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">model1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">electoral_democracy</span> <span class="op">~</span> <span class="va">internet_use</span>, <span class="va">data</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model1</span><span class="op">)</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -865,7 +865,7 @@
 <span><span class="co">#&gt;   (1347 observations deleted due to missingness)</span></span>
 <span><span class="co">#&gt; Multiple R-squared:  0.1478, Adjusted R-squared:  0.1477 </span></span>
 <span><span class="co">#&gt; F-statistic: 921.4 on 1 and 5311 DF,  p-value: &lt; 2.2e-16</span></span></code></pre></div>
-<div class="sourceCode" id="cb619"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb620"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">model2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">gdp</span> <span class="op">~</span> <span class="va">internet_use</span>, <span class="va">data</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model2</span><span class="op">)</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -890,9 +890,9 @@
 <span><span class="co">#&gt; F-statistic:  3190 on 1 and 5872 DF,  p-value: &lt; 2.2e-16</span></span></code></pre></div>
 <p>Creating a table of the results of the regression analysis using <code>texreg</code>.
 For the first time, install the pacage <code>texreg</code>.</p>
-<div class="sourceCode" id="cb620"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"texreg"</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb621"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"texreg"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb622"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/leifeld/texreg/">texreg</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; Version:  1.38.6</span></span>
 <span><span class="co">#&gt; Date:     2022-04-06</span></span>
@@ -905,7 +905,7 @@ For the first time, install the pacage <code>texreg</code>.</p>
 <span><span class="co">#&gt; The following object is masked from 'package:tidyr':</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;     extract</span></span></code></pre></div>
-<div class="sourceCode" id="cb622"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb623"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">models</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"Model 1"</span> <span class="op">=</span> <span class="va">model1</span>,</span>
 <span>               <span class="st">"Model 2"</span> <span class="op">=</span> <span class="va">model2</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/texreg/man/screenreg.html">screenreg</a></span><span class="op">(</span><span class="va">models</span>, stars <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span>
@@ -965,7 +965,7 @@ For the first time, install the pacage <code>texreg</code>.</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-03-11.</p>
+    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-03-13.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -1,7 +1,7 @@
 --- 
 title: "Data Analysis for Researchers AY2022"
 author: "Hiroshi Suzuki"
-date: "2023-03-11"
+date: "2023-03-13"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]

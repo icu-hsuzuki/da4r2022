@@ -122,7 +122,7 @@
 <h2>
 <span class="header-section-number">28.1</span> Set up<a class="anchor" aria-label="anchor" href="#set-up-7"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb654"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb655"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
 <span><span class="co">#&gt; ✔ ggplot2 3.4.1     ✔ purrr   1.0.1</span></span>
@@ -149,14 +149,14 @@
 </li>
 </ul>
 <p>Please add <code>mode="wb"</code> (web binary). This should work better.</p>
-<div class="sourceCode" id="cb655"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb656"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">url_summary</span> <span class="op">&lt;-</span> <span class="st">"https://wir2022.wid.world/www-site/uploads/2022/03/WIR2022TablesFigures-Summary.xlsx"</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span><span class="op">(</span>url <span class="op">=</span> <span class="va">url_summary</span>, </span>
 <span>              destfile <span class="op">=</span> <span class="st">"./data/WIR2022s.xlsx"</span>, </span>
 <span>              mode <span class="op">=</span> <span class="st">"wb"</span><span class="op">)</span> </span></code></pre></div>
 <p>If you get an error, download the file directory from the methodology site into your computer, then open it with Excel and save it in the data folder of your R Studio project. Then R studio can recognize it easily as an Excel data.</p>
 <p>Generally, a text file such as a CSV file is easy to import, but a binary file is difficult to handle. It is because unless R can recognize its file type, for example, Excel or so, R cannot import the data.</p>
-<div class="sourceCode" id="cb656"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb657"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://readxl.tidyverse.org/reference/excel_sheets.html">excel_sheets</a></span><span class="op">(</span><span class="st">"./data/WIR2022s.xlsx"</span><span class="op">)</span></span>
 <span><span class="co">#&gt;  [1] "Index"     "F1"        "F2"        "F3"       </span></span>
 <span><span class="co">#&gt;  [5] "F4"        "F5."       "F6"        "F7"       </span></span>
@@ -173,7 +173,7 @@
 <span class="header-section-number">28.2</span> WIR Package<a class="anchor" aria-label="anchor" href="#wir-package-1"><i class="fas fa-link"></i></a>
 </h2>
 <p>In the following, we explain how to download data by an R package <code>wir</code>. First, you need to install the package. However, it is not an official R package yet; you need to use the package <code>devtools</code> to install it.</p>
-<div class="sourceCode" id="cb657"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb658"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></span>
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"WIDworld/wid-r-tool"</span><span class="op">)</span></span></code></pre></div>
 <p>I have not studied fully, but you can download the data by a package called <code>wir</code>. See <a href="https://ds-sl.github.io/data-analysis/wir2022.nb.html">here</a>. After installing the package, check the <a href="https://wid.world/codes-dictionary">codebook</a> of the indicators. The following is not the ratio given in F8, but an example.</p>
@@ -182,7 +182,7 @@
 <li>wealg: net public wealth to net national income ratio</li>
 <li>wealp: net private wealth to net national income ratio</li>
 </ul>
-<div class="sourceCode" id="cb658"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb659"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">wid</span><span class="op">)</span></span>
 <span><span class="va">wwealg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/wid/man/download_wid.html">download_wid</a></span><span class="op">(</span>indicators <span class="op">=</span> <span class="st">"wwealg"</span>, areas <span class="op">=</span> <span class="st">"all"</span>, years <span class="op">=</span> <span class="st">"all"</span><span class="op">)</span></span>
 <span><span class="va">wwealp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/wid/man/download_wid.html">download_wid</a></span><span class="op">(</span>indicators <span class="op">=</span> <span class="st">"wwealp"</span>, areas <span class="op">=</span> <span class="st">"all"</span>, years <span class="op">=</span> <span class="st">"all"</span><span class="op">)</span></span></code></pre></div>
@@ -202,7 +202,7 @@
 #&gt; 
 #&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
 #&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<div class="sourceCode" id="cb660"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb661"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">public</span> <span class="op">&lt;-</span> <span class="va">wwealg</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">country</span>, <span class="va">year</span>, public <span class="op">=</span> <span class="va">value</span><span class="op">)</span></span>
 <span><span class="va">public</span></span>
 <span><span class="co">#&gt; # A tibble: 8,783 × 3</span></span>
@@ -219,7 +219,7 @@
 <span><span class="co">#&gt;  9 AD       2003 0.263 </span></span>
 <span><span class="co">#&gt; 10 AD       2004 0.294 </span></span>
 <span><span class="co">#&gt; # … with 8,773 more rows</span></span></code></pre></div>
-<div class="sourceCode" id="cb661"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb662"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">private</span> <span class="op">&lt;-</span> <span class="va">wwealp</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">country</span>, <span class="va">year</span>, private <span class="op">=</span> <span class="va">value</span><span class="op">)</span></span>
 <span><span class="va">private</span></span>
 <span><span class="co">#&gt; # A tibble: 8,989 × 3</span></span>
@@ -236,7 +236,7 @@
 <span><span class="co">#&gt;  9 AD       2003   0.834</span></span>
 <span><span class="co">#&gt; 10 AD       2004   0.894</span></span>
 <span><span class="co">#&gt; # … with 8,979 more rows</span></span></code></pre></div>
-<div class="sourceCode" id="cb662"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb663"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">public_vs_private</span> <span class="op">&lt;-</span> <span class="va">public</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">private</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Joining with `by = join_by(country, year)`</span></span>
 <span><span class="va">public_vs_private</span></span>
@@ -255,9 +255,9 @@
 <span><span class="co">#&gt; 10 AD       2004 0.294    0.894</span></span>
 <span><span class="co">#&gt; # … with 8,773 more rows</span></span></code></pre></div>
 <p>We use <code>wdi_cache</code> created by <code>wdi_cache = WDI::wdi_cache()</code>.</p>
-<div class="sourceCode" id="cb663"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">wdi_cache</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_rds.html">read_rds</a></span><span class="op">(</span><span class="st">"./data/wdi_cache.RData"</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb664"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_rds.html">read_rds</a></span><span class="op">(</span><span class="st">"./data/wdi_cache.RData"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb665"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_pub_priv</span> <span class="op">&lt;-</span> <span class="va">public_vs_private</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>,<span class="fl">4</span><span class="op">)</span>, names_to <span class="op">=</span> <span class="st">"category"</span>, values_to <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"country"</span><span class="op">=</span><span class="st">"iso2c"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span>country <span class="op">=</span> <span class="va">country.y</span>, iso2c <span class="op">=</span> <span class="va">country</span>, <span class="va">year</span>, <span class="va">category</span>, <span class="va">value</span>, <span class="va">region</span>, <span class="va">income</span>, <span class="va">lending</span><span class="op">)</span></span>
 <span><span class="va">df_pub_priv</span></span>
@@ -275,7 +275,7 @@
 <span><span class="co">#&gt;  9 Andorra AD     1999 public   0.159  Europ… High … Not cl…</span></span>
 <span><span class="co">#&gt; 10 Andorra AD     1999 private  0.628  Europ… High … Not cl…</span></span>
 <span><span class="co">#&gt; # … with 17,556 more rows</span></span></code></pre></div>
-<div class="sourceCode" id="cb665"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb666"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">df_pub_priv</span><span class="op">$</span><span class="va">country</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   [1] "Andorra"                                     </span></span>
 <span><span class="co">#&gt;   [2] "United Arab Emirates"                        </span></span>
@@ -495,7 +495,7 @@
 <span><span class="co">#&gt; [216] "South Africa"                                </span></span>
 <span><span class="co">#&gt; [217] "Zambia"                                      </span></span>
 <span><span class="co">#&gt; [218] "Zimbabwe"</span></span></code></pre></div>
-<div class="sourceCode" id="cb666"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb667"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_pub_priv</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Japan"</span>, <span class="st">"Norway"</span>, <span class="st">"Sweden"</span>, <span class="st">"Denmark"</span>, <span class="st">"Finland"</span><span class="op">)</span>, <span class="va">year</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fl">1970</span><span class="op">:</span><span class="fl">2020</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">value</span>, color <span class="op">=</span> <span class="va">country</span>, linetype <span class="op">=</span> <span class="va">category</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -540,7 +540,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-03-11.</p>
+    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-03-13.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

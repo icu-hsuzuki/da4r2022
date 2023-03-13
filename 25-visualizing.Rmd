@@ -314,6 +314,54 @@ df_wdi %>% mutate(year = as.character(year)) %>%
   labs(x = "year")
 ```
 
+## `ggplot2` Fundamentals
+
+```
+ggplot (data = <DATA> ) +
+  <GEOM_FUNCTION> (mapping = aes( <MAPPINGS> ),　
+    stat = <STAT> , position = <POSITION> ) + 
+  <COORDINATE_FUNCTION> + 
+  <FACET_FUNCTION> + 
+  <SCALE_FUNCTION> + 
+  <THEME_FUNCTION>
+```
+
+### Data
+
+### Aestics: Mapping
+
+### Geom Functions
+
+#### Stat Option
+
+#### Position Option
+
+### Coordinate Function
+
+### Scale Function
+
+### Theme Function
+
+## Tips
+
+### `log10` scale
+
+* `scale_y_log10()`
+
+### `scale_color_manual`
+
+* `scale_color_manual(values=c('Green','Yellow',"Orange","Black","Blue","Dark Blue","Purple"))`
+
+### `stringr`
+
+* When the labels of $x$-axis are long:
+  - `scale_x_discrete(labels = function(x) stringr::str_wrap(x, width = 8))`
+  
+### `ggplot2::legend.position`
+
+* `theme(legend.position = "none")`
+  - the position of legends ("none", "left", "right", "bottom", "top", or two-element numeric vector)
+
 ## Maps
 
 https://www.naturalearthdata.com
