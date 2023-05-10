@@ -6,19 +6,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 11 Workflow | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
-<meta name="description" content="It is an excellent time to review and sort out the data analysis workflow using R Studio. library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.1   ✔...">
-<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta name="description" content="It is an excellent time to review and sort out the data analysis workflow using R Studio. library(tidyverse) #&gt; ── Attaching core tidyverse packages ──── tidyverse 2.0.0 ── #&gt; ✔ dplyr   1.1.2   ✔...">
+<meta name="generator" content="bookdown 0.33 with bs4_book()">
 <meta property="og:title" content="Chapter 11 Workflow | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/workflow.html">
-<meta property="og:description" content="It is an excellent time to review and sort out the data analysis workflow using R Studio. library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.1   ✔...">
+<meta property="og:description" content="It is an excellent time to review and sort out the data analysis workflow using R Studio. library(tidyverse) #&gt; ── Attaching core tidyverse packages ──── tidyverse 2.0.0 ── #&gt; ✔ dplyr   1.1.2   ✔...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 11 Workflow | Data Analysis for Researchers AY2022">
-<meta name="twitter:description" content="It is an excellent time to review and sort out the data analysis workflow using R Studio. library(tidyverse) #&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ── #&gt; ✔ ggplot2 3.4.1   ✔...">
+<meta name="twitter:description" content="It is an excellent time to review and sort out the data analysis workflow using R Studio. library(tidyverse) #&gt; ── Attaching core tidyverse packages ──── tidyverse 2.0.0 ── #&gt; ✔ dplyr   1.1.2   ✔...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
 <script src="libs/datatables-binding-0.27/datatables.js"></script><link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
 <link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet">
 <script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
@@ -105,8 +105,9 @@
 <li class="book-part">APPENDIX</li>
 <li><a class="" href="histdata.html"><span class="header-section-number">A</span> HistData</a></li>
 <li><a class="" href="covid19.html"><span class="header-section-number">B</span> Covid 19</a></li>
-<li><a class="" href="bookdown.html"><span class="header-section-number">C</span> Bookdown</a></li>
-<li><a class="" href="template.html"><span class="header-section-number">D</span> Template</a></li>
+<li><a class="" href="worldmap.html"><span class="header-section-number">C</span> World Map</a></li>
+<li><a class="" href="bookdown.html"><span class="header-section-number">D</span> Bookdown</a></li>
+<li><a class="" href="template.html"><span class="header-section-number">E</span> Template</a></li>
 </ul>
 
         <div class="book-extra">
@@ -123,14 +124,16 @@
 </blockquote>
 <div class="sourceCode" id="cb341"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
-<span><span class="co">#&gt; ✔ ggplot2 3.4.1     ✔ purrr   1.0.1</span></span>
-<span><span class="co">#&gt; ✔ tibble  3.1.8     ✔ dplyr   1.1.0</span></span>
-<span><span class="co">#&gt; ✔ tidyr   1.3.0     ✔ stringr 1.5.0</span></span>
-<span><span class="co">#&gt; ✔ readr   2.1.4     ✔ forcats 1.0.0</span></span>
+<span><span class="co">#&gt; ── Attaching core tidyverse packages ──── tidyverse 2.0.0 ──</span></span>
+<span><span class="co">#&gt; ✔ dplyr     1.1.2     ✔ readr     2.1.4</span></span>
+<span><span class="co">#&gt; ✔ forcats   1.0.0     ✔ stringr   1.5.0</span></span>
+<span><span class="co">#&gt; ✔ ggplot2   3.4.2     ✔ tibble    3.2.1</span></span>
+<span><span class="co">#&gt; ✔ lubridate 1.9.2     ✔ tidyr     1.3.0</span></span>
+<span><span class="co">#&gt; ✔ purrr     1.0.1     </span></span>
 <span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
 <span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span>
+<span><span class="co">#&gt; ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/WDI/">WDI</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span></span></code></pre></div>
 <div id="eda-step-0" class="section level2" number="11.1">
@@ -341,25 +344,25 @@
 <code class="sourceCode R"><span><span class="va">df_f8</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"./data/WIR2022s.xlsx"</span>, sheet <span class="op">=</span> <span class="st">"data-F8"</span><span class="op">)</span></span>
 <span><span class="va">df_f8</span></span>
 <span><span class="co">#&gt; # A tibble: 51 × 17</span></span>
-<span><span class="co">#&gt;     year Germany German…¹ Spain Spain…² France Franc…³    UK</span></span>
-<span><span class="co">#&gt;    &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1  1970   1.11      2.30 0.604    4.06  0.422    3.12 0.601</span></span>
-<span><span class="co">#&gt;  2  1971   1.12      2.25 0.657    4.53  0.443    3.06 0.689</span></span>
-<span><span class="co">#&gt;  3  1972   1.11      2.27 0.624    4.36  0.467    3.08 0.790</span></span>
-<span><span class="co">#&gt;  4  1973   1.11      2.23 0.596    4.46  0.478    3.06 0.929</span></span>
-<span><span class="co">#&gt;  5  1974   1.13      2.25 0.586    4.64  0.498    3.03 1.09 </span></span>
-<span><span class="co">#&gt;  6  1975   1.12      2.35 0.602    4.83  0.545    3.12 1.00 </span></span>
-<span><span class="co">#&gt;  7  1976   1.03      2.34 0.581    4.46  0.561    3.08 0.918</span></span>
-<span><span class="co">#&gt;  8  1977   1.01      2.42 0.586    4.10  0.567    3.10 0.867</span></span>
-<span><span class="co">#&gt;  9  1978   0.990     2.52 0.604    4.10  0.580    3.20 0.881</span></span>
-<span><span class="co">#&gt; 10  1979   0.989     2.55 0.621    4.20  0.624    3.30 0.955</span></span>
-<span><span class="co">#&gt; # … with 41 more rows, 9 more variables:</span></span>
+<span><span class="co">#&gt;     year Germany `Germany (private)` Spain `Spain (private)`</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt;   &lt;dbl&gt;               &lt;dbl&gt; &lt;dbl&gt;             &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  1970   1.11                 2.30 0.604              4.06</span></span>
+<span><span class="co">#&gt;  2  1971   1.12                 2.25 0.657              4.53</span></span>
+<span><span class="co">#&gt;  3  1972   1.11                 2.27 0.624              4.36</span></span>
+<span><span class="co">#&gt;  4  1973   1.11                 2.23 0.596              4.46</span></span>
+<span><span class="co">#&gt;  5  1974   1.13                 2.25 0.586              4.64</span></span>
+<span><span class="co">#&gt;  6  1975   1.12                 2.35 0.602              4.83</span></span>
+<span><span class="co">#&gt;  7  1976   1.03                 2.34 0.581              4.46</span></span>
+<span><span class="co">#&gt;  8  1977   1.01                 2.42 0.586              4.10</span></span>
+<span><span class="co">#&gt;  9  1978   0.990                2.52 0.604              4.10</span></span>
+<span><span class="co">#&gt; 10  1979   0.989                2.55 0.621              4.20</span></span>
+<span><span class="co">#&gt; # ℹ 41 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 12 more variables: France &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   `France (private)` &lt;dbl&gt;, UK &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   `UK (private)` &lt;dbl&gt;, Japan &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   `Japan (private)` &lt;dbl&gt;, Norway &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   `Norway (private)` &lt;dbl&gt;, USA &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   `USA (private)` &lt;dbl&gt;, gwealAVGRICH &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   pwealAVGRICH &lt;dbl&gt;, and abbreviated variable names</span></span>
-<span><span class="co">#&gt; #   ¹​`Germany (private)`, ²​`Spain (private)`, …</span></span></code></pre></div>
+<span><span class="co">#&gt; #   `USA (private)` &lt;dbl&gt;, gwealAVGRICH &lt;dbl&gt;, …</span></span></code></pre></div>
 <div class="inline-figure"><img src="11-workflow_files/figure-html/unnamed-chunk-3-1.png" width="672"></div>
 </div>
 <div id="the-week-five-assignment-in-moodle" class="section level2" number="11.10">
@@ -435,7 +438,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-03-13.</p>
+    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-05-10.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

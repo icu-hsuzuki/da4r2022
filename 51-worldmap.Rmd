@@ -1,0 +1,251 @@
+# World Map {#worldmap}
+
+In this chapter, we study the topic of drawing world maps using `ggplot2`. 
+
+Using a map data in `data.frame` to apply `geom_map` or `geom_polygon` is possible. However, recently, we can obtain a map data in `simple feature (sf)` format, ad `ggplot2` includes a special geom called `geom_sf` to draw more complex data. 
+
+## Setup
+
+```{r}
+library(tidyverse)
+library(sf)
+```
+
+We will use `income` level data with the iso2c code of each country obtained using `WDIcache()`.
+
+```{r}
+wdi_cache <- read_rds("./data/wdi_cache.RData")
+```
+
+```{r}
+wdi_cache$country %>% as_tibble() %>% glimpse()
+```
+
+
+```{r}
+wdi_income <- wdi_cache$country %>% 
+  filter(region != "Aggregates") %>%
+  select(iso2c, income) %>% 
+  drop_na(iso2c) %>%
+  mutate(income = factor(income, levels = c("High income", "Upper middle income", "Lower middle income", "Low income", "Not classified", NA))) 
+glimpse(wdi_income)
+```
+### `geom_sf`
+
+See also, `coord_sf`, `geom_sf_label`, `geom_sf_text`, `stat_sf`.
+
+> This set of geom, stat, and coord are used to visualise simple feature (sf) objects. For simple plots, you will only need geom_sf() as it uses stat_sf() and adds coord_sf() for you. geom_sf() is an unusual geom because it will draw different geometric objects depending on what simple features are present in the data: you can get points, lines, or polygons. For text and labels, you can use geom_sf_text() and geom_sf_label().
+
+```
+geom_sf(
+  mapping = aes(),
+  data = NULL,
+  stat = "sf",
+  position = "identity",
+  na.rm = FALSE,
+  show.legend = NA,
+  inherit.aes = TRUE,
+  ...
+)
+```
+
+## Natural Earth Data 
+
+https://www.naturalearthdata.com
+
+Get natural earth world country polygons
+
+Manual: https://cran.r-project.org/web/packages/rnaturalearth/rnaturalearth.pdf
+
+### `ne_countries`
+
+```{r}
+library(rnaturalearth)
+library(rnaturalearthdata)
+```
+
+```
+ne_countries(
+  scale = 110,
+  type = "countries",
+  continent = NULL,
+  country = NULL,
+  geounit = NULL,
+  sovereignty = NULL,
+  returnclass = c("sp", "sf")
+)
+```
+
+#### Arguments
+
+* scale: scale of map to return, one of 110, 50, 10 or 'small', 'medium', 'large'
+* type: country type, one of 'countries', 'map_units', 'sovereignty', 'tiny_countries'
+* continent: a character vector of continent names to get countries from.
+* country: a character vector of country names.
+* geounit: a character vector of geounit names.
+* sovereignty: a character vector of sovereignty names.
+* returnclass: 'sp' default or 'sf' for Simple Features
+
+#### Examples 
+
+There are three scales. Add `returnclass = "sf"` as an option to obtain data in `sf` format.
+
+```{r}
+ne_countries(scale = "large", returnclass = "sf") %>%
+  ggplot() +   geom_sf()
+```
+
+```{r}
+ne_countries(scale = "small", returnclass = "sf") %>%
+  ggplot() +   geom_sf()
+```
+
+We will use 'medium` scale data in the following.
+
+```{r}
+ne_world <- ne_countries(scale = "medium", returnclass = "sf")
+```
+
+```{r}
+glimpse(ne_world)
+```
+
+The last column is the geometry which contains map data in multi-polygon format. 
+
+
+```{r}
+ne_world %>% ggplot() + geom_sf()
+```
+
+This map data comes with various information. 
+
+```{r}
+ne_world %>% ggplot() + geom_sf(aes(fill = income_grp))
+```
+You can specify a 'continent', a 'region_un', a 'subregion' or 'region_wb'.
+
+```{r}
+ne_world %>% as_tibble() %>% distinct(continent) %>% pull()
+```
+
+```{r}
+ne_world %>% as_tibble() %>% distinct(region_un) %>% pull()
+```
+
+```{r}
+ne_world %>% as_tibble() %>% distinct(subregion) %>% pull()
+```
+```{r}
+ne_world %>% as_tibble() %>% distinct(region_wb) %>% pull()
+```
+
+```{r}
+ne_world %>% filter(subregion == "South-Eastern Asia") %>%
+  ggplot() +   geom_sf(aes(fill = iso_a2))
+```
+```{r}
+ne_world %>% filter(continent == 'Africa') %>%
+  ggplot() +   geom_sf(aes(fill = subregion))
+```
+
+#### `type` argument
+
+```{r}
+ne_countries(type = "countries", country = c("Japan", "South Korea", "North Korea", "China", "Taiwan", "Mongolia"), scale = "medium", returnclass = "sf") %>%
+  ggplot() + geom_sf(aes(fill = economy))
+```
+
+### `ne_states`
+
+Get natural earth world state (admin level 1) polygons
+
+**Description**: returns state polygons (administrative level 1) for specified countries
+
+#### Usage
+
+```
+ne_states(
+  country = NULL,
+  geounit = NULL,
+  iso_a2 = NULL,
+  spdf = NULL,
+  returnclass = c("sp", "sf")
+)
+```
+
+### Arguments
+
+* country: a character vector of country names.
+
+* geounit: a character vector of geounit names.
+
+* iso_a2: a character vector of iso_a2 country codes
+
+* spdf: an optional alternative states map
+
+* returnclass: 'sp' default or 'sf' for Simple Features
+
+### Value
+
+* SpatialPolygons DataFrame or sf
+
+```{r}
+ne_world_admin1 <- ne_states(returnclass = "sf")
+```
+
+```{r}
+glimpse(ne_world_admin1)
+```
+
+
+```{r}
+ne_world_admin1 %>% as_tibble() %>% 
+  filter(iso_a2 != "-1") %>% arrange(admin) %>%
+  distinct(iso_a2, admin)
+```
+
+```{r}
+country <- "Japan"
+ne_world_admin1 %>% filter(admin == country) %>% 
+  ggplot() + geom_sf()
+```
+
+```{r}
+iso2s <- c("IN","PK","BD","LK")
+ne_world_admin1 %>% filter(iso_a2 %in% iso2s) %>% 
+  ggplot() +   geom_sf(aes(fill = admin))
+```
+
+```{r}
+regions <- c("Tohoku")
+ne_world_admin1 %>% filter(region %in% regions) %>% 
+  ggplot() + geom_sf(aes(fill = name_local))
+```
+
+```{r}
+ne_world_admin1 %>% filter(iso_a2 == "JP") %>%
+  ggplot() +   geom_sf(aes(fill = region))
+```
+```{r}
+ne_world_admin1 %>% as_tibble() %>% filter(admin %in% "Japan") %>% 
+  select(name_local, region) %>% filter(is.na(region))
+```
+
+```{r}
+ne_world_admin1 %>% mutate(region = case_when(
+  name_local == "佐賀県" ~ "Kyushu",
+  name_local == "長崎県" ~ "Kyushu",
+  TRUE ~ region)) %>%
+  as_tibble() %>% filter(admin %in% "Japan") %>% 
+  select(name_local, region) %>% filter(is.na(region))
+```
+
+```{r}
+ne_world_admin1 %>% mutate(region = case_when(
+  name_local == "佐賀県" ~ "Kyushu",
+  name_local == "長崎県" ~ "Kyushu",
+  TRUE ~ region)) %>%
+  filter(iso_a2 == "JP") %>%
+  ggplot() +   geom_sf(aes(fill = region))
+```
+

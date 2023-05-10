@@ -7,7 +7,7 @@
 <title>Chapter 9 Assignment Three | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
 <meta name="description" content="Assignment Three: The Week Four Assignment WDI and ggplot2 Create an R Notebook of a Data Analysis containing the following and submit the rendered HTML file (eg. a3_123456.nb.html by replacing...">
-<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta name="generator" content="bookdown 0.33 with bs4_book()">
 <meta property="og:title" content="Chapter 9 Assignment Three | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/a3resp.html">
@@ -18,7 +18,7 @@
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
 <script src="libs/datatables-binding-0.27/datatables.js"></script><link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
 <link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet">
 <script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
@@ -105,8 +105,9 @@
 <li class="book-part">APPENDIX</li>
 <li><a class="" href="histdata.html"><span class="header-section-number">A</span> HistData</a></li>
 <li><a class="" href="covid19.html"><span class="header-section-number">B</span> Covid 19</a></li>
-<li><a class="" href="bookdown.html"><span class="header-section-number">C</span> Bookdown</a></li>
-<li><a class="" href="template.html"><span class="header-section-number">D</span> Template</a></li>
+<li><a class="" href="worldmap.html"><span class="header-section-number">C</span> World Map</a></li>
+<li><a class="" href="bookdown.html"><span class="header-section-number">D</span> Bookdown</a></li>
+<li><a class="" href="template.html"><span class="header-section-number">E</span> Template</a></li>
 </ul>
 
         <div class="book-extra">
@@ -216,14 +217,16 @@
 </ul>
 <div class="sourceCode" id="cb213"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
-<span><span class="co">#&gt; ✔ ggplot2 3.4.1     ✔ purrr   1.0.1</span></span>
-<span><span class="co">#&gt; ✔ tibble  3.1.8     ✔ dplyr   1.1.0</span></span>
-<span><span class="co">#&gt; ✔ tidyr   1.3.0     ✔ stringr 1.5.0</span></span>
-<span><span class="co">#&gt; ✔ readr   2.1.4     ✔ forcats 1.0.0</span></span>
+<span><span class="co">#&gt; ── Attaching core tidyverse packages ──── tidyverse 2.0.0 ──</span></span>
+<span><span class="co">#&gt; ✔ dplyr     1.1.2     ✔ readr     2.1.4</span></span>
+<span><span class="co">#&gt; ✔ forcats   1.0.0     ✔ stringr   1.5.0</span></span>
+<span><span class="co">#&gt; ✔ ggplot2   3.4.2     ✔ tibble    3.2.1</span></span>
+<span><span class="co">#&gt; ✔ lubridate 1.9.2     ✔ tidyr     1.3.0</span></span>
+<span><span class="co">#&gt; ✔ purrr     1.0.1     </span></span>
 <span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
 <span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span>
+<span><span class="co">#&gt; ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/WDI/">WDI</a></span><span class="op">)</span></span></code></pre></div>
 <p><em>When people read a paper, they want to know the minimal set of packages required to install. So it is better to load the packages by library() you actually need in the paper.</em></p>
 <p>2.3. Choose <code>Source</code> or <code>Visual</code> editor mode, and start editing Project Notebook</p>
@@ -599,20 +602,19 @@
 #&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
 #&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 #&gt; # A tibble: 16,492 × 5
-#&gt;    country                     iso2c iso3c  year NY.GDP.PC…¹
-#&gt;    &lt;chr&gt;                       &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;       &lt;dbl&gt;
-#&gt;  1 Africa Eastern and Southern ZH    AFE    2021       1461.
-#&gt;  2 Africa Eastern and Southern ZH    AFE    2020       1437.
-#&gt;  3 Africa Eastern and Southern ZH    AFE    2019       1520.
-#&gt;  4 Africa Eastern and Southern ZH    AFE    2018       1529.
-#&gt;  5 Africa Eastern and Southern ZH    AFE    2017       1532.
-#&gt;  6 Africa Eastern and Southern ZH    AFE    2016       1533.
-#&gt;  7 Africa Eastern and Southern ZH    AFE    2015       1541.
-#&gt;  8 Africa Eastern and Southern ZH    AFE    2014       1538.
-#&gt;  9 Africa Eastern and Southern ZH    AFE    2013       1520.
-#&gt; 10 Africa Eastern and Southern ZH    AFE    2012       1499.
-#&gt; # … with 16,482 more rows, and abbreviated variable name
-#&gt; #   ¹​NY.GDP.PCAP.KD</code></pre>
+#&gt;    country                  iso2c iso3c  year NY.GDP.PCAP.KD
+#&gt;    &lt;chr&gt;                    &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;          &lt;dbl&gt;
+#&gt;  1 Africa Eastern and Sout… ZH    AFE    2021          1461.
+#&gt;  2 Africa Eastern and Sout… ZH    AFE    2020          1437.
+#&gt;  3 Africa Eastern and Sout… ZH    AFE    2019          1520.
+#&gt;  4 Africa Eastern and Sout… ZH    AFE    2018          1529.
+#&gt;  5 Africa Eastern and Sout… ZH    AFE    2017          1532.
+#&gt;  6 Africa Eastern and Sout… ZH    AFE    2016          1533.
+#&gt;  7 Africa Eastern and Sout… ZH    AFE    2015          1541.
+#&gt;  8 Africa Eastern and Sout… ZH    AFE    2014          1538.
+#&gt;  9 Africa Eastern and Sout… ZH    AFE    2013          1520.
+#&gt; 10 Africa Eastern and Sout… ZH    AFE    2012          1499.
+#&gt; # ℹ 16,482 more rows</code></pre>
 <ul>
 <li>In order to use the downloaded data, we need to assign a name to it. It can be <code>df</code> if you download and use only one data, but it is better to assign the data to be a more descriptive name.</li>
 </ul>
@@ -628,20 +630,19 @@
 #&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
 #&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 #&gt; # A tibble: 16,492 × 5
-#&gt;    country                     iso2c iso3c  year NY.GDP.PC…¹
-#&gt;    &lt;chr&gt;                       &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;       &lt;dbl&gt;
-#&gt;  1 Africa Eastern and Southern ZH    AFE    2021       1461.
-#&gt;  2 Africa Eastern and Southern ZH    AFE    2020       1437.
-#&gt;  3 Africa Eastern and Southern ZH    AFE    2019       1520.
-#&gt;  4 Africa Eastern and Southern ZH    AFE    2018       1529.
-#&gt;  5 Africa Eastern and Southern ZH    AFE    2017       1532.
-#&gt;  6 Africa Eastern and Southern ZH    AFE    2016       1533.
-#&gt;  7 Africa Eastern and Southern ZH    AFE    2015       1541.
-#&gt;  8 Africa Eastern and Southern ZH    AFE    2014       1538.
-#&gt;  9 Africa Eastern and Southern ZH    AFE    2013       1520.
-#&gt; 10 Africa Eastern and Southern ZH    AFE    2012       1499.
-#&gt; # … with 16,482 more rows, and abbreviated variable name
-#&gt; #   ¹​NY.GDP.PCAP.KD</code></pre>
+#&gt;    country                  iso2c iso3c  year NY.GDP.PCAP.KD
+#&gt;    &lt;chr&gt;                    &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;          &lt;dbl&gt;
+#&gt;  1 Africa Eastern and Sout… ZH    AFE    2021          1461.
+#&gt;  2 Africa Eastern and Sout… ZH    AFE    2020          1437.
+#&gt;  3 Africa Eastern and Sout… ZH    AFE    2019          1520.
+#&gt;  4 Africa Eastern and Sout… ZH    AFE    2018          1529.
+#&gt;  5 Africa Eastern and Sout… ZH    AFE    2017          1532.
+#&gt;  6 Africa Eastern and Sout… ZH    AFE    2016          1533.
+#&gt;  7 Africa Eastern and Sout… ZH    AFE    2015          1541.
+#&gt;  8 Africa Eastern and Sout… ZH    AFE    2014          1538.
+#&gt;  9 Africa Eastern and Sout… ZH    AFE    2013          1520.
+#&gt; 10 Africa Eastern and Sout… ZH    AFE    2012          1499.
+#&gt; # ℹ 16,482 more rows</code></pre>
 <ul>
 <li>If you want to use extra information such as <code>region</code>, <code>income</code>, <code>lending</code>, use <code>extra = TRUE</code>.</li>
 </ul>
@@ -659,22 +660,22 @@
 #&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
 #&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 #&gt; # A tibble: 16,492 × 13
-#&gt;    country     iso2c iso3c  year NY.GDP.…¹ status lastupda…²
-#&gt;    &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;lgl&gt;  &lt;date&gt;    
-#&gt;  1 Afghanistan AF    AFG    2015      592. NA     2022-12-22
-#&gt;  2 Afghanistan AF    AFG    2011      551. NA     2022-12-22
-#&gt;  3 Afghanistan AF    AFG    2014      603. NA     2022-12-22
-#&gt;  4 Afghanistan AF    AFG    2013      608. NA     2022-12-22
-#&gt;  5 Afghanistan AF    AFG    2012      596. NA     2022-12-22
-#&gt;  6 Afghanistan AF    AFG    2007      429. NA     2022-12-22
-#&gt;  7 Afghanistan AF    AFG    2010      569. NA     2022-12-22
-#&gt;  8 Afghanistan AF    AFG    2009      512. NA     2022-12-22
-#&gt;  9 Afghanistan AF    AFG    2008      437. NA     2022-12-22
-#&gt; 10 Afghanistan AF    AFG    2003      363. NA     2022-12-22
-#&gt; # … with 16,482 more rows, 6 more variables: region &lt;chr&gt;,
+#&gt;    country     iso2c iso3c  year NY.GDP.PCAP.KD status
+#&gt;    &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;          &lt;dbl&gt; &lt;lgl&gt; 
+#&gt;  1 Afghanistan AF    AFG    2015           592. NA    
+#&gt;  2 Afghanistan AF    AFG    2011           551. NA    
+#&gt;  3 Afghanistan AF    AFG    2014           603. NA    
+#&gt;  4 Afghanistan AF    AFG    2013           608. NA    
+#&gt;  5 Afghanistan AF    AFG    2012           596. NA    
+#&gt;  6 Afghanistan AF    AFG    2007           429. NA    
+#&gt;  7 Afghanistan AF    AFG    2010           569. NA    
+#&gt;  8 Afghanistan AF    AFG    2009           512. NA    
+#&gt;  9 Afghanistan AF    AFG    2008           437. NA    
+#&gt; 10 Afghanistan AF    AFG    2003           363. NA    
+#&gt; # ℹ 16,482 more rows
+#&gt; # ℹ 7 more variables: lastupdated &lt;date&gt;, region &lt;chr&gt;,
 #&gt; #   capital &lt;chr&gt;, longitude &lt;dbl&gt;, latitude &lt;dbl&gt;,
-#&gt; #   income &lt;chr&gt;, lending &lt;chr&gt;, and abbreviated variable
-#&gt; #   names ¹​NY.GDP.PCAP.KD, ²​lastupdated</code></pre>
+#&gt; #   income &lt;chr&gt;, lending &lt;chr&gt;</code></pre>
 </div>
 <div id="writing-and-reading-a-csv-file" class="section level3" number="9.3.5">
 <h3>
@@ -719,7 +720,7 @@ Before saving it check whether you have <code>data</code> folder (or directory) 
 #&gt;  8 Brunei Darussalam BN    BRN    2014         31156.
 #&gt;  9 Brunei Darussalam BN    BRN    2013         32342.
 #&gt; 10 Brunei Darussalam BN    BRN    2012         33457.
-#&gt; # … with 486 more rows</code></pre>
+#&gt; # ℹ 486 more rows</code></pre>
 <div class="sourceCode" id="cb231"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_gdppcap_asean</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">country</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "Brunei Darussalam" "Indonesia"        </span></span>
@@ -1029,7 +1030,7 @@ Before saving it check whether you have <code>data</code> folder (or directory) 
 <span><span class="co">#&gt; 13 Vietnam VN    VNM    2010  9.21   NA     2022-12-22 </span></span>
 <span><span class="co">#&gt; 14 Vietnam VN    VNM    2005  8.28   NA     2022-12-22 </span></span>
 <span><span class="co">#&gt; 15 Vietnam VN    VNM    2000 -1.71   NA     2022-12-22 </span></span>
-<span><span class="co">#&gt; # … with 6 more variables: region &lt;chr&gt;, capital &lt;chr&gt;,</span></span>
+<span><span class="co">#&gt; # ℹ 6 more variables: region &lt;chr&gt;, capital &lt;chr&gt;,</span></span>
 <span><span class="co">#&gt; #   longitude &lt;dbl&gt;, latitude &lt;dbl&gt;, income &lt;chr&gt;,</span></span>
 <span><span class="co">#&gt; #   lending &lt;chr&gt;</span></span></code></pre></div>
 <div class="sourceCode" id="cb266"><pre class="downlit sourceCode r">
@@ -1336,7 +1337,7 @@ Before saving it check whether you have <code>data</code> folder (or directory) 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-03-13.</p>
+    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-05-10.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

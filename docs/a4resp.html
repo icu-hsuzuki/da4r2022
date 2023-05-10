@@ -7,7 +7,7 @@
 <title>Chapter 12 Assignment Four | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
 <meta name="description" content="Assignment Four: The Week Five Assignment tidyr and WIR2022 Create an R Notebook of a Data Analysis containing the following and submit the rendered HTML file (e.g., a3_123456.nb.html by replacing...">
-<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta name="generator" content="bookdown 0.33 with bs4_book()">
 <meta property="og:title" content="Chapter 12 Assignment Four | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/a4resp.html">
@@ -18,7 +18,7 @@
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
 <script src="libs/datatables-binding-0.27/datatables.js"></script><link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
 <link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet">
 <script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
@@ -105,8 +105,9 @@
 <li class="book-part">APPENDIX</li>
 <li><a class="" href="histdata.html"><span class="header-section-number">A</span> HistData</a></li>
 <li><a class="" href="covid19.html"><span class="header-section-number">B</span> Covid 19</a></li>
-<li><a class="" href="bookdown.html"><span class="header-section-number">C</span> Bookdown</a></li>
-<li><a class="" href="template.html"><span class="header-section-number">D</span> Template</a></li>
+<li><a class="" href="worldmap.html"><span class="header-section-number">C</span> World Map</a></li>
+<li><a class="" href="bookdown.html"><span class="header-section-number">D</span> Bookdown</a></li>
+<li><a class="" href="template.html"><span class="header-section-number">E</span> Template</a></li>
 </ul>
 
         <div class="book-extra">
@@ -160,14 +161,16 @@
 </h2>
 <div class="sourceCode" id="cb343"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
-<span><span class="co">#&gt; ✔ ggplot2 3.4.1     ✔ purrr   1.0.1</span></span>
-<span><span class="co">#&gt; ✔ tibble  3.1.8     ✔ dplyr   1.1.0</span></span>
-<span><span class="co">#&gt; ✔ tidyr   1.3.0     ✔ stringr 1.5.0</span></span>
-<span><span class="co">#&gt; ✔ readr   2.1.4     ✔ forcats 1.0.0</span></span>
+<span><span class="co">#&gt; ── Attaching core tidyverse packages ──── tidyverse 2.0.0 ──</span></span>
+<span><span class="co">#&gt; ✔ dplyr     1.1.2     ✔ readr     2.1.4</span></span>
+<span><span class="co">#&gt; ✔ forcats   1.0.0     ✔ stringr   1.5.0</span></span>
+<span><span class="co">#&gt; ✔ ggplot2   3.4.2     ✔ tibble    3.2.1</span></span>
+<span><span class="co">#&gt; ✔ lubridate 1.9.2     ✔ tidyr     1.3.0</span></span>
+<span><span class="co">#&gt; ✔ purrr     1.0.1     </span></span>
 <span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
 <span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span>
+<span><span class="co">#&gt; ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span> <span class="co"># for excel files</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/WDI/">WDI</a></span><span class="op">)</span></span></code></pre></div>
 <div id="world-development-indicator---wdi" class="section level3" number="12.1.1">
@@ -774,20 +777,19 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 #&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
 #&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 #&gt; # A tibble: 10 × 7
-#&gt;    Region/Country…¹ ...2   Year Series  Value Footn…² Source
-#&gt;               &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt; 
-#&gt;  1                1 Tota…  2005 Stude… 6.79e5 &lt;NA&gt;    Unite…
-#&gt;  2                1 Tota…  2005 Gross… 1.04e2 &lt;NA&gt;    Unite…
-#&gt;  3                1 Tota…  2005 Gross… 9.97e1 &lt;NA&gt;    Unite…
-#&gt;  4                1 Tota…  2005 Stude… 5.09e5 &lt;NA&gt;    Unite…
-#&gt;  5                1 Tota…  2005 Gross… 6.58e1 &lt;NA&gt;    Unite…
-#&gt;  6                1 Tota…  2005 Gross… 6.23e1 &lt;NA&gt;    Unite…
-#&gt;  7                1 Tota…  2005 Stude… 2.00e5 &lt;NA&gt;    Unite…
-#&gt;  8                1 Tota…  2005 Gross… 5.12e1 &lt;NA&gt;    Unite…
-#&gt;  9                1 Tota…  2005 Gross… 4.83e1 &lt;NA&gt;    Unite…
-#&gt; 10                1 Tota…  2010 Stude… 6.97e5 &lt;NA&gt;    Unite…
-#&gt; # … with abbreviated variable names ¹​`Region/Country/Area`,
-#&gt; #   ²​Footnotes</code></pre>
+#&gt;    `Region/Country/Area` ...2   Year Series  Value Footnotes
+#&gt;                    &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;    
+#&gt;  1                     1 Tota…  2005 Stude… 6.79e5 &lt;NA&gt;     
+#&gt;  2                     1 Tota…  2005 Gross… 1.05e2 &lt;NA&gt;     
+#&gt;  3                     1 Tota…  2005 Gross… 9.97e1 &lt;NA&gt;     
+#&gt;  4                     1 Tota…  2005 Stude… 5.09e5 &lt;NA&gt;     
+#&gt;  5                     1 Tota…  2005 Gross… 6.58e1 &lt;NA&gt;     
+#&gt;  6                     1 Tota…  2005 Gross… 6.23e1 &lt;NA&gt;     
+#&gt;  7                     1 Tota…  2005 Stude… 2.00e5 &lt;NA&gt;     
+#&gt;  8                     1 Tota…  2005 Gross… 5.12e1 &lt;NA&gt;     
+#&gt;  9                     1 Tota…  2005 Gross… 4.83e1 &lt;NA&gt;     
+#&gt; 10                     1 Tota…  2010 Stude… 6.97e5 &lt;NA&gt;     
+#&gt; # ℹ 1 more variable: Source &lt;chr&gt;</code></pre>
 <p>It is a very large data, and we need to check the values.</p>
 <div class="sourceCode" id="cb383"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">un_edu</span><span class="op">)</span></span>
@@ -828,7 +830,7 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 <span><span class="co">#&gt;  8 South-eastern Asia           </span></span>
 <span><span class="co">#&gt;  9 Southern Asia                </span></span>
 <span><span class="co">#&gt; 10 Western Asia                 </span></span>
-<span><span class="co">#&gt; # … with 214 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 214 more rows</span></span></code></pre></div>
 <div class="sourceCode" id="cb385"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Series</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 9 × 1</span></span>
@@ -867,7 +869,7 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 <span><span class="co">#&gt;    Region                         Year Series          Value</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;                         &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt;  1 Total, all countries or areas  2005 Students enro… 6.79e5</span></span>
-<span><span class="co">#&gt;  2 Total, all countries or areas  2005 Gross enrollm… 1.04e2</span></span>
+<span><span class="co">#&gt;  2 Total, all countries or areas  2005 Gross enrollm… 1.05e2</span></span>
 <span><span class="co">#&gt;  3 Total, all countries or areas  2005 Gross enrollm… 9.97e1</span></span>
 <span><span class="co">#&gt;  4 Total, all countries or areas  2005 Students enro… 5.09e5</span></span>
 <span><span class="co">#&gt;  5 Total, all countries or areas  2005 Gross enrollm… 6.58e1</span></span>
@@ -876,7 +878,7 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 <span><span class="co">#&gt;  8 Total, all countries or areas  2005 Gross enrollm… 5.12e1</span></span>
 <span><span class="co">#&gt;  9 Total, all countries or areas  2005 Gross enrollm… 4.83e1</span></span>
 <span><span class="co">#&gt; 10 Total, all countries or areas  2010 Students enro… 6.97e5</span></span>
-<span><span class="co">#&gt; # … with 7,272 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 7,272 more rows</span></span></code></pre></div>
 <p>Is there a way to separate regions from countries?</p>
 <div class="sourceCode" id="cb389"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Region"</span><span class="op">=</span><span class="st">"country"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -894,7 +896,7 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 <span><span class="co">#&gt;  8 Armenia            </span></span>
 <span><span class="co">#&gt;  9 Aruba              </span></span>
 <span><span class="co">#&gt; 10 Australia          </span></span>
-<span><span class="co">#&gt; # … with 166 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 166 more rows</span></span></code></pre></div>
 <div class="sourceCode" id="cb390"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Region"</span><span class="op">=</span><span class="st">"country"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">iso2c</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Region</span><span class="op">)</span></span>
@@ -911,7 +913,7 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 <span><span class="co">#&gt;  8 South-eastern Asia           </span></span>
 <span><span class="co">#&gt;  9 Southern Asia                </span></span>
 <span><span class="co">#&gt; 10 Western Asia                 </span></span>
-<span><span class="co">#&gt; # … with 38 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 38 more rows</span></span></code></pre></div>
 <div class="sourceCode" id="cb391"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_un_edu</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Region"</span><span class="op">=</span><span class="st">"country"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">iso2c</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Region</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -1016,20 +1018,19 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 #&gt; ℹ Use `spec()` to retrieve the full column specification for this data.
 #&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 #&gt; # A tibble: 10 × 7
-#&gt;    Region.Country.…¹ X      Year Series Value Footn…² Source
-#&gt;                &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt; 
-#&gt;  1                 1 Tota…  2010 Popul…   1.3 &lt;NA&gt;    "Unit…
-#&gt;  2                 1 Tota…  2010 Total…   2.6 &lt;NA&gt;    "Unit…
-#&gt;  3                 1 Tota…  2010 Infan…  37.1 &lt;NA&gt;    "Unit…
-#&gt;  4                 1 Tota…  2010 Mater… 253   &lt;NA&gt;    "Worl…
-#&gt;  5                 1 Tota…  2010 Life …  70.1 &lt;NA&gt;    "Unit…
-#&gt;  6                 1 Tota…  2010 Life …  67.6 &lt;NA&gt;    "Unit…
-#&gt;  7                 1 Tota…  2010 Life …  72.7 &lt;NA&gt;    "Unit…
-#&gt;  8                 1 Tota…  2015 Popul…   1.2 &lt;NA&gt;    "Unit…
-#&gt;  9                 1 Tota…  2015 Total…   2.5 &lt;NA&gt;    "Unit…
-#&gt; 10                 1 Tota…  2015 Infan…  31.5 &lt;NA&gt;    "Unit…
-#&gt; # … with abbreviated variable names ¹​Region.Country.Area,
-#&gt; #   ²​Footnotes</code></pre>
+#&gt;    Region.Country.Area X         Year Series Value Footnotes
+#&gt;                  &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;    
+#&gt;  1                   1 Total, …  2010 Popul…   1.3 &lt;NA&gt;     
+#&gt;  2                   1 Total, …  2010 Total…   2.6 &lt;NA&gt;     
+#&gt;  3                   1 Total, …  2010 Infan…  37.1 &lt;NA&gt;     
+#&gt;  4                   1 Total, …  2010 Mater… 253   &lt;NA&gt;     
+#&gt;  5                   1 Total, …  2010 Life …  70.1 &lt;NA&gt;     
+#&gt;  6                   1 Total, …  2010 Life …  67.6 &lt;NA&gt;     
+#&gt;  7                   1 Total, …  2010 Life …  72.7 &lt;NA&gt;     
+#&gt;  8                   1 Total, …  2015 Popul…   1.2 &lt;NA&gt;     
+#&gt;  9                   1 Total, …  2015 Total…   2.5 &lt;NA&gt;     
+#&gt; 10                   1 Total, …  2015 Infan…  31.5 &lt;NA&gt;     
+#&gt; # ℹ 1 more variable: Source &lt;chr&gt;</code></pre>
 <div class="sourceCode" id="cb398"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_un_pop</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Source</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 4 × 1</span></span>
@@ -1054,7 +1055,7 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 <span><span class="co">#&gt;  8 Projected estimate (medium fertility variant).;Including…</span></span>
 <span><span class="co">#&gt;  9 Including Falkland Islands (Malvinas).                   </span></span>
 <span><span class="co">#&gt; 10 Projected estimate (medium fertility variant).;Including…</span></span>
-<span><span class="co">#&gt; # … with 72 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 72 more rows</span></span></code></pre></div>
 <div class="sourceCode" id="cb400"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_un_pop</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">X</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 264 × 1</span></span>
@@ -1070,7 +1071,7 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 <span><span class="co">#&gt;  8 Western Africa               </span></span>
 <span><span class="co">#&gt;  9 Northern America             </span></span>
 <span><span class="co">#&gt; 10 Latin America &amp; the Caribbean</span></span>
-<span><span class="co">#&gt; # … with 254 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 254 more rows</span></span></code></pre></div>
 <div class="sourceCode" id="cb401"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_un_pop</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">Series</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 7 × 1</span></span>
@@ -1138,28 +1139,27 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 <span><span class="co">#&gt;  8 Total, all countries or areas  2015 Population ann…   1.2</span></span>
 <span><span class="co">#&gt;  9 Total, all countries or areas  2015 Total fertilit…   2.5</span></span>
 <span><span class="co">#&gt; 10 Total, all countries or areas  2015 Infant mortali…  31.5</span></span>
-<span><span class="co">#&gt; # … with 6,644 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 6,644 more rows</span></span></code></pre></div>
 <p>Let us change the names of series.</p>
 <div class="sourceCode" id="cb404"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">un_pop_wide</span> <span class="op">&lt;-</span> <span class="va">un_pop</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span><span class="op">(</span>names_from <span class="op">=</span> <span class="va">Series</span>, values_from <span class="op">=</span> <span class="va">Value</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">un_pop_wide</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Region"</span>, <span class="st">"Year"</span>, <span class="st">"IncRate"</span>, <span class="st">"Fert"</span>, <span class="st">"InfDeath"</span>, <span class="st">"MatDeath"</span>, <span class="st">"LifeExp"</span>, <span class="st">"LifeExpM"</span>, <span class="st">"LifeExpF"</span><span class="op">)</span></span>
 <span><span class="va">un_pop_wide</span></span>
 <span><span class="co">#&gt; # A tibble: 1,005 × 9</span></span>
-<span><span class="co">#&gt;    Region         Year IncRate  Fert InfDe…¹ MatDe…² LifeExp</span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;         &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 Total, all c…  2010     1.3   2.6    37.1     253    70.1</span></span>
-<span><span class="co">#&gt;  2 Total, all c…  2015     1.2   2.5    31.5     225    71.8</span></span>
-<span><span class="co">#&gt;  3 Total, all c…  2017     1.1   2.5    29.6     218    72.3</span></span>
-<span><span class="co">#&gt;  4 Total, all c…  2022     0.8   2.3    27.5      NA    71.7</span></span>
-<span><span class="co">#&gt;  5 Africa         2010     2.6   4.9    60.9      NA    58.6</span></span>
-<span><span class="co">#&gt;  6 Africa         2015     2.6   4.6    52.5      NA    61.1</span></span>
-<span><span class="co">#&gt;  7 Africa         2022     2.3   4.2    44.2      NA    62.2</span></span>
-<span><span class="co">#&gt;  8 Northern Afr…  2010     1.9   3.2    29.5     148    69.6</span></span>
-<span><span class="co">#&gt;  9 Northern Afr…  2015     2.1   3.4    25.3     120    70.9</span></span>
-<span><span class="co">#&gt; 10 Northern Afr…  2017     2     3.2    24.2     115    71.5</span></span>
-<span><span class="co">#&gt; # … with 995 more rows, 2 more variables: LifeExpM &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   LifeExpF &lt;dbl&gt;, and abbreviated variable names</span></span>
-<span><span class="co">#&gt; #   ¹​InfDeath, ²​MatDeath</span></span></code></pre></div>
+<span><span class="co">#&gt;    Region       Year IncRate  Fert InfDeath MatDeath LifeExp</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 Total, all…  2010     1.3   2.6     37.1      253    70.1</span></span>
+<span><span class="co">#&gt;  2 Total, all…  2015     1.2   2.5     31.5      225    71.8</span></span>
+<span><span class="co">#&gt;  3 Total, all…  2017     1.1   2.5     29.6      218    72.3</span></span>
+<span><span class="co">#&gt;  4 Total, all…  2022     0.8   2.3     27.5       NA    71.7</span></span>
+<span><span class="co">#&gt;  5 Africa       2010     2.6   4.9     60.9       NA    58.6</span></span>
+<span><span class="co">#&gt;  6 Africa       2015     2.6   4.6     52.5       NA    61.1</span></span>
+<span><span class="co">#&gt;  7 Africa       2022     2.3   4.2     44.2       NA    62.2</span></span>
+<span><span class="co">#&gt;  8 Northern A…  2010     1.9   3.2     29.5      148    69.6</span></span>
+<span><span class="co">#&gt;  9 Northern A…  2015     2.1   3.4     25.3      120    70.9</span></span>
+<span><span class="co">#&gt; 10 Northern A…  2017     2     3.2     24.2      115    71.5</span></span>
+<span><span class="co">#&gt; # ℹ 995 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 2 more variables: LifeExpM &lt;dbl&gt;, LifeExpF &lt;dbl&gt;</span></span></code></pre></div>
 <div class="sourceCode" id="cb405"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">un_pop_long</span> <span class="op">&lt;-</span> <span class="va">un_pop_wide</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span>, names_to <span class="op">=</span> <span class="st">"Series"</span>, values_to <span class="op">=</span> <span class="st">"Value"</span><span class="op">)</span></span>
 <span><span class="va">un_pop_long</span>                                           </span>
@@ -1176,7 +1176,7 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 <span><span class="co">#&gt;  8 Total, all countries or areas  2015 IncRate    1.2</span></span>
 <span><span class="co">#&gt;  9 Total, all countries or areas  2015 Fert       2.5</span></span>
 <span><span class="co">#&gt; 10 Total, all countries or areas  2015 InfDeath  31.5</span></span>
-<span><span class="co">#&gt; # … with 7,025 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 7,025 more rows</span></span></code></pre></div>
 <div class="sourceCode" id="cb406"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">un_pop_long_area</span> <span class="op">&lt;-</span> <span class="va">un_pop_long</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">pop_area</span><span class="op">)</span></span>
 <span><span class="va">un_pop_long_region</span> <span class="op">&lt;-</span> <span class="va">un_pop_long</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">Region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">pop_area</span><span class="op">)</span></span>
@@ -1236,7 +1236,7 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 <span><span class="co">#&gt;  8 AD       2002 0.234 </span></span>
 <span><span class="co">#&gt;  9 AD       2003 0.263 </span></span>
 <span><span class="co">#&gt; 10 AD       2004 0.294 </span></span>
-<span><span class="co">#&gt; # … with 8,773 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 8,773 more rows</span></span></code></pre></div>
 <div class="sourceCode" id="cb411"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">private</span> <span class="op">&lt;-</span> <span class="va">wwealp</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">country</span>, <span class="va">year</span>, private <span class="op">=</span> <span class="va">value</span><span class="op">)</span></span>
 <span><span class="va">private</span></span>
@@ -1253,7 +1253,7 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 <span><span class="co">#&gt;  8 AD       2002   0.778</span></span>
 <span><span class="co">#&gt;  9 AD       2003   0.834</span></span>
 <span><span class="co">#&gt; 10 AD       2004   0.894</span></span>
-<span><span class="co">#&gt; # … with 8,979 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 8,979 more rows</span></span></code></pre></div>
 <div class="sourceCode" id="cb412"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">public_vs_private</span> <span class="op">&lt;-</span> <span class="va">public</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">private</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Joining with `by = join_by(country, year)`</span></span>
@@ -1271,7 +1271,7 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 <span><span class="co">#&gt;  8 AD       2002 0.234    0.778</span></span>
 <span><span class="co">#&gt;  9 AD       2003 0.263    0.834</span></span>
 <span><span class="co">#&gt; 10 AD       2004 0.294    0.894</span></span>
-<span><span class="co">#&gt; # … with 8,773 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 8,773 more rows</span></span></code></pre></div>
 <div class="sourceCode" id="cb413"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_pub_priv</span> <span class="op">&lt;-</span> <span class="va">public_vs_private</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>,<span class="fl">4</span><span class="op">)</span>, names_to <span class="op">=</span> <span class="st">"category"</span>, values_to <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"country"</span><span class="op">=</span><span class="st">"iso2c"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span>country <span class="op">=</span> <span class="va">country.y</span>, iso2c <span class="op">=</span> <span class="va">country</span>, <span class="va">year</span>, <span class="va">category</span>, <span class="va">value</span>, <span class="va">region</span>, <span class="va">income</span>, <span class="va">lending</span><span class="op">)</span></span>
@@ -1289,7 +1289,7 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 <span><span class="co">#&gt;  8 Andorra AD     1998 private  0.582  Europ… High … Not cl…</span></span>
 <span><span class="co">#&gt;  9 Andorra AD     1999 public   0.159  Europ… High … Not cl…</span></span>
 <span><span class="co">#&gt; 10 Andorra AD     1999 private  0.628  Europ… High … Not cl…</span></span>
-<span><span class="co">#&gt; # … with 17,556 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 17,556 more rows</span></span></code></pre></div>
 <div class="sourceCode" id="cb414"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">df_pub_priv</span><span class="op">$</span><span class="va">country</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   [1] "Andorra"                                     </span></span>
@@ -1581,7 +1581,7 @@ It is possible if you change year to a character vector by <code>mutate(year = a
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-03-13.</p>
+    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-05-10.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

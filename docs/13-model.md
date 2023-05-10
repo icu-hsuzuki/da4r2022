@@ -6,14 +6,16 @@
 
 ```r
 library(tidyverse)
-#> ── Attaching packages ─────────────────── tidyverse 1.3.2 ──
-#> ✔ ggplot2 3.4.1     ✔ purrr   1.0.1
-#> ✔ tibble  3.1.8     ✔ dplyr   1.1.0
-#> ✔ tidyr   1.3.0     ✔ stringr 1.5.0
-#> ✔ readr   2.1.4     ✔ forcats 1.0.0
+#> ── Attaching core tidyverse packages ──── tidyverse 2.0.0 ──
+#> ✔ dplyr     1.1.2     ✔ readr     2.1.4
+#> ✔ forcats   1.0.0     ✔ stringr   1.5.0
+#> ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+#> ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+#> ✔ purrr     1.0.1     
 #> ── Conflicts ────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
+#> ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 library(WDI)
 library(readxl)
 library(broom)
@@ -855,11 +857,11 @@ wdi_world
 #>  8 Afghanistan AF    AFG    2019 NA     2022-12-22     584.
 #>  9 Afghanistan AF    AFG    2002 NA     2022-12-22     360.
 #> 10 Afghanistan AF    AFG    2017 NA     2022-12-22     589.
-#> # … with 8,502 more rows, and 11 more variables:
-#> #   lifeExp <dbl>, pop <dbl>, research <dbl>,
-#> #   military <dbl>, education <dbl>, region <chr>,
-#> #   capital <chr>, longitude <dbl>, latitude <dbl>,
-#> #   income <chr>, lending <chr>
+#> # ℹ 8,502 more rows
+#> # ℹ 11 more variables: lifeExp <dbl>, pop <dbl>,
+#> #   research <dbl>, military <dbl>, education <dbl>,
+#> #   region <chr>, capital <chr>, longitude <dbl>,
+#> #   latitude <dbl>, income <chr>, lending <chr>
 ```
 
 SE.XPD.TOTL.GB.ZS: Government expenditure on education, total (% of government expenditure)
@@ -922,21 +924,21 @@ wdi_world_el %>% filter(year==2020) %>% ggplot(aes(x = income, y = education, fi
 ```r
 wdi_world_el %>% filter(year==2020) %>% arrange(desc(education))
 #> # A tibble: 152 × 10
-#>    country       year educa…¹ lifeExp gdpPcap    pop resea…²
-#>    <chr>        <dbl>   <dbl>   <dbl>   <dbl>  <dbl>   <dbl>
-#>  1 Solomon Isl…  2020   12.8     70.2   2080. 6.91e5  NA    
-#>  2 Bolivia       2020    9.84    64.5   2920. 1.19e7  NA    
-#>  3 Namibia       2020    9.45    62.8   4155. 2.49e6  NA    
-#>  4 Sierra Leone  2020    8.81    59.8    604. 8.23e6  NA    
-#>  5 Botswana      2020    8.74    65.6   5811. 2.55e6  NA    
-#>  6 Saudi Arabia  2020    7.81    76.2  18086. 3.60e7   0.522
-#>  7 Iceland       2020    7.72    83.1  52984. 3.66e5   2.47 
-#>  8 Lesotho       2020    7.67    54.7    972. 2.25e6  NA    
-#>  9 Cabo Verde    2020    7.58    74.8   2801. 5.83e5  NA    
-#> 10 Belize        2020    7.53    72.9   5040. 3.95e5  NA    
-#> # … with 142 more rows, 3 more variables: military <dbl>,
-#> #   region <chr>, income <chr>, and abbreviated variable
-#> #   names ¹​education, ²​research
+#>    country    year education lifeExp gdpPcap    pop research
+#>    <chr>     <dbl>     <dbl>   <dbl>   <dbl>  <dbl>    <dbl>
+#>  1 Solomon …  2020     12.8     70.2   2080. 6.91e5   NA    
+#>  2 Bolivia    2020      9.84    64.5   2920. 1.19e7   NA    
+#>  3 Namibia    2020      9.45    62.8   4155. 2.49e6   NA    
+#>  4 Sierra L…  2020      8.81    59.8    604. 8.23e6   NA    
+#>  5 Botswana   2020      8.74    65.6   5811. 2.55e6   NA    
+#>  6 Saudi Ar…  2020      7.81    76.2  18086. 3.60e7    0.522
+#>  7 Iceland    2020      7.72    83.1  52984. 3.66e5    2.47 
+#>  8 Lesotho    2020      7.67    54.7    972. 2.25e6   NA    
+#>  9 Cabo Ver…  2020      7.58    74.8   2801. 5.83e5   NA    
+#> 10 Belize     2020      7.53    72.9   5040. 3.95e5   NA    
+#> # ℹ 142 more rows
+#> # ℹ 3 more variables: military <dbl>, region <chr>,
+#> #   income <chr>
 ```
 
 
@@ -944,21 +946,21 @@ wdi_world_el %>% filter(year==2020) %>% arrange(desc(education))
 ```r
 wdi_world_el %>% filter(year==2020) %>% arrange(desc(education))
 #> # A tibble: 152 × 10
-#>    country       year educa…¹ lifeExp gdpPcap    pop resea…²
-#>    <chr>        <dbl>   <dbl>   <dbl>   <dbl>  <dbl>   <dbl>
-#>  1 Solomon Isl…  2020   12.8     70.2   2080. 6.91e5  NA    
-#>  2 Bolivia       2020    9.84    64.5   2920. 1.19e7  NA    
-#>  3 Namibia       2020    9.45    62.8   4155. 2.49e6  NA    
-#>  4 Sierra Leone  2020    8.81    59.8    604. 8.23e6  NA    
-#>  5 Botswana      2020    8.74    65.6   5811. 2.55e6  NA    
-#>  6 Saudi Arabia  2020    7.81    76.2  18086. 3.60e7   0.522
-#>  7 Iceland       2020    7.72    83.1  52984. 3.66e5   2.47 
-#>  8 Lesotho       2020    7.67    54.7    972. 2.25e6  NA    
-#>  9 Cabo Verde    2020    7.58    74.8   2801. 5.83e5  NA    
-#> 10 Belize        2020    7.53    72.9   5040. 3.95e5  NA    
-#> # … with 142 more rows, 3 more variables: military <dbl>,
-#> #   region <chr>, income <chr>, and abbreviated variable
-#> #   names ¹​education, ²​research
+#>    country    year education lifeExp gdpPcap    pop research
+#>    <chr>     <dbl>     <dbl>   <dbl>   <dbl>  <dbl>    <dbl>
+#>  1 Solomon …  2020     12.8     70.2   2080. 6.91e5   NA    
+#>  2 Bolivia    2020      9.84    64.5   2920. 1.19e7   NA    
+#>  3 Namibia    2020      9.45    62.8   4155. 2.49e6   NA    
+#>  4 Sierra L…  2020      8.81    59.8    604. 8.23e6   NA    
+#>  5 Botswana   2020      8.74    65.6   5811. 2.55e6   NA    
+#>  6 Saudi Ar…  2020      7.81    76.2  18086. 3.60e7    0.522
+#>  7 Iceland    2020      7.72    83.1  52984. 3.66e5    2.47 
+#>  8 Lesotho    2020      7.67    54.7    972. 2.25e6   NA    
+#>  9 Cabo Ver…  2020      7.58    74.8   2801. 5.83e5   NA    
+#> 10 Belize     2020      7.53    72.9   5040. 3.95e5   NA    
+#> # ℹ 142 more rows
+#> # ℹ 3 more variables: military <dbl>, region <chr>,
+#> #   income <chr>
 ```
 
 
@@ -976,23 +978,21 @@ wdi_world_el %>% filter(year==2020) %>% lm(gdpPcap ~ education, .)
 ```r
 wdi_world_el %>% filter(year==2020) %>% lm(gdpPcap ~ education, .) %>% glance()
 #> # A tibble: 1 × 12
-#>   r.squa…¹ adj.r…²  sigma stati…³ p.value    df logLik   AIC
-#>      <dbl>   <dbl>  <dbl>   <dbl>   <dbl> <dbl>  <dbl> <dbl>
-#> 1   0.0131 0.00650 20523.    1.98   0.161     1 -1713. 3431.
-#> # … with 4 more variables: BIC <dbl>, deviance <dbl>,
-#> #   df.residual <int>, nobs <int>, and abbreviated variable
-#> #   names ¹​r.squared, ²​adj.r.squared, ³​statistic
+#>   r.squared adj.r.squared  sigma statistic p.value    df
+#>       <dbl>         <dbl>  <dbl>     <dbl>   <dbl> <dbl>
+#> 1    0.0131       0.00650 20523.      1.98   0.161     1
+#> # ℹ 6 more variables: logLik <dbl>, AIC <dbl>, BIC <dbl>,
+#> #   deviance <dbl>, df.residual <int>, nobs <int>
 ```
 
 ```r
 wdi_world_el %>% lm(lifeExp ~ education + research + military, .) %>% glance()
 #> # A tibble: 1 × 12
-#>   r.squ…¹ adj.r…² sigma stati…³   p.value    df logLik   AIC
-#>     <dbl>   <dbl> <dbl>   <dbl>     <dbl> <dbl>  <dbl> <dbl>
-#> 1   0.346   0.345  5.25    270. 2.05e-140     3 -4711. 9432.
-#> # … with 4 more variables: BIC <dbl>, deviance <dbl>,
-#> #   df.residual <int>, nobs <int>, and abbreviated variable
-#> #   names ¹​r.squared, ²​adj.r.squared, ³​statistic
+#>   r.squared adj.r.squared sigma statistic   p.value    df
+#>       <dbl>         <dbl> <dbl>     <dbl>     <dbl> <dbl>
+#> 1     0.346         0.345  5.25      270. 2.05e-140     3
+#> # ℹ 6 more variables: logLik <dbl>, AIC <dbl>, BIC <dbl>,
+#> #   deviance <dbl>, df.residual <int>, nobs <int>
 ```
 
 
@@ -1025,12 +1025,11 @@ wdi_world_el %>% lm(gdpPcap ~ education + research + military, .) %>% tidy()
 ```r
 wdi_world_el %>% lm(gdpPcap ~ education + research + military, .) %>% glance()
 #> # A tibble: 1 × 12
-#>   r.squared adj.r.s…¹  sigma stati…²   p.value    df  logLik
-#>       <dbl>     <dbl>  <dbl>   <dbl>     <dbl> <dbl>   <dbl>
-#> 1     0.478     0.477 14013.    466. 9.65e-215     3 -16766.
-#> # … with 5 more variables: AIC <dbl>, BIC <dbl>,
-#> #   deviance <dbl>, df.residual <int>, nobs <int>, and
-#> #   abbreviated variable names ¹​adj.r.squared, ²​statistic
+#>   r.squared adj.r.squared  sigma statistic   p.value    df
+#>       <dbl>         <dbl>  <dbl>     <dbl>     <dbl> <dbl>
+#> 1     0.478         0.477 14013.      466. 9.65e-215     3
+#> # ℹ 6 more variables: logLik <dbl>, AIC <dbl>, BIC <dbl>,
+#> #   deviance <dbl>, df.residual <int>, nobs <int>
 ```
 
 $$gdpPcap \sim 1077 + 1024\cdot education + 12792 \cdot research - 967 \cdot military$$

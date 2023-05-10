@@ -7,7 +7,7 @@
 <title>Chapter 25 Our World in Data | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
 <meta name="description" content="25.1 The package owidR  We study the R package owidR for importing data from Our World in Data.   25.2 References The package official site contains other links. When you quote the package, use...">
-<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta name="generator" content="bookdown 0.33 with bs4_book()">
 <meta property="og:title" content="Chapter 25 Our World in Data | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/owid.html">
@@ -18,7 +18,7 @@
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
 <script src="libs/datatables-binding-0.27/datatables.js"></script><link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
 <link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet">
 <script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
@@ -105,8 +105,9 @@
 <li class="book-part">APPENDIX</li>
 <li><a class="" href="histdata.html"><span class="header-section-number">A</span> HistData</a></li>
 <li><a class="" href="covid19.html"><span class="header-section-number">B</span> Covid 19</a></li>
-<li><a class="" href="bookdown.html"><span class="header-section-number">C</span> Bookdown</a></li>
-<li><a class="" href="template.html"><span class="header-section-number">D</span> Template</a></li>
+<li><a class="" href="worldmap.html"><span class="header-section-number">C</span> World Map</a></li>
+<li><a class="" href="bookdown.html"><span class="header-section-number">D</span> Bookdown</a></li>
+<li><a class="" href="template.html"><span class="header-section-number">E</span> Template</a></li>
 </ul>
 
         <div class="book-extra">
@@ -177,14 +178,16 @@
 <div class="sourceCode" id="cb571"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/piersyork/owidR">owidR</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span> </span>
-<span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
-<span><span class="co">#&gt; ✔ ggplot2 3.4.1     ✔ purrr   1.0.1</span></span>
-<span><span class="co">#&gt; ✔ tibble  3.1.8     ✔ dplyr   1.1.0</span></span>
-<span><span class="co">#&gt; ✔ tidyr   1.3.0     ✔ stringr 1.5.0</span></span>
-<span><span class="co">#&gt; ✔ readr   2.1.4     ✔ forcats 1.0.0</span></span>
+<span><span class="co">#&gt; ── Attaching core tidyverse packages ──── tidyverse 2.0.0 ──</span></span>
+<span><span class="co">#&gt; ✔ dplyr     1.1.2     ✔ readr     2.1.4</span></span>
+<span><span class="co">#&gt; ✔ forcats   1.0.0     ✔ stringr   1.5.0</span></span>
+<span><span class="co">#&gt; ✔ ggplot2   3.4.2     ✔ tibble    3.2.1</span></span>
+<span><span class="co">#&gt; ✔ lubridate 1.9.2     ✔ tidyr     1.3.0</span></span>
+<span><span class="co">#&gt; ✔ purrr     1.0.1     </span></span>
 <span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
-<span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span></code></pre></div>
+<span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span>
+<span><span class="co">#&gt; ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</span></span></code></pre></div>
 <p>The package automatically load a part of <code>tidyverse</code>, e.g., <code>dplyr</code>, <code>ggplot</code>, …. Since it works well with the scheme<code>tidyverse</code>, it is better to load <code>tidyverse</code> with it.</p>
 <p>The creator of this package also suggests loading packages <code>plm</code> for panels of data, and <code>texreg</code> for displaying models, but let us start without them until we actually use them. For panel data, see, for example, the site](<a href="https://www.aptech.com/blog/introduction-to-the-fundamentals-of-panel-data/" class="uri">https://www.aptech.com/blog/introduction-to-the-fundamentals-of-panel-data/</a>).</p>
 </div>
@@ -241,21 +244,20 @@
 <p>A matrix is returned. If the list is long, it is easier to see the pairs of the titles and chart_ids by adding <code><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble()</a></code>.</p>
 <div class="sourceCode" id="cb574"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_search.html">owid_search</a></span><span class="op">(</span><span class="st">"emissions"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 150 × 2</span></span>
-<span><span class="co">#&gt;    titles                                            chart…¹</span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;                                             &lt;chr&gt;  </span></span>
-<span><span class="co">#&gt;  1 Air pollutant emissions                           air-po…</span></span>
-<span><span class="co">#&gt;  2 Emissions of air pollutants                       emissi…</span></span>
-<span><span class="co">#&gt;  3 Emissions of air pollutants                       emissi…</span></span>
-<span><span class="co">#&gt;  4 Emissions of particulate matter                   emissi…</span></span>
-<span><span class="co">#&gt;  5 Global sulphur dioxide (SO₂) emissions by world … so-emi…</span></span>
-<span><span class="co">#&gt;  6 Sulphur dioxide (SO₂) emissions                   so2-em…</span></span>
-<span><span class="co">#&gt;  7 Sulphur dioxide (SO₂) emissions                   so-emi…</span></span>
-<span><span class="co">#&gt;  8 Sulphur dioxide (SO₂) emissions per capita        so-emi…</span></span>
-<span><span class="co">#&gt;  9 Sulphur oxide (SO₂) emissions                     sulphu…</span></span>
-<span><span class="co">#&gt; 10 Annual CO2 emissions from land-use change per ca… co2-la…</span></span>
-<span><span class="co">#&gt; # … with 140 more rows, and abbreviated variable name</span></span>
-<span><span class="co">#&gt; #   ¹​chart_id</span></span></code></pre></div>
+<span><span class="co">#&gt; # A tibble: 157 × 2</span></span>
+<span><span class="co">#&gt;    titles                                           chart_id</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;                                            &lt;chr&gt;   </span></span>
+<span><span class="co">#&gt;  1 Air pollutant emissions                          air-pol…</span></span>
+<span><span class="co">#&gt;  2 Emissions of air pollutants                      emissio…</span></span>
+<span><span class="co">#&gt;  3 Emissions of air pollutants                      emissio…</span></span>
+<span><span class="co">#&gt;  4 Emissions of particulate matter                  emissio…</span></span>
+<span><span class="co">#&gt;  5 Global sulphur dioxide (SO₂) emissions by world… so-emis…</span></span>
+<span><span class="co">#&gt;  6 Sulphur dioxide (SO₂) emissions                  so2-emi…</span></span>
+<span><span class="co">#&gt;  7 Sulphur dioxide (SO₂) emissions                  so-emis…</span></span>
+<span><span class="co">#&gt;  8 Sulphur dioxide (SO₂) emissions per capita       so-emis…</span></span>
+<span><span class="co">#&gt;  9 Sulphur oxide (SO₂) emissions                    sulphur…</span></span>
+<span><span class="co">#&gt; 10 Annual CO2 emissions from land-use change per c… co2-lan…</span></span>
+<span><span class="co">#&gt; # ℹ 147 more rows</span></span></code></pre></div>
 <p>If the list is not long, you do not need to add <code><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble()</a></code>. However, note that you need to keep in mind that the title and the chart_id consists of a pair, and you need to use the chart_id to download the data using <code>owid</code>.</p>
 <div class="sourceCode" id="cb575"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_search.html">owid_search</a></span><span class="op">(</span><span class="st">"human rights"</span><span class="op">)</span></span>
@@ -264,8 +266,8 @@
 <span><span class="co">#&gt; [2,] "Countries with accredited independent national human rights institutions"         </span></span>
 <span><span class="co">#&gt; [3,] "Distribution of human rights"                                                     </span></span>
 <span><span class="co">#&gt; [4,] "Human rights"                                                                     </span></span>
-<span><span class="co">#&gt; [5,] "Human rights vs. GDP per capita"                                                  </span></span>
-<span><span class="co">#&gt; [6,] "Human rights weighted by population"                                              </span></span>
+<span><span class="co">#&gt; [5,] "Human rights"                                                                     </span></span>
+<span><span class="co">#&gt; [6,] "Human rights vs. GDP per capita"                                                  </span></span>
 <span><span class="co">#&gt; [7,] "Number of cases of killed human rights defenders, journalists and trade unionists"</span></span>
 <span><span class="co">#&gt; [8,] "Share of countries with accredited independent national human rights institutions"</span></span>
 <span><span class="co">#&gt;      chart_id                                                                   </span></span>
@@ -273,8 +275,8 @@
 <span><span class="co">#&gt; [2,] "countries-with-independent-national-human-rights-institution"             </span></span>
 <span><span class="co">#&gt; [3,] "distribution-human-rights-vdem"                                           </span></span>
 <span><span class="co">#&gt; [4,] "human-rights-vdem"                                                        </span></span>
-<span><span class="co">#&gt; [5,] "human-rights-vs-gdp-per-capita"                                           </span></span>
-<span><span class="co">#&gt; [6,] "human-rights-popw"                                                        </span></span>
+<span><span class="co">#&gt; [5,] "human-rights-popw"                                                        </span></span>
+<span><span class="co">#&gt; [6,] "human-rights-vs-gdp-per-capita"                                           </span></span>
 <span><span class="co">#&gt; [7,] "cases-of-killed-human-rights-defenders-journalists-trade-unionists"       </span></span>
 <span><span class="co">#&gt; [8,] "share-countries-accredited-independent-national-human-rights-institutions"</span></span></code></pre></div>
 </div>
@@ -293,20 +295,22 @@
 <code class="sourceCode R"><span><span class="va">emissions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"per-capita-ghg-emissions"</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb578"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">emissions</span></span>
-<span><span class="co">#&gt; # A tibble: 6,149 × 4</span></span>
-<span><span class="co">#&gt;    entity      code   year `Total including LUCF`</span></span>
-<span><span class="co">#&gt;  * &lt;chr&gt;       &lt;chr&gt; &lt;int&gt;                  &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 Afghanistan AFG    1990                  0.772</span></span>
-<span><span class="co">#&gt;  2 Afghanistan AFG    1991                  0.738</span></span>
-<span><span class="co">#&gt;  3 Afghanistan AFG    1992                  0.623</span></span>
-<span><span class="co">#&gt;  4 Afghanistan AFG    1993                  0.576</span></span>
-<span><span class="co">#&gt;  5 Afghanistan AFG    1994                  0.536</span></span>
-<span><span class="co">#&gt;  6 Afghanistan AFG    1995                  0.529</span></span>
-<span><span class="co">#&gt;  7 Afghanistan AFG    1996                  0.563</span></span>
-<span><span class="co">#&gt;  8 Afghanistan AFG    1997                  0.598</span></span>
-<span><span class="co">#&gt;  9 Afghanistan AFG    1998                  0.628</span></span>
-<span><span class="co">#&gt; 10 Afghanistan AFG    1999                  0.658</span></span>
-<span><span class="co">#&gt; # … with 6,139 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # A tibble: 35,646 × 4</span></span>
+<span><span class="co">#&gt;    entity      code   year Per-capita greenhouse gas emiss…¹</span></span>
+<span><span class="co">#&gt;  * &lt;chr&gt;       &lt;chr&gt; &lt;int&gt;                             &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 Afghanistan AFG    1850                              1.94</span></span>
+<span><span class="co">#&gt;  2 Afghanistan AFG    1851                              1.96</span></span>
+<span><span class="co">#&gt;  3 Afghanistan AFG    1852                              1.96</span></span>
+<span><span class="co">#&gt;  4 Afghanistan AFG    1853                              1.97</span></span>
+<span><span class="co">#&gt;  5 Afghanistan AFG    1854                              1.97</span></span>
+<span><span class="co">#&gt;  6 Afghanistan AFG    1855                              1.97</span></span>
+<span><span class="co">#&gt;  7 Afghanistan AFG    1856                              1.98</span></span>
+<span><span class="co">#&gt;  8 Afghanistan AFG    1857                              1.98</span></span>
+<span><span class="co">#&gt;  9 Afghanistan AFG    1858                              1.99</span></span>
+<span><span class="co">#&gt; 10 Afghanistan AFG    1859                              1.99</span></span>
+<span><span class="co">#&gt; # ℹ 35,636 more rows</span></span>
+<span><span class="co">#&gt; # ℹ abbreviated name:</span></span>
+<span><span class="co">#&gt; #   ¹​`Per-capita greenhouse gas emissions in CO2 equivalents`</span></span></code></pre></div>
 <div class="sourceCode" id="cb579"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">rights</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"human-rights-scores"</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb580"><pre class="downlit sourceCode r">
@@ -324,46 +328,46 @@
 <span><span class="co">#&gt;  8 Afghanistan AFG    1953                     1.18 </span></span>
 <span><span class="co">#&gt;  9 Afghanistan AFG    1954                     1.22 </span></span>
 <span><span class="co">#&gt; 10 Afghanistan AFG    1955                     1.22 </span></span>
-<span><span class="co">#&gt; # … with 11,263 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 11,263 more rows</span></span></code></pre></div>
 <p><strong>Note.</strong></p>
 <ol style="list-style-type: decimal">
 <li>You can use <code>rename</code> to change column names. For example,</li>
 </ol>
 <div class="sourceCode" id="cb581"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"per-capita-ghg-emissions"</span>, rename <span class="op">=</span> <span class="st">"ghgPcap"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 6,149 × 4</span></span>
+<span><span class="co">#&gt; # A tibble: 35,646 × 4</span></span>
 <span><span class="co">#&gt;    entity      code   year ghgPcap</span></span>
 <span><span class="co">#&gt;  * &lt;chr&gt;       &lt;chr&gt; &lt;int&gt;   &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 Afghanistan AFG    1990   0.772</span></span>
-<span><span class="co">#&gt;  2 Afghanistan AFG    1991   0.738</span></span>
-<span><span class="co">#&gt;  3 Afghanistan AFG    1992   0.623</span></span>
-<span><span class="co">#&gt;  4 Afghanistan AFG    1993   0.576</span></span>
-<span><span class="co">#&gt;  5 Afghanistan AFG    1994   0.536</span></span>
-<span><span class="co">#&gt;  6 Afghanistan AFG    1995   0.529</span></span>
-<span><span class="co">#&gt;  7 Afghanistan AFG    1996   0.563</span></span>
-<span><span class="co">#&gt;  8 Afghanistan AFG    1997   0.598</span></span>
-<span><span class="co">#&gt;  9 Afghanistan AFG    1998   0.628</span></span>
-<span><span class="co">#&gt; 10 Afghanistan AFG    1999   0.658</span></span>
-<span><span class="co">#&gt; # … with 6,139 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt;  1 Afghanistan AFG    1850    1.94</span></span>
+<span><span class="co">#&gt;  2 Afghanistan AFG    1851    1.96</span></span>
+<span><span class="co">#&gt;  3 Afghanistan AFG    1852    1.96</span></span>
+<span><span class="co">#&gt;  4 Afghanistan AFG    1853    1.97</span></span>
+<span><span class="co">#&gt;  5 Afghanistan AFG    1854    1.97</span></span>
+<span><span class="co">#&gt;  6 Afghanistan AFG    1855    1.97</span></span>
+<span><span class="co">#&gt;  7 Afghanistan AFG    1856    1.98</span></span>
+<span><span class="co">#&gt;  8 Afghanistan AFG    1857    1.98</span></span>
+<span><span class="co">#&gt;  9 Afghanistan AFG    1858    1.99</span></span>
+<span><span class="co">#&gt; 10 Afghanistan AFG    1859    1.99</span></span>
+<span><span class="co">#&gt; # ℹ 35,636 more rows</span></span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>Since until after importing the data, you never know the original column name, and how many columns are for indicators. It is natural to change column names using <code>dpyr::rename</code>. In the next example, I used <code>Total including LUCF</code>. However, ‘Total including LUCF’ and “Total including LUCF” work as well.</li>
 </ol>
 <div class="sourceCode" id="cb582"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">emissions</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>ghgPcap <span class="op">=</span> <span class="va">`Total including LUCF`</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 6,149 × 4</span></span>
+<code class="sourceCode R"><span><span class="va">emissions</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>ghgPcap <span class="op">=</span> <span class="va">`Per-capita greenhouse gas emissions in CO2 equivalents`</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 35,646 × 4</span></span>
 <span><span class="co">#&gt;    entity      code   year ghgPcap</span></span>
 <span><span class="co">#&gt;  * &lt;chr&gt;       &lt;chr&gt; &lt;int&gt;   &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 Afghanistan AFG    1990   0.772</span></span>
-<span><span class="co">#&gt;  2 Afghanistan AFG    1991   0.738</span></span>
-<span><span class="co">#&gt;  3 Afghanistan AFG    1992   0.623</span></span>
-<span><span class="co">#&gt;  4 Afghanistan AFG    1993   0.576</span></span>
-<span><span class="co">#&gt;  5 Afghanistan AFG    1994   0.536</span></span>
-<span><span class="co">#&gt;  6 Afghanistan AFG    1995   0.529</span></span>
-<span><span class="co">#&gt;  7 Afghanistan AFG    1996   0.563</span></span>
-<span><span class="co">#&gt;  8 Afghanistan AFG    1997   0.598</span></span>
-<span><span class="co">#&gt;  9 Afghanistan AFG    1998   0.628</span></span>
-<span><span class="co">#&gt; 10 Afghanistan AFG    1999   0.658</span></span>
-<span><span class="co">#&gt; # … with 6,139 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt;  1 Afghanistan AFG    1850    1.94</span></span>
+<span><span class="co">#&gt;  2 Afghanistan AFG    1851    1.96</span></span>
+<span><span class="co">#&gt;  3 Afghanistan AFG    1852    1.96</span></span>
+<span><span class="co">#&gt;  4 Afghanistan AFG    1853    1.97</span></span>
+<span><span class="co">#&gt;  5 Afghanistan AFG    1854    1.97</span></span>
+<span><span class="co">#&gt;  6 Afghanistan AFG    1855    1.97</span></span>
+<span><span class="co">#&gt;  7 Afghanistan AFG    1856    1.98</span></span>
+<span><span class="co">#&gt;  8 Afghanistan AFG    1857    1.98</span></span>
+<span><span class="co">#&gt;  9 Afghanistan AFG    1858    1.99</span></span>
+<span><span class="co">#&gt; 10 Afghanistan AFG    1859    1.99</span></span>
+<span><span class="co">#&gt; # ℹ 35,636 more rows</span></span></code></pre></div>
 <ol start="3" style="list-style-type: decimal">
 <li>If there are more than one variables to rename, use vector notation as follows. Here <code>top_n(1)</code> is same as <code>slice(1)</code>, and gives the first row only.</li>
 </ol>
@@ -371,51 +375,50 @@
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"electoral-democracy"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/top_n.html">top_n</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Selecting by electdem_vdem_low_owid</span></span>
 <span><span class="co">#&gt; # A tibble: 3 × 6</span></span>
-<span><span class="co">#&gt;   entity  code   year `Electoral democracy` electd…¹ elect…²</span></span>
-<span><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;int&gt;                 &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1 Denmark DNK    2008                 0.922    0.959     0.9</span></span>
-<span><span class="co">#&gt; 2 Denmark DNK    2009                 0.922    0.959     0.9</span></span>
-<span><span class="co">#&gt; 3 Denmark DNK    2010                 0.922    0.959     0.9</span></span>
-<span><span class="co">#&gt; # … with abbreviated variable names</span></span>
-<span><span class="co">#&gt; #   ¹​electdem_vdem_high_owid, ²​electdem_vdem_low_owid</span></span></code></pre></div>
+<span><span class="co">#&gt;   entity  code   year `Electoral democracy`</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;int&gt;                 &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 Denmark DNK    2008                 0.922</span></span>
+<span><span class="co">#&gt; 2 Denmark DNK    2009                 0.922</span></span>
+<span><span class="co">#&gt; 3 Denmark DNK    2010                 0.922</span></span>
+<span><span class="co">#&gt; # ℹ 2 more variables: electdem_vdem_high_owid &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   electdem_vdem_low_owid &lt;dbl&gt;</span></span></code></pre></div>
 <div class="sourceCode" id="cb584"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"electoral-democracy"</span>, rename <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"electoral_democracy"</span>, <span class="st">"vdem_high"</span>, <span class="st">"vdem_low"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 32,518 × 6</span></span>
-<span><span class="co">#&gt;    entity      code   year electoral_democ…¹ vdem_…² vdem_…³</span></span>
-<span><span class="co">#&gt;  * &lt;chr&gt;       &lt;chr&gt; &lt;int&gt;             &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 Afghanistan AFG    1789             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  2 Afghanistan AFG    1790             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  3 Afghanistan AFG    1791             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  4 Afghanistan AFG    1792             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  5 Afghanistan AFG    1793             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  6 Afghanistan AFG    1794             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  7 Afghanistan AFG    1795             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  8 Afghanistan AFG    1796             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  9 Afghanistan AFG    1797             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt; 10 Afghanistan AFG    1798             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt; # … with 32,508 more rows, and abbreviated variable names</span></span>
-<span><span class="co">#&gt; #   ¹​electoral_democracy, ²​vdem_high, ³​vdem_low</span></span></code></pre></div>
+<span><span class="co">#&gt;    entity code   year electoral_democracy vdem_high vdem_low</span></span>
+<span><span class="co">#&gt;  * &lt;chr&gt;  &lt;chr&gt; &lt;int&gt;               &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 Afgha… AFG    1789               0.019     0.024     0.01</span></span>
+<span><span class="co">#&gt;  2 Afgha… AFG    1790               0.019     0.024     0.01</span></span>
+<span><span class="co">#&gt;  3 Afgha… AFG    1791               0.019     0.024     0.01</span></span>
+<span><span class="co">#&gt;  4 Afgha… AFG    1792               0.019     0.024     0.01</span></span>
+<span><span class="co">#&gt;  5 Afgha… AFG    1793               0.019     0.024     0.01</span></span>
+<span><span class="co">#&gt;  6 Afgha… AFG    1794               0.019     0.024     0.01</span></span>
+<span><span class="co">#&gt;  7 Afgha… AFG    1795               0.019     0.024     0.01</span></span>
+<span><span class="co">#&gt;  8 Afgha… AFG    1796               0.019     0.024     0.01</span></span>
+<span><span class="co">#&gt;  9 Afgha… AFG    1797               0.019     0.024     0.01</span></span>
+<span><span class="co">#&gt; 10 Afgha… AFG    1798               0.019     0.024     0.01</span></span>
+<span><span class="co">#&gt; # ℹ 32,508 more rows</span></span></code></pre></div>
 <ol start="4" style="list-style-type: decimal">
 <li>You can use <code><a href="https://dplyr.tidyverse.org/reference/rename.html">dplyr::rename</a></code>, and keep the record of renaming column names.</li>
 </ol>
 <div class="sourceCode" id="cb585"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">(</span><span class="va">democracy</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"electoral-democracy"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 32,518 × 6</span></span>
-<span><span class="co">#&gt;    entity      code   year Electoral democ…¹ elect…² elect…³</span></span>
-<span><span class="co">#&gt;  * &lt;chr&gt;       &lt;chr&gt; &lt;int&gt;             &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 Afghanistan AFG    1789             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  2 Afghanistan AFG    1790             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  3 Afghanistan AFG    1791             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  4 Afghanistan AFG    1792             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  5 Afghanistan AFG    1793             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  6 Afghanistan AFG    1794             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  7 Afghanistan AFG    1795             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  8 Afghanistan AFG    1796             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  9 Afghanistan AFG    1797             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt; 10 Afghanistan AFG    1798             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt; # … with 32,508 more rows, and abbreviated variable names</span></span>
-<span><span class="co">#&gt; #   ¹​`Electoral democracy`, ²​electdem_vdem_high_owid,</span></span>
-<span><span class="co">#&gt; #   ³​electdem_vdem_low_owid</span></span></code></pre></div>
+<span><span class="co">#&gt;    entity      code   year `Electoral democracy`</span></span>
+<span><span class="co">#&gt;  * &lt;chr&gt;       &lt;chr&gt; &lt;int&gt;                 &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 Afghanistan AFG    1789                 0.019</span></span>
+<span><span class="co">#&gt;  2 Afghanistan AFG    1790                 0.019</span></span>
+<span><span class="co">#&gt;  3 Afghanistan AFG    1791                 0.019</span></span>
+<span><span class="co">#&gt;  4 Afghanistan AFG    1792                 0.019</span></span>
+<span><span class="co">#&gt;  5 Afghanistan AFG    1793                 0.019</span></span>
+<span><span class="co">#&gt;  6 Afghanistan AFG    1794                 0.019</span></span>
+<span><span class="co">#&gt;  7 Afghanistan AFG    1795                 0.019</span></span>
+<span><span class="co">#&gt;  8 Afghanistan AFG    1796                 0.019</span></span>
+<span><span class="co">#&gt;  9 Afghanistan AFG    1797                 0.019</span></span>
+<span><span class="co">#&gt; 10 Afghanistan AFG    1798                 0.019</span></span>
+<span><span class="co">#&gt; # ℹ 32,508 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 2 more variables: electdem_vdem_high_owid &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   electdem_vdem_low_owid &lt;dbl&gt;</span></span></code></pre></div>
 <div class="sourceCode" id="cb586"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">democracy</span> <span class="op">&lt;-</span> <span class="va">democracy</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>`electoral_democracy` <span class="op">=</span> <span class="va">`Electoral democracy`</span>,  </span>
@@ -423,21 +426,20 @@
 <span>         `electdem_vdem_low_owid` <span class="op">=</span> <span class="va">`electdem_vdem_low_owid`</span><span class="op">)</span></span>
 <span><span class="va">democracy</span></span>
 <span><span class="co">#&gt; # A tibble: 32,518 × 6</span></span>
-<span><span class="co">#&gt;    entity      code   year electoral_democ…¹ vdem_…² elect…³</span></span>
-<span><span class="co">#&gt;  * &lt;chr&gt;       &lt;chr&gt; &lt;int&gt;             &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 Afghanistan AFG    1789             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  2 Afghanistan AFG    1790             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  3 Afghanistan AFG    1791             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  4 Afghanistan AFG    1792             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  5 Afghanistan AFG    1793             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  6 Afghanistan AFG    1794             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  7 Afghanistan AFG    1795             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  8 Afghanistan AFG    1796             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  9 Afghanistan AFG    1797             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt; 10 Afghanistan AFG    1798             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt; # … with 32,508 more rows, and abbreviated variable names</span></span>
-<span><span class="co">#&gt; #   ¹​electoral_democracy, ²​vdem_high,</span></span>
-<span><span class="co">#&gt; #   ³​electdem_vdem_low_owid</span></span></code></pre></div>
+<span><span class="co">#&gt;    entity      code   year electoral_democracy vdem_high</span></span>
+<span><span class="co">#&gt;  * &lt;chr&gt;       &lt;chr&gt; &lt;int&gt;               &lt;dbl&gt;     &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 Afghanistan AFG    1789               0.019     0.024</span></span>
+<span><span class="co">#&gt;  2 Afghanistan AFG    1790               0.019     0.024</span></span>
+<span><span class="co">#&gt;  3 Afghanistan AFG    1791               0.019     0.024</span></span>
+<span><span class="co">#&gt;  4 Afghanistan AFG    1792               0.019     0.024</span></span>
+<span><span class="co">#&gt;  5 Afghanistan AFG    1793               0.019     0.024</span></span>
+<span><span class="co">#&gt;  6 Afghanistan AFG    1794               0.019     0.024</span></span>
+<span><span class="co">#&gt;  7 Afghanistan AFG    1795               0.019     0.024</span></span>
+<span><span class="co">#&gt;  8 Afghanistan AFG    1796               0.019     0.024</span></span>
+<span><span class="co">#&gt;  9 Afghanistan AFG    1797               0.019     0.024</span></span>
+<span><span class="co">#&gt; 10 Afghanistan AFG    1798               0.019     0.024</span></span>
+<span><span class="co">#&gt; # ℹ 32,508 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 1 more variable: electdem_vdem_low_owid &lt;dbl&gt;</span></span></code></pre></div>
 </div>
 <div id="owid_source" class="section level5" number="25.3.2.2.3">
 <h5>
@@ -450,15 +452,25 @@
 </ul>
 <div class="sourceCode" id="cb588"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_source.html">owid_source</a></span><span class="op">(</span><span class="va">emissions</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Dataset Name: Our World in Data based on Climate Analysis Indicators Tool (CAIT).</span></span>
+<span><span class="co">#&gt; Dataset Name: Our World in Data based on Jones et al. (2023)</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Published By: CAIT Climate Data Explorer via Climate Watch</span></span>
+<span><span class="co">#&gt; Published By: Our World in Data based on Jones, Matthew W., Peters, Glen P., Gasser, Thomas, Andrew, Robbie M., Schwingshackl, Clemens, Gütschow, Johannes, Houghton, Richard A., Friedlingstein, Pierre, Pongratz, Julia, &amp; Le Quéré, Corinne. (2023). National contributions to climate change due to historical emissions of carbon dioxide, methane and nitrous oxide [Data set]. In Scientific Data (2023.1). Zenodo.</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Link: https://www.climatewatchdata.org/data-explorer/historical-emissions</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Emissions are measured in tonnes of carbon dioxide equivalents (CO₂e), based on 100-year global warming potential factors for non-CO₂ gases.</span></span>
+<span><span class="co">#&gt; Link: https://zenodo.org/record/7636699#.ZFCy4exBweZ</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Emissions are broken down by sector. Further information on sector definitions is available &lt;a href="https://ourworldindata.org/ghg-emissions-by-sector"&gt;here&lt;/a&gt;.</span></span></code></pre></div>
+<span><span class="co">#&gt; Jones et al. (2023) quantify national and regional contributions to the increase of global mean surface temperature over the last few centuries.</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Original dataset description by Jones et al. (2023):</span></span>
+<span><span class="co">#&gt; A dataset describing the global warming response to national emissions CO2, CH4 and N2O from fossil and land use sources during 1851-2021.</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; National CO2 emissions data are collated from the Global Carbon Project (Andrew and Peters, 2022; Friedlingstein et al., 2022). </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; National CH4 and N2O emissions data are collated from PRIMAP-hist (HISTTP) (Gütschow et al., 2022).</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; We construct a time series of cumulative CO2-equivalent emissions for each country, gas, and emissions source (fossil or land use). Emissions of CH4 and N2O emissions are related to cumulative CO2-equivalent emissions using the Global Warming Potential (GWP*) approach, with best-estimates of the coefficients taken from the IPCC AR6 (Forster et al., 2021).</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Warming in response to cumulative CO2-equivalent emissions is estimated using the transient climate response to cumulative carbon emissions (TCRE) approach, with best-estimate value of TCRE taken from the IPCC AR6 (Forster et al., 2021, Canadell et al., 2021). 'Warming' is specifically the change in global mean surface temperature (GMST).</span></span></code></pre></div>
 <div class="sourceCode" id="cb589"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_source.html">owid_source</a></span><span class="op">(</span><span class="va">rights</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Dataset Name: Fariss et al. (2020)</span></span>
@@ -516,26 +528,26 @@
 <code class="sourceCode R"><span><span class="va">covid</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_covid.html">owid_covid</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb596"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">covid</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">location</span> <span class="op">==</span> <span class="st">"Japan"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 1,161 × 67</span></span>
-<span><span class="co">#&gt;    iso_code continent location date       total_ca…¹ new_c…²</span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;    &lt;date&gt;          &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 JPN      Asia      Japan    2020-01-03         NA       0</span></span>
-<span><span class="co">#&gt;  2 JPN      Asia      Japan    2020-01-04         NA       0</span></span>
-<span><span class="co">#&gt;  3 JPN      Asia      Japan    2020-01-05         NA       0</span></span>
-<span><span class="co">#&gt;  4 JPN      Asia      Japan    2020-01-06         NA       0</span></span>
-<span><span class="co">#&gt;  5 JPN      Asia      Japan    2020-01-07         NA       0</span></span>
-<span><span class="co">#&gt;  6 JPN      Asia      Japan    2020-01-08         NA       0</span></span>
-<span><span class="co">#&gt;  7 JPN      Asia      Japan    2020-01-09         NA       0</span></span>
-<span><span class="co">#&gt;  8 JPN      Asia      Japan    2020-01-10         NA       0</span></span>
-<span><span class="co">#&gt;  9 JPN      Asia      Japan    2020-01-11         NA       0</span></span>
-<span><span class="co">#&gt; 10 JPN      Asia      Japan    2020-01-12         NA       0</span></span>
-<span><span class="co">#&gt; # … with 1,151 more rows, 61 more variables:</span></span>
+<span><span class="co">#&gt; # A tibble: 1,221 × 67</span></span>
+<span><span class="co">#&gt;    iso_code continent location date       total_cases</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;    &lt;date&gt;           &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 JPN      Asia      Japan    2020-01-03          NA</span></span>
+<span><span class="co">#&gt;  2 JPN      Asia      Japan    2020-01-04          NA</span></span>
+<span><span class="co">#&gt;  3 JPN      Asia      Japan    2020-01-05          NA</span></span>
+<span><span class="co">#&gt;  4 JPN      Asia      Japan    2020-01-06          NA</span></span>
+<span><span class="co">#&gt;  5 JPN      Asia      Japan    2020-01-07          NA</span></span>
+<span><span class="co">#&gt;  6 JPN      Asia      Japan    2020-01-08          NA</span></span>
+<span><span class="co">#&gt;  7 JPN      Asia      Japan    2020-01-09          NA</span></span>
+<span><span class="co">#&gt;  8 JPN      Asia      Japan    2020-01-10          NA</span></span>
+<span><span class="co">#&gt;  9 JPN      Asia      Japan    2020-01-11          NA</span></span>
+<span><span class="co">#&gt; 10 JPN      Asia      Japan    2020-01-12          NA</span></span>
+<span><span class="co">#&gt; # ℹ 1,211 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 62 more variables: new_cases &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   new_cases_smoothed &lt;dbl&gt;, total_deaths &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   new_deaths &lt;dbl&gt;, new_deaths_smoothed &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   total_cases_per_million &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   new_cases_per_million &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   new_cases_smoothed_per_million &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   total_deaths_per_million &lt;dbl&gt;, …</span></span></code></pre></div>
+<span><span class="co">#&gt; #   new_cases_smoothed_per_million &lt;dbl&gt;, …</span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -553,17 +565,16 @@
 <div class="sourceCode" id="cb597"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_search.html">owid_search</a></span><span class="op">(</span><span class="st">"human rights"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 8 × 2</span></span>
-<span><span class="co">#&gt;   titles                                             chart…¹</span></span>
-<span><span class="co">#&gt;   &lt;chr&gt;                                              &lt;chr&gt;  </span></span>
-<span><span class="co">#&gt; 1 Human rights vs. electoral democracy               human-…</span></span>
-<span><span class="co">#&gt; 2 Countries with accredited independent national hu… countr…</span></span>
-<span><span class="co">#&gt; 3 Distribution of human rights                       distri…</span></span>
-<span><span class="co">#&gt; 4 Human rights                                       human-…</span></span>
-<span><span class="co">#&gt; 5 Human rights vs. GDP per capita                    human-…</span></span>
-<span><span class="co">#&gt; 6 Human rights weighted by population                human-…</span></span>
-<span><span class="co">#&gt; 7 Number of cases of killed human rights defenders,… cases-…</span></span>
-<span><span class="co">#&gt; 8 Share of countries with accredited independent na… share-…</span></span>
-<span><span class="co">#&gt; # … with abbreviated variable name ¹​chart_id</span></span></code></pre></div>
+<span><span class="co">#&gt;   titles                                            chart_id</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;                                             &lt;chr&gt;   </span></span>
+<span><span class="co">#&gt; 1 Human rights vs. electoral democracy              human-r…</span></span>
+<span><span class="co">#&gt; 2 Countries with accredited independent national h… countri…</span></span>
+<span><span class="co">#&gt; 3 Distribution of human rights                      distrib…</span></span>
+<span><span class="co">#&gt; 4 Human rights                                      human-r…</span></span>
+<span><span class="co">#&gt; 5 Human rights                                      human-r…</span></span>
+<span><span class="co">#&gt; 6 Human rights vs. GDP per capita                   human-r…</span></span>
+<span><span class="co">#&gt; 7 Number of cases of killed human rights defenders… cases-o…</span></span>
+<span><span class="co">#&gt; 8 Share of countries with accredited independent n… share-c…</span></span></code></pre></div>
 <p>Let’s use the human rights protection dataset.</p>
 <div class="sourceCode" id="cb598"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">rights</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"human-rights-protection"</span><span class="op">)</span></span>
@@ -581,7 +592,7 @@
 <span><span class="co">#&gt;  8 Afghanistan AFG    1953                     1.18 </span></span>
 <span><span class="co">#&gt;  9 Afghanistan AFG    1954                     1.22 </span></span>
 <span><span class="co">#&gt; 10 Afghanistan AFG    1955                     1.22 </span></span>
-<span><span class="co">#&gt; # … with 11,263 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 11,263 more rows</span></span></code></pre></div>
 <p>ggplot2 makes it easy to visualise our data.</p>
 <div class="sourceCode" id="cb599"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">rights</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
@@ -597,16 +608,15 @@
 <div class="sourceCode" id="cb600"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_search.html">owid_search</a></span><span class="op">(</span><span class="st">"internet"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 7 × 2</span></span>
-<span><span class="co">#&gt;   titles                                             chart…¹</span></span>
-<span><span class="co">#&gt;   &lt;chr&gt;                                              &lt;chr&gt;  </span></span>
-<span><span class="co">#&gt; 1 Share of schools with access to the Internet for … school…</span></span>
-<span><span class="co">#&gt; 2 Daily time spent on the Internet by young people   daily-…</span></span>
-<span><span class="co">#&gt; 3 Landline Internet subscriptions                    landli…</span></span>
-<span><span class="co">#&gt; 4 Landline Internet subscriptions per 100 people     broadb…</span></span>
-<span><span class="co">#&gt; 5 Number of people using the Internet                number…</span></span>
-<span><span class="co">#&gt; 6 Share of US adults who use the Internet, by age    share-…</span></span>
-<span><span class="co">#&gt; 7 Share of the population using the Internet         share-…</span></span>
-<span><span class="co">#&gt; # … with abbreviated variable name ¹​chart_id</span></span></code></pre></div>
+<span><span class="co">#&gt;   titles                                            chart_id</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;                                             &lt;chr&gt;   </span></span>
+<span><span class="co">#&gt; 1 Share of primary schools with access to the Inte… primary…</span></span>
+<span><span class="co">#&gt; 2 Landline Internet subscriptions                   landlin…</span></span>
+<span><span class="co">#&gt; 3 Landline Internet subscriptions by download speed landlin…</span></span>
+<span><span class="co">#&gt; 4 Landline Internet subscriptions per 100 people    broadba…</span></span>
+<span><span class="co">#&gt; 5 Number of people using the Internet               number-…</span></span>
+<span><span class="co">#&gt; 6 Share of US adults who use the Internet, by age   share-u…</span></span>
+<span><span class="co">#&gt; 7 Share of the population using the Internet        share-o…</span></span></code></pre></div>
 <p>Get a dataset used in an OWID chart.</p>
 <div class="sourceCode" id="cb601"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"share-of-individuals-using-the-internet"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/top_n.html">top_n</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
@@ -616,7 +626,7 @@
 <span><span class="co">#&gt;   entity               code   year Individuals using the I…¹</span></span>
 <span><span class="co">#&gt;   &lt;chr&gt;                &lt;chr&gt; &lt;int&gt;                     &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt; 1 United Arab Emirates ARE    2020                       100</span></span>
-<span><span class="co">#&gt; # … with abbreviated variable name</span></span>
+<span><span class="co">#&gt; # ℹ abbreviated name:</span></span>
 <span><span class="co">#&gt; #   ¹​`Individuals using the Internet (% of population)`</span></span></code></pre></div>
 <div class="sourceCode" id="cb602"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">internet</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"share-of-individuals-using-the-internet"</span>, rename <span class="op">=</span> <span class="st">"internet_use"</span><span class="op">)</span></span>
@@ -634,7 +644,7 @@
 <span><span class="co">#&gt;  8 Afghanistan AFG    2002      0.00456</span></span>
 <span><span class="co">#&gt;  9 Afghanistan AFG    2003      0.0879 </span></span>
 <span><span class="co">#&gt; 10 Afghanistan AFG    2004      0.106  </span></span>
-<span><span class="co">#&gt; # … with 6,650 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 6,650 more rows</span></span></code></pre></div>
 <p>Get source information on an OWID dataset</p>
 <div class="sourceCode" id="cb603"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_source.html">owid_source</a></span><span class="op">(</span><span class="va">internet</span><span class="op">)</span></span>
@@ -675,11 +685,17 @@
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Share of Population Using the Internet, 2017"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Warning: `owid_map()` was deprecated in owidR 1.4.0.</span></span>
 <span><span class="co">#&gt; ℹ Please use `ggplot2::ggplot()` instead.</span></span>
+<span><span class="co">#&gt; This warning is displayed once every 8 hours.</span></span>
+<span><span class="co">#&gt; Call `lifecycle::last_lifecycle_warnings()` to see where</span></span>
+<span><span class="co">#&gt; this warning was generated.</span></span>
 <span><span class="co">#&gt; Warning: `theme_owid()` was deprecated in owidR 1.4.0.</span></span>
 <span><span class="co">#&gt; ℹ Please use `ggplot2::theme()` instead.</span></span>
 <span><span class="co">#&gt; ℹ The deprecated feature was likely used in the owidR</span></span>
 <span><span class="co">#&gt;   package.</span></span>
 <span><span class="co">#&gt;   Please report the issue to the authors.</span></span>
+<span><span class="co">#&gt; This warning is displayed once every 8 hours.</span></span>
+<span><span class="co">#&gt; Call `lifecycle::last_lifecycle_warnings()` to see where</span></span>
+<span><span class="co">#&gt; this warning was generated.</span></span>
 <span><span class="co">#&gt; Loading required namespace: showtext</span></span></code></pre></div>
 <div class="inline-figure"><img src="32-owid_files/figure-html/unnamed-chunk-34-1.png" width="672"></div>
 </div>
@@ -689,7 +705,7 @@
 </h3>
 <div class="sourceCode" id="cb609"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_search.html">owid_search</a></span><span class="op">(</span><span class="st">"democrac"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 106 × 2</span></span>
+<span><span class="co">#&gt; # A tibble: 91 × 2</span></span>
 <span><span class="co">#&gt;    titles                                           chart_id</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;                                            &lt;chr&gt;   </span></span>
 <span><span class="co">#&gt;  1 Child mortality rate vs. electoral democracy     child-m…</span></span>
@@ -702,36 +718,35 @@
 <span><span class="co">#&gt;  8 Age of liberal democracy                         age-of-…</span></span>
 <span><span class="co">#&gt;  9 Citizen satisfaction with democracy              citizen…</span></span>
 <span><span class="co">#&gt; 10 Citizen support for democracy                    citizen…</span></span>
-<span><span class="co">#&gt; # … with 96 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 81 more rows</span></span></code></pre></div>
 <div class="sourceCode" id="cb610"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"electoral-democracy"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/top_n.html">top_n</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Selecting by electdem_vdem_low_owid</span></span>
 <span><span class="co">#&gt; # A tibble: 3 × 6</span></span>
-<span><span class="co">#&gt;   entity  code   year `Electoral democracy` electd…¹ elect…²</span></span>
-<span><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;int&gt;                 &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1 Denmark DNK    2008                 0.922    0.959     0.9</span></span>
-<span><span class="co">#&gt; 2 Denmark DNK    2009                 0.922    0.959     0.9</span></span>
-<span><span class="co">#&gt; 3 Denmark DNK    2010                 0.922    0.959     0.9</span></span>
-<span><span class="co">#&gt; # … with abbreviated variable names</span></span>
-<span><span class="co">#&gt; #   ¹​electdem_vdem_high_owid, ²​electdem_vdem_low_owid</span></span></code></pre></div>
+<span><span class="co">#&gt;   entity  code   year `Electoral democracy`</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;int&gt;                 &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 Denmark DNK    2008                 0.922</span></span>
+<span><span class="co">#&gt; 2 Denmark DNK    2009                 0.922</span></span>
+<span><span class="co">#&gt; 3 Denmark DNK    2010                 0.922</span></span>
+<span><span class="co">#&gt; # ℹ 2 more variables: electdem_vdem_high_owid &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   electdem_vdem_low_owid &lt;dbl&gt;</span></span></code></pre></div>
 <div class="sourceCode" id="cb611"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">democracy</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid.html">owid</a></span><span class="op">(</span><span class="st">"electoral-democracy"</span>, rename <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"electoral_democracy"</span>, <span class="st">"vdem_high"</span>, <span class="st">"vdem_low"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">democracy</span></span>
 <span><span class="co">#&gt; # A tibble: 32,518 × 6</span></span>
-<span><span class="co">#&gt;    entity      code   year electoral_democ…¹ vdem_…² vdem_…³</span></span>
-<span><span class="co">#&gt;  * &lt;chr&gt;       &lt;chr&gt; &lt;int&gt;             &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 Afghanistan AFG    1789             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  2 Afghanistan AFG    1790             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  3 Afghanistan AFG    1791             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  4 Afghanistan AFG    1792             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  5 Afghanistan AFG    1793             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  6 Afghanistan AFG    1794             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  7 Afghanistan AFG    1795             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  8 Afghanistan AFG    1796             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt;  9 Afghanistan AFG    1797             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt; 10 Afghanistan AFG    1798             0.019   0.024    0.01</span></span>
-<span><span class="co">#&gt; # … with 32,508 more rows, and abbreviated variable names</span></span>
-<span><span class="co">#&gt; #   ¹​electoral_democracy, ²​vdem_high, ³​vdem_low</span></span></code></pre></div>
+<span><span class="co">#&gt;    entity code   year electoral_democracy vdem_high vdem_low</span></span>
+<span><span class="co">#&gt;  * &lt;chr&gt;  &lt;chr&gt; &lt;int&gt;               &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 Afgha… AFG    1789               0.019     0.024     0.01</span></span>
+<span><span class="co">#&gt;  2 Afgha… AFG    1790               0.019     0.024     0.01</span></span>
+<span><span class="co">#&gt;  3 Afgha… AFG    1791               0.019     0.024     0.01</span></span>
+<span><span class="co">#&gt;  4 Afgha… AFG    1792               0.019     0.024     0.01</span></span>
+<span><span class="co">#&gt;  5 Afgha… AFG    1793               0.019     0.024     0.01</span></span>
+<span><span class="co">#&gt;  6 Afgha… AFG    1794               0.019     0.024     0.01</span></span>
+<span><span class="co">#&gt;  7 Afgha… AFG    1795               0.019     0.024     0.01</span></span>
+<span><span class="co">#&gt;  8 Afgha… AFG    1796               0.019     0.024     0.01</span></span>
+<span><span class="co">#&gt;  9 Afgha… AFG    1797               0.019     0.024     0.01</span></span>
+<span><span class="co">#&gt; 10 Afgha… AFG    1798               0.019     0.024     0.01</span></span>
+<span><span class="co">#&gt; # ℹ 32,508 more rows</span></span></code></pre></div>
 <div class="sourceCode" id="cb612"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/owidR/man/owid_source.html">owid_source</a></span><span class="op">(</span><span class="va">democracy</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Value:  </span></span>
@@ -965,7 +980,7 @@ For the first time, install the pacage <code>texreg</code>.</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-03-13.</p>
+    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-05-10.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

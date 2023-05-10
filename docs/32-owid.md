@@ -39,14 +39,16 @@ install.packages("owidR")
 ```r
 library(owidR)
 library(tidyverse) 
-#> ── Attaching packages ─────────────────── tidyverse 1.3.2 ──
-#> ✔ ggplot2 3.4.1     ✔ purrr   1.0.1
-#> ✔ tibble  3.1.8     ✔ dplyr   1.1.0
-#> ✔ tidyr   1.3.0     ✔ stringr 1.5.0
-#> ✔ readr   2.1.4     ✔ forcats 1.0.0
+#> ── Attaching core tidyverse packages ──── tidyverse 2.0.0 ──
+#> ✔ dplyr     1.1.2     ✔ readr     2.1.4
+#> ✔ forcats   1.0.0     ✔ stringr   1.5.0
+#> ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+#> ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+#> ✔ purrr     1.0.1     
 #> ── Conflicts ────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
+#> ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 ```
 
 The package automatically load a part of `tidyverse`, e.g., `dplyr`, `ggplot`, .... Since it works well with the scheme`tidyverse`, it is better to load `tidyverse` with it.
@@ -105,21 +107,20 @@ A matrix is returned. If the list is long, it is easier to see the pairs of the 
 
 ```r
 owid_search("emissions") %>% as_tibble()
-#> # A tibble: 150 × 2
-#>    titles                                            chart…¹
-#>    <chr>                                             <chr>  
-#>  1 Air pollutant emissions                           air-po…
-#>  2 Emissions of air pollutants                       emissi…
-#>  3 Emissions of air pollutants                       emissi…
-#>  4 Emissions of particulate matter                   emissi…
-#>  5 Global sulphur dioxide (SO₂) emissions by world … so-emi…
-#>  6 Sulphur dioxide (SO₂) emissions                   so2-em…
-#>  7 Sulphur dioxide (SO₂) emissions                   so-emi…
-#>  8 Sulphur dioxide (SO₂) emissions per capita        so-emi…
-#>  9 Sulphur oxide (SO₂) emissions                     sulphu…
-#> 10 Annual CO2 emissions from land-use change per ca… co2-la…
-#> # … with 140 more rows, and abbreviated variable name
-#> #   ¹​chart_id
+#> # A tibble: 157 × 2
+#>    titles                                           chart_id
+#>    <chr>                                            <chr>   
+#>  1 Air pollutant emissions                          air-pol…
+#>  2 Emissions of air pollutants                      emissio…
+#>  3 Emissions of air pollutants                      emissio…
+#>  4 Emissions of particulate matter                  emissio…
+#>  5 Global sulphur dioxide (SO₂) emissions by world… so-emis…
+#>  6 Sulphur dioxide (SO₂) emissions                  so2-emi…
+#>  7 Sulphur dioxide (SO₂) emissions                  so-emis…
+#>  8 Sulphur dioxide (SO₂) emissions per capita       so-emis…
+#>  9 Sulphur oxide (SO₂) emissions                    sulphur…
+#> 10 Annual CO2 emissions from land-use change per c… co2-lan…
+#> # ℹ 147 more rows
 ```
 
 If the list is not long, you do not need to add `as_tibble()`. However, note that you need to keep in mind that the title and the chart_id consists of a pair, and you need to use the chart_id to download the data using `owid`.
@@ -132,8 +133,8 @@ owid_search("human rights")
 #> [2,] "Countries with accredited independent national human rights institutions"         
 #> [3,] "Distribution of human rights"                                                     
 #> [4,] "Human rights"                                                                     
-#> [5,] "Human rights vs. GDP per capita"                                                  
-#> [6,] "Human rights weighted by population"                                              
+#> [5,] "Human rights"                                                                     
+#> [6,] "Human rights vs. GDP per capita"                                                  
 #> [7,] "Number of cases of killed human rights defenders, journalists and trade unionists"
 #> [8,] "Share of countries with accredited independent national human rights institutions"
 #>      chart_id                                                                   
@@ -141,8 +142,8 @@ owid_search("human rights")
 #> [2,] "countries-with-independent-national-human-rights-institution"             
 #> [3,] "distribution-human-rights-vdem"                                           
 #> [4,] "human-rights-vdem"                                                        
-#> [5,] "human-rights-vs-gdp-per-capita"                                           
-#> [6,] "human-rights-popw"                                                        
+#> [5,] "human-rights-popw"                                                        
+#> [6,] "human-rights-vs-gdp-per-capita"                                           
 #> [7,] "cases-of-killed-human-rights-defenders-journalists-trade-unionists"       
 #> [8,] "share-countries-accredited-independent-national-human-rights-institutions"
 ```
@@ -170,20 +171,22 @@ emissions <- owid("per-capita-ghg-emissions")
 
 ```r
 emissions
-#> # A tibble: 6,149 × 4
-#>    entity      code   year `Total including LUCF`
-#>  * <chr>       <chr> <int>                  <dbl>
-#>  1 Afghanistan AFG    1990                  0.772
-#>  2 Afghanistan AFG    1991                  0.738
-#>  3 Afghanistan AFG    1992                  0.623
-#>  4 Afghanistan AFG    1993                  0.576
-#>  5 Afghanistan AFG    1994                  0.536
-#>  6 Afghanistan AFG    1995                  0.529
-#>  7 Afghanistan AFG    1996                  0.563
-#>  8 Afghanistan AFG    1997                  0.598
-#>  9 Afghanistan AFG    1998                  0.628
-#> 10 Afghanistan AFG    1999                  0.658
-#> # … with 6,139 more rows
+#> # A tibble: 35,646 × 4
+#>    entity      code   year Per-capita greenhouse gas emiss…¹
+#>  * <chr>       <chr> <int>                             <dbl>
+#>  1 Afghanistan AFG    1850                              1.94
+#>  2 Afghanistan AFG    1851                              1.96
+#>  3 Afghanistan AFG    1852                              1.96
+#>  4 Afghanistan AFG    1853                              1.97
+#>  5 Afghanistan AFG    1854                              1.97
+#>  6 Afghanistan AFG    1855                              1.97
+#>  7 Afghanistan AFG    1856                              1.98
+#>  8 Afghanistan AFG    1857                              1.98
+#>  9 Afghanistan AFG    1858                              1.99
+#> 10 Afghanistan AFG    1859                              1.99
+#> # ℹ 35,636 more rows
+#> # ℹ abbreviated name:
+#> #   ¹​`Per-capita greenhouse gas emissions in CO2 equivalents`
 ```
 
 
@@ -207,7 +210,7 @@ rights
 #>  8 Afghanistan AFG    1953                     1.18 
 #>  9 Afghanistan AFG    1954                     1.22 
 #> 10 Afghanistan AFG    1955                     1.22 
-#> # … with 11,263 more rows
+#> # ℹ 11,263 more rows
 ```
 
 **Note.**
@@ -217,41 +220,41 @@ rights
 
 ```r
 owid("per-capita-ghg-emissions", rename = "ghgPcap")
-#> # A tibble: 6,149 × 4
+#> # A tibble: 35,646 × 4
 #>    entity      code   year ghgPcap
 #>  * <chr>       <chr> <int>   <dbl>
-#>  1 Afghanistan AFG    1990   0.772
-#>  2 Afghanistan AFG    1991   0.738
-#>  3 Afghanistan AFG    1992   0.623
-#>  4 Afghanistan AFG    1993   0.576
-#>  5 Afghanistan AFG    1994   0.536
-#>  6 Afghanistan AFG    1995   0.529
-#>  7 Afghanistan AFG    1996   0.563
-#>  8 Afghanistan AFG    1997   0.598
-#>  9 Afghanistan AFG    1998   0.628
-#> 10 Afghanistan AFG    1999   0.658
-#> # … with 6,139 more rows
+#>  1 Afghanistan AFG    1850    1.94
+#>  2 Afghanistan AFG    1851    1.96
+#>  3 Afghanistan AFG    1852    1.96
+#>  4 Afghanistan AFG    1853    1.97
+#>  5 Afghanistan AFG    1854    1.97
+#>  6 Afghanistan AFG    1855    1.97
+#>  7 Afghanistan AFG    1856    1.98
+#>  8 Afghanistan AFG    1857    1.98
+#>  9 Afghanistan AFG    1858    1.99
+#> 10 Afghanistan AFG    1859    1.99
+#> # ℹ 35,636 more rows
 ```
 
 2. Since until after importing the data, you never know the original column name, and how many columns are for indicators. It is natural to change column names using `dpyr::rename`. In the next example, I used `Total including LUCF`. However, 'Total including LUCF' and "Total including LUCF" work as well.
 
 
 ```r
-emissions %>% rename(ghgPcap = `Total including LUCF`)
-#> # A tibble: 6,149 × 4
+emissions %>% rename(ghgPcap = `Per-capita greenhouse gas emissions in CO2 equivalents`)
+#> # A tibble: 35,646 × 4
 #>    entity      code   year ghgPcap
 #>  * <chr>       <chr> <int>   <dbl>
-#>  1 Afghanistan AFG    1990   0.772
-#>  2 Afghanistan AFG    1991   0.738
-#>  3 Afghanistan AFG    1992   0.623
-#>  4 Afghanistan AFG    1993   0.576
-#>  5 Afghanistan AFG    1994   0.536
-#>  6 Afghanistan AFG    1995   0.529
-#>  7 Afghanistan AFG    1996   0.563
-#>  8 Afghanistan AFG    1997   0.598
-#>  9 Afghanistan AFG    1998   0.628
-#> 10 Afghanistan AFG    1999   0.658
-#> # … with 6,139 more rows
+#>  1 Afghanistan AFG    1850    1.94
+#>  2 Afghanistan AFG    1851    1.96
+#>  3 Afghanistan AFG    1852    1.96
+#>  4 Afghanistan AFG    1853    1.97
+#>  5 Afghanistan AFG    1854    1.97
+#>  6 Afghanistan AFG    1855    1.97
+#>  7 Afghanistan AFG    1856    1.98
+#>  8 Afghanistan AFG    1857    1.98
+#>  9 Afghanistan AFG    1858    1.99
+#> 10 Afghanistan AFG    1859    1.99
+#> # ℹ 35,636 more rows
 ```
 
 3. If there are more than one variables to rename, use vector notation as follows. Here `top_n(1)` is same as `slice(1)`, and gives the first row only.
@@ -261,33 +264,32 @@ emissions %>% rename(ghgPcap = `Total including LUCF`)
 owid("electoral-democracy") %>% top_n(1)
 #> Selecting by electdem_vdem_low_owid
 #> # A tibble: 3 × 6
-#>   entity  code   year `Electoral democracy` electd…¹ elect…²
-#>   <chr>   <chr> <int>                 <dbl>    <dbl>   <dbl>
-#> 1 Denmark DNK    2008                 0.922    0.959     0.9
-#> 2 Denmark DNK    2009                 0.922    0.959     0.9
-#> 3 Denmark DNK    2010                 0.922    0.959     0.9
-#> # … with abbreviated variable names
-#> #   ¹​electdem_vdem_high_owid, ²​electdem_vdem_low_owid
+#>   entity  code   year `Electoral democracy`
+#>   <chr>   <chr> <int>                 <dbl>
+#> 1 Denmark DNK    2008                 0.922
+#> 2 Denmark DNK    2009                 0.922
+#> 3 Denmark DNK    2010                 0.922
+#> # ℹ 2 more variables: electdem_vdem_high_owid <dbl>,
+#> #   electdem_vdem_low_owid <dbl>
 ```
 
 
 ```r
 owid("electoral-democracy", rename = c("electoral_democracy", "vdem_high", "vdem_low"))
 #> # A tibble: 32,518 × 6
-#>    entity      code   year electoral_democ…¹ vdem_…² vdem_…³
-#>  * <chr>       <chr> <int>             <dbl>   <dbl>   <dbl>
-#>  1 Afghanistan AFG    1789             0.019   0.024    0.01
-#>  2 Afghanistan AFG    1790             0.019   0.024    0.01
-#>  3 Afghanistan AFG    1791             0.019   0.024    0.01
-#>  4 Afghanistan AFG    1792             0.019   0.024    0.01
-#>  5 Afghanistan AFG    1793             0.019   0.024    0.01
-#>  6 Afghanistan AFG    1794             0.019   0.024    0.01
-#>  7 Afghanistan AFG    1795             0.019   0.024    0.01
-#>  8 Afghanistan AFG    1796             0.019   0.024    0.01
-#>  9 Afghanistan AFG    1797             0.019   0.024    0.01
-#> 10 Afghanistan AFG    1798             0.019   0.024    0.01
-#> # … with 32,508 more rows, and abbreviated variable names
-#> #   ¹​electoral_democracy, ²​vdem_high, ³​vdem_low
+#>    entity code   year electoral_democracy vdem_high vdem_low
+#>  * <chr>  <chr> <int>               <dbl>     <dbl>    <dbl>
+#>  1 Afgha… AFG    1789               0.019     0.024     0.01
+#>  2 Afgha… AFG    1790               0.019     0.024     0.01
+#>  3 Afgha… AFG    1791               0.019     0.024     0.01
+#>  4 Afgha… AFG    1792               0.019     0.024     0.01
+#>  5 Afgha… AFG    1793               0.019     0.024     0.01
+#>  6 Afgha… AFG    1794               0.019     0.024     0.01
+#>  7 Afgha… AFG    1795               0.019     0.024     0.01
+#>  8 Afgha… AFG    1796               0.019     0.024     0.01
+#>  9 Afgha… AFG    1797               0.019     0.024     0.01
+#> 10 Afgha… AFG    1798               0.019     0.024     0.01
+#> # ℹ 32,508 more rows
 ```
 
 
@@ -297,21 +299,21 @@ owid("electoral-democracy", rename = c("electoral_democracy", "vdem_high", "vdem
 ```r
 (democracy <- owid("electoral-democracy"))
 #> # A tibble: 32,518 × 6
-#>    entity      code   year Electoral democ…¹ elect…² elect…³
-#>  * <chr>       <chr> <int>             <dbl>   <dbl>   <dbl>
-#>  1 Afghanistan AFG    1789             0.019   0.024    0.01
-#>  2 Afghanistan AFG    1790             0.019   0.024    0.01
-#>  3 Afghanistan AFG    1791             0.019   0.024    0.01
-#>  4 Afghanistan AFG    1792             0.019   0.024    0.01
-#>  5 Afghanistan AFG    1793             0.019   0.024    0.01
-#>  6 Afghanistan AFG    1794             0.019   0.024    0.01
-#>  7 Afghanistan AFG    1795             0.019   0.024    0.01
-#>  8 Afghanistan AFG    1796             0.019   0.024    0.01
-#>  9 Afghanistan AFG    1797             0.019   0.024    0.01
-#> 10 Afghanistan AFG    1798             0.019   0.024    0.01
-#> # … with 32,508 more rows, and abbreviated variable names
-#> #   ¹​`Electoral democracy`, ²​electdem_vdem_high_owid,
-#> #   ³​electdem_vdem_low_owid
+#>    entity      code   year `Electoral democracy`
+#>  * <chr>       <chr> <int>                 <dbl>
+#>  1 Afghanistan AFG    1789                 0.019
+#>  2 Afghanistan AFG    1790                 0.019
+#>  3 Afghanistan AFG    1791                 0.019
+#>  4 Afghanistan AFG    1792                 0.019
+#>  5 Afghanistan AFG    1793                 0.019
+#>  6 Afghanistan AFG    1794                 0.019
+#>  7 Afghanistan AFG    1795                 0.019
+#>  8 Afghanistan AFG    1796                 0.019
+#>  9 Afghanistan AFG    1797                 0.019
+#> 10 Afghanistan AFG    1798                 0.019
+#> # ℹ 32,508 more rows
+#> # ℹ 2 more variables: electdem_vdem_high_owid <dbl>,
+#> #   electdem_vdem_low_owid <dbl>
 ```
 
 
@@ -323,21 +325,20 @@ democracy <- democracy %>%
          `electdem_vdem_low_owid` = `electdem_vdem_low_owid`)
 democracy
 #> # A tibble: 32,518 × 6
-#>    entity      code   year electoral_democ…¹ vdem_…² elect…³
-#>  * <chr>       <chr> <int>             <dbl>   <dbl>   <dbl>
-#>  1 Afghanistan AFG    1789             0.019   0.024    0.01
-#>  2 Afghanistan AFG    1790             0.019   0.024    0.01
-#>  3 Afghanistan AFG    1791             0.019   0.024    0.01
-#>  4 Afghanistan AFG    1792             0.019   0.024    0.01
-#>  5 Afghanistan AFG    1793             0.019   0.024    0.01
-#>  6 Afghanistan AFG    1794             0.019   0.024    0.01
-#>  7 Afghanistan AFG    1795             0.019   0.024    0.01
-#>  8 Afghanistan AFG    1796             0.019   0.024    0.01
-#>  9 Afghanistan AFG    1797             0.019   0.024    0.01
-#> 10 Afghanistan AFG    1798             0.019   0.024    0.01
-#> # … with 32,508 more rows, and abbreviated variable names
-#> #   ¹​electoral_democracy, ²​vdem_high,
-#> #   ³​electdem_vdem_low_owid
+#>    entity      code   year electoral_democracy vdem_high
+#>  * <chr>       <chr> <int>               <dbl>     <dbl>
+#>  1 Afghanistan AFG    1789               0.019     0.024
+#>  2 Afghanistan AFG    1790               0.019     0.024
+#>  3 Afghanistan AFG    1791               0.019     0.024
+#>  4 Afghanistan AFG    1792               0.019     0.024
+#>  5 Afghanistan AFG    1793               0.019     0.024
+#>  6 Afghanistan AFG    1794               0.019     0.024
+#>  7 Afghanistan AFG    1795               0.019     0.024
+#>  8 Afghanistan AFG    1796               0.019     0.024
+#>  9 Afghanistan AFG    1797               0.019     0.024
+#> 10 Afghanistan AFG    1798               0.019     0.024
+#> # ℹ 32,508 more rows
+#> # ℹ 1 more variable: electdem_vdem_low_owid <dbl>
 ```
 
 
@@ -354,15 +355,25 @@ owid_source(data)
 
 ```r
 owid_source(emissions)
-#> Dataset Name: Our World in Data based on Climate Analysis Indicators Tool (CAIT).
+#> Dataset Name: Our World in Data based on Jones et al. (2023)
 #> 
-#> Published By: CAIT Climate Data Explorer via Climate Watch
+#> Published By: Our World in Data based on Jones, Matthew W., Peters, Glen P., Gasser, Thomas, Andrew, Robbie M., Schwingshackl, Clemens, Gütschow, Johannes, Houghton, Richard A., Friedlingstein, Pierre, Pongratz, Julia, & Le Quéré, Corinne. (2023). National contributions to climate change due to historical emissions of carbon dioxide, methane and nitrous oxide [Data set]. In Scientific Data (2023.1). Zenodo.
 #> 
-#> Link: https://www.climatewatchdata.org/data-explorer/historical-emissions
 #> 
-#> Emissions are measured in tonnes of carbon dioxide equivalents (CO₂e), based on 100-year global warming potential factors for non-CO₂ gases.
+#> Link: https://zenodo.org/record/7636699#.ZFCy4exBweZ
 #> 
-#> Emissions are broken down by sector. Further information on sector definitions is available <a href="https://ourworldindata.org/ghg-emissions-by-sector">here</a>.
+#> Jones et al. (2023) quantify national and regional contributions to the increase of global mean surface temperature over the last few centuries.
+#> 
+#> Original dataset description by Jones et al. (2023):
+#> A dataset describing the global warming response to national emissions CO2, CH4 and N2O from fossil and land use sources during 1851-2021.
+#> 
+#> National CO2 emissions data are collated from the Global Carbon Project (Andrew and Peters, 2022; Friedlingstein et al., 2022). 
+#> 
+#> National CH4 and N2O emissions data are collated from PRIMAP-hist (HISTTP) (Gütschow et al., 2022).
+#> 
+#> We construct a time series of cumulative CO2-equivalent emissions for each country, gas, and emissions source (fossil or land use). Emissions of CH4 and N2O emissions are related to cumulative CO2-equivalent emissions using the Global Warming Potential (GWP*) approach, with best-estimates of the coefficients taken from the IPCC AR6 (Forster et al., 2021).
+#> 
+#> Warming in response to cumulative CO2-equivalent emissions is estimated using the transient climate response to cumulative carbon emissions (TCRE) approach, with best-estimate value of TCRE taken from the IPCC AR6 (Forster et al., 2021, Canadell et al., 2021). 'Warming' is specifically the change in global mean surface temperature (GMST).
 ```
 
 
@@ -443,26 +454,26 @@ covid <- owid_covid()
 
 ```r
 covid %>% filter(location == "Japan")
-#> # A tibble: 1,161 × 67
-#>    iso_code continent location date       total_ca…¹ new_c…²
-#>    <chr>    <chr>     <chr>    <date>          <dbl>   <dbl>
-#>  1 JPN      Asia      Japan    2020-01-03         NA       0
-#>  2 JPN      Asia      Japan    2020-01-04         NA       0
-#>  3 JPN      Asia      Japan    2020-01-05         NA       0
-#>  4 JPN      Asia      Japan    2020-01-06         NA       0
-#>  5 JPN      Asia      Japan    2020-01-07         NA       0
-#>  6 JPN      Asia      Japan    2020-01-08         NA       0
-#>  7 JPN      Asia      Japan    2020-01-09         NA       0
-#>  8 JPN      Asia      Japan    2020-01-10         NA       0
-#>  9 JPN      Asia      Japan    2020-01-11         NA       0
-#> 10 JPN      Asia      Japan    2020-01-12         NA       0
-#> # … with 1,151 more rows, 61 more variables:
+#> # A tibble: 1,221 × 67
+#>    iso_code continent location date       total_cases
+#>    <chr>    <chr>     <chr>    <date>           <dbl>
+#>  1 JPN      Asia      Japan    2020-01-03          NA
+#>  2 JPN      Asia      Japan    2020-01-04          NA
+#>  3 JPN      Asia      Japan    2020-01-05          NA
+#>  4 JPN      Asia      Japan    2020-01-06          NA
+#>  5 JPN      Asia      Japan    2020-01-07          NA
+#>  6 JPN      Asia      Japan    2020-01-08          NA
+#>  7 JPN      Asia      Japan    2020-01-09          NA
+#>  8 JPN      Asia      Japan    2020-01-10          NA
+#>  9 JPN      Asia      Japan    2020-01-11          NA
+#> 10 JPN      Asia      Japan    2020-01-12          NA
+#> # ℹ 1,211 more rows
+#> # ℹ 62 more variables: new_cases <dbl>,
 #> #   new_cases_smoothed <dbl>, total_deaths <dbl>,
 #> #   new_deaths <dbl>, new_deaths_smoothed <dbl>,
 #> #   total_cases_per_million <dbl>,
 #> #   new_cases_per_million <dbl>,
-#> #   new_cases_smoothed_per_million <dbl>,
-#> #   total_deaths_per_million <dbl>, …
+#> #   new_cases_smoothed_per_million <dbl>, …
 ```
 
 ## Examples
@@ -477,17 +488,16 @@ Lets use the core functions to get data on how human rights have changed over ti
 ```r
 owid_search("human rights") %>% as_tibble()
 #> # A tibble: 8 × 2
-#>   titles                                             chart…¹
-#>   <chr>                                              <chr>  
-#> 1 Human rights vs. electoral democracy               human-…
-#> 2 Countries with accredited independent national hu… countr…
-#> 3 Distribution of human rights                       distri…
-#> 4 Human rights                                       human-…
-#> 5 Human rights vs. GDP per capita                    human-…
-#> 6 Human rights weighted by population                human-…
-#> 7 Number of cases of killed human rights defenders,… cases-…
-#> 8 Share of countries with accredited independent na… share-…
-#> # … with abbreviated variable name ¹​chart_id
+#>   titles                                            chart_id
+#>   <chr>                                             <chr>   
+#> 1 Human rights vs. electoral democracy              human-r…
+#> 2 Countries with accredited independent national h… countri…
+#> 3 Distribution of human rights                      distrib…
+#> 4 Human rights                                      human-r…
+#> 5 Human rights                                      human-r…
+#> 6 Human rights vs. GDP per capita                   human-r…
+#> 7 Number of cases of killed human rights defenders… cases-o…
+#> 8 Share of countries with accredited independent n… share-c…
 ```
 
 Let’s use the human rights protection dataset.
@@ -509,7 +519,7 @@ rights
 #>  8 Afghanistan AFG    1953                     1.18 
 #>  9 Afghanistan AFG    1954                     1.22 
 #> 10 Afghanistan AFG    1955                     1.22 
-#> # … with 11,263 more rows
+#> # ℹ 11,263 more rows
 ```
 
 ggplot2 makes it easy to visualise our data.
@@ -533,16 +543,15 @@ rights %>%
 ```r
 owid_search("internet") %>% as_tibble()
 #> # A tibble: 7 × 2
-#>   titles                                             chart…¹
-#>   <chr>                                              <chr>  
-#> 1 Share of schools with access to the Internet for … school…
-#> 2 Daily time spent on the Internet by young people   daily-…
-#> 3 Landline Internet subscriptions                    landli…
-#> 4 Landline Internet subscriptions per 100 people     broadb…
-#> 5 Number of people using the Internet                number…
-#> 6 Share of US adults who use the Internet, by age    share-…
-#> 7 Share of the population using the Internet         share-…
-#> # … with abbreviated variable name ¹​chart_id
+#>   titles                                            chart_id
+#>   <chr>                                             <chr>   
+#> 1 Share of primary schools with access to the Inte… primary…
+#> 2 Landline Internet subscriptions                   landlin…
+#> 3 Landline Internet subscriptions by download speed landlin…
+#> 4 Landline Internet subscriptions per 100 people    broadba…
+#> 5 Number of people using the Internet               number-…
+#> 6 Share of US adults who use the Internet, by age   share-u…
+#> 7 Share of the population using the Internet        share-o…
 ```
 
 Get a dataset used in an OWID chart.
@@ -556,7 +565,7 @@ owid("share-of-individuals-using-the-internet") %>% top_n(1)
 #>   entity               code   year Individuals using the I…¹
 #>   <chr>                <chr> <int>                     <dbl>
 #> 1 United Arab Emirates ARE    2020                       100
-#> # … with abbreviated variable name
+#> # ℹ abbreviated name:
 #> #   ¹​`Individuals using the Internet (% of population)`
 ```
 
@@ -577,7 +586,7 @@ internet
 #>  8 Afghanistan AFG    2002      0.00456
 #>  9 Afghanistan AFG    2003      0.0879 
 #> 10 Afghanistan AFG    2004      0.106  
-#> # … with 6,650 more rows
+#> # ℹ 6,650 more rows
 ```
 
 Get source information on an OWID dataset
@@ -643,11 +652,17 @@ owid_map(internet, year = 2017) +
   labs(title = "Share of Population Using the Internet, 2017")
 #> Warning: `owid_map()` was deprecated in owidR 1.4.0.
 #> ℹ Please use `ggplot2::ggplot()` instead.
+#> This warning is displayed once every 8 hours.
+#> Call `lifecycle::last_lifecycle_warnings()` to see where
+#> this warning was generated.
 #> Warning: `theme_owid()` was deprecated in owidR 1.4.0.
 #> ℹ Please use `ggplot2::theme()` instead.
 #> ℹ The deprecated feature was likely used in the owidR
 #>   package.
 #>   Please report the issue to the authors.
+#> This warning is displayed once every 8 hours.
+#> Call `lifecycle::last_lifecycle_warnings()` to see where
+#> this warning was generated.
 #> Loading required namespace: showtext
 ```
 
@@ -658,7 +673,7 @@ owid_map(internet, year = 2017) +
 
 ```r
 owid_search("democrac") %>% as_tibble()
-#> # A tibble: 106 × 2
+#> # A tibble: 91 × 2
 #>    titles                                           chart_id
 #>    <chr>                                            <chr>   
 #>  1 Child mortality rate vs. electoral democracy     child-m…
@@ -671,7 +686,7 @@ owid_search("democrac") %>% as_tibble()
 #>  8 Age of liberal democracy                         age-of-…
 #>  9 Citizen satisfaction with democracy              citizen…
 #> 10 Citizen support for democracy                    citizen…
-#> # … with 96 more rows
+#> # ℹ 81 more rows
 ```
 
 
@@ -679,13 +694,13 @@ owid_search("democrac") %>% as_tibble()
 owid("electoral-democracy") %>% top_n(1)
 #> Selecting by electdem_vdem_low_owid
 #> # A tibble: 3 × 6
-#>   entity  code   year `Electoral democracy` electd…¹ elect…²
-#>   <chr>   <chr> <int>                 <dbl>    <dbl>   <dbl>
-#> 1 Denmark DNK    2008                 0.922    0.959     0.9
-#> 2 Denmark DNK    2009                 0.922    0.959     0.9
-#> 3 Denmark DNK    2010                 0.922    0.959     0.9
-#> # … with abbreviated variable names
-#> #   ¹​electdem_vdem_high_owid, ²​electdem_vdem_low_owid
+#>   entity  code   year `Electoral democracy`
+#>   <chr>   <chr> <int>                 <dbl>
+#> 1 Denmark DNK    2008                 0.922
+#> 2 Denmark DNK    2009                 0.922
+#> 3 Denmark DNK    2010                 0.922
+#> # ℹ 2 more variables: electdem_vdem_high_owid <dbl>,
+#> #   electdem_vdem_low_owid <dbl>
 ```
 
 
@@ -693,20 +708,19 @@ owid("electoral-democracy") %>% top_n(1)
 democracy <- owid("electoral-democracy", rename = c("electoral_democracy", "vdem_high", "vdem_low"))
 democracy
 #> # A tibble: 32,518 × 6
-#>    entity      code   year electoral_democ…¹ vdem_…² vdem_…³
-#>  * <chr>       <chr> <int>             <dbl>   <dbl>   <dbl>
-#>  1 Afghanistan AFG    1789             0.019   0.024    0.01
-#>  2 Afghanistan AFG    1790             0.019   0.024    0.01
-#>  3 Afghanistan AFG    1791             0.019   0.024    0.01
-#>  4 Afghanistan AFG    1792             0.019   0.024    0.01
-#>  5 Afghanistan AFG    1793             0.019   0.024    0.01
-#>  6 Afghanistan AFG    1794             0.019   0.024    0.01
-#>  7 Afghanistan AFG    1795             0.019   0.024    0.01
-#>  8 Afghanistan AFG    1796             0.019   0.024    0.01
-#>  9 Afghanistan AFG    1797             0.019   0.024    0.01
-#> 10 Afghanistan AFG    1798             0.019   0.024    0.01
-#> # … with 32,508 more rows, and abbreviated variable names
-#> #   ¹​electoral_democracy, ²​vdem_high, ³​vdem_low
+#>    entity code   year electoral_democracy vdem_high vdem_low
+#>  * <chr>  <chr> <int>               <dbl>     <dbl>    <dbl>
+#>  1 Afgha… AFG    1789               0.019     0.024     0.01
+#>  2 Afgha… AFG    1790               0.019     0.024     0.01
+#>  3 Afgha… AFG    1791               0.019     0.024     0.01
+#>  4 Afgha… AFG    1792               0.019     0.024     0.01
+#>  5 Afgha… AFG    1793               0.019     0.024     0.01
+#>  6 Afgha… AFG    1794               0.019     0.024     0.01
+#>  7 Afgha… AFG    1795               0.019     0.024     0.01
+#>  8 Afgha… AFG    1796               0.019     0.024     0.01
+#>  9 Afgha… AFG    1797               0.019     0.024     0.01
+#> 10 Afgha… AFG    1798               0.019     0.024     0.01
+#> # ℹ 32,508 more rows
 ```
 
 

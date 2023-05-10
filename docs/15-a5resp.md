@@ -40,14 +40,16 @@ Sys.setenv(LANG = "en")
 
 ```r
 library(tidyverse)
-#> ── Attaching packages ─────────────────── tidyverse 1.3.2 ──
-#> ✔ ggplot2 3.4.1     ✔ purrr   1.0.1
-#> ✔ tibble  3.1.8     ✔ dplyr   1.1.0
-#> ✔ tidyr   1.3.0     ✔ stringr 1.5.0
-#> ✔ readr   2.1.4     ✔ forcats 1.0.0
+#> ── Attaching core tidyverse packages ──── tidyverse 2.0.0 ──
+#> ✔ dplyr     1.1.2     ✔ readr     2.1.4
+#> ✔ forcats   1.0.0     ✔ stringr   1.5.0
+#> ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+#> ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+#> ✔ purrr     1.0.1     
 #> ── Conflicts ────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
+#> ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 library(readxl) # for excel files
 library(WDI)
 ```
@@ -140,16 +142,16 @@ df1 <- WDI(country = G7,
            extra=TRUE, cache=wdi_cache)
 df1 %>% slice(1:10)  # for R Notebook use this line, for PDF delete by adding #
 #>    country iso2c iso3c year status lastupdated parl gini
-#> 1   Canada    CA   CAN 1960         2023-03-01   NA   NA
-#> 2   Canada    CA   CAN 1961         2023-03-01   NA   NA
-#> 3   Canada    CA   CAN 1962         2023-03-01   NA   NA
-#> 4   Canada    CA   CAN 1963         2023-03-01   NA   NA
-#> 5   Canada    CA   CAN 1964         2023-03-01   NA   NA
-#> 6   Canada    CA   CAN 1965         2023-03-01   NA   NA
-#> 7   Canada    CA   CAN 1966         2023-03-01   NA   NA
-#> 8   Canada    CA   CAN 1967         2023-03-01   NA   NA
-#> 9   Canada    CA   CAN 1968         2023-03-01   NA   NA
-#> 10  Canada    CA   CAN 1969         2023-03-01   NA   NA
+#> 1   Canada    CA   CAN 1960         2023-03-30   NA   NA
+#> 2   Canada    CA   CAN 1961         2023-03-30   NA   NA
+#> 3   Canada    CA   CAN 1962         2023-03-30   NA   NA
+#> 4   Canada    CA   CAN 1963         2023-03-30   NA   NA
+#> 5   Canada    CA   CAN 1964         2023-03-30   NA   NA
+#> 6   Canada    CA   CAN 1965         2023-03-30   NA   NA
+#> 7   Canada    CA   CAN 1966         2023-03-30   NA   NA
+#> 8   Canada    CA   CAN 1967         2023-03-30   NA   NA
+#> 9   Canada    CA   CAN 1968         2023-03-30   NA   NA
+#> 10  Canada    CA   CAN 1969         2023-03-30   NA   NA
 #>           region capital longitude latitude      income
 #> 1  North America  Ottawa  -75.6919  45.4215 High income
 #> 2  North America  Ottawa  -75.6919  45.4215 High income
@@ -503,16 +505,16 @@ wdi_cache$series %>% filter(indicator == "AG.LND.FRST.K2")
 df2 <- WDI(country = "all", indicator = c(area = "AG.LND.FRST.K2"), extra = TRUE, cache = wdi_cache) 
 df2 %>% slice(1:10)
 #>        country iso2c iso3c year    area status lastupdated
-#> 1  Afghanistan    AF   AFG 2021      NA         2023-03-01
-#> 2  Afghanistan    AF   AFG 2020 12084.4         2023-03-01
-#> 3  Afghanistan    AF   AFG 2019 12084.4         2023-03-01
-#> 4  Afghanistan    AF   AFG 2018 12084.4         2023-03-01
-#> 5  Afghanistan    AF   AFG 2017 12084.4         2023-03-01
-#> 6  Afghanistan    AF   AFG 2016 12084.4         2023-03-01
-#> 7  Afghanistan    AF   AFG 2015 12084.4         2023-03-01
-#> 8  Afghanistan    AF   AFG 2014 12084.4         2023-03-01
-#> 9  Afghanistan    AF   AFG 2013 12084.4         2023-03-01
-#> 10 Afghanistan    AF   AFG 2012 12084.4         2023-03-01
+#> 1  Afghanistan    AF   AFG 2022      NA         2023-03-30
+#> 2  Afghanistan    AF   AFG 2021      NA         2023-03-30
+#> 3  Afghanistan    AF   AFG 2020 12084.4         2023-03-30
+#> 4  Afghanistan    AF   AFG 2019 12084.4         2023-03-30
+#> 5  Afghanistan    AF   AFG 2018 12084.4         2023-03-30
+#> 6  Afghanistan    AF   AFG 2017 12084.4         2023-03-30
+#> 7  Afghanistan    AF   AFG 2016 12084.4         2023-03-30
+#> 8  Afghanistan    AF   AFG 2015 12084.4         2023-03-30
+#> 9  Afghanistan    AF   AFG 2014 12084.4         2023-03-30
+#> 10 Afghanistan    AF   AFG 2013 12084.4         2023-03-30
 #>        region capital longitude latitude     income lending
 #> 1  South Asia   Kabul   69.1761  34.5228 Low income     IDA
 #> 2  South Asia   Kabul   69.1761  34.5228 Low income     IDA
@@ -531,13 +533,13 @@ df2 %>% slice(1:10)
 
 ```r
 df1_wona <- df1 %>% drop_na(); nrow(df1_wona)
-#> [1] 114
+#> [1] 138
 ```
 
 
 ```r
 df2_wona <- df2 %>% drop_na(); nrow(df2_wona)
-#> [1] 7723
+#> [1] 7748
 ```
 
 2. Drop data only a specified indicator.
@@ -545,25 +547,25 @@ df2_wona <- df2 %>% drop_na(); nrow(df2_wona)
 
 ```r
 df1_wona_parl <- df1 %>% drop_na(parl); nrow(df1_wona_parl)
-#> [1] 173
+#> [1] 180
 ```
 
 
 ```r
 df1_wona_gini <- df1 %>% drop_na(gini); nrow(df1_wona_gini)
-#> [1] 155
+#> [1] 213
 ```
 
 
 ```r
 df1_wona_parl_gini <- df1 %>% drop_na(parl, gini); nrow(df1_wona_parl_gini)
-#> [1] 114
+#> [1] 138
 ```
 
 
 ```r
 df2_wona_area <- df2 %>% drop_na(area); nrow(df2_wona_area)
-#> [1] 7909
+#> [1] 7934
 ```
 
 Can you see why the number above is larger than the row number of `df2_wona`? Since there are many column imported using `extra=TRUE`, there may be NA values in the othre columns. 
@@ -580,11 +582,12 @@ df1 %>% drop_na(parl, gini) %>%
   group_by(year) %>% summarize(n = n()) %>% 
   arrange(desc(n), desc(year)) %>% top_n(1)
 #> Selecting by n
-#> # A tibble: 2 × 2
+#> # A tibble: 3 × 2
 #>    year     n
 #>   <int> <int>
 #> 1  2013     7
 #> 2  2010     7
+#> 3  2008     7
 ```
 
 4. Compare the following charts. In the second chart, we can get rid of the warnings. You can simply remove the warning by adding a chunk optiion `warning=FALSE` by {r warning=FALSE} or choosing an option using the gear mark.
@@ -592,7 +595,7 @@ df1 %>% drop_na(parl, gini) %>%
 
 ```r
 df1 %>% ggplot(aes(x = year, y = gini, col = country)) + geom_line()
-#> Warning: Removed 184 rows containing missing values
+#> Warning: Removed 172 rows containing missing values
 #> (`geom_line()`).
 ```
 
@@ -768,12 +771,11 @@ It produces the latter half of the model summary. The fist is the R squared foll
 ```r
 mod %>% glance()
 #> # A tibble: 1 × 12
-#>   r.squared adj.r…¹ sigma stati…² p.value    df logLik   AIC
-#>       <dbl>   <dbl> <dbl>   <dbl>   <dbl> <dbl>  <dbl> <dbl>
-#> 1    0.0138 0.00716 0.825    2.07   0.152     1  -183.  372.
-#> # … with 4 more variables: BIC <dbl>, deviance <dbl>,
-#> #   df.residual <int>, nobs <int>, and abbreviated variable
-#> #   names ¹​adj.r.squared, ²​statistic
+#>   r.squared adj.r.squared sigma statistic p.value    df
+#>       <dbl>         <dbl> <dbl>     <dbl>   <dbl> <dbl>
+#> 1    0.0138       0.00716 0.825      2.07   0.152     1
+#> # ℹ 6 more variables: logLik <dbl>, AIC <dbl>, BIC <dbl>,
+#> #   deviance <dbl>, df.residual <int>, nobs <int>
 ```
 
 #### `augment`
@@ -788,21 +790,20 @@ $$.fitted = y-intercept + slope \cdot x.$$
 ```r
 mod %>% augment() %>% arrange(Sepal.Width)
 #> # A tibble: 150 × 8
-#>    Sepal.Len…¹ Sepal…² .fitted  .resid   .hat .sigma .cooksd
-#>          <dbl>   <dbl>   <dbl>   <dbl>  <dbl>  <dbl>   <dbl>
-#>  1         5       2      6.08 -1.08   0.0462  0.823 4.34e-2
-#>  2         6       2.2    6.03 -0.0348 0.0326  0.828 3.11e-5
-#>  3         6.2     2.2    6.03  0.165  0.0326  0.828 6.99e-4
-#>  4         6       2.2    6.03 -0.0348 0.0326  0.828 3.11e-5
-#>  5         4.5     2.3    6.01 -1.51   0.0269  0.818 4.78e-2
-#>  6         5.5     2.3    6.01 -0.512  0.0269  0.827 5.49e-3
-#>  7         6.3     2.3    6.01  0.288  0.0269  0.828 1.73e-3
-#>  8         5       2.3    6.01 -1.01   0.0269  0.824 2.14e-2
-#>  9         4.9     2.4    5.99 -1.09   0.0219  0.823 2.00e-2
-#> 10         5.5     2.4    5.99 -0.490  0.0219  0.827 4.05e-3
-#> # … with 140 more rows, 1 more variable: .std.resid <dbl>,
-#> #   and abbreviated variable names ¹​Sepal.Length,
-#> #   ²​Sepal.Width
+#>    Sepal.Length Sepal.Width .fitted  .resid   .hat .sigma
+#>           <dbl>       <dbl>   <dbl>   <dbl>  <dbl>  <dbl>
+#>  1          5           2      6.08 -1.08   0.0462  0.823
+#>  2          6           2.2    6.03 -0.0348 0.0326  0.828
+#>  3          6.2         2.2    6.03  0.165  0.0326  0.828
+#>  4          6           2.2    6.03 -0.0348 0.0326  0.828
+#>  5          4.5         2.3    6.01 -1.51   0.0269  0.818
+#>  6          5.5         2.3    6.01 -0.512  0.0269  0.827
+#>  7          6.3         2.3    6.01  0.288  0.0269  0.828
+#>  8          5           2.3    6.01 -1.01   0.0269  0.824
+#>  9          4.9         2.4    5.99 -1.09   0.0219  0.823
+#> 10          5.5         2.4    5.99 -0.490  0.0219  0.827
+#> # ℹ 140 more rows
+#> # ℹ 2 more variables: .cooksd <dbl>, .std.resid <dbl>
 ```
 
 Hence, the following two charts are the same.

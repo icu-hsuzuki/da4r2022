@@ -6,14 +6,16 @@ We use `HistData` Package. See https://CRAN.R-project.org/package=HistData.
 
 ```r
 library(tidyverse)
-#> ── Attaching packages ─────────────────── tidyverse 1.3.2 ──
-#> ✔ ggplot2 3.4.1     ✔ purrr   1.0.1
-#> ✔ tibble  3.1.8     ✔ dplyr   1.1.0
-#> ✔ tidyr   1.3.0     ✔ stringr 1.5.0
-#> ✔ readr   2.1.4     ✔ forcats 1.0.0
+#> ── Attaching core tidyverse packages ──── tidyverse 2.0.0 ──
+#> ✔ dplyr     1.1.2     ✔ readr     2.1.4
+#> ✔ forcats   1.0.0     ✔ stringr   1.5.0
+#> ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+#> ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+#> ✔ purrr     1.0.1     
 #> ── Conflicts ────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
+#> ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 library(HistData)
 ```
 
@@ -241,7 +243,7 @@ df_fn
 #>  8 1854-06-01 Wounds_Rate     0  
 #>  9 1854-06-01 Other_Rate      2.5
 #> 10 1854-07-01 Disease_Rate  150  
-#> # … with 62 more rows
+#> # ℹ 62 more rows
 ```
 
 
@@ -394,21 +396,20 @@ In addition to the question of the relation between heights of parents and their
 gf <- as_tibble(GaltonFamilies)
 gf
 #> # A tibble: 934 × 8
-#>    family father mother midparentHe…¹ child…² child…³ gender
-#>    <fct>   <dbl>  <dbl>         <dbl>   <int>   <int> <fct> 
-#>  1 001      78.5   67            75.4       4       1 male  
-#>  2 001      78.5   67            75.4       4       2 female
-#>  3 001      78.5   67            75.4       4       3 female
-#>  4 001      78.5   67            75.4       4       4 female
-#>  5 002      75.5   66.5          73.7       4       1 male  
-#>  6 002      75.5   66.5          73.7       4       2 male  
-#>  7 002      75.5   66.5          73.7       4       3 female
-#>  8 002      75.5   66.5          73.7       4       4 female
-#>  9 003      75     64            72.1       2       1 male  
-#> 10 003      75     64            72.1       2       2 female
-#> # … with 924 more rows, 1 more variable: childHeight <dbl>,
-#> #   and abbreviated variable names ¹​midparentHeight,
-#> #   ²​children, ³​childNum
+#>    family father mother midparentHeight children childNum
+#>    <fct>   <dbl>  <dbl>           <dbl>    <int>    <int>
+#>  1 001      78.5   67              75.4        4        1
+#>  2 001      78.5   67              75.4        4        2
+#>  3 001      78.5   67              75.4        4        3
+#>  4 001      78.5   67              75.4        4        4
+#>  5 002      75.5   66.5            73.7        4        1
+#>  6 002      75.5   66.5            73.7        4        2
+#>  7 002      75.5   66.5            73.7        4        3
+#>  8 002      75.5   66.5            73.7        4        4
+#>  9 003      75     64              72.1        2        1
+#> 10 003      75     64              72.1        2        2
+#> # ℹ 924 more rows
+#> # ℹ 2 more variables: gender <fct>, childHeight <dbl>
 ```
 
 

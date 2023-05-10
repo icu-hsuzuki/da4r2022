@@ -5,14 +5,16 @@
 
 ```r
 library(tidyverse)
-#> ── Attaching packages ─────────────────── tidyverse 1.3.2 ──
-#> ✔ ggplot2 3.4.1     ✔ purrr   1.0.1
-#> ✔ tibble  3.1.8     ✔ dplyr   1.1.0
-#> ✔ tidyr   1.3.0     ✔ stringr 1.5.0
-#> ✔ readr   2.1.4     ✔ forcats 1.0.0
+#> ── Attaching core tidyverse packages ──── tidyverse 2.0.0 ──
+#> ✔ dplyr     1.1.2     ✔ readr     2.1.4
+#> ✔ forcats   1.0.0     ✔ stringr   1.5.0
+#> ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+#> ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+#> ✔ purrr     1.0.1     
 #> ── Conflicts ────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
+#> ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 library(WDI)
 library(readxl)
 ```
@@ -208,25 +210,25 @@ EDA is an important part of any data analysis. You can use EDA to make discoveri
 df_f8 <- read_excel("./data/WIR2022s.xlsx", sheet = "data-F8")
 df_f8
 #> # A tibble: 51 × 17
-#>     year Germany German…¹ Spain Spain…² France Franc…³    UK
-#>    <dbl>   <dbl>    <dbl> <dbl>   <dbl>  <dbl>   <dbl> <dbl>
-#>  1  1970   1.11      2.30 0.604    4.06  0.422    3.12 0.601
-#>  2  1971   1.12      2.25 0.657    4.53  0.443    3.06 0.689
-#>  3  1972   1.11      2.27 0.624    4.36  0.467    3.08 0.790
-#>  4  1973   1.11      2.23 0.596    4.46  0.478    3.06 0.929
-#>  5  1974   1.13      2.25 0.586    4.64  0.498    3.03 1.09 
-#>  6  1975   1.12      2.35 0.602    4.83  0.545    3.12 1.00 
-#>  7  1976   1.03      2.34 0.581    4.46  0.561    3.08 0.918
-#>  8  1977   1.01      2.42 0.586    4.10  0.567    3.10 0.867
-#>  9  1978   0.990     2.52 0.604    4.10  0.580    3.20 0.881
-#> 10  1979   0.989     2.55 0.621    4.20  0.624    3.30 0.955
-#> # … with 41 more rows, 9 more variables:
+#>     year Germany `Germany (private)` Spain `Spain (private)`
+#>    <dbl>   <dbl>               <dbl> <dbl>             <dbl>
+#>  1  1970   1.11                 2.30 0.604              4.06
+#>  2  1971   1.12                 2.25 0.657              4.53
+#>  3  1972   1.11                 2.27 0.624              4.36
+#>  4  1973   1.11                 2.23 0.596              4.46
+#>  5  1974   1.13                 2.25 0.586              4.64
+#>  6  1975   1.12                 2.35 0.602              4.83
+#>  7  1976   1.03                 2.34 0.581              4.46
+#>  8  1977   1.01                 2.42 0.586              4.10
+#>  9  1978   0.990                2.52 0.604              4.10
+#> 10  1979   0.989                2.55 0.621              4.20
+#> # ℹ 41 more rows
+#> # ℹ 12 more variables: France <dbl>,
+#> #   `France (private)` <dbl>, UK <dbl>,
 #> #   `UK (private)` <dbl>, Japan <dbl>,
 #> #   `Japan (private)` <dbl>, Norway <dbl>,
 #> #   `Norway (private)` <dbl>, USA <dbl>,
-#> #   `USA (private)` <dbl>, gwealAVGRICH <dbl>,
-#> #   pwealAVGRICH <dbl>, and abbreviated variable names
-#> #   ¹​`Germany (private)`, ²​`Spain (private)`, …
+#> #   `USA (private)` <dbl>, gwealAVGRICH <dbl>, …
 ```
 
 

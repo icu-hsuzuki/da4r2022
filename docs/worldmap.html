@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>C World Map | Data Analysis for Researchers AY2022</title>
+<meta name="author" content="Hiroshi Suzuki">
+<meta name="description" content="In this chapter, we study the topic of drawing world maps using ggplot2. Using a map data in data.frame to apply geom_map or geom_polygon is possible. However, recently, we can obtain a map data...">
+<meta name="generator" content="bookdown 0.33 with bs4_book()">
+<meta property="og:title" content="C World Map | Data Analysis for Researchers AY2022">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/worldmap.html">
+<meta property="og:description" content="In this chapter, we study the topic of drawing world maps using ggplot2. Using a map data in data.frame to apply geom_map or geom_polygon is possible. However, recently, we can obtain a map data...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C World Map | Data Analysis for Researchers AY2022">
+<meta name="twitter:description" content="In this chapter, we study the topic of drawing world maps using ggplot2. Using a map data in data.frame to apply geom_map or geom_polygon is possible. However, recently, we can obtain a map data...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.27/datatables.js"></script><link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Data Analysis for Researchers AY2022</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">About</a></li>
+<li class="book-part">PART I. INTRODUCTION</li>
+<li><a class="" href="intro.html"><span class="header-section-number">1</span> About the Course</a></li>
+<li><a class="" href="randrstudio.html"><span class="header-section-number">2</span> R and R Studio</a></li>
+<li><a class="" href="tidyverse.html"><span class="header-section-number">3</span> tidyverse</a></li>
+<li><a class="" href="rmarkdown.html"><span class="header-section-number">4</span> R Markdown</a></li>
+<li><a class="" href="dplyr.html"><span class="header-section-number">5</span> dplyr</a></li>
+<li><a class="" href="a2resp.html"><span class="header-section-number">6</span> Assignment Two</a></li>
+<li><a class="" href="wdidata.html"><span class="header-section-number">7</span> WDI</a></li>
+<li><a class="" href="ggplot2.html"><span class="header-section-number">8</span> ggplot2</a></li>
+<li><a class="" href="a3resp.html"><span class="header-section-number">9</span> Assignment Three</a></li>
+<li><a class="" href="tidy.html"><span class="header-section-number">10</span> tidyr</a></li>
+<li><a class="" href="workflow.html"><span class="header-section-number">11</span> Workflow</a></li>
+<li><a class="" href="a4resp.html"><span class="header-section-number">12</span> Assignment Four</a></li>
+<li><a class="" href="model.html"><span class="header-section-number">13</span> Linear Model</a></li>
+<li><a class="" href="roundups.html"><span class="header-section-number">14</span> Roudups</a></li>
+<li><a class="" href="a5resp.html"><span class="header-section-number">15</span> Assignment Five</a></li>
+<li><a class="" href="final.html"><span class="header-section-number">16</span> Presentation and Paper</a></li>
+<li class="book-part">PART II EDA BASICS</li>
+<li><a class="" href="eda.html"><span class="header-section-number">17</span> Exploratory Data analysis</a></li>
+<li><a class="" href="importing.html"><span class="header-section-number">18</span> Importing</a></li>
+<li><a class="" href="transforming.html"><span class="header-section-number">19</span> Transforming</a></li>
+<li><a class="" href="tidying.html"><span class="header-section-number">20</span> Tidying</a></li>
+<li><a class="" href="visualizing.html"><span class="header-section-number">21</span> Visualizing</a></li>
+<li><a class="" href="modeling.html"><span class="header-section-number">22</span> Modeling</a></li>
+<li><a class="" href="communicating.html"><span class="header-section-number">23</span> Communicating</a></li>
+<li class="book-part">PART III OPEN PUBLIC DATA</li>
+<li><a class="" href="worldbank.html"><span class="header-section-number">24</span> World Bank</a></li>
+<li><a class="" href="owid.html"><span class="header-section-number">25</span> Our World in Data</a></li>
+<li><a class="" href="oecd.html"><span class="header-section-number">26</span> OECD</a></li>
+<li><a class="" href="undata.html"><span class="header-section-number">27</span> UN Data</a></li>
+<li><a class="" href="wir.html"><span class="header-section-number">28</span> World Inequality Report</a></li>
+<li class="book-part">APPENDIX</li>
+<li><a class="" href="histdata.html"><span class="header-section-number">A</span> HistData</a></li>
+<li><a class="" href="covid19.html"><span class="header-section-number">B</span> Covid 19</a></li>
+<li><a class="active" href="worldmap.html"><span class="header-section-number">C</span> World Map</a></li>
+<li><a class="" href="bookdown.html"><span class="header-section-number">D</span> Bookdown</a></li>
+<li><a class="" href="template.html"><span class="header-section-number">E</span> Template</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/icu-hsuzuki/da4r2022">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="worldmap" class="section level1" number="31">
+<h1>
+<span class="header-section-number">C</span> World Map<a class="anchor" aria-label="anchor" href="#worldmap"><i class="fas fa-link"></i></a>
+</h1>
+<p>In this chapter, we study the topic of drawing world maps using <code>ggplot2</code>.</p>
+<p>Using a map data in <code>data.frame</code> to apply <code>geom_map</code> or <code>geom_polygon</code> is possible. However, recently, we can obtain a map data in <code>simple feature (sf)</code> format, ad <code>ggplot2</code> includes a special geom called <code>geom_sf</code> to draw more complex data.</p>
+<div id="setup-6" class="section level2" number="31.1">
+<h2>
+<span class="header-section-number">C.1</span> Setup<a class="anchor" aria-label="anchor" href="#setup-6"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb719"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; ── Attaching core tidyverse packages ──── tidyverse 2.0.0 ──</span></span>
+<span><span class="co">#&gt; ✔ dplyr     1.1.2     ✔ readr     2.1.4</span></span>
+<span><span class="co">#&gt; ✔ forcats   1.0.0     ✔ stringr   1.5.0</span></span>
+<span><span class="co">#&gt; ✔ ggplot2   3.4.2     ✔ tibble    3.2.1</span></span>
+<span><span class="co">#&gt; ✔ lubridate 1.9.2     ✔ tidyr     1.3.0</span></span>
+<span><span class="co">#&gt; ✔ purrr     1.0.1     </span></span>
+<span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
+<span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
+<span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span>
+<span><span class="co">#&gt; ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/">sf</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2()</span></span>
+<span><span class="co">#&gt; is TRUE</span></span></code></pre></div>
+<p>We will use <code>income</code> level data with the iso2c code of each country obtained using <code><a href="https://vincentarelbundock.github.io/WDI/reference/WDIcache.html">WDIcache()</a></code>.</p>
+<div class="sourceCode" id="cb720"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_rds.html">read_rds</a></span><span class="op">(</span><span class="st">"./data/wdi_cache.RData"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb721"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Rows: 299</span></span>
+<span><span class="co">#&gt; Columns: 9</span></span>
+<span><span class="co">#&gt; $ iso3c     &lt;chr&gt; "ABW", "AFE", "AFG", "AFR", "AFW", "AGO"…</span></span>
+<span><span class="co">#&gt; $ iso2c     &lt;chr&gt; "AW", "ZH", "AF", "A9", "ZI", "AO", "AL"…</span></span>
+<span><span class="co">#&gt; $ country   &lt;chr&gt; "Aruba", "Africa Eastern and Southern", …</span></span>
+<span><span class="co">#&gt; $ region    &lt;chr&gt; "Latin America &amp; Caribbean", "Aggregates…</span></span>
+<span><span class="co">#&gt; $ capital   &lt;chr&gt; "Oranjestad", "", "Kabul", "", "", "Luan…</span></span>
+<span><span class="co">#&gt; $ longitude &lt;chr&gt; "-70.0167", "", "69.1761", "", "", "13.2…</span></span>
+<span><span class="co">#&gt; $ latitude  &lt;chr&gt; "12.5167", "", "34.5228", "", "", "-8.81…</span></span>
+<span><span class="co">#&gt; $ income    &lt;chr&gt; "High income", "Aggregates", "Low income…</span></span>
+<span><span class="co">#&gt; $ lending   &lt;chr&gt; "Not classified", "Aggregates", "IDA", "…</span></span></code></pre></div>
+<div class="sourceCode" id="cb722"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wdi_income</span> <span class="op">&lt;-</span> <span class="va">wdi_cache</span><span class="op">$</span><span class="va">country</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">region</span> <span class="op">!=</span> <span class="st">"Aggregates"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">iso2c</span>, <span class="va">income</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">iso2c</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>income <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">income</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"High income"</span>, <span class="st">"Upper middle income"</span>, <span class="st">"Lower middle income"</span>, <span class="st">"Low income"</span>, <span class="st">"Not classified"</span>, <span class="cn">NA</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> </span>
+<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">wdi_income</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Rows: 218</span></span>
+<span><span class="co">#&gt; Columns: 2</span></span>
+<span><span class="co">#&gt; $ iso2c  &lt;chr&gt; "AW", "AF", "AO", "AL", "AD", "AE", "AR", "…</span></span>
+<span><span class="co">#&gt; $ income &lt;fct&gt; High income, Low income, Lower middle incom…</span></span></code></pre></div>
+<div id="geom_sf" class="section level3" number="31.1.1">
+<h3>
+<span class="header-section-number">C.1.1</span> <code>geom_sf</code><a class="anchor" aria-label="anchor" href="#geom_sf"><i class="fas fa-link"></i></a>
+</h3>
+<p>See also, <code>coord_sf</code>, <code>geom_sf_label</code>, <code>geom_sf_text</code>, <code>stat_sf</code>.</p>
+<blockquote>
+<p>This set of geom, stat, and coord are used to visualise simple feature (sf) objects. For simple plots, you will only need geom_sf() as it uses stat_sf() and adds coord_sf() for you. geom_sf() is an unusual geom because it will draw different geometric objects depending on what simple features are present in the data: you can get points, lines, or polygons. For text and labels, you can use geom_sf_text() and geom_sf_label().</p>
+</blockquote>
+<pre><code>geom_sf(
+  mapping = aes(),
+  data = NULL,
+  stat = "sf",
+  position = "identity",
+  na.rm = FALSE,
+  show.legend = NA,
+  inherit.aes = TRUE,
+  ...
+)</code></pre>
+</div>
+</div>
+<div id="natural-earth-data" class="section level2" number="31.2">
+<h2>
+<span class="header-section-number">C.2</span> Natural Earth Data<a class="anchor" aria-label="anchor" href="#natural-earth-data"><i class="fas fa-link"></i></a>
+</h2>
+<p><a href="https://www.naturalearthdata.com" class="uri">https://www.naturalearthdata.com</a></p>
+<p>Get natural earth world country polygons</p>
+<p>Manual: <a href="https://cran.r-project.org/web/packages/rnaturalearth/rnaturalearth.pdf" class="uri">https://cran.r-project.org/web/packages/rnaturalearth/rnaturalearth.pdf</a></p>
+<div id="ne_countries" class="section level3" number="31.2.1">
+<h3>
+<span class="header-section-number">C.2.1</span> <code>ne_countries</code><a class="anchor" aria-label="anchor" href="#ne_countries"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb724"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/rnaturalearth/">rnaturalearth</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ropenscilabs/rnaturalearthdata">rnaturalearthdata</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Attaching package: 'rnaturalearthdata'</span></span>
+<span><span class="co">#&gt; The following object is masked from 'package:rnaturalearth':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     countries110</span></span></code></pre></div>
+<pre><code>ne_countries(
+  scale = 110,
+  type = "countries",
+  continent = NULL,
+  country = NULL,
+  geounit = NULL,
+  sovereignty = NULL,
+  returnclass = c("sp", "sf")
+)</code></pre>
+<div id="arguments" class="section level4" number="31.2.1.1">
+<h4>
+<span class="header-section-number">C.2.1.1</span> Arguments<a class="anchor" aria-label="anchor" href="#arguments"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li>scale: scale of map to return, one of 110, 50, 10 or ‘small’, ‘medium’, ‘large’</li>
+<li>type: country type, one of ‘countries’, ‘map_units’, ‘sovereignty’, ‘tiny_countries’</li>
+<li>continent: a character vector of continent names to get countries from.</li>
+<li>country: a character vector of country names.</li>
+<li>geounit: a character vector of geounit names.</li>
+<li>sovereignty: a character vector of sovereignty names.</li>
+<li>returnclass: ‘sp’ default or ‘sf’ for Simple Features</li>
+</ul>
+</div>
+<div id="examples-2" class="section level4" number="31.2.1.2">
+<h4>
+<span class="header-section-number">C.2.1.2</span> Examples<a class="anchor" aria-label="anchor" href="#examples-2"><i class="fas fa-link"></i></a>
+</h4>
+<p>There are three scales. Add <code>returnclass = "sf"</code> as an option to obtain data in <code>sf</code> format.</p>
+<div class="sourceCode" id="cb726"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://docs.ropensci.org/rnaturalearth/reference/ne_countries.html">ne_countries</a></span><span class="op">(</span>scale <span class="op">=</span> <span class="st">"large"</span>, returnclass <span class="op">=</span> <span class="st">"sf"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="51-worldmap_files/figure-html/unnamed-chunk-6-1.png" width="672"></div>
+<div class="sourceCode" id="cb727"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://docs.ropensci.org/rnaturalearth/reference/ne_countries.html">ne_countries</a></span><span class="op">(</span>scale <span class="op">=</span> <span class="st">"small"</span>, returnclass <span class="op">=</span> <span class="st">"sf"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="51-worldmap_files/figure-html/unnamed-chunk-7-1.png" width="672"></div>
+<p>We will use ’medium` scale data in the following.</p>
+<div class="sourceCode" id="cb728"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ne_world</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://docs.ropensci.org/rnaturalearth/reference/ne_countries.html">ne_countries</a></span><span class="op">(</span>scale <span class="op">=</span> <span class="st">"medium"</span>, returnclass <span class="op">=</span> <span class="st">"sf"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb729"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">ne_world</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Rows: 241</span></span>
+<span><span class="co">#&gt; Columns: 64</span></span>
+<span><span class="co">#&gt; $ scalerank  &lt;int&gt; 3, 1, 1, 1, 1, 3, 3, 1, 1, 1, 3, 1, 5, …</span></span>
+<span><span class="co">#&gt; $ featurecla &lt;chr&gt; "Admin-0 country", "Admin-0 country", "…</span></span>
+<span><span class="co">#&gt; $ labelrank  &lt;dbl&gt; 5, 3, 3, 6, 6, 6, 6, 4, 2, 6, 4, 4, 5, …</span></span>
+<span><span class="co">#&gt; $ sovereignt &lt;chr&gt; "Netherlands", "Afghanistan", "Angola",…</span></span>
+<span><span class="co">#&gt; $ sov_a3     &lt;chr&gt; "NL1", "AFG", "AGO", "GB1", "ALB", "FI1…</span></span>
+<span><span class="co">#&gt; $ adm0_dif   &lt;dbl&gt; 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, …</span></span>
+<span><span class="co">#&gt; $ level      &lt;dbl&gt; 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, …</span></span>
+<span><span class="co">#&gt; $ type       &lt;chr&gt; "Country", "Sovereign country", "Sovere…</span></span>
+<span><span class="co">#&gt; $ admin      &lt;chr&gt; "Aruba", "Afghanistan", "Angola", "Angu…</span></span>
+<span><span class="co">#&gt; $ adm0_a3    &lt;chr&gt; "ABW", "AFG", "AGO", "AIA", "ALB", "ALD…</span></span>
+<span><span class="co">#&gt; $ geou_dif   &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span></span>
+<span><span class="co">#&gt; $ geounit    &lt;chr&gt; "Aruba", "Afghanistan", "Angola", "Angu…</span></span>
+<span><span class="co">#&gt; $ gu_a3      &lt;chr&gt; "ABW", "AFG", "AGO", "AIA", "ALB", "ALD…</span></span>
+<span><span class="co">#&gt; $ su_dif     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span></span>
+<span><span class="co">#&gt; $ subunit    &lt;chr&gt; "Aruba", "Afghanistan", "Angola", "Angu…</span></span>
+<span><span class="co">#&gt; $ su_a3      &lt;chr&gt; "ABW", "AFG", "AGO", "AIA", "ALB", "ALD…</span></span>
+<span><span class="co">#&gt; $ brk_diff   &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span></span>
+<span><span class="co">#&gt; $ name       &lt;chr&gt; "Aruba", "Afghanistan", "Angola", "Angu…</span></span>
+<span><span class="co">#&gt; $ name_long  &lt;chr&gt; "Aruba", "Afghanistan", "Angola", "Angu…</span></span>
+<span><span class="co">#&gt; $ brk_a3     &lt;chr&gt; "ABW", "AFG", "AGO", "AIA", "ALB", "ALD…</span></span>
+<span><span class="co">#&gt; $ brk_name   &lt;chr&gt; "Aruba", "Afghanistan", "Angola", "Angu…</span></span>
+<span><span class="co">#&gt; $ brk_group  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ abbrev     &lt;chr&gt; "Aruba", "Afg.", "Ang.", "Ang.", "Alb."…</span></span>
+<span><span class="co">#&gt; $ postal     &lt;chr&gt; "AW", "AF", "AO", "AI", "AL", "AI", "AN…</span></span>
+<span><span class="co">#&gt; $ formal_en  &lt;chr&gt; "Aruba", "Islamic State of Afghanistan"…</span></span>
+<span><span class="co">#&gt; $ formal_fr  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ note_adm0  &lt;chr&gt; "Neth.", NA, NA, "U.K.", NA, "Fin.", NA…</span></span>
+<span><span class="co">#&gt; $ note_brk   &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ name_sort  &lt;chr&gt; "Aruba", "Afghanistan", "Angola", "Angu…</span></span>
+<span><span class="co">#&gt; $ name_alt   &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ mapcolor7  &lt;dbl&gt; 4, 5, 3, 6, 1, 4, 1, 2, 3, 3, 4, 4, 1, …</span></span>
+<span><span class="co">#&gt; $ mapcolor8  &lt;dbl&gt; 2, 6, 2, 6, 4, 1, 4, 1, 1, 1, 5, 5, 2, …</span></span>
+<span><span class="co">#&gt; $ mapcolor9  &lt;dbl&gt; 2, 8, 6, 6, 1, 4, 1, 3, 3, 2, 1, 1, 2, …</span></span>
+<span><span class="co">#&gt; $ mapcolor13 &lt;dbl&gt; 9, 7, 1, 3, 6, 6, 8, 3, 13, 10, 1, NA, …</span></span>
+<span><span class="co">#&gt; $ pop_est    &lt;dbl&gt; 103065, 28400000, 12799293, 14436, 3639…</span></span>
+<span><span class="co">#&gt; $ gdp_md_est &lt;dbl&gt; 2258.0, 22270.0, 110300.0, 108.9, 21810…</span></span>
+<span><span class="co">#&gt; $ pop_year   &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ lastcensus &lt;dbl&gt; 2010, 1979, 1970, NA, 2001, NA, 1989, 2…</span></span>
+<span><span class="co">#&gt; $ gdp_year   &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ economy    &lt;chr&gt; "6. Developing region", "7. Least devel…</span></span>
+<span><span class="co">#&gt; $ income_grp &lt;chr&gt; "2. High income: nonOECD", "5. Low inco…</span></span>
+<span><span class="co">#&gt; $ wikipedia  &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ fips_10    &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ iso_a2     &lt;chr&gt; "AW", "AF", "AO", "AI", "AL", "AX", "AD…</span></span>
+<span><span class="co">#&gt; $ iso_a3     &lt;chr&gt; "ABW", "AFG", "AGO", "AIA", "ALB", "ALA…</span></span>
+<span><span class="co">#&gt; $ iso_n3     &lt;chr&gt; "533", "004", "024", "660", "008", "248…</span></span>
+<span><span class="co">#&gt; $ un_a3      &lt;chr&gt; "533", "004", "024", "660", "008", "248…</span></span>
+<span><span class="co">#&gt; $ wb_a2      &lt;chr&gt; "AW", "AF", "AO", NA, "AL", NA, "AD", "…</span></span>
+<span><span class="co">#&gt; $ wb_a3      &lt;chr&gt; "ABW", "AFG", "AGO", NA, "ALB", NA, "AD…</span></span>
+<span><span class="co">#&gt; $ woe_id     &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ adm0_a3_is &lt;chr&gt; "ABW", "AFG", "AGO", "AIA", "ALB", "ALA…</span></span>
+<span><span class="co">#&gt; $ adm0_a3_us &lt;chr&gt; "ABW", "AFG", "AGO", "AIA", "ALB", "ALD…</span></span>
+<span><span class="co">#&gt; $ adm0_a3_un &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ adm0_a3_wb &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ continent  &lt;chr&gt; "North America", "Asia", "Africa", "Nor…</span></span>
+<span><span class="co">#&gt; $ region_un  &lt;chr&gt; "Americas", "Asia", "Africa", "Americas…</span></span>
+<span><span class="co">#&gt; $ subregion  &lt;chr&gt; "Caribbean", "Southern Asia", "Middle A…</span></span>
+<span><span class="co">#&gt; $ region_wb  &lt;chr&gt; "Latin America &amp; Caribbean", "South Asi…</span></span>
+<span><span class="co">#&gt; $ name_len   &lt;dbl&gt; 5, 11, 6, 8, 7, 5, 7, 20, 9, 7, 14, 10,…</span></span>
+<span><span class="co">#&gt; $ long_len   &lt;dbl&gt; 5, 11, 6, 8, 7, 13, 7, 20, 9, 7, 14, 10…</span></span>
+<span><span class="co">#&gt; $ abbrev_len &lt;dbl&gt; 5, 4, 4, 4, 4, 5, 4, 6, 4, 4, 9, 4, 7, …</span></span>
+<span><span class="co">#&gt; $ tiny       &lt;dbl&gt; 4, NA, NA, NA, NA, 5, 5, NA, NA, NA, 3,…</span></span>
+<span><span class="co">#&gt; $ homepart   &lt;dbl&gt; NA, 1, 1, NA, 1, NA, 1, 1, 1, 1, NA, 1,…</span></span>
+<span><span class="co">#&gt; $ geometry   &lt;MULTIPOLYGON [°]&gt; MULTIPOLYGON (((-69.89912 …</span></span></code></pre></div>
+<p>The last column is the geometry which contains map data in multi-polygon format.</p>
+<div class="sourceCode" id="cb730"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ne_world</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="51-worldmap_files/figure-html/unnamed-chunk-10-1.png" width="672"></div>
+<p>This map data comes with various information.</p>
+<div class="sourceCode" id="cb731"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ne_world</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">income_grp</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure">
+<img src="51-worldmap_files/figure-html/unnamed-chunk-11-1.png" width="672">
+You can specify a ‘continent’, a ‘region_un’, a ‘subregion’ or ‘region_wb’.</div>
+<div class="sourceCode" id="cb732"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ne_world</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">continent</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "North America"           "Asia"                   </span></span>
+<span><span class="co">#&gt; [3] "Africa"                  "Europe"                 </span></span>
+<span><span class="co">#&gt; [5] "South America"           "Oceania"                </span></span>
+<span><span class="co">#&gt; [7] "Antarctica"              "Seven seas (open ocean)"</span></span></code></pre></div>
+<div class="sourceCode" id="cb733"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ne_world</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">region_un</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "Americas"                "Asia"                   </span></span>
+<span><span class="co">#&gt; [3] "Africa"                  "Europe"                 </span></span>
+<span><span class="co">#&gt; [5] "Oceania"                 "Antarctica"             </span></span>
+<span><span class="co">#&gt; [7] "Seven seas (open ocean)"</span></span></code></pre></div>
+<div class="sourceCode" id="cb734"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ne_world</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">subregion</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "Caribbean"                 "Southern Asia"            </span></span>
+<span><span class="co">#&gt;  [3] "Middle Africa"             "Southern Europe"          </span></span>
+<span><span class="co">#&gt;  [5] "Northern Europe"           "Western Asia"             </span></span>
+<span><span class="co">#&gt;  [7] "South America"             "Polynesia"                </span></span>
+<span><span class="co">#&gt;  [9] "Antarctica"                "Australia and New Zealand"</span></span>
+<span><span class="co">#&gt; [11] "Seven seas (open ocean)"   "Western Europe"           </span></span>
+<span><span class="co">#&gt; [13] "Eastern Africa"            "Western Africa"           </span></span>
+<span><span class="co">#&gt; [15] "Eastern Europe"            "Central America"          </span></span>
+<span><span class="co">#&gt; [17] "Northern America"          "South-Eastern Asia"       </span></span>
+<span><span class="co">#&gt; [19] "Southern Africa"           "Eastern Asia"             </span></span>
+<span><span class="co">#&gt; [21] "Northern Africa"           "Melanesia"                </span></span>
+<span><span class="co">#&gt; [23] "Micronesia"                "Central Asia"</span></span></code></pre></div>
+<div class="sourceCode" id="cb735"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ne_world</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">region_wb</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "Latin America &amp; Caribbean" </span></span>
+<span><span class="co">#&gt; [2] "South Asia"                </span></span>
+<span><span class="co">#&gt; [3] "Sub-Saharan Africa"        </span></span>
+<span><span class="co">#&gt; [4] "Europe &amp; Central Asia"     </span></span>
+<span><span class="co">#&gt; [5] "Middle East &amp; North Africa"</span></span>
+<span><span class="co">#&gt; [6] "East Asia &amp; Pacific"       </span></span>
+<span><span class="co">#&gt; [7] "Antarctica"                </span></span>
+<span><span class="co">#&gt; [8] "North America"</span></span></code></pre></div>
+<div class="sourceCode" id="cb736"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ne_world</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">subregion</span> <span class="op">==</span> <span class="st">"South-Eastern Asia"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">iso_a2</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="51-worldmap_files/figure-html/unnamed-chunk-16-1.png" width="672"></div>
+<div class="sourceCode" id="cb737"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ne_world</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">continent</span> <span class="op">==</span> <span class="st">'Africa'</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">subregion</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="51-worldmap_files/figure-html/unnamed-chunk-17-1.png" width="672"></div>
+</div>
+<div id="type-argument" class="section level4" number="31.2.1.3">
+<h4>
+<span class="header-section-number">C.2.1.3</span> <code>type</code> argument<a class="anchor" aria-label="anchor" href="#type-argument"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb738"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://docs.ropensci.org/rnaturalearth/reference/ne_countries.html">ne_countries</a></span><span class="op">(</span>type <span class="op">=</span> <span class="st">"countries"</span>, country <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Japan"</span>, <span class="st">"South Korea"</span>, <span class="st">"North Korea"</span>, <span class="st">"China"</span>, <span class="st">"Taiwan"</span>, <span class="st">"Mongolia"</span><span class="op">)</span>, scale <span class="op">=</span> <span class="st">"medium"</span>, returnclass <span class="op">=</span> <span class="st">"sf"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">economy</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="51-worldmap_files/figure-html/unnamed-chunk-18-1.png" width="672"></div>
+</div>
+</div>
+<div id="ne_states" class="section level3" number="31.2.2">
+<h3>
+<span class="header-section-number">C.2.2</span> <code>ne_states</code><a class="anchor" aria-label="anchor" href="#ne_states"><i class="fas fa-link"></i></a>
+</h3>
+<p>Get natural earth world state (admin level 1) polygons</p>
+<p><strong>Description</strong>: returns state polygons (administrative level 1) for specified countries</p>
+<div id="usage-1" class="section level4" number="31.2.2.1">
+<h4>
+<span class="header-section-number">C.2.2.1</span> Usage<a class="anchor" aria-label="anchor" href="#usage-1"><i class="fas fa-link"></i></a>
+</h4>
+<pre><code>ne_states(
+  country = NULL,
+  geounit = NULL,
+  iso_a2 = NULL,
+  spdf = NULL,
+  returnclass = c("sp", "sf")
+)</code></pre>
+</div>
+</div>
+<div id="arguments-1" class="section level3" number="31.2.3">
+<h3>
+<span class="header-section-number">C.2.3</span> Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>country: a character vector of country names.</p></li>
+<li><p>geounit: a character vector of geounit names.</p></li>
+<li><p>iso_a2: a character vector of iso_a2 country codes</p></li>
+<li><p>spdf: an optional alternative states map</p></li>
+<li><p>returnclass: ‘sp’ default or ‘sf’ for Simple Features</p></li>
+</ul>
+</div>
+<div id="value" class="section level3" number="31.2.4">
+<h3>
+<span class="header-section-number">C.2.4</span> Value<a class="anchor" aria-label="anchor" href="#value"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>SpatialPolygons DataFrame or sf</li>
+</ul>
+<div class="sourceCode" id="cb740"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ne_world_admin1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://docs.ropensci.org/rnaturalearth/reference/ne_states.html">ne_states</a></span><span class="op">(</span>returnclass <span class="op">=</span> <span class="st">"sf"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb741"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="va">ne_world_admin1</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Rows: 4,596</span></span>
+<span><span class="co">#&gt; Columns: 122</span></span>
+<span><span class="co">#&gt; $ featurecla &lt;chr&gt; "Admin-1 states provinces lakes", "Admi…</span></span>
+<span><span class="co">#&gt; $ scalerank  &lt;int&gt; 3, 6, 2, 6, 3, 4, 4, 3, 4, 3, 4, 3, 3, …</span></span>
+<span><span class="co">#&gt; $ adm1_code  &lt;chr&gt; "ARG-1309", "URY-8", "IDN-1185", "MYS-1…</span></span>
+<span><span class="co">#&gt; $ diss_me    &lt;int&gt; 1309, 8, 1185, 1186, 2694, 1936, 1937, …</span></span>
+<span><span class="co">#&gt; $ iso_3166_2 &lt;chr&gt; "AR-E", "UY-PA", "ID-KI", "MY-12", "CL-…</span></span>
+<span><span class="co">#&gt; $ wikipedia  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ iso_a2     &lt;chr&gt; "AR", "UY", "ID", "MY", "CL", "BO", "BO…</span></span>
+<span><span class="co">#&gt; $ adm0_sr    &lt;int&gt; 1, 1, 5, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, …</span></span>
+<span><span class="co">#&gt; $ name       &lt;chr&gt; "Entre Ríos", "Paysandú", "Kalimantan T…</span></span>
+<span><span class="co">#&gt; $ name_alt   &lt;chr&gt; "Entre-Rios", NA, "Kaltim", "North Born…</span></span>
+<span><span class="co">#&gt; $ name_local &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ type       &lt;chr&gt; "Provincia", "Departamento", "Propinsi"…</span></span>
+<span><span class="co">#&gt; $ type_en    &lt;chr&gt; "Province", "Department", "Province", "…</span></span>
+<span><span class="co">#&gt; $ code_local &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ code_hasc  &lt;chr&gt; "AR.ER", "UY.PA", "ID.KI", "MY.SA", "CL…</span></span>
+<span><span class="co">#&gt; $ note       &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ hasc_maybe &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, "BO.OR|…</span></span>
+<span><span class="co">#&gt; $ region     &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ region_cod &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ provnum_ne &lt;int&gt; 10, 19, 15, 1, 0, 8, 7, 0, 1, 20006, 8,…</span></span>
+<span><span class="co">#&gt; $ gadm_level &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …</span></span>
+<span><span class="co">#&gt; $ check_me   &lt;int&gt; 20, 0, 20, 20, 20, 0, 0, 20, 10, 20, 10…</span></span>
+<span><span class="co">#&gt; $ datarank   &lt;int&gt; 3, 8, 1, 6, 3, 8, 6, 3, 6, 3, 5, 3, 3, …</span></span>
+<span><span class="co">#&gt; $ abbrev     &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ postal     &lt;chr&gt; "ER", "PA", "KI", "SA", NA, "LP", "OR",…</span></span>
+<span><span class="co">#&gt; $ area_sqkm  &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …</span></span>
+<span><span class="co">#&gt; $ sameascity &lt;int&gt; -99, -99, -99, -99, 7, 6, 6, -99, -99, …</span></span>
+<span><span class="co">#&gt; $ labelrank  &lt;int&gt; 3, 6, 2, 6, 7, 6, 6, 3, 4, 6, 7, 6, 3, …</span></span>
+<span><span class="co">#&gt; $ name_len   &lt;int&gt; 10, 8, 16, 5, 18, 6, 5, 8, 6, 11, 5, 5,…</span></span>
+<span><span class="co">#&gt; $ mapcolor9  &lt;int&gt; 3, 2, 6, 3, 5, 2, 2, 5, 2, 5, 4, 3, 3, …</span></span>
+<span><span class="co">#&gt; $ mapcolor13 &lt;int&gt; 13, 10, 11, 6, 9, 3, 3, 9, 3, 9, 11, 13…</span></span>
+<span><span class="co">#&gt; $ fips       &lt;chr&gt; "AR08", "UY11", "ID14", "MY16", NA, "BL…</span></span>
+<span><span class="co">#&gt; $ fips_alt   &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, "BL05",…</span></span>
+<span><span class="co">#&gt; $ woe_id     &lt;int&gt; 2344682, 2347650, 2345723, 2346310, 560…</span></span>
+<span><span class="co">#&gt; $ woe_label  &lt;chr&gt; "Entre Rios, AR, Argentina", "PaysandÃº…</span></span>
+<span><span class="co">#&gt; $ woe_name   &lt;chr&gt; "Entre Ríos", "Paysandú", "Kalimantan T…</span></span>
+<span><span class="co">#&gt; $ latitude   &lt;dbl&gt; -32.02750, -32.09330, 1.28915, 5.31115,…</span></span>
+<span><span class="co">#&gt; $ longitude  &lt;dbl&gt; -59.28240, -57.22400, 116.35400, 117.09…</span></span>
+<span><span class="co">#&gt; $ sov_a3     &lt;chr&gt; "ARG", "URY", "IDN", "MYS", "CHL", "BOL…</span></span>
+<span><span class="co">#&gt; $ adm0_a3    &lt;chr&gt; "ARG", "URY", "IDN", "MYS", "CHL", "BOL…</span></span>
+<span><span class="co">#&gt; $ adm0_label &lt;int&gt; 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, …</span></span>
+<span><span class="co">#&gt; $ admin      &lt;chr&gt; "Argentina", "Uruguay", "Indonesia", "M…</span></span>
+<span><span class="co">#&gt; $ geonunit   &lt;chr&gt; "Argentina", "Uruguay", "Indonesia", "M…</span></span>
+<span><span class="co">#&gt; $ gu_a3      &lt;chr&gt; "ARG", "URY", "IDN", "MYS", "CHL", "BOL…</span></span>
+<span><span class="co">#&gt; $ gn_id      &lt;int&gt; 3434137, 3441242, 1641897, 1733039, 669…</span></span>
+<span><span class="co">#&gt; $ gn_name    &lt;chr&gt; "Provincia de Entre Rios", "Departament…</span></span>
+<span><span class="co">#&gt; $ gns_id     &lt;int&gt; -988655, -908097, -2680740, -2405166, 1…</span></span>
+<span><span class="co">#&gt; $ gns_name   &lt;chr&gt; "Entre Rios", "Paysandu, Departamento d…</span></span>
+<span><span class="co">#&gt; $ gn_level   &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …</span></span>
+<span><span class="co">#&gt; $ gn_region  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ gn_a1_code &lt;chr&gt; "AR.08", "UY.11", "ID.14", "MY.16", "CL…</span></span>
+<span><span class="co">#&gt; $ region_sub &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ sub_code   &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ gns_level  &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …</span></span>
+<span><span class="co">#&gt; $ gns_lang   &lt;chr&gt; "khm", "fra", "ind", "fil", "ara", "kor…</span></span>
+<span><span class="co">#&gt; $ gns_adm1   &lt;chr&gt; "AR08", "UY11", "ID14", "MY16", "CI16",…</span></span>
+<span><span class="co">#&gt; $ gns_region &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ min_label  &lt;dbl&gt; 6.0, 8.0, 5.0, 7.0, 6.0, 6.6, 6.6, 6.0,…</span></span>
+<span><span class="co">#&gt; $ max_label  &lt;dbl&gt; 11.0, 11.0, 10.1, 11.0, 11.0, 11.0, 11.…</span></span>
+<span><span class="co">#&gt; $ min_zoom   &lt;dbl&gt; 6.0, 8.0, 4.6, 7.0, 6.0, 6.6, 6.6, 6.0,…</span></span>
+<span><span class="co">#&gt; $ wikidataid &lt;chr&gt; "Q44762", "Q16576", "Q3899", "Q179029",…</span></span>
+<span><span class="co">#&gt; $ name_ar    &lt;chr&gt; "إنتري ريوس", "إدارة بايساندو", "كالمنت…</span></span>
+<span><span class="co">#&gt; $ name_bn    &lt;chr&gt; "এন্ত্রে রিও প্রদেশ", "পেসান্ডো বিভাগ", "পূর্…</span></span>
+<span><span class="co">#&gt; $ name_de    &lt;chr&gt; "Entre Ríos", "Paysandú", "Ostkalimanta…</span></span>
+<span><span class="co">#&gt; $ name_en    &lt;chr&gt; "Entre Ríos", "Paysandú", "East Kaliman…</span></span>
+<span><span class="co">#&gt; $ name_es    &lt;chr&gt; "Entre Ríos", "Paysandú", "Kalimantan O…</span></span>
+<span><span class="co">#&gt; $ name_fr    &lt;chr&gt; "Entre Ríos", "Paysandú", "Kalimantan o…</span></span>
+<span><span class="co">#&gt; $ name_el    &lt;chr&gt; "Έντρε Ρίος", "Παϊσαντού", "Ανατολικό Κ…</span></span>
+<span><span class="co">#&gt; $ name_hi    &lt;chr&gt; "एन्ट्रे रियोस", "पयसंदु विभाग", "पूर्व कालिमंत…</span></span>
+<span><span class="co">#&gt; $ name_hu    &lt;chr&gt; "Entre Ríos", "Paysandú", "Kelet-Kalima…</span></span>
+<span><span class="co">#&gt; $ name_id    &lt;chr&gt; "Entre Ríos", "Departemen Paysandú", "K…</span></span>
+<span><span class="co">#&gt; $ name_it    &lt;chr&gt; "Entre Ríos", "dipartimento di Paysandú…</span></span>
+<span><span class="co">#&gt; $ name_ja    &lt;chr&gt; "エントレ・リオス州", "パイサンドゥ県",…</span></span>
+<span><span class="co">#&gt; $ name_ko    &lt;chr&gt; "엔트레리오스", "파이산두", "동칼리만탄…</span></span>
+<span><span class="co">#&gt; $ name_nl    &lt;chr&gt; "Entre Ríos", "Paysandú", "Oost-Kaliman…</span></span>
+<span><span class="co">#&gt; $ name_pl    &lt;chr&gt; "Entre Ríos", "Paysandú", "Borneo Wscho…</span></span>
+<span><span class="co">#&gt; $ name_pt    &lt;chr&gt; "Entre Ríos", "Paysandú", "Kalimantan O…</span></span>
+<span><span class="co">#&gt; $ name_ru    &lt;chr&gt; "Энтре-Риос", "Пайсанду", "Восточный Ка…</span></span>
+<span><span class="co">#&gt; $ name_sv    &lt;chr&gt; "Entre Ríos", "Paysandú", "Kalimantan T…</span></span>
+<span><span class="co">#&gt; $ name_tr    &lt;chr&gt; "Entre Ríos eyaleti", "Paysandu Departm…</span></span>
+<span><span class="co">#&gt; $ name_vi    &lt;chr&gt; "Entre Ríos", "Paysandú", "Đông Kaliman…</span></span>
+<span><span class="co">#&gt; $ name_zh    &lt;chr&gt; "恩特雷里奥斯省", "派桑杜省", "东加里曼…</span></span>
+<span><span class="co">#&gt; $ ne_id      &lt;dbl&gt; 1159309789, 1159307733, 1159310009, 115…</span></span>
+<span><span class="co">#&gt; $ name_he    &lt;chr&gt; "אנטרה ריוס", "פאיסאנדו", "מזרח קלימנטא…</span></span>
+<span><span class="co">#&gt; $ name_uk    &lt;chr&gt; "Ентре-Ріос", "Пайсанду", "Східний Калі…</span></span>
+<span><span class="co">#&gt; $ name_ur    &lt;chr&gt; "صوبہ انترے ریوس", "پایساندو محکمہ", "م…</span></span>
+<span><span class="co">#&gt; $ name_fa    &lt;chr&gt; "ایالت انتره ریوز", "بخش پایساندو", "کا…</span></span>
+<span><span class="co">#&gt; $ name_zht   &lt;chr&gt; "恩特雷里奥斯省", "派桑杜省", "東加里曼…</span></span>
+<span><span class="co">#&gt; $ FCLASS_ISO &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_US  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_FR  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_RU  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_ES  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_CN  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_TW  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_IN  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_NP  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_PK  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_DE  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_GB  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_BR  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_IL  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_PS  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_SA  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_EG  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_MA  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_PT  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_AR  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_JP  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_KO  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_VN  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_TR  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_ID  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_PL  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_GR  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_IT  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_NL  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_SE  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_BD  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_UA  &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ FCLASS_TLC &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span><span class="co">#&gt; $ geometry   &lt;MULTIPOLYGON [°]&gt; MULTIPOLYGON (((-58.20011 …</span></span></code></pre></div>
+<div class="sourceCode" id="cb742"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ne_world_admin1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">iso_a2</span> <span class="op">!=</span> <span class="st">"-1"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">admin</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">iso_a2</span>, <span class="va">admin</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 243 × 2</span></span>
+<span><span class="co">#&gt;    iso_a2 admin              </span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;  &lt;chr&gt;              </span></span>
+<span><span class="co">#&gt;  1 AF     Afghanistan        </span></span>
+<span><span class="co">#&gt;  2 AX     Aland              </span></span>
+<span><span class="co">#&gt;  3 AL     Albania            </span></span>
+<span><span class="co">#&gt;  4 DZ     Algeria            </span></span>
+<span><span class="co">#&gt;  5 AS     American Samoa     </span></span>
+<span><span class="co">#&gt;  6 AD     Andorra            </span></span>
+<span><span class="co">#&gt;  7 AO     Angola             </span></span>
+<span><span class="co">#&gt;  8 AI     Anguilla           </span></span>
+<span><span class="co">#&gt;  9 AQ     Antarctica         </span></span>
+<span><span class="co">#&gt; 10 AG     Antigua and Barbuda</span></span>
+<span><span class="co">#&gt; # ℹ 233 more rows</span></span></code></pre></div>
+<div class="sourceCode" id="cb743"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">country</span> <span class="op">&lt;-</span> <span class="st">"Japan"</span></span>
+<span><span class="va">ne_world_admin1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">admin</span> <span class="op">==</span> <span class="va">country</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="51-worldmap_files/figure-html/unnamed-chunk-22-1.png" width="672"></div>
+<div class="sourceCode" id="cb744"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">iso2s</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"IN"</span>,<span class="st">"PK"</span>,<span class="st">"BD"</span>,<span class="st">"LK"</span><span class="op">)</span></span>
+<span><span class="va">ne_world_admin1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">iso_a2</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">iso2s</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">admin</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="51-worldmap_files/figure-html/unnamed-chunk-23-1.png" width="672"></div>
+<div class="sourceCode" id="cb745"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">regions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Tohoku"</span><span class="op">)</span></span>
+<span><span class="va">ne_world_admin1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">region</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">regions</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">name_local</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="51-worldmap_files/figure-html/unnamed-chunk-24-1.png" width="672"></div>
+<div class="sourceCode" id="cb746"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ne_world_admin1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">iso_a2</span> <span class="op">==</span> <span class="st">"JP"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">region</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="51-worldmap_files/figure-html/unnamed-chunk-25-1.png" width="672"></div>
+<div class="sourceCode" id="cb747"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ne_world_admin1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">admin</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="st">"Japan"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">name_local</span>, <span class="va">region</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">region</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 2 × 2</span></span>
+<span><span class="co">#&gt;   name_local region</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt; </span></span>
+<span><span class="co">#&gt; 1 佐賀県     &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt; 2 長崎県     &lt;NA&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb748"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ne_world_admin1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>region <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span></span>
+<span>  <span class="va">name_local</span> <span class="op">==</span> <span class="st">"佐賀県"</span> <span class="op">~</span> <span class="st">"Kyushu"</span>,</span>
+<span>  <span class="va">name_local</span> <span class="op">==</span> <span class="st">"長崎県"</span> <span class="op">~</span> <span class="st">"Kyushu"</span>,</span>
+<span>  <span class="cn">TRUE</span> <span class="op">~</span> <span class="va">region</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">admin</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="st">"Japan"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">name_local</span>, <span class="va">region</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">region</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 0 × 2</span></span>
+<span><span class="co">#&gt; # ℹ 2 variables: name_local &lt;chr&gt;, region &lt;chr&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb749"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ne_world_admin1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>region <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span></span>
+<span>  <span class="va">name_local</span> <span class="op">==</span> <span class="st">"佐賀県"</span> <span class="op">~</span> <span class="st">"Kyushu"</span>,</span>
+<span>  <span class="va">name_local</span> <span class="op">==</span> <span class="st">"長崎県"</span> <span class="op">~</span> <span class="st">"Kyushu"</span>,</span>
+<span>  <span class="cn">TRUE</span> <span class="op">~</span> <span class="va">region</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">iso_a2</span> <span class="op">==</span> <span class="st">"JP"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">region</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="51-worldmap_files/figure-html/unnamed-chunk-28-1.png" width="672"></div>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="covid19.html"><span class="header-section-number">B</span> Covid 19</a></div>
+<div class="next"><a href="bookdown.html"><span class="header-section-number">D</span> Bookdown</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#worldmap"><span class="header-section-number">C</span> World Map</a></li>
+<li>
+<a class="nav-link" href="#setup-6"><span class="header-section-number">C.1</span> Setup</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#geom_sf"><span class="header-section-number">C.1.1</span> geom_sf</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#natural-earth-data"><span class="header-section-number">C.2</span> Natural Earth Data</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#ne_countries"><span class="header-section-number">C.2.1</span> ne_countries</a></li>
+<li><a class="nav-link" href="#ne_states"><span class="header-section-number">C.2.2</span> ne_states</a></li>
+<li><a class="nav-link" href="#arguments-1"><span class="header-section-number">C.2.3</span> Arguments</a></li>
+<li><a class="nav-link" href="#value"><span class="header-section-number">C.2.4</span> Value</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/icu-hsuzuki/da4r2022/blob/master/51-worldmap.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/icu-hsuzuki/da4r2022/edit/master/51-worldmap.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-05-10.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

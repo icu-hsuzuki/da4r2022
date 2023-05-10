@@ -129,7 +129,7 @@ owid("per-capita-ghg-emissions", rename = "ghgPcap")
 2. Since until after importing the data, you never know the original column name, and how many columns are for indicators. It is natural to change column names using `dpyr::rename`. In the next example, I used `Total including LUCF`. However, 'Total including LUCF' and "Total including LUCF" work as well.
 
 ```{r}
-emissions %>% rename(ghgPcap = `Total including LUCF`)
+emissions %>% rename(ghgPcap = `Per-capita greenhouse gas emissions in CO2 equivalents`)
 ```
 
 3. If there are more than one variables to rename, use vector notation as follows. Here `top_n(1)` is same as `slice(1)`, and gives the first row only.

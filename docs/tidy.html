@@ -7,7 +7,7 @@
 <title>Chapter 10 tidyr | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
 <meta name="description" content="We study the concept of tidy data and learn how to use the package tidyr, especially the functions pivot_longer, and it’s converse pivot_wider. We also learn how to combine two data frames a...">
-<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta name="generator" content="bookdown 0.33 with bs4_book()">
 <meta property="og:title" content="Chapter 10 tidyr | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/tidy.html">
@@ -18,7 +18,7 @@
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
 <script src="libs/datatables-binding-0.27/datatables.js"></script><link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
 <link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet">
 <script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
@@ -105,8 +105,9 @@
 <li class="book-part">APPENDIX</li>
 <li><a class="" href="histdata.html"><span class="header-section-number">A</span> HistData</a></li>
 <li><a class="" href="covid19.html"><span class="header-section-number">B</span> Covid 19</a></li>
-<li><a class="" href="bookdown.html"><span class="header-section-number">C</span> Bookdown</a></li>
-<li><a class="" href="template.html"><span class="header-section-number">D</span> Template</a></li>
+<li><a class="" href="worldmap.html"><span class="header-section-number">C</span> World Map</a></li>
+<li><a class="" href="bookdown.html"><span class="header-section-number">D</span> Bookdown</a></li>
+<li><a class="" href="template.html"><span class="header-section-number">E</span> Template</a></li>
 </ul>
 
         <div class="book-extra">
@@ -141,14 +142,16 @@
 </ul>
 <div class="sourceCode" id="cb282"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
-<span><span class="co">#&gt; ✔ ggplot2 3.4.1     ✔ purrr   1.0.1</span></span>
-<span><span class="co">#&gt; ✔ tibble  3.1.8     ✔ dplyr   1.1.0</span></span>
-<span><span class="co">#&gt; ✔ tidyr   1.3.0     ✔ stringr 1.5.0</span></span>
-<span><span class="co">#&gt; ✔ readr   2.1.4     ✔ forcats 1.0.0</span></span>
+<span><span class="co">#&gt; ── Attaching core tidyverse packages ──── tidyverse 2.0.0 ──</span></span>
+<span><span class="co">#&gt; ✔ dplyr     1.1.2     ✔ readr     2.1.4</span></span>
+<span><span class="co">#&gt; ✔ forcats   1.0.0     ✔ stringr   1.5.0</span></span>
+<span><span class="co">#&gt; ✔ ggplot2   3.4.2     ✔ tibble    3.2.1</span></span>
+<span><span class="co">#&gt; ✔ lubridate 1.9.2     ✔ tidyr     1.3.0</span></span>
+<span><span class="co">#&gt; ✔ purrr     1.0.1     </span></span>
 <span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
 <span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span>
+<span><span class="co">#&gt; ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb283"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">url_summary</span> <span class="op">&lt;-</span> <span class="st">"https://wir2022.wid.world/www-site/uploads/2022/03/WIR2022TablesFigures-Summary.xlsx"</span></span>
@@ -320,18 +323,16 @@
 <code class="sourceCode R"><span><span class="va">df_f2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"./data/WIR2022s.xlsx"</span>, sheet <span class="op">=</span> <span class="st">"data-F2"</span><span class="op">)</span></span>
 <span><span class="va">df_f2</span></span>
 <span><span class="co">#&gt; # A tibble: 8 × 5</span></span>
-<span><span class="co">#&gt;    year iso                     `Bottom 50%` Middl…¹ Top 1…²</span></span>
-<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;                          &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1  2021 Europe                        0.189    0.453   0.358</span></span>
-<span><span class="co">#&gt; 2  2021 East Asia                     0.139    0.427   0.434</span></span>
-<span><span class="co">#&gt; 3  2021 North America                 0.132    0.411   0.457</span></span>
-<span><span class="co">#&gt; 4  2021 Russia &amp; Central Asia         0.147    0.386   0.467</span></span>
-<span><span class="co">#&gt; 5  2021 South &amp; South East Asia       0.123    0.328   0.548</span></span>
-<span><span class="co">#&gt; 6  2021 Latin America                 0.102    0.344   0.554</span></span>
-<span><span class="co">#&gt; 7  2021 Sub-Saharan Africa            0.0892   0.354   0.557</span></span>
-<span><span class="co">#&gt; 8  2021 MENA                          0.09     0.329   0.581</span></span>
-<span><span class="co">#&gt; # … with abbreviated variable names ¹​`Middle 40%`,</span></span>
-<span><span class="co">#&gt; #   ²​`Top 10%`</span></span></code></pre></div>
+<span><span class="co">#&gt;    year iso              `Bottom 50%` `Middle 40%` `Top 10%`</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;        &lt;dbl&gt;     &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1  2021 Europe                 0.189         0.453     0.358</span></span>
+<span><span class="co">#&gt; 2  2021 East Asia              0.139         0.427     0.434</span></span>
+<span><span class="co">#&gt; 3  2021 North America          0.132         0.411     0.457</span></span>
+<span><span class="co">#&gt; 4  2021 Russia &amp; Centra…       0.147         0.386     0.467</span></span>
+<span><span class="co">#&gt; 5  2021 South &amp; South E…       0.123         0.328     0.548</span></span>
+<span><span class="co">#&gt; 6  2021 Latin America          0.102         0.344     0.554</span></span>
+<span><span class="co">#&gt; 7  2021 Sub-Saharan Afr…       0.0892        0.354     0.557</span></span>
+<span><span class="co">#&gt; 8  2021 MENA                   0.09          0.329     0.581</span></span></code></pre></div>
 <div class="sourceCode" id="cb294"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="fl">3</span><span class="op">:</span><span class="fl">5</span>, names_to <span class="op">=</span> <span class="st">"group"</span>, values_to <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 24 × 4</span></span>
@@ -347,7 +348,7 @@
 <span><span class="co">#&gt;  8  2021 North America         Middle 40% 0.411</span></span>
 <span><span class="co">#&gt;  9  2021 North America         Top 10%    0.457</span></span>
 <span><span class="co">#&gt; 10  2021 Russia &amp; Central Asia Bottom 50% 0.147</span></span>
-<span><span class="co">#&gt; # … with 14 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 14 more rows</span></span></code></pre></div>
 <div class="sourceCode" id="cb295"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="fl">3</span><span class="op">:</span><span class="fl">5</span>, names_to <span class="op">=</span> <span class="st">"group"</span>, values_to <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">iso</span>, y <span class="op">=</span> <span class="va">value</span>, fill <span class="op">=</span> <span class="va">group</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -376,7 +377,7 @@ In Console: vignette(“pivot”)</p>
 #&gt;  8  2021 North America         Middle 40% 0.411
 #&gt;  9  2021 North America         Top 10%    0.457
 #&gt; 10  2021 Russia &amp; Central Asia Bottom 50% 0.147
-#&gt; # … with 14 more rows</code></pre>
+#&gt; # ℹ 14 more rows</code></pre>
 <pre><code>pivot_wider(data, names_from = group, values_from = value) </code></pre>
 </div>
 <div id="practice-f4-and-f13" class="section level2" number="10.9">
@@ -420,7 +421,7 @@ In Console: vignette(“pivot”)</p>
 <span><span class="co">#&gt;  8  2021 Australia               10.4 </span></span>
 <span><span class="co">#&gt;  9  2021 Azerbaijan               9.63</span></span>
 <span><span class="co">#&gt; 10  2021 Bosnia and Herzegovina   9.32</span></span>
-<span><span class="co">#&gt; # … with 167 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 167 more rows</span></span></code></pre></div>
 </div>
 <div id="f3-top-10bottom-50-income-gaps-across-the-world-2021---original" class="section level2" number="10.11">
 <h2>
@@ -455,27 +456,27 @@ In Console: vignette(“pivot”)</p>
 <span><span class="co">#&gt;  8  2021 Botswana                   36.5</span></span>
 <span><span class="co">#&gt;  9  2021 Angola                     32.1</span></span>
 <span><span class="co">#&gt; 10  2021 Yemen                      32.0</span></span>
-<span><span class="co">#&gt; # … with 167 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 167 more rows</span></span></code></pre></div>
 <p>Using the information above, we set breakpoints and use R Base’s <code>cut</code> command to divide into five classes, and add it as a new column using <code>mutate</code></p>
 <div class="sourceCode" id="cb303"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>`Top 10 Bottom 50 Ratio` <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/cut.html">cut</a></span><span class="op">(</span><span class="va">T10B50</span>,breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">12</span>, <span class="fl">13</span>, <span class="fl">16</span>, <span class="fl">19</span>,<span class="fl">140</span><span class="op">)</span>, </span>
 <span>                                        include.lowest <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span> </span>
 <span><span class="co">#&gt; # A tibble: 177 × 4</span></span>
-<span><span class="co">#&gt;     year Country                T10B50 Top 10 Bottom 50 Ra…¹</span></span>
-<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt; &lt;fct&gt;                </span></span>
-<span><span class="co">#&gt;  1  2021 United Arab Emirates    19.2  (19,140]             </span></span>
-<span><span class="co">#&gt;  2  2021 Afghanistan             11.7  (5,12]               </span></span>
-<span><span class="co">#&gt;  3  2021 Albania                  8.99 (5,12]               </span></span>
-<span><span class="co">#&gt;  4  2021 Armenia                 11.0  (5,12]               </span></span>
-<span><span class="co">#&gt;  5  2021 Angola                  32.1  (19,140]             </span></span>
-<span><span class="co">#&gt;  6  2021 Argentina               13.2  (13,16]              </span></span>
-<span><span class="co">#&gt;  7  2021 Austria                  7.68 (5,12]               </span></span>
-<span><span class="co">#&gt;  8  2021 Australia               10.4  (5,12]               </span></span>
-<span><span class="co">#&gt;  9  2021 Azerbaijan               9.63 (5,12]               </span></span>
-<span><span class="co">#&gt; 10  2021 Bosnia and Herzegovina   9.32 (5,12]               </span></span>
-<span><span class="co">#&gt; # … with 167 more rows, and abbreviated variable name</span></span>
-<span><span class="co">#&gt; #   ¹​`Top 10 Bottom 50 Ratio`</span></span></code></pre></div>
+<span><span class="co">#&gt;     year Country               T10B50 Top 10 Bottom 50 Rat…¹</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;                  &lt;dbl&gt; &lt;fct&gt;                 </span></span>
+<span><span class="co">#&gt;  1  2021 United Arab Emirates   19.2  (19,140]              </span></span>
+<span><span class="co">#&gt;  2  2021 Afghanistan            11.7  (5,12]                </span></span>
+<span><span class="co">#&gt;  3  2021 Albania                 8.99 (5,12]                </span></span>
+<span><span class="co">#&gt;  4  2021 Armenia                11.0  (5,12]                </span></span>
+<span><span class="co">#&gt;  5  2021 Angola                 32.1  (19,140]              </span></span>
+<span><span class="co">#&gt;  6  2021 Argentina              13.2  (13,16]               </span></span>
+<span><span class="co">#&gt;  7  2021 Austria                 7.68 (5,12]                </span></span>
+<span><span class="co">#&gt;  8  2021 Australia              10.4  (5,12]                </span></span>
+<span><span class="co">#&gt;  9  2021 Azerbaijan              9.63 (5,12]                </span></span>
+<span><span class="co">#&gt; 10  2021 Bosnia and Herzegovi…   9.32 (5,12]                </span></span>
+<span><span class="co">#&gt; # ℹ 167 more rows</span></span>
+<span><span class="co">#&gt; # ℹ abbreviated name: ¹​`Top 10 Bottom 50 Ratio`</span></span></code></pre></div>
 <div class="sourceCode" id="cb304"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">world_map</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/map_data.html">map_data</a></span><span class="op">(</span><span class="st">"world"</span><span class="op">)</span></span>
 <span><span class="va">df_f3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>`Top 10 Bottom 50 Ratio` <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/cut.html">cut</a></span><span class="op">(</span><span class="va">T10B50</span>,breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">12</span>, <span class="fl">13</span>, <span class="fl">16</span>, <span class="fl">19</span>,<span class="fl">140</span><span class="op">)</span>, </span>
@@ -600,7 +601,7 @@ In Console: vignette(“pivot”)</p>
 <span><span class="co">#&gt;  8  1940   44.4</span></span>
 <span><span class="co">#&gt;  9  1950   40.3</span></span>
 <span><span class="co">#&gt; 10  1960   38.4</span></span>
-<span><span class="co">#&gt; # … with 14 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 14 more rows</span></span></code></pre></div>
 <div class="sourceCode" id="cb313"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f5</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">y</span>, y <span class="op">=</span> <span class="va">t10b50</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>span<span class="op">=</span><span class="fl">0.25</span>, se<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; `geom_smooth()` using method = 'loess' and formula = 'y ~</span></span>
@@ -626,7 +627,7 @@ In Console: vignette(“pivot”)</p>
 <span><span class="co">#&gt;  8     7                    0.0317</span></span>
 <span><span class="co">#&gt;  9     8                    0.0322</span></span>
 <span><span class="co">#&gt; 10     9                    0.0328</span></span>
-<span><span class="co">#&gt; # … with 117 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 117 more rows</span></span></code></pre></div>
 <div class="sourceCode" id="cb315"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f9</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">p</span>, y <span class="op">=</span> <span class="va">`Wealth growth 1995-2021`</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>span <span class="op">=</span> <span class="fl">0.30</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
@@ -653,7 +654,7 @@ In Console: vignette(“pivot”)</p>
 <span><span class="co">#&gt;  8  1940       0.0629        0.379     0.558</span></span>
 <span><span class="co">#&gt;  9  1950       0.0687        0.377     0.554</span></span>
 <span><span class="co">#&gt; 10  1960       0.0701        0.392     0.538</span></span>
-<span><span class="co">#&gt; # … with 14 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 14 more rows</span></span></code></pre></div>
 <div class="sourceCode" id="cb317"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f7</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="fl">2</span><span class="op">:</span><span class="fl">4</span>, names_to <span class="op">=</span> <span class="st">"type"</span>, values_to <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -684,7 +685,7 @@ In Console: vignette(“pivot”)</p>
 <span><span class="co">#&gt;  8  2002   0.0119         0.08   NA       NA    NA</span></span>
 <span><span class="co">#&gt;  9  2003   0.0103         0.08   NA       NA    NA</span></span>
 <span><span class="co">#&gt; 10  2004   0.0127         0.0828 NA       NA    NA</span></span>
-<span><span class="co">#&gt; # … with 17 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 17 more rows</span></span></code></pre></div>
 <div class="sourceCode" id="cb319"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f10</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">year</span>, <span class="st">"Global Billionaire Wealth"</span> <span class="op">=</span> <span class="va">bn_hhweal</span>, <span class="st">"Top 0.01%"</span> <span class="op">=</span> <span class="va">top0.1_hhweal</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -702,7 +703,7 @@ In Console: vignette(“pivot”)</p>
 <span><span class="co">#&gt;  8  1998 Top 0.01%                 0.0815 </span></span>
 <span><span class="co">#&gt;  9  1999 Global Billionaire Wealth 0.0112 </span></span>
 <span><span class="co">#&gt; 10  1999 Top 0.01%                 0.0855 </span></span>
-<span><span class="co">#&gt; # … with 44 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 44 more rows</span></span></code></pre></div>
 <div class="sourceCode" id="cb320"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f10</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">year</span>, <span class="st">"Global Billionaire Wealth"</span> <span class="op">=</span> <span class="va">bn_hhweal</span>, <span class="st">"Top 0.01%"</span> <span class="op">=</span> <span class="va">top0.1_hhweal</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -731,8 +732,7 @@ In Console: vignette(“pivot”)</p>
 <span><span class="co">#&gt; 7  1980                        0.569                   0.431</span></span>
 <span><span class="co">#&gt; 8  2000                        0.473                   0.527</span></span>
 <span><span class="co">#&gt; 9  2020                        0.320                   0.680</span></span>
-<span><span class="co">#&gt; # … with abbreviated variable name</span></span>
-<span><span class="co">#&gt; #   ¹​`Within-country inequality`</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ abbreviated name: ¹​`Within-country inequality`</span></span></code></pre></div>
 <div class="sourceCode" id="cb322"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f6</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span>year <span class="op">=</span> <span class="st">"...1"</span>, <span class="fl">2</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="fl">2</span><span class="op">:</span><span class="fl">3</span>, names_to <span class="op">=</span> <span class="st">"type"</span>, values_to <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -849,7 +849,7 @@ In Console: vignette(“pivot”)</p>
 #&gt;  8  1940 EU    0.0282  0.412
 #&gt;  9  1950 US    0.0270  0.276
 #&gt; 10  1950 EU    0.0272  0.339
-#&gt; # … with 14 more rows</code></pre>
+#&gt; # ℹ 14 more rows</code></pre>
 </div>
 <div id="step-3." class="section level3" number="10.18.4">
 <h3>
@@ -880,7 +880,7 @@ In Console: vignette(“pivot”)</p>
 #&gt;  8  1920 EU    top1  0.496  
 #&gt;  9  1930 US    bot50 0.00737
 #&gt; 10  1930 US    top1  0.409  
-#&gt; # … with 38 more rows</code></pre>
+#&gt; # ℹ 38 more rows</code></pre>
 <div class="inline-figure"><img src="10-tidyr_files/figure-html/unnamed-chunk-43-1.png" width="672"></div>
 <p>The following is similar to the previous example.</p>
 </div>
@@ -892,25 +892,25 @@ In Console: vignette(“pivot”)</p>
 <div class="sourceCode" id="cb330"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f8</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="st">"./data/WIR2022s.xlsx"</span>, sheet <span class="op">=</span> <span class="st">"data-F8"</span><span class="op">)</span>; <span class="va">df_f8</span></span>
 <span><span class="co">#&gt; # A tibble: 51 × 17</span></span>
-<span><span class="co">#&gt;     year Germany German…¹ Spain Spain…² France Franc…³    UK</span></span>
-<span><span class="co">#&gt;    &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1  1970   1.11      2.30 0.604    4.06  0.422    3.12 0.601</span></span>
-<span><span class="co">#&gt;  2  1971   1.12      2.25 0.657    4.53  0.443    3.06 0.689</span></span>
-<span><span class="co">#&gt;  3  1972   1.11      2.27 0.624    4.36  0.467    3.08 0.790</span></span>
-<span><span class="co">#&gt;  4  1973   1.11      2.23 0.596    4.46  0.478    3.06 0.929</span></span>
-<span><span class="co">#&gt;  5  1974   1.13      2.25 0.586    4.64  0.498    3.03 1.09 </span></span>
-<span><span class="co">#&gt;  6  1975   1.12      2.35 0.602    4.83  0.545    3.12 1.00 </span></span>
-<span><span class="co">#&gt;  7  1976   1.03      2.34 0.581    4.46  0.561    3.08 0.918</span></span>
-<span><span class="co">#&gt;  8  1977   1.01      2.42 0.586    4.10  0.567    3.10 0.867</span></span>
-<span><span class="co">#&gt;  9  1978   0.990     2.52 0.604    4.10  0.580    3.20 0.881</span></span>
-<span><span class="co">#&gt; 10  1979   0.989     2.55 0.621    4.20  0.624    3.30 0.955</span></span>
-<span><span class="co">#&gt; # … with 41 more rows, 9 more variables:</span></span>
+<span><span class="co">#&gt;     year Germany `Germany (private)` Spain `Spain (private)`</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt;   &lt;dbl&gt;               &lt;dbl&gt; &lt;dbl&gt;             &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  1970   1.11                 2.30 0.604              4.06</span></span>
+<span><span class="co">#&gt;  2  1971   1.12                 2.25 0.657              4.53</span></span>
+<span><span class="co">#&gt;  3  1972   1.11                 2.27 0.624              4.36</span></span>
+<span><span class="co">#&gt;  4  1973   1.11                 2.23 0.596              4.46</span></span>
+<span><span class="co">#&gt;  5  1974   1.13                 2.25 0.586              4.64</span></span>
+<span><span class="co">#&gt;  6  1975   1.12                 2.35 0.602              4.83</span></span>
+<span><span class="co">#&gt;  7  1976   1.03                 2.34 0.581              4.46</span></span>
+<span><span class="co">#&gt;  8  1977   1.01                 2.42 0.586              4.10</span></span>
+<span><span class="co">#&gt;  9  1978   0.990                2.52 0.604              4.10</span></span>
+<span><span class="co">#&gt; 10  1979   0.989                2.55 0.621              4.20</span></span>
+<span><span class="co">#&gt; # ℹ 41 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 12 more variables: France &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   `France (private)` &lt;dbl&gt;, UK &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   `UK (private)` &lt;dbl&gt;, Japan &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   `Japan (private)` &lt;dbl&gt;, Norway &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   `Norway (private)` &lt;dbl&gt;, USA &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   `USA (private)` &lt;dbl&gt;, gwealAVGRICH &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   pwealAVGRICH &lt;dbl&gt;, and abbreviated variable names</span></span>
-<span><span class="co">#&gt; #   ¹​`Germany (private)`, ²​`Spain (private)`, …</span></span></code></pre></div>
+<span><span class="co">#&gt; #   `USA (private)` &lt;dbl&gt;, gwealAVGRICH &lt;dbl&gt;, …</span></span></code></pre></div>
 <div class="sourceCode" id="cb331"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f8</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">year</span>, Germany_public <span class="op">=</span> <span class="va">Germany</span>, Germany_private <span class="op">=</span> <span class="st">'Germany (private)'</span>, </span>
@@ -943,25 +943,25 @@ In Console: vignette(“pivot”)</p>
 <span>         Norway_public <span class="op">=</span> <span class="va">Norway</span>, Norway_private <span class="op">=</span> <span class="st">'Norway (private)'</span>,</span>
 <span>         USA_public <span class="op">=</span> <span class="va">USA</span>, USA_private <span class="op">=</span> <span class="st">'USA (private)'</span><span class="op">)</span> </span></code></pre></div>
 <pre><code>#&gt; # A tibble: 51 × 15
-#&gt;     year Germany_p…¹ Germa…² Spain…³ Spain…⁴ Franc…⁵ Franc…⁶
-#&gt;    &lt;dbl&gt;       &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
-#&gt;  1  1970       1.11     2.30   0.604    4.06   0.422    3.12
-#&gt;  2  1971       1.12     2.25   0.657    4.53   0.443    3.06
-#&gt;  3  1972       1.11     2.27   0.624    4.36   0.467    3.08
-#&gt;  4  1973       1.11     2.23   0.596    4.46   0.478    3.06
-#&gt;  5  1974       1.13     2.25   0.586    4.64   0.498    3.03
-#&gt;  6  1975       1.12     2.35   0.602    4.83   0.545    3.12
-#&gt;  7  1976       1.03     2.34   0.581    4.46   0.561    3.08
-#&gt;  8  1977       1.01     2.42   0.586    4.10   0.567    3.10
-#&gt;  9  1978       0.990    2.52   0.604    4.10   0.580    3.20
-#&gt; 10  1979       0.989    2.55   0.621    4.20   0.624    3.30
-#&gt; # … with 41 more rows, 8 more variables: UK_public &lt;dbl&gt;,
-#&gt; #   UK_private &lt;dbl&gt;, Japan_public &lt;dbl&gt;,
+#&gt;     year Germany_public Germany_private Spain_public
+#&gt;    &lt;dbl&gt;          &lt;dbl&gt;           &lt;dbl&gt;        &lt;dbl&gt;
+#&gt;  1  1970          1.11             2.30        0.604
+#&gt;  2  1971          1.12             2.25        0.657
+#&gt;  3  1972          1.11             2.27        0.624
+#&gt;  4  1973          1.11             2.23        0.596
+#&gt;  5  1974          1.13             2.25        0.586
+#&gt;  6  1975          1.12             2.35        0.602
+#&gt;  7  1976          1.03             2.34        0.581
+#&gt;  8  1977          1.01             2.42        0.586
+#&gt;  9  1978          0.990            2.52        0.604
+#&gt; 10  1979          0.989            2.55        0.621
+#&gt; # ℹ 41 more rows
+#&gt; # ℹ 11 more variables: Spain_private &lt;dbl&gt;,
+#&gt; #   France_public &lt;dbl&gt;, France_private &lt;dbl&gt;,
+#&gt; #   UK_public &lt;dbl&gt;, UK_private &lt;dbl&gt;, Japan_public &lt;dbl&gt;,
 #&gt; #   Japan_private &lt;dbl&gt;, Norway_public &lt;dbl&gt;,
 #&gt; #   Norway_private &lt;dbl&gt;, USA_public &lt;dbl&gt;,
-#&gt; #   USA_private &lt;dbl&gt;, and abbreviated variable names
-#&gt; #   ¹​Germany_public, ²​Germany_private, ³​Spain_public,
-#&gt; #   ⁴​Spain_private, ⁵​France_public, ⁶​France_private</code></pre>
+#&gt; #   USA_private &lt;dbl&gt;</code></pre>
 </div>
 <div id="step-2.-2" class="section level3" number="10.19.2">
 <h3>
@@ -990,7 +990,7 @@ In Console: vignette(“pivot”)</p>
 #&gt;  8  1971 Germany  1.12     2.25
 #&gt;  9  1971 Spain    0.657    4.53
 #&gt; 10  1971 France   0.443    3.06
-#&gt; # … with 347 more rows</code></pre>
+#&gt; # ℹ 347 more rows</code></pre>
 </div>
 <div id="step-3.-2" class="section level3" number="10.19.3">
 <h3>
@@ -1020,7 +1020,7 @@ In Console: vignette(“pivot”)</p>
 #&gt;  8  1970 UK      private 2.85 
 #&gt;  9  1970 Japan   public  0.719
 #&gt; 10  1970 Japan   private 3.09 
-#&gt; # … with 704 more rows</code></pre>
+#&gt; # ℹ 704 more rows</code></pre>
 </div>
 <div id="step-3.-final-step" class="section level3" number="10.19.4">
 <h3>
@@ -1066,7 +1066,7 @@ In Console: vignette(“pivot”)</p>
 <span><span class="co">#&gt;  8 &lt;NA&gt;                    Middle 40% 21.7      3</span></span>
 <span><span class="co">#&gt;  9 &lt;NA&gt;                    Top 10%    73.0      3</span></span>
 <span><span class="co">#&gt; 10 South &amp; South-East Asia Bottom 50%  1.04     4</span></span>
-<span><span class="co">#&gt; # … with 14 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 14 more rows</span></span></code></pre></div>
 <div class="sourceCode" id="cb340"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_f15</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>region <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="va">regionWID</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">regionWID</span><span class="op">)</span><span class="op">]</span>, each <span class="op">=</span> <span class="fl">3</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">region</span>, <span class="va">group</span>, <span class="va">tcap</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -1149,7 +1149,7 @@ In Console: vignette(“pivot”)</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-03-13.</p>
+    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-05-10.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

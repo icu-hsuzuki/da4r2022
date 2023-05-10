@@ -5,14 +5,16 @@
 
 ```r
 library(tidyverse)
-#> ── Attaching packages ─────────────────── tidyverse 1.3.2 ──
-#> ✔ ggplot2 3.4.1     ✔ purrr   1.0.1
-#> ✔ tibble  3.1.8     ✔ dplyr   1.1.0
-#> ✔ tidyr   1.3.0     ✔ stringr 1.5.0
-#> ✔ readr   2.1.4     ✔ forcats 1.0.0
+#> ── Attaching core tidyverse packages ──── tidyverse 2.0.0 ──
+#> ✔ dplyr     1.1.2     ✔ readr     2.1.4
+#> ✔ forcats   1.0.0     ✔ stringr   1.5.0
+#> ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+#> ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+#> ✔ purrr     1.0.1     
 #> ── Conflicts ────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
+#> ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 ```
 
 
@@ -723,20 +725,20 @@ Don't get scared. We will learn little by little.
 df_lifeExp %>% slice(1:10)
 #> # A tibble: 60 × 6
 #> # Groups:   continent, year [60]
-#>    continent  year mean_lifeExp median_lif…¹ max_l…² min_l…³
-#>    <fct>     <int>        <dbl>        <dbl>   <dbl>   <dbl>
-#>  1 Africa     1952         39.1         38.8    52.7    30  
-#>  2 Africa     1957         41.3         40.6    58.1    31.6
-#>  3 Africa     1962         43.3         42.6    60.2    32.8
-#>  4 Africa     1967         45.3         44.7    61.6    34.1
-#>  5 Africa     1972         47.5         47.0    64.3    35.4
-#>  6 Africa     1977         49.6         49.3    67.1    36.8
-#>  7 Africa     1982         51.6         50.8    69.9    38.4
-#>  8 Africa     1987         53.3         51.6    71.9    39.9
-#>  9 Africa     1992         53.6         52.4    73.6    23.6
-#> 10 Africa     1997         53.6         52.8    74.8    36.1
-#> # … with 50 more rows, and abbreviated variable names
-#> #   ¹​median_lifeExp, ²​max_lifeExp, ³​min_lifeExp
+#>    continent  year mean_lifeExp median_lifeExp max_lifeExp
+#>    <fct>     <int>        <dbl>          <dbl>       <dbl>
+#>  1 Africa     1952         39.1           38.8        52.7
+#>  2 Africa     1957         41.3           40.6        58.1
+#>  3 Africa     1962         43.3           42.6        60.2
+#>  4 Africa     1967         45.3           44.7        61.6
+#>  5 Africa     1972         47.5           47.0        64.3
+#>  6 Africa     1977         49.6           49.3        67.1
+#>  7 Africa     1982         51.6           50.8        69.9
+#>  8 Africa     1987         53.3           51.6        71.9
+#>  9 Africa     1992         53.6           52.4        73.6
+#> 10 Africa     1997         53.6           52.8        74.8
+#> # ℹ 50 more rows
+#> # ℹ 1 more variable: min_lifeExp <dbl>
 ```
 
 You can use `fill` and `color` for the box plot. Try and check the difference.
@@ -924,10 +926,10 @@ df_wdi_extra
 #>  8 Afghanistan AF    AFG    2007 NA     2022-12-22     59.1
 #>  9 Afghanistan AF    AFG    2008 NA     2022-12-22     59.9
 #> 10 Afghanistan AF    AFG    1980 NA     2022-12-22     39.6
-#> # … with 16,482 more rows, and 8 more variables: pop <dbl>,
-#> #   gdpPercap <dbl>, region <chr>, capital <chr>,
-#> #   longitude <dbl>, latitude <dbl>, income <chr>,
-#> #   lending <chr>
+#> # ℹ 16,482 more rows
+#> # ℹ 8 more variables: pop <dbl>, gdpPercap <dbl>,
+#> #   region <chr>, capital <chr>, longitude <dbl>,
+#> #   latitude <dbl>, income <chr>, lending <chr>
 ```
 
 Can you see the differences? List them out. We will study the World Development Indicators in Chapter \@ref(wdi). 

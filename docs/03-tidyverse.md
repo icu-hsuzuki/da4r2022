@@ -95,7 +95,7 @@ output: html_notebook
 
 title: "Title of R Notebook"
 author: "ID and Your Name"
-date: "2023-03-13" 
+date: "2023-05-10" 
 output: 
   html_notebook:
 #    number_sections: yes
@@ -107,7 +107,7 @@ output:
 * Don't change the format. Indention matters.
 * The statement after \# is ignored.
 * Date is automatically inserted when you compile the file.
-* You can replace "2023-03-13" by "2022-12-14" or in any date format surrounded by double quotation marks.
+* You can replace "2023-05-10" by "2022-12-14" or in any date format surrounded by double quotation marks.
 * Section numbers: - default is `number_sections: no`.
 * Table of contents, `toc: true` - default is `toc: false`.
 * Floating table of contents in HTML output, `toc_float: true` - default is `toc_float: false`
@@ -125,14 +125,16 @@ You can run the code in a code chunk by clicking the triangle mark at the top ri
 
 ```r
 library(tidyverse)
-#> ── Attaching packages ─────────────────── tidyverse 1.3.2 ──
-#> ✔ ggplot2 3.4.1     ✔ purrr   1.0.1
-#> ✔ tibble  3.1.8     ✔ dplyr   1.1.0
-#> ✔ tidyr   1.3.0     ✔ stringr 1.5.0
-#> ✔ readr   2.1.4     ✔ forcats 1.0.0
+#> ── Attaching core tidyverse packages ──── tidyverse 2.0.0 ──
+#> ✔ dplyr     1.1.2     ✔ readr     2.1.4
+#> ✔ forcats   1.0.0     ✔ stringr   1.5.0
+#> ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+#> ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+#> ✔ purrr     1.0.1     
 #> ── Conflicts ────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
+#> ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 ```
 
 

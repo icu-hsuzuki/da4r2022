@@ -17,14 +17,16 @@
 
 ```r
 library(tidyverse)
-#> ── Attaching packages ─────────────────── tidyverse 1.3.2 ──
-#> ✔ ggplot2 3.4.1     ✔ purrr   1.0.1
-#> ✔ tibble  3.1.8     ✔ dplyr   1.1.0
-#> ✔ tidyr   1.3.0     ✔ stringr 1.5.0
-#> ✔ readr   2.1.4     ✔ forcats 1.0.0
+#> ── Attaching core tidyverse packages ──── tidyverse 2.0.0 ──
+#> ✔ dplyr     1.1.2     ✔ readr     2.1.4
+#> ✔ forcats   1.0.0     ✔ stringr   1.5.0
+#> ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+#> ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+#> ✔ purrr     1.0.1     
 #> ── Conflicts ────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
+#> ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 library(gapminder)
 ```
 
@@ -51,7 +53,7 @@ df
 #>  8 Afghanistan Asia       1987    40.8 13867957      852.
 #>  9 Afghanistan Asia       1992    41.7 16317921      649.
 #> 10 Afghanistan Asia       1997    41.8 22227415      635.
-#> # … with 1,694 more rows
+#> # ℹ 1,694 more rows
 ```
 
 ## General Comments
@@ -113,7 +115,7 @@ df_co2
 #>  8 Qn2   Quebec nonchilled    95   13.6
 #>  9 Qn2   Quebec nonchilled   175   27.3
 #> 10 Qn2   Quebec nonchilled   250   37.1
-#> # … with 74 more rows
+#> # ℹ 74 more rows
 ```
 
 You can use `head(CO2)` if you set `df_co2 <-CO2` or `df_co2 <- datasets::CO2`.
@@ -358,20 +360,20 @@ head(Seatbelts)
 df_sb <- as_tibble(datasets::Seatbelts)
 df_sb
 #> # A tibble: 192 × 8
-#>    Drivers…¹ drivers front  rear   kms Petro…² VanKi…³   law
-#>        <dbl>   <dbl> <dbl> <dbl> <dbl>   <dbl>   <dbl> <dbl>
-#>  1       107    1687   867   269  9059   0.103      12     0
-#>  2        97    1508   825   265  7685   0.102       6     0
-#>  3       102    1507   806   319  9963   0.102      12     0
-#>  4        87    1385   814   407 10955   0.101       8     0
-#>  5       119    1632   991   454 11823   0.101      10     0
-#>  6       106    1511   945   427 12391   0.101      13     0
-#>  7       110    1559  1004   522 13460   0.104      11     0
-#>  8       106    1630  1091   536 14055   0.104       6     0
-#>  9       107    1579   958   405 12106   0.104      10     0
-#> 10       134    1653   850   437 11372   0.103      16     0
-#> # … with 182 more rows, and abbreviated variable names
-#> #   ¹​DriversKilled, ²​PetrolPrice, ³​VanKilled
+#>    DriversKilled drivers front  rear   kms PetrolPrice
+#>            <dbl>   <dbl> <dbl> <dbl> <dbl>       <dbl>
+#>  1           107    1687   867   269  9059       0.103
+#>  2            97    1508   825   265  7685       0.102
+#>  3           102    1507   806   319  9963       0.102
+#>  4            87    1385   814   407 10955       0.101
+#>  5           119    1632   991   454 11823       0.101
+#>  6           106    1511   945   427 12391       0.101
+#>  7           110    1559  1004   522 13460       0.104
+#>  8           106    1630  1091   536 14055       0.104
+#>  9           107    1579   958   405 12106       0.104
+#> 10           134    1653   850   437 11372       0.103
+#> # ℹ 182 more rows
+#> # ℹ 2 more variables: VanKilled <dbl>, law <dbl>
 ```
 
 
@@ -438,20 +440,20 @@ We will learn how to use `pivot_longer` and `pivot_wider` in EDA4.
 df_sb %>% 
   pivot_longer(cols = 2:4, names_to = "seat", values_to = "value")
 #> # A tibble: 576 × 7
-#>    DriversKilled   kms PetrolPrice VanKi…¹   law seat  value
-#>            <dbl> <dbl>       <dbl>   <dbl> <dbl> <chr> <dbl>
-#>  1           107  9059       0.103      12     0 driv…  1687
-#>  2           107  9059       0.103      12     0 front   867
-#>  3           107  9059       0.103      12     0 rear    269
-#>  4            97  7685       0.102       6     0 driv…  1508
-#>  5            97  7685       0.102       6     0 front   825
-#>  6            97  7685       0.102       6     0 rear    265
-#>  7           102  9963       0.102      12     0 driv…  1507
-#>  8           102  9963       0.102      12     0 front   806
-#>  9           102  9963       0.102      12     0 rear    319
-#> 10            87 10955       0.101       8     0 driv…  1385
-#> # … with 566 more rows, and abbreviated variable name
-#> #   ¹​VanKilled
+#>    DriversKilled   kms PetrolPrice VanKilled   law seat   
+#>            <dbl> <dbl>       <dbl>     <dbl> <dbl> <chr>  
+#>  1           107  9059       0.103        12     0 drivers
+#>  2           107  9059       0.103        12     0 front  
+#>  3           107  9059       0.103        12     0 rear   
+#>  4            97  7685       0.102         6     0 drivers
+#>  5            97  7685       0.102         6     0 front  
+#>  6            97  7685       0.102         6     0 rear   
+#>  7           102  9963       0.102        12     0 drivers
+#>  8           102  9963       0.102        12     0 front  
+#>  9           102  9963       0.102        12     0 rear   
+#> 10            87 10955       0.101         8     0 drivers
+#> # ℹ 566 more rows
+#> # ℹ 1 more variable: value <dbl>
 ```
 
 
@@ -668,7 +670,7 @@ Eg. [Smoking, Alcohol and (O)esophageal Cancer](https://stat.ethz.ch/R-manual/R-
 #>  8 25-34 40-79     30+           0         7
 #>  9 25-34 80-119    0-9g/day      0         2
 #> 10 25-34 80-119    10-19         0         1
-#> # … with 78 more rows
+#> # ℹ 78 more rows
 ```
 
 `df_esoph` has three categorical variables and one numerical variable `ncases` to investigate.

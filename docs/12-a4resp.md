@@ -32,14 +32,16 @@
 
 ```r
 library(tidyverse)
-#> ── Attaching packages ─────────────────── tidyverse 1.3.2 ──
-#> ✔ ggplot2 3.4.1     ✔ purrr   1.0.1
-#> ✔ tibble  3.1.8     ✔ dplyr   1.1.0
-#> ✔ tidyr   1.3.0     ✔ stringr 1.5.0
-#> ✔ readr   2.1.4     ✔ forcats 1.0.0
+#> ── Attaching core tidyverse packages ──── tidyverse 2.0.0 ──
+#> ✔ dplyr     1.1.2     ✔ readr     2.1.4
+#> ✔ forcats   1.0.0     ✔ stringr   1.5.0
+#> ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+#> ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+#> ✔ purrr     1.0.1     
 #> ── Conflicts ────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
+#> ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 library(readxl) # for excel files
 library(WDI)
 ```
@@ -752,20 +754,19 @@ un_edu %>% slice(1:10)
 #> ℹ Use `spec()` to retrieve the full column specification for this data.
 #> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 #> # A tibble: 10 × 7
-#>    Region/Country…¹ ...2   Year Series  Value Footn…² Source
-#>               <dbl> <chr> <dbl> <chr>   <dbl> <chr>   <chr> 
-#>  1                1 Tota…  2005 Stude… 6.79e5 <NA>    Unite…
-#>  2                1 Tota…  2005 Gross… 1.04e2 <NA>    Unite…
-#>  3                1 Tota…  2005 Gross… 9.97e1 <NA>    Unite…
-#>  4                1 Tota…  2005 Stude… 5.09e5 <NA>    Unite…
-#>  5                1 Tota…  2005 Gross… 6.58e1 <NA>    Unite…
-#>  6                1 Tota…  2005 Gross… 6.23e1 <NA>    Unite…
-#>  7                1 Tota…  2005 Stude… 2.00e5 <NA>    Unite…
-#>  8                1 Tota…  2005 Gross… 5.12e1 <NA>    Unite…
-#>  9                1 Tota…  2005 Gross… 4.83e1 <NA>    Unite…
-#> 10                1 Tota…  2010 Stude… 6.97e5 <NA>    Unite…
-#> # … with abbreviated variable names ¹​`Region/Country/Area`,
-#> #   ²​Footnotes
+#>    `Region/Country/Area` ...2   Year Series  Value Footnotes
+#>                    <dbl> <chr> <dbl> <chr>   <dbl> <chr>    
+#>  1                     1 Tota…  2005 Stude… 6.79e5 <NA>     
+#>  2                     1 Tota…  2005 Gross… 1.05e2 <NA>     
+#>  3                     1 Tota…  2005 Gross… 9.97e1 <NA>     
+#>  4                     1 Tota…  2005 Stude… 5.09e5 <NA>     
+#>  5                     1 Tota…  2005 Gross… 6.58e1 <NA>     
+#>  6                     1 Tota…  2005 Gross… 6.23e1 <NA>     
+#>  7                     1 Tota…  2005 Stude… 2.00e5 <NA>     
+#>  8                     1 Tota…  2005 Gross… 5.12e1 <NA>     
+#>  9                     1 Tota…  2005 Gross… 4.83e1 <NA>     
+#> 10                     1 Tota…  2010 Stude… 6.97e5 <NA>     
+#> # ℹ 1 more variable: Source <chr>
 ```
 
 It is a very large data, and we need to check the values.
@@ -813,7 +814,7 @@ un_edu %>% distinct(...2)
 #>  8 South-eastern Asia           
 #>  9 Southern Asia                
 #> 10 Western Asia                 
-#> # … with 214 more rows
+#> # ℹ 214 more rows
 ```
 
 
@@ -862,7 +863,7 @@ df_un_edu
 #>    Region                         Year Series          Value
 #>    <chr>                         <dbl> <chr>           <dbl>
 #>  1 Total, all countries or areas  2005 Students enro… 6.79e5
-#>  2 Total, all countries or areas  2005 Gross enrollm… 1.04e2
+#>  2 Total, all countries or areas  2005 Gross enrollm… 1.05e2
 #>  3 Total, all countries or areas  2005 Gross enrollm… 9.97e1
 #>  4 Total, all countries or areas  2005 Students enro… 5.09e5
 #>  5 Total, all countries or areas  2005 Gross enrollm… 6.58e1
@@ -871,7 +872,7 @@ df_un_edu
 #>  8 Total, all countries or areas  2005 Gross enrollm… 5.12e1
 #>  9 Total, all countries or areas  2005 Gross enrollm… 4.83e1
 #> 10 Total, all countries or areas  2010 Students enro… 6.97e5
-#> # … with 7,272 more rows
+#> # ℹ 7,272 more rows
 ```
 
 Is there a way to separate regions from countries?
@@ -893,7 +894,7 @@ df_un_edu %>% left_join(wdi_cache$country, by = c("Region"="country")) %>%
 #>  8 Armenia            
 #>  9 Aruba              
 #> 10 Australia          
-#> # … with 166 more rows
+#> # ℹ 166 more rows
 ```
 
 
@@ -913,7 +914,7 @@ df_un_edu %>% left_join(wdi_cache$country, by = c("Region"="country")) %>%
 #>  8 South-eastern Asia           
 #>  9 Southern Asia                
 #> 10 Western Asia                 
-#> # … with 38 more rows
+#> # ℹ 38 more rows
 ```
 
 
@@ -1044,20 +1045,19 @@ df_un_pop
 #> ℹ Use `spec()` to retrieve the full column specification for this data.
 #> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 #> # A tibble: 10 × 7
-#>    Region.Country.…¹ X      Year Series Value Footn…² Source
-#>                <dbl> <chr> <dbl> <chr>  <dbl> <chr>   <chr> 
-#>  1                 1 Tota…  2010 Popul…   1.3 <NA>    "Unit…
-#>  2                 1 Tota…  2010 Total…   2.6 <NA>    "Unit…
-#>  3                 1 Tota…  2010 Infan…  37.1 <NA>    "Unit…
-#>  4                 1 Tota…  2010 Mater… 253   <NA>    "Worl…
-#>  5                 1 Tota…  2010 Life …  70.1 <NA>    "Unit…
-#>  6                 1 Tota…  2010 Life …  67.6 <NA>    "Unit…
-#>  7                 1 Tota…  2010 Life …  72.7 <NA>    "Unit…
-#>  8                 1 Tota…  2015 Popul…   1.2 <NA>    "Unit…
-#>  9                 1 Tota…  2015 Total…   2.5 <NA>    "Unit…
-#> 10                 1 Tota…  2015 Infan…  31.5 <NA>    "Unit…
-#> # … with abbreviated variable names ¹​Region.Country.Area,
-#> #   ²​Footnotes
+#>    Region.Country.Area X         Year Series Value Footnotes
+#>                  <dbl> <chr>    <dbl> <chr>  <dbl> <chr>    
+#>  1                   1 Total, …  2010 Popul…   1.3 <NA>     
+#>  2                   1 Total, …  2010 Total…   2.6 <NA>     
+#>  3                   1 Total, …  2010 Infan…  37.1 <NA>     
+#>  4                   1 Total, …  2010 Mater… 253   <NA>     
+#>  5                   1 Total, …  2010 Life …  70.1 <NA>     
+#>  6                   1 Total, …  2010 Life …  67.6 <NA>     
+#>  7                   1 Total, …  2010 Life …  72.7 <NA>     
+#>  8                   1 Total, …  2015 Popul…   1.2 <NA>     
+#>  9                   1 Total, …  2015 Total…   2.5 <NA>     
+#> 10                   1 Total, …  2015 Infan…  31.5 <NA>     
+#> # ℹ 1 more variable: Source <chr>
 ```
 
 
@@ -1088,7 +1088,7 @@ df_un_pop %>% distinct(Footnotes)
 #>  8 Projected estimate (medium fertility variant).;Including…
 #>  9 Including Falkland Islands (Malvinas).                   
 #> 10 Projected estimate (medium fertility variant).;Including…
-#> # … with 72 more rows
+#> # ℹ 72 more rows
 ```
 
 
@@ -1107,7 +1107,7 @@ df_un_pop %>% distinct(X)
 #>  8 Western Africa               
 #>  9 Northern America             
 #> 10 Latin America & the Caribbean
-#> # … with 254 more rows
+#> # ℹ 254 more rows
 ```
 
 
@@ -1183,7 +1183,7 @@ un_pop
 #>  8 Total, all countries or areas  2015 Population ann…   1.2
 #>  9 Total, all countries or areas  2015 Total fertilit…   2.5
 #> 10 Total, all countries or areas  2015 Infant mortali…  31.5
-#> # … with 6,644 more rows
+#> # ℹ 6,644 more rows
 ```
 
 Let us change the names of series.
@@ -1194,21 +1194,20 @@ un_pop_wide <- un_pop %>% pivot_wider(names_from = Series, values_from = Value)
 colnames(un_pop_wide) <- c("Region", "Year", "IncRate", "Fert", "InfDeath", "MatDeath", "LifeExp", "LifeExpM", "LifeExpF")
 un_pop_wide
 #> # A tibble: 1,005 × 9
-#>    Region         Year IncRate  Fert InfDe…¹ MatDe…² LifeExp
-#>    <chr>         <dbl>   <dbl> <dbl>   <dbl>   <dbl>   <dbl>
-#>  1 Total, all c…  2010     1.3   2.6    37.1     253    70.1
-#>  2 Total, all c…  2015     1.2   2.5    31.5     225    71.8
-#>  3 Total, all c…  2017     1.1   2.5    29.6     218    72.3
-#>  4 Total, all c…  2022     0.8   2.3    27.5      NA    71.7
-#>  5 Africa         2010     2.6   4.9    60.9      NA    58.6
-#>  6 Africa         2015     2.6   4.6    52.5      NA    61.1
-#>  7 Africa         2022     2.3   4.2    44.2      NA    62.2
-#>  8 Northern Afr…  2010     1.9   3.2    29.5     148    69.6
-#>  9 Northern Afr…  2015     2.1   3.4    25.3     120    70.9
-#> 10 Northern Afr…  2017     2     3.2    24.2     115    71.5
-#> # … with 995 more rows, 2 more variables: LifeExpM <dbl>,
-#> #   LifeExpF <dbl>, and abbreviated variable names
-#> #   ¹​InfDeath, ²​MatDeath
+#>    Region       Year IncRate  Fert InfDeath MatDeath LifeExp
+#>    <chr>       <dbl>   <dbl> <dbl>    <dbl>    <dbl>   <dbl>
+#>  1 Total, all…  2010     1.3   2.6     37.1      253    70.1
+#>  2 Total, all…  2015     1.2   2.5     31.5      225    71.8
+#>  3 Total, all…  2017     1.1   2.5     29.6      218    72.3
+#>  4 Total, all…  2022     0.8   2.3     27.5       NA    71.7
+#>  5 Africa       2010     2.6   4.9     60.9       NA    58.6
+#>  6 Africa       2015     2.6   4.6     52.5       NA    61.1
+#>  7 Africa       2022     2.3   4.2     44.2       NA    62.2
+#>  8 Northern A…  2010     1.9   3.2     29.5      148    69.6
+#>  9 Northern A…  2015     2.1   3.4     25.3      120    70.9
+#> 10 Northern A…  2017     2     3.2     24.2      115    71.5
+#> # ℹ 995 more rows
+#> # ℹ 2 more variables: LifeExpM <dbl>, LifeExpF <dbl>
 ```
 
 
@@ -1228,7 +1227,7 @@ un_pop_long
 #>  8 Total, all countries or areas  2015 IncRate    1.2
 #>  9 Total, all countries or areas  2015 Fert       2.5
 #> 10 Total, all countries or areas  2015 InfDeath  31.5
-#> # … with 7,025 more rows
+#> # ℹ 7,025 more rows
 ```
 
 
@@ -1306,7 +1305,7 @@ public
 #>  8 AD       2002 0.234 
 #>  9 AD       2003 0.263 
 #> 10 AD       2004 0.294 
-#> # … with 8,773 more rows
+#> # ℹ 8,773 more rows
 ```
 
 
@@ -1326,7 +1325,7 @@ private
 #>  8 AD       2002   0.778
 #>  9 AD       2003   0.834
 #> 10 AD       2004   0.894
-#> # … with 8,979 more rows
+#> # ℹ 8,979 more rows
 ```
 
 
@@ -1347,7 +1346,7 @@ public_vs_private
 #>  8 AD       2002 0.234    0.778
 #>  9 AD       2003 0.263    0.834
 #> 10 AD       2004 0.294    0.894
-#> # … with 8,773 more rows
+#> # ℹ 8,773 more rows
 ```
 
 
@@ -1368,7 +1367,7 @@ df_pub_priv
 #>  8 Andorra AD     1998 private  0.582  Europ… High … Not cl…
 #>  9 Andorra AD     1999 public   0.159  Europ… High … Not cl…
 #> 10 Andorra AD     1999 private  0.628  Europ… High … Not cl…
-#> # … with 17,556 more rows
+#> # ℹ 17,556 more rows
 ```
 
 

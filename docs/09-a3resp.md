@@ -79,14 +79,16 @@ In RStudio,
 
 ```r
 library(tidyverse)
-#> ── Attaching packages ─────────────────── tidyverse 1.3.2 ──
-#> ✔ ggplot2 3.4.1     ✔ purrr   1.0.1
-#> ✔ tibble  3.1.8     ✔ dplyr   1.1.0
-#> ✔ tidyr   1.3.0     ✔ stringr 1.5.0
-#> ✔ readr   2.1.4     ✔ forcats 1.0.0
+#> ── Attaching core tidyverse packages ──── tidyverse 2.0.0 ──
+#> ✔ dplyr     1.1.2     ✔ readr     2.1.4
+#> ✔ forcats   1.0.0     ✔ stringr   1.5.0
+#> ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+#> ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+#> ✔ purrr     1.0.1     
 #> ── Conflicts ────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
+#> ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 library(WDI)
 ```
 
@@ -459,20 +461,19 @@ WDI(indicator = "NY.GDP.PCAP.KD")
 #> ℹ Use `spec()` to retrieve the full column specification for this data.
 #> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 #> # A tibble: 16,492 × 5
-#>    country                     iso2c iso3c  year NY.GDP.PC…¹
-#>    <chr>                       <chr> <chr> <dbl>       <dbl>
-#>  1 Africa Eastern and Southern ZH    AFE    2021       1461.
-#>  2 Africa Eastern and Southern ZH    AFE    2020       1437.
-#>  3 Africa Eastern and Southern ZH    AFE    2019       1520.
-#>  4 Africa Eastern and Southern ZH    AFE    2018       1529.
-#>  5 Africa Eastern and Southern ZH    AFE    2017       1532.
-#>  6 Africa Eastern and Southern ZH    AFE    2016       1533.
-#>  7 Africa Eastern and Southern ZH    AFE    2015       1541.
-#>  8 Africa Eastern and Southern ZH    AFE    2014       1538.
-#>  9 Africa Eastern and Southern ZH    AFE    2013       1520.
-#> 10 Africa Eastern and Southern ZH    AFE    2012       1499.
-#> # … with 16,482 more rows, and abbreviated variable name
-#> #   ¹​NY.GDP.PCAP.KD
+#>    country                  iso2c iso3c  year NY.GDP.PCAP.KD
+#>    <chr>                    <chr> <chr> <dbl>          <dbl>
+#>  1 Africa Eastern and Sout… ZH    AFE    2021          1461.
+#>  2 Africa Eastern and Sout… ZH    AFE    2020          1437.
+#>  3 Africa Eastern and Sout… ZH    AFE    2019          1520.
+#>  4 Africa Eastern and Sout… ZH    AFE    2018          1529.
+#>  5 Africa Eastern and Sout… ZH    AFE    2017          1532.
+#>  6 Africa Eastern and Sout… ZH    AFE    2016          1533.
+#>  7 Africa Eastern and Sout… ZH    AFE    2015          1541.
+#>  8 Africa Eastern and Sout… ZH    AFE    2014          1538.
+#>  9 Africa Eastern and Sout… ZH    AFE    2013          1520.
+#> 10 Africa Eastern and Sout… ZH    AFE    2012          1499.
+#> # ℹ 16,482 more rows
 ```
 
 * In order to use the downloaded data, we need to assign a name to it. It can be `df` if you download and use only one data, but it is better to assign the data to be a more descriptive name.
@@ -494,20 +495,19 @@ df_gdppcap
 #> ℹ Use `spec()` to retrieve the full column specification for this data.
 #> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 #> # A tibble: 16,492 × 5
-#>    country                     iso2c iso3c  year NY.GDP.PC…¹
-#>    <chr>                       <chr> <chr> <dbl>       <dbl>
-#>  1 Africa Eastern and Southern ZH    AFE    2021       1461.
-#>  2 Africa Eastern and Southern ZH    AFE    2020       1437.
-#>  3 Africa Eastern and Southern ZH    AFE    2019       1520.
-#>  4 Africa Eastern and Southern ZH    AFE    2018       1529.
-#>  5 Africa Eastern and Southern ZH    AFE    2017       1532.
-#>  6 Africa Eastern and Southern ZH    AFE    2016       1533.
-#>  7 Africa Eastern and Southern ZH    AFE    2015       1541.
-#>  8 Africa Eastern and Southern ZH    AFE    2014       1538.
-#>  9 Africa Eastern and Southern ZH    AFE    2013       1520.
-#> 10 Africa Eastern and Southern ZH    AFE    2012       1499.
-#> # … with 16,482 more rows, and abbreviated variable name
-#> #   ¹​NY.GDP.PCAP.KD
+#>    country                  iso2c iso3c  year NY.GDP.PCAP.KD
+#>    <chr>                    <chr> <chr> <dbl>          <dbl>
+#>  1 Africa Eastern and Sout… ZH    AFE    2021          1461.
+#>  2 Africa Eastern and Sout… ZH    AFE    2020          1437.
+#>  3 Africa Eastern and Sout… ZH    AFE    2019          1520.
+#>  4 Africa Eastern and Sout… ZH    AFE    2018          1529.
+#>  5 Africa Eastern and Sout… ZH    AFE    2017          1532.
+#>  6 Africa Eastern and Sout… ZH    AFE    2016          1533.
+#>  7 Africa Eastern and Sout… ZH    AFE    2015          1541.
+#>  8 Africa Eastern and Sout… ZH    AFE    2014          1538.
+#>  9 Africa Eastern and Sout… ZH    AFE    2013          1520.
+#> 10 Africa Eastern and Sout… ZH    AFE    2012          1499.
+#> # ℹ 16,482 more rows
 ```
 
 * If you want to use extra information such as `region`, `income`, `lending`, use `extra = TRUE`.
@@ -531,22 +531,22 @@ df_gdppcap_extra
 #> ℹ Use `spec()` to retrieve the full column specification for this data.
 #> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 #> # A tibble: 16,492 × 13
-#>    country     iso2c iso3c  year NY.GDP.…¹ status lastupda…²
-#>    <chr>       <chr> <chr> <dbl>     <dbl> <lgl>  <date>    
-#>  1 Afghanistan AF    AFG    2015      592. NA     2022-12-22
-#>  2 Afghanistan AF    AFG    2011      551. NA     2022-12-22
-#>  3 Afghanistan AF    AFG    2014      603. NA     2022-12-22
-#>  4 Afghanistan AF    AFG    2013      608. NA     2022-12-22
-#>  5 Afghanistan AF    AFG    2012      596. NA     2022-12-22
-#>  6 Afghanistan AF    AFG    2007      429. NA     2022-12-22
-#>  7 Afghanistan AF    AFG    2010      569. NA     2022-12-22
-#>  8 Afghanistan AF    AFG    2009      512. NA     2022-12-22
-#>  9 Afghanistan AF    AFG    2008      437. NA     2022-12-22
-#> 10 Afghanistan AF    AFG    2003      363. NA     2022-12-22
-#> # … with 16,482 more rows, 6 more variables: region <chr>,
+#>    country     iso2c iso3c  year NY.GDP.PCAP.KD status
+#>    <chr>       <chr> <chr> <dbl>          <dbl> <lgl> 
+#>  1 Afghanistan AF    AFG    2015           592. NA    
+#>  2 Afghanistan AF    AFG    2011           551. NA    
+#>  3 Afghanistan AF    AFG    2014           603. NA    
+#>  4 Afghanistan AF    AFG    2013           608. NA    
+#>  5 Afghanistan AF    AFG    2012           596. NA    
+#>  6 Afghanistan AF    AFG    2007           429. NA    
+#>  7 Afghanistan AF    AFG    2010           569. NA    
+#>  8 Afghanistan AF    AFG    2009           512. NA    
+#>  9 Afghanistan AF    AFG    2008           437. NA    
+#> 10 Afghanistan AF    AFG    2003           363. NA    
+#> # ℹ 16,482 more rows
+#> # ℹ 7 more variables: lastupdated <date>, region <chr>,
 #> #   capital <chr>, longitude <dbl>, latitude <dbl>,
-#> #   income <chr>, lending <chr>, and abbreviated variable
-#> #   names ¹​NY.GDP.PCAP.KD, ²​lastupdated
+#> #   income <chr>, lending <chr>
 ```
 
 ### Writing and reading a csv file
@@ -605,7 +605,7 @@ df_gdppcap_asean <- WDI(ASEAN, "NY.GDP.PCAP.KD")
 #>  8 Brunei Darussalam BN    BRN    2014         31156.
 #>  9 Brunei Darussalam BN    BRN    2013         32342.
 #> 10 Brunei Darussalam BN    BRN    2012         33457.
-#> # … with 486 more rows
+#> # ℹ 486 more rows
 ```
 
 
@@ -1034,7 +1034,7 @@ df_infl_s
 #> 13 Vietnam VN    VNM    2010  9.21   NA     2022-12-22 
 #> 14 Vietnam VN    VNM    2005  8.28   NA     2022-12-22 
 #> 15 Vietnam VN    VNM    2000 -1.71   NA     2022-12-22 
-#> # … with 6 more variables: region <chr>, capital <chr>,
+#> # ℹ 6 more variables: region <chr>, capital <chr>,
 #> #   longitude <dbl>, latitude <dbl>, income <chr>,
 #> #   lending <chr>
 ```

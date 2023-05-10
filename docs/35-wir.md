@@ -5,14 +5,16 @@
 
 ```r
 library(tidyverse)
-#> ── Attaching packages ─────────────────── tidyverse 1.3.2 ──
-#> ✔ ggplot2 3.4.1     ✔ purrr   1.0.1
-#> ✔ tibble  3.1.8     ✔ dplyr   1.1.0
-#> ✔ tidyr   1.3.0     ✔ stringr 1.5.0
-#> ✔ readr   2.1.4     ✔ forcats 1.0.0
+#> ── Attaching core tidyverse packages ──── tidyverse 2.0.0 ──
+#> ✔ dplyr     1.1.2     ✔ readr     2.1.4
+#> ✔ forcats   1.0.0     ✔ stringr   1.5.0
+#> ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+#> ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+#> ✔ purrr     1.0.1     
 #> ── Conflicts ────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
+#> ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 library(readxl) # for excel files
 library(WDI)
 ```
@@ -114,7 +116,7 @@ public
 #>  8 AD       2002 0.234 
 #>  9 AD       2003 0.263 
 #> 10 AD       2004 0.294 
-#> # … with 8,773 more rows
+#> # ℹ 8,773 more rows
 ```
 
 
@@ -134,7 +136,7 @@ private
 #>  8 AD       2002   0.778
 #>  9 AD       2003   0.834
 #> 10 AD       2004   0.894
-#> # … with 8,979 more rows
+#> # ℹ 8,979 more rows
 ```
 
 
@@ -155,7 +157,7 @@ public_vs_private
 #>  8 AD       2002 0.234    0.778
 #>  9 AD       2003 0.263    0.834
 #> 10 AD       2004 0.294    0.894
-#> # … with 8,773 more rows
+#> # ℹ 8,773 more rows
 ```
 
 We use `wdi_cache` created by `wdi_cache = WDI::wdi_cache()`.
@@ -184,7 +186,7 @@ df_pub_priv
 #>  8 Andorra AD     1998 private  0.582  Europ… High … Not cl…
 #>  9 Andorra AD     1999 public   0.159  Europ… High … Not cl…
 #> 10 Andorra AD     1999 private  0.628  Europ… High … Not cl…
-#> # … with 17,556 more rows
+#> # ℹ 17,556 more rows
 ```
 
 

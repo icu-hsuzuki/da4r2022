@@ -14,14 +14,16 @@
 
 ```r
 library(tidyverse)
-#> ── Attaching packages ─────────────────── tidyverse 1.3.2 ──
-#> ✔ ggplot2 3.4.1     ✔ purrr   1.0.1
-#> ✔ tibble  3.1.8     ✔ dplyr   1.1.0
-#> ✔ tidyr   1.3.0     ✔ stringr 1.5.0
-#> ✔ readr   2.1.4     ✔ forcats 1.0.0
+#> ── Attaching core tidyverse packages ──── tidyverse 2.0.0 ──
+#> ✔ dplyr     1.1.2     ✔ readr     2.1.4
+#> ✔ forcats   1.0.0     ✔ stringr   1.5.0
+#> ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+#> ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+#> ✔ purrr     1.0.1     
 #> ── Conflicts ────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
+#> ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 library(readxl)
 ```
 
@@ -218,18 +220,16 @@ The next F2 is similar to F1.
 df_f2 <- read_excel("./data/WIR2022s.xlsx", sheet = "data-F2")
 df_f2
 #> # A tibble: 8 × 5
-#>    year iso                     `Bottom 50%` Middl…¹ Top 1…²
-#>   <dbl> <chr>                          <dbl>   <dbl>   <dbl>
-#> 1  2021 Europe                        0.189    0.453   0.358
-#> 2  2021 East Asia                     0.139    0.427   0.434
-#> 3  2021 North America                 0.132    0.411   0.457
-#> 4  2021 Russia & Central Asia         0.147    0.386   0.467
-#> 5  2021 South & South East Asia       0.123    0.328   0.548
-#> 6  2021 Latin America                 0.102    0.344   0.554
-#> 7  2021 Sub-Saharan Africa            0.0892   0.354   0.557
-#> 8  2021 MENA                          0.09     0.329   0.581
-#> # … with abbreviated variable names ¹​`Middle 40%`,
-#> #   ²​`Top 10%`
+#>    year iso              `Bottom 50%` `Middle 40%` `Top 10%`
+#>   <dbl> <chr>                   <dbl>        <dbl>     <dbl>
+#> 1  2021 Europe                 0.189         0.453     0.358
+#> 2  2021 East Asia              0.139         0.427     0.434
+#> 3  2021 North America          0.132         0.411     0.457
+#> 4  2021 Russia & Centra…       0.147         0.386     0.467
+#> 5  2021 South & South E…       0.123         0.328     0.548
+#> 6  2021 Latin America          0.102         0.344     0.554
+#> 7  2021 Sub-Saharan Afr…       0.0892        0.354     0.557
+#> 8  2021 MENA                   0.09          0.329     0.581
 ```
 
 
@@ -250,7 +250,7 @@ df_f2 %>% pivot_longer(cols = 3:5, names_to = "group", values_to = "value")
 #>  8  2021 North America         Middle 40% 0.411
 #>  9  2021 North America         Top 10%    0.457
 #> 10  2021 Russia & Central Asia Bottom 50% 0.147
-#> # … with 14 more rows
+#> # ℹ 14 more rows
 ```
 
 
@@ -294,7 +294,7 @@ pivot_wider(data,
 #>  8  2021 North America         Middle 40% 0.411
 #>  9  2021 North America         Top 10%    0.457
 #> 10  2021 Russia & Central Asia Bottom 50% 0.147
-#> # … with 14 more rows
+#> # ℹ 14 more rows
 ```
 
 ```
@@ -336,7 +336,7 @@ df_f3
 #>  8  2021 Australia               10.4 
 #>  9  2021 Azerbaijan               9.63
 #> 10  2021 Bosnia and Herzegovina   9.32
-#> # … with 167 more rows
+#> # ℹ 167 more rows
 ```
 
 
@@ -387,7 +387,7 @@ df_f3 %>% arrange(desc(T10B50))
 #>  8  2021 Botswana                   36.5
 #>  9  2021 Angola                     32.1
 #> 10  2021 Yemen                      32.0
-#> # … with 167 more rows
+#> # ℹ 167 more rows
 ```
 
 Using the information above, we set breakpoints and use R Base's `cut` command to divide into five classes, and add it as a new column using `mutate`
@@ -398,20 +398,20 @@ df_f3 %>%
   mutate(`Top 10 Bottom 50 Ratio` = cut(T10B50,breaks = c(5, 12, 13, 16, 19,140), 
                                         include.lowest = FALSE)) 
 #> # A tibble: 177 × 4
-#>     year Country                T10B50 Top 10 Bottom 50 Ra…¹
-#>    <dbl> <chr>                   <dbl> <fct>                
-#>  1  2021 United Arab Emirates    19.2  (19,140]             
-#>  2  2021 Afghanistan             11.7  (5,12]               
-#>  3  2021 Albania                  8.99 (5,12]               
-#>  4  2021 Armenia                 11.0  (5,12]               
-#>  5  2021 Angola                  32.1  (19,140]             
-#>  6  2021 Argentina               13.2  (13,16]              
-#>  7  2021 Austria                  7.68 (5,12]               
-#>  8  2021 Australia               10.4  (5,12]               
-#>  9  2021 Azerbaijan               9.63 (5,12]               
-#> 10  2021 Bosnia and Herzegovina   9.32 (5,12]               
-#> # … with 167 more rows, and abbreviated variable name
-#> #   ¹​`Top 10 Bottom 50 Ratio`
+#>     year Country               T10B50 Top 10 Bottom 50 Rat…¹
+#>    <dbl> <chr>                  <dbl> <fct>                 
+#>  1  2021 United Arab Emirates   19.2  (19,140]              
+#>  2  2021 Afghanistan            11.7  (5,12]                
+#>  3  2021 Albania                 8.99 (5,12]                
+#>  4  2021 Armenia                11.0  (5,12]                
+#>  5  2021 Angola                 32.1  (19,140]              
+#>  6  2021 Argentina              13.2  (13,16]               
+#>  7  2021 Austria                 7.68 (5,12]                
+#>  8  2021 Australia              10.4  (5,12]                
+#>  9  2021 Azerbaijan              9.63 (5,12]                
+#> 10  2021 Bosnia and Herzegovi…   9.32 (5,12]                
+#> # ℹ 167 more rows
+#> # ℹ abbreviated name: ¹​`Top 10 Bottom 50 Ratio`
 ```
 
 
@@ -586,7 +586,7 @@ We will discuss `geom_smooth` and `stat_smooth` in Chapter \@ref(model) applied 
 #>  8  1940   44.4
 #>  9  1950   40.3
 #> 10  1960   38.4
-#> # … with 14 more rows
+#> # ℹ 14 more rows
 ```
 
 
@@ -620,7 +620,7 @@ df_f9 <- read_excel("./data/WIR2022s.xlsx", sheet = "data-F9"); df_f9
 #>  8     7                    0.0317
 #>  9     8                    0.0322
 #> 10     9                    0.0328
-#> # … with 117 more rows
+#> # ℹ 117 more rows
 ```
 
 
@@ -655,7 +655,7 @@ df_f7 <- read_excel("./data/WIR2022s.xlsx", sheet = "data-F7"); df_f7
 #>  8  1940       0.0629        0.379     0.558
 #>  9  1950       0.0687        0.377     0.554
 #> 10  1960       0.0701        0.392     0.538
-#> # … with 14 more rows
+#> # ℹ 14 more rows
 ```
 
 
@@ -694,7 +694,7 @@ df_f10 <- read_excel("./data/WIR2022s.xlsx", sheet = "data-F10"); df_f10
 #>  8  2002   0.0119         0.08   NA       NA    NA
 #>  9  2003   0.0103         0.08   NA       NA    NA
 #> 10  2004   0.0127         0.0828 NA       NA    NA
-#> # … with 17 more rows
+#> # ℹ 17 more rows
 ```
 
 
@@ -717,7 +717,7 @@ df_f10 %>%
 #>  8  1998 Top 0.01%                 0.0815 
 #>  9  1999 Global Billionaire Wealth 0.0112 
 #> 10  1999 Top 0.01%                 0.0855 
-#> # … with 44 more rows
+#> # ℹ 44 more rows
 ```
 
 
@@ -754,8 +754,7 @@ df_f6 <- read_excel("./data/WIR2022s.xlsx", sheet = "data-F6"); df_f6
 #> 7  1980                        0.569                   0.431
 #> 8  2000                        0.473                   0.527
 #> 9  2020                        0.320                   0.680
-#> # … with abbreviated variable name
-#> #   ¹​`Within-country inequality`
+#> # ℹ abbreviated name: ¹​`Within-country inequality`
 ```
 
 
@@ -897,7 +896,7 @@ df_f11 %>%
 #>  8  1940 EU    0.0282  0.412
 #>  9  1950 US    0.0270  0.276
 #> 10  1950 EU    0.0272  0.339
-#> # … with 14 more rows
+#> # ℹ 14 more rows
 ```
 
 
@@ -933,7 +932,7 @@ df_f11 %>%
 #>  8  1920 EU    top1  0.496  
 #>  9  1930 US    bot50 0.00737
 #> 10  1930 US    top1  0.409  
-#> # … with 38 more rows
+#> # ℹ 38 more rows
 ```
 
 
@@ -949,25 +948,25 @@ The following is similar to the previous example.
 ```r
 df_f8 <- read_excel("./data/WIR2022s.xlsx", sheet = "data-F8"); df_f8
 #> # A tibble: 51 × 17
-#>     year Germany German…¹ Spain Spain…² France Franc…³    UK
-#>    <dbl>   <dbl>    <dbl> <dbl>   <dbl>  <dbl>   <dbl> <dbl>
-#>  1  1970   1.11      2.30 0.604    4.06  0.422    3.12 0.601
-#>  2  1971   1.12      2.25 0.657    4.53  0.443    3.06 0.689
-#>  3  1972   1.11      2.27 0.624    4.36  0.467    3.08 0.790
-#>  4  1973   1.11      2.23 0.596    4.46  0.478    3.06 0.929
-#>  5  1974   1.13      2.25 0.586    4.64  0.498    3.03 1.09 
-#>  6  1975   1.12      2.35 0.602    4.83  0.545    3.12 1.00 
-#>  7  1976   1.03      2.34 0.581    4.46  0.561    3.08 0.918
-#>  8  1977   1.01      2.42 0.586    4.10  0.567    3.10 0.867
-#>  9  1978   0.990     2.52 0.604    4.10  0.580    3.20 0.881
-#> 10  1979   0.989     2.55 0.621    4.20  0.624    3.30 0.955
-#> # … with 41 more rows, 9 more variables:
+#>     year Germany `Germany (private)` Spain `Spain (private)`
+#>    <dbl>   <dbl>               <dbl> <dbl>             <dbl>
+#>  1  1970   1.11                 2.30 0.604              4.06
+#>  2  1971   1.12                 2.25 0.657              4.53
+#>  3  1972   1.11                 2.27 0.624              4.36
+#>  4  1973   1.11                 2.23 0.596              4.46
+#>  5  1974   1.13                 2.25 0.586              4.64
+#>  6  1975   1.12                 2.35 0.602              4.83
+#>  7  1976   1.03                 2.34 0.581              4.46
+#>  8  1977   1.01                 2.42 0.586              4.10
+#>  9  1978   0.990                2.52 0.604              4.10
+#> 10  1979   0.989                2.55 0.621              4.20
+#> # ℹ 41 more rows
+#> # ℹ 12 more variables: France <dbl>,
+#> #   `France (private)` <dbl>, UK <dbl>,
 #> #   `UK (private)` <dbl>, Japan <dbl>,
 #> #   `Japan (private)` <dbl>, Norway <dbl>,
 #> #   `Norway (private)` <dbl>, USA <dbl>,
-#> #   `USA (private)` <dbl>, gwealAVGRICH <dbl>,
-#> #   pwealAVGRICH <dbl>, and abbreviated variable names
-#> #   ¹​`Germany (private)`, ²​`Spain (private)`, …
+#> #   `USA (private)` <dbl>, gwealAVGRICH <dbl>, …
 ```
 
 
@@ -1016,25 +1015,25 @@ df_f8 %>%
 
 ```
 #> # A tibble: 51 × 15
-#>     year Germany_p…¹ Germa…² Spain…³ Spain…⁴ Franc…⁵ Franc…⁶
-#>    <dbl>       <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
-#>  1  1970       1.11     2.30   0.604    4.06   0.422    3.12
-#>  2  1971       1.12     2.25   0.657    4.53   0.443    3.06
-#>  3  1972       1.11     2.27   0.624    4.36   0.467    3.08
-#>  4  1973       1.11     2.23   0.596    4.46   0.478    3.06
-#>  5  1974       1.13     2.25   0.586    4.64   0.498    3.03
-#>  6  1975       1.12     2.35   0.602    4.83   0.545    3.12
-#>  7  1976       1.03     2.34   0.581    4.46   0.561    3.08
-#>  8  1977       1.01     2.42   0.586    4.10   0.567    3.10
-#>  9  1978       0.990    2.52   0.604    4.10   0.580    3.20
-#> 10  1979       0.989    2.55   0.621    4.20   0.624    3.30
-#> # … with 41 more rows, 8 more variables: UK_public <dbl>,
-#> #   UK_private <dbl>, Japan_public <dbl>,
+#>     year Germany_public Germany_private Spain_public
+#>    <dbl>          <dbl>           <dbl>        <dbl>
+#>  1  1970          1.11             2.30        0.604
+#>  2  1971          1.12             2.25        0.657
+#>  3  1972          1.11             2.27        0.624
+#>  4  1973          1.11             2.23        0.596
+#>  5  1974          1.13             2.25        0.586
+#>  6  1975          1.12             2.35        0.602
+#>  7  1976          1.03             2.34        0.581
+#>  8  1977          1.01             2.42        0.586
+#>  9  1978          0.990            2.52        0.604
+#> 10  1979          0.989            2.55        0.621
+#> # ℹ 41 more rows
+#> # ℹ 11 more variables: Spain_private <dbl>,
+#> #   France_public <dbl>, France_private <dbl>,
+#> #   UK_public <dbl>, UK_private <dbl>, Japan_public <dbl>,
 #> #   Japan_private <dbl>, Norway_public <dbl>,
 #> #   Norway_private <dbl>, USA_public <dbl>,
-#> #   USA_private <dbl>, and abbreviated variable names
-#> #   ¹​Germany_public, ²​Germany_private, ³​Spain_public,
-#> #   ⁴​Spain_private, ⁵​France_public, ⁶​France_private
+#> #   USA_private <dbl>
 ```
 
 
@@ -1075,7 +1074,7 @@ df_f8 %>%
 #>  8  1971 Germany  1.12     2.25
 #>  9  1971 Spain    0.657    4.53
 #> 10  1971 France   0.443    3.06
-#> # … with 347 more rows
+#> # ℹ 347 more rows
 ```
 
 
@@ -1114,7 +1113,7 @@ df_f8 %>%
 #>  8  1970 UK      private 2.85 
 #>  9  1970 Japan   public  0.719
 #> 10  1970 Japan   private 3.09 
-#> # … with 704 more rows
+#> # ℹ 704 more rows
 ```
 
 
@@ -1167,7 +1166,7 @@ df_f15 <- read_excel("./data/WIR2022s.xlsx", sheet = "data-F15"); df_f15
 #>  8 <NA>                    Middle 40% 21.7      3
 #>  9 <NA>                    Top 10%    73.0      3
 #> 10 South & South-East Asia Bottom 50%  1.04     4
-#> # … with 14 more rows
+#> # ℹ 14 more rows
 ```
 
 

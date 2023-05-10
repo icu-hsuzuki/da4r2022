@@ -7,7 +7,7 @@
 <title>Chapter 15 Assignment Five | Data Analysis for Researchers AY2022</title>
 <meta name="author" content="Hiroshi Suzuki">
 <meta name="description" content="Assignment Five: The Week Six Assignment Choose a public data. Clearly state how you obtained the data. Even if you are able to give the URL to download the data, explain the steps you reached and...">
-<meta name="generator" content="bookdown 0.32 with bs4_book()">
+<meta name="generator" content="bookdown 0.33 with bs4_book()">
 <meta property="og:title" content="Chapter 15 Assignment Five | Data Analysis for Researchers AY2022">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://icu-hsuzuki.github.io/da4r2022/a5resp.html">
@@ -18,7 +18,7 @@
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
 <script src="libs/datatables-binding-0.27/datatables.js"></script><link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
 <link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet">
 <script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
@@ -105,8 +105,9 @@
 <li class="book-part">APPENDIX</li>
 <li><a class="" href="histdata.html"><span class="header-section-number">A</span> HistData</a></li>
 <li><a class="" href="covid19.html"><span class="header-section-number">B</span> Covid 19</a></li>
-<li><a class="" href="bookdown.html"><span class="header-section-number">C</span> Bookdown</a></li>
-<li><a class="" href="template.html"><span class="header-section-number">D</span> Template</a></li>
+<li><a class="" href="worldmap.html"><span class="header-section-number">C</span> World Map</a></li>
+<li><a class="" href="bookdown.html"><span class="header-section-number">D</span> Bookdown</a></li>
+<li><a class="" href="template.html"><span class="header-section-number">E</span> Template</a></li>
 </ul>
 
         <div class="book-extra">
@@ -163,14 +164,16 @@
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span><span class="op">(</span>LANG <span class="op">=</span> <span class="st">"en"</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb477"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; ── Attaching packages ─────────────────── tidyverse 1.3.2 ──</span></span>
-<span><span class="co">#&gt; ✔ ggplot2 3.4.1     ✔ purrr   1.0.1</span></span>
-<span><span class="co">#&gt; ✔ tibble  3.1.8     ✔ dplyr   1.1.0</span></span>
-<span><span class="co">#&gt; ✔ tidyr   1.3.0     ✔ stringr 1.5.0</span></span>
-<span><span class="co">#&gt; ✔ readr   2.1.4     ✔ forcats 1.0.0</span></span>
+<span><span class="co">#&gt; ── Attaching core tidyverse packages ──── tidyverse 2.0.0 ──</span></span>
+<span><span class="co">#&gt; ✔ dplyr     1.1.2     ✔ readr     2.1.4</span></span>
+<span><span class="co">#&gt; ✔ forcats   1.0.0     ✔ stringr   1.5.0</span></span>
+<span><span class="co">#&gt; ✔ ggplot2   3.4.2     ✔ tibble    3.2.1</span></span>
+<span><span class="co">#&gt; ✔ lubridate 1.9.2     ✔ tidyr     1.3.0</span></span>
+<span><span class="co">#&gt; ✔ purrr     1.0.1     </span></span>
 <span><span class="co">#&gt; ── Conflicts ────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
 <span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span>
+<span><span class="co">#&gt; ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span> <span class="co"># for excel files</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vincentarelbundock.github.io/WDI/">WDI</a></span><span class="op">)</span></span></code></pre></div>
 <div id="world-development-indicator---wdi-1" class="section level3" number="15.1.1">
@@ -238,16 +241,16 @@
 <span>           extra<span class="op">=</span><span class="cn">TRUE</span>, cache<span class="op">=</span><span class="va">wdi_cache</span><span class="op">)</span></span>
 <span><span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span>  <span class="co"># for R Notebook use this line, for PDF delete by adding #</span></span>
 <span><span class="co">#&gt;    country iso2c iso3c year status lastupdated parl gini</span></span>
-<span><span class="co">#&gt; 1   Canada    CA   CAN 1960         2023-03-01   NA   NA</span></span>
-<span><span class="co">#&gt; 2   Canada    CA   CAN 1961         2023-03-01   NA   NA</span></span>
-<span><span class="co">#&gt; 3   Canada    CA   CAN 1962         2023-03-01   NA   NA</span></span>
-<span><span class="co">#&gt; 4   Canada    CA   CAN 1963         2023-03-01   NA   NA</span></span>
-<span><span class="co">#&gt; 5   Canada    CA   CAN 1964         2023-03-01   NA   NA</span></span>
-<span><span class="co">#&gt; 6   Canada    CA   CAN 1965         2023-03-01   NA   NA</span></span>
-<span><span class="co">#&gt; 7   Canada    CA   CAN 1966         2023-03-01   NA   NA</span></span>
-<span><span class="co">#&gt; 8   Canada    CA   CAN 1967         2023-03-01   NA   NA</span></span>
-<span><span class="co">#&gt; 9   Canada    CA   CAN 1968         2023-03-01   NA   NA</span></span>
-<span><span class="co">#&gt; 10  Canada    CA   CAN 1969         2023-03-01   NA   NA</span></span>
+<span><span class="co">#&gt; 1   Canada    CA   CAN 1960         2023-03-30   NA   NA</span></span>
+<span><span class="co">#&gt; 2   Canada    CA   CAN 1961         2023-03-30   NA   NA</span></span>
+<span><span class="co">#&gt; 3   Canada    CA   CAN 1962         2023-03-30   NA   NA</span></span>
+<span><span class="co">#&gt; 4   Canada    CA   CAN 1963         2023-03-30   NA   NA</span></span>
+<span><span class="co">#&gt; 5   Canada    CA   CAN 1964         2023-03-30   NA   NA</span></span>
+<span><span class="co">#&gt; 6   Canada    CA   CAN 1965         2023-03-30   NA   NA</span></span>
+<span><span class="co">#&gt; 7   Canada    CA   CAN 1966         2023-03-30   NA   NA</span></span>
+<span><span class="co">#&gt; 8   Canada    CA   CAN 1967         2023-03-30   NA   NA</span></span>
+<span><span class="co">#&gt; 9   Canada    CA   CAN 1968         2023-03-30   NA   NA</span></span>
+<span><span class="co">#&gt; 10  Canada    CA   CAN 1969         2023-03-30   NA   NA</span></span>
 <span><span class="co">#&gt;           region capital longitude latitude      income</span></span>
 <span><span class="co">#&gt; 1  North America  Ottawa  -75.6919  45.4215 High income</span></span>
 <span><span class="co">#&gt; 2  North America  Ottawa  -75.6919  45.4215 High income</span></span>
@@ -626,16 +629,16 @@
 <code class="sourceCode R"><span><span class="va">df2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span>country <span class="op">=</span> <span class="st">"all"</span>, indicator <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>area <span class="op">=</span> <span class="st">"AG.LND.FRST.K2"</span><span class="op">)</span>, extra <span class="op">=</span> <span class="cn">TRUE</span>, cache <span class="op">=</span> <span class="va">wdi_cache</span><span class="op">)</span> </span>
 <span><span class="va">df2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt;        country iso2c iso3c year    area status lastupdated</span></span>
-<span><span class="co">#&gt; 1  Afghanistan    AF   AFG 2021      NA         2023-03-01</span></span>
-<span><span class="co">#&gt; 2  Afghanistan    AF   AFG 2020 12084.4         2023-03-01</span></span>
-<span><span class="co">#&gt; 3  Afghanistan    AF   AFG 2019 12084.4         2023-03-01</span></span>
-<span><span class="co">#&gt; 4  Afghanistan    AF   AFG 2018 12084.4         2023-03-01</span></span>
-<span><span class="co">#&gt; 5  Afghanistan    AF   AFG 2017 12084.4         2023-03-01</span></span>
-<span><span class="co">#&gt; 6  Afghanistan    AF   AFG 2016 12084.4         2023-03-01</span></span>
-<span><span class="co">#&gt; 7  Afghanistan    AF   AFG 2015 12084.4         2023-03-01</span></span>
-<span><span class="co">#&gt; 8  Afghanistan    AF   AFG 2014 12084.4         2023-03-01</span></span>
-<span><span class="co">#&gt; 9  Afghanistan    AF   AFG 2013 12084.4         2023-03-01</span></span>
-<span><span class="co">#&gt; 10 Afghanistan    AF   AFG 2012 12084.4         2023-03-01</span></span>
+<span><span class="co">#&gt; 1  Afghanistan    AF   AFG 2022      NA         2023-03-30</span></span>
+<span><span class="co">#&gt; 2  Afghanistan    AF   AFG 2021      NA         2023-03-30</span></span>
+<span><span class="co">#&gt; 3  Afghanistan    AF   AFG 2020 12084.4         2023-03-30</span></span>
+<span><span class="co">#&gt; 4  Afghanistan    AF   AFG 2019 12084.4         2023-03-30</span></span>
+<span><span class="co">#&gt; 5  Afghanistan    AF   AFG 2018 12084.4         2023-03-30</span></span>
+<span><span class="co">#&gt; 6  Afghanistan    AF   AFG 2017 12084.4         2023-03-30</span></span>
+<span><span class="co">#&gt; 7  Afghanistan    AF   AFG 2016 12084.4         2023-03-30</span></span>
+<span><span class="co">#&gt; 8  Afghanistan    AF   AFG 2015 12084.4         2023-03-30</span></span>
+<span><span class="co">#&gt; 9  Afghanistan    AF   AFG 2014 12084.4         2023-03-30</span></span>
+<span><span class="co">#&gt; 10 Afghanistan    AF   AFG 2013 12084.4         2023-03-30</span></span>
 <span><span class="co">#&gt;        region capital longitude latitude     income lending</span></span>
 <span><span class="co">#&gt; 1  South Asia   Kabul   69.1761  34.5228 Low income     IDA</span></span>
 <span><span class="co">#&gt; 2  South Asia   Kabul   69.1761  34.5228 Low income     IDA</span></span>
@@ -652,25 +655,25 @@
 </ol>
 <div class="sourceCode" id="cb497"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df1_wona</span> <span class="op">&lt;-</span> <span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">df1_wona</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 114</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 138</span></span></code></pre></div>
 <div class="sourceCode" id="cb498"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df2_wona</span> <span class="op">&lt;-</span> <span class="va">df2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">df2_wona</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 7723</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 7748</span></span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>Drop data only a specified indicator.</li>
 </ol>
 <div class="sourceCode" id="cb499"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df1_wona_parl</span> <span class="op">&lt;-</span> <span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">parl</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">df1_wona_parl</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 173</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 180</span></span></code></pre></div>
 <div class="sourceCode" id="cb500"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df1_wona_gini</span> <span class="op">&lt;-</span> <span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">gini</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">df1_wona_gini</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 155</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 213</span></span></code></pre></div>
 <div class="sourceCode" id="cb501"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df1_wona_parl_gini</span> <span class="op">&lt;-</span> <span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">parl</span>, <span class="va">gini</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">df1_wona_parl_gini</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 114</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 138</span></span></code></pre></div>
 <div class="sourceCode" id="cb502"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df2_wona_area</span> <span class="op">&lt;-</span> <span class="va">df2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">area</span><span class="op">)</span>; <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">df2_wona_area</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 7909</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 7934</span></span></code></pre></div>
 <p>Can you see why the number above is larger than the row number of <code>df2_wona</code>? Since there are many column imported using <code>extra=TRUE</code>, there may be NA values in the othre columns.</p>
 <p>So, generally speaking, it is better to drop NA only for the indicators.</p>
 <ol start="3" style="list-style-type: decimal">
@@ -682,17 +685,18 @@
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span>, <span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/top_n.html">top_n</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Selecting by n</span></span>
-<span><span class="co">#&gt; # A tibble: 2 × 2</span></span>
+<span><span class="co">#&gt; # A tibble: 3 × 2</span></span>
 <span><span class="co">#&gt;    year     n</span></span>
 <span><span class="co">#&gt;   &lt;int&gt; &lt;int&gt;</span></span>
 <span><span class="co">#&gt; 1  2013     7</span></span>
-<span><span class="co">#&gt; 2  2010     7</span></span></code></pre></div>
+<span><span class="co">#&gt; 2  2010     7</span></span>
+<span><span class="co">#&gt; 3  2008     7</span></span></code></pre></div>
 <ol start="4" style="list-style-type: decimal">
 <li>Compare the following charts. In the second chart, we can get rid of the warnings. You can simply remove the warning by adding a chunk optiion <code>warning=FALSE</code> by {r warning=FALSE} or choosing an option using the gear mark.</li>
 </ol>
 <div class="sourceCode" id="cb504"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">gini</span>, col <span class="op">=</span> <span class="va">country</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Warning: Removed 184 rows containing missing values</span></span>
+<span><span class="co">#&gt; Warning: Removed 172 rows containing missing values</span></span>
 <span><span class="co">#&gt; (`geom_line()`).</span></span></code></pre></div>
 <div class="inline-figure"><img src="15-a5resp_files/figure-html/unnamed-chunk-26-1.png" width="672"></div>
 <div class="sourceCode" id="cb505"><pre class="downlit sourceCode r">
@@ -835,12 +839,11 @@
 <div class="sourceCode" id="cb516"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mod</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/glance.html">glance</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 1 × 12</span></span>
-<span><span class="co">#&gt;   r.squared adj.r…¹ sigma stati…² p.value    df logLik   AIC</span></span>
-<span><span class="co">#&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1    0.0138 0.00716 0.825    2.07   0.152     1  -183.  372.</span></span>
-<span><span class="co">#&gt; # … with 4 more variables: BIC &lt;dbl&gt;, deviance &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   df.residual &lt;int&gt;, nobs &lt;int&gt;, and abbreviated variable</span></span>
-<span><span class="co">#&gt; #   names ¹​adj.r.squared, ²​statistic</span></span></code></pre></div>
+<span><span class="co">#&gt;   r.squared adj.r.squared sigma statistic p.value    df</span></span>
+<span><span class="co">#&gt;       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1    0.0138       0.00716 0.825      2.07   0.152     1</span></span>
+<span><span class="co">#&gt; # ℹ 6 more variables: logLik &lt;dbl&gt;, AIC &lt;dbl&gt;, BIC &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</span></span></code></pre></div>
 </div>
 <div id="augment" class="section level4" number="15.5.4.2">
 <h4>
@@ -859,21 +862,20 @@
 <div class="sourceCode" id="cb517"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mod</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/augment.html">augment</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">Sepal.Width</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 150 × 8</span></span>
-<span><span class="co">#&gt;    Sepal.Len…¹ Sepal…² .fitted  .resid   .hat .sigma .cooksd</span></span>
-<span><span class="co">#&gt;          &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1         5       2      6.08 -1.08   0.0462  0.823 4.34e-2</span></span>
-<span><span class="co">#&gt;  2         6       2.2    6.03 -0.0348 0.0326  0.828 3.11e-5</span></span>
-<span><span class="co">#&gt;  3         6.2     2.2    6.03  0.165  0.0326  0.828 6.99e-4</span></span>
-<span><span class="co">#&gt;  4         6       2.2    6.03 -0.0348 0.0326  0.828 3.11e-5</span></span>
-<span><span class="co">#&gt;  5         4.5     2.3    6.01 -1.51   0.0269  0.818 4.78e-2</span></span>
-<span><span class="co">#&gt;  6         5.5     2.3    6.01 -0.512  0.0269  0.827 5.49e-3</span></span>
-<span><span class="co">#&gt;  7         6.3     2.3    6.01  0.288  0.0269  0.828 1.73e-3</span></span>
-<span><span class="co">#&gt;  8         5       2.3    6.01 -1.01   0.0269  0.824 2.14e-2</span></span>
-<span><span class="co">#&gt;  9         4.9     2.4    5.99 -1.09   0.0219  0.823 2.00e-2</span></span>
-<span><span class="co">#&gt; 10         5.5     2.4    5.99 -0.490  0.0219  0.827 4.05e-3</span></span>
-<span><span class="co">#&gt; # … with 140 more rows, 1 more variable: .std.resid &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   and abbreviated variable names ¹​Sepal.Length,</span></span>
-<span><span class="co">#&gt; #   ²​Sepal.Width</span></span></code></pre></div>
+<span><span class="co">#&gt;    Sepal.Length Sepal.Width .fitted  .resid   .hat .sigma</span></span>
+<span><span class="co">#&gt;           &lt;dbl&gt;       &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1          5           2      6.08 -1.08   0.0462  0.823</span></span>
+<span><span class="co">#&gt;  2          6           2.2    6.03 -0.0348 0.0326  0.828</span></span>
+<span><span class="co">#&gt;  3          6.2         2.2    6.03  0.165  0.0326  0.828</span></span>
+<span><span class="co">#&gt;  4          6           2.2    6.03 -0.0348 0.0326  0.828</span></span>
+<span><span class="co">#&gt;  5          4.5         2.3    6.01 -1.51   0.0269  0.818</span></span>
+<span><span class="co">#&gt;  6          5.5         2.3    6.01 -0.512  0.0269  0.827</span></span>
+<span><span class="co">#&gt;  7          6.3         2.3    6.01  0.288  0.0269  0.828</span></span>
+<span><span class="co">#&gt;  8          5           2.3    6.01 -1.01   0.0269  0.824</span></span>
+<span><span class="co">#&gt;  9          4.9         2.4    5.99 -1.09   0.0219  0.823</span></span>
+<span><span class="co">#&gt; 10          5.5         2.4    5.99 -0.490  0.0219  0.827</span></span>
+<span><span class="co">#&gt; # ℹ 140 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 2 more variables: .cooksd &lt;dbl&gt;, .std.resid &lt;dbl&gt;</span></span></code></pre></div>
 <p>Hence, the following two charts are the same.</p>
 <div class="sourceCode" id="cb518"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mod</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/augment.html">augment</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Sepal.Width</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">Sepal.Length</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">.fitted</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span></span></code></pre></div>
@@ -959,7 +961,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-03-13.</p>
+    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-05-10.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
