@@ -9,6 +9,8 @@ Using a map data in `data.frame` to apply `geom_map` or `geom_polygon` is possib
 ```{r}
 library(tidyverse)
 library(sf)
+library(showtext)
+showtext_auto()
 ```
 
 We will use `income` level data with the iso2c code of each country obtained using `WDIcache()`.
@@ -100,7 +102,7 @@ ne_countries(scale = "small", returnclass = "sf") %>%
   ggplot() +   geom_sf()
 ```
 
-We will use 'medium` scale data in the following.
+We will use `medium` scale data in the following.
 
 ```{r}
 ne_world <- ne_countries(scale = "medium", returnclass = "sf")

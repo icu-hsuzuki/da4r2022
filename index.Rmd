@@ -38,4 +38,4 @@ library(tidyverse)
 
 ## The package `bookdown` {-}
 
-We used the [`bookdown` package](https://cran.r-project.org/web/packages/bookdown/index.html) to create this page with [`bs4_book` style](https://pkgs.rstudio.com/bookdown/reference/bs4_book.html) of bootstrap4. See the [Bookdown book}(https://bookdown.org/yihui/bookdown/) for the detail.
+We used the [`bookdown` package](https://cran.r-project.org/web/packages/bookdown/index.html) to create this page with [`bs4_book` style](https://pkgs.rstudio.com/bookdown/reference/bs4_book.html) of bootstrap4. See the [Bookdown book](https://bookdown.org/yihui/bookdown/) for the detail.

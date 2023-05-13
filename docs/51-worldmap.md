@@ -22,6 +22,10 @@ library(tidyverse)
 library(sf)
 #> Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2()
 #> is TRUE
+library(showtext)
+#> Loading required package: sysfonts
+#> Loading required package: showtextdb
+showtext_auto()
 ```
 
 We will use `income` level data with the iso2c code of each country obtained using `WDIcache()`.
@@ -143,7 +147,7 @@ ne_countries(scale = "small", returnclass = "sf") %>%
 
 <img src="51-worldmap_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 
-We will use 'medium` scale data in the following.
+We will use `medium` scale data in the following.
 
 
 ```r

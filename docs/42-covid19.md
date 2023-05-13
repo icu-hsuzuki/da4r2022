@@ -1,6 +1,6 @@
 # Covid 19 {#covid19}
 
-> An example of an R Notebook, rendered at 2023-05-13 14:31:53 JST  
+> An example of an R Notebook, rendered at 2023-05-13 23:15:09 JST  
 
 
 ## Introduction
@@ -1518,7 +1518,7 @@ covid <- owid_covid()
 
 ```r
 glimpse(covid)
-#> Rows: 309,616
+#> Rows: 309,639
 #> Columns: 67
 #> $ iso_code                                   <chr> "AFG", …
 #> $ continent                                  <chr> "Asia",…
