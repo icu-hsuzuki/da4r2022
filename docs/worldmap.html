@@ -606,6 +606,155 @@ You can specify a ‘continent’, a ‘region_un’, a ‘subregion’ or ‘re
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">iso_a2</span> <span class="op">==</span> <span class="st">"JP"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">region</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="51-worldmap_files/figure-html/unnamed-chunk-28-1.png" width="672"></div>
+</div>
+</div>
+<div id="geodata-package" class="section level2" number="31.3">
+<h2>
+<span class="header-section-number">C.3</span> <code>geodata</code> Package<a class="anchor" aria-label="anchor" href="#geodata-package"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>URL: <a href="https://gadm.org" class="uri">https://gadm.org</a>
+</li>
+<li>
+<code>geodata</code>: Download Geographic Data</li>
+<li>Functions for downloading of geographic data for use in spatial analysis and mapping. The package facilitates access to climate, crops, elevation, land use, soil, species occurrence, accessibility, administrative boundaries and other data.</li>
+<li>Package Link: <a href="https://CRAN.R-project.org/package=geodata" class="uri">https://CRAN.R-project.org/package=geodata</a>
+</li>
+<li>Manual: <a href="https://cran.r-project.org/web/packages/geodata/geodata.pdf" class="uri">https://cran.r-project.org/web/packages/geodata/geodata.pdf</a>
+</li>
+</ul>
+<div class="sourceCode" id="cb750"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">geodata</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Loading required package: terra</span></span>
+<span><span class="co">#&gt; terra 1.7.29</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Attaching package: 'terra'</span></span>
+<span><span class="co">#&gt; The following object is masked from 'package:tidyr':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     extract</span></span></code></pre></div>
+<div class="sourceCode" id="cb751"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/geodata/man/world.html">world</a></span><span class="op">(</span>resolution<span class="op">=</span><span class="fl">5</span>, level<span class="op">=</span><span class="fl">0</span>, path <span class="op">=</span> <span class="st">"./data"</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  class       : SpatVector </span></span>
+<span><span class="co">#&gt;  geometry    : polygons </span></span>
+<span><span class="co">#&gt;  dimensions  : 231, 2  (geometries, attributes)</span></span>
+<span><span class="co">#&gt;  extent      : -180, 180, -90, 83.65625  (xmin, xmax, ymin, ymax)</span></span>
+<span><span class="co">#&gt;  coord. ref. : +proj=longlat +datum=WGS84 +no_defs </span></span>
+<span><span class="co">#&gt;  names       : GID_0      NAME_0</span></span>
+<span><span class="co">#&gt;  type        : &lt;chr&gt;       &lt;chr&gt;</span></span>
+<span><span class="co">#&gt;  values      :   ABW       Aruba</span></span>
+<span><span class="co">#&gt;                  AFG Afghanistan</span></span>
+<span><span class="co">#&gt;                  AGO      Angola</span></span></code></pre></div>
+<div class="sourceCode" id="cb752"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">world5</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/terra/man/serialize.html">readRDS</a></span><span class="op">(</span><span class="st">"./data/gadm/gadm36_adm0_r5_pk.rds"</span><span class="op">)</span></span>
+<span><span class="va">world5</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Rows: 231</span></span>
+<span><span class="co">#&gt; Columns: 2</span></span>
+<span><span class="co">#&gt; $ GID_0  &lt;chr&gt; "ABW", "AFG", "AGO", "ALA", "ALB", "AND", "…</span></span>
+<span><span class="co">#&gt; $ NAME_0 &lt;chr&gt; "Aruba", "Afghanistan", "Angola", "Åland", …</span></span></code></pre></div>
+<div class="sourceCode" id="cb753"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">world5</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_as_sf.html">st_as_sf</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="51-worldmap_files/figure-html/unnamed-chunk-32-1.png" width="672"></div>
+<div class="sourceCode" id="cb754"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">world5</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_as_sf.html">st_as_sf</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">GID_0</span> <span class="op">==</span> <span class="st">"JPN"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="51-worldmap_files/figure-html/unnamed-chunk-33-1.png" width="672"></div>
+<div class="sourceCode" id="cb755"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/geodata/man/world.html">world</a></span><span class="op">(</span>resolution<span class="op">=</span><span class="fl">1</span>, level<span class="op">=</span><span class="fl">0</span>, path <span class="op">=</span> <span class="st">"./data"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_as_sf.html">st_as_sf</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="51-worldmap_files/figure-html/unnamed-chunk-34-1.png" width="672"></div>
+<div class="sourceCode" id="cb756"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/geodata/man/world.html">world</a></span><span class="op">(</span>path <span class="op">=</span> <span class="st">"./data"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_as_sf.html">st_as_sf</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="51-worldmap_files/figure-html/unnamed-chunk-35-1.png" width="672"></div>
+<div class="sourceCode" id="cb757"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/geodata/man/world.html">world</a></span><span class="op">(</span>resolution<span class="op">=</span><span class="fl">1</span>, level<span class="op">=</span><span class="fl">0</span>, path <span class="op">=</span> <span class="st">"./data"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_as_sf.html">st_as_sf</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">NAME_0</span> <span class="op">==</span> <span class="st">"Japan"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="51-worldmap_files/figure-html/unnamed-chunk-36-1.png" width="672"></div>
+<div class="sourceCode" id="cb758"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/geodata/man/world.html">world</a></span><span class="op">(</span>resolution<span class="op">=</span><span class="fl">1</span>, level<span class="op">=</span><span class="fl">0</span>, path <span class="op">=</span> <span class="st">"./data"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_as_sf.html">st_as_sf</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">NAME_0</span> <span class="op"><a href="https://rdrr.io/pkg/terra/man/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"India"</span>,<span class="st">"Pakistan"</span>, <span class="st">"Bangladesh"</span> , <span class="st">"Sri Lanka"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">GID_0</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="51-worldmap_files/figure-html/unnamed-chunk-37-1.png" width="672"></div>
+<div class="sourceCode" id="cb759"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">world5_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_as_sf.html">st_as_sf</a></span><span class="op">(</span><span class="va">world5</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_crs.html">st_set_crs</a></span><span class="op">(</span><span class="st">"+proj=longlat +datum=WGS84"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_transform.html">st_transform</a></span><span class="op">(</span><span class="va">.</span>, <span class="st">"+proj=robin"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">world5_df</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="51-worldmap_files/figure-html/unnamed-chunk-38-1.png" width="672"></div>
+<div id="gadm-administrative-boundaries" class="section level3" number="31.3.1">
+<h3>
+<span class="header-section-number">C.3.1</span> <code>gadm</code> Administrative boundaries<a class="anchor" aria-label="anchor" href="#gadm-administrative-boundaries"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Get administrative boundaries for any country in the world. Data are read from files that are down- loaded if necessary.</li>
+<li>Usage: <code>gadm(country, level=1, path, version="latest", resolution=1, ...)</code>
+</li>
+<li>Arguments
+<ul>
+<li>country: character. Three-letter ISO code or full country name. If you provide multiple names they are all downloaded and rbind-ed together</li>
+<li>level: numeric. The level of administrative subdivision requested. (starting with 0 for country, then 1 for the first level of subdivision)</li>
+<li>path: character. Path for storing the downloaded data. See geodata_path</li>
+<li>version: character. Either “latest” or GADM version number (can be “3.6”, “4.0” or “4.1”)</li>
+<li>resolution: integer indicating the level of detail. Only for version 4.1. It should be either 1 (high) or 2 (low)</li>
+</ul>
+</li>
+</ul>
+<div class="sourceCode" id="cb760"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">gadm0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/geodata/man/gadm.html">gadm</a></span><span class="op">(</span><span class="st">"JPN"</span>, level <span class="op">=</span> <span class="fl">0</span>, path <span class="op">=</span> <span class="st">"./data/"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb761"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">gadm0</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_as_sf.html">st_as_sf</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="51-worldmap_files/figure-html/unnamed-chunk-40-1.png" width="672"></div>
+<div class="sourceCode" id="cb762"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">gadm1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/geodata/man/gadm.html">gadm</a></span><span class="op">(</span><span class="st">"JPN"</span>, level <span class="op">=</span> <span class="fl">1</span>, path <span class="op">=</span> <span class="st">"./data/"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_as_sf.html">st_as_sf</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">gadm1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Rows: 47</span></span>
+<span><span class="co">#&gt; Columns: 12</span></span>
+<span><span class="co">#&gt; $ GID_1     &lt;chr&gt; "JPN.1_1", "JPN.2_1", "JPN.3_1", "JPN.4_…</span></span>
+<span><span class="co">#&gt; $ GID_0     &lt;chr&gt; "JPN", "JPN", "JPN", "JPN", "JPN", "JPN"…</span></span>
+<span><span class="co">#&gt; $ COUNTRY   &lt;chr&gt; "Japan", "Japan", "Japan", "Japan", "Jap…</span></span>
+<span><span class="co">#&gt; $ NAME_1    &lt;chr&gt; "Aichi", "Akita", "Aomori", "Chiba", "Eh…</span></span>
+<span><span class="co">#&gt; $ VARNAME_1 &lt;chr&gt; "Aiti", NA, NA, "Tiba|Tsiba", NA, "Hukui…</span></span>
+<span><span class="co">#&gt; $ NL_NAME_1 &lt;chr&gt; "愛知県", "秋田県", "青森県", "千葉県", …</span></span>
+<span><span class="co">#&gt; $ TYPE_1    &lt;chr&gt; "Ken", "Ken", "Ken", "Ken", "Ken", "Ken"…</span></span>
+<span><span class="co">#&gt; $ ENGTYPE_1 &lt;chr&gt; "Prefecture", "Prefecture", "Prefecture"…</span></span>
+<span><span class="co">#&gt; $ CC_1      &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …</span></span>
+<span><span class="co">#&gt; $ HASC_1    &lt;chr&gt; "JP.AI", "JP.AK", "JP.AO", "JP.CH", "JP.…</span></span>
+<span><span class="co">#&gt; $ ISO_1     &lt;chr&gt; "JP-23", "JP-05", "JP-02", "JP-12", "JP-…</span></span>
+<span><span class="co">#&gt; $ geometry  &lt;GEOMETRY [°]&gt; MULTIPOLYGON (((137.0974 34...,…</span></span></code></pre></div>
+<div class="sourceCode" id="cb763"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">gadm1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">NAME_1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="51-worldmap_files/figure-html/unnamed-chunk-42-1.png" width="672"></div>
+<div class="sourceCode" id="cb764"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">gadm2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/geodata/man/gadm.html">gadm</a></span><span class="op">(</span><span class="st">"JPN"</span>, level <span class="op">=</span> <span class="fl">2</span>, path <span class="op">=</span> <span class="st">"./data/"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_as_sf.html">st_as_sf</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">gadm2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Rows: 1,811</span></span>
+<span><span class="co">#&gt; Columns: 14</span></span>
+<span><span class="co">#&gt; $ GID_2     &lt;chr&gt; "JPN.1.1_1", "JPN.1.2_1", "JPN.1.3_1", "…</span></span>
+<span><span class="co">#&gt; $ GID_0     &lt;chr&gt; "JPN", "JPN", "JPN", "JPN", "JPN", "JPN"…</span></span>
+<span><span class="co">#&gt; $ COUNTRY   &lt;chr&gt; "Japan", "Japan", "Japan", "Japan", "Jap…</span></span>
+<span><span class="co">#&gt; $ GID_1     &lt;chr&gt; "JPN.1_1", "JPN.1_1", "JPN.1_1", "JPN.1_…</span></span>
+<span><span class="co">#&gt; $ NAME_1    &lt;chr&gt; "Aichi", "Aichi", "Aichi", "Aichi", "Aic…</span></span>
+<span><span class="co">#&gt; $ NL_NAME_1 &lt;chr&gt; "愛知県", "愛知県", "愛知県", "愛知県", …</span></span>
+<span><span class="co">#&gt; $ NAME_2    &lt;chr&gt; "Agui", "Aisai", "Anjō", "Chiryū", "Chit…</span></span>
+<span><span class="co">#&gt; $ VARNAME_2 &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …</span></span>
+<span><span class="co">#&gt; $ NL_NAME_2 &lt;chr&gt; "阿久比町", "愛西市", "安城市", "知立市"…</span></span>
+<span><span class="co">#&gt; $ TYPE_2    &lt;chr&gt; "Machi", "Shi", "Shi", "Shi", "Shi", "Ma…</span></span>
+<span><span class="co">#&gt; $ ENGTYPE_2 &lt;chr&gt; "Town", "City", "City", "City", "City", …</span></span>
+<span><span class="co">#&gt; $ CC_2      &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …</span></span>
+<span><span class="co">#&gt; $ HASC_2    &lt;chr&gt; NA, NA, NA, NA, "JP.AI.CG", NA, NA, "JP.…</span></span>
+<span><span class="co">#&gt; $ geometry  &lt;GEOMETRY [°]&gt; POLYGON ((136.8802 34.94398...,…</span></span></code></pre></div>
+<div class="sourceCode" id="cb765"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">gadm2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">NL_NAME_1</span> <span class="op"><a href="https://rdrr.io/pkg/terra/man/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"埼玉県"</span>, <span class="st">"群馬県"</span>, <span class="st">"栃木県"</span>, <span class="st">"茨城県"</span>, <span class="st">"千葉県"</span>, <span class="st">"神奈川県"</span>, <span class="st">"東京都"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">NAME_1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/lims.html">ylim</a></span><span class="op">(</span><span class="fl">34.7</span>,<span class="fl">37.2</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/lims.html">xlim</a></span><span class="op">(</span><span class="fl">138.2</span>,<span class="fl">141</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="51-worldmap_files/figure-html/unnamed-chunk-44-1.png" width="672"></div>
 
 </div>
 </div>
@@ -628,6 +777,9 @@ You can specify a ‘continent’, a ‘region_un’, a ‘subregion’ or ‘re
 <li><a class="nav-link" href="#value"><span class="header-section-number">C.2.4</span> Value</a></li>
 </ul>
 </li>
+<li>
+<a class="nav-link" href="#geodata-package"><span class="header-section-number">C.3</span> geodata Package</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#gadm-administrative-boundaries"><span class="header-section-number">C.3.1</span> gadm Administrative boundaries</a></li></ul>
+</li>
 </ul>
 
       <div class="book-extra">
@@ -645,7 +797,7 @@ You can specify a ‘continent’, a ‘region_un’, a ‘subregion’ or ‘re
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-05-10.</p>
+    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-05-13.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

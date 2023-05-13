@@ -249,3 +249,106 @@ ne_world_admin1 %>% mutate(region = case_when(
   ggplot() +   geom_sf(aes(fill = region))
 ```
 
+## `geodata` Package
+
+* URL: https://gadm.org
+* `geodata`: Download Geographic Data
+* Functions for downloading of geographic data for use in spatial analysis and mapping. The package facilitates access to climate, crops, elevation, land use, soil, species occurrence, accessibility, administrative boundaries and other data.
+* Package Link:  https://CRAN.R-project.org/package=geodata
+* Manual: https://cran.r-project.org/web/packages/geodata/geodata.pdf
+
+
+```{r}
+library(geodata)
+```
+
+```{r}
+world(resolution=5, level=0, path = "./data")
+```
+```{r}
+world5 <- readRDS("./data/gadm/gadm36_adm0_r5_pk.rds")
+world5 %>% as_tibble() %>% glimpse()
+```
+
+```{r}
+world5 %>% st_as_sf() %>% ggplot() + geom_sf()
+```
+
+```{r}
+world5 %>% 
+  st_as_sf() %>% filter(GID_0 == "JPN") %>% 
+  ggplot() + geom_sf()
+```
+
+```{r}
+world(resolution=1, level=0, path = "./data") %>%
+  st_as_sf() %>% ggplot() + geom_sf()
+```
+```{r}
+world(path = "./data") %>%
+  st_as_sf() %>% ggplot() + geom_sf()
+```
+
+```{r}
+world(resolution=1, level=0, path = "./data") %>%
+  st_as_sf() %>% filter(NAME_0 == "Japan") %>%
+  ggplot() + geom_sf()
+```
+
+```{r}
+world(resolution=1, level=0, path = "./data") %>%
+  st_as_sf() %>% filter(NAME_0 %in% c("India","Pakistan", "Bangladesh" , "Sri Lanka")) %>%
+  ggplot() + geom_sf(aes(fill = GID_0))
+```
+
+```{r}
+world5_df <- st_as_sf(world5) %>% 
+  st_set_crs("+proj=longlat +datum=WGS84") %>% 
+  st_transform(., "+proj=robin")
+
+ggplot() +
+  geom_sf(data = world5_df)
+```
+
+### `gadm` Administrative boundaries
+
+* Get administrative boundaries for any country in the world. Data are read from files that are down- loaded if necessary.
+* Usage: `gadm(country, level=1, path, version="latest", resolution=1, ...)`
+* Arguments
+    - country: character. Three-letter ISO code or full country name. If you provide multiple names they are all downloaded and rbind-ed together
+    - level: numeric. The level of administrative subdivision requested. (starting with 0 for country, then 1 for the first level of subdivision)
+    - path: character. Path for storing the downloaded data. See geodata_path
+    - version: character. Either "latest" or GADM version number (can be "3.6", "4.0" or "4.1")
+    - resolution: integer indicating the level of detail. Only for version 4.1. It should be either 1 (high) or 2 (low)
+
+
+```{r}
+gadm0 <- gadm("JPN", level = 0, path = "./data/")
+```
+```{r}
+gadm0 %>% st_as_sf() %>% 
+  ggplot() + geom_sf()
+```
+
+```{r}
+gadm1 <- gadm("JPN", level = 1, path = "./data/") %>% st_as_sf()
+gadm1 %>% glimpse()
+```
+
+```{r}
+gadm1 %>% 
+  ggplot() + geom_sf(aes(fill = NAME_1)) + theme(legend.position = "none")
+```
+```{r}
+gadm2 <- gadm("JPN", level = 2, path = "./data/") %>% st_as_sf()
+gadm2 %>% glimpse()
+```
+
+```{r}
+gadm2 %>% filter(NL_NAME_1 %in% c("埼玉県", "群馬県", "栃木県", "茨城県", "千葉県", "神奈川県", "東京都")) %>% 
+  ggplot() + geom_sf(aes(fill = NAME_1)) + 
+  ylim(34.7,37.2) + xlim(138.2,141) + 
+  theme(legend.position = "none")
+```
+
+

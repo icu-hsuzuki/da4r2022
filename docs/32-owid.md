@@ -454,7 +454,7 @@ covid <- owid_covid()
 
 ```r
 covid %>% filter(location == "Japan")
-#> # A tibble: 1,221 × 67
+#> # A tibble: 1,224 × 67
 #>    iso_code continent location date       total_cases
 #>    <chr>    <chr>     <chr>    <date>           <dbl>
 #>  1 JPN      Asia      Japan    2020-01-03          NA
@@ -467,7 +467,7 @@ covid %>% filter(location == "Japan")
 #>  8 JPN      Asia      Japan    2020-01-10          NA
 #>  9 JPN      Asia      Japan    2020-01-11          NA
 #> 10 JPN      Asia      Japan    2020-01-12          NA
-#> # ℹ 1,211 more rows
+#> # ℹ 1,214 more rows
 #> # ℹ 62 more variables: new_cases <dbl>,
 #> #   new_cases_smoothed <dbl>, total_deaths <dbl>,
 #> #   new_deaths <dbl>, new_deaths_smoothed <dbl>,

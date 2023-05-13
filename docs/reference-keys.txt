@@ -523,6 +523,8 @@ ne_states
 usage-1
 arguments-1
 value
+geodata-package
+gadm-administrative-boundaries
 bookdown
 about-1
 usage-2

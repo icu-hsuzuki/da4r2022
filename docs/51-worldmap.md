@@ -572,3 +572,193 @@ ne_world_admin1 %>% mutate(region = case_when(
 
 <img src="51-worldmap_files/figure-html/unnamed-chunk-28-1.png" width="672" />
 
+## `geodata` Package
+
+* URL: https://gadm.org
+* `geodata`: Download Geographic Data
+* Functions for downloading of geographic data for use in spatial analysis and mapping. The package facilitates access to climate, crops, elevation, land use, soil, species occurrence, accessibility, administrative boundaries and other data.
+* Package Link:  https://CRAN.R-project.org/package=geodata
+* Manual: https://cran.r-project.org/web/packages/geodata/geodata.pdf
+
+
+
+```r
+library(geodata)
+#> Loading required package: terra
+#> terra 1.7.29
+#> 
+#> Attaching package: 'terra'
+#> The following object is masked from 'package:tidyr':
+#> 
+#>     extract
+```
+
+
+```r
+world(resolution=5, level=0, path = "./data")
+#>  class       : SpatVector 
+#>  geometry    : polygons 
+#>  dimensions  : 231, 2  (geometries, attributes)
+#>  extent      : -180, 180, -90, 83.65625  (xmin, xmax, ymin, ymax)
+#>  coord. ref. : +proj=longlat +datum=WGS84 +no_defs 
+#>  names       : GID_0      NAME_0
+#>  type        : <chr>       <chr>
+#>  values      :   ABW       Aruba
+#>                  AFG Afghanistan
+#>                  AGO      Angola
+```
+
+```r
+world5 <- readRDS("./data/gadm/gadm36_adm0_r5_pk.rds")
+world5 %>% as_tibble() %>% glimpse()
+#> Rows: 231
+#> Columns: 2
+#> $ GID_0  <chr> "ABW", "AFG", "AGO", "ALA", "ALB", "AND", "…
+#> $ NAME_0 <chr> "Aruba", "Afghanistan", "Angola", "Åland", …
+```
+
+
+```r
+world5 %>% st_as_sf() %>% ggplot() + geom_sf()
+```
+
+<img src="51-worldmap_files/figure-html/unnamed-chunk-32-1.png" width="672" />
+
+
+```r
+world5 %>% 
+  st_as_sf() %>% filter(GID_0 == "JPN") %>% 
+  ggplot() + geom_sf()
+```
+
+<img src="51-worldmap_files/figure-html/unnamed-chunk-33-1.png" width="672" />
+
+
+```r
+world(resolution=1, level=0, path = "./data") %>%
+  st_as_sf() %>% ggplot() + geom_sf()
+```
+
+<img src="51-worldmap_files/figure-html/unnamed-chunk-34-1.png" width="672" />
+
+```r
+world(path = "./data") %>%
+  st_as_sf() %>% ggplot() + geom_sf()
+```
+
+<img src="51-worldmap_files/figure-html/unnamed-chunk-35-1.png" width="672" />
+
+
+```r
+world(resolution=1, level=0, path = "./data") %>%
+  st_as_sf() %>% filter(NAME_0 == "Japan") %>%
+  ggplot() + geom_sf()
+```
+
+<img src="51-worldmap_files/figure-html/unnamed-chunk-36-1.png" width="672" />
+
+
+```r
+world(resolution=1, level=0, path = "./data") %>%
+  st_as_sf() %>% filter(NAME_0 %in% c("India","Pakistan", "Bangladesh" , "Sri Lanka")) %>%
+  ggplot() + geom_sf(aes(fill = GID_0))
+```
+
+<img src="51-worldmap_files/figure-html/unnamed-chunk-37-1.png" width="672" />
+
+
+```r
+world5_df <- st_as_sf(world5) %>% 
+  st_set_crs("+proj=longlat +datum=WGS84") %>% 
+  st_transform(., "+proj=robin")
+
+ggplot() +
+  geom_sf(data = world5_df)
+```
+
+<img src="51-worldmap_files/figure-html/unnamed-chunk-38-1.png" width="672" />
+
+### `gadm` Administrative boundaries
+
+* Get administrative boundaries for any country in the world. Data are read from files that are down- loaded if necessary.
+* Usage: `gadm(country, level=1, path, version="latest", resolution=1, ...)`
+* Arguments
+    - country: character. Three-letter ISO code or full country name. If you provide multiple names they are all downloaded and rbind-ed together
+    - level: numeric. The level of administrative subdivision requested. (starting with 0 for country, then 1 for the first level of subdivision)
+    - path: character. Path for storing the downloaded data. See geodata_path
+    - version: character. Either "latest" or GADM version number (can be "3.6", "4.0" or "4.1")
+    - resolution: integer indicating the level of detail. Only for version 4.1. It should be either 1 (high) or 2 (low)
+
+
+
+```r
+gadm0 <- gadm("JPN", level = 0, path = "./data/")
+```
+
+```r
+gadm0 %>% st_as_sf() %>% 
+  ggplot() + geom_sf()
+```
+
+<img src="51-worldmap_files/figure-html/unnamed-chunk-40-1.png" width="672" />
+
+
+```r
+gadm1 <- gadm("JPN", level = 1, path = "./data/") %>% st_as_sf()
+gadm1 %>% glimpse()
+#> Rows: 47
+#> Columns: 12
+#> $ GID_1     <chr> "JPN.1_1", "JPN.2_1", "JPN.3_1", "JPN.4_…
+#> $ GID_0     <chr> "JPN", "JPN", "JPN", "JPN", "JPN", "JPN"…
+#> $ COUNTRY   <chr> "Japan", "Japan", "Japan", "Japan", "Jap…
+#> $ NAME_1    <chr> "Aichi", "Akita", "Aomori", "Chiba", "Eh…
+#> $ VARNAME_1 <chr> "Aiti", NA, NA, "Tiba|Tsiba", NA, "Hukui…
+#> $ NL_NAME_1 <chr> "愛知県", "秋田県", "青森県", "千葉県", …
+#> $ TYPE_1    <chr> "Ken", "Ken", "Ken", "Ken", "Ken", "Ken"…
+#> $ ENGTYPE_1 <chr> "Prefecture", "Prefecture", "Prefecture"…
+#> $ CC_1      <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+#> $ HASC_1    <chr> "JP.AI", "JP.AK", "JP.AO", "JP.CH", "JP.…
+#> $ ISO_1     <chr> "JP-23", "JP-05", "JP-02", "JP-12", "JP-…
+#> $ geometry  <GEOMETRY [°]> MULTIPOLYGON (((137.0974 34...,…
+```
+
+
+```r
+gadm1 %>% 
+  ggplot() + geom_sf(aes(fill = NAME_1)) + theme(legend.position = "none")
+```
+
+<img src="51-worldmap_files/figure-html/unnamed-chunk-42-1.png" width="672" />
+
+```r
+gadm2 <- gadm("JPN", level = 2, path = "./data/") %>% st_as_sf()
+gadm2 %>% glimpse()
+#> Rows: 1,811
+#> Columns: 14
+#> $ GID_2     <chr> "JPN.1.1_1", "JPN.1.2_1", "JPN.1.3_1", "…
+#> $ GID_0     <chr> "JPN", "JPN", "JPN", "JPN", "JPN", "JPN"…
+#> $ COUNTRY   <chr> "Japan", "Japan", "Japan", "Japan", "Jap…
+#> $ GID_1     <chr> "JPN.1_1", "JPN.1_1", "JPN.1_1", "JPN.1_…
+#> $ NAME_1    <chr> "Aichi", "Aichi", "Aichi", "Aichi", "Aic…
+#> $ NL_NAME_1 <chr> "愛知県", "愛知県", "愛知県", "愛知県", …
+#> $ NAME_2    <chr> "Agui", "Aisai", "Anjō", "Chiryū", "Chit…
+#> $ VARNAME_2 <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+#> $ NL_NAME_2 <chr> "阿久比町", "愛西市", "安城市", "知立市"…
+#> $ TYPE_2    <chr> "Machi", "Shi", "Shi", "Shi", "Shi", "Ma…
+#> $ ENGTYPE_2 <chr> "Town", "City", "City", "City", "City", …
+#> $ CC_2      <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+#> $ HASC_2    <chr> NA, NA, NA, NA, "JP.AI.CG", NA, NA, "JP.…
+#> $ geometry  <GEOMETRY [°]> POLYGON ((136.8802 34.94398...,…
+```
+
+
+```r
+gadm2 %>% filter(NL_NAME_1 %in% c("埼玉県", "群馬県", "栃木県", "茨城県", "千葉県", "神奈川県", "東京都")) %>% 
+  ggplot() + geom_sf(aes(fill = NAME_1)) + 
+  ylim(34.7,37.2) + xlim(138.2,141) + 
+  theme(legend.position = "none")
+```
+
+<img src="51-worldmap_files/figure-html/unnamed-chunk-44-1.png" width="672" />
+
+

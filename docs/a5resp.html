@@ -241,16 +241,16 @@
 <span>           extra<span class="op">=</span><span class="cn">TRUE</span>, cache<span class="op">=</span><span class="va">wdi_cache</span><span class="op">)</span></span>
 <span><span class="va">df1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span>  <span class="co"># for R Notebook use this line, for PDF delete by adding #</span></span>
 <span><span class="co">#&gt;    country iso2c iso3c year status lastupdated parl gini</span></span>
-<span><span class="co">#&gt; 1   Canada    CA   CAN 1960         2023-03-30   NA   NA</span></span>
-<span><span class="co">#&gt; 2   Canada    CA   CAN 1961         2023-03-30   NA   NA</span></span>
-<span><span class="co">#&gt; 3   Canada    CA   CAN 1962         2023-03-30   NA   NA</span></span>
-<span><span class="co">#&gt; 4   Canada    CA   CAN 1963         2023-03-30   NA   NA</span></span>
-<span><span class="co">#&gt; 5   Canada    CA   CAN 1964         2023-03-30   NA   NA</span></span>
-<span><span class="co">#&gt; 6   Canada    CA   CAN 1965         2023-03-30   NA   NA</span></span>
-<span><span class="co">#&gt; 7   Canada    CA   CAN 1966         2023-03-30   NA   NA</span></span>
-<span><span class="co">#&gt; 8   Canada    CA   CAN 1967         2023-03-30   NA   NA</span></span>
-<span><span class="co">#&gt; 9   Canada    CA   CAN 1968         2023-03-30   NA   NA</span></span>
-<span><span class="co">#&gt; 10  Canada    CA   CAN 1969         2023-03-30   NA   NA</span></span>
+<span><span class="co">#&gt; 1   Canada    CA   CAN 1960         2023-05-10   NA   NA</span></span>
+<span><span class="co">#&gt; 2   Canada    CA   CAN 1961         2023-05-10   NA   NA</span></span>
+<span><span class="co">#&gt; 3   Canada    CA   CAN 1962         2023-05-10   NA   NA</span></span>
+<span><span class="co">#&gt; 4   Canada    CA   CAN 1963         2023-05-10   NA   NA</span></span>
+<span><span class="co">#&gt; 5   Canada    CA   CAN 1964         2023-05-10   NA   NA</span></span>
+<span><span class="co">#&gt; 6   Canada    CA   CAN 1965         2023-05-10   NA   NA</span></span>
+<span><span class="co">#&gt; 7   Canada    CA   CAN 1966         2023-05-10   NA   NA</span></span>
+<span><span class="co">#&gt; 8   Canada    CA   CAN 1967         2023-05-10   NA   NA</span></span>
+<span><span class="co">#&gt; 9   Canada    CA   CAN 1968         2023-05-10   NA   NA</span></span>
+<span><span class="co">#&gt; 10  Canada    CA   CAN 1969         2023-05-10   NA   NA</span></span>
 <span><span class="co">#&gt;           region capital longitude latitude      income</span></span>
 <span><span class="co">#&gt; 1  North America  Ottawa  -75.6919  45.4215 High income</span></span>
 <span><span class="co">#&gt; 2  North America  Ottawa  -75.6919  45.4215 High income</span></span>
@@ -629,16 +629,16 @@
 <code class="sourceCode R"><span><span class="va">df2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://vincentarelbundock.github.io/WDI/reference/WDI.html">WDI</a></span><span class="op">(</span>country <span class="op">=</span> <span class="st">"all"</span>, indicator <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>area <span class="op">=</span> <span class="st">"AG.LND.FRST.K2"</span><span class="op">)</span>, extra <span class="op">=</span> <span class="cn">TRUE</span>, cache <span class="op">=</span> <span class="va">wdi_cache</span><span class="op">)</span> </span>
 <span><span class="va">df2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt;        country iso2c iso3c year    area status lastupdated</span></span>
-<span><span class="co">#&gt; 1  Afghanistan    AF   AFG 2022      NA         2023-03-30</span></span>
-<span><span class="co">#&gt; 2  Afghanistan    AF   AFG 2021      NA         2023-03-30</span></span>
-<span><span class="co">#&gt; 3  Afghanistan    AF   AFG 2020 12084.4         2023-03-30</span></span>
-<span><span class="co">#&gt; 4  Afghanistan    AF   AFG 2019 12084.4         2023-03-30</span></span>
-<span><span class="co">#&gt; 5  Afghanistan    AF   AFG 2018 12084.4         2023-03-30</span></span>
-<span><span class="co">#&gt; 6  Afghanistan    AF   AFG 2017 12084.4         2023-03-30</span></span>
-<span><span class="co">#&gt; 7  Afghanistan    AF   AFG 2016 12084.4         2023-03-30</span></span>
-<span><span class="co">#&gt; 8  Afghanistan    AF   AFG 2015 12084.4         2023-03-30</span></span>
-<span><span class="co">#&gt; 9  Afghanistan    AF   AFG 2014 12084.4         2023-03-30</span></span>
-<span><span class="co">#&gt; 10 Afghanistan    AF   AFG 2013 12084.4         2023-03-30</span></span>
+<span><span class="co">#&gt; 1  Afghanistan    AF   AFG 2022      NA         2023-05-10</span></span>
+<span><span class="co">#&gt; 2  Afghanistan    AF   AFG 2021      NA         2023-05-10</span></span>
+<span><span class="co">#&gt; 3  Afghanistan    AF   AFG 2020 12084.4         2023-05-10</span></span>
+<span><span class="co">#&gt; 4  Afghanistan    AF   AFG 2019 12084.4         2023-05-10</span></span>
+<span><span class="co">#&gt; 5  Afghanistan    AF   AFG 2018 12084.4         2023-05-10</span></span>
+<span><span class="co">#&gt; 6  Afghanistan    AF   AFG 2017 12084.4         2023-05-10</span></span>
+<span><span class="co">#&gt; 7  Afghanistan    AF   AFG 2016 12084.4         2023-05-10</span></span>
+<span><span class="co">#&gt; 8  Afghanistan    AF   AFG 2015 12084.4         2023-05-10</span></span>
+<span><span class="co">#&gt; 9  Afghanistan    AF   AFG 2014 12084.4         2023-05-10</span></span>
+<span><span class="co">#&gt; 10 Afghanistan    AF   AFG 2013 12084.4         2023-05-10</span></span>
 <span><span class="co">#&gt;        region capital longitude latitude     income lending</span></span>
 <span><span class="co">#&gt; 1  South Asia   Kabul   69.1761  34.5228 Low income     IDA</span></span>
 <span><span class="co">#&gt; 2  South Asia   Kabul   69.1761  34.5228 Low income     IDA</span></span>
@@ -961,7 +961,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-05-10.</p>
+    <p>"<strong>Data Analysis for Researchers AY2022</strong>" was written by Hiroshi Suzuki. It was last built on 2023-05-13.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

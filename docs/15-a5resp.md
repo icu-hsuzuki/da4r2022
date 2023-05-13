@@ -142,16 +142,16 @@ df1 <- WDI(country = G7,
            extra=TRUE, cache=wdi_cache)
 df1 %>% slice(1:10)  # for R Notebook use this line, for PDF delete by adding #
 #>    country iso2c iso3c year status lastupdated parl gini
-#> 1   Canada    CA   CAN 1960         2023-03-30   NA   NA
-#> 2   Canada    CA   CAN 1961         2023-03-30   NA   NA
-#> 3   Canada    CA   CAN 1962         2023-03-30   NA   NA
-#> 4   Canada    CA   CAN 1963         2023-03-30   NA   NA
-#> 5   Canada    CA   CAN 1964         2023-03-30   NA   NA
-#> 6   Canada    CA   CAN 1965         2023-03-30   NA   NA
-#> 7   Canada    CA   CAN 1966         2023-03-30   NA   NA
-#> 8   Canada    CA   CAN 1967         2023-03-30   NA   NA
-#> 9   Canada    CA   CAN 1968         2023-03-30   NA   NA
-#> 10  Canada    CA   CAN 1969         2023-03-30   NA   NA
+#> 1   Canada    CA   CAN 1960         2023-05-10   NA   NA
+#> 2   Canada    CA   CAN 1961         2023-05-10   NA   NA
+#> 3   Canada    CA   CAN 1962         2023-05-10   NA   NA
+#> 4   Canada    CA   CAN 1963         2023-05-10   NA   NA
+#> 5   Canada    CA   CAN 1964         2023-05-10   NA   NA
+#> 6   Canada    CA   CAN 1965         2023-05-10   NA   NA
+#> 7   Canada    CA   CAN 1966         2023-05-10   NA   NA
+#> 8   Canada    CA   CAN 1967         2023-05-10   NA   NA
+#> 9   Canada    CA   CAN 1968         2023-05-10   NA   NA
+#> 10  Canada    CA   CAN 1969         2023-05-10   NA   NA
 #>           region capital longitude latitude      income
 #> 1  North America  Ottawa  -75.6919  45.4215 High income
 #> 2  North America  Ottawa  -75.6919  45.4215 High income
@@ -505,16 +505,16 @@ wdi_cache$series %>% filter(indicator == "AG.LND.FRST.K2")
 df2 <- WDI(country = "all", indicator = c(area = "AG.LND.FRST.K2"), extra = TRUE, cache = wdi_cache) 
 df2 %>% slice(1:10)
 #>        country iso2c iso3c year    area status lastupdated
-#> 1  Afghanistan    AF   AFG 2022      NA         2023-03-30
-#> 2  Afghanistan    AF   AFG 2021      NA         2023-03-30
-#> 3  Afghanistan    AF   AFG 2020 12084.4         2023-03-30
-#> 4  Afghanistan    AF   AFG 2019 12084.4         2023-03-30
-#> 5  Afghanistan    AF   AFG 2018 12084.4         2023-03-30
-#> 6  Afghanistan    AF   AFG 2017 12084.4         2023-03-30
-#> 7  Afghanistan    AF   AFG 2016 12084.4         2023-03-30
-#> 8  Afghanistan    AF   AFG 2015 12084.4         2023-03-30
-#> 9  Afghanistan    AF   AFG 2014 12084.4         2023-03-30
-#> 10 Afghanistan    AF   AFG 2013 12084.4         2023-03-30
+#> 1  Afghanistan    AF   AFG 2022      NA         2023-05-10
+#> 2  Afghanistan    AF   AFG 2021      NA         2023-05-10
+#> 3  Afghanistan    AF   AFG 2020 12084.4         2023-05-10
+#> 4  Afghanistan    AF   AFG 2019 12084.4         2023-05-10
+#> 5  Afghanistan    AF   AFG 2018 12084.4         2023-05-10
+#> 6  Afghanistan    AF   AFG 2017 12084.4         2023-05-10
+#> 7  Afghanistan    AF   AFG 2016 12084.4         2023-05-10
+#> 8  Afghanistan    AF   AFG 2015 12084.4         2023-05-10
+#> 9  Afghanistan    AF   AFG 2014 12084.4         2023-05-10
+#> 10 Afghanistan    AF   AFG 2013 12084.4         2023-05-10
 #>        region capital longitude latitude     income lending
 #> 1  South Asia   Kabul   69.1761  34.5228 Low income     IDA
 #> 2  South Asia   Kabul   69.1761  34.5228 Low income     IDA
